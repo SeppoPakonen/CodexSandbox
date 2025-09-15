@@ -1,0 +1,137 @@
+
+:i function $[6e9d9abb]$
+	:i $[d92845ef]$
+	:i $[11918f70]$
+	:i $[a1116237]$$[cc424795]$ = $[45b8e935]$$[c4745838]$ = %s(1," ")
+	:i $[9eb6e336]$$[6d0a9e65]$
+	:i $[9eb6e336]$$[da262587]$
+	:i $[9eb6e336]$$[4abd5e6e]$
+	:i $[9eb6e336]$$[3cb79e88]$
+:i endfunction
+:i function $[eff2c692]$
+	:i $[e2a1a579]$
+	:i $[f8d6a996]$$[6c4e7971]$ = %s(16,"TRG_PRTCL_Leaves")
+	:i $[9eb6e336]$$[b98dc50f]$
+	:i if $[7d873131]$
+		:i $[b457a5ff]$%i(2000,000007d0)
+		:i $[bf74c9ca]$%i(40,00000028)
+		:i $[4067de42]$%i(40,00000028)
+		:i $[816d9ec4]$%f(2.000000)
+	:i endif
+:i endfunction
+:i function $[3cb79e88]$
+	:i $[e2f095f9]$
+	:i if  ( (%GLOBAL%$[f884773c]$ = %i(1,00000001))  AND  (%GLOBAL%$[af1575eb]$ = %i(1,00000001)) ) 
+		:i if $[2712fb96]$$[a1dc81f9]$ = $[1557ba06]$
+			:i $[f8d6a996]$$[a1dc81f9]$ = $[1557ba06]$
+		:i endif
+	:i else
+		:i if NOT $[2712fb96]$$[a1dc81f9]$ = $[1557ba06]$
+			:i $[70291f04]$$[a1dc81f9]$ = $[1557ba06]$
+		:i endif
+	:i endif
+	:i if $[89d01f11]$$[a1dc81f9]$ = $[5989b01f]$
+		:i if $[2712fb96]$$[a1dc81f9]$ = $[1557ba06]$
+			:i $[f8d6a996]$$[a1dc81f9]$ = $[1557ba06]$
+		:i endif
+	:i endif
+:i endfunction
+:i function $[5f518813]$
+	:i $[2de8c60e]$%s(57,"=================================== Running MikeV checker")
+	:i if NOT $[a1da6fe9]$
+		:i $[e2f095f9]$
+		:i if NOT $[c51a8a84]$$[a1dc81f9]$ = $[dbe24066]$
+			:i if $[2712fb96]$$[a1dc81f9]$ = $[b363d028]$
+				:i $[f8d6a996]$$[a1dc81f9]$ = $[b363d028]$
+			:i endif
+		:i endif
+		:i if  ( (%GLOBAL%$[f884773c]$ = %i(0,00000000))  AND  (%GLOBAL%$[af1575eb]$ = %i(0,00000000)) ) 
+			:i if $[2712fb96]$$[a1dc81f9]$ = $[b363d028]$
+				:i $[f8d6a996]$$[a1dc81f9]$ = $[b363d028]$
+			:i endif
+		:i else
+			:i if NOT $[2712fb96]$$[a1dc81f9]$ = $[b363d028]$
+				:i $[70291f04]$$[a1dc81f9]$ = $[b363d028]$
+			:i endif
+			:i if $[89d01f11]$$[a1dc81f9]$ = $[dbe24066]$
+				:i $[f8d6a996]$$[a1dc81f9]$ = $[b363d028]$
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[2cd62090]$
+	:i if NOT $[850b3cca]$
+		:i $[e2f095f9]$
+		:i $[2de8c60e]$%s(76,"checking for drivable car!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+		:i if  ( ($[c51a8a84]$$[a1dc81f9]$ = $[adfaf339]$)  OR  (%GLOBAL%$[f884773c]$ > %i(0,00000000))  OR  (%GLOBAL%$[af1575eb]$ > %i(1,00000001)) ) 
+			:i if NOT $[2712fb96]$$[a1dc81f9]$ = $[23807e06]$
+				:i $[f8d6a996]$$[6c4e7971]$ = %s(6,"Race6_")
+				:i $[f8d6a996]$$[6c4e7971]$ = %s(26,"TRG_SFX_TrigBox_IdleHotRod")
+				:i $[f8d6a996]$$[6c4e7971]$ = %s(19,"TRG_Car_NotDrivable")
+				:i $[f8d6a996]$$[6c4e7971]$ = %s(13,"Burnout_Smoke")
+				:i $[70291f04]$$[a1dc81f9]$ = $[23807e06]$
+				:i $[2de8c60e]$%s(72,"creating drivable car!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[f122eb78]$
+	:i if $[c51a8a84]$$[a1dc81f9]$ = $[665ac246]$
+		:i $[5b8ab877]$.$[1b572abf]$$[d6f06bf6]$$[7a8017ba]$ = $[36d5d854]$
+	:i endif
+:i endfunction
+:i function $[b98dc50f]$
+	:i $[82117c1a]$%f(0.050000)$[49e0ee96]$
+	:i if $[7d873131]$
+		:i if $[2712fb96]$$[a1dc81f9]$ = $[023f626f]$
+			:i $[023f626f]$.$[e48fd084]$$[6d0b88d5]$
+		:i endif
+	:i endif
+	:i $[9eb6e336]$$[2cd62090]$
+	:i $[5f518813]$
+:i endfunction
+:i function $[f74b084f]$$[75d5ba48]$ = $[aa1bade2]$
+	:i $[e507281c]$$[5b8ab877]$ = %i(0,00000000):s{$[ee721991]$
+		:i $[531e4d28]$ = %GLOBAL%$[75d5ba48]$
+		:i $[906642bf]$ = %vec3(-13.500000,27.700001,12.400000)
+		:i $[a00d3d6e]$ = %vec3(-27.799999,70.000000,170.399994)
+		:i $[019176c5]$ = %i(180,000000b4)
+		:i $[8dde72c0]$ = %i(1,00000001)
+	:i :s}
+:i endfunction
+:i function $[cd56ede7]$
+	:i while
+		
+		:i $[82117c1a]$%i(1,00000001)$[4a07c332]$
+		:i if $[437b2131]$$[40c698af]$ = $[5b8ab877]$
+			:i continue
+			
+		:i endif
+	:i loop_to 
+:i endfunction
+:i function $[8ca4d2a4]$
+	:i if $[850b3cca]$
+		:i $[0b501f99]$
+		:i $[f8d6a996]$$[6c4e7971]$ = %s(17,"Veh_PoliceCar_NJ_")
+		:i $[f8d6a996]$$[6c4e7971]$ = %s(18,"NJ_G_NOT_BridgeQP_")
+		:i $[4af4611b]$%i(1,00000001)
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT  ( ($[20985922]$$[7de8ca6c]$)  OR  ($[20985922]$$[353961d7]$) ) 
+			:i if $[a1da6fe9]$
+				:i $[530a5ca8]$
+				:i $[a7370abe]$
+				:i $[95be3206]$
+				:i $[28aeb42a]$
+				:i $[71b4c82d]$
+			:i else
+				:i $[6fffea05]$
+				:i $[6d2752e7]$
+				:i $[f6d40109]$
+				:i $[95be3206]$
+				:i $[e9ad50b5]$
+				:i $[28aeb42a]$
+				:i $[9b5c71f5]$
+				:i switch %GLOBAL%$[3671f748]$
+					:i case :end
+						

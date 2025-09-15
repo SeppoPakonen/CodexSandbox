@@ -1,0 +1,293 @@
+$Veh_Pickup_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $CHEVY_SILVERADO_Col$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,-0.000008)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1.412973,46.091480,62.640427)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(41.238876,18.539761,149.399384)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-37.769722,18.539761,149.399384)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(42.617508,18.539764,-11.846138)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-37.935581,18.539764,-11.846145)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(35.966904,74.550728,54.239029)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail01$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(8,00000008):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(35.966896,74.550720,105.524773)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail02$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(9,00000009):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(35.966896,79.550720,117.524773)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(35.966904,79.550728,42.239029)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail04$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(7,00000007):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Pickup01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Pickup01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Pickup02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Pickup02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Pickup03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Pickup03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Pickup04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Pickup04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(44.710445,35.372166,-63.037205)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Skitch01$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-41.555912,35.372169,-63.037197)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Skitch02$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-32.531036,79.536560,42.239029)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(18,00000012):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-32.531036,74.536560,54.239029)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail06$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(19,00000013):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-32.531044,74.536552,105.524773)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail07$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(20,00000014):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-32.531044,79.536552,117.524773)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-41.368885,58.796227,-75.037209)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail09$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(22,00000016):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-41.368885,53.796227,-63.037205)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail10$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(23,00000017):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-41.368881,53.779049,50.161900)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail11$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(24,00000018):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-41.368881,58.779049,62.161900)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail12$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(44.710445,53.831661,-63.037197)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail13$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(27,0000001b):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(44.710445,58.831661,-75.037201)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail14$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(25,00000019):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(44.710449,53.814484,50.161907)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail15$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(28,0000001c):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(44.710449,58.814484,62.161907)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Pickup_Rail16$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :a}
+:i $Veh_PickupTriggerScripts$ = 
+:i :a{
+	:i $TRGP_Pickup01Script$
+	:i $TRGP_Pickup02Script$
+	:i $TRGP_Pickup03Script$
+	:i $TRGP_Pickup04Script$
+	:i :a}
+:i function $TRGP_Pickup01Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop02$$EndGapID$ = $CarHop01$
+:i endfunction
+:i function $TRGP_Pickup02Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop01$$EndGapID$ = $CarHop02$
+:i endfunction
+:i function $TRGP_Pickup03Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop03$$EndGapID$ = $CarHop04$
+:i endfunction
+:i function $TRGP_Pickup04Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop04$$EndGapID$ = $CarHop03$
+:i endfunction
+:i :end

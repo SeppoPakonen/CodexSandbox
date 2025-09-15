@@ -1,0 +1,12 @@
+uses
+	Demo,
+	Dolphin;
+
+uses(CHARPIPE) CharPipe;
+
+file
+	lit-multi.cpp;
+
+mainconfig
+	"" = "EMU SDL HAVE_DIRECT_OPENGL";
+

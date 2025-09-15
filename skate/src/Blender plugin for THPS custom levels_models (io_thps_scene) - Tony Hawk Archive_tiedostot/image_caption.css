@@ -1,0 +1,94 @@
+/**
+ * Image caption styles
+ * Type: Screen
+*/
+div.imgcaption {
+	float: left;
+	margin: 5px 5px 5px 0px;
+	padding: 0px;
+    position: relative;
+    border: 2px solid #999;
+    width: 100%;
+	}
+    
+    #site-navigation .imgcaption {
+        margin: 0px;
+    }
+    #site-navigation div.imgcaption div, #site-navigation div.imgcaption_inactive div {
+        width: 100%; height: 100%;
+        background-color: rgba(0,25,54,0.75);
+    }
+    
+    div.imgcaption div {
+        width: 100%; height: 25px;
+        position: absolute;
+        bottom: 0px;
+        background: #001936;
+        display: none;
+    }
+	div.imgcaption div p {
+        display: block;
+        position: absolute;
+        bottom: 0px; left: 0px;
+        margin: 3px 5px;
+		/*font-family: Tahoma, Arial, sans-serif;*/
+        font-family: 'Lato', sans-serif;
+		font-size: 100%; font-weight: normal; 
+		color: #CFCFC8; text-decoration: none;
+        border: 0;
+        cursor: hand;
+		}
+	div.imgcaption img {
+		border: 0;
+        margin: 0; padding: 0;
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+		}
+	div.imgcaption:hover {
+		background: #739CC0;
+		border-color: white;
+		}
+div.imgcaption_inactive {
+	float: left;
+	margin: 5px;
+	padding: 0px;
+    position: relative;
+    border: 2px solid #999;
+	background: #4B545B;
+	width: 100%;
+	}
+	div.imgcaption_inactive div {
+        width: 100%; height: 25px;
+        position: absolute;
+        bottom: 0px;
+        background: #001936;
+		opacity: 0.5;
+    }
+	div.imgcaption_inactive div p {
+        display: block;
+        position: absolute;
+        bottom: 0px; left: 0px;
+        margin: 3px 5px;
+		font-family: 'Lato', sans-serif;
+		font-size: 100%; font-weight: normal; 
+		color: #CFCFC8; text-decoration: none;
+        border: 0;
+        cursor: hand;
+		}
+	div.imgcaption_inactive img {
+		border: 0;
+        margin: 0; padding: 0;
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+		}
+        
+
+@media (max-width: 767px) {
+    div.imgcaption div, div.imgcaption_inactive div { display: block; }
+}
+@media (min-width: 1200px) {
+    div.imgcaption div, div.imgcaption_inactive div { height: 30px; }
+	div.imgcaption div p, div.imgcaption_inactive div p { font-size: 120%; margin: 3px 8px; }
+}

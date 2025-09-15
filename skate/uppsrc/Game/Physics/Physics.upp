@@ -1,0 +1,41 @@
+noblitz;
+
+uses
+	Game/Core,
+	Game/World;
+
+file
+	Physics.h,
+	BatchTriColl.cpp,
+	BatchTriColl.h,
+	CarPhysicsComponent.cpp,
+	CarPhysicsComponent.h,
+	CollCache.cpp,
+	CollCache.h,
+	CollEnums.h,
+	CollideAndDieComponent.cpp,
+	CollideAndDieComponent.h,
+	Collision2.cpp,
+	Collision2.h,
+	CollisionComponent.cpp,
+	CollisionComponent.h,
+	Collision.cpp,
+	Collision.h,
+	CollTriData.cpp,
+	CollTriData.h,
+	Contact.cpp,
+	Contact.h,
+	Feeler.cpp,
+	Feeler.h,
+	MovingObject.cpp,
+	MovingObject.h,
+	NearComponent.cpp,
+	NearComponent.h,
+	Physics.upp,
+	RectFeeler.cpp,
+	RectFeeler.h,
+	RigidBodyComponent.cpp,
+	RigidBodyComponent.h,
+	WalkHangUtil.cpp,
+	WalkLadderUtil.cpp;
+

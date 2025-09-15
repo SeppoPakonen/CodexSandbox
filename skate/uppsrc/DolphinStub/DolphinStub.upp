@@ -1,0 +1,22 @@
+description "\377B28,85,255";
+
+file
+	DolphinStub.h,
+	Ai.cpp,
+	Ar.cpp,
+	Arq.cpp,
+	Ax.cpp,
+	CARD.cpp,
+	Dtk.cpp,
+	Gd.cpp,
+	Gx.cpp,
+	Hio.cpp,
+	Misc.cpp,
+	Pad.cpp,
+	Dvd.cpp,
+	Vi.cpp,
+	Os.cpp,
+	Trash readonly separator,
+	C.cpp,
+	Dc.cpp;
+

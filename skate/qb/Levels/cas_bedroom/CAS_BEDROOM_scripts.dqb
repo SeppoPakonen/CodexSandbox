@@ -1,0 +1,27 @@
+function $[cbdce19a]$
+	:i $[2de8c60e]$%s(49,"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+	:i $[2de8c60e]$%s(49,"X                                               X")
+	:i $[2de8c60e]$%s(49,"X              CAS Startup                      X")
+	:i $[2de8c60e]$%s(49,"X                                               X")
+	:i $[2de8c60e]$%s(49,"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+	:i $[6cbdf252]$
+	:i $[fb9af75e]$
+	:i $[bfa801df]$$[5dc8d7a9]$ = %i(0,00000000)
+	:i $[ee2ee195]$
+	:i $[0f6968c0]$%i(0,00000000)
+	:i if  ($[75f58405]$ = %i(0,00000000)) 
+		:i if  ($[7fbfb38f]$ = %i(1,00000001)) 
+		:i else
+			:i $[edffcece]$
+		:i endif
+	:i else
+		:i if  ($[75f58405]$ = %i(1,00000001)) 
+			:i $[26a24667]$
+		:i else
+			:i $[26a24667]$$[014461d0]$ = $[014461d0]$
+		:i endif
+	:i endif
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 000001d1:15

@@ -1,0 +1,55 @@
+$Veh_Test_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(3.742027,0.446778,-5.454354)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-34.365238,32.848328,-6.373177)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(32.157753,14.198025,62.608727)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-29.174622,14.198025,62.608727)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(32.157745,14.198030,-58.270325)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-29.174629,14.198030,-58.270325)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :a}
+:i $Veh_TestTriggerScripts$ = 
+:i :a{
+	:i :a}
+:i :end

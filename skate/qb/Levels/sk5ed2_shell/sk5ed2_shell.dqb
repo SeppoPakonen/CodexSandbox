@@ -1,0 +1,2156 @@
+$NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(6063.285645,2671.614746,7627.314453)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $JG_NY_77BuildingTop01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,12.387161,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor971$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,12.387177,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor972$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor973$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,12.387199,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor974$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387123,-0.000355)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor987$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387199,-720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor998$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387184,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1003$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387184,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1009$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1015$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387184,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1021$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387138,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1023$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387146,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1024$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387161,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1025$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387177,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1026$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387138,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1028$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387184,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1030$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387177,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1031$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387161,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1032$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387146,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1033$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387138,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1046$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387199,-720.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1054$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387138,-1200.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1055$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387138,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1056$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387138,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1058$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387138,-1680.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1062$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387146,-720.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1063$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387161,1679.999878)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1065$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387177,720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1069$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387215,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1070$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387177,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1072$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387184,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1073$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387199,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1074$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387215,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1075$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387177,1679.999878)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1076$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387161,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1077$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387184,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1079$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387199,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1080$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387161,720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1082$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387177,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1087$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387161,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1088$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387222,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1090$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387161,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1091$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387161,1679.999878)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1092$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387215,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1093$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387161,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1094$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387199,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1095$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387184,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1096$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387177,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1097$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387161,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1098$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387161,720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1100$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387215,720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1102$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387215,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1106$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387215,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1111$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387215,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1117$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387215,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1119$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387215,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1129$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387199,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1131$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387184,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1132$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387177,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1133$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387177,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1135$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3439.869629,60.586948,-1966.017578)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3435.157227,11.681473,1817.234619)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(479.758667,170.552765,3436.967529)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $BilboardFramework_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-919.277222,52.253071,3429.221924)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(58.010223,-1046.393555,-6573.115234)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(58.010223,-1046.393555,-6573.115234)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-8410.707031,-1046.343750,-8722.888672)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-7046.711914,-1046.393799,3374.703369)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(8415.683594,-1046.343994,-8722.888672)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(60.681763,2681.229980,-8126.075195)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $JG_NY_77BuildingTop03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4863.393555,-646.832825,-6322.950684)
+		:i $Angles$ = %vec3(0.000000,0.000980,0.000000)
+		:i $Name$ = $BilboardFramework_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-0.000031,12.387177,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1137$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387184,0.000098)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1138$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-0.000061,12.387199,3120.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1139$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387161,-3600.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Roof_08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3600.000000,12.387192,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Roof_09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387230,3599.999756)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Roof_10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1140$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387169,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1141$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1142$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1143$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387169,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1144$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1145$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387169,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1146$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387169,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1147$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387192,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1148$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387207,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1149$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387222,-720.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1150$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387192,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1151$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387207,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1152$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387222,-720.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1153$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387146,-2640.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1154$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387131,-720.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1155$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387146,-1680.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1156$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387131,-2160.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1157$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387146,-1200.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1158$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387131,-1200.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1159$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387131,-1680.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1160$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387146,-720.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1161$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387169,-2640.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1162$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387184,-2640.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1163$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387154,-2160.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1164$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387169,-2160.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1165$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387184,-2160.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1166$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387154,-2640.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1167$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387100,2160.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1168$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000122,12.387085,2640.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1169$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000122,12.387100,2160.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1170$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387085,2640.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1171$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000122,12.387100,2160.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1172$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000122,12.387085,2640.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1173$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000122,12.387085,2640.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1174$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000122,12.387100,2160.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1175$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387123,1200.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1176$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387138,720.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1177$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387108,1680.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1178$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387123,1200.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1179$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387138,720.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1180$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387108,1680.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1181$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387184,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1182$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387184,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1183$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387169,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1184$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387222,-719.999878)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1185$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387146,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1186$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387154,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1187$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387199,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1188$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387146,-720.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1189$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387100,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1190$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387100,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1191$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000122,12.387100,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1192$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387154,720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1193$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387184,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1194$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387169,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1195$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387184,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1196$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387215,720.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1197$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387199,-720.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1198$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387184,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1199$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387146,-720.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1200$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387161,-1200.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1201$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(719.999878,12.387192,1200.000122)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1202$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1199.999878,12.387207,720.000061)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1203$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000122,12.387199,720.000000)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1204$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000000,12.387215,1200.000000)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1205$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387154,0.000006)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1206$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387138,0.000006)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1207$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000031,12.387222,2640.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1208$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000031,12.387207,2160.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1209$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387238,0.000006)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1210$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387222,0.000006)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1211$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387169,0.000006)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1212$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000031,12.387184,1680.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1213$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387215,0.000006)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1214$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000000,12.387161,-720.000000)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1215$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(720.000061,12.387177,720.000122)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1217$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-719.999939,12.387199,719.999939)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1218$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1199.999878,12.387207,0.000067)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1219$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,12.387215,1200.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1220$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387199,0.000037)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1221$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,12.387184,-720.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1222$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(719.999939,12.387161,0.000006)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1223$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000061,12.387177,720.000000)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Sk5ed_Shell_Floor1224$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-720.000061,12.387169,-0.000177)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1225$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3600.000977,12.387115,1200.000000)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Roof_11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(58.010223,-1046.393555,-6573.115234)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(60.508770,-857.788574,-6669.952148)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4670.414551,-935.967529,-8156.777344)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5346.289551,754.353394,-4892.276855)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object18$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(8521.108398,-1033.518188,-11543.205078)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(9159.173828,863.738098,-13140.093750)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object25$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(9261.236328,-913.665894,-8371.317383)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object27$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(9256.077148,-283.499268,-8366.229492)
+		:i $Angles$ = %vec3(-0.000000,-0.166837,0.000000)
+		:i $Name$ = $Object28$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4244.289063,-913.665894,-6962.196289)
+		:i $Angles$ = %vec3(0.000000,0.436702,0.000000)
+		:i $Name$ = $Object33$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4262.173340,-913.665894,-6315.833008)
+		:i $Angles$ = %vec3(0.000000,0.441505,0.000000)
+		:i $Name$ = $Object34$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5035.505371,-913.665894,-10898.541992)
+		:i $Angles$ = %vec3(0.000000,0.348608,0.000000)
+		:i $Name$ = $Object35$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(7110.596680,-913.665894,-9118.470703)
+		:i $Angles$ = %vec3(0.000000,0.436702,0.000000)
+		:i $Name$ = $Object36$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(9057.305664,-913.665894,-9118.470703)
+		:i $Angles$ = %vec3(0.000000,0.436702,0.000000)
+		:i $Name$ = $Object37$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6176.048828,300.056732,-15383.329102)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object39$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5713.730957,300.056732,-15383.329102)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object40$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5179.748535,2673.811279,-4480.261230)
+		:i $Angles$ = %vec3(0.000000,0.004599,0.000000)
+		:i $Name$ = $Object41$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5179.748535,2673.811279,-4402.851563)
+		:i $Angles$ = %vec3(0.000000,0.004599,0.000000)
+		:i $Name$ = $Object42$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4243.602539,292.744263,-24066.357422)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6296.633789,-58.122864,-1229.616699)
+		:i $Angles$ = %vec3(0.000000,-1.401920,0.000000)
+		:i $Name$ = $Object43$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5145.347168,80.445786,-1229.616821)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object17$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5164.495605,80.445786,-1229.616821)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object59$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6296.632813,633.996582,637.930176)
+		:i $Angles$ = %vec3(-1.881489,0.000000,0.000000)
+		:i $Name$ = $Object15$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5648.873535,1580.729370,-2487.497559)
+		:i $Angles$ = %vec3(-1.487706,0.000000,0.000000)
+		:i $Name$ = $Object20$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6540.711914,1580.729370,-2487.497559)
+		:i $Angles$ = %vec3(-1.487706,0.000000,0.000000)
+		:i $Name$ = $Object71$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6287.785645,1580.729370,-2487.497559)
+		:i $Angles$ = %vec3(3.141593,0.000000,0.000000)
+		:i $Name$ = $Object74$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6695.126465,280.417480,3882.196045)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object21$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(18006.746094,24.516968,-12483.868164)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Object78$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(12967.765625,24.516968,1261.087646)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object80$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6431.701172,-1034.933228,5828.814941)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Object24$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(9716.049805,-1002.724487,7038.233887)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object30$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1738.898560,-503.871826,5964.042969)
+		:i $Angles$ = %vec3(0.000000,-1.174773,0.000000)
+		:i $Name$ = $Object84$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1903.178101,62.959122,8573.670898)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object89$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1743.720703,209.700592,7450.962402)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object90$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1743.720947,-598.905701,5640.440430)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object19$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(588.393433,-1042.611084,7051.626953)
+		:i $Angles$ = %vec3(0.000000,0.603328,0.000000)
+		:i $Name$ = $Object109$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1718.451904,897.461853,7305.649414)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object46$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-215.667358,-974.465576,6869.673828)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object47$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-215.667358,-974.465576,5769.867676)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object110$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-215.667358,-974.465576,8729.794922)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object111$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3289.297852,-974.465576,6869.673828)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $Object112$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3289.297852,-974.465576,5388.086914)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $Object113$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3289.297852,-974.465576,8516.945313)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $Object114$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1651.140503,1246.976685,9218.904297)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object48$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4194.431641,-495.267090,11441.061523)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object116$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1053.725952,581.971558,6222.580078)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object49$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-6040.790527,31.637329,8670.129883)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object118$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-9273.137695,-876.400146,6792.938477)
+		:i $Angles$ = %vec3(-3.141593,-1.064721,3.141593)
+		:i $Name$ = $Object120$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-5387.672363,-716.662781,2059.725586)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object126$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-4791.082031,-720.056519,6707.177734)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Object29$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-5674.716309,-720.056519,6707.177734)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Object134$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-7202.334473,-720.056519,6707.177734)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Object135$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-8039.942383,-720.056519,6707.177734)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Object136$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-5387.672363,-716.662781,2059.725586)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object38$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-4815.469238,492.985992,1246.723999)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object45$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-4815.469238,339.332855,1246.723999)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object148$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-4787.436035,635.298584,1776.267212)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object151$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-7789.747559,-776.969788,1500.635986)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object152$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-0.000076,12.387174,-0.000092)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor1226$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-20800.410156,-1361.688843,-3927.916992)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(58.010223,-1046.393555,-6573.115234)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-5039.683594,2524.250977,-5556.387695)
+		:i $Angles$ = %vec3(3.141593,-0.001033,3.141593)
+		:i $Name$ = $Object157$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2786.186035,-820.207947,-4515.836914)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object160$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2786.186035,-820.207947,-4515.836914)
+		:i $Angles$ = %vec3(0.000000,-0.129750,0.000000)
+		:i $Name$ = $Object50$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-11596.601563,1455.948242,-8511.726563)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object162$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-16419.734375,1455.948242,-3768.094971)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object166$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-5973.194824,280.451508,-2506.072266)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $BilboardFramework_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-6939.767090,-974.465576,-3441.037109)
+		:i $Angles$ = %vec3(0.000000,1.094801,0.000000)
+		:i $Name$ = $Object170$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-8558.350586,-974.465576,-3441.037109)
+		:i $Angles$ = %vec3(0.000000,1.094801,0.000000)
+		:i $Name$ = $Object171$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-10347.783203,-974.465576,-3441.037109)
+		:i $Angles$ = %vec3(0.000000,1.094801,0.000000)
+		:i $Name$ = $Object172$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-4919.264648,-974.465576,-3960.781006)
+		:i $Angles$ = %vec3(0.000000,-1.094801,0.000000)
+		:i $Name$ = $Object174$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2786.186035,-820.207947,-4515.836914)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object26$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(479.726288,15.481035,3410.367676)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object12$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(6232.481445,-1047.908203,1466.906006)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(5868.743164,-1047.908203,1466.906006)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-919.431458,12.744615,3351.905762)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object175$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3429.204590,11.094833,-401.245361)
+		:i $Angles$ = %vec3(0.000000,0.237374,0.000000)
+		:i $Name$ = $Cylinder03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3435.157227,67.364197,2181.175293)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object16$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3410.311035,14.315914,2026.620850)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1.987594,50.655468,1703.698730)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(11.982910,-514.572144,-0.000732)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object179$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1200.000000,12.387143,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2000$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387149,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2001$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000000,12.387143,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2002$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387128,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2005$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387179,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2006$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1680.000000,12.387101,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2007$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2160.000244,12.387097,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2003$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2640.000000,12.387082,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2004$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(3120.000000,12.387216,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2008$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1199.999878,12.387189,1200.000122)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2009$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387197,1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2010$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387177,1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2011$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387174,2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2012$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387158,2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2013$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387170,3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2014$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1200.000000,12.387181,-1200.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2015$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1680.000000,12.387184,-1680.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2016$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2160.000000,12.387181,-2160.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2017$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2640.000000,12.387166,-2640.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2018$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-3120.000000,12.387138,-3120.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Sk5ed_Shell_Floor2019$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(11.982910,-514.572144,-0.000732)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object23$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(57.531990,-512.735718,-0.000732)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object31$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1.987594,50.655468,-1659.067383)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object180$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :a}
+:i $TriggerScripts$ = 
+:i :a{
+	:i $LoadTerrain$
+	:i :a}
+:i function $LoadAllParticleTextures$
+:i endfunction
+:i function $LoadTerrain$
+	:i $SetTerrainDefault$
+:i endfunction
+:i function $load_level_anims$
+:i endfunction
+:i function $LoadCameras$
+	:i $LoadAsset$%s(32,"levels\sk5ed2_shell\Camera01.ska")$Camera01$
+:i endfunction
+:i function $LoadObjectAnims$
+:i endfunction
+:i :end

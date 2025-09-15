@@ -1,0 +1,325 @@
+$NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(0.136942,-0.686624,-0.163291)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.082470,0.000000,-349.885254)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Playerrestart$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(226.255554,0.000000,-91.980606)
+		:i $Angles$ = %vec3(-1.570796,0.000000,0.000000)
+		:i $Name$ = $TRGP_shadowtrigger$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_shadowtriggerScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4.371835,-334.707001,0.426948)
+		:i $Angles$ = %vec3(1.570796,0.186830,-0.000000)
+		:i $Name$ = $mainmenu_background$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2343.848145,-502.460632,-1315.038574)
+		:i $Angles$ = %vec3(0.000000,0.163514,0.000000)
+		:i $Name$ = $light_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(9.113075,-275.526215,139.667892)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_LevelLightSS$
+		:i $Class$ = $LevelLight$
+		:i $CreatedAtStart$
+		:i $Brightness$ = %i(1,00000001)
+		:i $InnerRadius$ = %i(20,00000014)
+		:i $OuterRadius$ = %i(190,000000be)
+		:i $Color$ = :a{%i(255,000000ff);%i(252,000000fc);%i(235,000000eb):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(23.187153,-375.670776,188.220490)
+		:i $Angles$ = %vec3(0.000000,-0.119757,0.000000)
+		:i $Name$ = $SS_player_restart$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$$Multiplayer$$Horse$:a}
+		:i $extra_anims$ = $animload_THPS5_FrontEnd$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-312.813904,-124.647919,10.285645)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_LightController$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $Model$ = %s(4,"none")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_LightControllerScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2.521454,-376.167419,-0.163307)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-302.141907,-40.751160,-0.000002)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $options_clousd_trigger$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $AbsentInNetGames$
+		:i $Model$ = %s(33,"options_clouds\options_clouds.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-302.141907,-7.810287,-0.000000)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $ui_bg_trigger$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $AbsentInNetGames$
+		:i $Model$ = %s(15,"UI_bg\UI_bg.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-15.914997,-356.831482,-21.023651)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $manhole_cover_smoke$
+		:i $Class$ = $LevelGeometry$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(25.011568,-374.597229,131.595459)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Iron_Man_Dust_1$
+		:i $Class$ = $ParticleObject$
+		:i $Type$ = $Default$
+		:i $BoxDimsStart$ = %vec3(33.428425,30.920830,43.037174)
+		:i $MidPosition$ = %vec3(6.099247,-374.597229,140.588562)
+		:i $BoxDimsMid$ = %vec3(11.965864,12.936263,9.294290)
+		:i $EndPosition$ = %vec3(6.482885,-374.597229,119.045662)
+		:i $BoxDimsEnd$ = %vec3(11.965864,12.936263,9.294290)
+		:i $Texture$ = $ru_tb_puff_01$
+		:i $UseMidPoint$
+		:i $Type$ = $NEWFLAT$
+		:i $BlendMode$ = $Add$
+		:i $FixedAlpha$ = %i(128,00000080)
+		:i $AlphaCutoff$ = %i(1,00000001)
+		:i $MaxStreams$ = %i(2,00000002)
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $EmitRate$ = %f(40.000000)
+		:i $Lifetime$ = %f(4.000000)
+		:i $MidPointPCT$ = %i(50,00000032)
+		:i $StartRadius$ = %f(25.000000)
+		:i $MidRadius$ = %f(25.000000)
+		:i $EndRadius$ = %f(25.000000)
+		:i $StartRadiusSpread$ = %f(25.000000)
+		:i $MidRadiusSpread$ = %f(25.000000)
+		:i $EndRadiusSpread$ = %f(25.000000)
+		:i $StartRGB$ = :a{%i(35,00000023);%i(66,00000042);%i(69,00000045):a}
+		:i $StartAlpha$ = %i(7,00000007)
+		:i $EndRGB$ = :a{%i(111,0000006f);%i(157,0000009d);%i(151,00000097):a}
+		:i $EndAlpha$ = %i(0,00000000)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(53.657291,-372.959198,164.160187)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Gene_Simmons_pyro$
+		:i $Class$ = $ParticleObject$
+		:i $Type$ = $Default$
+		:i $BoxDimsStart$ = %vec3(6.616897,6.121313,15.304472)
+		:i $MidPosition$ = %vec3(53.086491,-337.563232,163.846649)
+		:i $BoxDimsMid$ = %vec3(17.667648,14.226909,27.394979)
+		:i $EndPosition$ = %vec3(53.525948,-259.621155,163.238312)
+		:i $BoxDimsEnd$ = %vec3(12.195818,12.195830,26.214256)
+		:i $Texture$ = $dt_generic_particle01$
+		:i $UseMidPoint$
+		:i $UseColorMidTime$
+		:i $Type$ = $NEWFLAT$
+		:i $BlendMode$ = $Add$
+		:i $FixedAlpha$ = %i(128,00000080)
+		:i $AlphaCutoff$ = %i(0,00000000)
+		:i $MaxStreams$ = %i(2,00000002)
+		:i $SuspendDistance$ = %i(10,0000000a)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $EmitRate$ = %f(900.000000)
+		:i $Lifetime$ = %f(1.500000)
+		:i $MidPointPCT$ = %i(50,00000032)
+		:i $StartRadius$ = %f(30.000000)
+		:i $MidRadius$ = %f(14.000000)
+		:i $EndRadius$ = %f(14.000000)
+		:i $StartRadiusSpread$ = %f(4.000000)
+		:i $MidRadiusSpread$ = %f(4.000000)
+		:i $EndRadiusSpread$ = %f(4.000000)
+		:i $StartRGB$ = :a{%i(49,00000031);%i(36,00000024);%i(21,00000015):a}
+		:i $StartAlpha$ = %i(61,0000003d)
+		:i $ColorMidTime$ = %i(40,00000028)
+		:i $MidRGB$ = :a{%i(95,0000005f);%i(34,00000022);%i(0,00000000):a}
+		:i $MidAlpha$ = %i(51,00000033)
+		:i $EndRGB$ = :a{%i(23,00000017);%i(22,00000016);%i(21,00000015):a}
+		:i $EndAlpha$ = %i(0,00000000)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-7.634739,-372.959198,164.160187)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Gene_Simmons_pyro01$
+		:i $Class$ = $ParticleObject$
+		:i $Type$ = $Default$
+		:i $BoxDimsStart$ = %vec3(6.616897,6.121313,15.304472)
+		:i $MidPosition$ = %vec3(-8.205539,-337.563232,163.846649)
+		:i $BoxDimsMid$ = %vec3(17.667648,14.226909,27.394979)
+		:i $EndPosition$ = %vec3(-7.766082,-259.621155,163.238312)
+		:i $BoxDimsEnd$ = %vec3(12.195818,12.195830,26.214256)
+		:i $Texture$ = $dt_generic_particle01$
+		:i $UseMidPoint$
+		:i $UseColorMidTime$
+		:i $Type$ = $NEWFLAT$
+		:i $BlendMode$ = $Add$
+		:i $FixedAlpha$ = %i(128,00000080)
+		:i $AlphaCutoff$ = %i(0,00000000)
+		:i $MaxStreams$ = %i(2,00000002)
+		:i $SuspendDistance$ = %i(10,0000000a)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $EmitRate$ = %f(900.000000)
+		:i $Lifetime$ = %f(1.500000)
+		:i $MidPointPCT$ = %i(50,00000032)
+		:i $StartRadius$ = %f(30.000000)
+		:i $MidRadius$ = %f(14.000000)
+		:i $EndRadius$ = %f(14.000000)
+		:i $StartRadiusSpread$ = %f(4.000000)
+		:i $MidRadiusSpread$ = %f(4.000000)
+		:i $EndRadiusSpread$ = %f(4.000000)
+		:i $StartRGB$ = :a{%i(49,00000031);%i(36,00000024);%i(21,00000015):a}
+		:i $StartAlpha$ = %i(61,0000003d)
+		:i $ColorMidTime$ = %i(40,00000028)
+		:i $MidRGB$ = :a{%i(95,0000005f);%i(34,00000022);%i(0,00000000):a}
+		:i $MidAlpha$ = %i(51,00000033)
+		:i $EndRGB$ = :a{%i(23,00000017);%i(22,00000016);%i(21,00000015):a}
+		:i $EndAlpha$ = %i(0,00000000)
+	:i :s}
+	:i :a}
+:i $TriggerScripts$ = 
+:i :a{
+	:i $LoadTerrain$
+	:i $TRGP_shadowtriggerScript$
+	:i $TRG_LightControllerScript$
+	:i :a}
+:i function $LoadAllParticleTextures$
+	:i $LoadParticleTexture$%s(23,"particles\ru_tb_puff_01")
+	:i $LoadParticleTexture$%s(31,"particles\dt_generic_particle01")
+:i endfunction
+:i function $TRGP_shadowtriggerScript$
+	:i $Obj_MoveToNode$$Name$ = $TRG_Playerrestart$$Orient$$NoReset$
+	:i $ShadowSkaterOptionsTricks$
+:i endfunction
+:i function $TRG_LightControllerScript$
+	:i while
+		
+		:i $Wait$%f(0.040000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.300000)$second$
+		:i $FakeLights$$percent$ = %i(35,00000023)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.100000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.030000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.010000)$second$
+		:i $FakeLights$$percent$ = %i(70,00000046)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.060000)$second$
+		:i $FakeLights$$percent$ = %i(50,00000032)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.050000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.100000)$second$
+		:i $FakeLights$$percent$ = %i(35,00000023)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.010000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.030000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.010000)$second$
+		:i $FakeLights$$percent$ = %i(70,00000046)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.060000)$second$
+		:i $FakeLights$$percent$ = %i(50,00000032)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.050000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.060000)$second$
+		:i $FakeLights$$percent$ = %i(50,00000032)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(45,0000002d)$prefix$ = $TRG_LevelLightSS$
+		:i $Wait$%f(0.050000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLightSS$
+	:i loop_to 
+:i endfunction
+:i function $LoadTerrain$
+	:i $SetTerrainDefault$
+:i endfunction
+:i function $load_level_anims$
+	:i $animload_THPS5_FrontEnd$
+:i endfunction
+:i function $LoadCameras$
+	:i $LoadAsset$%s(35,"levels\MainMenu\mainmenu_camera.ska")$mainmenu_camera$
+	:i $LoadAsset$%s(37,"levels\MainMenu\mainmenu_camera02.ska")$mainmenu_camera02$
+	:i $LoadAsset$%s(37,"levels\MainMenu\mainmenu_camera03.ska")$mainmenu_camera03$
+	:i $LoadAsset$%s(37,"levels\MainMenu\skater_select_cam.ska")$skater_select_cam$
+	:i $LoadAsset$%s(39,"levels\MainMenu\skater_select_cam01.ska")$skater_select_cam01$
+	:i $LoadAsset$%s(39,"levels\MainMenu\skater_select_cam02.ska")$skater_select_cam02$
+	:i $LoadAsset$%s(41,"levels\MainMenu\stationary_skater_cam.ska")$stationary_skater_cam$
+:i endfunction
+:i function $LoadObjectAnims$
+:i endfunction
+:i :end

@@ -1,0 +1,287 @@
+$Veh_Bus_HI_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.287359,41.388683,-64.682632)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(34.345886,25.790695,266.027039)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-33.265808,25.790695,266.027039)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(34.345879,25.790710,-91.301170)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-33.265812,25.790710,-91.301170)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(34.345886,25.790710,-33.841557)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-33.265808,25.790710,-33.841557)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Bus_HI01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Bus_HI01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Bus_HI02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Bus_HI02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Bus_HI03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Bus_HI03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Bus_HI04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Bus_HI04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Bus_HI_Col$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.252266,145.944748,-182.153488)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail01$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(14,0000000e):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.252258,145.589355,163.068588)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail02$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(25,00000019):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(46.810284,145.944748,-182.153488)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(16,00000010):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(46.810291,145.589355,163.068558)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail04$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(26,0000001a):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-50.753288,61.368416,-199.778473)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Skitch01$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(51.306637,61.368416,-199.778488)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Skitch02$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(50.667313,107.619225,190.660858)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(21,00000015):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-45.878490,107.619225,190.660889)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail06$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(22,00000016):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(51.945965,107.619225,336.546448)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail07$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(28,0000001c):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.628086,107.619225,336.546448)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(27,0000001b):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(46.810284,148.944748,-188.153488)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail09$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(15,0000000f):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.252266,148.944748,-188.153488)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail10$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(13,0000000d):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.252266,148.944748,169.068558)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail11$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(46.810284,148.944748,169.068558)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail12$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.628086,110.619225,342.546448)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail13$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(51.945965,110.619225,342.546448)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Bus_HI_Rail14$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :a}
+:i $Veh_Bus_HITriggerScripts$ = 
+:i :a{
+	:i $TRGP_Bus_HI01Script$
+	:i $TRGP_Bus_HI02Script$
+	:i $TRGP_Bus_HI03Script$
+	:i $TRGP_Bus_HI04Script$
+	:i :a}
+:i function $TRGP_Bus_HI01Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop04$$EndGapID$ = $CarHop03$
+:i endfunction
+:i function $TRGP_Bus_HI02Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop03$$EndGapID$ = $CarHop04$
+:i endfunction
+:i function $TRGP_Bus_HI03Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop01$$EndGapID$ = $CarHop02$
+:i endfunction
+:i function $TRGP_Bus_HI04Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop02$$EndGapID$ = $CarHop01$
+:i endfunction
+:i :end

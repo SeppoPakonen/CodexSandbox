@@ -1,0 +1,5947 @@
+$NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Position$ = %vec3(1170.201660,128.101105,-432.515686)
+		:i $Angles$ = %vec3(0.000000,-2.237511,0.000000)
+		:i $Name$ = $TRG_SS_Skater01$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$:a}
+		:i $TriggerScript$ = $TRG_SS_Skater01Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,96.548744,994.826416)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PedProBob$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Burnquist$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_burnquist_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Burnquist$
+		:i $TriggerScript$ = $TRG_SS_PedProBobScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,96.548744,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedProSteve$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Caballero$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_caballero_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Caballero$
+		:i $TriggerScript$ = $TRG_SS_PedProSteveScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,96.548744,807.791992)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PedProKareem$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Campbell$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_campbell_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Campbell$
+		:i $TriggerScript$ = $TRG_SS_PedProKareemScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,96.548744,331.637665)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PedProRune$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Glifberg$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_glifberg_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Glifberg$
+		:i $TriggerScript$ = $TRG_SS_PedProRuneScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,96.254425,213.676620)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PedProEric$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Koston$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_koston_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Koston$
+		:i $TriggerScript$ = $TRG_SS_PedProEricScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,115.230682,29.664513)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PedProBucky$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Lasek$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_lasek_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Lasek$
+		:i $TriggerScript$ = $TRG_SS_PedProBuckyScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(436.037659,196.551544,-201.156799)
+		:i $Angles$ = %vec3(0.000000,1.610939,0.000000)
+		:i $Name$ = $TRG_SS_PedProBam$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Margera$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_margera_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Margera$
+		:i $TriggerScript$ = $TRG_SS_PedProBamScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1185.748901,126.032211,-364.320709)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PedProRodney$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Mullen$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_mullen_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Mullen$
+		:i $TriggerScript$ = $TRG_SS_PedProRodneyScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(436.037659,95.948257,470.791901)
+		:i $Angles$ = %vec3(0.000000,1.610939,0.000000)
+		:i $Name$ = $TRG_SS_PedProAndrew$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Reynolds$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_reynolds_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Reynolds$
+		:i $TriggerScript$ = $TRG_SS_PedProAndrewScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(436.037659,199.586777,-431.068512)
+		:i $Angles$ = %vec3(0.000000,1.541126,0.000000)
+		:i $Name$ = $TRG_SS_PedProGeoff$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Rowley$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_rowley_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Rowley$
+		:i $TriggerScript$ = $TRG_SS_PedProGeoffScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1184.042358,96.735748,706.698608)
+		:i $Angles$ = %vec3(0.000000,-1.600466,0.000000)
+		:i $Name$ = $TRG_SS_PedProElissa$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Steamer$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_steamer_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Steamer$
+		:i $TriggerScript$ = $TRG_SS_PedProElissaScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(436.037659,200.284485,-317.494843)
+		:i $Angles$ = %vec3(0.000000,1.541126,0.000000)
+		:i $Name$ = $TRG_SS_PedProJamie$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Thomas$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_thomas_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Thomas$
+		:i $TriggerScript$ = $TRG_SS_PedProJamieScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1139.024170,79.519501,1029.550659)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail01$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(14,0000000e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.641113,98.909187,998.302490)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail02$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(15,0000000f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.077393,98.909195,141.943939)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(16,00000010):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.077393,128.395355,-50.896454)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail04$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(17,00000011):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.077393,128.395355,-437.748779)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(18,00000012):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1148.212280,119.047768,-469.845612)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail06$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.382965,199.099564,-435.519653)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail07$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(38,00000026):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.382965,199.099564,-163.138870)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(19,00000013):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(471.135315,146.852081,911.767578)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail09$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.102936,154.643463,897.367920)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail10$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(21,00000015):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.102936,154.643463,639.314514)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail11$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(22,00000016):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.302032,98.987885,639.799011)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail12$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(25,00000019):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.302032,98.987885,391.402435)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail13$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(126,0000007e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.302032,98.987885,164.253754)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail14$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(123,0000007b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.302032,98.987885,-14.636955)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail15$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(26,0000001a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(438.030548,131.473038,392.997559)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail16$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(125,0000007d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(438.030548,131.473038,163.471893)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail17$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(28,0000001c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(793.048584,0.436607,1120.498169)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped_SkateShop$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Bozo$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $model$ = %s(27,"peds\ped_bozo\ped_bozo.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+		:i $Extra_Anims$ = $Animload_thps5_skateshop$
+		:i $TriggerScript$ = $TRG_SS_Ped_SkateShopScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(740.548279,0.436607,1135.570068)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_Ped_Tutorials$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+		:i $TriggerScript$ = $TRG_SS_Ped_TutorialsScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(463.958008,431.501709,419.755646)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_01$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_01Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(463.958008,431.501709,910.912109)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_02$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_02Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(455.179901,431.158722,-116.029449)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_03$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_03Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.516968,431.501617,-258.666779)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_04$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_04Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1149.348267,430.877136,970.754639)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_05$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_05Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(436.037659,95.425743,109.344872)
+		:i $Angles$ = %vec3(0.000000,1.541126,0.000000)
+		:i $Name$ = $TRG_SS_PedProTony$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $PedPro_Hawk$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $pedpro_hawk_profile$
+		:i $SuspendDistance$ = %i(9000,00002328)
+		:i $lod_dist1$ = %i(5000,00001388)
+		:i $lod_dist2$ = %i(8000,00001f40)
+		:i $pro_name$ = $Hawk$
+		:i $TriggerScript$ = $TRG_SS_PedProTonyScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(483.574127,162.310730,-470.248077)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail18$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1210.195190,128.101105,-234.401108)
+		:i $Angles$ = %vec3(0.000000,1.130974,0.000000)
+		:i $Name$ = $TRG_SS_SkaterChoosing$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Generic$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(12,"Gen: Restart")
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(619.250916,0.069592,1290.013550)
+		:i $Angles$ = %vec3(0.000000,-2.804743,0.000000)
+		:i $Name$ = $TRG_SS_Appearance$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Generic$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(12,"Gen: Restart")
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.626587,112.763618,-234.401108)
+		:i $Angles$ = %vec3(1.570796,-1.570796,-0.000000)
+		:i $Name$ = $TRG_SS_SkaterDropIn$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Generic$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(6,"DropIn")
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,96.453049,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Steve1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(363,0000016b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,582.415283)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav02$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(44,0000002c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(45,0000002d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav04$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(46,0000002e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav05$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(47,0000002f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav06$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(48,00000030):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav07$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(49,00000031):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav08$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(50,00000032):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav09$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(51,00000033):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,95.915688,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav10$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav11$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(56,00000038):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,582.958435)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav12$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(57,00000039):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav13$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(53,00000035):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav14$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(54,00000036):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav15$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(55,00000037):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav16$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav17$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(52,00000034):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav18$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(58,0000003a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav19$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(59,0000003b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,95.915688,582.958435)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Steve2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(60,0000003c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(437.890625,128.714920,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav21$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(437.890625,128.714920,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Rune2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(65,00000041):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(453.899353,78.621124,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav23$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(62,0000003e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(453.899353,78.621124,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav24$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(67,00000043):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(490.066162,25.031342,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav25$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(64,00000040):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(490.066162,25.031342,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav26$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(71,00000047):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav27$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(66,00000042):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav28$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(77,0000004d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav29$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(68,00000044):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav30$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(69,00000045):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav31$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(73,00000049):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav32$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(74,0000004a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav33$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(70,00000046):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav34$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(79,0000004f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav35$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(75,0000004b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav36$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(76,0000004c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,327.611359)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav37$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(72,00000048):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,328.154510)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav38$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(81,00000051):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,96.453049,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Rune1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(362,0000016a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,328.154510)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav40$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav41$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(93,0000005d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.951569,97.100731,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Tony1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(364,0000016c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav43$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(92,0000005c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav44$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(87,00000057):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav45$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(84,00000054):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav46$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(91,0000005b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav47$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(86,00000056):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav48$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(97,00000061):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav49$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(88,00000058):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav50$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(89,00000059):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,97.100731,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav51$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav52$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(94,0000005e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav53$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(90,0000005a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav54$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(99,00000063):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav55$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(95,0000005f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav56$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(96,00000060):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,108.218788)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav57$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(82,00000052):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,108.761940)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav58$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(101,00000065):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,105.761108,108.218788)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Tony2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(98,00000062):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,105.761108,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav60$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav61$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(113,00000071):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.951569,197.080307,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Jamie1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(359,00000167):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav63$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(112,00000070):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav64$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(107,0000006b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav65$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(104,00000068):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav66$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(111,0000006f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav67$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(106,0000006a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav68$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(117,00000075):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav69$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(108,0000006c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav70$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(109,0000006d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,197.080307,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav71$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav72$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(114,00000072):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav73$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(110,0000006e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav74$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(119,00000077):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav75$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(115,00000073):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav76$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(116,00000074):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-315.982849)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav77$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(102,00000066):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-315.439697)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav78$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(121,00000079):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-315.982849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Jamie2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(118,00000076):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav80$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(472.139648,83.110733,-29.308151)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail19$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(27,0000001b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(474.176636,83.110733,179.673859)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail20$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(447.345398,111.453125,147.612900)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail21$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(29,0000001d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(447.368164,111.453125,410.116089)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail22$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(471.138031,91.030624,383.014832)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail23$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(472.336731,142.418976,628.381348)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail24$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(23,00000017):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1236.631836,55.789528,-409.287872)
+		:i $Angles$ = %vec3(0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_SS_PlayerWatcher$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(4,"none")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_SS_PlayerWatcherScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav81$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(138,0000008a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav82$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(131,00000083):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav83$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(133,00000085):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav84$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(140,0000008c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav85$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(132,00000084):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav86$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(129,00000081):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav87$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(134,00000086):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav88$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(142,0000008e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav89$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(136,00000088):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav90$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(137,00000089):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav91$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(135,00000087):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav92$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(143,0000008f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-430.917542)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav93$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(146,00000092):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-430.374390)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav94$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(148,00000094):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav95$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(147,00000093):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.951569,197.080307,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Geoff1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(358,00000166):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Geoff2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(141,0000008d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav96$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(130,00000082):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,197.080307,-430.917542)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav97$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav98$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.951569,197.080307,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bam1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(353,00000161):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav99$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(159,0000009f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav100$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(153,00000099):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav101$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(166,000000a6):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav102$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(157,0000009d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav103$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(152,00000098):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav104$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(158,0000009e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav105$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(154,0000009a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav106$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(155,0000009b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav107$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(162,000000a2):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav108$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(160,000000a0):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav109$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(156,0000009c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav110$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(163,000000a3):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav111$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(161,000000a1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-202.268097)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav112$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(168,000000a8):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-202.811249)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav113$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(150,00000096):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bam2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(164,000000a4):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav114$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(167,000000a7):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,197.080307,-202.811249)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav115$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav116$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav117$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(183,000000b7):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,471.164185)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav118$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(171,000000ab):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav119$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(172,000000ac):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav120$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(173,000000ad):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav121$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(174,000000ae):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav122$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(175,000000af):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav123$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(176,000000b0):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav124$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(177,000000b1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav125$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(178,000000b2):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,95.915688,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav126$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,471.164185)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Andrew2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(170,000000aa):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,471.707336)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav127$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(188,000000bc):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav128$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(180,000000b4):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav129$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(181,000000b5):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav130$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(182,000000b6):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav131$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(169,000000a9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav132$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(184,000000b8):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav133$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(185,000000b9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.951569,95.915688,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Andrew1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(352,00000160):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav134$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav135$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(198,000000c6):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav136$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(191,000000bf):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav137$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(193,000000c1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav138$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(200,000000c8):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.611694,7.499573,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav139$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(192,000000c0):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav140$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(189,000000bd):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav141$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(194,000000c2):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav142$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(202,000000ca):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav143$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(196,000000c4):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1028.421021,7.499573,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav144$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(197,000000c5):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav145$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(195,000000c3):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav146$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(203,000000cb):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-364.213196)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav147$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(206,000000ce):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,-363.670044)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav148$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(208,000000d0):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(466.976257,81.546104,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav149$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(207,000000cf):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,197.080307,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Rodney2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(199,000000c7):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.916016,125.949806,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Rodney1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(361,00000169):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav150$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(190,000000be):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,197.080307,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav151$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,125.949806,-363.670044)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav152$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav153$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(220,000000dc):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(437.890625,128.714920,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Eric2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(212,000000d4):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(453.899353,78.621124,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav154$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(219,000000db):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(453.899353,78.621124,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav155$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(214,000000d6):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(490.066162,25.031342,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav156$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(211,000000d3):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(490.066162,25.031342,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav157$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(218,000000da):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav158$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(213,000000d5):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav159$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(224,000000e0):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav160$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(215,000000d7):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav161$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(216,000000d8):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(437.890625,128.714920,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav162$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav163$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(221,000000dd):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav164$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(217,000000d9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav165$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(226,000000e2):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav166$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(222,000000de):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav167$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(223,000000df):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,213.038849)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav168$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(209,000000d1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,213.582001)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav169$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(228,000000e4):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,96.453049,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Eric1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(357,00000165):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,213.582001)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav170$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,95.915688,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav171$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav172$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(231,000000e7):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav173$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(229,000000e5):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,995.379944)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav174$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(236,000000ec):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav175$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(232,000000e8):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav176$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(233,000000e9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav177$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(234,000000ea):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav178$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav179$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(248,000000f8):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav180$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(237,000000ed):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav181$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(238,000000ee):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,95.915688,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bob2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(239,000000ef):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav182$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(230,000000e6):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav183$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(241,000000f1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav184$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(242,000000f2):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav185$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(243,000000f3):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav186$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(244,000000f4):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,994.836792)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav187$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(245,000000f5):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,96.453049,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bob1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(354,00000162):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,995.379944)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav188$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(235,000000eb):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,805.520813)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav189$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(256,00000100):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(464.471863,153.323654,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav190$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav191$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(252,000000fc):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav192$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(250,000000fa):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav193$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(249,000000f9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav194$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(253,000000fd):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav195$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(254,000000fe):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav196$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav197$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(268,0000010c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav198$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(257,00000101):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav199$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(258,00000102):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(464.471863,153.323654,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Kareem2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(259,00000103):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav200$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(251,000000fb):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav201$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(261,00000105):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav202$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(262,00000106):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav203$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(263,00000107):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav204$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(264,00000108):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,804.977661)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav205$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(265,00000109):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,96.453049,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Kareem1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(360,00000168):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,805.520813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav206$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(255,000000ff):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav207$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(272,00000110):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,706.059265)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav208$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(276,00000114):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(464.471863,153.323654,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav209$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav210$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(271,0000010f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav211$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(270,0000010e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav212$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(273,00000111):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav213$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(274,00000112):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,96.453049,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav214$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav215$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(288,00000120):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav216$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(277,00000115):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav217$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(278,00000116):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(464.471863,153.323654,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Elissa2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(279,00000117):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav218$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(269,0000010d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav219$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(281,00000119):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.538574,7.499573,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav220$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(282,0000011a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav221$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(283,0000011b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav222$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(284,0000011c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,705.516113)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav223$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(285,0000011d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,97.050652,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Elissa1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(356,00000164):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.704346,7.499573,706.059265)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav224$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(275,00000113):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav225$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(300,0000012c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,97.100731,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bucky2$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(292,00000124):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav226$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(299,0000012b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(475.169098,49.705650,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav227$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(294,00000126):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav228$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(291,00000123):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(497.221375,25.031342,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav229$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(298,0000012a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav230$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(293,00000125):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.748901,7.499573,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav231$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(304,00000130):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(596.748901,7.499573,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav232$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(295,00000127):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(526.204346,12.044846,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav233$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(296,00000128):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,97.100731,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav234$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav235$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(301,0000012d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.531494,7.499573,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav236$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(297,00000129):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1122.966675,25.031342,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav237$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(306,00000132):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.124756,12.044846,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav238$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(302,0000012e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1055.531494,7.499573,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav239$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(303,0000012f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,26.412184)
+		:i $Angles$ = %vec3(-0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav240$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Skateshop_PedProRotateUp$
+		:i $Links$ = :a{%i(289,00000121):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1145.108521,50.666981,26.955336)
+		:i $Angles$ = %vec3(-0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav241$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(308,00000134):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1155.155396,114.916939,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bucky1$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(355,00000163):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,114.916939,26.955336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedPro02Nav242$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2522.099609,350.513245,-1556.981445)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TnA_Qtr05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-528.340820,-5.058908,-865.145325)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Car01$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $TransAm$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $CollisionMode$ = $Geometry$
+		:i $model$ = %s(31,"veh\veh_transam\veh_transam.mdl")
+		:i $SkeletonName$ = $car$
+		:i $SuspendDistance$ = %i(100000,000186a0)
+		:i $lod_dist1$ = %i(300,0000012c)
+		:i $lod_dist2$ = %i(350,0000015e)
+		:i $Links$ = :a{%i(312,00000138):a}
+		:i $TriggerScript$ = $TRG_SS_Car01Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-706.309692,-5.058908,-750.495117)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav01$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(312,00000138):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-259.255920,-5.058908,-954.791077)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav02$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(313,00000139):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2849.143311,-5.058908,-953.866028)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(314,0000013a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3297.976807,-5.058908,-766.132813)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav04$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(315,0000013b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3507.376709,-5.058908,-315.223938)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav05$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(318,0000013e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-906.844727,-5.058908,-317.199768)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav06$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(311,00000137):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-906.844727,-5.058908,2149.743408)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav07$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(316,0000013c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3507.376709,-5.058908,2151.719238)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav08$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(317,0000013d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-255.384979,-5.058908,-743.823486)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav09$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(320,00000140):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-572.123291,-5.058908,-621.278931)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav10$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(321,00000141):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-673.449280,-5.058908,-318.017334)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav11$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(325,00000145):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3150.416504,-5.058908,-744.612183)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav12$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(319,0000013f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3264.000488,-5.058908,-488.339783)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav13$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(322,00000142):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3273.606445,-5.058908,1945.674805)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav14$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(323,00000143):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-673.449280,-5.058908,1925.578735)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_CarNav15$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(324,00000144):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-414.562378,-5.058908,-837.754211)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Car03$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $TransAm$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $CollisionMode$ = $Geometry$
+		:i $model$ = %s(31,"veh\veh_transam\veh_transam.mdl")
+		:i $SkeletonName$ = $car$
+		:i $SuspendDistance$ = %i(100000,000186a0)
+		:i $lod_dist1$ = %i(300,0000012c)
+		:i $lod_dist2$ = %i(350,0000015e)
+		:i $Links$ = :a{%i(320,00000140):a}
+		:i $TriggerScript$ = $TRG_SS_Car03Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-231.255524,-0.054833,-584.964783)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav01$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(348,0000015c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-374.819763,0.029313,-569.491455)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped01$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(2000,000007d0)
+		:i $lod_dist1$ = %i(130,00000082)
+		:i $lod_dist2$ = %i(600,00000258)
+		:i $Links$ = :a{%i(327,00000147):a}
+		:i $TriggerScript$ = $TRG_SS_Ped01Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1020.741882,-0.054833,-575.847961)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav02$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(340,00000154):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1379.773438,-0.054833,-476.006287)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(331,0000014b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1385.276611,-0.054833,1692.268066)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav04$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(332,0000014c):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1341.142700,-0.054833,1692.268066)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav05$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(333,0000014d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1322.122559,-0.054833,-479.191132)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav06$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(334,0000014e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1272.676880,-0.054833,-508.765533)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav07$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(342,00000156):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-224.843994,-0.054833,-523.571289)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav08$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(327,00000147):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(288.612976,0.029313,-525.679321)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped02$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(2000,000007d0)
+		:i $lod_dist1$ = %i(130,00000082)
+		:i $lod_dist2$ = %i(600,00000258)
+		:i $Links$ = :a{%i(335,0000014f):a}
+		:i $TriggerScript$ = $TRG_SS_Ped02Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(387.822632,0.029313,-567.804077)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped03$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(2000,000007d0)
+		:i $lod_dist1$ = %i(130,00000082)
+		:i $lod_dist2$ = %i(600,00000258)
+		:i $Links$ = :a{%i(329,00000149):a}
+		:i $TriggerScript$ = $TRG_SS_Ped03Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1366.875244,0.029313,-59.632874)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped04$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(2000,000007d0)
+		:i $lod_dist1$ = %i(130,00000082)
+		:i $lod_dist2$ = %i(600,00000258)
+		:i $Links$ = :a{%i(331,0000014b):a}
+		:i $TriggerScript$ = $TRG_SS_Ped04Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1331.266846,0.029313,-60.216125)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped05$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(2000,000007d0)
+		:i $lod_dist1$ = %i(130,00000082)
+		:i $lod_dist2$ = %i(600,00000258)
+		:i $Links$ = :a{%i(333,0000014d):a}
+		:i $TriggerScript$ = $TRG_SS_Ped05Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1075.495728,-0.054833,-543.140686)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav09$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(341,00000155):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1297.017944,-0.054833,-542.575928)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav10$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(330,0000014a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1090.528687,-0.054833,-513.948425)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav01$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(343,00000157):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(985.476196,-0.054833,-513.948425)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav02$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(344,00000158):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(889.205688,-0.054833,-538.287231)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(345,00000159):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(719.174011,-0.054833,-542.353516)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav04$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(346,0000015a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(624.019348,-0.054833,-517.955994)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav05$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(347,0000015b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(463.787659,-0.054833,-523.571289)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedNav11$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(335,0000014f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(536.165344,-0.054833,-568.997864)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav06$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(349,0000015d):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(629.616577,-0.054833,-568.997864)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav07$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(350,0000015e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(723.868103,-0.054833,-581.050903)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav08$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(351,0000015f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(840.437744,-0.054833,-581.050903)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_SS_PedCherrNav09$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SwitchObjScript$ = $Skateshop_PedRandomWave$
+		:i $Links$ = :a{%i(329,00000149):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,82.758095,471.707336)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Andrew03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(186,000000ba):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,183.922714,-202.268097)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bam03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(151,00000097):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,83.295456,994.836792)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bob03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(246,000000f6):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,101.759346,26.412184)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Bucky03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(305,00000131):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,83.295456,705.516113)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Elissa03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(286,0000011e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,83.295456,213.038849)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Eric03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(225,000000e1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,183.922714,-430.374390)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Geoff03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(139,0000008b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,183.922714,-315.439697)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Jamie03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(105,00000069):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,83.295456,804.977661)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Kareem03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(266,0000010a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1154.377197,112.792213,-364.213196)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Rodney03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(201,000000c9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,83.295456,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Rune03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(78,0000004e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1153.616577,83.295456,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Steve03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(43,0000002b):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.508118,83.943138,108.761940)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Tony03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(85,00000055):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(490.800720,116.736183,1469.952271)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_01$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(1,00000001)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(505.925201,116.736183,1466.505615)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_02$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(2,00000002)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(520.460388,116.736183,1463.145142)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_03$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(3,00000003)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(534.209900,116.736183,1459.609497)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_04$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(4,00000004)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(549.530762,116.736183,1456.246216)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_05$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(5,00000005)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(495.155487,60.098839,1465.082642)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_06$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(6,00000006)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(508.526978,60.098839,1457.818726)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_07$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(7,00000007)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(521.898499,60.098839,1450.794312)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_08$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(8,00000008)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(534.648071,60.098839,1444.009277)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_09$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(9,00000009)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(548.175049,60.098839,1436.825195)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_10$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(10,0000000a)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(402.940369,91.542114,1295.505981)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_Main$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(11,0000000b)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(477.776550,46.527061,1295.058960)
+		:i $Angles$ = %vec3(-1.195551,0.000000,1.570796)
+		:i $Name$ = $TRG_Deck_Low$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"levels\skateshop\thps4board_01\thps4board_01.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $texDictOffset$ = %i(12,0000000c)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(840.534912,73.871048,-0.528198)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Fence01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(993.602844,73.684090,-486.863464)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Fence02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(729.930054,9.927955,-513.348999)
+		:i $Angles$ = %vec3(-0.292172,0.183685,-0.001221)
+		:i $Name$ = $SSO_SaleSign01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(756.647339,38.703140,-514.906738)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_SaleSign02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(712.380066,38.703140,-519.408020)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_SaleSign03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(397.968048,151.612579,-202.106598)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_OldStar01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(245.013168,85.238182,-495.580444)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $SSO_BdgWindow01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-67.589256,105.598450,-520.407593)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SS_Pipe01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1281.859497,52.359310,918.001587)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.191986)
+		:i $Name$ = $SSO_ParkingSign01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(914.463623,9.927955,-503.788300)
+		:i $Angles$ = %vec3(-0.292126,0.567057,-0.003877)
+		:i $Name$ = $SSO_OpenSign01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(378.792023,232.414185,-464.497375)
+		:i $Angles$ = %vec3(0.000000,-1.867502,0.000000)
+		:i $Name$ = $SSO_BrokenSign01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1376.276489,73.871017,-461.307587)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_StreetSign01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1376.021240,110.429428,-461.809845)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $SSO_StreetSign02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1376.993164,10.228866,535.921570)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $SSO_Weeds01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1383.548340,3.181967,-452.813660)
+		:i $Angles$ = %vec3(0.000000,-0.523599,0.000000)
+		:i $Name$ = $SSO_Grass01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1492.213135,-4.891938,-396.301605)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_StreetPaint01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1353.600220,351.745605,520.089417)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_TelePole01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1331.441895,519.864441,517.640076)
+		:i $Angles$ = %vec3(-0.017453,-0.000000,-0.942478)
+		:i $Name$ = $SSO_TelePMetal01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1331.441895,519.864441,1659.902588)
+		:i $Angles$ = %vec3(-0.017453,-0.000000,-0.942478)
+		:i $Name$ = $SSO_TelePMetal02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1353.600220,351.745605,1662.351807)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_TelePole02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-244.868042,351.745605,-600.225159)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $SSO_TelePole03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1953.244507,351.745605,-1077.938965)
+		:i $Angles$ = %vec3(0.000000,3.141593,0.000000)
+		:i $Name$ = $SSO_TelePole04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(911.090820,555.761536,289.152191)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_TeleWires01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1435.249023,1598.809814,-1303.234863)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object16$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-260.850281,0.000946,-1510.922852)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Theater$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-260.850403,0.000946,-1510.922852)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $DT_sportshop$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(392.665222,-213.658646,-875.884766)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1074.310791,-4.891938,-1251.488159)
+		:i $Angles$ = %vec3(0.000000,3.141593,0.000000)
+		:i $Name$ = $SSO_StreetPaint02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(856.452576,73.684090,-486.863464)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Fence05$
+		:i $Class$ = $LevelGeometry$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.973389,97.845558,-17.685272)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $InvisColl01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2299.592773,350.513245,-1869.609375)
+		:i $Angles$ = %vec3(0.000000,-3.141593,0.000000)
+		:i $Name$ = $TnA_Qtr04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2487.768799,350.513245,482.356567)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TnA_Qtr07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(4106.965820,350.513245,-318.545654)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TnA_Qtr08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(4419.593750,350.513245,-541.052490)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TnA_Qtr09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3361.750977,-2.668336,366.109344)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Object01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-770.144531,-2.668336,366.579803)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Object23$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-377.673676,-2.668336,-812.542358)
+		:i $Angles$ = %vec3(0.000000,2.905973,0.000000)
+		:i $Name$ = $Object24$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(3348.489990,-2.668336,-435.002563)
+		:i $Angles$ = %vec3(0.000000,-1.806416,0.000000)
+		:i $Name$ = $Object25$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2036.830322,350.513245,2780.172852)
+		:i $Angles$ = %vec3(0.000000,3.141593,0.000000)
+		:i $Name$ = $TnA_Qtr11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(928.530762,-2.839946,3121.788086)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Street02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-1803.476074,350.513245,1074.173828)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TnA_Qtr12$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-1490.848145,350.513245,851.666992)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TnA_Qtr13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2969.280273,-2.668336,2019.579956)
+		:i $Angles$ = %vec3(0.000000,-0.235620,0.000000)
+		:i $Name$ = $Object26$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-756.883606,-2.668336,1642.040161)
+		:i $Angles$ = %vec3(0.000000,1.335177,0.000000)
+		:i $Name$ = $Object27$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.973389,97.845558,-17.685272)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Ramp01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(391.738159,131.329056,33.900108)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $Object21$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(62.941223,246.689819,-10.864365)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $SSO_Roof01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(383.489685,131.281845,33.898727)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $Object20$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(511.344360,0.018042,-0.010406)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_RampCement01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1638.156982,-2.616756,259.802612)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Street01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.973389,97.845558,-17.685272)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Vert_Section01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $SSO_Vert_Section01Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.973389,97.845558,-17.685272)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Vert_Section02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $SSO_Vert_Section02Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.973389,97.845558,-17.685272)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Vert_Section03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $SSO_Vert_Section03Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(4491.291016,318.947540,2058.801514)
+		:i $Angles$ = %vec3(0.000000,-0.785398,0.000000)
+		:i $Name$ = $TnA_Warehouse05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-340.516602,318.947540,3164.498535)
+		:i $Angles$ = %vec3(0.000000,0.785398,0.000000)
+		:i $Name$ = $TnA_Warehouse06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-1875.173950,318.947540,-1525.680054)
+		:i $Angles$ = %vec3(0.000000,2.356194,0.000000)
+		:i $Name$ = $TnA_Warehouse07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(653.693237,206.633347,991.050232)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.209439)
+		:i $Name$ = $ss_cw_logo08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(447.319153,71.695343,1476.627686)
+		:i $Angles$ = %vec3(-0.000000,0.000000,1.570796)
+		:i $Name$ = $ss_cw_skaterack06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(514.314087,20.323093,1394.943115)
+		:i $Angles$ = %vec3(-1.528318,3.138370,-0.151407)
+		:i $Name$ = $techdeck_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(509.088593,4.380827,1410.331177)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_wheels_10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(311.425110,170.270004,1114.876831)
+		:i $Angles$ = %vec3(0.000000,3.141593,0.000000)
+		:i $Name$ = $SSO_BdgNumber01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(611.710510,19.420055,1373.778442)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Box01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(659.106384,21.045240,1403.283936)
+		:i $Angles$ = %vec3(-1.570796,1.570796,-0.000000)
+		:i $Name$ = $Box13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(709.709412,55.247887,1083.268188)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object19$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(808.344299,0.018042,960.056335)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $floor$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(808.333923,113.732498,994.351807)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(791.858337,225.362396,1227.475464)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_light02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(518.921265,225.362396,1286.100952)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_light03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1094.847778,230.266296,1259.731812)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_light01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(964.390076,210.475189,1220.029785)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_food$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(856.168762,180.152298,988.888611)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.026180)
+		:i $Name$ = $ss_cw_logo02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(950.392273,128.401047,1014.001953)
+		:i $Angles$ = %vec3(-0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_logo03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(816.583130,118.379181,1010.636536)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.156770)
+		:i $Name$ = $ss_cw_logo04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(806.491089,133.710037,1010.636536)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.033008)
+		:i $Name$ = $ss_cw_logo05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(958.937988,207.212891,988.888550)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.095993)
+		:i $Name$ = $ss_cw_logo06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(696.717834,120.124321,1014.873291)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.088672)
+		:i $Name$ = $volcom_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(477.048889,113.732498,-0.020691)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $Occlusion$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $Occluder$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1147.637939,88.969704,663.988892)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $bsckwall$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(831.447266,168.390167,935.584839)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_skatechose01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(588.072510,99.454399,1453.833618)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Skaterack01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.679138,166.547958,935.091187)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object29$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(588.509766,64.927299,1443.389038)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_shadow03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(492.778839,119.337807,1470.747559)
+		:i $Angles$ = %vec3(1.570796,2.914700,-0.000000)
+		:i $Name$ = $BS_Board_shadow01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(491.055634,-7.851442,1479.348145)
+		:i $Angles$ = %vec3(1.324923,0.013053,-0.105547)
+		:i $Name$ = $ss_cw_logo54$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(724.821472,71.695343,1476.150513)
+		:i $Angles$ = %vec3(-0.000000,0.000000,1.570796)
+		:i $Name$ = $ss_cw_skaterack04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(588.163940,124.687149,1466.109009)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_cw_shadow04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1307.715942,417.951691,890.379272)
+		:i $Angles$ = %vec3(-1.570796,-0.375246,-3.141593)
+		:i $Name$ = $cw_ss_lightBoards01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1370.666504,393.359650,1508.207153)
+		:i $Angles$ = %vec3(-1.570796,-0.375246,-3.141593)
+		:i $Name$ = $cw_ss_darkBoards01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(588.640320,185.361694,1267.099243)
+		:i $Angles$ = %vec3(0.000002,1.570798,1.544617)
+		:i $Name$ = $cw_ss_lightBoards02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(741.079773,179.155396,1316.981567)
+		:i $Angles$ = %vec3(1.220513,3.141593,0.000000)
+		:i $Name$ = $upper_pipes_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(587.036743,41.679974,1466.293701)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $cabinet$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(585.085083,209.814178,1320.403564)
+		:i $Angles$ = %vec3(-1.159550,1.165637,-0.267915)
+		:i $Name$ = $upper_pipes_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(934.615784,77.896790,1372.823608)
+		:i $Angles$ = %vec3(-0.000000,0.000000,1.570796)
+		:i $Name$ = $ts_railShadow08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(909.940735,85.287468,1368.884155)
+		:i $Angles$ = %vec3(2.094395,-1.570796,-0.000000)
+		:i $Name$ = $ts_rail07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(921.767639,77.896790,1360.192383)
+		:i $Angles$ = %vec3(1.570796,0.000000,1.570796)
+		:i $Name$ = $ts_railShadow09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(913.078979,-16.948593,1382.501343)
+		:i $Angles$ = %vec3(0.000000,3.141593,0.000000)
+		:i $Name$ = $pill_Shadow01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1120.093262,90.269562,1252.577026)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_tshirtpillar02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(889.984680,49.955593,1367.824097)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $ss_tshirt_13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(921.427307,85.287468,1360.728516)
+		:i $Angles$ = %vec3(2.094395,0.000000,-0.000000)
+		:i $Name$ = $ts_rail08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(922.487366,49.955593,1340.772583)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $ss_tshirt_14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(696.267517,-15.192673,1366.488770)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $pill_Shadow02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(507.548279,92.025482,1476.322144)
+		:i $Angles$ = %vec3(0.000000,-3.141593,0.000000)
+		:i $Name$ = $ss_tshirtpillar03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(234.078979,49.390396,1368.646851)
+		:i $Angles$ = %vec3(0.000000,0.008727,0.000000)
+		:i $Name$ = $lightbar_10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(653.636658,49.390396,1668.567993)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $lightbar_11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(851.209656,142.151367,1461.162231)
+		:i $Angles$ = %vec3(-0.041138,0.358162,-0.304980)
+		:i $Name$ = $Television_set$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(537.880127,158.959641,1440.539429)
+		:i $Angles$ = %vec3(0.959931,0.000000,0.000000)
+		:i $Name$ = $ss_cw_spotlite_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(749.837341,83.262787,1478.881592)
+		:i $Angles$ = %vec3(1.817755,-0.000000,-0.000000)
+		:i $Name$ = $new_wall_right$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(714.297180,108.743271,1478.399902)
+		:i $Angles$ = %vec3(-1.570796,-3.141593,0.000000)
+		:i $Name$ = $techdeck_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(711.923767,90.519157,1478.399902)
+		:i $Angles$ = %vec3(-1.570796,-3.141593,0.000000)
+		:i $Name$ = $techdeck_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(418.746368,103.710938,1367.528931)
+		:i $Angles$ = %vec3(0.000000,0.008727,0.000000)
+		:i $Name$ = $lightbar_12$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(594.613464,21.155058,1406.717407)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_wheels_07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(659.079773,24.093552,1407.214966)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_wheels_08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(681.142029,11.501194,1405.320801)
+		:i $Angles$ = %vec3(-1.570796,0.000000,1.570796)
+		:i $Name$ = $Board74$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(488.946259,23.600718,1405.057739)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ss_wheels_09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(565.306885,0.000000,1108.798218)
+		:i $Angles$ = %vec3(0.000000,-3.141593,0.000000)
+		:i $Name$ = $shoebox_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(551.775635,0.000000,1110.259644)
+		:i $Angles$ = %vec3(0.000000,-3.001966,0.000000)
+		:i $Name$ = $shoebox_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.766113,9.319382,1108.798218)
+		:i $Angles$ = %vec3(-0.000000,-3.124139,-0.000000)
+		:i $Name$ = $shoebox_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(564.716919,18.790167,1108.798218)
+		:i $Angles$ = %vec3(-0.000000,3.115413,0.000000)
+		:i $Name$ = $shoebox_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(492.094391,0.000000,1452.835205)
+		:i $Angles$ = %vec3(0.000000,0.122173,0.000000)
+		:i $Name$ = $shoebox_05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(694.866882,126.574249,1356.383423)
+		:i $Angles$ = %vec3(2.498025,-0.643567,0.330306)
+		:i $Name$ = $picture_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(783.376160,114.449661,1437.914795)
+		:i $Angles$ = %vec3(-0.886129,-0.034167,0.837664)
+		:i $Name$ = $cube_graphic$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(865.697571,115.973892,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe37$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(865.697571,120.256676,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe38$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(836.579407,104.494186,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe39$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(836.579407,101.203888,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe40$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(836.579407,103.311737,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe41$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(836.579407,105.486664,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe42$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(865.697571,118.081749,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe43$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(865.346252,112.835114,1474.763062)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $shoeBox19$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(896.244141,104.940796,1474.763062)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $shoeBox20$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(896.595459,108.079575,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe44$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(896.595459,112.362350,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe45$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(896.595459,111.369873,1469.439331)
+		:i $Angles$ = %vec3(0.000000,0.966791,0.000000)
+		:i $Name$ = $shoe46$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(836.228333,98.065109,1474.763062)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $shoeBox21$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(710.086548,239.420731,1417.054932)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $ss_cw_light04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(391.421143,49.390396,1368.646851)
+		:i $Angles$ = %vec3(0.000000,0.008727,0.000000)
+		:i $Name$ = $lightbar_14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(488.408691,86.510696,1478.520142)
+		:i $Angles$ = %vec3(-1.570796,2.958333,0.000000)
+		:i $Name$ = $techdeck_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(479.991089,102.236023,1478.399902)
+		:i $Angles$ = %vec3(-1.570796,-3.141593,0.000000)
+		:i $Name$ = $techdeck_05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-359.814026,238.788116,1037.826538)
+		:i $Angles$ = %vec3(-1.570796,-0.523599,-3.141593)
+		:i $Name$ = $cw_ss_lightBoards03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(694.866882,158.127350,1356.383423)
+		:i $Angles$ = %vec3(0.638274,-0.638274,-0.391458)
+		:i $Name$ = $banner_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(785.336243,87.212105,1477.057129)
+		:i $Angles$ = %vec3(1.471648,-0.001642,0.033094)
+		:i $Name$ = $wall_poster_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(583.665222,4.506667,1403.431030)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(500.983887,4.695522,1401.380737)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Plane02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(545.337036,4.228178,1400.530151)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(547.462463,4.228178,1410.236816)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(537.659607,149.031677,1453.952515)
+		:i $Angles$ = %vec3(0.649462,0.000000,0.000000)
+		:i $Name$ = $light_cone_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.650269,149.031677,1453.952515)
+		:i $Angles$ = %vec3(0.649462,0.000000,0.000000)
+		:i $Name$ = $light_cone_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(592.766357,149.031677,1453.952515)
+		:i $Angles$ = %vec3(0.649462,0.000000,0.000000)
+		:i $Name$ = $light_cone_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(623.428467,149.031677,1453.952515)
+		:i $Angles$ = %vec3(0.649462,0.000000,0.000000)
+		:i $Name$ = $light_cone_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(653.428589,149.031677,1453.952515)
+		:i $Angles$ = %vec3(0.649462,0.000000,0.000000)
+		:i $Name$ = $light_cone_05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(660.521790,335.359802,1796.315552)
+		:i $Angles$ = %vec3(0.809840,0.000000,0.000000)
+		:i $Name$ = $picture_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(657.994629,191.938065,1407.426514)
+		:i $Angles$ = %vec3(-1.570796,-0.253073,-3.141593)
+		:i $Name$ = $cw_ss_lightBoards04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(520.314697,334.667389,1463.138428)
+		:i $Angles$ = %vec3(-1.570796,-0.226893,0.000000)
+		:i $Name$ = $retro_board_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(658.775269,333.953278,1463.138428)
+		:i $Angles$ = %vec3(-1.570796,-0.226893,0.000000)
+		:i $Name$ = $retro_board_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(536.150757,58.283218,1108.472656)
+		:i $Angles$ = %vec3(-0.000000,3.106686,-0.000000)
+		:i $Name$ = $shoebox_06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(537.547119,48.963837,1109.123779)
+		:i $Angles$ = %vec3(0.000000,-2.705260,0.000000)
+		:i $Name$ = $shoebox_08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(752.304199,334.436707,1796.315552)
+		:i $Angles$ = %vec3(0.809840,0.000000,0.000000)
+		:i $Name$ = $picture_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(593.889587,252.300003,1584.341309)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.104720)
+		:i $Name$ = $ss_cw_logo55$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(520.314697,333.188232,1466.391724)
+		:i $Angles$ = %vec3(-1.570796,-0.226893,0.000000)
+		:i $Name$ = $retro_board_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(658.882813,332.610809,1466.391724)
+		:i $Angles$ = %vec3(-1.570796,-0.226893,0.000000)
+		:i $Name$ = $retro_board_05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(549.402039,142.645432,1287.181519)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $Box05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(635.283447,142.645432,1287.181519)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $Box15$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(720.424316,142.645432,1287.181519)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $Box16$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(807.706360,142.645432,1287.181519)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $Box17$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(893.276978,142.645432,1287.181519)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $Box18$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(736.153442,4.695522,1399.771973)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Plane03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(739.520813,28.468340,1405.320801)
+		:i $Angles$ = %vec3(-1.404990,0.000000,1.570796)
+		:i $Name$ = $Board75$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(538.571716,174.815872,1438.208862)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $lightbeam_1tt$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(563.835938,174.815872,1438.208862)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $lightbeam_1tt01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(592.856750,174.815872,1438.208862)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $lightbeam_1tt02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(623.738953,174.815872,1438.208862)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $lightbeam_1tt03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(653.328430,174.815872,1438.208862)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $lightbeam_1tt04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1328.566528,249.302902,1460.545044)
+		:i $Angles$ = %vec3(0.005497,1.435342,-0.080992)
+		:i $Name$ = $O2_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1231.457153,313.168976,1423.061035)
+		:i $Angles$ = %vec3(-1.570796,-1.797689,0.000000)
+		:i $Name$ = $retro_board_06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1231.457153,313.168976,1288.835693)
+		:i $Angles$ = %vec3(-1.570796,-1.797689,0.000000)
+		:i $Name$ = $retro_board_07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1189.066284,149.255783,1326.164307)
+		:i $Angles$ = %vec3(-0.015695,1.064864,0.060699)
+		:i $Name$ = $Nokia_banner_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(560.771301,-130.017761,1562.523071)
+		:i $Angles$ = %vec3(0.000053,2.854832,0.086901)
+		:i $Name$ = $logo_411$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(431.657745,-91.482040,1580.801758)
+		:i $Angles$ = %vec3(0.000000,-3.141592,0.087266)
+		:i $Name$ = $globe_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(417.016174,-95.693375,1580.801758)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.043633)
+		:i $Name$ = $tensor_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(680.062561,-122.926727,1609.220337)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.165806)
+		:i $Name$ = $globe_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(413.398071,-105.764236,1628.325317)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.045930)
+		:i $Name$ = $enjoy_logo_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(566.253906,12.756132,1370.239990)
+		:i $Angles$ = %vec3(0.000000,-3.141592,0.024640)
+		:i $Name$ = $globe_logo02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(474.394135,92.250244,1460.183472)
+		:i $Angles$ = %vec3(-0.000386,2.928127,-0.057489)
+		:i $Name$ = $bidhouse_logo_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(502.990387,87.557770,1454.491699)
+		:i $Angles$ = %vec3(-0.023684,2.928293,0.046709)
+		:i $Name$ = $bidhouse_logo_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.591003,-78.953011,1580.581177)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.043633)
+		:i $Name$ = $adio_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(510.505707,6.552497,1393.076294)
+		:i $Angles$ = %vec3(0.000000,-3.141592,0.157080)
+		:i $Name$ = $circa_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(913.148254,154.011398,1364.833130)
+		:i $Angles$ = %vec3(-0.012286,1.724952,-0.158754)
+		:i $Name$ = $fourstar_logo_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(681.137207,377.627319,1668.567993)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $string_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(510.234375,273.985748,1610.021851)
+		:i $Angles$ = %vec3(0.000000,-3.141592,0.137565)
+		:i $Name$ = $quiksilver_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1328.352905,93.294373,1534.986206)
+		:i $Angles$ = %vec3(0.000548,1.435799,-0.008100)
+		:i $Name$ = $independant_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(538.571716,72.945465,1295.376099)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $floor_beam_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(433.229950,-118.556786,1622.858276)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.045694)
+		:i $Name$ = $citystars_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1322.529541,105.376114,1440.828125)
+		:i $Angles$ = %vec3(0.007724,1.434896,-0.113382)
+		:i $Name$ = $brigade_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(796.173523,72.945465,1295.376099)
+		:i $Angles$ = %vec3(-0.400878,-0.000000,0.000000)
+		:i $Name$ = $floor_beam_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(694.841736,8.179321,1349.568359)
+		:i $Angles$ = %vec3(-0.014656,1.752633,-0.160415)
+		:i $Name$ = $zero_logo_02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(488.321899,-37.966125,1623.808838)
+		:i $Angles$ = %vec3(-0.000000,-3.141592,-0.043633)
+		:i $Name$ = $etnies_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(797.199585,176.043625,1030.223389)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.074667)
+		:i $Name$ = $firm_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(690.304565,-107.284805,905.485107)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.087266)
+		:i $Name$ = $globe_logo03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(670.136963,-96.771828,905.485107)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.043633)
+		:i $Name$ = $tensor_logo02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(479.956329,-124.943443,877.066528)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.165806)
+		:i $Name$ = $globe_logo04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(707.218140,15.401230,1115.755249)
+		:i $Angles$ = %vec3(0.000015,0.008213,-0.057492)
+		:i $Name$ = $bidhouse_logo_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(575.282959,24.323925,1114.498779)
+		:i $Angles$ = %vec3(-0.023998,0.000175,0.046550)
+		:i $Name$ = $bidhouse_logo_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(682.825806,156.517334,1030.247925)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.082743)
+		:i $Name$ = $faction_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(502.274597,-105.115662,875.966187)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.165806)
+		:i $Name$ = $genertic_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(935.496887,223.564667,1008.012756)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.222749)
+		:i $Name$ = $sessions_logo$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(393.598083,-74.763512,751.548950)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.182598)
+		:i $Name$ = $hawk_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1282.104980,189.136566,1450.707031)
+		:i $Angles$ = %vec3(-0.012193,0.932243,0.036879)
+		:i $Name$ = $es_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(755.443237,-115.498863,1581.214111)
+		:i $Angles$ = %vec3(-0.000000,2.679081,-0.165806)
+		:i $Name$ = $flip_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(911.240479,86.136856,1364.833130)
+		:i $Angles$ = %vec3(-0.012286,1.724952,-0.158754)
+		:i $Name$ = $girl_logo_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(514.385254,-90.043930,1580.801758)
+		:i $Angles$ = %vec3(0.000000,-3.141592,0.087266)
+		:i $Name$ = $globe_logo05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(656.658813,91.784668,1046.477295)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.107148)
+		:i $Name$ = $baker_logo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1024.529541,155.525528,953.658081)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.102500)
+		:i $Name$ = $krawl_logo_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.456421,-0.055174,-612.214661)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_2_San_Fran$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_3_Alcatraz$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_4_Kona$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-605.755371)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_5_Shipyard$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_6_London$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_7_Zoo$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_8_Carnival$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_10_Custom$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_11_Locked$
+		:i $Class$ = $LevelGeometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(372.728943,-5.967255,-1209.549316)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $schnitzel$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(2556.673096,318.947540,473.604614)
+		:i $Angles$ = %vec3(0.000000,-0.785398,0.000000)
+		:i $Name$ = $TnA_Warehouse04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(657.870483,41.679974,1107.257568)
+		:i $Angles$ = %vec3(0.000000,-3.141593,0.000000)
+		:i $Name$ = $cabinet02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1383.548340,4.504879,817.524780)
+		:i $Angles$ = %vec3(0.000000,-0.523599,0.000000)
+		:i $Name$ = $SSO_Grass03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(830.421387,9.319382,1097.298828)
+		:i $Angles$ = %vec3(-0.000000,-2.530727,-0.000000)
+		:i $Name$ = $shoebox_14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(831.209656,18.790167,1097.830566)
+		:i $Angles$ = %vec3(-0.000000,-2.574361,0.000000)
+		:i $Name$ = $shoebox_13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(831.698792,0.000000,1098.160400)
+		:i $Angles$ = %vec3(0.000000,-2.548181,0.000000)
+		:i $Name$ = $shoebox_12$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1477.297852,20.511435,948.295288)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_door_1$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1411.907227,20.511435,979.318970)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_door_2$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1459.170044,11.479160,1000.607178)
+		:i $Angles$ = %vec3(0.000000,2.705260,0.000000)
+		:i $Name$ = $Looter_Van_Wheels_Rear$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1551.831909,11.479155,1108.656250)
+		:i $Angles$ = %vec3(0.000000,2.705260,0.000000)
+		:i $Name$ = $Looter_Van_Wheel_FR$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1429.319946,303.569458,915.705933)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $secrets_box_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_clothes$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_clothesScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_levels$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_levelsScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_skaters$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_skatersScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_codes$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_codesScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_decks$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_decksScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_movies$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_moviesScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1455.940796,33.711407,983.790955)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $van_boxes_tricks$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $TriggerScript$ = $van_boxes_tricksScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1482.378418,11.479153,1141.042969)
+		:i $Angles$ = %vec3(0.000000,2.705260,0.000000)
+		:i $Name$ = $Looter_Van_Wheel_FL$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(848.095337,0.436607,1165.223633)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped_animload$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Bozo$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $model$ = %s(27,"peds\ped_bozo\ped_bozo.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(885.794067,0.436607,1146.775269)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_SS_Ped_animload01$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Bozo$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $model$ = %s(27,"peds\ped_bozo\ped_bozo.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(399.018860,91.542114,1292.931641)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_MainTrucks$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $model$ = %s(43,"levels\skateshop\mdl_trucks\mdl_trucks.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.075879,-611.719360)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Car01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1230.453613,13.310059,-580.867676)
+		:i $Angles$ = %vec3(-1.445088,0.000000,-3.141593)
+		:i $Name$ = $Car06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1114.480957,13.310053,-580.867676)
+		:i $Angles$ = %vec3(-1.445088,0.000000,-3.141593)
+		:i $Name$ = $Car04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1230.453613,13.310059,-641.368896)
+		:i $Angles$ = %vec3(-1.445088,0.000000,-3.141593)
+		:i $Name$ = $Car05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1114.480957,13.310053,-641.368896)
+		:i $Angles$ = %vec3(-1.445088,0.000000,-3.141593)
+		:i $Name$ = $Car03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,0.382196,-611.719360)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Car02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055128,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_1_College$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1357.145386,-60.807095,1114.344482)
+		:i $Angles$ = %vec3(0.000000,2.812545,0.000000)
+		:i $Name$ = $Looter_Van02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(4899.446777,318.947540,-1941.307129)
+		:i $Angles$ = %vec3(0.000000,-2.356194,0.000000)
+		:i $Name$ = $TnA_Warehouse03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(774.073608,246.653671,1407.670776)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $SSO_Roof02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.689819,7.499573,327.611359)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Rune$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(70,00000046):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.683167,7.500270,582.415283)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Steve$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(47,0000002f):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.692139,7.500271,807.791992)
+		:i $Angles$ = %vec3(-0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Kareem$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(262,00000106):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.683167,7.503072,213.676620)
+		:i $Angles$ = %vec3(-0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Eric$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(217,000000d9):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.683167,7.497743,29.664516)
+		:i $Angles$ = %vec3(-0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Bucky$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(297,00000129):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.683838,7.496846,-364.320709)
+		:i $Angles$ = %vec3(-0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Rodney$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(193,000000c1):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.692139,7.493186,706.698608)
+		:i $Angles$ = %vec3(0.000000,-1.600467,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Elissa$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(282,0000011a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(758.688965,7.500271,994.826416)
+		:i $Angles$ = %vec3(-0.000000,-1.530653,0.000000)
+		:i $Name$ = $TRG_Pro_Start_Bob$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(242,000000f2):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(845.086365,6.984912,470.791901)
+		:i $Angles$ = %vec3(0.000000,1.610940,-0.000000)
+		:i $Name$ = $TRG_Pro_Start_Andrew$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(183,000000b7):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(845.086365,7.000803,-431.068512)
+		:i $Angles$ = %vec3(-0.000000,1.541127,-0.000000)
+		:i $Name$ = $TRG_Pro_Start_Geoff$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(138,0000008a):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(845.086365,6.983790,-317.494843)
+		:i $Angles$ = %vec3(-0.000000,1.541127,-0.000000)
+		:i $Name$ = $TRG_Pro_Start_Jamie$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(117,00000075):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(845.086365,6.992138,109.344879)
+		:i $Angles$ = %vec3(-0.000000,1.541127,-0.000000)
+		:i $Name$ = $TRG_Pro_Start_Tony$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(97,00000061):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(845.086365,7.000439,-201.156799)
+		:i $Angles$ = %vec3(0.000000,1.610940,-0.000000)
+		:i $Name$ = $TRG_Pro_Start_Bam$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(158,0000009e):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(126.051468,288.910614,1228.288452)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $SSO_BackBdg01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(118.728546,362.327576,1289.856445)
+		:i $Angles$ = %vec3(0.000000,0.872665,0.000000)
+		:i $Name$ = $SSO_BackTree01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(477.048889,113.732498,-0.020691)
+		:i $Angles$ = %vec3(0.000000,1.570797,0.000000)
+		:i $Name$ = $SSO_BdgExterior01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(420.585144,43.338280,1411.343140)
+		:i $Angles$ = %vec3(-0.229128,-2.720872,0.061610)
+		:i $Name$ = $Box04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1183.997925,-0.055102,-611.719421)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Cab_sign_9_Chicago$
+		:i $Class$ = $LevelGeometry$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1247.890381,0.000946,-3379.724609)
+		:i $Angles$ = %vec3(0.000000,3.141593,0.000000)
+		:i $Name$ = $dt_bldg66asd$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1149.348267,430.877136,684.322754)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_06$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_06Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(1149.348267,430.877136,134.982773)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $TRG_CASH_ICON_07$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Goal_Money$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(37,"gameobjects\goal_money\goal_money.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_CASH_ICON_07Script$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(834.307739,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Rasta$
+		:i $CreatedAtStart$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $Ped_Rasta$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(280,00000118)
+		:i $lod_dist2$ = %i(350,0000015e)
+		:i $TriggerScript$ = $TRG_RastaPopolusScript$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(793.334473,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus01$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(744.186646,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus02$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(669.197510,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(601.541992,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus04$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(499.499115,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus05$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(376.017517,0.069592,1426.717163)
+		:i $Angles$ = %vec3(0.000000,-0.003490,0.000000)
+		:i $Name$ = $TRG_RastaPopolus06$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(-260.850403,0.000946,-1510.922852)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Object02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.102936,96.993462,1017.405212)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail25$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(661,00000295):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(471.135315,89.202080,1031.804932)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail26$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(472.336731,84.768974,906.749207)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail27$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(663,00000297):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(465.102936,96.993462,917.682373)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_SS_RampRail28$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_METALSMOOTH$
+		:i $Links$ = :a{%i(660,00000294):a}
+	:i :s}
+	:i :s{
+		:i $Position$ = %vec3(399.018860,91.542114,1292.931641)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Deck_MainJets$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $model$ = %s(41,"levels\skateshop\mdl_trucks\mdl_jets.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+	:i :s}
+	:i :a}
+:i $TriggerScripts$ = 
+:i :a{
+	:i $LoadTerrain$
+	:i $TRG_SS_Skater01Script$
+	:i $TRG_SS_PedProBobScript$
+	:i $TRG_SS_PedProSteveScript$
+	:i $TRG_SS_PedProKareemScript$
+	:i $TRG_SS_PedProRuneScript$
+	:i $TRG_SS_PedProEricScript$
+	:i $TRG_SS_PedProBuckyScript$
+	:i $TRG_SS_PedProBamScript$
+	:i $TRG_SS_PedProRodneyScript$
+	:i $TRG_SS_PedProAndrewScript$
+	:i $TRG_SS_PedProGeoffScript$
+	:i $TRG_SS_PedProElissaScript$
+	:i $TRG_SS_PedProJamieScript$
+	:i $TRG_SS_Ped_SkateShopScript$
+	:i $TRG_SS_Ped_TutorialsScript$
+	:i $TRG_CASH_ICON_01Script$
+	:i $TRG_CASH_ICON_02Script$
+	:i $TRG_CASH_ICON_03Script$
+	:i $TRG_CASH_ICON_04Script$
+	:i $TRG_CASH_ICON_05Script$
+	:i $TRG_SS_PedProTonyScript$
+	:i $TRG_SS_PlayerWatcherScript$
+	:i $TRG_SS_Car01Script$
+	:i $TRG_SS_Car03Script$
+	:i $TRG_SS_Ped01Script$
+	:i $TRG_SS_Ped02Script$
+	:i $TRG_SS_Ped03Script$
+	:i $TRG_SS_Ped04Script$
+	:i $TRG_SS_Ped05Script$
+	:i $SSO_Vert_Section01Script$
+	:i $SSO_Vert_Section02Script$
+	:i $SSO_Vert_Section03Script$
+	:i $van_boxes_clothesScript$
+	:i $van_boxes_levelsScript$
+	:i $van_boxes_skatersScript$
+	:i $van_boxes_codesScript$
+	:i $van_boxes_decksScript$
+	:i $van_boxes_moviesScript$
+	:i $van_boxes_tricksScript$
+	:i $TRG_CASH_ICON_06Script$
+	:i $TRG_CASH_ICON_07Script$
+	:i $TRG_RastaPopolusScript$
+	:i :a}
+:i function $TRG_SS_Skater01Script$
+	:i $MakeSkaterGoto$$FreezeSkater$
+	:i $killskatercamanim$$all$
+	:i $PlaySkaterCamAnim$$skater$ = %i(0,00000000)$Name$ = $SS_MenuCam$$play_hold$
+:i endfunction
+:i function $TRG_SS_PedProBobScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Bob$$Path1$ = $TRG_Pro_Bob1$$Path2$ = $TRG_Pro_Bob2$$Path3$ = $TRG_Pro_Bob03$
+:i endfunction
+:i function $TRG_SS_PedProSteveScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Steve$$Path1$ = $TRG_Pro_Steve1$$Path2$ = $TRG_Pro_Steve2$$Path3$ = $TRG_Pro_Steve03$
+:i endfunction
+:i function $TRG_SS_PedProKareemScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Kareem$$Path1$ = $TRG_Pro_Kareem1$$Path2$ = $TRG_Pro_Kareem2$$Path3$ = $TRG_Pro_Kareem03$
+:i endfunction
+:i function $TRG_SS_PedProRuneScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Rune$$Path1$ = $TRG_Pro_Rune1$$Path2$ = $TRG_Pro_Rune2$$Path3$ = $TRG_Pro_Rune03$
+:i endfunction
+:i function $TRG_SS_PedProEricScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Eric$$Path1$ = $TRG_Pro_Eric1$$Path2$ = $TRG_Pro_Eric2$$Path3$ = $TRG_Pro_Eric03$
+:i endfunction
+:i function $TRG_SS_PedProBuckyScript$
+	:i $Skateshop_PedProTest$$DropinAnim$ = $DropIn3$$Start$ = $TRG_Pro_Start_Bucky$$Path1$ = $TRG_Pro_Bucky1$$Path2$ = $TRG_Pro_Bucky2$$Path3$ = $TRG_Pro_Bucky03$
+:i endfunction
+:i function $TRG_SS_PedProBamScript$
+	:i $Skateshop_PedProTest$$DropinAnim$ = $DropIn1$$Start$ = $TRG_Pro_Start_Bam$$Path1$ = $TRG_Pro_Bam1$$Path2$ = $TRG_Pro_Bam2$$Path3$ = $TRG_Pro_Bam03$
+:i endfunction
+:i function $TRG_SS_PedProRodneyScript$
+	:i $Skateshop_PedProTest$$DropinAnim$ = $DropIn22$$Start$ = $TRG_Pro_Start_Rodney$$Path1$ = $TRG_Pro_Rodney1$$Path2$ = $TRG_Pro_Rodney2$$Path3$ = $TRG_Pro_Rodney03$
+:i endfunction
+:i function $TRG_SS_PedProAndrewScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Andrew$$Path1$ = $TRG_Pro_Andrew1$$Path2$ = $TRG_Pro_Andrew2$$Path3$ = $TRG_Pro_Andrew03$
+:i endfunction
+:i function $TRG_SS_PedProGeoffScript$
+	:i $Skateshop_PedProTest$$DropinAnim$ = $DropIn1$$Start$ = $TRG_Pro_Start_Geoff$$Path1$ = $TRG_Pro_Geoff1$$Path2$ = $TRG_Pro_Geoff2$$Path3$ = $TRG_Pro_Geoff03$
+:i endfunction
+:i function $TRG_SS_PedProElissaScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Elissa$$Path1$ = $TRG_Pro_Elissa1$$Path2$ = $TRG_Pro_Elissa2$$Path3$ = $TRG_Pro_Elissa03$
+:i endfunction
+:i function $TRG_SS_PedProJamieScript$
+	:i $Skateshop_PedProTest$$DropinAnim$ = $DropIn1$$Start$ = $TRG_Pro_Start_Jamie$$Path1$ = $TRG_Pro_Jamie1$$Path2$ = $TRG_Pro_Jamie2$$Path3$ = $TRG_Pro_Jamie03$
+:i endfunction
+:i function $TRG_SS_Ped_SkateShopScript$
+	:i $Skateshop_PedPro$
+:i endfunction
+:i function $TRG_SS_Ped_TutorialsScript$
+	:i $Skateshop_PedPro$
+:i endfunction
+:i function $TRG_CASH_ICON_01Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_01$
+:i endfunction
+:i function $TRG_CASH_ICON_02Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_02$
+:i endfunction
+:i function $TRG_CASH_ICON_03Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_03$
+:i endfunction
+:i function $TRG_CASH_ICON_04Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_04$
+:i endfunction
+:i function $TRG_CASH_ICON_05Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_05$
+:i endfunction
+:i function $TRG_SS_PedProTonyScript$
+	:i $Skateshop_PedProTest$$Start$ = $TRG_Pro_Start_Tony$$Path1$ = $TRG_Pro_Tony1$$Path2$ = $TRG_Pro_Tony2$$Path3$ = $TRG_Pro_Tony03$
+:i endfunction
+:i function $TRG_SS_PlayerWatcherScript$
+	:i $Skateshop_PlayerWatcher$
+:i endfunction
+:i function $TRG_SS_Car01Script$
+	:i $Car_Generic01$$NoSound$
+:i endfunction
+:i function $TRG_SS_Car03Script$
+	:i $Car_Generic01$$NoSound$
+:i endfunction
+:i function $TRG_SS_Ped01Script$
+	:i $Skateshop_Pedestrian$
+:i endfunction
+:i function $TRG_SS_Ped02Script$
+	:i $Skateshop_Pedestrian$
+:i endfunction
+:i function $TRG_SS_Ped03Script$
+	:i $Skateshop_Pedestrian$
+:i endfunction
+:i function $TRG_SS_Ped04Script$
+	:i $Skateshop_Pedestrian$
+:i endfunction
+:i function $TRG_SS_Ped05Script$
+	:i $Skateshop_Pedestrian$
+:i endfunction
+:i function $SSO_Vert_Section01Script$
+	:i $Skateshop_GAP_Vert_Section01$
+:i endfunction
+:i function $SSO_Vert_Section02Script$
+	:i $Skateshop_GAP_Vert_Section02$
+:i endfunction
+:i function $SSO_Vert_Section03Script$
+	:i $Skateshop_GAP_Vert_Section03$
+:i endfunction
+:i function $van_boxes_clothesScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $van_boxes_levelsScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $van_boxes_skatersScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $van_boxes_codesScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $van_boxes_decksScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $van_boxes_moviesScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $van_boxes_tricksScript$
+	:i $Skateshop_SecretBox$
+:i endfunction
+:i function $TRG_CASH_ICON_06Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_06$
+:i endfunction
+:i function $TRG_CASH_ICON_07Script$
+	:i $Init_Cash_Icon$$Name$ = $TRG_CASH_ICON_07$
+:i endfunction
+:i function $TRG_RastaPopolusScript$
+	:i $Skateshop_Rasta$
+:i endfunction
+:i function $LoadTerrain$
+	:i $SetTerrainDefault$
+	:i $SetTerrainConcSmooth$
+	:i $SetTerrainConcRough$
+	:i $SetTerrainMetalSmooth$
+	:i $SetTerrainMetalRough$
+	:i $SetTerrainMetalCorrugated$
+	:i $SetTerrainMetalGrating$
+	:i $SetTerrainMetalTin$
+	:i $SetTerrainWood$
+	:i $SetTerrainBrick$
+	:i $SetTerrainGrass$
+	:i $SetTerrainDirt$
+	:i $SetTerrainPlexiglass$
+:i endfunction
+:i function $load_level_anims$
+	:i $animload_THPS5_human$
+	:i $Animload_thps5_skateshop$
+:i endfunction
+:i function $LoadCameras$
+	:i $LoadAsset$%s(32,"levels\skateshop\SS_StartCam.ska")$SS_StartCam$
+	:i $LoadAsset$%s(31,"levels\skateshop\SS_MenuCam.ska")$SS_MenuCam$
+	:i $LoadAsset$%s(38,"levels\skateshop\SS_SkaterChoosing.ska")$SS_SkaterChoosing$
+	:i $LoadAsset$%s(38,"levels\skateshop\SS_StatsAndTricks.ska")$SS_StatsAndTricks$
+	:i $LoadAsset$%s(35,"levels\skateshop\SS_LevelSelect.ska")$SS_LevelSelect$
+	:i $LoadAsset$%s(33,"levels\skateshop\SS_SpendCash.ska")$SS_SpendCash$
+	:i $LoadAsset$%s(33,"levels\skateshop\SS_MenuCam01.ska")$SS_MenuCam01$
+	:i $LoadAsset$%s(33,"levels\skateshop\SS_MenuCam02.ska")$SS_MenuCam02$
+	:i $LoadAsset$%s(33,"levels\skateshop\SS_MenuCam03.ska")$SS_MenuCam03$
+	:i $LoadAsset$%s(33,"levels\skateshop\SS_MenuCam04.ska")$SS_MenuCam04$
+	:i $LoadAsset$%s(33,"levels\skateshop\SS_MenuCam05.ska")$SS_MenuCam05$
+	:i $LoadAsset$%s(34,"levels\skateshop\SS_Appearance.ska")$SS_Appearance$
+	:i $LoadAsset$%s(39,"levels\skateshop\SS_Appearance_Face.ska")$SS_Appearance_Face$
+	:i $LoadAsset$%s(40,"levels\skateshop\SS_Appearance_Torso.ska")$SS_Appearance_Torso$
+	:i $LoadAsset$%s(39,"levels\skateshop\SS_Appearance_Legs.ska")$SS_Appearance_Legs$
+	:i $LoadAsset$%s(35,"levels\skateshop\SS_BoardSelect.ska")$SS_BoardSelect$
+	:i $LoadAsset$%s(39,"levels\skateshop\SS_Appearance_Feet.ska")$SS_Appearance_Feet$
+	:i $LoadAsset$%s(39,"levels\skateshop\SS_MenuCam_options.ska")$SS_MenuCam_options$
+	:i $LoadAsset$%s(39,"levels\skateshop\SS_menucam_credits.ska")$SS_menucam_credits$
+	:i $LoadAsset$%s(38,"levels\skateshop\SS_MenuCam_movies.ska")$SS_MenuCam_movies$
+	:i $LoadAsset$%s(39,"levels\skateshop\SS_MenuCam_secrets.ska")$SS_MenuCam_secrets$
+:i endfunction
+:i function $LoadObjectAnims$
+:i endfunction
+:i :end

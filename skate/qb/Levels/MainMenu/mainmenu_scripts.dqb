@@ -1,0 +1,44 @@
+function $[1994c8df]$
+	:i $[2de8c60e]$%s(49,"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+	:i $[2de8c60e]$%s(49,"X                                               X")
+	:i $[2de8c60e]$%s(49,"X        Main Menu Startup                      X")
+	:i $[2de8c60e]$%s(49,"X                                               X")
+	:i $[2de8c60e]$%s(49,"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+	:i $[6cbdf252]$
+	:i $[fb9af75e]$
+	:i $[bfa801df]$$[5dc8d7a9]$ = %i(0,00000000)
+	:i $[ee2ee195]$
+	:i $[0f6968c0]$%i(0,00000000)
+	:i $[9eb6e336]$$[26232c7e]$
+	:i $[9eb6e336]$$[52d550d3]$
+	:i $[2a621572]$%s(20,"Skateshop\BoardsFlip")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(19,"terrains\olliewood2")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(19,"terrains\olliewood3")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(18,"terrains\landwood2")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(18,"terrains\landwood3")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(21,"Shared\Menu\CheatGood")
+	:i $[2a621572]$%s(20,"Shared\Menu\CheatBad")
+:i endfunction
+:i function $[26648c17]$
+	:i if $[7d873131]$
+	:i else
+	:i endif
+:i endfunction
+:i function $[d1fdb5de]$
+	:i if $[850b3cca]$
+		:i $[0b501f99]$
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+		:i endif
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+			:i if NOT $[a1da6fe9]$
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 00000342:15

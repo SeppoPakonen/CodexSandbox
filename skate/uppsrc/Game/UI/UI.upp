@@ -1,0 +1,31 @@
+description "\377B0,0,255";
+
+noblitz;
+
+uses
+	Game/Core,
+	Game/Graphics,
+	Game/Components;
+
+file
+	UI.h,
+	Clipboard.cpp,
+	Clipboard.h,
+	FrontEnd.cpp,
+	FrontEnd.h,
+	Menu2.cpp,
+	Menu2.h,
+	ScrollingMenu.cpp,
+	ScrollingMenu.h,
+	SpriteElement.cpp,
+	SpriteElement.h,
+	TextElement.cpp,
+	TextElement.h,
+	UI.upp,
+	Viewer.cpp,
+	Viewer.h,
+	ViewerObj.cpp,
+	ViewerObj.h,
+	Window.cpp,
+	Window.h;
+

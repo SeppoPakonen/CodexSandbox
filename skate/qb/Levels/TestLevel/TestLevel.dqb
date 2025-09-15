@@ -1,0 +1,2503 @@
+$NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(1431.116821,-7.004193,1498.682617)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode01$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_Accel01$
+		:i $Links$ = :a{%i(6,00000006):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1351.124878,-7.004193,746.703552)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Car_01$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $Test$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $AllowReplaceTex$
+		:i $model$ = %s(25,"veh\veh_test\veh_test.mdl")
+		:i $skeletonName$ = $car$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(1000,000003e8)
+		:i $TriggerScript$ = $TRG_Test_Car_01Script$
+		:i $Links$ = :a{%i(6,00000006):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1431.117310,-7.011025,-1495.267334)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode03$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_Accel01$
+		:i $Links$ = :a{%i(7,00000007):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1562.983521,-7.009980,-1495.267822)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode04$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_Accel01$
+		:i $Links$ = :a{%i(8,00000008):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1562.984009,-7.004193,1498.682129)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode05$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_Accel01$
+		:i $Links$ = :a{%i(9,00000009):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1431.193726,-3.506864,1498.681885)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $NY_Street01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $NY_Street01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1431.117310,-7.011025,-415.267151)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode_Decel02$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_DecelForTurn01$
+		:i $Links$ = :a{%i(2,00000002):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-482.983521,-7.011025,-1495.267578)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode_Decel08$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_DecelForTurn01$
+		:i $Links$ = :a{%i(3,00000003):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1562.984009,-7.011025,418.682190)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode_Decel09$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_DecelForTurn01$
+		:i $Links$ = :a{%i(4,00000004):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(351.117310,-7.011025,1498.682373)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_CarNode_Decel10$
+		:i $Class$ = $Waypoint$
+		:i $CreatedAtStart$
+		:i $SpawnObjScript$ = $Car_DecelForTurn01$
+		:i $Links$ = :a{%i(0,00000000):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(293.827576,0.000000,362.014679)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test01$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $Test$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(25,"veh\veh_test\veh_test.mdl")
+		:i $skeletonName$ = $car$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(1000,000003e8)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(153.830688,-7.004193,-1550.084961)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Car_03$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $Test$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $AllowReplaceTex$
+		:i $model$ = %s(25,"veh\veh_test\veh_test.mdl")
+		:i $skeletonName$ = $car$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(1000,000003e8)
+		:i $TriggerScript$ = $TRG_Test_Car_03Script$
+		:i $Links$ = :a{%i(7,00000007):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1545.509277,-7.004193,-123.664185)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Car_04$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $Test$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $AllowReplaceTex$
+		:i $model$ = %s(25,"veh\veh_test\veh_test.mdl")
+		:i $skeletonName$ = $car$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(1000,000003e8)
+		:i $TriggerScript$ = $TRG_Test_Car_04Script$
+		:i $Links$ = :a{%i(8,00000008):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-166.217651,-7.004193,1515.451050)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Car_05$
+		:i $Class$ = $Vehicle$
+		:i $Type$ = $Test$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $AllowReplaceTex$
+		:i $model$ = %s(25,"veh\veh_test\veh_test.mdl")
+		:i $skeletonName$ = $car$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(1000,000003e8)
+		:i $TriggerScript$ = $TRG_Test_Car_05Script$
+		:i $Links$ = :a{%i(9,00000009):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(4.630716,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Restart$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(316.200104,116.843864,-735.999939)
+		:i $Angles$ = %vec3(2.074613,0.000000,3.141593)
+		:i $Name$ = $NY_Ladder$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(316.199982,-0.000000,-739.854919)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_NY_JKU_Ladder01$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ladder$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(316.200043,233.750183,-739.558044)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_NY_JKU_Ladder02$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ladder$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(16,00000010):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(276.984283,-0.000000,-906.010193)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_TestLevel_Rail$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(458.094879,233.750183,-739.558044)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(20,00000014):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(95.873688,233.750183,-739.558167)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail04$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(21,00000015):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(95.873718,233.750183,-1072.462402)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(22,00000016):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(458.094940,233.750183,-1072.462402)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail01$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(19,00000013):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-141.278900,144.000000,-984.730957)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail06$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(24,00000018):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-983.500122,144.000000,-984.731079)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail07$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(25,00000019):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-983.500122,144.000000,-1008.731079)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(26,0000001a):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-141.278900,144.000000,-1008.730957)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Rail02$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Concrete$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDCONC$
+		:i $Links$ = :a{%i(23,00000017):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-802.389526,-89.750191,-842.278931)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_TestLevel_Rail01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1245.204102,0.000000,997.850464)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPed$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_WalkPedScript$
+		:i $Links$ = :a{%i(29,0000001d):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1262.831909,0.000000,1258.685913)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPedNode01$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(30,0000001e):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1173.620239,0.000000,1241.108765)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPedNode02$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(31,0000001f):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1173.620728,0.000000,-1237.696533)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPedNode03$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(32,00000020):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1305.486450,0.000000,-1237.696777)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPedNode04$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(29,0000001d):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-307.163208,0.000000,-793.118408)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_Test_StandPed01$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_SGanem$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $model$ = %s(24,"ped_male\ped_sganem.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_StandPed01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-749.858032,0.000000,-820.133423)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_G_HS_RestartNode$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Generic$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(12,"Gen: Restart")
+		:i $restart_types$ = :a{$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-841.987427,0.000000,-822.470642)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_G_HS_Pro$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $random_male_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_G_HS_ProScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(734.585449,0.000000,675.781067)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_StandPed02$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Anl_Chicken$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $chicken$
+		:i $AnimName$ = $animload_anl_chicken$
+		:i $model$ = %s(36,"animals\anl_chicken\anl_chicken.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+		:i $TriggerScript$ = $TRG_Test_StandPed02Script$
+		:i $Links$ = :a{%i(70,00000046):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(596.193909,0.000000,659.986572)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_StandPed03$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Photographer$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $Extra_Anims$ = $animload_Ped_Photo$
+		:i $profile$ = $ped_photo$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+		:i $TriggerScript$ = $TRG_Test_StandPed03Script$
+		:i $Links$ = :a{%i(70,00000046):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-939.383972,104.875092,637.823975)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRGP_TestLevel_Gap01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_TestLevel_Gap01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-939.383972,104.875092,504.967072)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRGP_TestLevel_Gap02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_TestLevel_Gap02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-939.383850,104.875092,-158.133118)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRGP_TestLevel_Gap03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_TestLevel_Gap03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-939.383850,104.875092,-25.276340)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRGP_TestLevel_Gap04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_TestLevel_Gap04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-562.367554,71.628662,-979.295898)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Test_AnimTest$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-961.052429,1606.000000,-2642.817383)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Box01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1321.886475,346.689575,-1794.268555)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-961.052612,346.689575,-1793.268311)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-600.218628,346.689575,-1792.268311)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1173.423218,346.689575,-1792.268311)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(812.589172,346.689575,-1793.268311)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(451.755310,346.689575,-1794.268311)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1000.721558,0.000000,-2642.817383)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Box03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1534.257202,346.689575,-1791.268066)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(624.620117,96.000000,-1072.462402)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Climb01$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ledge$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(56,00000038):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(805.730591,-0.000000,-906.010193)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_TestLevel_Rail02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(624.619995,96.000000,-739.558044)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Climb04$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ledge$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(52,00000034):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(986.841187,96.000000,-739.558044)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Climb03$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ledge$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(54,00000036):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(986.841309,96.000000,-1072.462402)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Climb02$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ledge$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(55,00000037):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-239.384674,346.689575,-1791.268311)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Object09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2765.069580,0.000000,951.134155)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Box04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2765.222656,0.000000,-947.719849)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $Box05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554688,1.000061,-269.680481)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554688,2.000061,-608.700073)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554688,3.000061,-947.719604)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object12$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554443,4.000061,-1286.739502)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object13$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554688,4.000061,341.296692)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554688,3.000061,680.316406)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object15$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554688,2.000061,1019.335938)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object16$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2043.554932,1.000061,1358.355591)
+		:i $Angles$ = %vec3(-1.570796,0.000000,3.141593)
+		:i $Name$ = $Object17$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(965.650146,0.000000,1260.965942)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPed01$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_F_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $Ped_Female$
+		:i $AnimName$ = $animload_ped_female$
+		:i $profile$ = $random_female_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_WalkPed01Script$
+		:i $Links$ = :a{%i(30,0000001e):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-531.308838,10.431511,-217.360672)
+		:i $Angles$ = %vec3(0.000000,0.278564,0.000000)
+		:i $Name$ = $Test_Bouncy_Cone$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Bouncy_Cone$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(-12.000000,-1.000000,-12.000000)%vec3(12.000000,-1.000000,-12.000000)%vec3(-12.000000,-1.000000,12.000000)%vec3(12.000000,-1.000000,12.000000)%vec3(0.000000,27.000000,0.000000):a}
+		:i $center_of_mass$ = %vec3(0.000000,0.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.700000)
+		:i $skater_collision_rotation_factor$ = %f(2.500000)
+		:i $skater_collision_assent$ = %i(15,0000000f)
+		:i $skater_collision_radius$ = %i(28,0000001c)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(671.564575,0.000000,538.608643)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_02$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(71,00000047):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(584.362427,0.000000,256.743103)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_03$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(72,00000048):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(985.139893,0.000000,240.888184)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_04$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(73,00000049):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(988.663208,0.000000,539.489441)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_05$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $Default$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(70,00000046):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(488.116455,0.000000,681.798950)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_StandPed04$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Anl_Pigeon$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $pigeon$
+		:i $AnimName$ = $animload_anl_pigeon$
+		:i $model$ = %s(34,"animals\anl_pigeon\anl_pigeon.skin")
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(1500,000005dc)
+		:i $TriggerScript$ = $TRG_Test_StandPed04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1180.218750,0.000000,-966.047241)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPed02$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_F_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $Ped_Female$
+		:i $AnimName$ = $animload_ped_female$
+		:i $profile$ = $random_female_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_WalkPed02Script$
+		:i $Links$ = :a{%i(31,0000001f):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1093.700928,0.000000,-1235.009033)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_WalkPed03$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_F_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $Ped_Female$
+		:i $AnimName$ = $animload_ped_female$
+		:i $profile$ = $random_female_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_WalkPed03Script$
+		:i $Links$ = :a{%i(32,00000020):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(11.599136,346.689575,-1761.807983)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Ghost_DecalDist$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(4,"none")
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Ghost_DecalDistScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2765.145996,0.000000,1.707153)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Box02$
+		:i $Class$ = $ProximNode$
+		:i $Type$ = $Camera$
+		:i $CreatedAtStart$
+		:i $RenderToViewport$
+		:i $SelectRenderOnly$
+		:i $Shape$ = $BoundingBox$
+		:i $radius$ = %i(1000,000003e8)
+		:i $TriggerScript$ = $Box02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2754.401855,184.576385,844.771606)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NY_BB_JO_Support03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2750.344238,264.378571,457.434937)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NY_BB_JO_Frwycw08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2750.344238,264.378510,1233.105103)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NY_BB_JO_Frwycw09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2750.344238,264.378632,-318.235107)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NY_BB_JO_Frwycw10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2750.344238,264.378693,-1093.905273)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NY_BB_JO_Frwycw11$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2754.401855,184.576508,-706.568604)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NY_BB_JO_Support04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2278.270508,264.000000,-589.014160)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_09$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2758.376465,360.000000,-516.718994)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_10$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(916.270874,456.000000,-2742.865234)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $g_seatsB_add_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2320.270508,319.333374,682.985840)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_railing_01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2638.270508,360.000000,682.985840)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_ports_top_25$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2618.770508,380.723694,758.554932)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_new_07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2618.770508,380.723694,988.251221)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_new_06_side$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2293.770508,280.723633,758.554932)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_new_06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1894.112915,157.412842,758.518311)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_new_12$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1894.112915,157.412842,988.214600)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_seatsB_new_12_side$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1933.270996,160.182739,682.985596)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $g_ports_top_47$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1774.167847,129.099411,953.465576)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Test_Crowd02$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $CrowdB_01$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $MonsterPed$
+		:i $AnimName$ = $animload_MonsterPed$
+		:i $model$ = %s(34,"peds\ped_crowds\ped_crowdb_01.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Crowd02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2368.825928,305.607300,881.402100)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Test_Crowd06$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $CrowdA_01$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $MonsterPed$
+		:i $AnimName$ = $animload_MonsterPed$
+		:i $model$ = %s(34,"peds\ped_crowds\ped_crowda_01.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Crowd06Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2034.168213,202.296494,917.865845)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Test_Crowd04$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $CrowdC_01$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $MonsterPed$
+		:i $AnimName$ = $animload_MonsterPed$
+		:i $model$ = %s(34,"peds\ped_crowds\ped_crowdc_01.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Crowd04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1839.168213,142.296448,917.865601)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Test_Crowd01$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $CrowdB_01$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $MonsterPed$
+		:i $AnimName$ = $animload_MonsterPed$
+		:i $model$ = %s(34,"peds\ped_crowds\ped_crowdb_01.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Crowd01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1969.168213,182.296509,953.465820)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Test_Crowd03$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $CrowdC_01$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $MonsterPed$
+		:i $AnimName$ = $animload_MonsterPed$
+		:i $model$ = %s(34,"peds\ped_crowds\ped_crowdc_01.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Crowd03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2433.826172,325.607300,881.402100)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $TRG_Test_Crowd05$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $CrowdA_01$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $MonsterPed$
+		:i $AnimName$ = $animload_MonsterPed$
+		:i $model$ = %s(34,"peds\ped_crowds\ped_crowda_01.skin")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Crowd05Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-21.100586,24.000000,164.056885)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Test_Bouncy_HotDog$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $HotDogCart$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(601,00000259)
+		:i $contacts$ = :a{%vec3(-28.000000,-60.000000,-40.000000)%vec3(28.000000,-60.000000,-40.000000)%vec3(-28.000000,-60.000000,65.000000)%vec3(28.000000,-60.000000,65.000000)%vec3(-28.000000,-25.000000,-40.000000)%vec3(28.000000,-25.000000,-40.000000)%vec3(-28.000000,-25.000000,65.000000)%vec3(28.000000,-25.000000,65.000000):a}
+		:i $center_of_mass$ = %vec3(0.000000,0.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.300000)
+		:i $coeff_friction$ = %f(0.400000)
+		:i $skater_collision_impulse_factor$ = %i(1,00000001)
+		:i $skater_collision_rotation_factor$ = %i(0,00000000)
+		:i $skater_collision_assent$ = %i(2,00000002)
+		:i $skater_collision_radius$ = %i(65,00000041)
+		:i $CollideScript$ = $slowskater$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1159.403198,0.000000,-652.434998)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_SkaterPed01$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Skateboard_A$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $Ped_Skateboard_A$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_SkaterPed01Script$
+		:i $Links$ = :a{%i(104,00000068):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-974.693481,0.000000,-911.017761)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_SkatePedNode01$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $PedAI$
+		:i $CreatedAtStart$
+		:i $Continue$
+		:i $JumpToNextNode$
+		:i $PedType$ = $Skate$
+		:i $Priority$ = $Normal$
+		:i $ContinueWeight$ = %f(1.000000)
+		:i $SkateAction$ = $Jump$
+		:i $JumpHeight$ = %f(60.000000)
+		:i $Links$ = :a{%i(105,00000069):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-154.416138,0.000000,-925.326172)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_SkatePedNode02$
+		:i $Class$ = $Waypoint$
+		:i $Type$ = $PedAI$
+		:i $CreatedAtStart$
+		:i $Continue$
+		:i $JumpToNextNode$
+		:i $PedType$ = $Skate$
+		:i $Priority$ = $Normal$
+		:i $ContinueWeight$ = %f(1.000000)
+		:i $SkateAction$ = $Jump$
+		:i $JumpHeight$ = %f(60.000000)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(166.129959,346.689575,46.170898)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_SJ_CrowdGhost$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(4,"none")
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_SJ_CrowdGhostScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2662.447266,422.607391,987.035706)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Test_AnimTest01$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(601,00000259)
+		:i $TriggerScript$ = $Test_AnimTest01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-129.880981,0.000000,-793.118408)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $TRG_Test_StandPed05$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_F_From_Profile$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $skeletonName$ = $Ped_Female$
+		:i $AnimName$ = $animload_ped_female$
+		:i $profile$ = $random_female_profile$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(600,00000258)
+		:i $lod_dist2$ = %i(700,000002bc)
+		:i $TriggerScript$ = $TRG_Test_StandPed05Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.492104,0.000000,-591.249878)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $Rail02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.492096,110.599709,-411.250000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_TestLevel_Rail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(114,00000072):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.492054,122.599709,-692.995178)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_TestLevel_Rail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.492054,110.599709,-772.392273)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_TestLevel_Rail06$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ledge$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.492054,110.599709,-639.781128)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_TestLevel_Rail07$
+		:i $Class$ = $ClimbingNode$
+		:i $Type$ = $Ledge$
+		:i $CreatedAtStart$
+		:i $Links$ = :a{%i(112,00000070):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-47.492054,110.599709,-639.781128)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_TestLevel_Rail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(111,0000006f):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-865.874146,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_KOTH01$
+		:i $Class$ = $GenericNode$
+		:i $Type$ = $Crown$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-745.874146,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_KOTH02$
+		:i $Class$ = $GenericNode$
+		:i $Type$ = $Crown$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-625.874146,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_KOTH03$
+		:i $Class$ = $GenericNode$
+		:i $Type$ = $Crown$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-505.874146,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_KOTH04$
+		:i $Class$ = $GenericNode$
+		:i $Type$ = $Crown$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-385.874146,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_KOTH05$
+		:i $Class$ = $GenericNode$
+		:i $Type$ = $Crown$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-265.874146,0.000000,741.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_KOTH06$
+		:i $Class$ = $GenericNode$
+		:i $Type$ = $Crown$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-265.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Blue$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Blue$
+		:i $model$ = %s(41,"gameobjects\flags\flag_blue\flag_blue.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_CTF_BlueScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-265.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Blue_Base$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Blue_Base$
+		:i $model$ = %s(51,"gameobjects\flags\flag_blue_base\flag_blue_base.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-265.874146,0.000000,861.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Restart_Blue$
+		:i $Class$ = $Restart$
+		:i $Type$ = $CTF$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(14,"Team: CTF Blue")
+		:i $restart_types$ = :a{$CTF$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-385.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Red_Base$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Red_Base$
+		:i $model$ = %s(49,"gameobjects\flags\flag_red_base\flag_red_base.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-385.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Red$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Red$
+		:i $model$ = %s(39,"gameobjects\flags\flag_red\flag_red.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_CTF_RedScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-385.874146,0.000000,861.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Restart_Red$
+		:i $Class$ = $Restart$
+		:i $Type$ = $CTF$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(13,"Team: CTF Red")
+		:i $restart_types$ = :a{$CTF$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-505.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Yellow_Base$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Yellow_Base$
+		:i $model$ = %s(55,"gameobjects\flags\flag_yellow_base\flag_yellow_base.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-505.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Yellow$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Yellow$
+		:i $model$ = %s(45,"gameobjects\flags\flag_yellow\flag_yellow.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_CTF_YellowScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-505.874146,0.000000,861.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Restart_Yellow$
+		:i $Class$ = $Restart$
+		:i $Type$ = $CTF$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(16,"Team: CTF Yellow")
+		:i $restart_types$ = :a{$CTF$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-625.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Green_Base$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Green_Base$
+		:i $model$ = %s(53,"gameobjects\flags\flag_green_base\flag_green_base.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-625.874146,0.000000,982.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Green$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Green$
+		:i $model$ = %s(43,"gameobjects\flags\flag_green\flag_green.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_CTF_GreenScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-625.874146,0.000000,861.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_CTF_Restart_Green$
+		:i $Class$ = $Restart$
+		:i $Type$ = $CTF$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(15,"Team: CTF Green")
+		:i $restart_types$ = :a{$CTF$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-265.874146,0.000000,1222.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Flag_Blue$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Blue$
+		:i $model$ = %s(41,"gameobjects\flags\flag_blue\flag_blue.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_Flag_BlueScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-985.874146,0.000000,1222.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Flag_Green$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Green$
+		:i $model$ = %s(43,"gameobjects\flags\flag_green\flag_green.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_Flag_GreenScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-505.874146,0.000000,1222.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Flag_Red$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Red$
+		:i $model$ = %s(39,"gameobjects\flags\flag_red\flag_red.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_Flag_RedScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-745.874146,0.000000,1222.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Flag_Yellow$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Flag_Yellow$
+		:i $model$ = %s(45,"gameobjects\flags\flag_yellow\flag_yellow.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(800,00000320)
+		:i $lod_dist2$ = %i(801,00000321)
+		:i $TriggerScript$ = $TRG_Flag_YellowScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-265.874146,0.000000,1102.470825)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Team_Restart$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Team$
+		:i $RestartName$ = %s(13,"Team: Restart")
+		:i $restart_types$ = :a{$Team$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(445.657043,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test07$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Donut_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\fl\donut_pickup\donut_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test07Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(598.225830,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test08$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Lei_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(40,"gameobjects\hi\lei_pickup\lei_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test08Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(750.794617,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test09$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Scrapmetal_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(54,"gameobjects\nj\scrapmetal_pickup\scrapmetal_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test09Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(903.363403,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test10$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Skatewheel_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(54,"gameobjects\nj\skatewheel_pickup\skatewheel_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test10Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(293.088287,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test11$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Truck_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\nj\truck_pickup\truck_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test11Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1255.221802,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test12$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Purse_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\ny\purse_pickup\purse_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test12Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1407.790527,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test13$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Aspirin_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"gameobjects\ru\aspirin_pickup\aspirin_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test13Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1560.359375,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test14$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Drink_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\ru\drink_pickup\drink_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test14Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1712.928223,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test15$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Pepto_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\ru\pepto_pickup\pepto_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test15Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1102.653076,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test16$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Pills_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\ru\pills_pickup\pills_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test16Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-316.102295,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test17$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Vodka_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(44,"gameobjects\ru\vodka_pickup\vodka_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test17Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-973.098267,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test18$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Bass_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(42,"gameobjects\sd\bass_pickup\bass_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test18Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-820.529480,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test19$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Guitar_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(46,"gameobjects\sd\guitar_pickup\guitar_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test19Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-667.960693,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test20$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Mike_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(42,"gameobjects\sd\mike_pickup\mike_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test20Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1278.235840,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test21$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Sticker_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"gameobjects\sd\sticker_pickup\sticker_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test21Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1125.666992,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test22$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Sticks_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(46,"gameobjects\sd\sticks_pickup\sticks_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test22Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-163.533569,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test23$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $A_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(36,"gameobjects\vc\a_pickup\a_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test23Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-10.964722,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test24$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $C_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(36,"gameobjects\vc\c_pickup\c_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test24Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(141.604126,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test25$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Guest_Pass$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(40,"gameobjects\vc\guest_pass\guest_pass.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test25Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-468.671021,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test26$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Passport_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(50,"gameobjects\vc\passport_pickup\passport_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test26Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1561.425781,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test27$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Passport_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(50,"gameobjects\vc\passport_pickup\passport_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test27Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1408.856934,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test28$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $R_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(36,"gameobjects\vc\r_pickup\r_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test28Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2019.132080,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test29$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $SCJshirt_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(50,"gameobjects\vc\scjshirt_pickup\scjshirt_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test29Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1866.563232,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test30$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Shoebox_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(48,"gameobjects\vc\shoebox_pickup\shoebox_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test30Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1713.994629,116.431915,1928.439453)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $TRG_Test_Veh_Test31$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Trophy_Pickup$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $model$ = %s(46,"gameobjects\vc\trophy_pickup\trophy_pickup.mdl")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_Test_Veh_Test31Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-1148.845337)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $JOW_CON_Sign03$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-1148.845337)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-1019.743347)
+		:i $Angles$ = %vec3(0.000000,-0.523599,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow01$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-1019.743347)
+		:i $Angles$ = %vec3(0.000000,-0.523599,0.000000)
+		:i $Name$ = $JOW_CON_Sign04$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-884.535706)
+		:i $Angles$ = %vec3(0.000000,-1.047198,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow02$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-884.535706)
+		:i $Angles$ = %vec3(0.000000,-1.047198,0.000000)
+		:i $Name$ = $JOW_CON_Sign05$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-758.141418)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow03$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-758.141418)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $JOW_CON_Sign06$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-651.167358)
+		:i $Angles$ = %vec3(3.141593,-1.047197,3.141593)
+		:i $Name$ = $JOW_CON_Sign03_Shadow04$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-651.167358)
+		:i $Angles$ = %vec3(3.141593,-1.047197,3.141593)
+		:i $Name$ = $JOW_CON_Sign07$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-536.198853)
+		:i $Angles$ = %vec3(3.141593,-0.523599,3.141593)
+		:i $Name$ = $JOW_CON_Sign03_Shadow05$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-536.198853)
+		:i $Angles$ = %vec3(3.141593,-0.523599,3.141593)
+		:i $Name$ = $JOW_CON_Sign08$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-393.716553)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $JOW_CON_Sign03_Shadow06$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-393.716553)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $JOW_CON_Sign09$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-272.362091)
+		:i $Angles$ = %vec3(3.141593,0.523599,3.141593)
+		:i $Name$ = $JOW_CON_Sign03_Shadow07$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-272.362091)
+		:i $Angles$ = %vec3(3.141593,0.523599,3.141593)
+		:i $Name$ = $JOW_CON_Sign10$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-154.895248)
+		:i $Angles$ = %vec3(3.141593,1.047197,3.141593)
+		:i $Name$ = $JOW_CON_Sign03_Shadow08$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-154.895248)
+		:i $Angles$ = %vec3(3.141593,1.047197,3.141593)
+		:i $Name$ = $JOW_CON_Sign11$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,-24.111622)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow09$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,-24.111622)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $JOW_CON_Sign12$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,79.218857)
+		:i $Angles$ = %vec3(0.000000,1.047198,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow10$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,79.218857)
+		:i $Angles$ = %vec3(0.000000,1.047198,0.000000)
+		:i $Name$ = $JOW_CON_Sign13$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,211.019470)
+		:i $Angles$ = %vec3(0.000000,0.523599,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow11$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,211.019470)
+		:i $Angles$ = %vec3(0.000000,0.523599,0.000000)
+		:i $Name$ = $JOW_CON_Sign14$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,-0.001744,331.705322)
+		:i $Angles$ = %vec3(0.000000,0.000001,0.000000)
+		:i $Name$ = $JOW_CON_Sign03_Shadow12$
+		:i $Class$ = $LevelGeometry$
+		:i $AbsentInNetGames$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1678.909912,41.801952,331.705322)
+		:i $Angles$ = %vec3(0.000000,0.000001,0.000000)
+		:i $Name$ = $JOW_CON_Sign15$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Construction_Sign$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $bouncy$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(200,000000c8)
+		:i $lod_dist2$ = %i(201,000000c9)
+		:i $contacts$ = :a{%vec3(0.000000,46.500000,-1.200000)%vec3(28.000000,18.500000,-0.600000)%vec3(-28.000000,18.500000,-0.600000)%vec3(0.000000,-45.299999,-27.299999)%vec3(26.400000,-45.299999,-0.900000)%vec3(0.000000,-45.299999,25.400000)%vec3(-26.299999,-45.299999,-0.900000):a}
+		:i $center_of_mass$ = %vec3(0.000000,-20.000000,0.000000)
+		:i $coeff_restitution$ = %f(0.400000)
+		:i $coeff_friction$ = %f(0.500000)
+		:i $skater_collision_impulse_factor$ = %f(0.600000)
+		:i $skater_collision_rotation_factor$ = %f(0.500000)
+		:i $skater_collision_assent$ = %i(10,0000000a)
+		:i $skater_collision_radius$ = %i(35,00000023)
+	:i :s}
+	:i :a}
+:i $TriggerScripts$ = 
+:i :a{
+	:i $LoadTerrain$
+	:i $TRG_Test_Car_01Script$
+	:i $NY_Street01Script$
+	:i $TRG_Test_Veh_Test01Script$
+	:i $TRG_Test_Car_03Script$
+	:i $TRG_Test_Car_04Script$
+	:i $TRG_Test_Car_05Script$
+	:i $TRG_Test_WalkPedScript$
+	:i $TRG_Test_StandPed01Script$
+	:i $TRG_G_HS_ProScript$
+	:i $TRG_Test_StandPed02Script$
+	:i $TRG_Test_StandPed03Script$
+	:i $TRGP_TestLevel_Gap01Script$
+	:i $TRGP_TestLevel_Gap02Script$
+	:i $TRGP_TestLevel_Gap03Script$
+	:i $TRGP_TestLevel_Gap04Script$
+	:i $TRG_Test_WalkPed01Script$
+	:i $TRG_Test_StandPed04Script$
+	:i $TRG_Test_WalkPed02Script$
+	:i $TRG_Test_WalkPed03Script$
+	:i $TRG_Test_Ghost_DecalDistScript$
+	:i $Box02Script$
+	:i $TRG_Test_Crowd02Script$
+	:i $TRG_Test_Crowd06Script$
+	:i $TRG_Test_Crowd04Script$
+	:i $TRG_Test_Crowd01Script$
+	:i $TRG_Test_Crowd03Script$
+	:i $TRG_Test_Crowd05Script$
+	:i $TRG_Test_SkaterPed01Script$
+	:i $TRG_SJ_CrowdGhostScript$
+	:i $Test_AnimTest01Script$
+	:i $TRG_Test_StandPed05Script$
+	:i $TRG_CTF_BlueScript$
+	:i $TRG_CTF_RedScript$
+	:i $TRG_CTF_YellowScript$
+	:i $TRG_CTF_GreenScript$
+	:i $TRG_Flag_BlueScript$
+	:i $TRG_Flag_GreenScript$
+	:i $TRG_Flag_RedScript$
+	:i $TRG_Flag_YellowScript$
+	:i $TRG_Test_Veh_Test07Script$
+	:i $TRG_Test_Veh_Test08Script$
+	:i $TRG_Test_Veh_Test09Script$
+	:i $TRG_Test_Veh_Test10Script$
+	:i $TRG_Test_Veh_Test11Script$
+	:i $TRG_Test_Veh_Test12Script$
+	:i $TRG_Test_Veh_Test13Script$
+	:i $TRG_Test_Veh_Test14Script$
+	:i $TRG_Test_Veh_Test15Script$
+	:i $TRG_Test_Veh_Test16Script$
+	:i $TRG_Test_Veh_Test17Script$
+	:i $TRG_Test_Veh_Test18Script$
+	:i $TRG_Test_Veh_Test19Script$
+	:i $TRG_Test_Veh_Test20Script$
+	:i $TRG_Test_Veh_Test21Script$
+	:i $TRG_Test_Veh_Test22Script$
+	:i $TRG_Test_Veh_Test23Script$
+	:i $TRG_Test_Veh_Test24Script$
+	:i $TRG_Test_Veh_Test25Script$
+	:i $TRG_Test_Veh_Test26Script$
+	:i $TRG_Test_Veh_Test27Script$
+	:i $TRG_Test_Veh_Test28Script$
+	:i $TRG_Test_Veh_Test29Script$
+	:i $TRG_Test_Veh_Test30Script$
+	:i $TRG_Test_Veh_Test31Script$
+	:i :a}
+:i function $LoadAllParticleTextures$
+:i endfunction
+:i function $TRG_Test_Car_01Script$
+	:i $TestLevel_CarOutside$
+:i endfunction
+:i function $NY_Street01Script$
+	:i $Printf$%s(17,"skating on ground")
+:i endfunction
+:i function $TRG_Test_Veh_Test01Script$
+	:i $testlevel_checkforskater$
+:i endfunction
+:i function $TRG_Test_Car_03Script$
+	:i $TestLevel_CarOutside$
+:i endfunction
+:i function $TRG_Test_Car_04Script$
+	:i $TestLevel_CarOutside$
+:i endfunction
+:i function $TRG_Test_Car_05Script$
+	:i $TestLevel_CarOutside$
+:i endfunction
+:i function $TRG_Test_WalkPedScript$
+	:i $Ped_InitAI$$avoid$
+:i endfunction
+:i function $TRG_Test_StandPed01Script$
+	:i $TestLevel_StandPedAI$
+:i endfunction
+:i function $TRG_G_HS_ProScript$
+	:i $TestLevel_GoalPedAI$
+:i endfunction
+:i function $TRG_Test_StandPed02Script$
+	:i $Ped_InitAI$
+:i endfunction
+:i function $TRG_Test_StandPed03Script$
+	:i $Ped_InitAI$$stand$$standing_anims$ = $Photographer_Goal_Wait$$Should_Look_At_Skater$ = %i(0,00000000)
+:i endfunction
+:i function $TRGP_TestLevel_Gap01Script$
+	:i $StartGap$$GapID$ = $testgap1$
+:i endfunction
+:i function $TRGP_TestLevel_Gap02Script$
+	:i $endgap$$GapID$ = $testgap1$$text$ = %s(10,"Ken rocks!")$score$ = %i(9999,0000270f)
+:i endfunction
+:i function $TRGP_TestLevel_Gap03Script$
+	:i $endgap$$GapID$ = $testgap2$$text$ = %s(10,"Ken rules!")$score$ = %i(9999,0000270f)
+:i endfunction
+:i function $TRGP_TestLevel_Gap04Script$
+	:i $StartGap$$GapID$ = $testgap2$
+:i endfunction
+:i function $TRG_Test_WalkPed01Script$
+	:i $Ped_InitAI$$avoid$$default_female_anim_assets$
+:i endfunction
+:i function $TRG_Test_StandPed04Script$
+	:i $Obj_ApplyScaling$$x$ = %i(3,00000003)$y$ = %i(3,00000003)$z$ = %i(3,00000003)
+	:i $Pigeon_Follow$
+:i endfunction
+:i function $TRG_Test_WalkPed02Script$
+	:i $Ped_InitAI$$avoid$$default_female_anim_assets$
+:i endfunction
+:i function $TRG_Test_WalkPed03Script$
+	:i $Ped_InitAI$$avoid$$default_female_anim_assets$
+:i endfunction
+:i function $TRG_Test_Ghost_DecalDistScript$
+	:i $TestLevel_CameraDist$
+:i endfunction
+:i function $Box02Script$
+	:i $TestLevel_ProximRain$
+:i endfunction
+:i function $TRG_Test_Crowd02Script$
+	:i $PlayAnims_CrowdB$
+:i endfunction
+:i function $TRG_Test_Crowd06Script$
+	:i $PlayAnims_CrowdA$
+:i endfunction
+:i function $TRG_Test_Crowd04Script$
+	:i $PlayAnims_CrowdC$
+:i endfunction
+:i function $TRG_Test_Crowd01Script$
+	:i $PlayAnims_CrowdB$
+:i endfunction
+:i function $TRG_Test_Crowd03Script$
+	:i $PlayAnims_CrowdC$
+:i endfunction
+:i function $TRG_Test_Crowd05Script$
+	:i $PlayAnims_CrowdA$
+:i endfunction
+:i function $TRG_Test_SkaterPed01Script$
+	:i $Ped_InitAI$$Skater$$speed$ = %i(35,00000023)
+:i endfunction
+:i function $TRG_SJ_CrowdGhostScript$
+	:i $SJ_Crowd$
+:i endfunction
+:i function $Test_AnimTest01Script$
+	:i $SJ_WAT_Crowd$$object$ = $Test_AnimTest01$
+:i endfunction
+:i function $TRG_Test_StandPed05Script$
+	:i $TestLevel_StandPedAI_F$
+:i endfunction
+:i function $TRG_CTF_BlueScript$
+	:i $Team_Flag$$blue$
+:i endfunction
+:i function $TRG_CTF_RedScript$
+	:i $Team_Flag$$red$
+:i endfunction
+:i function $TRG_CTF_YellowScript$
+	:i $Team_Flag$$yellow$
+:i endfunction
+:i function $TRG_CTF_GreenScript$
+	:i $Team_Flag$$green$
+:i endfunction
+:i function $TRG_Flag_BlueScript$
+	:i $Team_Flag$$blue$
+:i endfunction
+:i function $TRG_Flag_GreenScript$
+	:i $Team_Flag$$green$
+:i endfunction
+:i function $TRG_Flag_RedScript$
+	:i $Team_Flag$$red$
+:i endfunction
+:i function $TRG_Flag_YellowScript$
+	:i $Team_Flag$$yellow$
+:i endfunction
+:i function $TRG_Test_Veh_Test07Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test08Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test09Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test10Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test11Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test12Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test13Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test14Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test15Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test16Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test17Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test18Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test19Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test20Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test21Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test22Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test23Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test24Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test25Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test26Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test27Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test28Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test29Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test30Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $TRG_Test_Veh_Test31Script$
+	:i $Collect_Hover$
+:i endfunction
+:i function $LoadTerrain$
+	:i $SetTerrainDefault$
+	:i $SetTerrainConcSmooth$
+	:i $SetTerrainMetalSmooth$
+	:i $SetTerrainAsphalt$
+	:i $SetTerrainGrindConc$
+	:i $SetTerrainGrindMetal$
+:i endfunction
+:i function $load_level_anims$
+	:i $animload_THPS5_human$
+	:i $animload_THPS5_human$
+	:i $animload_anl_chicken$
+	:i $animload_Ped_Photo$
+	:i $animload_ped_female$
+	:i $animload_anl_pigeon$
+	:i $animload_MonsterPed$
+:i endfunction
+:i function $LoadCameras$
+	:i $LoadAsset$%s(37,"levels\TestLevel\G_HS_CameraStart.ska")$G_HS_CameraStart$
+:i endfunction
+:i function $LoadObjectAnims$
+:i endfunction
+:i :end

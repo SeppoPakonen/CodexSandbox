@@ -1,0 +1,59 @@
+function $[ff5d8673]$
+	:i if $[7d873131]$
+	:i else
+	:i endif
+:i endfunction
+:i function $[f8d0565b]$
+	:i $[2a621572]$%s(26,"Shared\Hits\HitGlassPane2x")
+	:i $[2a621572]$%s(22,"Shared\Auto\LA_Skid_11")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(26,"Shared\Auto\CarBrakeSqueal")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(19,"Shared\Auto\CarLoop")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(22,"Shared\Auto\CarHorn_11")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(23,"Shared\Hits\HitMetalCan")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(20,"Shared\Hits\BonkBush")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(0,00000000)
+	:i $[2a621572]$%s(22,"Shared\Water\FallWater")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(50,00000032)
+	:i $[11cf7df4]$
+	:i $[fc2e4665]$
+	:i $[90118c78]$
+	:i $[0736b8d5]$
+:i endfunction
+:i function $[546a1050]$:s{$[c4745838]$ = %s(8,"Asshole!"):s}
+	:i if NOT $[cf66717b]$$[4f0f6b02]$
+		:i $[a1116237]$:s{
+			:i $[40c698af]$ = $[44e9a8ec]$
+			:i $[c4745838]$ = %GLOBAL%$[c4745838]$
+			:i $[7f261953]$ = %vec2(320.000000,150.000000)
+			:i $[3f6bcdba]$ = :a{%i(118,00000076);%i(110,0000006e);%i(14,0000000e);%i(128,00000080):a}
+			:i $[d417bd55]$
+			:i $[6086aa70]$ = %i(200,000000c8)
+			:i $[f0d90109]$ = %i(1,00000001)
+			:i $[13b9da7b]$ = %f(1.000000)
+		:i :s}
+	:i endif
+	:i if $[cf66717b]$$[07713c7b]$
+		:i $[5151b2b1]$%GLOBAL%$[07713c7b]$
+	:i endif
+	:i if $[cf66717b]$$[7a8017ba]$
+		:i $[3f4b93f8]$$[9f92ba78]$ = %GLOBAL%$[7a8017ba]$
+	:i else
+		:i $[a1116237]$$[40c698af]$ = $[a0a45360]$$[c4745838]$ = %s(28,"You forgot node=<nodename>!!")$[7f261953]$ = %vec2(320.000000,200.000000)
+	:i endif
+:i endfunction
+:i function $[1d64ce6c]$
+	:i if $[850b3cca]$
+		:i $[0b501f99]$
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+		:i endif
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+			:i if NOT $[a1da6fe9]$
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 0000046a:15

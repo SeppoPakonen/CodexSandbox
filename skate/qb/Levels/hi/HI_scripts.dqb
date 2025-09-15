@@ -1,0 +1,44 @@
+function $[991a89a1]$
+	:i $[d92845ef]$
+	:i $[11918f70]$
+:i endfunction
+:i function $[db618a10]$
+	:i $[2de8c60e]$%s(10,"HI_Startup")
+	:i $[a04da6e4]$
+	:i $[69a57440]$
+:i endfunction
+:i function $[7b23c1be]$
+	:i if $[850b3cca]$
+		:i $[0b501f99]$
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT  ( ($[20985922]$$[7de8ca6c]$)  OR  ($[20985922]$$[353961d7]$) ) 
+			:i $[dbc654b5]$
+			:i $[3298a2f5]$
+			:i $[ec2fd957]$
+			:i $[2e257fc5]$
+			:i $[eab76332]$
+			:i if NOT $[a1da6fe9]$
+				:i $[ad4858f4]$
+				:i $[e159244c]$
+				:i $[965e14da]$
+				:i $[7235ff27]$
+				:i $[e5d7b6e3]$
+				:i $[57bc5479]$
+				:i $[e171d7ac]$
+				:i $[88b4b55d]$
+				:i $[9ef6615c]$
+				:i $[f2b63f4b]$
+				:i $[085f2314]$
+				:i $[083a8179]$
+				:i $[c40c68a2]$
+				:i $[43292212]$
+				:i $[ddb2b252]$
+				:i $[ffee2bc5]$
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 000001c9:15

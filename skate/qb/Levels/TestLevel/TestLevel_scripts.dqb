@@ -1,0 +1,49 @@
+function $[a843ea87]$
+	:i if $[7d873131]$
+	:i else
+	:i endif
+:i endfunction
+:i function $[cc04088f]$
+	:i $[2a621572]$%s(17,"Skater\bitchslap2")
+	:i $[2a621572]$%s(26,"Shared\Hits\HitGlassPane2x")
+	:i $[2a621572]$%s(22,"Shared\Auto\LA_Skid_11")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(26,"Shared\Auto\CarBrakeSqueal")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(19,"Shared\Auto\CarLoop")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(22,"Shared\Auto\CarHorn_11")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(23,"Shared\Hits\HitMetalCan")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(20,"Shared\Hits\BonkBush")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(0,00000000)
+	:i $[2a621572]$%s(19,"Shared\Auto\CarLoop")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(26,"Vehicles\Vehicle_Tire_Loop")
+	:i $[2a621572]$%s(21,"Terrains\BonkMetal_11")
+	:i $[0736b8d5]$
+	:i $[4af7eba0]$
+	:i $[ed9a7e2e]$
+:i endfunction
+:i function $[4a7aa298]$
+	:i if $[850b3cca]$
+		:i $[0b501f99]$
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+		:i endif
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+			:i if NOT $[a1da6fe9]$
+				:i $[f0c6076c]$:s{
+					:i $[da441d9a]$ = %s(20,"TestLevel High Score")
+					:i $[4bc5229d]$ = %s(20,"TestLevel High Score")
+					:i $[0c5d7e6b]$ = %s(24,"Duuude!  Whoah...  Yeah!")
+					:i $[cd66c8ae]$ = %i(1,00000001)
+					:i $[be947974]$ = $[d8884aeb]$
+					:i $[cf734b02]$ = $[d8884aeb]$
+					:i $[944b2900]$ = %s(6,"skater")
+					:i $[243b9c3b]$ = %s(3,"SIK")
+				:i :s}
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 0000042b:15

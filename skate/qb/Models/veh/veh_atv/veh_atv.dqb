@@ -1,0 +1,129 @@
+$Veh_ATV_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(-0.327789,0.000000,0.182138)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.048341,28.176298,0.391985)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(21.379614,11.233098,30.579082)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-21.052496,11.233098,30.579075)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(21.379622,11.233098,-31.818182)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-21.052488,11.233098,-31.818190)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_ATV01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_ATV01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_ATV02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_ATV02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_ATV03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_ATV03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_ATV04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_ATV04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(28.600960,34.351952,-36.979809)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_ATV_Skitch01$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-28.695225,34.351944,-36.979805)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_ATV_Skitch02$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ATV_Col$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :a}
+:i $Veh_ATVTriggerScripts$ = 
+:i :a{
+	:i $TRGP_ATV01Script$
+	:i $TRGP_ATV02Script$
+	:i $TRGP_ATV03Script$
+	:i $TRGP_ATV04Script$
+	:i :a}
+:i function $TRGP_ATV01Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop02$$EndGapID$ = $CarHop01$
+:i endfunction
+:i function $TRGP_ATV02Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop01$$EndGapID$ = $CarHop02$
+:i endfunction
+:i function $TRGP_ATV03Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop03$$EndGapID$ = $CarHop04$
+:i endfunction
+:i function $TRGP_ATV04Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop04$$EndGapID$ = $CarHop03$
+:i endfunction
+:i :end

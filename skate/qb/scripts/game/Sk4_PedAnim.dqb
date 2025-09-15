@@ -1,0 +1,219 @@
+
+:i function $pedanim_init$
+	:i $SetTags$ isNull 
+:i endfunction
+:i function $ped_play_impressed_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$impressedAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$impressedAnims$) :a{%GLOBAL%$index$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_bored_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$boredAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$boredAnims$) :a{%GLOBAL%$index$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_wave_anim$
+	:i $GetTags$
+	:i if $Obj_AnimEquals$%GLOBAL%$Idle$
+		:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$wave$
+		:i if NOT $gotparam$$no_block$
+			:i $Obj_WaitAnimFinished$
+		:i endif
+	:i endif
+:i endfunction
+:i function $ped_play_idle_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$idleAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$idleAnims$) :a{%GLOBAL%$index$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_disgust_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$disgustAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$disgustAnims$) :a{%GLOBAL%$index$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_attack_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$attackAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$attackAnims$) :a{%GLOBAL%$index$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_falldown_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$fallDownAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$fallDownAnims$) :a{%GLOBAL%$index$:a}) 
+	:i $SetTags$$fallDownAnimIndex$ = %GLOBAL%$index$
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_layidle_anim$
+	:i $GetTags$
+	:i if NOT $gotparam$$fallDownAnimIndex$
+		:i $GetArraySize$%GLOBAL%$layIdleAnims$
+		:i $GetRandomValue$$name$ = $fallDownAnimIndex$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i endif
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$layIdleAnims$) :a{%GLOBAL%$fallDownAnimIndex$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_getup_anim$
+	:i $GetTags$
+	:i if NOT $gotparam$$fallDownAnimIndex$
+		:i $GetArraySize$%GLOBAL%$getupAnims$
+		:i $GetRandomValue$$name$ = $fallDownAnimIndex$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i endif
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$getupAnims$) :a{%GLOBAL%$fallDownAnimIndex$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_play_knockdown_reaction_anim$
+	:i $GetTags$
+	:i $GetArraySize$%GLOBAL%$knockdownReactionAnims$
+	:i $GetRandomValue$$name$ = $index$$integer$$a$ = %i(0,00000000)$b$ =  (%GLOBAL%$array_size$ - %i(1,00000001)) 
+	:i $Obj_PlayAnim$$Anim$ =  ( (%GLOBAL%$knockdownReactionAnims$) :a{%GLOBAL%$index$:a}) 
+	:i if NOT $gotparam$$no_block$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_initialize_movement$
+	:i $GetTags$
+	:i if  (%GLOBAL%$is_moving_ped$ = %i(1,00000001)) 
+		:i $Obj_SetPathTurnDist$%f(2.500000)$feet$
+		:i if $gotparam$$skater$
+			:i if NOT $gotparam$$speed$
+				:i $speed$ = %i(25,00000019)
+			:i endif
+			:i $Obj_SetPathVelocity$%GLOBAL%$speed$$fps$
+			:i $Obj_SpawnScript$$ped_skater_idle$
+		:i else
+			:i if NOT $gotparam$$speed$
+				:i $speed$ = random%vec2(5.000000,10.000000)
+			:i endif
+			:i $Obj_SetPathVelocity$%GLOBAL%$speed$$fps$
+			:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$IdleToWalk$
+			:i $Obj_WaitAnimFinished$
+			:i if $gotparam$$WalkAnims$
+				:i $GetRandomArrayElement$%GLOBAL%$WalkAnims$
+				:i %GLOBAL%$walk$ = %GLOBAL%$element$
+				:i $SetTags$$walk$ = %GLOBAL%$walk$
+			:i endif
+			:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$walk$$Cycle$$UseAnimTags$
+			:i $GetTags$
+			:i if $gotparam$$animTags$
+				:i $ped_adjust_speed_to_match_anim$%GLOBAL%$animTags$
+			:i endif
+		:i endif
+		:i if $gotparam$$PathToFollow$
+		:i else
+		:i endif
+		:i if $gotparam$$PathToFollow$
+		:i else
+		:i endif
+	:i else
+		:i $ped_standing_idle$
+	:i endif
+:i endfunction
+:i function $ped_start_movement$
+	:i $GetTags$
+	:i if  (%GLOBAL%$is_moving_ped$ = %i(1,00000001)) 
+		:i if NOT $Obj_AnimEquals$%GLOBAL%$walk$
+			:i $Obj_SetAnimCycleMode$$off$
+			:i $Obj_WaitAnimFinished$
+			:i $ped_rotate_to_node_from_idle$
+			:i $Obj_SetAnimCycleMode$$off$
+			:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$IdleToWalk$
+			:i $Obj_WaitAnimFinished$
+		:i else
+		:i endif
+		:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$walk$$Cycle$
+	:i else
+		:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$Idle$$Cycle$
+	:i endif
+:i endfunction
+:i function $ped_stop_movement$
+	:i $GetTags$
+	:i %GLOBAL%$playing_walk_anim$ = %i(0,00000000)
+	:i if $Obj_AnimEquals$%GLOBAL%$walk$
+		:i %GLOBAL%$playing_walk_anim$ = %i(1,00000001)
+	:i endif
+	:i if $Obj_AnimEquals$%GLOBAL%$WalkingWave$
+		:i %GLOBAL%$playing_walk_anim$ = %i(1,00000001)
+	:i endif
+	:i if  (%GLOBAL%$playing_walk_anim$ = %i(1,00000001)) 
+		:i $Obj_SetAnimCycleMode$$off$
+		:i $Obj_WaitAnimFinished$
+		:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$WalkToIdle$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_rotate_to_skater_from_idle$$time$ = %f(0.300000)
+	:i $GetTags$
+	:i if $Obj_AngleToNearestSkaterGreaterThan$%i(15,0000000f)
+		:i if $Obj_LookAtObject$$type$ = $skater$$time$ = %GLOBAL%$time$
+			:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$RotateFromIdle1$
+			:i $Obj_WaitRotate$
+			:i $Obj_SetAnimCycleMode$$off$
+			:i $Obj_WaitAnimFinished$
+		:i endif
+	:i endif
+:i endfunction
+:i function $ped_rotate_to_node_from_idle$$time$ = %f(0.300000)
+	:i $GetTags$
+	:i if $Obj_LookAtNodeLinked$$time$ = %GLOBAL%$time$
+		:i $Obj_PlayAnim$$Anim$ = %GLOBAL%$RotateFromIdle1$
+		:i $Obj_WaitRotate$
+		:i $Obj_SetAnimCycleMode$$off$
+		:i $Obj_WaitAnimFinished$
+	:i endif
+:i endfunction
+:i function $ped_in_front_of_skater$
+	:i %GLOBAL%$retVal$ = %i(0,00000000)
+	:i $Obj_GetOrientationToObject$$skater$
+	:i if  (%GLOBAL%$dotProd$ < %f(0.500000)) 
+		:i if  (%GLOBAL%$dotProd$ > %f(-0.500000)) 
+			:i %GLOBAL%$retVal$ = %i(1,00000001)
+		:i endif
+	:i endif
+	:i return
+	$in_front$ = %GLOBAL%$retVal$
+:i endfunction
+:i function $ped_pass_ped$
+	:i $Obj_StopAlongPath$
+	:i $Ped_SetLogicState$$pass_ped$
+:i endfunction
+:i function $ped_pass_ped_finish$
+	:i $Ped_SetLogicState$$Idle$
+	:i $Obj_SetPathVelocity$%GLOBAL%$vel$$ips$
+	:i $Obj_StartAlongPath$
+	:i $Obj_SetPathAcceleration$%i(10000,00002710)
+	:i $Obj_StoreNode$
+	:i $Obj_FollowPathStored$
+:i endfunction
+:i function $ped_wait_to_pass_ped$
+	:i $Ped_SetLogicState$$waiting_to_pass_ped$
+	:i $Obj_SetPathDeceleration$%i(100,00000064)
+	:i $Obj_SetPathVelocity$%GLOBAL%$lead_ped_vel$$ips$
+:i endfunction
+:i :end

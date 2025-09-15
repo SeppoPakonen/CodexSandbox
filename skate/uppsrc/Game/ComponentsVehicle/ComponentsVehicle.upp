@@ -1,0 +1,19 @@
+noblitz;
+
+uses
+	Game/Components,
+	Game/Audio,
+	Game/Physics;
+
+file
+	ComponentsVehicle.h,
+	Car.cpp,
+	Car.h,
+	ComponentsVehicle.upp,
+	VehicleCameraComponent.cpp,
+	VehicleCameraComponent.h,
+	VehicleComponent.cpp,
+	VehicleComponent.h,
+	VehicleSoundComponent.cpp,
+	VehicleSoundComponent.h;
+

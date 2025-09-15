@@ -1,0 +1,15 @@
+uses
+	Dolphin;
+
+options(EMU) -DEMU;
+
+options(WIN32) -DWIN32;
+
+file
+	EasyDemo.h,
+	EasyDemo.cpp,
+	Utils.cpp;
+
+mainconfig
+	"" = "EMU GUI";
+

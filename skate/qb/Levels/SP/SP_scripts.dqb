@@ -1,0 +1,30 @@
+function $SP_Setup$
+	:i if $IsCareerMode$
+	:i else
+	:i endif
+:i endfunction
+:i function $SP_startup$
+	:i $LoadSound$%s(26,"Shared\Hits\HitGlassPane2x")
+	:i $LoadSound$%s(22,"Shared\Auto\LA_Skid_11")$vol$ = %i(100,00000064)$dropoff$ = %i(150,00000096)
+	:i $LoadSound$%s(26,"Shared\Auto\CarBrakeSqueal")$vol$ = %i(100,00000064)$dropoff$ = %i(150,00000096)
+	:i $LoadSound$%s(19,"Shared\Auto\CarLoop")$vol$ = %i(100,00000064)$dropoff$ = %i(150,00000096)$PosUpdateWithDoppler$
+	:i $LoadSound$%s(22,"Shared\Auto\CarHorn_11")$vol$ = %i(100,00000064)$dropoff$ = %i(150,00000096)
+	:i $LoadSound$%s(23,"Shared\Hits\HitMetalCan")$vol$ = %i(100,00000064)$dropoff$ = %i(150,00000096)$PosUpdateWithDoppler$
+	:i $LoadSound$%s(20,"Shared\Hits\BonkBush")$vol$ = %i(100,00000064)$dropoff$ = %i(0,00000000)
+:i endfunction
+:i function $SP_Goals$
+	:i if $InMultiplayerGame$
+		:i $add_multiplayer_mode_goals$
+	:i endif
+	:i if NOT $InSplitScreenGame$
+		:i if NOT $GameModeEquals$$is_singlesession$
+		:i endif
+	:i endif
+	:i if NOT $InSplitScreenGame$
+		:i if NOT $GameModeEquals$$is_singlesession$
+			:i if NOT $InNetGame$
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i :end

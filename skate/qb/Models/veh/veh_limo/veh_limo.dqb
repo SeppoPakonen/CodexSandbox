@@ -1,0 +1,197 @@
+$veh_Limo_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(0.000015,0.226225,-0.000006)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-0.021030,1.293261,19.456039)
+		:i $Angles$ = %vec3(-0.000001,0.000000,0.000000)
+		:i $Name$ = $Car$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(35.744896,16.686968,166.219101)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-33.356285,16.686968,166.219101)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(35.744873,16.686975,-30.778297)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-33.356285,16.686975,-30.778299)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(25.063150,64.079346,-26.298645)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail01$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(7,00000007):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(25.063150,64.079338,112.987015)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail02$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(8,00000008):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(25.063150,69.079338,124.987015)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(25.063150,69.079346,-38.298645)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail04$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(6,00000006):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Limo01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Limo01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Limo02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Limo02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Limo03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Limo03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_Limo04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_Limo04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Limo_Col$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-25.302069,69.079338,124.987015)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-25.302069,64.079338,112.987015)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail06$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(15,0000000f):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-25.302069,64.079346,-26.298645)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail07$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(16,00000010):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-25.302069,69.079346,-38.298645)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_Veh_Limo_Rail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $NoClimbing$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(17,00000011):a}
+	:i :s}
+	:i :a}
+:i $veh_LimoTriggerScripts$ = 
+:i :a{
+	:i $TRGP_Limo01Script$
+	:i $TRGP_Limo02Script$
+	:i $TRGP_Limo03Script$
+	:i $TRGP_Limo04Script$
+	:i :a}
+:i function $TRGP_Limo01Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop02$$EndGapID$ = $CarHop01$
+:i endfunction
+:i function $TRGP_Limo02Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop01$$EndGapID$ = $CarHop02$
+:i endfunction
+:i function $TRGP_Limo03Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop03$$EndGapID$ = $CarHop04$
+:i endfunction
+:i function $TRGP_Limo04Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop04$$EndGapID$ = $CarHop03$
+:i endfunction
+:i :end

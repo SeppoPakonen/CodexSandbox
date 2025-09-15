@@ -1,0 +1,30 @@
+noblitz;
+
+uses
+	Game/Core,
+	Game/Assets;
+
+file
+	Scripting.h,
+	CFuncs.cpp,
+	CFuncs.h,
+	Content.cpp,
+	Content.h,
+	FTables.cpp,
+	FTables.h,
+	Import.cpp,
+	Import.h,
+	ScriptCache.cpp,
+	ScriptCache.h,
+	Script.cpp,
+	ScriptDebugger.h,
+	ScriptDefs.h,
+	Script.h,
+	Scripting.upp,
+	SymbolTable.cpp,
+	SymbolTable.h,
+	SymbolType.cpp,
+	SymbolType.h,
+	Tokens.cpp,
+	Tokens.h;
+

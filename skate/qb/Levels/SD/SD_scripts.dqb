@@ -1,0 +1,12 @@
+function $[d91cc51c]$
+	:i $[d92845ef]$
+	:i $[11918f70]$
+:i endfunction
+:i function $[f5601758]$
+	:i $[e0bfc1cb]$
+	:i $[ae5a1b5d]$
+	:i $[4a37fa94]$
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 0000006f:15

@@ -1,0 +1,42 @@
+function $[1cbbfb92]$
+	:i if $[7d873131]$
+	:i else
+	:i endif
+	:i $[a1116237]$$[cc424795]$ = $[45b8e935]$$[c4745838]$ = %s(1," ")
+:i endfunction
+:i function $[91017a91]$
+	:i $[2a621572]$%s(26,"Shared\Hits\HitGlassPane2x")
+	:i $[2a621572]$%s(22,"Shared\Auto\LA_Skid_11")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(26,"Shared\Auto\CarBrakeSqueal")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(19,"Shared\Auto\CarLoop")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(22,"Shared\Auto\CarHorn_11")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)
+	:i $[2a621572]$%s(23,"Shared\Hits\HitMetalCan")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(150,00000096)$[cf15c120]$
+	:i $[2a621572]$%s(20,"Shared\Hits\BonkBush")$[f6a36814]$ = %i(100,00000064)$[ff2020ec]$ = %i(0,00000000)
+	:i $[11cf7df4]$
+	:i $[fc2e4665]$
+	:i $[90118c78]$
+	:i $[0736b8d5]$
+:i endfunction
+:i function $[b1eebc4c]$
+	:i $[69c257e9]$
+	:i $[82117c1a]$%i(4,00000004)$[49e0ee96]$
+	:i $[c6870028]$
+:i endfunction
+:i function $[fe82b38d]$
+	:i if $[850b3cca]$
+		:i $[0b501f99]$
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT $[20985922]$$[7de8ca6c]$
+		:i endif
+	:i endif
+	:i if NOT $[9cb87e60]$
+		:i if NOT  ( ($[20985922]$$[7de8ca6c]$)  OR  ($[20985922]$$[353961d7]$) ) 
+			:i if NOT $[a1da6fe9]$
+			:i endif
+		:i endif
+	:i endif
+:i endfunction
+:i function $[4c72ed98]$
+	:i switch %GLOBAL%$[f200cb7e]$
+		:i case Unknown instruction at 00000314:15

@@ -1,0 +1,12 @@
+/**
+ * Pearl default styles
+ * Some basic style definitions, mostly margins and padding that you will likely
+ * want to use for basic HTML elements. These can be overridden by a theme-specific stylesheet
+*/
+
+.small { font-size: 90%; }
+.center { text-align: center; }
+.indent { padding-left: 15px; }
+
+.right { float: right; margin: 5px; }
+.left { float: left; margin: 5px; }

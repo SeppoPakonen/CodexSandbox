@@ -1,0 +1,207 @@
+$Veh_PoliceCAr_NY_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(0.000015,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Shadow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-34.365234,11.852058,-8.642040)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(32.157761,14.198025,110.608719)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-29.174622,14.198025,110.608719)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(32.157745,14.198030,-10.270325)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-29.174622,14.198030,-10.270325)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Car_Wheel04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_PoliceCarNY01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_PoliceCarNY01Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_PoliceCarNY02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_PoliceCarNY02Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_PoliceCarNY03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_PoliceCarNY03Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRGP_PoliceCarNY04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $TRGP_PoliceCarNY04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $CROWN_VIC_CAB_Col$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-27.841459,55.460655,-8.477798)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail01$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(12,0000000c):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-27.841421,55.460655,72.293297)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail02$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(18,00000012):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(28.670561,55.460655,-8.477814)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail03$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(14,0000000e):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(28.670599,55.460655,72.293274)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail04$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(17,00000011):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-35.841442,35.293335,-59.343269)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Skitch01$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(36.670567,35.293335,-59.343277)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Skitch02$
+		:i $Class$ = $ObjectHook$
+		:i $CreatedAtStart$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(28.670599,58.460655,84.293274)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail05$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-27.841421,58.460655,84.293297)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail06$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(28.670561,58.460655,-20.477814)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail07$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(13,0000000d):a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-27.841459,58.460655,-20.477798)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_PoliceCar_NY_Rail08$
+		:i $Class$ = $RailNode$
+		:i $Type$ = $Metal$
+		:i $CreatedAtStart$
+		:i $TerrainType$ = $TERRAIN_GRINDMETAL$
+		:i $Links$ = :a{%i(11,0000000b):a}
+	:i :s}
+	:i :a}
+:i $Veh_PoliceCAr_NYTriggerScripts$ = 
+:i :a{
+	:i $TRGP_PoliceCarNY01Script$
+	:i $TRGP_PoliceCarNY02Script$
+	:i $TRGP_PoliceCarNY03Script$
+	:i $TRGP_PoliceCarNY04Script$
+	:i :a}
+:i function $TRGP_PoliceCarNY01Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop04$$EndGapID$ = $CarHop03$
+:i endfunction
+:i function $TRGP_PoliceCarNY02Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop03$$EndGapID$ = $CarHop04$
+:i endfunction
+:i function $TRGP_PoliceCarNY03Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop01$$EndGapID$ = $CarHop02$
+:i endfunction
+:i function $TRGP_PoliceCarNY04Script$
+	:i $Gap_CarHop$$StartGapID$ = $CarHop02$$EndGapID$ = $CarHop01$
+:i endfunction
+:i :end

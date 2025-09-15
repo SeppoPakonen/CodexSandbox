@@ -1,0 +1,1209 @@
+$NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(1282.236938,98.143982,2897.861328)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_Telepole_05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(489.524750,111.394196,2266.634766)
+		:i $Angles$ = %vec3(-0.000000,-0.000000,0.000000)
+		:i $Name$ = $NJ_Telepole_23$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1238.137817,111.394196,2258.596680)
+		:i $Angles$ = %vec3(-0.000000,-0.000000,0.000000)
+		:i $Name$ = $NJ_Telepole_24$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1256.406250,111.394196,1923.121704)
+		:i $Angles$ = %vec3(-0.000000,0.000000,-0.000000)
+		:i $Name$ = $NJ_Telepole_26$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(468.536621,207.305511,2913.803223)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_TeleCable_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(876.882629,325.233917,1950.148438)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_cable37$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(2050.255859,238.254837,2404.588135)
+		:i $Angles$ = %vec3(3.141593,-0.000000,3.141593)
+		:i $Name$ = $dt_cable38$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1054.199951,19.535431,3491.179443)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_lowwall94$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1206.513794,2.259145,2604.772461)
+		:i $Angles$ = %vec3(2.293427,1.393844,0.848165)
+		:i $Name$ = $dt_plants20$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1209.294922,4.070742,2576.171631)
+		:i $Angles$ = %vec3(1.136984,1.262675,-0.093355)
+		:i $Name$ = $dt_plants24$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1206.513794,2.259145,2545.083496)
+		:i $Angles$ = %vec3(2.293427,1.393844,0.848165)
+		:i $Name$ = $dt_plants25$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(918.617310,-16.515879,3673.977051)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_grassclump543$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1054.199951,19.535431,3491.237061)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_Road_East01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-306.336975,-44.637901,2466.109131)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_Sidewalk_South01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1054.199951,19.535431,3491.237061)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_Road_South01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(825.252197,7.067444,1668.869019)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $dt_windows9301$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(825.252197,7.067444,1668.869019)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $dt_windows9302$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(825.252197,7.067444,1668.869019)
+		:i $Angles$ = %vec3(3.141593,0.000000,3.141593)
+		:i $Name$ = $dt_windows9305$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1054.199951,19.535431,3491.237061)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_Road_Alleyway0101$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1184.610596,0.349434,2750.069580)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $DO_WoodFence07$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $TriggerScript$ = $DO_WoodFence07Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(20.148972,22.707594,2508.325439)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_grassy64$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(56.946625,198.085678,2384.725830)
+		:i $Angles$ = %vec3(2.077221,0.828073,1.064372)
+		:i $Name$ = $DT_COLLISION65$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1027.861938,-0.770951,2396.121826)
+		:i $Angles$ = %vec3(-0.632419,-1.146284,2.509174)
+		:i $Name$ = $boys_bed_mattress$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1117.471802,12.017547,2381.830811)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $workbench_top$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(917.516357,12.234328,2399.735107)
+		:i $Angles$ = %vec3(2.165743,0.000000,0.000000)
+		:i $Name$ = $headboard$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2357.931641)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $bedroom_outer_wall$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1020.751282,-18.317636,2368.630371)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $bedleg$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1052.257813,22.916079,2371.626953)
+		:i $Angles$ = %vec3(1.570796,1.492497,0.000000)
+		:i $Name$ = $ghetto_blaster$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1039.966064,45.927166,2366.264648)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $shelf_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(921.166382,-18.317644,2601.959473)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $nightstand_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(917.966370,21.233202,2461.202393)
+		:i $Angles$ = %vec3(1.570796,-1.570796,0.000000)
+		:i $Name$ = $alarm_clock$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1181.646484,-0.704088,2448.072754)
+		:i $Angles$ = %vec3(1.570796,-0.001470,0.000000)
+		:i $Name$ = $milkcrate_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1143.531616,-18.317636,2379.036133)
+		:i $Angles$ = %vec3(0.000000,1.483530,0.000000)
+		:i $Name$ = $toolbox$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1189.534058,11.232800,2480.065674)
+		:i $Angles$ = %vec3(-0.403198,-0.596380,2.740955)
+		:i $Name$ = $top_plank$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1189.593262,4.770970,2463.023438)
+		:i $Angles$ = %vec3(0.382533,-0.590005,0.432413)
+		:i $Name$ = $book_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1184.027466,24.747541,2480.802246)
+		:i $Angles$ = %vec3(-0.403198,-0.596380,2.740955)
+		:i $Name$ = $stereo_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(802.108337,205.944519,2451.497070)
+		:i $Angles$ = %vec3(-3.141590,-1.493428,-1.570798)
+		:i $Name$ = $framed_poster_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1150.928589,7.820376,2456.944824)
+		:i $Angles$ = %vec3(1.570796,-0.001667,0.000000)
+		:i $Name$ = $gamemachine_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1059.204590,-18.317636,2360.394531)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $spaceship_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1139.162354,66.357468,2385.493896)
+		:i $Angles$ = %vec3(1.570797,-0.000000,0.091085)
+		:i $Name$ = $wall_poster_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1190.282104,71.916763,2374.607422)
+		:i $Angles$ = %vec3(-2.757412,-1.423595,-2.014286)
+		:i $Name$ = $wall_poster_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(911.077209,42.274029,2493.122559)
+		:i $Angles$ = %vec3(0.000000,1.545907,-1.570796)
+		:i $Name$ = $wall_poster_3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1120.103271,-18.317636,2391.252686)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $cd_case_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1127.359497,-18.317636,2405.022217)
+		:i $Angles$ = %vec3(0.000000,-0.146683,0.000000)
+		:i $Name$ = $cd_case_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1184.472168,4.831409,2453.605713)
+		:i $Angles$ = %vec3(0.000000,-0.001667,0.000000)
+		:i $Name$ = $cd_case_4$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1189.661499,70.595924,2483.758545)
+		:i $Angles$ = %vec3(-0.754924,-1.484665,2.386672)
+		:i $Name$ = $banner_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1163.154419,92.721870,2384.446777)
+		:i $Angles$ = %vec3(1.570796,-0.000000,-0.000000)
+		:i $Name$ = $hanging_bulb$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1006.725525,32.598724,2409.398438)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $wallet$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1064.148682,71.986435,2360.479004)
+		:i $Angles$ = %vec3(1.474193,0.001609,0.033289)
+		:i $Name$ = $small_poster$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1024.275269,1.992177,2411.922852)
+		:i $Angles$ = %vec3(1.570796,-0.000000,-0.000000)
+		:i $Name$ = $fish_tank_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1104.437012,-18.159765,2384.800537)
+		:i $Angles$ = %vec3(3.141593,0.996060,3.141593)
+		:i $Name$ = $road_sign_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1052.663574,-18.317636,2318.140625)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $desk_lamp$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1084.536499,-13.479547,2384.233643)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $pennant_3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1140.209961,84.561874,2359.875977)
+		:i $Angles$ = %vec3(1.874552,0.005892,0.000902)
+		:i $Name$ = $mag_Poster_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1190.282104,50.536659,2415.976074)
+		:i $Angles$ = %vec3(-1.985391,-1.330088,-2.516676)
+		:i $Name$ = $mag_poster_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1077.175171,66.862671,2362.043213)
+		:i $Angles$ = %vec3(1.570796,-0.000000,0.000000)
+		:i $Name$ = $mag_poster_3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1090.183228,-8.770808,2493.625244)
+		:i $Angles$ = %vec3(0.000000,-0.592086,0.000000)
+		:i $Name$ = $television_set$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1133.775513,-70.000572,2415.866943)
+		:i $Angles$ = %vec3(1.639838,-0.591482,-0.021043)
+		:i $Name$ = $tv_antenae$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1079.791992,-18.317636,2449.849121)
+		:i $Angles$ = %vec3(0.000000,-1.553250,0.000000)
+		:i $Name$ = $CAS_player_restart$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1078.663574,-18.317636,2398.513184)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $mag_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1076.422852,-18.317636,2398.513184)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $mag_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1076.422852,-18.317636,2398.513184)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $mag_3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1072.471313,-18.317636,2470.789307)
+		:i $Angles$ = %vec3(0.000000,1.570796,0.000000)
+		:i $Name$ = $mag_4$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1098.394653,-18.161760,2398.513184)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $mag_5$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1163.162842,-18.317636,2521.726807)
+		:i $Angles$ = %vec3(0.000000,-1.570796,0.000000)
+		:i $Name$ = $Box01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1076.422852,-18.317636,2398.513184)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $mag_6$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1132.701416,-18.317636,2383.352783)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $cd_case_05$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1184.664917,24.167442,2457.010742)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $speaker_3$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(100000,000186a0)
+		:i $lod_dist1$ = %i(90000,00015f90)
+		:i $lod_dist2$ = %i(95000,00017318)
+		:i $TriggerScript$ = $speaker_3Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1058.592896,-18.317636,2465.821777)
+		:i $Angles$ = %vec3(0.000000,0.698132,0.000000)
+		:i $Name$ = $mag_08$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(928.499268,-8.082889,2505.596680)
+		:i $Angles$ = %vec3(-1.570796,-0.412944,3.141593)
+		:i $Name$ = $milkcrate_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1013.313293,63.939404,2541.048584)
+		:i $Angles$ = %vec3(-1.752903,0.007716,-3.057140)
+		:i $Name$ = $wall_poster_06$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1079.791992,-18.317636,2428.547363)
+		:i $Angles$ = %vec3(0.000000,-1.553250,0.000000)
+		:i $Name$ = $TRG_animload$
+		:i $Class$ = $Pedestrian$
+		:i $Type$ = $Ped_Skateboard_A$
+		:i $AbsentInNetGames$
+		:i $SkeletonName$ = $THPS5_human$
+		:i $AnimName$ = $animload_THPS5_human$
+		:i $profile$ = $Ped_Skateboard_A$
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(80,00000050)
+		:i $lod_dist2$ = %i(150,00000096)
+		:i $extra_anims$ = $animload_THPS5_skateshop$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(835.854065,202.000183,2543.464111)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $pillow_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2357.931641)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $NewWindow1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(937.193054,26.977983,2520.082031)
+		:i $Angles$ = %vec3(0.506865,1.050132,-0.738196)
+		:i $Name$ = $stand_sticker_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1047.810303,5.421539,2540.414307)
+		:i $Angles$ = %vec3(-1.752903,0.007716,-3.057140)
+		:i $Name$ = $wall_fart$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1182.333618,69.627594,2454.620117)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $lava_lamp_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1077.175171,70.910789,2362.043213)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $outlet_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1074.390747,70.910789,2369.253174)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $outlet_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2357.931641)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $bedroom_window$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1028.236572,-18.317644,2382.007813)
+		:i $Angles$ = %vec3(-3.141593,-1.515108,3.141593)
+		:i $Name$ = $nightstand_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1023.949707,15.327551,2587.338135)
+		:i $Angles$ = %vec3(2.807283,0.928571,0.931224)
+		:i $Name$ = $sticker_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(938.369019,7.067440,2673.043945)
+		:i $Angles$ = %vec3(0.000000,-0.000000,0.000000)
+		:i $Name$ = $dt_housy65$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1243.970703,16.824129,2366.953125)
+		:i $Angles$ = %vec3(0.562775,-0.528286,0.296148)
+		:i $Name$ = $table_bricks_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1158.318848,-3.863896,2443.536377)
+		:i $Angles$ = %vec3(-0.769675,-0.193418,3.022062)
+		:i $Name$ = $thps3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1069.693970,70.910789,2286.723145)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $table_glow$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1175.552246,19.811434,2458.099609)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $speaker_1$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(9000,00002328)
+		:i $lod_dist2$ = %i(9500,0000251c)
+		:i $TriggerScript$ = $speaker_1Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1175.579346,20.243578,2502.709717)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $speaker_2$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(10000,00002710)
+		:i $lod_dist1$ = %i(9000,00002328)
+		:i $lod_dist2$ = %i(9500,0000251c)
+		:i $TriggerScript$ = $speaker_2Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1023.949707,15.327551,2587.338135)
+		:i $Angles$ = %vec3(2.807283,0.928571,0.931225)
+		:i $Name$ = $sticker_5$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1003.342590,-4.382408,2539.870117)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $top_shelf$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1189.593262,4.770970,2463.023438)
+		:i $Angles$ = %vec3(0.382532,-0.590005,0.432413)
+		:i $Name$ = $THPS4_box$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1310.660400,14.320354,2139.509766)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $TRG_LightController$
+		:i $Class$ = $GameObject$
+		:i $Type$ = $Ghost$
+		:i $CreatedAtStart$
+		:i $AbsentInNetGames$
+		:i $Model$ = %s(4,"none")
+		:i $SuspendDistance$ = %i(0,00000000)
+		:i $lod_dist1$ = %i(400,00000190)
+		:i $lod_dist2$ = %i(401,00000191)
+		:i $TriggerScript$ = $TRG_LightControllerScript$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1049.243652,36.720131,2500.033936)
+		:i $Angles$ = %vec3(0.000000,0.578219,-0.000000)
+		:i $Name$ = $shoe_3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(931.450134,5.170654,2500.033936)
+		:i $Angles$ = %vec3(-3.141593,0.561484,3.141593)
+		:i $Name$ = $shoe_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1055.845337,21.764435,2406.073730)
+		:i $Angles$ = %vec3(0.000000,1.070348,-0.000000)
+		:i $Name$ = $shoe_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1167.217285,17.307154,2381.130615)
+		:i $Angles$ = %vec3(0.000000,0.411687,0.000000)
+		:i $Name$ = $soda_can_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1165.232666,20.339985,2366.927734)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $turtle_shell$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1077.175171,70.910789,2362.043213)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $closet_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1077.175171,78.171730,2345.934570)
+		:i $Angles$ = %vec3(1.611659,0.000000,0.000000)
+		:i $Name$ = $footprint$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1058.663330,-26.986366,2384.233643)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $robot_toy$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1074.708984,-18.317636,2456.691650)
+		:i $Angles$ = %vec3(3.141593,-0.001789,3.141593)
+		:i $Name$ = $MYF_player_restart01$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1088.798828,29.594362,2391.792725)
+		:i $Angles$ = %vec3(-0.769675,-0.193418,3.022062)
+		:i $Name$ = $ralph_cd$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1064.559204,71.986435,2360.479004)
+		:i $Angles$ = %vec3(1.474193,0.001609,0.033289)
+		:i $Name$ = $shadow_4$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(810.537903,-18.317636,2396.713867)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $lamplamp_inside_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1117.126099,144.176788,2791.081055)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_rampy8901$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1054.199951,19.535431,3491.179443)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_GroundNorth01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1054.199951,19.535431,3491.179443)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_grassy$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-306.336975,-44.637901,-22.018555)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $NJ_Sidewalk_South03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(775.436401,712.718201,0.000031)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $facade_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(775.436401,712.718201,0.000031)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $facade_2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(20.148972,22.707594,2508.325439)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $planterbox14$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(56.946625,198.085678,2384.725830)
+		:i $Angles$ = %vec3(2.077221,0.828073,1.064372)
+		:i $Name$ = $dt_House35$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(20.148972,22.707594,2508.325439)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_grassy66$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(775.436401,712.718201,0.000031)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $facade_3$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1129.487915,24.760477,2386.364746)
+		:i $Angles$ = %vec3(2.092606,0.000000,-1.570796)
+		:i $Name$ = $CAD_deck_spot$
+		:i $Class$ = $Restart$
+		:i $Type$ = $Player1$
+		:i $CreatedAtStart$
+		:i $RestartName$ = %s(11,"P1: Restart")
+		:i $restart_types$ = :a{$Player1$$Multiplayer$$Horse$:a}
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-1728.950928,712.718201,0.000031)
+		:i $Angles$ = %vec3(-1.570796,-0.000000,-3.141593)
+		:i $Name$ = $facade_04$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-2546.648438,19.535431,3491.179443)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dt_lowwall95$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2356.106689)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $ts_floor01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2357.931641)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $Object01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2357.931641)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $ts_frontWall$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1166.608887,17.483236,2392.527588)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $Cylinder01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1184.664917,24.167442,2501.290771)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $speaker_04$
+		:i $Class$ = $LevelObject$
+		:i $Type$ = $Normal$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $SuspendDistance$ = %i(100000,000186a0)
+		:i $lod_dist1$ = %i(90000,00015f90)
+		:i $lod_dist2$ = %i(95000,00017318)
+		:i $TriggerScript$ = $speaker_04Script$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1185.078613,3.447516,2502.229004)
+		:i $Angles$ = %vec3(0.409714,0.349237,0.525465)
+		:i $Name$ = $bricks$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1166.885742,25.593945,2457.157471)
+		:i $Angles$ = %vec3(-2.713252,0.161294,-2.036569)
+		:i $Name$ = $Cylinder02$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(979.505310,62.888126,2365.323975)
+		:i $Angles$ = %vec3(3.141593,0.785397,3.141593)
+		:i $Name$ = $lava_lamp_03$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1052.663574,-18.317636,2318.140625)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ts_lampShade$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1039.966064,45.927166,2366.264648)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $ts_shelfBracket01$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2372.384033)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $window2$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1065.874023,37.554447,2372.384033)
+		:i $Angles$ = %vec3(1.570796,0.000000,0.000000)
+		:i $Name$ = $ts_windowObject$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(1003.342590,-4.382408,2539.870117)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $dresser_1$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+	:i :s}
+	:i :s{
+		:i $Pos$ = %vec3(-0.000003,33.400867,-1.745408)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $longboard$
+		:i $Class$ = $LevelGeometry$
+		:i $CreatedAtStart$
+		:i $CollisionMode$ = $Geometry$
+		:i $ExportName$ = $board_banana$
+	:i :s}
+	:i :a}
+:i $TriggerScripts$ = 
+:i :a{
+	:i $LoadTerrain$
+	:i $DO_WoodFence07Script$
+	:i $speaker_3Script$
+	:i $speaker_1Script$
+	:i $speaker_2Script$
+	:i $TRG_LightControllerScript$
+	:i $speaker_04Script$
+	:i :a}
+:i function $LoadAllParticleTextures$
+:i endfunction
+:i function $DO_WoodFence07Script$
+	:i $ShatterAndDie$$Name$ = $DO_WoodFence07$$area$ = %i(1000,000003e8)$variance$ = %i(4,00000004)$vel_x$ = %i(30,0000001e)$vel_y$ = %i(30,0000001e)$vel_z$ = %i(30,0000001e)$spread$ = %i(1,00000001)
+:i endfunction
+:i function $speaker_3Script$
+	:i while
+		
+		:i $wait$%f(0.030000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.997000)$z$ = %f(0.997000):s}
+		:i $wait$%f(0.300000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.010000)$z$ = %f(1.010000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.999000)$z$ = %f(0.999000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.000000)$z$ = %f(1.000000):s}
+		:i $wait$%f(0.010000)$second$
+	:i loop_to 
+:i endfunction
+:i function $speaker_1Script$
+	:i while
+		
+		:i $wait$%f(0.030000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.950000)$z$ = %f(0.950000):s}
+		:i $wait$%f(0.300000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.300000)$z$ = %f(1.300000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.980000)$z$ = %f(0.980000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.000000)$z$ = %f(1.000000):s}
+		:i $wait$%f(0.010000)$second$
+	:i loop_to 
+:i endfunction
+:i function $speaker_2Script$
+	:i while
+		
+		:i $wait$%f(0.030000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.950000)$z$ = %f(0.950000):s}
+		:i $wait$%f(0.300000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.300000)$z$ = %f(1.300000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.980000)$z$ = %f(0.980000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.000000)$z$ = %f(1.000000):s}
+		:i $wait$%f(0.010000)$second$
+	:i loop_to 
+:i endfunction
+:i function $TRG_LightControllerScript$
+	:i while
+		
+		:i $wait$%f(0.040000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.300000)$second$
+		:i $FakeLights$$percent$ = %i(60,0000003c)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(30,0000001e)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.200000)$second$
+		:i $FakeLights$$percent$ = %i(70,00000046)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(40,00000028)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.400000)$second$
+		:i $FakeLights$$percent$ = %i(60,0000003c)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.020000)$second$
+		:i $FakeLights$$percent$ = %i(10,0000000a)$prefix$ = $TRG_LevelLight$
+		:i $wait$%f(0.010000)$second$
+		:i $FakeLights$$percent$ = %i(50,00000032)$prefix$ = $TRG_LevelLight$
+	:i loop_to 
+:i endfunction
+:i function $speaker_04Script$
+	:i while
+		
+		:i $wait$%f(0.030000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.997000)$z$ = %f(0.997000):s}
+		:i $wait$%f(0.300000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.010000)$z$ = %f(1.010000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(0.999000)$z$ = %f(0.999000):s}
+		:i $wait$%f(0.010000)$second$
+		:i $obj_applyscaling$:s{$y$ = %f(1.000000)$z$ = %f(1.000000):s}
+		:i $wait$%f(0.010000)$second$
+	:i loop_to 
+:i endfunction
+:i function $LoadTerrain$
+	:i $SetTerrainDefault$
+	:i $SetTerrainConcSmooth$
+	:i $SetTerrainConcRough$
+	:i $SetTerrainMetalRough$
+	:i $SetTerrainBrick$
+	:i $SetTerrainAsphalt$
+	:i $SetTerrainGravel$
+	:i $SetTerrainSidewalk$
+	:i $SetTerrainGrass$
+	:i $SetTerrainGrassDried$
+:i endfunction
+:i function $load_level_anims$
+	:i $animload_THPS5_human$
+	:i $animload_THPS5_skateshop$
+:i endfunction
+:i function $LoadCameras$
+	:i $LoadAsset$%s(38,"levels\cas_bedroom\CAS_default_cam.ska")$CAS_default_cam$
+	:i $LoadAsset$%s(36,"levels\cas_bedroom\CAS_intro_cam.ska")$CAS_intro_cam$
+	:i $LoadAsset$%s(38,"levels\cas_bedroom\MYF_intro_cam01.ska")$MYF_intro_cam01$
+	:i $LoadAsset$%s(43,"levels\cas_bedroom\Map_Deck_intro_cam01.ska")$Map_Deck_intro_cam01$
+:i endfunction
+:i function $LoadObjectAnims$
+:i endfunction
+:i :end

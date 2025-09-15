@@ -1,0 +1,8 @@
+uses
+	Core;
+
+file
+	GameImpl.h,
+	GameImpl.cpp,
+	Thread.cpp;
+

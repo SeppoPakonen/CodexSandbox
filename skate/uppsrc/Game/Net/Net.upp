@@ -1,0 +1,31 @@
+noblitz;
+
+uses
+	Dolphin,
+	Socket,
+	Game/Core;
+
+file
+	Net.h,
+	GameNet.cpp,
+	GameNet.h,
+	Lobby.cpp,
+	Lobby.h,
+	NetApp.cpp,
+	NetClnt.cpp,
+	NetClnt.h,
+	NetConfig.cpp,
+	NetConfigIf.h,
+	NetConnect.cpp,
+	Net.cpp,
+	NetDispatch.cpp,
+	NetGoal.cpp,
+	NetGoal.h,
+	NetClasses.h,
+	NetHandlr.cpp,
+	NetServer.cpp,
+	NetServer.h,
+	Net.upp,
+	ServerList.cpp,
+	SkateNet.cpp;
+

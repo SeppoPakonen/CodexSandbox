@@ -1,0 +1,10 @@
+description "\377B56,127,0";
+
+file
+	Demo.h,
+	DemoFont.cpp,
+	DemoInit.cpp,
+	DemoPad.cpp,
+	DemoPuts.cpp,
+	DemoStats.cpp;
+

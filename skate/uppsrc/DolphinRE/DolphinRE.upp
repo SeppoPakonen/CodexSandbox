@@ -1,0 +1,63 @@
+description "\377B28,170,255";
+
+noblitz;
+
+uses(SDL) DolphinSDL;
+
+uses(!SDL & WIN32) DolphinWin;
+
+options(EMU) -DEMU;
+
+file
+	Readme.txt,
+	DolphinRE.h,
+	Endian.cpp,
+	ClipCull.h,
+	ClipCull.cpp,
+	DispList.h,
+	DispList.cpp,
+	EmVert.h,
+	EmVert.cpp,
+	FrameBuf.h,
+	FrameBuf.cpp,
+	GeoVert.h,
+	GeoVert.cpp,
+	Light.h,
+	Light.cpp,
+	Misc.h,
+	Misc.cpp,
+	PixlProc.h,
+	PixlProc.cpp,
+	TexConv.h,
+	TexConv.cpp,
+	TexEnv.h,
+	TexEnv.cpp,
+	Texture.h,
+	Texture.cpp,
+	Translate.h,
+	Translate.cpp,
+	TransMtx.h,
+	TransMtx.cpp,
+	Draw.h,
+	Draw.cpp,
+	FrameBuf2.h,
+	FrameBuf2.cpp,
+	Init.h,
+	Init.cpp,
+	Stubs.cpp,
+	Texture2.h,
+	Texture2.cpp,
+	Transform.h,
+	Transform.cpp,
+	Vert.h,
+	Vert.cpp,
+	Common readonly separator,
+	Mtx.h,
+	Mtx.cpp,
+	PsMtx.cpp,
+	Os.cpp,
+	_ readonly separator;
+
+mainconfig
+	"" = "EMU";
+

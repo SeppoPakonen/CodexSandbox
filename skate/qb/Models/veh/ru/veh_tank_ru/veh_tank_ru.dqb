@@ -1,0 +1,13 @@
+$Veh_Tank_RU_NodeArray$ = 
+:i :a{
+	:i :s{
+		:i $Pos$ = %vec3(-0.068975,0.000000,-0.415264)
+		:i $Angles$ = %vec3(0.000000,0.000000,0.000000)
+		:i $Name$ = $gr_Tank02$
+		:i $ncomp_level_geometry$
+	:i :s}
+	:i :a}
+:i $Veh_Tank_RUTriggerScripts$ = 
+:i :a{
+	:i :a}
+:i :end

@@ -1,0 +1,10 @@
+
+:i $[501dbb4a]$ = %i(1,00000001)
+:i function $[d41f52f8]$
+	:i $[d92845ef]$
+	:i $[11918f70]$
+	:i $[e2f095f9]$
+	:i $[2de8c60e]$$[f884773c]$
+	:i switch %GLOBAL%$[f884773c]$
+		:i case :end
+			

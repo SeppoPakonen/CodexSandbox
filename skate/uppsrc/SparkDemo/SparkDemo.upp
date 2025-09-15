@@ -1,0 +1,16 @@
+uses
+	DolphinWin;
+
+file
+	Fly.h,
+	Fly.cpp,
+	List.h,
+	List.cpp,
+	main.cpp,
+	Particle.h,
+	Particle.cpp,
+	Plane.h,
+	Plane.cpp,
+	Spline.h,
+	Spline.cpp;
+

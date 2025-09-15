@@ -1,0 +1,80 @@
+wine: Unhandled page fault on read access to 0x00150000 at address 0x429e28 (thread 00a6), starting debugger...
+Unhandled exception: page fault on read access to 0x00150000 in 32-bit code (0x00429e28).
+Register dump:
+ CS:0023 SS:002b DS:002b ES:002b FS:006b GS:0063
+ EIP:00429e28 ESP:0033f898 EBP:0033fd84 EFLAGS:00010216(  R- --  I   -A-P- )
+ EAX:00150000 EBX:7b63edf8 ECX:0033f5e3 EDX:00340000
+ ESI:7b63edf8 EDI:0033fd78
+Stack dump:
+0x0033f898:  2a2c9fb6 0033fe6c 7b63edf8 7b63edf8
+0x0033f8a8:  0033f8e4 000000dd cccccccc cccccccc
+0x0033f8b8:  cccccccc cccccccc cccccccc cccccccc
+0x0033f8c8:  cccccccc cccccccc cccccccc cccccccc
+0x0033f8d8:  000002c5 cccccccc cccccccc 00000000
+0x0033f8e8:  cc003100 cccccccc cccccccc cccccccc
+Backtrace:
+=>0 0x00429e28 EntryPoint+0xffffffff() in roq (0x0033fd84)
+  1 0x0043691a EntryPoint+0xffffffff() in roq (0x0033fe6c)
+  2 0x00478d7a EntryPoint+0xffffffff() in roq (0x0033feb8)
+  3 0x00478ecd in roq (+0x78ecc) (0x0033fec0)
+  4 0x7b463e12 in kernel32 (+0x43e11) (0x0033fed8)
+  5 0x7b46613c in kernel32 (+0x4613b) (0x0033ffd8)
+  6 0x7b463e1e in kernel32 (+0x43e1d) (0x0033ffec)
+0x00429e28 EntryPoint+0xffffffff in roq: movzbl	0x0(%eax),%ecx
+Modules:
+Module	Address			Debug info	Name (3 modules)
+PE	  400000-  53b000	Export          roq
+PE	7b420000-7b5d0000	Export          kernel32
+PE	7bc10000-7bc14000	Deferred        ntdll
+Threads:
+process  tid      prio (all id:s are in hex)
+00000008 roq.exe
+	00000009    0
+0000000e services.exe
+	0000002e    0
+	00000029    0
+	00000024    0
+	00000020    0
+	0000001d    0
+	00000010    0
+	0000000f    0
+0000001a winedevice.exe
+	00000021    0
+	0000001f    0
+	0000001e    0
+	0000001b    0
+00000022 plugplay.exe
+	00000026    0
+	00000025    0
+	00000023    0
+00000027 winedevice.exe
+	0000002b    0
+	0000002a    0
+	00000028    0
+0000002c winedevice.exe
+	00000035    0
+	00000034    0
+	00000030    0
+	0000002f    0
+	0000002d    0
+00000036 roq.exe
+	00000037    0
+000000e9 roq.exe
+	000000ea    0
+00000197 roq.exe
+	00000198    0
+00000199 roq.exe
+	0000019a    0
+000000a3 (D) Z:\home\sblo\importer\thug\QuazzScriptTools\roq.exe
+	000000a6    0 <==
+000000a7 explorer.exe
+	000000ab    0
+	000000ac    0
+	000000a9    0
+	000000aa    0
+System information:
+    Wine build: wine-4.0 (Ubuntu 4.0-1)
+    Platform: i386
+    Version: Windows 2000
+    Host system: Linux
+    Host version: 5.0.0-16-generic

@@ -1,0 +1,16 @@
+uses
+	Demo,
+	DolphinRE;
+
+uses(CHARPIPE) CharPipe;
+
+options(EMU) -DEMU;
+
+file
+	TriangleDemo.cpp;
+
+mainconfig
+	"" = "EMU SDL HAVE_DIRECT_OPENGL",
+	"" = "EMU SDL",
+	"" = "EMU";
+
