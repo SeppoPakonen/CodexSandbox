@@ -1,0 +1,41 @@
+FIPS123  README
+
+This is the FIPS123 C library that provides convenient access to
+ISO8211 files.  The version number of this release can be found in 
+the file VERSION. You will need an ANSI C compiler to build this 
+library. (See INSTALL for information)
+
+The point of contact for this software is sdts@usgs.gov. 
+(However, resources are not available to provide technical assistance, 
+and FIPS123 has been retired at final version of 1.0.4. 
+The contents of this distribution should be all 
+that you need---and in most cases it represents all we can offer anyway :)
+
+If you do not have a C compiler, then check the web pages at 
+http://mcmcweb.er.usgs.gov/sdts for precompiled utilities (for PC) that are 
+based on this FIPS123 library.
+
+
+README     this file
+INSTALL    installation instructions
+VERSION    version number of this distribution
+HISTORY    record of changes
+NEWS       changes to this version
+f123src    directory containing fips 123 library source code 
+f123utl    directory containing fips 123 utilies source code
+f123inc    directory containing fips 123 header files
+f123app	   directory containing sample programs & data
+f123doc    directory containing the documents in WP format
+Makefile   a gnu makefile
+common.mk  a general rule for make
+
+
+
+DISCLAIMER:
+   Although this program has been used by the USGS, no warranty, expressed or
+implied, is made by the USGS or the United States Government as to the
+accuracy and functioning of the program and related program material nor
+shall the fact of distribution constitute any such warranty, and no
+responsibility is assumed by the USGS in connection therewith. Use of
+registered trademarks or product names does not constitute endorsement.
+

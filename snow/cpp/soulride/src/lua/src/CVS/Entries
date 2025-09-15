@@ -1,0 +1,41 @@
+/Makefile/1.5/Wed Jun 11 17:48:01 2003//
+/Makefile.linux/1.2/Mon Jan 20 19:28:11 2003//
+/Makefile.macosx/1.1/Mon Sep  1 21:49:54 2003/-kb/
+/lapi.c/1.1.1.1/Sat Jan 18 20:14:19 2003//
+/lapi.h/1.1.1.1/Sat Jan 18 20:14:19 2003//
+/lauxlib.c/1.1.1.1/Sat Jan 18 20:14:19 2003//
+/lbuffer.c/1.1.1.1/Sat Jan 18 20:14:19 2003//
+/lbuiltin.c/1.1.1.1/Sat Jan 18 20:14:21 2003//
+/lbuiltin.h/1.1.1.1/Sat Jan 18 20:14:21 2003//
+/ldo.c/1.1.1.1/Sat Jan 18 20:14:21 2003//
+/ldo.h/1.1.1.1/Sat Jan 18 20:14:21 2003//
+/lfunc.c/1.1.1.1/Sat Jan 18 20:14:22 2003//
+/lfunc.h/1.1.1.1/Sat Jan 18 20:14:22 2003//
+/lgc.c/1.1.1.1/Sat Jan 18 20:14:22 2003//
+/lgc.h/1.1.1.1/Sat Jan 18 20:14:22 2003//
+/llex.c/1.1.1.1/Sat Jan 18 20:14:23 2003//
+/llex.h/1.1.1.1/Sat Jan 18 20:14:23 2003//
+/lmem.c/1.1.1.1/Sat Jan 18 20:14:23 2003//
+/lmem.h/1.1.1.1/Sat Jan 18 20:14:23 2003//
+/lobject.c/1.1.1.1/Sat Jan 18 20:14:23 2003//
+/lobject.h/1.1.1.1/Sat Jan 18 20:14:23 2003//
+/lopcodes.h/1.1.1.1/Sat Jan 18 20:14:24 2003//
+/lparser.c/1.1.1.1/Sat Jan 18 20:14:26 2003//
+/lparser.h/1.1.1.1/Sat Jan 18 20:14:26 2003//
+/lstate.c/1.1.1.1/Sat Jan 18 20:14:26 2003//
+/lstate.h/1.1.1.1/Sat Jan 18 20:14:26 2003//
+/lstring.c/1.1.1.1/Sat Jan 18 20:14:27 2003//
+/lstring.h/1.1.1.1/Sat Jan 18 20:14:27 2003//
+/ltable.c/1.1.1.1/Sat Jan 18 20:14:27 2003//
+/ltable.h/1.1.1.1/Sat Jan 18 20:14:27 2003//
+/ltm.c/1.1.1.1/Sat Jan 18 20:14:27 2003//
+/ltm.h/1.1.1.1/Sat Jan 18 20:14:27 2003//
+/lundump.c/1.1.1.1/Sat Jan 18 20:14:28 2003//
+/lundump.h/1.1.1.1/Sat Jan 18 20:14:28 2003//
+/lvm.c/1.1.1.1/Sat Jan 18 20:14:28 2003//
+/lvm.h/1.1.1.1/Sat Jan 18 20:14:29 2003//
+/lzio.c/1.1.1.1/Sat Jan 18 20:14:29 2003//
+/lzio.h/1.1.1.1/Sat Jan 18 20:14:29 2003//
+D/lib////
+D/lua////
+D/luac////

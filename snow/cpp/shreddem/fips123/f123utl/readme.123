@@ -1,0 +1,21 @@
+directory: .../fips123/f123utl
+
+This subdirectory contains utility application programs written in the 
+ANSI C programming language for the FIPS PUB 123 Function Library.
+
+File           Description
+-----------    -----------
+attrinfo.c     Attribute Primary Module Information Utility
+attrdump.c     Attribute Primary Module Decoding / Dump Utility
+linearc.c      Line Module to Arc/Info Generate Compatible File Utility
+linedump.c     Line Module Decoding / Dump Utility
+ptarc.c        Point Module to Arc/Info Generate Compatible File Utility
+polyarc.c      Polygon Module to Info Compatible File Utility
+show173.c      SDTS Browse Utility
+show173        SDTS Browse Utility executable
+show8211.c     ISO 8211 Dump Utility
+show8211       ISO 8211 Dump Utility executable
+sdtsdgn.c      Intergraph Microstation Import Routine
+sum173.c       SDTS Summary Utility
+wrddf.c        Example Program
+readme.123     Directory information

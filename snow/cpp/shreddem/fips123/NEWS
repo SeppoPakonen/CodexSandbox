@@ -1,0 +1,129 @@
+
+                     FIPS PUB 123 Function Library 
+                     *****************************
+
+April 14, 1997     Version 1.0.4
+
+           FIPS PUB 123 Function Library Version 1.0.4
+
+                          Release Notes
+
+This file describes the modifications contained in the FIPS123
+Function Library version 1.0.4.  Please read these notes as they
+may be important to your application.
+
+General Notes:
+
+  Many failure reports against the FIPS123 library in regards to reading 
+binary data are caused by corrupt *.DDF files.  The most common cause was 
+the use of WinZip (tm) to unpack the files. The option for "Smart TAR 
+file CR/LF conversion" must be turned off. Failure to do so will cause
+data reading errors in the SDTS Line Module (files with name 
+xxxxLEnn.DDF)   [96DR003]      The second most common cause is failing to 
+set ftp mode to binary before downloading a tar/zip file 
+(extension *.tar.gz).
+
+  The FIPS123 library implements the 1986 version of ISO 8211. The latest 
+version of ISO 8211 is 1995. There are no plans at this time to upgrade 
+this library to the 1995 version.    [96SN006]
+
+
+Testing environment:
+
+   The FIPS123 version 1.04 has only been tested in the Unix environment 
+prior to its first release on 4-14-97. GNU C compiler version 2.5.8 was
+used on a Data General AViiON running DG/UX 5.4.3. 
+
+
+Modifications:
+
+The following DRs (discrepancy reports) and SN (statement of needs) have
+been implemented in this version. (DRs and SNs are documented in HISTORY.)
+
+1.  Reading of binary data would stop short when a field terminator 
+(hex 1e) was encountered at the beginning of a subfield in a binary 
+stream.  Problem fixed (change made to routine ret123fv). [96DR001]
+
+2.  Writing would terminate early if writing binary data an entire 
+field at a time and one of its subfields started with a field terminator 
+(hex 1e). Problem fixed (change made to routine ret123fv). Test program 
+testfld.c was added in f123app to test this change. [96DR002]
+
+3.  Read-only mode was actually opening up the files with update enabled. 
+This would cause failure when reading SDTS data from a CDROM. Routine 
+beg123file was modified to not open read-only files for update. [96DR004] 
+
+4.  Added Make files to make the library, utilities, and sample programs 
+in the Unix environment. (No precompiled executables are contained in the 
+distribution.)   (This software will compile and execute on a PC, but 
+there is no standardized make facility.)   [96SN005]
+  
+5.  Cleaned up some memory leaks in the function library which were 
+detected by a source code analyzer tool (Pure Software's (TM) Purify)
+
+6.  An SDTS Transfer has been included in the f123app directory to be 
+used as test data.
+
+7.  Appendix E of the Programmers Reference Manual has been shortened by 
+removing a lengthy source code listing.  The other documentation has not 
+been updated and may contain out of date source, installation, and 
+technical contact information. See README and INSTALL for latest information.
+
+
+
+===============================================================
+March 11, 1993     Version 1.0.3
+
+
+           FIPS PUB 123 Function Library Version 1.0.3
+
+                          Release Notes
+
+
+This file describes the modifications contained in the FIPS123
+Function Library version 1.0.3.  Please read these notes as they
+may be important to your application.
+
+With the resolution and implementation of 93DR033, this version of
+the library supports the use of an array descriptor in place of
+labels in an ISO 8211 DDR.
+
+
+====================================================================
+September 14, 1993   Version 1.0.2
+
+           FIPS PUB 123 Function Library Version 1.0.2
+
+                          Release Notes
+
+This file describes the modifications contained in the FIPS123
+Function Library version 1.0.2.  Please read these notes as they
+may be important to your application.
+
+The following DRs have been resolved and are implemented within
+version 1.0.2 of the library.
+
+
+     93DR030 - Failure of function wr123sfld() to load the correct
+               data structures with the array descriptors present
+               in the DR field
+
+     93DR031 - A Segmenation fault occurs when function
+               chk123nsfld() is invoked for a DR field that
+               contains Cartesian data with no labels present in
+               the corresponding DDR field
+
+     93DR036 - Failure of wr123sfld() when writing a field
+               containing array descriptors and attempting to drop
+               the leader and directory (using leader ID 'R')
+
+     93DR037 - Use of the memset system function
+
+     93DR038 - Unable to write subfield containing binary value
+               255 (decimal)
+
+     93DR039 - Function wr123fld() performance
+
+     93DR040 - Writing formatted arrays containing adjacent
+               fixed-length binary subfields that do not end on a
+               byte boundary

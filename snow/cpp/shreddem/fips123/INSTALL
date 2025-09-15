@@ -1,0 +1,156 @@
+FIPS123 INSTALL NOTES
+
+This is the FIPS123 C library that provides convenient access to
+ISO8211 files.  The version number of this release can be found in 
+the file VERSION. You will need an ANSI C compiler to build this 
+library. 
+
+The point of contact for this software is sdts@usgs.gov. 
+(However, resources are not always immediately available to provide 
+technical assistance. The contents of this distribution should be all 
+that you need---and in most cases it represents all we can offer anyway :)
+
+If you do not have a C compiler, then check the web pages at 
+http://mcmcweb.er.usgs.gov/sdts for precompiled utilities (for PC) that are 
+based on this FIPS123 library.
+
+
+Installation for Unix with make facility:
+=========================================
+
+1. Copy/untar the distribution files into a directory "fips123" or a 
+custom directory name. There will be a couple of subdirectories created 
+(contents explained in file README.)  
+
+2. For Unix, you would then issue "make" to build the library 
+and all executables. Issue make from the "fips123" or your custom directory.
+At this point the library is available (fips123.a), and the sample programs 
+and all utilities are ready to execute.
+
+3. (Optional) If you want to install the executable files to another 
+directory, then do this step.
+
+The default install directory ( prefix ) will be /usr/local:
+
+	fips123 library will be installed in /usr/local/lib
+	fips123 header files will be installed in /usr/local/include
+	fips123 utility files will be installed in /usr/local/bin
+
+If you would like to install fips123 in a different directory, edit 
+the Makefile in the top directory of fips123, change "prefix=/usr/local" 
+to your preference directory, then do "make install".
+
+
+Uninstall:
+==========
+This is not currently supported, but you can do:
+
+	% make clean
+or
+	% make realclean
+
+to clean up the binary files under the tree of fips123 
+
+
+
+List of Files/Directories:
+==========================
+
+File			Description
+-------			-----------
+INSTALL			this file
+VERSION			version number of this distribution
+HISTORY                  record of changes
+NEWS                     changes to this version
+f123src			a directory containing fips 123 library source code 
+f123utl			a directory containing fips 123 utilies source code
+f123inc			a directory containing fips 123 header files
+f123app			a directory containing sample programs & data
+f123doc			a directory containing the documentation
+Makefile		a gnu makefile
+common.mk		a general rule for make
+
+*******************************************************************
+
+Directory:	f123app
+---------
+
+This subdirectory contains sample application programs written in
+the ANSI C programming language for the FIPS PUB 123 Function Library.
+
+File            Description
+------------    -----------
+
+testfld.c	demo. to read and write with field
+sam_prg2.c	demo
+samprg2b.c 	demo
+sam_prg3.c	demo
+samprg3b.c	demo
+*.DDF           test data for the programs
+Makefile	gnu makefile
+
+
+********************************************************************
+
+Directory:	f123doc
+---------
+
+This subdirectory contains documentation for the FIPS PUB 123 Function Library.
+Documentation includes introductory documentation, the FIPS PUB 123 
+Programmers Reference Manual, and software release notices.  The
+documentation is in WordPerfect 5.1/2 format.
+
+see f123doc/readme.123 for more information
+
+********************************************************************
+
+Directory:	f123inc
+----------
+
+This subdirectory contains the FIPS PUB 123 Function Library include
+files stc123.h and gvd123.h which are included in the Function Library
+source code when compiled with the ANSI C Compiler.
+
+********************************************************************
+
+Directory:	f123src
+----------
+
+This subdirectory contains the entire FIPS PUB 123 Function Library 
+source code written in the ANSI C programming language. Please see 
+f123doc.
+
+********************************************************************
+
+Directory:	f123utl
+----------
+
+This subdirectory contains utility application programs written in the 
+ANSI C programming language for the FIPS PUB 123 Function Library.
+
+
+File           Description
+-----------    -----------
+attrinfo.c     Attribute Primary Module Information Utility
+attrdump.c     Attribute Primary Module Decoding / Dump Utility
+linearc.c      Line Module to Arc/Info Generate Compatible File Utility
+linedump.c     Line Module Decoding / Dump Utility
+ptarc.c        Point Module to Arc/Info Generate Compatible File Utility
+polyarc.c      Polygon Module to Info Compatible File Utility
+show173.c      SDTS Browse Utility - text mode
+show8211.c     ISO 8211 Dump Utility
+sdtsdgn.c      Intergraph Microstation Import Routine
+sum173.c       SDTS Summary Utility
+wrddf.c        Example Program
+readme.123     Directory information
+
+
+
+DISCLAIMER:
+   Although this program has been used by the USGS, no warranty, expressed or
+implied, is made by the USGS or the United States Government as to the
+accuracy and functioning of the program and related program material nor
+shall the fact of distribution constitute any such warranty, and no
+responsibility is assumed by the USGS in connection therewith. Use of
+registered trademarks or product names does not constitute endorsement.
+

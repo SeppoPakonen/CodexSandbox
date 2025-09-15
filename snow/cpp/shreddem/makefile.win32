@@ -1,0 +1,430 @@
+# Microsoft Developer Studio Generated NMAKE File, Based on ShredDem.dsp
+!IF "$(CFG)" == ""
+CFG=ShredDem - Win32 Debug
+!MESSAGE No configuration specified. Defaulting to ShredDem - Win32 Debug.
+!ENDIF 
+
+!IF "$(CFG)" != "ShredDem - Win32 Release" && "$(CFG)" !=\
+ "ShredDem - Win32 Debug"
+!MESSAGE Invalid configuration "$(CFG)" specified.
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "ShredDem.mak" CFG="ShredDem - Win32 Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "ShredDem - Win32 Release" (based on\
+ "Win32 (x86) Console Application")
+!MESSAGE "ShredDem - Win32 Debug" (based on "Win32 (x86) Console Application")
+!MESSAGE 
+!ERROR An invalid configuration is specified.
+!ENDIF 
+
+!IF "$(OS)" == "Windows_NT"
+NULL=
+!ELSE 
+NULL=nul
+!ENDIF 
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+OUTDIR=.\Release
+INTDIR=.\Release
+# Begin Custom Macros
+OutDir=.\Release
+# End Custom Macros
+
+!IF "$(RECURSE)" == "0" 
+
+ALL : "$(OUTDIR)\ShredDem.exe"
+
+!ELSE 
+
+ALL : "io - Win32 Release" "getopt - Win32 Release" "container - Win32 Release"\
+ "$(OUTDIR)\ShredDem.exe"
+
+!ENDIF 
+
+!IF "$(RECURSE)" == "1" 
+CLEAN :"container - Win32 ReleaseCLEAN" "getopt - Win32 ReleaseCLEAN"\
+ "io - Win32 ReleaseCLEAN" 
+!ELSE 
+CLEAN :
+!ENDIF 
+	-@erase "$(INTDIR)\utm.obj"
+	-@erase "$(INTDIR)\DEM.obj"
+	-@erase "$(INTDIR)\Grid.obj"
+	-@erase "$(INTDIR)\ShredDEM.obj"
+	-@erase "$(INTDIR)\vc50.idb"
+	-@erase "$(OUTDIR)\ShredDem.exe"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP=cl.exe
+CPP_PROJ=/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D\
+ "_MBCS" /Fp"$(INTDIR)\ShredDem.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD\
+ /c 
+CPP_OBJS=.\Release/
+CPP_SBRS=.
+
+.c{$(CPP_OBJS)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(CPP_OBJS)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(CPP_OBJS)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.c{$(CPP_SBRS)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(CPP_SBRS)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(CPP_SBRS)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+RSC=rc.exe
+BSC32=bscmake.exe
+BSC32_FLAGS=/nologo /o"$(OUTDIR)\ShredDem.bsc" 
+BSC32_SBRS= \
+	
+LINK32=link.exe
+LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib\
+ advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib\
+ odbccp32.lib /nologo /subsystem:console /incremental:no\
+ /pdb:"$(OUTDIR)\ShredDem.pdb" /machine:I386 /out:"$(OUTDIR)\ShredDem.exe" 
+LINK32_OBJS= \
+	"$(INTDIR)\utm.obj" \
+	"$(INTDIR)\DEM.obj" \
+	"$(INTDIR)\Grid.obj" \
+	"$(INTDIR)\ShredDEM.obj" \
+	".\container\Release\container.lib" \
+	".\getopt\Release\getopt.lib" \
+	".\io\Release\io.lib"
+
+"$(OUTDIR)\ShredDem.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+OUTDIR=.\Debug
+INTDIR=.\Debug
+# Begin Custom Macros
+OutDir=.\Debug
+# End Custom Macros
+
+!IF "$(RECURSE)" == "0" 
+
+ALL : "$(OUTDIR)\ShredDem.exe" "$(OUTDIR)\ShredDem.bsc"
+
+!ELSE 
+
+ALL : "io - Win32 Debug" "getopt - Win32 Debug" "container - Win32 Debug"\
+ "$(OUTDIR)\ShredDem.exe" "$(OUTDIR)\ShredDem.bsc"
+
+!ENDIF 
+
+!IF "$(RECURSE)" == "1" 
+CLEAN :"container - Win32 DebugCLEAN" "getopt - Win32 DebugCLEAN"\
+ "io - Win32 DebugCLEAN" 
+!ELSE 
+CLEAN :
+!ENDIF 
+	-@erase "$(INTDIR)\utm.obj"
+	-@erase "$(INTDIR)\DEM.obj"
+	-@erase "$(INTDIR)\DEM.sbr"
+	-@erase "$(INTDIR)\Grid.obj"
+	-@erase "$(INTDIR)\Grid.sbr"
+	-@erase "$(INTDIR)\ShredDEM.obj"
+	-@erase "$(INTDIR)\ShredDEM.sbr"
+	-@erase "$(INTDIR)\vc50.idb"
+	-@erase "$(INTDIR)\vc50.pdb"
+	-@erase "$(OUTDIR)\ShredDem.bsc"
+	-@erase "$(OUTDIR)\ShredDem.exe"
+	-@erase "$(OUTDIR)\ShredDem.ilk"
+	-@erase "$(OUTDIR)\ShredDem.pdb"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP=cl.exe
+CPP_PROJ=/nologo /MLd /Gm /GR /GX /Zi /Od /I ".." /D "WIN32" /D "_DEBUG" /D\
+ "_CONSOLE" /D "_MBCS" /D "HAVE_ISO_HEADERS" /FR"$(INTDIR)\\" /Fo"$(INTDIR)\\"\
+ /Fd"$(INTDIR)\\" /FD /c 
+CPP_OBJS=.\Debug/
+CPP_SBRS=.\Debug/
+
+.c{$(CPP_OBJS)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(CPP_OBJS)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(CPP_OBJS)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.c{$(CPP_SBRS)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(CPP_SBRS)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(CPP_SBRS)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+RSC=rc.exe
+BSC32=bscmake.exe
+BSC32_FLAGS=/nologo /o"$(OUTDIR)\ShredDem.bsc" 
+BSC32_SBRS= \
+	"$(INTDIR)\utm.sbr" \
+	"$(INTDIR)\DEM.sbr" \
+	"$(INTDIR)\Grid.sbr" \
+	"$(INTDIR)\ShredDEM.sbr"
+
+"$(OUTDIR)\ShredDem.bsc" : "$(OUTDIR)" $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
+LINK32=link.exe
+LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib\
+ advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib\
+ odbccp32.lib wsock32.lib /nologo /subsystem:console /incremental:yes\
+ /pdb:"$(OUTDIR)\ShredDem.pdb" /debug /machine:I386\
+ /out:"$(OUTDIR)\ShredDem.exe" /pdbtype:sept 
+LINK32_OBJS= \
+	"$(INTDIR)\utm.obj" \
+	"$(INTDIR)\DEM.obj" \
+	"$(INTDIR)\Grid.obj" \
+	"$(INTDIR)\ShredDEM.obj" \
+	".\container\Debug\container.lib" \
+	".\getopt\Debug\getopt.lib" \
+	".\io\Debug\io.lib"
+
+"$(OUTDIR)\ShredDem.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ENDIF 
+
+
+!IF "$(CFG)" == "ShredDem - Win32 Release" || "$(CFG)" ==\
+ "ShredDem - Win32 Debug"
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+"container - Win32 Release" : 
+   cd ".\container"
+   $(MAKE) /$(MAKEFLAGS) /F .\container.mak CFG="container - Win32 Release" 
+   cd ".."
+
+"container - Win32 ReleaseCLEAN" : 
+   cd ".\container"
+   $(MAKE) /$(MAKEFLAGS) CLEAN /F .\container.mak\
+ CFG="container - Win32 Release" RECURSE=1 
+   cd ".."
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+"container - Win32 Debug" : 
+   cd ".\container"
+   $(MAKE) /$(MAKEFLAGS) /F .\container.mak CFG="container - Win32 Debug" 
+   cd ".."
+
+"container - Win32 DebugCLEAN" : 
+   cd ".\container"
+   $(MAKE) /$(MAKEFLAGS) CLEAN /F .\container.mak CFG="container - Win32 Debug"\
+ RECURSE=1 
+   cd ".."
+
+!ENDIF 
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+"getopt - Win32 Release" : 
+   cd ".\getopt"
+   $(MAKE) /$(MAKEFLAGS) /F .\getopt.mak CFG="getopt - Win32 Release" 
+   cd ".."
+
+"getopt - Win32 ReleaseCLEAN" : 
+   cd ".\getopt"
+   $(MAKE) /$(MAKEFLAGS) CLEAN /F .\getopt.mak CFG="getopt - Win32 Release"\
+ RECURSE=1 
+   cd ".."
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+"getopt - Win32 Debug" : 
+   cd ".\getopt"
+   $(MAKE) /$(MAKEFLAGS) /F .\getopt.mak CFG="getopt - Win32 Debug" 
+   cd ".."
+
+"getopt - Win32 DebugCLEAN" : 
+   cd ".\getopt"
+   $(MAKE) /$(MAKEFLAGS) CLEAN /F .\getopt.mak CFG="getopt - Win32 Debug"\
+ RECURSE=1 
+   cd ".."
+
+!ENDIF 
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+"io - Win32 Release" : 
+   cd ".\io"
+   $(MAKE) /$(MAKEFLAGS) /F .\io.mak CFG="io - Win32 Release" 
+   cd ".."
+
+"io - Win32 ReleaseCLEAN" : 
+   cd ".\io"
+   $(MAKE) /$(MAKEFLAGS) CLEAN /F .\io.mak CFG="io - Win32 Release" RECURSE=1 
+   cd ".."
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+"io - Win32 Debug" : 
+   cd ".\io"
+   $(MAKE) /$(MAKEFLAGS) /F .\io.mak CFG="io - Win32 Debug" 
+   cd ".."
+
+"io - Win32 DebugCLEAN" : 
+   cd ".\io"
+   $(MAKE) /$(MAKEFLAGS) CLEAN /F .\io.mak CFG="io - Win32 Debug" RECURSE=1 
+   cd ".."
+
+!ENDIF 
+
+SOURCE=.\DEM.cpp
+DEP_CPP_DEM_C=\
+	".\dem.hpp"\
+	
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+
+"$(INTDIR)\DEM.obj" : $(SOURCE) $(DEP_CPP_DEM_C) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+
+"$(INTDIR)\DEM.obj"	"$(INTDIR)\DEM.sbr" : $(SOURCE) $(DEP_CPP_DEM_C)\
+ "$(INTDIR)"
+
+
+!ENDIF 
+
+SOURCE=.\utm.cpp
+DEP_CPP_UTM_C=\
+	".\utm.hpp"\
+	
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+
+"$(INTDIR)\utm.obj" : $(SOURCE) $(DEP_CPP_UTM_C) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+
+"$(INTDIR)\utm.obj"	"$(INTDIR)\utm.sbr" : $(SOURCE) $(DEP_CPP_UTM_C)\
+ "$(INTDIR)"
+
+
+!ENDIF 
+
+SOURCE=.\Grid.cpp
+DEP_CPP_GRID_=\
+	".\grid.hpp"\
+	
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+
+"$(INTDIR)\Grid.obj" : $(SOURCE) $(DEP_CPP_GRID_) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+
+"$(INTDIR)\Grid.obj"	"$(INTDIR)\Grid.sbr" : $(SOURCE) $(DEP_CPP_GRID_)\
+ "$(INTDIR)"
+
+
+!ENDIF 
+
+SOURCE=.\ShredDEM.cpp
+DEP_CPP_SHRED=\
+	".\container\sc_Field.h"\
+	".\container\sc_MultiTypeValue.h"\
+	".\container\sc_Record.h"\
+	".\container\sc_Subfield.h"\
+	".\utm.hpp"\
+	".\dem.hpp"\
+	".\grid.hpp"\
+	".\io\sio_8211Converter.h"\
+	".\io\sio_8211Directory.h"\
+	".\io\sio_8211DirEntry.h"\
+	".\io\sio_8211DR.h"\
+	".\io\sio_8211DRLeader.h"\
+	".\io\sio_8211Field.h"\
+	".\io\sio_8211FieldArea.h"\
+	".\io\sio_8211FieldFormat.h"\
+	".\io\sio_8211Leader.h"\
+	".\io\sio_8211Record.h"\
+	".\io\sio_8211SubfieldFormat.h"\
+	".\io\sio_8211Utils.h"\
+	".\io\sio_Buffer.h"\
+	".\io\sio_Converter.h"\
+	".\io\sio_Reader.h"\
+	
+
+!IF  "$(CFG)" == "ShredDem - Win32 Release"
+
+
+"$(INTDIR)\ShredDEM.obj" : $(SOURCE) $(DEP_CPP_SHRED) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "ShredDem - Win32 Debug"
+
+
+"$(INTDIR)\ShredDEM.obj"	"$(INTDIR)\ShredDEM.sbr" : $(SOURCE) $(DEP_CPP_SHRED)\
+ "$(INTDIR)"
+
+
+!ENDIF 
+
+
+!ENDIF 
+

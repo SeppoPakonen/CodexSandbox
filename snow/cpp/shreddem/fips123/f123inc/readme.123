@@ -1,0 +1,6 @@
+directory:  ../fips123/f123inc
+
+This subdirectory contains the FIPS PUB 123 Function Library include
+files stc123.h and gvd123.h which are included in the Function Library
+source code when compiled with the ANSI C Compiler.
+

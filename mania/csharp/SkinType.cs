@@ -1,0 +1,26 @@
+public enum SkinType
+{
+	None,
+	Button,
+	Window,
+	Toggle,
+	mapSelectButton,
+	Label,
+	LabelGlow,
+	MenuButton,
+	VerticalScrollbar,
+	VerticalScrollBarThumb,
+	TextField,
+	asd,
+	HorizontalScrollBar,
+	HorizontalScrollBarThumb,
+	VerticalScrollbarUpButton,
+	VerticalScrollbarDownButton,
+	HorizontalScrollbarDownButton,
+	HorizontalScrollbarLeftButton,
+	HorizontalScrollbarRightButton,
+	horizontalSliderThumb,
+	horizontalSlider,
+	verticalSliderThumb,
+	verticalSlider
+}

@@ -1,0 +1,15 @@
+--------------------Configuration: mymodel - Win32 Debug--------------------
+Begining build with project "C:\Theyer\Projects\Library\myformat\mymodel.dsp", with item "myimage.c"
+Active configuration is Win32 (x86) Console Application (based on Win32 (x86) Console Application)
+
+
+Creating temp file "C:\WINDOWS\TEMP\RSP243.TMP" with contents </nologo /MLd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/mymodel.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Theyer\Projects\Library\myformat\myimage.c"
+>
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP243.TMP" 
+Compiling...
+myimage.c
+
+
+
+myimage.obj - 0 error(s), 0 warning(s)

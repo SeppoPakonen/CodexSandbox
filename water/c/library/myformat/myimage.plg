@@ -1,0 +1,34 @@
+--------------------Configuration: myimage - Win32 Debug--------------------
+Begining build with project "C:\Theyer\Projects\Library\myformat\myimage.dsp", with item "myimage.c"
+Active configuration is Win32 (x86) Console Application (based on Win32 (x86) Console Application)
+
+
+Creating temp file "C:\WINDOWS\TEMP\RSPB2F4.TMP" with contents </nologo /MLd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/myimage.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Theyer\Projects\Library\myformat\myimage.c"
+>
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPB2F4.TMP" 
+Compiling...
+myimage.c
+C:\Theyer\Projects\Library\myformat\myimage.c(83) : error C2065: 'binary' : undeclared identifier
+C:\Theyer\Projects\Library\myformat\myimage.c(85) : error C2065: 'data' : undeclared identifier
+C:\Theyer\Projects\Library\myformat\myimage.c(85) : error C2109: subscript requires array or pointer type
+C:\Theyer\Projects\Library\myformat\myimage.c(86) : error C2109: subscript requires array or pointer type
+C:\Theyer\Projects\Library\myformat\myimage.c(89) : warning C4047: '=' : 'int ' differs in levels of indirection from 'unsigned char *'
+C:\Theyer\Projects\Library\myformat\myimage.c(90) : warning C4047: '==' : 'int ' differs in levels of indirection from 'void *'
+C:\Theyer\Projects\Library\myformat\myimage.c(92) : warning C4047: 'function' : 'unsigned char *' differs in levels of indirection from 'int '
+C:\Theyer\Projects\Library\myformat\myimage.c(92) : warning C4024: 'binReadString' : different types for formal and actual parameter 2
+C:\Theyer\Projects\Library\myformat\myimage.c(96) : warning C4047: 'function' : 'unsigned char *' differs in levels of indirection from 'int '
+C:\Theyer\Projects\Library\myformat\myimage.c(96) : warning C4024: 'binReadString' : different types for formal and actual parameter 2
+C:\Theyer\Projects\Library\myformat\myimage.c(104) : warning C4020: 'mifTextureToGfxTexture' : too many actual parameters
+C:\Theyer\Projects\Library\myformat\myimage.c(108) : warning C4047: '=' : 'int ' differs in levels of indirection from 'unsigned char *'
+C:\Theyer\Projects\Library\myformat\myimage.c(109) : warning C4047: 'function' : 'unsigned char *' differs in levels of indirection from 'int '
+C:\Theyer\Projects\Library\myformat\myimage.c(109) : warning C4024: 'binReadInt' : different types for formal and actual parameter 1
+C:\Theyer\Projects\Library\myformat\myimage.c(110) : warning C4047: 'function' : 'unsigned char *' differs in levels of indirection from 'int '
+C:\Theyer\Projects\Library\myformat\myimage.c(110) : warning C4024: 'binReadShort' : different types for formal and actual parameter 1
+C:\Theyer\Projects\Library\myformat\myimage.c(111) : warning C4047: 'function' : 'unsigned char *' differs in levels of indirection from 'int '
+C:\Theyer\Projects\Library\myformat\myimage.c(111) : warning C4024: 'binReadShort' : different types for formal and actual parameter 1
+Error executing cl.exe.
+
+
+
+myimage.obj - 4 error(s), 14 warning(s)

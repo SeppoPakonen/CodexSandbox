@@ -1,0 +1,70 @@
+;/**********************************************************
+; * Copyright (C) 2001 TheyerGFX Pty Ltd
+; * All Rights Reserved
+; **********************************************************
+; * File:			vu0code.vsm
+; * Author:			Mark Theyer
+; * Created:		04 May 2001
+; **********************************************************
+; * Description:	PlayStation2 VU0 Microcode functions
+; **********************************************************
+; * Notes:	
+; *
+; *		VU0 Memory Map (256 quadwords in size)
+; *
+; **********************************************************
+; * Functions:
+; *
+; **********************************************************
+; * Revision History:
+; * 04-May-01	Theyer	Initial Coding.
+; **********************************************************/
+
+; Includes
+
+.include "vumacros.h"
+
+; Labels
+
+    .global vu0MicroCode
+    .global vu0CalcSwell
+
+; Init
+
+    .p2align 4		; This aligns the following data to quadword alignment
+    .DmaPackVif 0   ; specifies that the DMA tag will NOT be packed with VIFcodes
+
+; Code
+
+vu0MicroCode:
+
+    DMAend *
+    MPG 0, *        ; Upload program to address 0
+    .vu				; Must be used immediately before defining a VU microprogam
+
+;/**********************************************************
+; * Function:		vu0CalcSwell
+; **********************************************************
+; * Description:	Calculate swells for a set of points
+; * Data:	
+; *					------------------------------- point data
+; *					0   point 1
+; *					1   point 2
+; *					------------------------------- 
+; *
+; *					------------------------------- 
+; *
+; * Notes:			
+; *
+; **********************************************************/
+
+vu0CalcSwell:
+
+	; init
+	NOP[e]								NOP								
+	NOP 								NOP    							; delay slot
+
+	.EndMPG
+	.EndDmaData
+
+
