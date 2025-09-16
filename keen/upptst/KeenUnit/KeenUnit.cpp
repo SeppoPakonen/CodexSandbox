@@ -120,6 +120,9 @@ extern void RunKeenStateCounterTests();
 extern void RunKeenDemoRecordTests();
 extern void RunKeenDemoAutoTests();
 extern void RunKeenDemoPauseTests();
+extern void RunKeenTitleMenuTests();
+extern void RunKeenAutoDemoTimeoutTests();
+extern void RunKeenAutoDemoConfigTests();
 extern void RunKeenRfTests();
 
 END_UPP_NAMESPACE
@@ -145,5 +148,8 @@ CONSOLE_APP_MAIN {
     RunKeenDemoRecordTests();
     RunKeenDemoAutoTests();
     RunKeenDemoPauseTests();
+    RunKeenTitleMenuTests();
+    RunKeenAutoDemoTimeoutTests();
+    RunKeenAutoDemoConfigTests();
     LOG("KeenUnit: OK");
 }

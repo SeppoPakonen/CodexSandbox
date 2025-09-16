@@ -25,7 +25,8 @@ Thinking Log (design/state)
  - RF integration: `RF::State` has buffer tracking and switching; loop marks dirty tiles around player and switches buffers each present.
 - Game loop: `Game::RunDemoLoop` advances input/state/player with `Time::FrameRate`, renders overlay with state + ticks + pos.
 - HUD: Minimal `Game::Hud` that tracks score, shots, and a blink indicator; integrates with input (Fire pressed) and draws textual overlay. Added tests.
- - Demo mode: `Game::InjectDemo` injects Jump pulses and alternates Left/Right movement periodically; loop calls it when demo flag is on. Added auto-demo tests (jump and movement).
+- Demo mode: `Game::InjectDemo` injects Jump pulses and alternates Left/Right movement periodically; loop calls it when demo flag is on. Added auto-demo tests (jump and movement).
+ - Auto demo start: `AutoDemoTimeout` helper triggers demo start from Title after inactivity; loop uses it. Added tests. Overlay shows a DEMO banner when active.
 - Timing facade: Added `Time::Clock` with `DelayMs()` and `NowMs()`; will be used by gameplay loop and tick logic.
 - Binary IO helpers: Added `FS::Reader` and `FS::Writer` with `Read/Write(Int8/Int16LE/Int32LE/Bool16LE)` to replace FS_ReadIntXX/Write paths during future migrations.
 

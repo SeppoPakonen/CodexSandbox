@@ -15,6 +15,9 @@ void StateMachine::Step(Input::Device& in) {
     case Mode::Paused:
         if (in.WasPressed(Input::Device::Key::Up)) mode = Mode::Playing;
         break;
+    case Mode::HighScores:
+        if (in.WasPressed(Input::Device::Key::Jump)) mode = Mode::Title;
+        break;
     }
     // Toggle demo/record with Down/Right presses irrespective of mode
     if (in.WasPressed(Input::Device::Key::Down)) demo = !demo;

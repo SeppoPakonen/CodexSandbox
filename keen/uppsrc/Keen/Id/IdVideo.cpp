@@ -217,6 +217,10 @@ void Screen::DrawChar5x7(int x, int y, char ch, uint32_t colour) {
     if (ch >= '0' && ch <= '9') glyph = kGlyph5x7_Digits[ch - '0'];
     else if (ch == ':') glyph = kGlyph5x7_Colon;
     else if (ch >= 'A' && ch <= 'Z') glyph = kGlyph5x7_Upper[ch - 'A'];
+    else if (ch >= 'a' && ch <= 'z') glyph = kGlyph5x7_Upper[ch - 'a']; // fallback to uppercase glyphs
+    else if (ch == '!') { static const uint8_t g[5] = {0x00,0x00,0xFB,0x00,0x00}; glyph = g; }
+    else if (ch == '.') { static const uint8_t g[5] = {0x00,0x00,0x60,0x60,0x00}; glyph = g; }
+    else if (ch == '-') { static const uint8_t g[5] = {0x00,0x08,0x08,0x08,0x00}; glyph = g; }
     else if (ch == ' ') return; // space
     if (!glyph) return;
     // Render 5 columns x 7 rows

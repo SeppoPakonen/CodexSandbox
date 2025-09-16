@@ -5,11 +5,12 @@ namespace Game {
 
 class StateMachine {
 public:
-    enum class Mode { Title, Playing, Paused };
+    enum class Mode { Title, Playing, Paused, HighScores };
     void Reset() { mode = Mode::Title; }
     void Step(Input::Device& in);
     void Update(int ticks);
     Mode Get() const { return mode; }
+    void SetMode(Mode m) { mode = m; }
     const char* Name() const;
     int Counter() const { return counter; }
     // Demo/Record flags (resource-agnostic toggles)

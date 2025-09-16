@@ -42,6 +42,21 @@ void InjectDemo(Input::Device& in, StateMachine& sm, int& demo_accum, int ticks)
     }
 }
 
+bool AutoDemoTimeout(int& idle_accum, int ticks, int thresholdTicks) {
+    idle_accum += ticks;
+    if (idle_accum >= thresholdTicks) { idle_accum = 0; return true; }
+    return false;
+}
+
+int ComputeAutoDemoThresholdTicks(const AppTime::FrameRate& fr) {
+    int ms = Config::Store::Instance().GetInt("auto_demo_ms", 5000);
+    int base = fr.BaseMs();
+    if (base <= 0) base = 14;
+    int ticks = ms / base;
+    if (ticks < 70) ticks = 70; // at least ~1s
+    return ticks;
+}
+
 void RunDemoLoop(int frames) {
     Video::Screen s;
     s.SetSize(160, 120);
@@ -55,6 +70,7 @@ void RunDemoLoop(int frames) {
     player.Reset();
     StateMachine sm; sm.Reset();
     Hud hud; hud.Reset();
+    TitleMenu menu; menu.Reset();
 
     AppTime::FrameRate fr(14, 2, 5, 3);
     uint32_t last = AppTime::Clock::NowMs();
@@ -64,6 +80,8 @@ void RunDemoLoop(int frames) {
     int prevy = player.Y();
 
     int demo_accum = 0;
+    int title_idle = 0;
+    int auto_demo_threshold = ComputeAutoDemoThresholdTicks(fr);
     for (int f = 0; f < frames; ++f) {
         uint32_t now = AppTime::Clock::NowMs();
         uint32_t elapsed = now - last;
@@ -72,16 +90,38 @@ void RunDemoLoop(int frames) {
         int ticks = fr.ComputeTicks(elapsed);
         InjectDemo(in, sm, demo_accum, ticks);
         in.Poll();
-        sm.Step(in);
-        sm.Update(ticks);
-        player.Step(in, ticks);
+        if (sm.Get() == StateMachine::Mode::Title) {
+            // Process title menu input
+            auto act = menu.Step(in);
+            if (act == TitleMenu::Action::Start) {
+                sm.SetMode(StateMachine::Mode::Playing);
+            } else if (act == TitleMenu::Action::StartDemo) {
+                sm.SetDemo(true);
+                sm.SetMode(StateMachine::Mode::Playing);
+            } else {
+                // Auto-start demo after timeout without input
+                if (AutoDemoTimeout(title_idle, ticks, auto_demo_threshold)) {
+                    sm.SetDemo(true);
+                    sm.SetMode(StateMachine::Mode::Playing);
+                }
+            }
+        } else {
+            sm.Step(in);
+            sm.Update(ticks);
+            player.Step(in, ticks);
+        }
         hud.Update(in, ticks);
 
         // Draw background and player as a simple 3x3 white box
         s.Clear(0xff102020);
-        int px = player.X() >> 4; // scale units to pixels
-        int py = (player.Y() >> 4);
-        s.DrawRect(80 + px, 60 - py, 3, 3, 0xffffffff);
+        if (sm.Get() == StateMachine::Mode::Title) {
+            menu.Draw(s);
+            menu.Update(ticks);
+        } else {
+            int px = player.X() >> 4; // scale units to pixels
+            int py = (player.Y() >> 4);
+            s.DrawRect(80 + px, 60 - py, 3, 3, 0xffffffff);
+        }
         // Mark dirty tiles around previous and current positions
         auto mark_dirty = [&](int ux, int uy){
             int sx = 80 + (ux >> 4);
@@ -93,9 +133,11 @@ void RunDemoLoop(int frames) {
                     rf.MarkBlockDirty(mx, my, 1, rf.GetActiveBuffer());
                 }
         };
-        mark_dirty(prevx, prevy);
-        mark_dirty(player.X(), player.Y());
-        prevx = player.X(); prevy = player.Y();
+        if (sm.Get() != StateMachine::Mode::Title) {
+            mark_dirty(prevx, prevy);
+            mark_dirty(player.X(), player.Y());
+            prevx = player.X(); prevy = player.Y();
+        }
 
         // Compute bounding rect between previous and current positions and request update
         int old_px = 80 + (prevx >> 4);
@@ -119,7 +161,11 @@ void RunDemoLoop(int frames) {
             s.DrawRect(40, 40, 80, 40, 0xff000000);
             s.DrawText5x7(58, 58, "PAUSE", 0xffffffff);
         }
-        hud.Draw(s);
+        // DEMO banner
+        if (sm.IsDemo())
+            s.DrawText5x7(120, 2, "DEMO", 0xffffff00);
+        if (sm.Get() != StateMachine::Mode::Title)
+            hud.Draw(s);
         s.SwapOnNextPresent();
         s.Present();
         rf.SwitchBuffer();

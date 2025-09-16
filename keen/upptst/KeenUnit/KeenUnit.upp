@@ -21,7 +21,10 @@ file
 	KeenDemoRecordTest.cpp,
 	KeenDemoAutoTest.cpp,
 	KeenDemoMoveTest.cpp,
-	KeenDemoPauseTest.cpp;
+	KeenDemoPauseTest.cpp,
+	KeenTitleMenuTest.cpp,
+	KeenAutoDemoTimeoutTest.cpp,
+	KeenAutoDemoConfigTest.cpp;
 
 mainconfig
 	"" = "";
