@@ -1,0 +1,12 @@
+description "Minimal math types for Mania port.";
+
+uses
+	Core;
+
+file
+	AGENTS.md,
+	CURRENT_TASK.md,
+	ManiaMath.h options(BUILDER_OPTION) PCH,
+	Vec.h,
+	Vec.cpp;
+

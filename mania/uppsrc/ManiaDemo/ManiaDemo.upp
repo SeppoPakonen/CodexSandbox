@@ -1,0 +1,18 @@
+description "Console demo for Mania packages (AlphaNum, Triangulator).\377";
+
+uses
+	Core,
+	ManiaCore,
+	ManiaMath,
+	ManiaGeometry,
+	ManiaCurvy;
+
+file
+	AGENTS.md,
+	CURRENT_TASK.md,
+	ManiaDemo.h options(BUILDER_OPTION) PCH,
+	Main.cpp;
+
+mainconfig
+	"" = "";
+

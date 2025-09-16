@@ -1,0 +1,34 @@
+uses
+	Core;
+
+file
+	AGENTS.md,
+	Id.h,
+	IdMm.h,
+	IdMm.cpp,
+	IdFs.h,
+	IdFs.cpp,
+	IdTime.h,
+	IdTime.cpp,
+	IdCfg.h,
+	IdCfg.cpp,
+	IdInput.h,
+	IdInput.cpp,
+	IdVideo.h,
+	IdVideo.cpp,
+	IdAudio.h,
+	IdAudio.cpp,
+	IdCa.h,
+	IdCa.cpp,
+	IdVh.h,
+	IdVh.cpp,
+	IdRf.h,
+	IdRf.cpp,
+	IdSprites.h,
+	IdSprites.cpp,
+	IdStr.h,
+	IdStr.cpp;
+
+mainconfig
+	"" = "";
+

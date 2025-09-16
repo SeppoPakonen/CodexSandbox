@@ -1,0 +1,28 @@
+uses
+	Core,
+	Keen/Id;
+
+file
+	AGENTS.md,
+	Game.h,
+	Game.cpp,
+	Map.h,
+	Map.cpp,
+	Assets.h,
+	Assets.cpp,
+	Resources.h,
+	Resources.cpp,
+	Player.h,
+	Player.cpp,
+	Loop.h,
+	Loop.cpp,
+	State.h,
+	State.cpp,
+	Hud.h,
+	Hud.cpp,
+	TitleMenu.h,
+	TitleMenu.cpp;
+
+mainconfig
+	"" = "";
+

@@ -1,0 +1,11 @@
+uses
+	Core;
+
+file
+	AGENTS.md,
+	Opl.h,
+	Opl.cpp;
+
+mainconfig
+	"" = "";
+

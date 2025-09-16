@@ -1,0 +1,14 @@
+description "Geometry algorithms for Mania port (triangulation, etc.).";
+
+uses
+	Core,
+	ManiaMath;
+
+file
+	AGENTS.md,
+	CURRENT_TASK.md,
+	ManiaGeometry.h options(BUILDER_OPTION) PCH,
+	Triangulator.h,
+	Triangulator.cpp,
+	Poly.h,
+	Poly.cpp;

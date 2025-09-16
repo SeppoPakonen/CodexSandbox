@@ -1,0 +1,28 @@
+uses
+	Core,
+	Keen/Id,
+	Keen/Game,
+	Keen;
+
+file
+	KeenUnit.h,
+	KeenUnit.cpp,
+	KeenSpritesTest.cpp,
+	KeenCacheTest.cpp,
+	KeenVhTest.cpp,
+	KeenRfTest.cpp,
+	KeenInputTimeTest.cpp,
+	KeenPlayerTest.cpp,
+	KeenFrameRateTest.cpp,
+	KeenStateTest.cpp,
+	KeenBufferSyncTest.cpp,
+	KeenHudTest.cpp,
+	KeenStateCounterTest.cpp,
+	KeenDemoRecordTest.cpp,
+	KeenDemoAutoTest.cpp,
+	KeenDemoMoveTest.cpp,
+	KeenDemoPauseTest.cpp;
+
+mainconfig
+	"" = "";
+

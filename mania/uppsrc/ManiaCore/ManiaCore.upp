@@ -1,0 +1,24 @@
+description "Core helpers for Mania port (engine-agnostic).\377";
+
+uses
+	Core;
+
+file
+	AGENTS.md,
+	CURRENT_TASK.md,
+	ManiaCore.h options(BUILDER_OPTION) PCH,
+	AlphaNum.h,
+	AlphaNum.cpp,
+	Utils.h,
+	Utils.cpp,
+	Hash.h,
+	Hash.cpp,
+	Http.h,
+	Http.cpp,
+	Scheduler.h,
+	Scheduler.cpp,
+	Prefs.h,
+	Prefs.cpp,
+	Logger.h,
+	Logger.cpp;
+

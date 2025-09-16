@@ -3,199 +3,203 @@
 uint8 * RES_gamecube;
 
 void MemManagerHandlePushContext(Mem::Allocator* alloc)  {
-	TODO
+	Mem::Manager::sHandle().PushContext(alloc);
 }
 
 void MemManagerHandlePopContext(void)  {
-	TODO
+	Mem::Manager::sHandle().PopContext();
 }
 
 void* MemManagerHandleNew(size_t size, bool assert_on_fail, Mem::Allocator* pAlloc)  {
-	TODO
+	return Mem::Manager::sHandle().New(size, assert_on_fail, pAlloc);
 }
 
 int MemManagerHandleAvailable()  {
-	TODO
+	return Mem::Manager::sHandle().Available();
 }
 
 void* MemManagerHandleReallocateDown(size_t newSize, void *pOld, Mem::Allocator* pAlloc)  {
-	TODO
+	return Mem::Manager::sHandle().ReallocateDown(newSize, pOld, pAlloc);
 }
 
 void* MemManagerHandleReallocateUp(size_t newSize, void *pOld, Mem::Allocator* pAlloc)  {
-	TODO
+	return Mem::Manager::sHandle().ReallocateUp(newSize, pOld, pAlloc);
 }
 
 void* MemManagerHandleReallocateShrink(size_t newSize, void *pOld, Mem::Allocator* pAlloc)  {
-	TODO
+	return Mem::Manager::sHandle().ReallocateShrink(newSize, pOld, pAlloc);
 }
 
 void MemManagerHandleDelete(void* pAddr)  {
-	TODO
+	Mem::Manager::sHandle().Delete(pAddr);
 }
 
 bool MemManagerHandleValid(void* pAddr)  {
-	TODO
+	return Mem::Manager::sHandle().Valid(pAddr);
 }
 
 size_t MemManagerHandleGetAllocSize(void* pAddr)  {
-	TODO
+	return Mem::Manager::sHandle().GetAllocSize(pAddr);
 }
 
 Mem::Heap* MemManagerHandleTopDownHeap()  {
-	TODO
+	return Mem::Manager::sHandle().TopDownHeap();
 }
 
 Mem::Heap* MemManagerHandleBottomUpHeap()  {
-	TODO
+	return Mem::Manager::sHandle().BottomUpHeap();
 }
 
 Mem::Heap* MemManagerHandleFrontEndHeap()  {
-	TODO
+	return Mem::Manager::sHandle().FrontEndHeap();
 }
 
 Mem::Heap* MemManagerHandleScriptHeap()  {
-	TODO
+	return Mem::Manager::sHandle().ScriptHeap();
 }
 
 Mem::Heap* MemManagerHandleNetworkHeap()  {
-	TODO
+	return Mem::Manager::sHandle().NetworkHeap();
 }
 
 Mem::Heap* MemManagerHandleNetMiscHeap()  {
-	TODO
+	return Mem::Manager::sHandle().NetMiscHeap();
 }
 
 Mem::Heap* MemManagerHandleProfilerHeap()  {
-	TODO
+	return Mem::Manager::sHandle().ProfilerHeap();
 }
 
 Mem::Heap* MemManagerHandleDebugHeap()  {
-	TODO
+	return Mem::Manager::sHandle().DebugHeap();
 }
 
 Mem::Heap* MemManagerHandleSkaterHeap(int n)  {
-	TODO
+	return Mem::Manager::sHandle().SkaterHeap(n);
 }
 
 Mem::Heap* MemManagerHandleSkaterInfoHeap()  {
-	TODO
+	return Mem::Manager::sHandle().SkaterInfoHeap();
 }
 
 Mem::Heap* MemManagerHandleSkaterGeomHeap(int n)  {
-	TODO
+	return Mem::Manager::sHandle().SkaterGeomHeap(n);
 }
 
 Mem::Heap* MemManagerHandleInternetTopDownHeap()  {
-	TODO
+	return Mem::Manager::sHandle().InternetTopDownHeap();
 }
 
 Mem::Heap* MemManagerHandleInternetBottomUpHeap()  {
-	TODO
+	return Mem::Manager::sHandle().InternetBottomUpHeap();
 }
 
 Mem::Heap* MemManagerHandleThemeHeap()  {
-	TODO
+	return Mem::Manager::sHandle().ThemeHeap();
 }
 
 Mem::Heap* MemManagerHandleCutsceneTopDownHeap()  {
-	TODO
+	return Mem::Manager::sHandle().CutsceneTopDownHeap();
 }
 
 Mem::Heap* MemManagerHandleCutsceneBottomUpHeap()  {
-	TODO
+	return Mem::Manager::sHandle().CutsceneBottomUpHeap();
 }
 
 Mem::Heap* MemManagerHandleAudioHeap()  {
-	TODO
+	return Mem::Manager::sHandle().AudioHeap();
 }
 
 Mem::Heap* MemManagerHandleGetHeap(u32 whichHeap)  {
-	TODO
+	return Mem::Manager::sHandle().GetHeap(whichHeap);
 }
 
 void MemManagerHandleRemoveHeap(Mem::Heap* heap)  {
-	TODO
+	Mem::Manager::sHandle().RemoveHeap(heap);
 }
 
 int  MemManagerHandleGetContextDirection()  {
-	TODO
+	return (int)Mem::Manager::sHandle().GetContextDirection();
 }
 
 void MemManagerHandleInitCutsceneHeap(int heap_size)  {
-	TODO
+	Mem::Manager::sHandle().InitCutsceneHeap(heap_size);
 }
 
 void MemManagerHandleDeleteCutsceneHeap()  {
-	TODO
+	Mem::Manager::sHandle().DeleteCutsceneHeap();
 }
 
 Mem::Allocator* MemManagerHandleGetContextAllocator()  {
-	TODO
+	return Mem::Manager::sHandle().GetContextAllocator();
 }
 
 void MemManagerHandleDeleteSkaterHeaps()  {
-	TODO
+	Mem::Manager::sHandle().DeleteSkaterHeaps();
 }
 
 void MemManagerHandleInitNetMiscHeap()  {
-	TODO
+	Mem::Manager::sHandle().InitNetMiscHeap();
 }
 
 void MemManagerHandleDeleteNetMiscHeap()  {
-	TODO
+	Mem::Manager::sHandle().DeleteNetMiscHeap();
 }
 
 void MemManagerHandleInitOtherHeaps()  {
-	TODO // Get MemManager and call InitOtherHeaps
+	Mem::Manager::sHandle().InitOtherHeaps();
 }
 
 void MemManagerHandlePushMemoryMarker(int marker)  {
-	TODO
+	Mem::Manager::sHandle().PushMemoryMarker((uint32)marker);
 }
 
 void MemManagerHandlePopMemoryMarker(int marker)  {
-	TODO
+	Mem::Manager::sHandle().PopMemoryMarker((uint32)marker);
 }
 
 void MemManagerHandleInitSkaterHeaps(unsigned int num_skater_heaps_required)  {
-	TODO
+	Mem::Manager::sHandle().InitSkaterHeaps((int)num_skater_heaps_required);
 }
 
 char* MemManagerHandleGetContextName()  {
-	TODO
+	return Mem::Manager::sHandle().GetContextName();
 }
 
 Mem::Heap* MemManagerHandleCreateHeap(Mem::Region* region, int dir, char* p_name)  {
-	TODO
+	return Mem::Manager::sHandle().CreateHeap(region, (Mem::Allocator::Direction)dir, p_name);
 }
 
 void* get_font_file_address(const char * p_filename) {
-	TODO
+	// TODO: Provide lookup for permanent font data within RES_gamecube.
+	// For now, return NULL to indicate not found.
+	return NULL;
 }
 
-extern "C" {
+	extern "C" {
 
 	void RenderNewParticles(Nx::CParticleStream * p_stream, float lifetime, float midpercent, bool use_mid_color, Image::RGBA * p_color0, Mth::Vector * p0, Mth::Vector * sr, Mth::Vector * su, float * p_params, float nearz) {
-		TODO
+		// TODO: Implement platform-specific particle rendering hook if needed.
 	}
 	
 }
 
 unsigned int AllocatorGetId(void* addr) {
-	TODO
+	return Mem::Allocator::sGetId(addr);
 }
 
 int  CreateSema(SemaParam* params) {
-	TODO
+	// Stub for non-PS2 platforms. Returns a dummy semaphore ID.
+	(void)params;
+	return 0;
 }
 
 void DeleteSema(int sema_id) {
-	TODO
+	(void)sema_id;
 }
 
 void WaitSema(int sema_id) {
-	TODO
+	(void)sema_id;
 }
 
 void SignalSema(int sema_id) {
@@ -217,4 +221,3 @@ const char* kConnectionTypeDescs[] = {
 	"Modem, PPP",
 	"Modem, AOL PPP"
 };
-

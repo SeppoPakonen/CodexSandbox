@@ -1,0 +1,15 @@
+description "Curvy spline math for Mania port (engine-agnostic).\377";
+
+uses
+	Core,
+	ManiaMath;
+
+file
+	AGENTS.md,
+	CURRENT_TASK.md,
+	ManiaCurvy.h options(BUILDER_OPTION) PCH,
+	CurvySpline.h,
+	CurvySpline.cpp,
+	CurvyDump.h,
+	CurvyDump.cpp;
+
