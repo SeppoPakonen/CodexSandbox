@@ -57,5 +57,6 @@ typedef struct WinKey_Str {
 	int upCnt;
 } WinKey;
 
+extern WinKey winKey;
 
 #endif

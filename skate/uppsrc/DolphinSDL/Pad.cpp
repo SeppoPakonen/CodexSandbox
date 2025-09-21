@@ -1,6 +1,6 @@
 #include "DolphinSDL.h"
 
-extern WinKey winKey;
+WinKey winKey;
 
 
 

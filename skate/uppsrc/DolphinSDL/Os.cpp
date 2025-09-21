@@ -228,6 +228,8 @@ BOOL OSCreateThread(OSThread*  thread,
 		u32        stackSize,
 		OSPriority priority,
 		u16        attr) {
+	TODO
+	#if 0
 	pthread_t tid;
 	int ret = pthread_create(&tid, NULL, func, param);
 	if (ret != 0) {
@@ -235,6 +237,7 @@ BOOL OSCreateThread(OSThread*  thread,
 	}
 	*thread = (OSThread) tid;
 	return 1;
+	#endif
 }
         
 void OSSetAlarm(OSAlarm* alarm, OSTime tick, OSAlarmHandler handler) {
@@ -290,11 +293,11 @@ void OSTicksToCalendarTime(OSTime ticks, OSCalendarTime* td) {
 	time_t t = ticks / 1000;
 	struct tm *tm_info = localtime(&t);
 	td->year   = tm_info->tm_year + 1900;
-	td->month  = tm_info->tm_mon + 1;
-	td->day    = tm_info->tm_mday;
+	td->mon  = tm_info->tm_mon + 1;
+	td->mday    = tm_info->tm_mday;
 	td->hour   = tm_info->tm_hour;
-	td->minute = tm_info->tm_min;
-	td->second = tm_info->tm_sec;
+	td->min = tm_info->tm_min;
+	td->sec = tm_info->tm_sec;
 }
 
 void OSWakeupThread(OSThreadQueue* queue) {
