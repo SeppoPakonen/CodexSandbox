@@ -5,7 +5,8 @@ extern WinKey winKey;
 
 
 BOOL PADInit() {
-    // Initialize the winKey structure
+    // SDL-versiossa käytetään yksinkertaistettua alustusta.
+    // Huomaa: DolphinWin/Pad.cpp:ssa tehdään laajempi alustaminen (esim. DirectInput-käyttö).
     winKey.button = 0;
     winKey.stickX = 0;
     winKey.stickY = 0;
