@@ -127,6 +127,7 @@ int main() {
     {   
 #endif //__SINGLEFRAME
         DEMOBeforeRender();
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         DrawTick(v);        // Draw the model.
         DEMODoneRender();
         AnimTick(v);        // Update animation.
