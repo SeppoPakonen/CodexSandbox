@@ -5,8 +5,19 @@ extern WinKey winKey;
 
 
 BOOL PADInit() {
-	
-	return TRUE;
+    // Initialize the winKey structure
+    winKey.button = 0;
+    winKey.stickX = 0;
+    winKey.stickY = 0;
+    winKey.substickX = 0;
+    winKey.substickY = 0;
+    winKey.triggerLeft = 0;
+    winKey.triggerRight = 0;
+    memset(winKey.down, 0, sizeof(winKey.down));
+    winKey.downCnt = 0;
+    memset(winKey.up, 0, sizeof(winKey.up));
+    winKey.upCnt = 0;
+    return TRUE;
 }
 
 
