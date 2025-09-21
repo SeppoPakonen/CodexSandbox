@@ -17,7 +17,7 @@
 **	Description:	Vector Math Class										**
 **																			**
 *****************************************************************************/
-
+ 
 #ifndef __CORE_MATH_GEOMETRY_H
 #define __CORE_MATH_GEOMETRY_H
 
@@ -351,4 +351,3 @@ inline bool CBBox::CouldIntersect(const Vector &v0, const Vector &v1, const Vect
 } // namespace Mth
 
 #endif // __CORE_MATH_GEOMETRY_H
-

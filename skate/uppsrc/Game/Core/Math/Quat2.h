@@ -18,7 +18,7 @@
 **	Description:	Quaternion Math Class									**
 **																			**
 *****************************************************************************/
-
+ 
 #ifndef __CORE_MATH_QUAT_H
 #define __CORE_MATH_QUAT_H
 
@@ -139,5 +139,4 @@ void SCacheQuatVecToMatrix( Mth::Quat* pQ, Mth::Vector* pT, Mth::Matrix* pMatrix
 } // namespace Mth
 
 #endif // __CORE_MATH_QUAT_H
-
 

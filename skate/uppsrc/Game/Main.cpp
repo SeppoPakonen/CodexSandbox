@@ -139,19 +139,6 @@ Dbg_DefineProject( PS2, "Test Project" )
 **								  Externals									**
 *****************************************************************************/
 
-extern "C"
-{
-#ifdef __PLAT_XBOX__
-int pre_main( void );
-#endif
-#ifdef __PLAT_NGC__
-void __init_vm(void);
-#endif
-#ifdef __PLAT_NGPS__
-void pre_main( void );
-#endif
-void post_main( void );
-}
 
 /*****************************************************************************
 **								   Defines									**
@@ -183,15 +170,7 @@ void post_main( void );
 **							   Public Functions								**
 *****************************************************************************/
 
-#ifdef __PLAT_XBOX__
-int pre_main( void )
-#endif
-#ifdef __PLAT_NGC__
-void __init_vm( void )
-#endif
-#ifdef __PLAT_NGPS__
-void pre_main( void )
-#endif
+void pre_main()
 {
 	DEBUG_FLASH(0x07f7f7f);		// initial white
 
@@ -212,18 +191,8 @@ void pre_main( void )
 
 	DEBUG_FLASH(0x02050);		// brown
 
-#ifdef __PLAT_XBOX__
-	// Must return 0 here, as this is called from CRT initialization code.
-	return 0;
 }
 
-#pragma data_seg( ".CRT$RIX" )
-static int (*_mypreinit)(void) = pre_main;
-#pragma data_seg()
-
-#else
-}
-#endif
 
 /******************************************************************/
 /*                                                                */
@@ -246,6 +215,9 @@ void mat_test(Mth::Matrix A,Mth::Matrix B,Mth::Matrix C);
 
 int main ( sint argc, char** argv )
 {
+	// INITBLOCK
+	pre_main();
+	
 #ifdef __PLAT_NGC__
 #ifdef DVDETH
 	// Defaults
@@ -819,6 +791,8 @@ extern uint8 * RES_gamecube;
 	mat_test(A,B,C);
 	}
 
+	// EXITBLOCK
+	post_main();
 
 	return 0;
 }

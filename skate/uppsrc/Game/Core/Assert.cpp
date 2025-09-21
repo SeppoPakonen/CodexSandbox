@@ -1,4 +1,5 @@
 #include "Core.h"
+#include <Core/Core.h>
 
 /*****************************************************************************
 **																			**
@@ -312,5 +313,12 @@ void		assert_vcc( char* file, uint line, char* reason )
 *****************************************************************************/
 
 } // namespace Dbg
+
+
+/*namespace SDK {
+void Panic(::SDK::String s) {
+	int* i = 0; *i = 0;
+}
+}*/
 
 #endif	//__NOPT_DEBUG__

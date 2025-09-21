@@ -17,7 +17,7 @@
 **	Description:	4x4 Matrix Math Class									**
 **																			**
 *****************************************************************************/
-
+ 
 #ifndef __CORE_MATH_MATRIX_H
 #define __CORE_MATH_MATRIX_H
 
@@ -188,4 +188,3 @@ Matrix&		CreateMatrixOrtho( Matrix& mat, float width, float height, float f_near
 } // namespace Mth
 
 #endif // __CORE_MATH_MATRIX_H
-

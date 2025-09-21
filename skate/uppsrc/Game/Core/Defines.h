@@ -393,13 +393,13 @@ extern  uint32	check_checksum(uint32 _i, const char *_s, const char *f, int line
 //// these definitions override the new and delete operators.
 //
 #ifdef __PLAT_NGC__
-inline void* operator new       ( size_t blocksize ) ;
+void* operator new       ( size_t blocksize ) ;
 
-inline void* operator new[]     ( size_t blocksize ) ;
+void* operator new[]     ( size_t blocksize ) ;
 
-inline void operator delete     ( void* block ) ;
+void operator delete     ( void* block ) ;
 
-inline void operator delete[]   ( void* block ) ;
+void operator delete[]   ( void* block ) ;
 #endif		// __PLAT_NGC__
 //
 //#else

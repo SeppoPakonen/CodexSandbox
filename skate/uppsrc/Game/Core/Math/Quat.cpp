@@ -1,4 +1,4 @@
-#include "Core.h"
+#include "Math.h"
 
 //#include <math.h>
 //#include "p_quat.h"
@@ -71,7 +71,6 @@
 //	m_quat.z	= fBeta * pQ0.m_quat.z + fAlphaQ * pQ1.m_quat.z;
 //	m_quat.w	= fBeta * pQ0.m_quat.w + fAlphaQ * pQ1.m_quat.w;
 //}
-
 
 
 

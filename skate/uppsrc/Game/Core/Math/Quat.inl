@@ -17,7 +17,7 @@
 **	Description:	Quaternion Math Class									**
 **																			**
 *****************************************************************************/
-
+ 
 #ifndef __CORE_MATH_QUAT_INL
 #define __CORE_MATH_QUAT_INL
 
@@ -812,4 +812,3 @@ inline Mth::Quat EulerToQuat( const Mth::Vector& euler )
 } // namespace Mth
 
 #endif // __CORE_MATH_QUAT_INL
-

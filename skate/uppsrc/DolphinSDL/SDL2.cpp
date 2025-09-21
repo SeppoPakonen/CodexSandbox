@@ -384,9 +384,6 @@ void SDL2::KeyboardPad(int key, bool down) {
 
 #else
 
-
-void WinSwapBuffers() {
-	TODO
-}
+// Disabled minimal stub; provided by Vi.cpp implementation
 
 #endif

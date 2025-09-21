@@ -53,6 +53,8 @@
 #define		STICKY_WALLRIDES		 // attempt to snap sideways to wallrides
 
 // temp debug macros
+#undef DUMPC
+#undef DUMPM
 #define MESSAGE(a) { printf("M:%s:%i: %s\n", __FILE__ + 15, __LINE__, a); }
 #define DUMPI(a) { printf("D:%s:%i: " #a " = %i\n", __FILE__ + 15, __LINE__, a); }
 #define DUMPB(a) { printf("D:%s:%i: " #a " = %s\n", __FILE__ + 15, __LINE__, a ? "true" : "false"); }

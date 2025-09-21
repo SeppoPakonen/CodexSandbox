@@ -1,4 +1,4 @@
-#include "Core.h"
+#include "Math.h"
 
 /*****************************************************************************
 **																			**
@@ -559,6 +559,5 @@ void CBBox::GetClosestIntersectPoint(const Mth::Vector &pos, Mth::Vector &point)
 
 
 }
-
 
 

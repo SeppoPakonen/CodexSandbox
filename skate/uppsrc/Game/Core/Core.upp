@@ -2,6 +2,9 @@ description "\377B128,0,0";
 
 noblitz;
 
+uses
+	Game/Core/Math;
+
 file
 	Core.h,
 	Alloc.cpp,
@@ -12,9 +15,6 @@ file
 	Assert.h,
 	Atomic.cpp,
 	Atomic.h,
-	BBox2.h,
-	BBox.cpp,
-	BBox.h,
 	Buffer.cpp,
 	Buffer.h,
 	Chars.cpp,
@@ -44,8 +44,6 @@ file
 	Flags.h,
 	Frame.cpp,
 	Frame.h,
-	Geometry.cpp,
-	Geometry.h,
 	Handle.h,
 	HashId.cpp,
 	HashId.h,
@@ -59,13 +57,6 @@ file
 	Lock.h,
 	Macros.h,
 	Math2.h,
-	Math.cpp,
-	Math.h,
-	Matrix2.cpp,
-	Matrix2.h,
-	Matrix.cpp,
-	Matrix.h,
-	Matrix.inl,
 	MemPtr.h,
 	ObjPtr.cpp,
 	ObjPtr.h,
@@ -79,11 +70,6 @@ file
 	Profile.h,
 	Profiler.cpp,
 	Profiler.h,
-	Quat2.h,
-	Quat.cpp,
-	Quat.h,
-	Quat.inl,
-	Rect.h,
 	String.cpp,
 	String.h,
 	StringHashTable.h,
@@ -100,12 +86,5 @@ file
 	Timer.cpp,
 	Timer.h,
 	TimestampedFlag.h,
-	Types.h,
-	Vector2.cpp,
-	Vector2.h,
-	Vector.cpp,
-	Vector.h,
-	Vector.inl,
-	VectorPair.cpp,
-	VectorPair.h;
+	Types.h;
 

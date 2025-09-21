@@ -18,8 +18,8 @@
 **																			**
 *****************************************************************************/
 
-#ifndef __CORE_MATH_MATH_H
-#define __CORE_MATH_MATH_H
+#ifndef __CORE_MATH_MATHCORE_H
+#define __CORE_MATH_MATHCORE_H
 
 /*****************************************************************************
 **								   Includes									**

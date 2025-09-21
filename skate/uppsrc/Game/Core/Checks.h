@@ -131,12 +131,14 @@ if( !( _c ))													\
 // then we don not have the Dbg_signature thing
 // so we just pass NULL to assert()
 
+#undef Dbg_Assert
 #define Dbg_Assert(_c)  										\
 																\
 if ( !(_c))														\
 {																\
 	Dbg::Assert ( __FILE__, __LINE__, NULL );					\
 }
+
 
 /******************************************************************/
 /*                                                                */

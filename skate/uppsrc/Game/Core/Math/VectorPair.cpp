@@ -1,4 +1,4 @@
-#include "Core.h"
+#include "Math.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////
 //
@@ -36,4 +36,3 @@ CPair::CPair()
 // Note: No destructor needed.
 
 } // namespace Script
-

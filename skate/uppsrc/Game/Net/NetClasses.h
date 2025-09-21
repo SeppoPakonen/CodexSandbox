@@ -72,8 +72,10 @@
 #define in_addr SOInAddr
 #define sockaddr_in SOSockAddrIn
 #define sockaddr SOSockAddr
-#define AF_INET         SO_PF_INET              /* internetwork: UDP, TCP, etc. */
-#define PF_INET         AF_INET
+#ifndef AF_INET
+	#define AF_INET         SO_PF_INET              /* internetwork: UDP, TCP, etc. */
+	#define PF_INET         AF_INET
+#endif
 #define htonl(l)        SOHtoNl(l)
 #define ntohl(l)        SONtoHl(l)
 #define htons(s)        SOHtoNs(s)
@@ -83,8 +85,10 @@
 #define sin_addr addr
 #define sin_zero zero
 #define s_addr addr
-#define INADDR_ANY	SO_INADDR_ANY
-#define IPPROTO_UDP 0
+#ifndef INADDR_ANY
+	#define INADDR_ANY	SO_INADDR_ANY
+	#define IPPROTO_UDP 0
+#endif
 
 #define accept(s,addr,addrlen) SOAccept(s,addr)
 #define bind(s,addr,addrlen) SOBind(s,addr)
@@ -109,7 +113,7 @@
 #define sockAPIderegthr() 0
 #define socket(af,type,protocol) SOSocket(af,type,protocol)
 
-
+#ifndef ENOBUFS
 #define ENOBUFS         1
 #define ETIMEDOUT       2
 #define EISCONN         3
@@ -126,17 +130,18 @@
 #define EDESTADDRREQ    14
 #define ESHUTDOWN       15
 #define ENOPROTOOPT     16
-#define EHAVEOOB        17
 #define ENOMEM          18
 #define EADDRNOTAVAIL   19
 #define EADDRINUSE      20
 #define EAFNOSUPPORT    21
 #define EINPROGRESS     22
-#define ELOWER          23
 #define EBADF           24
 
 #define SOCK_STREAM     1               /* stream socket */
 #define SOCK_DGRAM      2               /* datagram socket */
+#endif
+#define EHAVEOOB        17
+#define ELOWER          23
 
 #ifndef SO_DEBUG
 #define SO_DEBUG        0x0001          /* turn on debugging info recording */
@@ -172,10 +177,12 @@
 #define SO_BIO          0x1014          /* Set socket blocking */
 #define SO_NONBLOCK     0x1015          /* Set/get blocking state */
 
+#ifndef MSG_OOB
 #define MSG_OOB         0x1             /* process out-of-band data */
 #define MSG_PEEK        0x2             /* peek at incoming message */
 #define MSG_DONTROUTE   0x4             /* send without using routing tables */
 #define MSG_DONTWAIT    0x20            /* this message should be nonblocking */
+#endif
 
 #define SD_RECEIVE  0
 #define SD_SEND     1

@@ -1,6 +1,6 @@
 #ifndef	__SCRIPTING_VECPAIR_H
 #define	__SCRIPTING_VECPAIR_H
-
+ 
 #ifndef __CORE_DEFINES_H
 //! #include <core/defines.h>
 #endif

@@ -1,4 +1,5 @@
-#include "Core.h"
+#include "Math.h"
+#include "Rot90.h"
 
 /*****************************************************************************
 **																			**
@@ -431,4 +432,3 @@ void Vector::PrintContents() const
 }
 
 }
-

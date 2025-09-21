@@ -239,4 +239,3 @@ ostream& 	operator<< ( ostream& os, const Vector& v );
 } // namespace Mth
 
 #endif // __CORE_MATH_VECTOR_H
-

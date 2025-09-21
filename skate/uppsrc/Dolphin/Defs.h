@@ -106,7 +106,8 @@ typedef char s8;
 
 #include "platform.h"
 
-
-#define PANIC(x) {std::cout << x << std::endl; volatile int* i = 0; *i = 0;}
+#ifndef PANIC
+	#define PANIC(x) {std::cout << x << std::endl; volatile int* i = 0; *i = 0;}
+#endif
 
 #endif

@@ -17,7 +17,7 @@
 **	Description:	Math Library Rectangle class							**
 **																			**
 *****************************************************************************/
-
+ 
 #ifndef __CORE_MATH_RECT_H
 #define __CORE_MATH_RECT_H
 

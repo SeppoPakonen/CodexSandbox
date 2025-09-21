@@ -1,5 +1,8 @@
 description "\377B28,127,255";
 
+uses
+	Core;
+
 library
 	"SDL2 SDL2_ttf",
 	"GL GLEW";

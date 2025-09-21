@@ -594,11 +594,18 @@ template <class T> inline WString ToWString(const T& o) {return o.ToWString();}
 template<> inline WString ToWString(const CString& o) {return MultiByteToWideChar(std::string(o));}
 template<> inline WString ToWString(const String& o) {return MultiByteToWideChar(std::string(o.Begin()));}*/
 #else
+
+#if 0
 typedef std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> UnicodeConverter;
 inline UnicodeConverter& GetUnicodeConverter() {static UnicodeConverter conv; return conv;}
 template<> inline String ToString(const WString& o) {return GetUnicodeConverter().to_bytes(std::wstring(o.Begin())).c_str();}
 template<> inline WString ToWString(const CString& o) {return GetUnicodeConverter().from_bytes(std::string(o)).c_str();}
 template<> inline WString ToWString(const String& o) {return GetUnicodeConverter().from_bytes(std::string(o.Begin())).c_str();}
+#else
+template<> inline String ToString(const WString& o) {ASSERT(0); return String();}
+template<> inline WString ToWString(const CString& o) {ASSERT(0); return WString();}
+template<> inline WString ToWString(const String& o) {ASSERT(0); return WString();}
+#endif
 #endif
 
 template <class T> inline int64 ToInt(const T& o) {return o.ToInt();}
