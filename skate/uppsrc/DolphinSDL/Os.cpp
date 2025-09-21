@@ -1,4 +1,7 @@
 #include "DolphinSDL.h"
+#include <pthread.h>
+#include <unistd.h>
+#include <time.h>
 
 FILE* outfile;
 GXBool GXinBegin;
@@ -198,23 +201,25 @@ u8 OSGetLanguage() {
 
 
 u32 OSGetProgressiveMode() {
-	TODO
+	return 0;
 }
 
 void OSSleepThread(OSThreadQueue* queue) {
-	TODO
+	// In SDL version, simply yield briefly.
+	SDL_Delay(1);
 }
 
 u32 OSGetEuRgb60Mode() {
-	TODO
+	return 0;
 }
 
 void OSInitThreadQueue(OSThreadQueue* queue) {
-	TODO
+	// No thread queue support in SDL version.
 }
 
 s32 OSResumeThread(OSThread* thread) {
-	TODO
+	// Not implemented in SDL version.
+	return 0;
 }
 BOOL OSCreateThread(OSThread*  thread,
 		void* (*func)(void*),
@@ -223,56 +228,75 @@ BOOL OSCreateThread(OSThread*  thread,
 		u32        stackSize,
 		OSPriority priority,
 		u16        attr) {
-	TODO
+	pthread_t tid;
+	int ret = pthread_create(&tid, NULL, func, param);
+	if (ret != 0) {
+		return 0;
+	}
+	*thread = (OSThread) tid;
+	return 1;
 }
         
 void OSSetAlarm(OSAlarm* alarm, OSTime tick, OSAlarmHandler handler) {
-	TODO
+	// Alarm not supported in SDL version.
 }
 
 s32 OSSuspendThread(OSThread* thread) {
-	TODO
+	// Not implemented; return 0.
+	return 0;
 }
 
 BOOL OSIsThreadSuspended(OSThread* thread) {
-	TODO
+	// Not supported in SDL version.
+	return 0;
 }
 
 void OSSetProgressiveMode(u32 on) {
-	TODO
+	// Not supported in SDL version.
 }
 
 BOOL OSGetResetButtonState() {
-	TODO
+	// No reset button support in SDL version.
+	return 0;
 }
 
 void OSResetSystem(int reset, u32 resetCode, BOOL forceMenu) {
-	TODO
+	OSReport("OSResetSystem called. Exiting.\n");
+	exit(reset);
 }
 
 void OSSetEuRgb60Mode(u32 on) {
-	TODO
+	// Not supported in SDL version.
 }
 
 
 u32 OSCachedToPhysical(const void* caddr) {
-	TODO
+	return (u32)(uintptr_t)caddr;
 }
 
 
 OSResetCallback OSSetResetCallback(OSResetCallback callback) {
-	TODO
+	// Not supported; simply return NULL.
+	return NULL;
 }
 
 
 u32 OSGetSoundMode() {
-	TODO
+	return 0;
 }
 
 void OSTicksToCalendarTime(OSTime ticks, OSCalendarTime* td) {
-	TODO
+	// Assuming ticks are in milliseconds.
+	time_t t = ticks / 1000;
+	struct tm *tm_info = localtime(&t);
+	td->year   = tm_info->tm_year + 1900;
+	td->month  = tm_info->tm_mon + 1;
+	td->day    = tm_info->tm_mday;
+	td->hour   = tm_info->tm_hour;
+	td->minute = tm_info->tm_min;
+	td->second = tm_info->tm_sec;
 }
 
 void OSWakeupThread(OSThreadQueue* queue) {
-	TODO
+	// Not supported; do nothing.
 }
