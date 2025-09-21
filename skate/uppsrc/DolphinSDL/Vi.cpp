@@ -93,8 +93,6 @@ void VIFlush() {
 	// Present the back buffer and count a retrace
 	if (s_window)
 		SDL_GL_SwapWindow(s_window);
-	// Clear the new back buffer to avoid flickering on alternate frames
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	retraceCount++;
 }
 
