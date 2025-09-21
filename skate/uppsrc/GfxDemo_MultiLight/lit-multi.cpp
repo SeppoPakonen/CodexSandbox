@@ -177,7 +177,7 @@ typedef struct
 /*---------------------------------------------------------------------------*
    Forward references
  *---------------------------------------------------------------------------*/
-extern "C" int         main            ( int, const char** );
+//extern "C" int         main            ( int, const char** );
 static void DrawInit        ( MySceneCtrlObj* sc );
 static void DrawTick        ( MySceneCtrlObj* sc );
 static void AnimTick        ( MySceneCtrlObj* sc );
@@ -374,7 +374,7 @@ CONSOLE_APP_MAIN {
         DEMODoneRender();
         DEMOPadRead();           // Update pad status.
         AnimTick(&SceneCtrl);    // Update animation.
-        SDK::Sleep(1000/60);
+        ::Upp::Sleep(1000/60);
     }
 #endif
 

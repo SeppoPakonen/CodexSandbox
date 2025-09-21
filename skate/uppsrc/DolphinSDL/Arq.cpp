@@ -8,18 +8,18 @@ void ARQPostRequest(ARQRequest* task,
 		u32         dest,
 		u32         length,
 		ARQCallback callback) {
-	TODO
+	LOG("ARQPostRequest(): pass");
 }
                       
 void ARQFlushQueue() {
-	TODO
+	LOG("ARQFlushQueue(): pass");
 }
 
 void ARQReset() {
-	TODO
+	LOG("ARQReset(): pass");
 }
 
 void ARQInit() {
-	TODO
+	LOG("ARQInit(): pass");
 }
 

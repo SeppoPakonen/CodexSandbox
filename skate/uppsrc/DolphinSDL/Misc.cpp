@@ -43,11 +43,11 @@ extern "C" {
 }
 
 void AIInit(u8* stack) {
-	TODO
+	LOG("AIInit(u8* stack): pass");
 }
 
 void AIReset() {
-	TODO
+	LOG("AIReset(): pass");
 }
 
 

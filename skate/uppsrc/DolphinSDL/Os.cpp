@@ -228,16 +228,7 @@ BOOL OSCreateThread(OSThread*  thread,
 		u32        stackSize,
 		OSPriority priority,
 		u16        attr) {
-	TODO
-	#if 0
-	pthread_t tid;
-	int ret = pthread_create(&tid, NULL, func, param);
-	if (ret != 0) {
-		return 0;
-	}
-	*thread = (OSThread) tid;
-	return 1;
-	#endif
+	TODO // convert OSThread to be ::Upp::Thread
 }
         
 void OSSetAlarm(OSAlarm* alarm, OSTime tick, OSAlarmHandler handler) {

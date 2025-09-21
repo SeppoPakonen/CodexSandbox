@@ -1,17 +1,18 @@
 #include "DolphinSDL.h"
 
 u32 ARGetDMAStatus() {
-	TODO
+	return 1;
 }
 
 void ARReset() {
-	TODO
+	
 }
 
 u32 ARInit(u32 *stack_index_addr, u32 num_entries) {
-	TODO
+	return 0;
 }
 
 u32 ARGetBaseAddress() {
-	TODO
+	LOG("ARGetBaseAddress(): pass, WARNING: returning 0 as memory address");
+	return 0;
 }

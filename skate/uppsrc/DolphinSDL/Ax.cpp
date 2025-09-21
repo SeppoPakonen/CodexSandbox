@@ -49,11 +49,11 @@ void AXSetVoiceMix(AXVPB *p, AXPBMIX *mix) {
 }
 
 void AXInit() {
-	TODO
+	LOG("AXInit(): pass");
 }
 
 void AXQuit() {
-	TODO
+	LOG("AXQuit(): pass");
 }
 
 void AXSetVoiceSrcRatio(AXVPB *p, f32 ratio) {
@@ -61,11 +61,11 @@ void AXSetVoiceSrcRatio(AXVPB *p, f32 ratio) {
 }
 
 void AXSetMode(int mode) {
-	TODO
+	LOG("AXSetMode(): pass");
 }
 
 void AXSetCompressor(int mode) {
-	TODO
+	LOG("AXSetCompressor(): pass");
 }
 
 void AXSetVoiceAdpcmLoop(AXVPB *p, AXPBADPCMLOOP *adpcmloop) {
