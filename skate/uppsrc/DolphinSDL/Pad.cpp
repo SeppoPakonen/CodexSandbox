@@ -23,19 +23,14 @@ BOOL PADInit() {
 
 
 void PADRead(PADStatus* status) {
-	TODO
-	#if 0
-	GetScreen().Update(0);
-	
 	memset(status, 0, sizeof(PADStatus));
-	status->stickX			= winKey.stickX;
-	status->stickY			= winKey.stickY;
-	status->substickX		= winKey.substickX;
-	status->substickY		= winKey.substickY;
-	status->triggerLeft		= winKey.triggerLeft;
-	status->triggerRight	= winKey.triggerRight;
-	status->button			= winKey.button;
-	#endif
+	status->stickX      = winKey.stickX;
+	status->stickY      = winKey.stickY;
+	status->substickX   = winKey.substickX;
+	status->substickY   = winKey.substickY;
+	status->triggerLeft = winKey.triggerLeft;
+	status->triggerRight= winKey.triggerRight;
+	status->button      = winKey.button;
 }
 
 
@@ -45,7 +40,6 @@ BOOL PADReset(u32 mask) {
 }
 
 u32 OSGetConsoleType() {
-	TODO
 	return OS_CONSOLE_EMULATOR;
 }
 
@@ -53,15 +47,16 @@ u32 OSGetConsoleType() {
 
 
 void PADControlMotor(int chan, u32 command) {
-	TODO
+	// No motor vibration support in SDL version.
 }
 
 BOOL PADRecalibrate(u32 mask) {
-	TODO
+	// Recalibration is not needed in SDL version.
+	return TRUE;
 }
 
 void PADSetAnalogMode(u32 mode) {
-	TODO
+	// In SDL version, analog mode is fixed; do nothing.
 }
 
 
