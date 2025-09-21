@@ -190,8 +190,8 @@ bool SDL2::Poll(Event& e) {
 			}
 			else if (event.window.event == SDL_WINDOWEVENT_CLOSE) {
 				e.type = EVENT_SHUTDOWN;
-				WhenUserShutdownSignal();
-				return true;
+				SDL_Quit();
+				exit(0);
 			}
 			break;
 		
