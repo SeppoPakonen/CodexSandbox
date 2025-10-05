@@ -1,0 +1,30 @@
+-- Level-Datei
+-- Frarace2
+-- von Frapela
+-- 16.08.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author	         = "Frapela"
+min_version        = 0.89
+max_players        = 2
+style              = GRASS
+map                = "frarace2.mar"   -- von Jens, gf03.mar
+initscript         = "frarace2.ini"
+script             = ""
+global_script      = 1
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+race               = 1
+singleplayer       = 1
+activate_extra_str = ""
+
+if (LANGUAGE == LANG_DE) then
+  name               = "Frarace 02"
+  description        = "Gib mit dem Original-Schiff aus Gravity Force mal so richtig Gas! von Frapela"
+--  missiondesc        = "VIEL ERFOLG!"
+else
+  name               = "Frarace 02"
+  description        = "Fly with the Original-Ship of Gravity Force! by Frapela"
+--  missiondesc        = "GOOD LUCK!" 
+end

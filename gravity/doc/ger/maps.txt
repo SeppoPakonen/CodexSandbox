@@ -1,0 +1,283 @@
+...........................................................................
+= Maps ==================> Gravity Strike, v0.92 <=========================
+
+
+Erstellung eigener Karten
+=========================
+
+Benoetigt wird der GS-Level-Editor, der sich auf gravity-strike.de 
+herunterladen laesst. Mit ihm lassen sich die Maps (.mar) erstellen und
+Objekte setzen.
+
+Die Karten in GS sind komponentenbasiert. Jeder Level liegt in seinem 
+eigenen Unterverzeichnis unter /levels. In diesem Verzeichnis befinden
+sich die gesamten levelspezifischen Daten. Es koennen sich auch mehrere
+Levels in einem Levelverzeichnis befinden. Somit lassen sich evtl.
+zusaetzlich eingebundene Daten (z.B. User-Objekte) leichter in mehreren
+Levels verwenden. Grundsaetzlich gilt, dass ein Level durch eine LVL-Datei
+definiert wird, d.h. die Anzahl der Levels entspricht der Anzahl der LVL-
+Files.
+
+In einem Level-Verzeichnis befinden sich mindestens die folgenden Files:
+
+Eine ".lvl"-Datei        -> Zentrale Steuerungsdatei fuer Level
+Eine ".mar"-Datei        -> Die Karte (ohne Objekte)
+Eine ".ini"-Datei        -> Das Init-Script (erstellt u.a. die Objekte)
+Eine ".sc"-Datei         -> Das Ingame-Script (optional)
+
+Sowie evtl. weitere Daten, z.B. eigene Grafiken und Sounds, die ueber
+die entsprechenden Scriptfunktionen ins Spiel eingebunden werden. Siehe
+dazu der Unterpunkt "Eigene Sounds und Grafiken" in diesem Text.
+
+
+MAR und INI erstellen
+---------------------
+
+Diese Dateien lassen sich mit dem Map-Editor erstellen. Zu diesem sind
+extra Dokumentationen verfuegbar (siehe Inhalt des Editor-Verzeichnisses).
+
+
+LVL erstellen (Control File)
+----------------------------
+
+Eine lvl-Datei beschreibt eine Karte. Es ist die zentrale Datei, ohne 
+sie geht nichts. Ihr Dateiname ist auch der einzige, der festgelegt ist. 
+Alle anderen Dateinamen werden in dieser Datei definiert.
+
+Sie enthaelt folgende Parameter:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+min_version         = 0.91
+max_players         = 2
+style               = GRASS
+
+map                 = "testmap.mar"
+initscript          = "testmap.ini"
+script              = "testmap.sc"
+global_script       = 1
+
+name                = "Mein Levelname"
+description         = "Beschreibung"
+missiondesc         = "Missionsbeschreibung (optional)"
+author              = "Designer der Karte"
+
+onescreen_map       = 1
+onescreen_map_x     = 16
+onescreen_map_y     = 36
+
+activate_extra_str  = ""
+activate_extra_bar  = "10 1 Blabla"
+
+capture_the_flag    = 1
+hunter_hunted       = 1
+race                = 0
+singleplayer        = 0
+minigame            = 0
+
+depends_on          = "pfad/zu/lvl (optional)"
+depends_on_txt      = "(optional)"
+
+required_resolution = 640 (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"min_version" gibt die Spielversion an, die der Level mindestens zum
+Funktionieren benoetigt. Hier sollte man einfach die aktuelle Version
+eintragen (z.B. 0.5, 0.6, 0.7 etc.)
+
+"max_players" gibt die maximale Anzahl der Spieler an, fuer die der
+Level ausgelegt ist. Dieser Wert kann zwischen 1 und 6 liegen. Liegt die
+Spielerzahl bei 1, dann wird der Level nur als Einspieler-Level angezeigt.
+
+"style" ist entweder GRASS oder STONE, je nach gewuenschtem Aussehen
+der Karte.
+Stattdessen kann aber auch ein Dateiname einer FMP-Datei angegeben werden,
+die statt den Standard-Dateien gfw1.fmp und gfw2.fmp benutzt wird. Diese
+kann im /dat-Verzeichnis des Spiels oder im entsprechenden Level-Verzeichnis
+liegen, GS findet sie automatisch (z.B. style = "test.fmp").
+
+"map" gibt den Namen der zugrundeliegenden Landschaftskarte an.
+Der Name ist beliebig.
+
+"initscript" ist das Script, das genau einmal ausgefuehrt wird, bevor
+der Level beginnt. Der Name ist beliebig.
+
+"script" ist das Script, das waehrend dem Spiel (60 Mal pro Sekunde) aus-
+gefuehrt wird. Der Name ist beliebig und kann auch leer sein ("").
+
+"global_script" ist entweder 0 oder 1. Bei 1 wird das Init-Script
+"global.ini" nach dem eigenen Ini-Script sowie das Level-Script
+"global.sc" vor dem eigenen Level-Script ausgefuehrt. Darin werden
+Funktionen aufgerufen, die fuer jeden Level gelten sollen, z.B.: Der 
+Feuer-Effekt, wenn man getroffen ist, und die Uhr am oberen
+Bildschirmrand.
+
+"name" ist der Name der Karte, der in der Level-Uebersicht angezeigt wird.
+
+"description" ist die Beschreibung, die in der Level-Uebersicht im mittleren
+Kasten angezeigt wird.
+
+"missondesc" wird hauptsaechlich bei Einspieler-Missionen eingesetzt, um
+am Anfang des Levels ein Briefing anzuzeigen. Die in diesem Text verfueg-
+baren Kommandos sind in script.txt unter "draw_typewriter_text" aufgefuehrt.
+
+"author" gibt den Namen des Map-Autors an und wird im Spiel oberhalb der
+Beschreibung angezeigt.
+
+"onescreen_map" kann auf 1 oder 0 stehen. Bei "1" sollte die Karte genau
+ein Bildschirm gross sein, weil weder Splitscreen noch Scrolling dann
+aktiviert werden.
+
+Wenn "onescreen_map" aktiviert ist, sollten noch die Parameter
+"onescreen_map_x" und "onescreen_map_y" gegeben werden. Dies sind die
+Koordinaten von der linken oberen Ecke aus gesehen, ab der die Karte dar-
+gestellt werden soll. Man kann damit diesen "Ausschnitt" perfekt plazieren.
+
+Steht "onescreen_map" auf 0, wird ganz normal gescrollt bzw. Splitscreen
+aktiviert. Die anderen beiden Parameter sind dann nicht notwendig.
+
+Wenn bei "activate_extra_str" eine Zeichenkette eingetragen ist, dann
+wird diese als Auswahlfeld unter der Level-Beschreibung angezeigt. Der
+Status dieses Auswahlfelds kann im Script dann ueber die Variable
+"globals.activate_extra" abgefragt werden, womit sich recht einfach zwei
+in bestimmten Teilen verschiedene Versionen desselben Levels implementieren
+lassen. Als Beispiel siehe gfqd05.lvl: Dort wird die Staerke des schwarzen
+Lochs in der Mitte durch diesen Schalter veraendert.
+
+Wenn "activate_extra_bar" vorhanden ist, dann wird im Minigames-Menue ein 
+Balken angezeigt, mit dem sich bestimmte Spieleinstellungen veraendern
+lassen. activate_extra_bar erwartet einen String der Form 
+"Zahl Zahl Text", dessen erste Zahl den Maximalwert des Balkens angibt,
+die zweite die Schrittzahl, schliesslich gefolgt von einer kurzen (!) 
+Beschreibung der Balkenfunktion, also z.B. "50 5 Powerups" 
+(erstellt einen Balken mit der Beschriftung "Powerups", den man von 0-50 
+in 5er-Schritten einstellen kann). Der eingestellte Wert kann im Script 
+ueber "globals.extra_bar" abgefragt werden. Der Maximalwert
+sollte durch die Schrittweite teilbar sein, sonst funktioniert der Balken
+nicht korrekt.
+
+"capture_the_flag" kann entweder 0 oder 1 sein. Bei letzterer Einstellung
+wird in der Level-Auswahl ein Feld angezeigt, mit dem der CtF-Spielmodus im
+Spiel aktiviert werden kann. Wenn hier eine 1 steht, muss im Init-Script
+die Datei "gm_ctf.sc" eingebunden sein (dofile("./levels/gm_ctf.sc")) und
+im Main-Script muss "do_capture_the_flag()" aufgerufen werden. Wenn
+global_script (s.o.) aktiviert ist, muss man sich um diese Aufrufe nicht
+kuemmern.
+Ob capture_the_flag aktiviert ist, kann man im Script ueber die Variable
+globals.capture_the_flag abfragen.
+
+Fuer "hunter_hunted" gilt dasselbe wie fuer "capture_the_flag". Der Spiel-
+modus selbst wird ueber das Script "gm_hh.sc" gesteuert.
+
+"singleplayer" gibt an, ob der Level als Einspieler-Mission zur Verfuegung
+stehen soll.
+
+"race" gibt an, ob fuer diesen Level der Spielmodus "Rennen" aktiviert
+werden soll. Dieser wird ueber das Script "gm_race.sc" gesteuert.
+
+Mit "minigame" kann man festlegen, ob der Level im entsprechenden Menue
+erscheinen soll. Ein "Minispiel" bei GS ist ein in GS-Script programmiertes
+Spiel, das nichts mehr oder wenig mit dem urspruenglichen GS-Spielprinzip
+zu tun hat. Wenn man im Levelverzeichnis eine Textdatei mit dem Namen
+"lvlname.txt" (lvlname ersetzen durch Leveldateiname) erstellt, wird diese
+im Menue nach einem Klick auf den Punkt "Level-Info" angezeigt. Diese Datei
+kann auch Markierungen fuer mehrere Sprachen enthalten: %%LANG_DE%% leitet
+z.B. den deutschen Bereich ein, %%LANG_EN%% den englischen usw. -- Ein
+Bereich ist beendet, wenn ein anderes %%LANG_* gelesen wird oder die Datei
+zuende ist. Wenn diese Markierungen vorhanden sind, wird je nach einge-
+stellter Sprache nur der entsprechende Teil angezeigt.
+
+"depends_on" gibt bei Missionslevels den Pfad eines Levels (einer LVL-Datei)
+an, der zuerst erfolgreich beendet werden muss, bevor der ausgewählte Level
+gespielt werden kann. Im Level, der bei depends_on angegebenen wird, muss
+per Script bei erfolgreichem Abschluss die Funktion 
+globals:create_level_done_file() aufgerufen werden. Siehe dazu die script.txt.
+
+"depends_on_txt" definiert einen Text, der (in roter Farbe) statt "missiondesc"
+angezeigt wird, wenn der Level gesperrt ist.
+
+"required_resolution" definiert eine Grafikaufloesung, die bei diesem Level
+IMMER verwendet wird - unabhaengig von der Einstellung in den Spieloptionen.
+Dies ist z.B. sinnvoll bei Minispielen und bestimmten Levels, die vielleicht
+zu einfach werden, wenn die Aufloesung erhoeht wird. 
+Als Werte wird dazu der (horizontale) X-Wert der Aufloesung angegeben, also:
+640  -> 640x480
+800  -> 800x600
+1024 -> 1024x768
+1280 -> 1280x1024
+1600 -> 1600x1200
+
+Im LVL-File kann man die globale Variable "LANGUAGE" abfragen, die eine
+der unterstuetzten Sprachen enthaelt:
+
+  LANG_EN        -> englisch
+  LANG_DE        -> deutsch
+  LANG_CR        -> kroatisch
+  
+Je nachdem, welche aktiviert wurde. Somit kann man fuer die Beschreibung
+und die Namen der Level jeweils sprachenspezifische Bezeichnungen angeben:
+
+if LANGUAGE == LANG_DE then
+  name = "Mein Level"
+else
+  name = "My Level"
+end
+
+
+Mini-Bild
+---------
+
+Das Mini-Bild der Karte in der Leveluebersicht wird automatisch erstellt,
+wenn es nicht vorhanden ist. Dazu wird jedoch nur das Map-File (MAR) 
+herangezogen. Man kann stattdessen auch selbst ein Bild erstellen (z.B.
+per Screenshot von einer Onescreen-Karte, wie bei gfqd03.lvl) und dieses
+statt dem automatisch erzeugten verwenden. Fuer das Format sollte man sich
+am besten ein von GS erstelltes Bild anschauen.
+
+
+Eigene Sounds und Grafiken
+--------------------------
+
+Ab Version 0.8 hat man die Moeglichkeit, eigene Bilder und Sounds in seine
+Levels einzufuegen.
+
+Ein eigener Sound muss im WAV- oder VOC-Format vorliegen. Dabei ist es 
+egal, ob 8 oder 16bit oder ob Mono oder Stereo. Geladen und benutzt wird 
+ein Sound im Script auf folgende Weise:
+
+MEIN_SOUND = gsound:load_sound("meinsound.wav")
+gsound:play_sound(MEIN_SOUND)
+
+Dabei ist "MEIN_SOUND" ein selbst bestimmbarer Variablenname.
+
+Ausserdem kann ein vordefinierter GS-Sound durch einen eigenen ersetzt
+werden: replace_sound(SOUND_SHOOT_SINGLE, MEIN_SOUND) ersetzt den
+Standard-Schuss-Sound durch "meinsound.wav".
+
+Eine eigene Grafik muss ein bestimmtes Format haben, um eingebunden werden
+zu koennen. Dieses Format entspricht den Erklaerungen zur Erstellung eines
+eigenen Schiffes in shipimg.txt. Alle Schiffsgrafiken liegen also in einem
+Format vor, das von der folgenden Funktion gelesen werden kann. Somit
+koennen auf dieselbe Weise (animierte) Objekte in das Spiel eingebunden
+werden. Die maximale Anzahl der Grafiken wird nur durch den RAM-Speicher
+begrenzt. Die maximale Anzahl Frames pro Bild ist 100. 
+Das Dateiformat muss entweder TGA, PCX oder BMP sein, wobei 
+die Farbpalette von GS mit 256 Farben benutzt werden muss.
+
+MEIN_OBJEKT = images:load("objekt.tga")
+objects:add(1, MEIN_OBJEKT, 200, 200)
+
+Genaueres steht in der script.txt bei der Beschreibung von "images:load".
+
+
+Karte einschicken
+-----------------
+
+Wer eine eigene Karte erstellt hat und diese anderen zugaenglich machen
+moechte (was ich stark hoffe), packt alle notwendigen Dateien zusammen,
+registriert sich auf gravity-strike.de als User und schreibt mir eine
+kurze Mail bzgl. Freischaltung fuer Karten-Uploads.
+
+
+Viel Spass!
+Jens Hassler
+jh@gravity-strike.de

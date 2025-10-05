@@ -1,0 +1,31 @@
+-- Rock Arena
+-- control file
+-- by B. Calisher (bcalisher@hotmail.com)
+
+author	            = "B. Calisher"
+min_version         = 0.6
+max_players         = 2
+style               = STONE
+
+map                 = "rock.mar"
+initscript          = "rock.ini"
+script              = ""
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name               = "Rock Arena"
+  description        = "This is the first level I have made. It's good for dogfighting."
+  activate_extra_str = ""
+else
+  name               = "Rock Arena"
+  description        = "Mein erster Level. Er garantiert tolle Dogfights."
+  activate_extra_str = ""
+end
+
+onescreen_map       = 1
+onescreen_map_x     = 16
+onescreen_map_y     = 36
+capture_the_flag    = 1
+hunter_hunted       = 1
+
+required_resolution = 640

@@ -1,0 +1,26 @@
+
+author	           = "Zarniwoop"
+min_version        = 0.85
+max_players        = 2
+style              = GRASS
+
+map                = "zarni_r1.mar"
+initscript         = "zarni_r1.ini"
+script             = ""
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "zarnis race1"
+  description      = "Die erste Race-Karte von Zarniwoop"
+else                 
+  name             = "zarnis race 1"
+  description      = "The first race map by Zarniwoop"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+race               = 1
+singleplayer       = 1
+  
+activate_extra_str = ""

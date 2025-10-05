@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "tempest.tga"
+name                 = "TempesT"
+description          = "Schwerer Langstreckenbomber. Langsam, aber sehr schwer bewaffnet. Mein erster Bomber berhaupt."
+
+hull                 = 16
+shield               = 8
+radar_zoom           = 5
+weapon_slots         = 6
+
+weapon_storage       = 100
+weapon_recharge      = 52
+
+shield_recharge      = 53
+hull_repair          = 35
+
+turn_speed           = 25
+maximum_speed        = 31
+acceleration         = 6
+
+fuel_consumption     = 5
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_BOMB
+weapon_slot_4        = W_BIGBOMB
+weapon_slot_5        = W_ROCKET
+weapon_slot_6        = W_SHRINKER

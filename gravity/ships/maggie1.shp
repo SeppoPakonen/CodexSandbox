@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "maggie1.tga"
+name                 = "Maggie"
+description          = "Ein Kleinfrachter. Schwere Panzerung, langsam, und kleine Bewaffnung"
+
+hull                 = 9
+shield               = 16
+radar_zoom           = 20
+weapon_slots         = 3
+
+weapon_storage       = 24
+weapon_recharge      = 28
+
+shield_recharge      = 38
+hull_repair          = 30
+
+turn_speed           = 22
+maximum_speed        = 21
+acceleration         = 23
+
+fuel_consumption     = 85
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_BOMB
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_NONE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE

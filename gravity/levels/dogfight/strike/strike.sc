@@ -1,0 +1,2 @@
+-- Strike
+-- script file

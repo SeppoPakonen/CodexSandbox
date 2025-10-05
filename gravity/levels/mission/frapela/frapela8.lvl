@@ -1,0 +1,28 @@
+-- Level-Datei
+-- Frapela8
+-- von Frapela
+-- 30.08.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author		    = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "frapela8.mar"   -- von Jens, GF-Level 10
+initscript       = "frapela8.ini"
+script           = "frapela8.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Frapela 08"
+  description = "Kleine Blaue, Rote, Gruene, Gelbe und Violette! von Frapela"
+  missiondesc = "[f:impact14][c:yellow]Vernichte 50 Gegner bevor du den Sueden eroberst! "
+else
+  name        = "Frapela 08"
+  description = "Little Blues, Reds, Greens, Yellows and Pinks! by Frapela"
+  missiondesc = "[f:impact14][c:yellow]Destroy 50 enemies before you conquer the south! "
+end

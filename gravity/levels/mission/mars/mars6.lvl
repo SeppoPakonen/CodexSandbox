@@ -1,0 +1,34 @@
+-- Mars Mission VI
+-- cr8ed by Simon
+
+author		   = "Simon"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "moremars.mar"
+initscript         = "mars6.ini"
+script             = "mars6.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Mars Mission VI"
+  description      = "Zerstoeren Sie den wichtigsten martianischen Kraftwerks-Komplex der Rebellen."
+
+missiondesc = "[w:10][c:white][u]Mars, Rebellischer Stuetzpunkt[/u][br][w:60][br][c:yellow][s:5]" ..
+"Sie haben Ihr Koennen bisher eindrucksvoll unter Beweis gestellt und sind fuer diese extrem wichtige Mission auserwaehlt worden.[w:60] Es geht darum, die Stromversorgung der Rebellen lahm zu legen. Dazu benoetigen wir jedoch eine spezielle Bombe.[w:30][br][c:orange]Fliegen Sie durch dieses Gebiet und sammeln Sie vier Frachtpakete, aus denen wir das Feuerwerk zusammenbasteln. Dann werfen Sie es auf den Kraftwerk-Komplex![w:30][br][c:yellow]Also dann, bis spaeter![w:60][c:green] :-)"
+else
+
+
+
+  name             = "Mars Mission VI"
+  description      = "Destroy the rebel's most important martian power station complex."
+  missiondesc      = "[w:10][c:white][u]Mars, Rebel Outpost[/u][br][w:60][br][c:yellow][s:5]As everybody knows your skills, you are chosen to work on this very important mission.[w:60] Its object is to destroy the rebel's power supply. But we need a special bomb for this job.[w:30][br][c:orange]Fly around this area and collect four cargo packets - and we will create the fireworks. Then throw it onto the power station complex![w:30][br][c:yellow]Well, see you later![w:60][c:green] :-)"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

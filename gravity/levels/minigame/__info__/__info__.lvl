@@ -1,0 +1,24 @@
+-- Info
+
+author		    = "Jens"
+min_version         = 0.9
+max_players         = 2
+style               = STONE
+
+map                 = "__info__.mar"
+initscript          = ""
+script              = ""
+global_script       = 1
+
+if (LANGUAGE == LANG_DE) then
+  name              = "__Info__"
+  description       = "Minigames sind eigenstaendige Spiele, die mit der Scriptsprache von GS programmiert wurden. Auf www.gravity-strike.de lassen sich alle in einem separaten Archiv oder einzeln herunterladen."
+else
+  name              = "__Info__"
+  description       = "Minigames are individual games created with the GS scripting language. You can download them in one archive on www.gravity-strike.de/eng."
+end
+
+capture_the_flag    = 0
+hunter_hunted       = 0
+minigame            = 1
+singleplayer        = 0

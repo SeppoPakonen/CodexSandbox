@@ -1,0 +1,25 @@
+-- Nuke_dm2
+-- control file
+-- by Torsten Bergmann (nukem2001@gmx.de)
+
+author	           = "Nukem"
+min_version         = 0.6
+max_players         = 2
+style               = GRASS
+
+map                 = "nuke_dm2.mar"
+initscript          = "nuke_dm2.ini"
+script              = ""
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name              = "Nuke_dm2"
+  description       = "Ready? Fight!"
+else
+  name              = "Nuke_dm2"
+  description       = "Fertig? Los!"
+end
+
+onescreen_map       = 0
+capture_the_flag    = 1
+hunter_hunted       = 1

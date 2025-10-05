@@ -1,0 +1,43 @@
+-- Grenzenlos einkaufen
+-- cr8ed by Simon
+
+min_version         = 0.89
+max_players         = 2
+style               = STONE
+
+map                 = "shopping.mar"
+initscript          = "shopping.ini"
+script              = "shopping.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_DE) then
+  author            = "Simon"
+  name              = "Grenzenlos einkaufen"
+  description       = "Wer scheffelt das meiste Geld und kauft davon starke Waffen und nuetzliche Items? Computergegner moeglich!"
+  activate_extra_str= "Single Blaster begrenzen"
+else
+  author            = "Simon"
+  name              = "Endless shopping"
+  description       = "Who collects most of the money and buys strong weapons and useful items? Computer enemy possible!"
+  activate_extra_str= "Limited Single Blaster"
+end
+
+onescreen_map       = 1
+onescreen_map_x     = 100
+onescreen_map_y     = 100
+
+required_resolution = 640
+
+capture_the_flag    = 0
+hunter_hunted       = 0
+minigame            = 0
+singleplayer        = 0
+
+-- Die Ideen fuer das Sammel-Kauf-Prinzip sind geklaut.
+-- Natuerlich wieder aus Snowboard Kids. Und dieses Mal
+-- ist das Ganze noch offensichtlicher als bei "Shoot Cross".
+-- Trotzdem viel Spass!
+
+-- The game ideas are stolen. From Snowboard Kids again.
+-- And this time, it's even more obvious than it was when
+-- I built "Shoot Cross". Anyway, have fun!

@@ -1,0 +1,34 @@
+-- Mars Mission IV
+-- cr8ed by Simon
+
+author		   = "Simon"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "mars.mar"
+initscript         = "mars4.ini"
+script             = "mars4.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Mars Mission IV"
+  description      = "Ihr erster Stoereinsatz gegen die Rebellen: Schwaechen Sie deren Verteidigung!"
+
+missiondesc = "[w:10][c:white][u]Mars, Dynidon Vale[/u][br][w:60][br][c:yellow][s:5]" ..
+"Im Sueden dieser Stadt befindet sich eine Teleporter-Kreuzung, die fuer die rebellischen Soeldner von groesster Wichtigkeit ist. Wir beauftragen Sie deshalb, die drei starken Pulse-Kanonen zu zerstoeren, mit denen die Rebellen diesen Durchgang bewachen. Das wird sie fuer eine Weile aufhalten.[w:60][br][c:orange]Ach ja, Ihr Single Blaster ist beschaedigt![c:yellow] Aber warum 'leihen' sie sich nicht einen feindlichen Single Blaster?[w:60] [c:green] :-)"
+else
+
+
+
+  name             = "Mars Mission IV"
+  description      = "Your first offensive mission against the rebels: Blow up their defense cannons!"
+  missiondesc      = "[w:10][c:white][u]Mars, Dynidon Vale[/u][br][w:60][br][c:yellow][s:5]Fly to the south of this city and destroy the tree Pulse Guns. Those are defending the most important teleport junction controlled by the rebels. [c:orange]You got no Single Blaster, but you can steal one if you originally put it into your ship.[w:60][c:green] :-)"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

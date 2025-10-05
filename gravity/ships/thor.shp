@@ -1,0 +1,38 @@
+-- GRAVITY STRIKE v0.5: Ship Definition
+
+type                 = CUSTOM
+image                = "thor.tga"
+name                 = "Thor"
+
+if (LANGUAGE == LANG_DE) then
+  description        = "Ein Mittelklasse-Raumschiff mit guten regenerativen Eigenschaften."
+else
+  description        = "A mid-class ship with good regenerative settings."
+end
+
+hull                 = 8
+shield               = 9
+radar_zoom           = 4
+weapon_slots         = 4
+
+weapon_storage       = 35
+weapon_recharge      = 60
+
+shield_recharge      = 61
+hull_repair          = 61
+
+turn_speed           = 36
+maximum_speed        = 26
+acceleration         = 27
+
+fuel_consumption     = 36
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_NONE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE
+

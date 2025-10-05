@@ -1,0 +1,40 @@
+-- Bling-Bling Scramble
+-- cr8ed by Simon
+
+min_version         = 0.85
+max_players         = 2
+style               = STONE
+
+map                 = "bling.mar"
+initscript          = "bling.ini"
+script              = "bling.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_DE) then
+  author            = "Simon"
+  name              = "Bling-Bling Scramble"
+  description       = "Wer durchfliegt die meisten Checkpoints? Stellen Sie mit dem EXTRA-Regler unten die Anzahl in Zehnerschritten ein! '0' steht fuer Zufall."
+else
+  author            = "Simon"
+  name              = "Bling-Bling Scramble"
+  description       = "Who will pass through most of the check points? Choose their number with the EXTRA option below, e.g. 3 for 30 points. '0' means random!"
+end
+
+onescreen_map      = 1
+onescreen_map_x     = 16
+onescreen_map_y     = 36
+
+capture_the_flag    = 0
+hunter_hunted       = 0
+minigame            = 0
+singleplayer        = 0
+
+required_resolution = 640
+
+if (LANGUAGE == LANG_DE) then
+  activate_extra_str  = ""
+  activate_extra_bar  = "100 10 Checkpoints"
+else
+  activate_extra_str  = ""
+  activate_extra_bar  = "100 10 Checkpoints"
+end

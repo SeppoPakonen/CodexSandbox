@@ -1,0 +1,26 @@
+-- fracht
+-- control file
+-- map by: Eike Thies
+
+author	           = "Eike Thies"
+style              = GRASS
+
+map                = "fracht.mar"
+initscript         = "fracht.ini"
+script             = "fracht.sc"
+min_version        = 0.6
+max_players        = 2
+global_script      = 1
+
+if (LANGUAGE == LANG_EN) then
+  name             = "Fracht"
+  description      = "The first player saving a specific amount of cargo will be the winner."
+else
+  name             = "Fracht"
+  description      = "Ein Level in dem derjenige zuerst gewonnen hat, der eine bestimmte Anzahl an Fracht eingesammelt hat."
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+activate_extra_str = ""
+hunter_hunted      = 1

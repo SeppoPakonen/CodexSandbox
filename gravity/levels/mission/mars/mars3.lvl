@@ -1,0 +1,30 @@
+-- Mars Mission III
+-- cr8ed by Simon
+
+author		   = "Simon"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "mars.mar"
+initscript         = "mars3.ini"
+script             = ""
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Mars Mission III"
+  description      = "Die martianischen Truppen ruesten zum Krieg gegen die Rebellen! Sammeln Sie Panzergranaten, ohne zu viele Raumschiffe zu 'verbrauchen'."
+
+missiondesc = "[w:10][c:white][u]Mars, Industriegelaende[/u][br][w:60][br][c:yellow][s:5]Die martianische Regierung in [c:white]Zidia City[c:yellow] hat sich zum Krieg gegen die Weltraum-Rebellen entschlossen. Allerdings belagern diese die wichtigste Waffenfabrik des Planeten. Wenn wir nicht schnell genug handeln, fallen ihnen saemtliche Waffen in die Haende. [w:60][br][c:yellow]Fliegen Sie ueber das [c:white]Industriegelaende[c:yellow] und sammeln Sie vier von fuenf Waffenpaketen ein. Sie koennen nur jeweils ein Paket gleichzeitig tragen.[w:60][c:orange] Und wenn Sie auch nur zwei Schiffe vergeigen, ist die Mission dahin![w:60][c:green] :-)"
+else                 
+  name             = "Mars Mission III"
+  description      = "The Martian Army prepares a war against the space rebels! Collect enough weapon crates without wasting too many ships."
+  missiondesc      = "[w:10][c:white][u]Mars, Industrial Area[/u][br][w:60][br][c:yellow][s:5]The Martian Government located in [c:white]Zidia City[c:yellow] declared war against the space rebels. But those guys recently occupated this planet's most important weapon factory. If we don't do anything against them quickly, they'll be able to steal all weapons. [w:60][br][c:yellow]Fly across the [c:white]Industrial Area[c:yellow] and collect four out of five weapon crates.[w:60][c:orange] And if only two of your ships are being wasted, the mission is failed![w:60][c:green] :-)"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

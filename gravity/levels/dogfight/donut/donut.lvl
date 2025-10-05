@@ -1,0 +1,24 @@
+-- Donut
+-- control file
+
+author	            = "Eike Thies"
+min_version         = 0.6
+max_players         = 2
+style               = GRASS
+
+map                 = "donut.mar"
+initscript          = "donut.ini"
+script              = "donut.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name              = "Donut"
+  description       = "A round map with a very deadly switch."
+else
+  name              = "Donut"
+  description       = "Kreisrunder Level mit einem sehr toedlichen Schalter"
+end
+
+onescreen_map       = 0
+capture_the_flag    = 1
+hunter_hunted       = 1

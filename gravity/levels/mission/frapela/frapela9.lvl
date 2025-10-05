@@ -1,0 +1,28 @@
+-- Level-Datei
+-- Frapela9
+-- von Frapela
+-- 10.09.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author		    = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "frapela9.mar"   -- von Jens, GF-Level 9
+initscript       = "frapela9.ini"
+script           = "frapela9.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Frapela 09"
+  description = "MISSION IMPOSSIBLE?!? Waehle deine Bewaffnung sorgfaeltig! Schwierigkeitsgrad: EXTREM HOCH! von Frapela"
+  missiondesc = "[f:impact14][c:white]Sammele alle vier Fracht-Pakete ein! Es wirkt unmoeglich, es ist aber machbar!!!"
+else
+  name        = "Frapela 09"
+  description = "MISSION IMPOSSIBLE?!? Choose your weapons intelligent! Difficulty: EXTREMLY HIGH! by Frapela"
+  missiondesc = "[f:impact14][c:white]Collect all four cargo-parcels! It seems impossible, but you can make it!!! "
+end

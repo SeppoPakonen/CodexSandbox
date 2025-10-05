@@ -1,0 +1,111 @@
+...........................................................................
+= Tips =================> Gravity Strike, v0.9 <===========================
+
+
+Tips fuer Levelscripter
+=======================
+
+
+o DATEINAMEN
+
+  Bitte darauf achten, dass alle verwendeten Dateinamen der 8.3-Norm (DOS)
+  entsprechen. Dies soll dazu dienen, dass GS plattformunabhaengig bleibt.
+  Also: Dateinamen duerfen hoechstens aus 8 Zeichen und hoechstens 3 Zeichen
+  Endung bestehen. Dabei sind keine Umlaute, Leerzeichen und andere
+  Sonderzeichen erlaubt! Zusaetzlich sollte man alle Dateinamen klein
+  schreiben. Immer. Bei Systemen, die Gross-/Kleinschreibung unterscheiden
+  (Linux!) kann dann z.B. eine Datei "Levelbild.bmp" nicht gelesen werden,
+  wenn sie aus dem Script heraus mit "levelbild.bmp" geladen werden soll.
+  
+  Levels, die ich mit anderen Dateinamen erhalte, muss ich zuerst selbst
+  umstellen, was natuerlich wieder Aufwand fuer mich bedeutet. Also bitte
+  immer an obiges denken. Danke!
+
+
+o MINIGAMES -- Spielerzahl
+
+  Bei Minigames (ab v0.89, Parameter "minigame = 1" im LVL) gilt bzgl.
+  der Spielerzahl folgende Regelung:
+
+  Wenn der Level nur Einspielermodus unterstuetzt, dann ist "max_players" 
+  auf 1 zu setzen. Ob "singleplayer" auf 1 oder 0 steht, ist dann egal. 
+
+  Wenn der Level nur Zweispielermodus unterstuetzt, dann ist "max_players" 
+  auf >=2 zu setzen und "singleplayer" auf 0.
+
+  Wenn der Level Ein- und Zweispielermodi unterstuetzt, dann ist 
+  "max_players" auf >=2 und "singleplayer" auf 1 zu setzen.
+
+
+o MINIGAMES -- Levelinfo
+
+  Bei Minigames besteht die Moeglichkeit, eine Informationsdatei mit 
+  Levelinformationen (z.B. Spielanleitung) anzuzeigen.
+
+  Diese Infodatei ist eine reine Textdatei, die denselben Namen 
+  haben muss wie die LVL-Datei (also z.B. "bling.txt" bei "bling.lvl").
+
+  Fuer die Gestaltung dieser Textdatei ist folgendes zu beachten:
+
+  - Keine Umlaute und Sonderzeichen verwenden (nur ASCII 0-127).
+
+  - Einen HARTEN Zeilenumbruch spaetestens bei Position 80 einbauen.
+    GS macht keinen automatischen Zeilenumbruch (zumindest bist jetzt).
+    Laengere Zeilen werden gnadenlos abgeschnitten.
+
+  - Die Textdatei kann verschiedene Sektionen enthalten, die je
+    nach eingestellter Sprache in GS angezeigt werden. Diese Sektionen
+    werden eingeleitet durch %%LANG_XX%%, wobei XX fuer die Sprache
+    steht, in der diese Sektion angezeigt werden soll, also (aktuell)
+    %%LANG_DE%%, %%LANG_EN%% und %%LANG_CR%%. Es koennen auch mehrere
+    dieser LANG-Befehle in einer Zeile stehen (damit z.B. die englische
+    Sektion angezeigt wird, wenn ein User Kroatisch als Sprache einge-
+    stellt hat).
+
+
+o generell / MINIGAMES -- Scripting-Tips
+
+  -- Extra-Bar im Minigames-Menue
+
+     Aus Ein- und Zweispielerlevels ist die LVL-Option 
+     "activate_extra_str" bekannt. Bei Minigames gibt es zusaetzlich die
+     Option "activate_extra_bar". Damit wird ein Auswahlbalken angezeigt,
+     der eine selbst waehlbare Beschriftung aufweist und dessen Massstab
+     frei bestimmbar ist. Das Format:
+
+     activate_extra_bar = "100 10 Anzahl Extras"
+
+     Dieser String erzeugt einen Balken mit der Beschriftung "Anzahl
+     Extras", der einen Maximalwert von 100 annehmen kann und sich in
+     10er-Schritten verstellen laesst.
+
+     Der Wert von activate_extra_bar kann im Script ueber 
+     "globals.extra_bar" abgefragt werden.
+
+
+  -- Aufloesung vorgeben
+  
+     Mit der Option "required_resolution" im LVL kann man festlegen, mit
+     welcher Aufloesung der Level gestartet werden soll, unabhaengig von
+     der Einstellung im Optionen-Menue. Anzugeben ist der X-Wert der 
+     gewuenschten Aufloesung, z.B. 640, 800 oder 1024.
+
+
+  -- Panel ausblenden
+
+     Vor allem bei Minigames ist es praktisch, dass man das Panel mit den
+     Spielerinfos am unteren Bildschirmrand komplett ausblenden kann, und
+     zwar durch folgenden Befehl:
+   
+     gpanel[1]:set_active(0) bzw. zusaetzlich fuer gpanel[2] (Zweispieler)
+
+     Auf der nun freien Flaeche kann man ohne Probleme ein Screen-OSD
+     erstellen und dort seine eigenen Spieldaten anzeigen.
+
+
+
+
+Jens Hassler
+jh@gravity-strike.de
+www.gravity-strike.de
+     

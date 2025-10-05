@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "ussrb.tga"
+name                 = "USSR-Bomber"
+description          = "sowjetischer Kampfbomber"
+
+hull                 = 11
+shield               = 4
+radar_zoom           = 0
+weapon_slots         = 4
+
+weapon_storage       = 100
+weapon_recharge      = 100
+
+shield_recharge      = 11
+hull_repair          = 18
+
+turn_speed           = 36
+maximum_speed        = 31
+acceleration         = 32
+
+fuel_consumption     = 46
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_BOMB
+weapon_slot_3        = W_BIGBOMB
+weapon_slot_4        = W_MINE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE

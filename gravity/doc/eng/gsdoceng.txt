@@ -1,0 +1,172 @@
+...........................................................................
+=======================> Gravity Strike, v0.94 <===========================
+
+
+1.  Introduction
+2.  Features
+3.  System Requirements
+4.  Command Line, Special keys
+5.  Additional Info / Networking mode
+6.  Download
+7.  Legal stuff
+8.  Credits
+
+
+1. INTRODUCTION
+
+Gravity Strike is a multiplayer version of my game "Gravity Force"
+you can download at...
+
+www.gravity-force.de
+
+Gravity Strike contains many cool new features, but no single player mode
+up to now.
+
+
+2. FEATURES
+
+The following things are the main features of Gravity Strike compared
+to Gravity Force:
+
+  - better code, which should be running on all supported platforms without
+    major problems.
+
+  - Splitscreen and networking support.
+
+  - User creatable ships: You can draw and import your own ship image and
+    change over 10 parameters which affect the overall power of your
+    personal ship.
+
+    A "ship" is nothing but an ASCII file and an image file. You can just
+    copy new ships into the /ships directory to use them in the game.
+
+  - More weapons. Up to now there are: Single Gun, Double Gun,
+    Bomb, Bigbomb, Mines, Rockets, Shrinker, Freezer, Probe and Delirium
+    Bomb.
+
+  - Component based maps: The maps are now divided in control file 
+    (/levels/xxx.lvl), ini file (/levels/xxx.ini), scripting file
+    (/levels/xxx.sc) and the map itself (/levels/xxx.mar).
+
+    No special actions inside the levels are hard coded.
+
+  - Scripting support in the language "Lua" (www.lua.org).
+    Theoretically you can create cool specials inside your own levels
+    without the need of changing the game code.
+    Unfortunately, the scripting documentation (script.txt) is only
+    available in German yet.
+
+
+3. SYSTEM REQUIREMENTS
+
+   Minimum: Pentium 200, 16 MB RAM
+   Operating System: clean DOS, Windows 95/98/ME/NT4/2000/XP, or Linux.
+
+   This list is sorted by performance. The DOS version is the fastest.
+
+   If performance is a problem: The DOS version should run very good under
+   Win95/98/ME and XP.
+
+   Some missions (e.g. "The Tower") with many enemies and scripting stuff
+   need much more processing power.
+   
+   You need a mouse to control all menu options.
+
+   A sound card is recommended.
+   
+   For networking you need TCP/IP with the Windows version or IPX with
+   the DOS version.
+   
+   The installation is very easy: Just unpack the archive and start 
+   "gs.exe". All files required for playing are in this directory. No
+   files will be copied to the Windows directory. To uninstall the game
+   simply delete the gs folder.
+
+
+4. COMMAND LINE, SPECIAL KEYS
+
+   You can start GS with any of the following command line parameters:
+
+   /debug           Writes debugging information to "gs.log"
+
+   /window          Tries to start GS inside a window on the desktop
+                    (only Windows & Linux versions).
+  
+
+   The following keys are available in the game:
+ 
+   F12		    Makes a screenshot (which is copied to the GS 
+                    directory as a TGA file)
+
+   PrtScr/PAUSE     Pauses the game. Both keys work in the DOS version,
+                    the Windows version only supports PrtScr.
+
+   Scroll Lock	    (ScrLock) Turns the status panel in the game on/off.
+
+
+
+   
+5. ADDITIONAL INFO / NETWORKING MODE
+
+   You don't need to change anything when using the DOS (IPX) version of
+   GS.
+   IF you use the Windows version with TCP/IP, you must change the 
+   "broadcast_address" setting in the file "dat/gs.cfg". The broadcast
+   address is usually the host 255. E.g. if your IP address in your internal
+   network ist 192.168.1.1, then your broadcast address is most probably
+   192.168.1.255. This setting must be the same on all computers running
+   GS in networking mode.
+   
+
+6. DOWNLOAD
+
+   You can download all new versions from...
+
+   www.gravity-strike.de
+
+   Under "News" you can also give me your eMail address. You will then
+   receive an informational mail when new versions are coming out.
+
+
+7. LEGAL STUFF
+
+   Gravity Strike is FREEWARE. This means: You can distribute the game
+   in any way if you take no charge for it.
+
+
+8. CREDITS
+
+   The credits for "Gravity Force" are, in most cases, also the credits 
+   for Gravity Strike.
+
+   The new code is written almost completely by myself. The same goes to
+   most of the new graphics.
+
+   For the scripting of levels and ini files the scripting language 
+   "Lua" was used (www.lua.org), also the tool "tolua".
+   
+   The menu music is taken out of the internet and was composed by Martin
+   Wall in October 1989.
+  
+   A big "Thank you" goes to all who have contributed to GS, either by
+   great comments and criticisms or by creating exciting ships and maps.
+   A complete list with the levels and ships created up to now is available
+   on gravity-strike.de.
+      
+   Following programming libraries were used:
+
+     -> DJGPP (C++ compiler)
+     -> Allegro 4 (game programming lib, www.allegro.cc)
+     -> AllegTTF 2 (lib for antialiased fonts)
+     -> JGMod (MOD playing library)
+     -> RakNet (networking library)
+     -> Lua (scripting language)
+
+
+Have fun!
+And don't hesitate writing me if you have some words to say :-)
+
+Jens Hassler
+
+jh@gravity-strike.de
+www.gravity-strike.de

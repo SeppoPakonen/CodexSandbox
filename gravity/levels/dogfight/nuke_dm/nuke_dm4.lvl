@@ -1,0 +1,32 @@
+-- Nuke_dm4
+-- control file
+
+author	           = "Nukem"
+min_version         = 0.6
+max_players         = 2
+style               = GRASS
+
+map                 = "nuke_dm4.mar"
+initscript          = "nuke_dm4.ini"
+script              = "nuke_dm4.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name               = "Nuke_dm4"
+  description        = "Small, but beautiful."
+  activate_extra_str = "" 
+else
+  name              = "Nuke_dm4"
+  description       = "Klein, aber fein!"
+  activate_extra_str = ""
+end
+
+onescreen_map       = 1
+onescreen_map_x     = 28
+onescreen_map_y     = 36
+
+required_resolution = 640
+
+singleplayer        = 0
+capture_the_flag    = 0
+hunter_hunted       = 0

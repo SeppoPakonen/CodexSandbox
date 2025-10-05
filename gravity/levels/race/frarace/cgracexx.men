@@ -1,0 +1,12 @@
+-- Menu-Speicher-Datei
+-- CG-Race XX
+-- von Frapela
+-- 20:27:52 am 12.06.2005
+
+menu_aktiv        = 6
+spiel_art         = 2
+globals.race_laps = 4
+CG_anz            = 4
+CG_flug_kunst     = 1
+CG_flug_tempo     = 3
+CG_schuss         = 1

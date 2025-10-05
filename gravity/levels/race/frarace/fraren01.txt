@@ -1,0 +1,6 @@
+-- Levelrekord-Datei
+-- Fraren 01
+-- von Frapela
+-- 14:48:21 am 12.06.2004
+
+highscore_frarenxx = 3162

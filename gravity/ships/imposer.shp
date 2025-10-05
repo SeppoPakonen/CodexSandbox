@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "imposer.tga"
+name                 = "Imposer"
+description          = "The same race of ship as the Exponent, only stronger."
+
+hull                 = 18
+shield               = 12
+radar_zoom           = 0
+weapon_slots         = 5
+
+weapon_storage       = 37
+weapon_recharge      = 60
+
+shield_recharge      = 22
+hull_repair          = 18
+
+turn_speed           = 30
+maximum_speed        = 22
+acceleration         = 22
+
+fuel_consumption     = 66
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_SHRINKER
+weapon_slot_4        = W_ROCKET
+weapon_slot_5        = W_MINE
+weapon_slot_6        = W_NONE
+

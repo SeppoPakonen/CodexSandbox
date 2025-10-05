@@ -1,0 +1,32 @@
+-- Level-Datei
+-- Frapela6
+-- von Frapela
+-- 16.08.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author		    = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "frapela6.mar"   -- von Jens, GF-Level 5 bis 7
+initscript       = "frapela6.ini"
+script           = ""
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Frapela 06"
+  description = "Memory! von Frapela"
+  missiondesc = "[f:impact14][c:yellow]Anleitung: "..
+                "[w:50][f:impact10][c:white][br]Mit den Pfeiltasten waehlst du die Anzahl der Paare, die du sammeln willst. Je mehr Paare du waehlst, desto weniger Gegner erscheinen. "..
+                "[w:20][c:orange]Mit Return bestaetigst du deine Wahl, und startest das Level! "
+else
+  name        = "Frapela 06"
+  description = "Memory! by Frapela"
+  missiondesc = "[f:impact14][c:yellow]Instruction: "..
+                "[w:50][f:impact10][c:white][br]With the Arrow-Keys you choose the number of pairs, which you want to get. The more pairs you choose, the less enemies appear. "..
+                "[w:20][c:orange]With Return you confirm your selection, and start the level! "
+end

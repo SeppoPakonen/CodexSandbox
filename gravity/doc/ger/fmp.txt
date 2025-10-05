@@ -1,0 +1,28 @@
+
+1. Man lädt sich das originale "Mappy" von Robin Burrows, am besten in der Win-Version, herunter.
+   http://www.geocities.com/SiliconValley/Vista/7336/mapwin14.zip
+
+2. Man startet Mappy und öffnet über "File/Open" ein FMP aus dem dat-Ordner von GS.
+
+3. Man startet einen Tile-Export über "File/Export". Dort macht man ein Häkchen bei "Graphics Blocks (?.bmp)" 
+   und gibt bei "Blocks in a row" die Zahl "13" an.
+
+4. In dem Ordner, aus dem man das FMP geöffnet hatte, liegt nun eine gleich heissende BMP-Datei. Diese mit 
+   einem Grafikprogramm öffnen.
+
+5. Im Grafikprogramm am besten gleich ein Gitter mit 48 x 48 Pixel (Tile-Größe) über das Bild legen.
+
+6. Das Ding soweit als möglich verändern. Es muss dabei unbedingt die Palette des Bildes beibehalten werden. 
+   Außerdem muss man penibelst darauf achten, das erste schwarze Rechteck nicht durch irgendwelche Grafikpixel 
+   an dessen Rand zu 'berühren'. Außerdem müssen alle komplett schwarzen Tiles 'dazwischen' irgendeinen Pixel 
+   enthalten. Beim späteren Import übergeht Mappy nämlich vollständig schwarze Tiles und dann stimmt die 
+   Reihenfolge nicht mehr.
+
+7. Das Bitmap speichern und in Mappy über "File/Import" importieren, nachdem man eine schon bestehende FMP-Datei
+   geladen hat. Die neuen Grafiken müssten nun alle bisherigen ersetzt haben. Nun kann diese FMP wieder in Mappy
+   gespeichert werden ueber "File/Save as". 
+
+8. Schliesslich kann man diese FMP in den GS-Map-Editor laden und dort wie gehabt Karten erstellen. Um diese
+   FMP in einem Level benutzen zu koennen, gibt man in der LVL-Datei bei "style=" nicht wie ueblich "GRASS"
+   oder "STONE" an, sondern den Dateinamen dieser FMP-Datei. Die Datei selbst kann im /dat-Verzeichnis von
+   GS liegen oder aber im aktuellen Levelverzeichnis.

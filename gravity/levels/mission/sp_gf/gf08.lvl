@@ -1,0 +1,41 @@
+-- Level-Datei
+-- Remake von Gravity Force Level 8
+-- von Frapela
+-- 08.08.2003
+
+author	         = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "gf08.mar"
+initscript       = "gf08.ini"
+script           = "gf08.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Gravity Force: Level 8"
+  description = "GF Level 8, sammele Munition und vernichte alle Gegner! (Schwierigkeit: Hoch) Umsetzung fuer GS von Frapela"
+  missiondesc = "[f:impact14][c:yellow]  LEVEL 8     [c:white]DEATHMATCH "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]MEHRERE JAEGERSONDEN WARTEN DARAUF, FREIGELASSEN ZU WERDEN. SIE JAGEN DICH, UND DU JAGST SIE. "..
+                "[w:50][br][br][br][br][br]FUELLE DEIN SCHIFF MIT WAFFEN UND ZERSTOERE ALLE SONDEN. DEIN SCHILDSYSTEM LAEDT SEHR SCHNELL NACH UND DU KANNST HIER JEDERZEIT AUFTANKEN."..
+                "[w:50][br][br][br][br][center][f:impact14][c:yellow] FROEHLICHES JAGEN!"
+elseif (LANGUAGE == LANG_EN) then
+  name        = "Gravity Force: Level 8"
+  description = "GF Level 8, get ammunition and destroy all enemies! (Difficulty: High) Remake for GS by Frapela"
+  missiondesc = "[f:impact14][c:yellow]  LEVEL 8     [c:white]DEATHMATCH "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]THERE ARE SOME HUNTER PROBES WAITING TO BE RELEASED. THEY HUNT YOU, YOU HUNT THEM. "..
+                "[w:50][br][br][br][br][br]FILL UP YOUR SHIP WITH WEAPONS AND DESTROY THESE PROBES. YOUR SHIELD SYSTEM IS VERY FAST RELOADING AND YOU CAN REFUEL YOUR SHIP AT THIS BASE."..
+                "[w:50][br][br][br][br][center][f:impact14][c:yellow] HAPPY HUNTING!"
+elseif (LANGUAGE == LANG_CR) then
+  name        = "Gravity Force: Level 8"
+  description = "GF Level 8, get ammunition and destroy all enemies! (Difficulty: High) Remake for GS by Frapela"
+  missiondesc = "[f:impact14][c:yellow]  LEVEL 8 [c:white]SMRTELNY ZAPAS "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]JE TU NIEKOLKO DESTRUKTIVNYCH SOND CAKAJUCE NA UVOLNENIE. POJDU PO TEBE, TY POJDES PO NICH. "..
+                "[w:50][br][br][br][br][br]NAPLN LOD ZBRANAMI A ZNIC SONDY. TVOJE STITY SA VELMI RYCHLO DOBYJAJU A MOZES TANKOVAT SVOJU LOD NA TEJTO ZAKLADNI."..
+                "[w:50][br][br][br][br][center][f:impact14][c:yellow] LOVU ZDAR!"
+end
+

@@ -1,0 +1,34 @@
+-- CG-Race 11
+-- LVL-Datei
+-- von Frapela
+-- 24. November 2004
+
+author	             = "Frapela"
+min_version          = 0.93
+max_players          = 6
+style                = "gfw6.fmp"
+
+map                  = "cgrace11.mar"
+initscript           = "cgrace11.ini"
+script               = "cgracexx.sc"
+global_script        = 1
+
+if (LANGUAGE == LANG_DE) then
+  name               = "CG-Race 11"
+  description        = "Ein Rundkurs!"
+else
+  name               = "CG-Race 11"
+  description        = "A circuit!"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+race               = 1
+singleplayer       = 1
+  
+if (LANGUAGE == LANG_DE) then
+  activate_extra_str = "Computer-Gegner"
+else
+  activate_extra_str = "Computer-Enemy"
+end

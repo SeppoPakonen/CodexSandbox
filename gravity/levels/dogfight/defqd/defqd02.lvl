@@ -1,0 +1,30 @@
+-- QD02: Bumping Around
+-- control file
+
+author	           = "Jens"
+min_version         = 0.6
+max_players         = 2
+style               = STONE
+
+map                 = "gfqd02.mar"
+initscript          = "defqd02.ini"
+script              = "defqd02.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name               = "QD02: Bumping Around"
+  description        = "The second onescreen multiplayer map out of 'Gravity Force': Bumping walls."
+else
+  name               = "QD02: Bumping Around"
+  description        = "Die zweite Multiplayer-Karte aus 'Gravity Force': Gummiwaende."
+end
+
+onescreen_map       = 1
+onescreen_map_x     = 100
+onescreen_map_y     = 100
+
+activate_extra_str  = ""
+capture_the_flag    = 0
+hunter_hunted       = 0
+
+required_resolution = 640

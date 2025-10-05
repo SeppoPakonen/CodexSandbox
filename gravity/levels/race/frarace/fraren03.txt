@@ -1,0 +1,6 @@
+-- Levelrekord-Datei
+-- Fraren 03
+-- von Frapela
+-- 16:07:12 am 09.11.2003
+
+highscore_frarenxx = 3000

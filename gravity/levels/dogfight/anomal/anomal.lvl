@@ -1,0 +1,27 @@
+-- Anomal
+-- control file
+-- map by: Martin
+
+author	           = "Martin"
+style              = STONE
+
+map                = "anomal.mar"
+initscript         = "anomal.ini"
+script             = ""
+min_version        = 0.8
+max_players        = 2
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Anomal"
+  description      = "Nach dem alles Normalium abgebaut war, mussten viele lieb gewordene Gewohnheiten aufgegeben werden, unter Anderem auch die Schwerkraft."
+else
+  name             = "Abnormal"
+  description      = "100 Miles deep in the Underground everything seems to be strange."
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+activate_extra_str = ""
+hunter_hunted      = 1
+singleplayer       = 0

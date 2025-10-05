@@ -1,0 +1,32 @@
+-- QD0x: Green Arena, Test
+-- control file
+
+author	           = "Jens"
+min_version         = 0.6
+max_players         = 4
+style               = GRASS
+
+map                 = "gfqd01.mar"
+initscript          = "defqd0x.ini"
+script              = "defqd0x.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name              = "QD0X: Green Arena, Netz-Test"
+  description       = "The first onescreen multiplayer map out of 'Gravity Force'"
+  activate_extra_str = "" 
+else
+  name              = "QD0X: Green Arena, Netz-Test"
+  description       = "Die erste Multiplayer-Karte aus 'Gravity Force'"
+  activate_extra_str = ""
+end
+
+onescreen_map       = 1
+onescreen_map_x     = 16
+onescreen_map_y     = 36
+
+singleplayer        = 0
+capture_the_flag    = 1
+hunter_hunted       = 1
+
+required_resolution = 640

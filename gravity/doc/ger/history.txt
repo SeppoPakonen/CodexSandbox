@@ -1,0 +1,255 @@
+...........................................................................
+= History ===============> Gravity Strike, v0.94 <=========================
+
+v0.94 (12.06.05)
+ * BUGFIXES
+ + verbessertes Waypoint-System (3 Modi)
+ + Pathfinding-Algorithmus fuer Gegner und Objekte (Beta)
+ + neue Tilemaps "offiziell" integriert
+ + neue Waffe: Säure
+
+v0.93 (29.08.04)
+ * viele BUGFIXES (z.B. libsw.sc, div. Karten, Extras gaben zuviel Munition...)
+ * Verbesserte Kollisonserkennung der Waffen
+   (schnelle Projektile 'ueberspringen' Objekte nicht mehr)
+ + Handicap-Option fuer Dogfights: Beim Abschuss eines Gegners wird das 
+   eigene Schiff etwas schwaecher. Wenn man selbst abgeschossen wird,
+   verringert sich dieses Handicap wieder.
+ + Neue Waffe: Schrotflinte
+ + Rueckstoss bei Partikelwaffen
+ + kleine Anzeige in Panel, ob Waffe wieder einsatzbereit/geladen ist
+ * Waffen teilweise verbessert: Minen sind fast unsichtbar,
+   Delirium-Bombe und Bumper erhoehen Frags
+ - Netzwerkmodus bis zur naechsten Version deaktiviert
+ + Anzeige der Durchschnitts-Schiffswerte im Schiffs-Auswahl-Menue
+ + Bei ESC im Spiel erscheint Menue mit Auswahl:
+   F1 = Neustart, ESC = Ende, andere Taste = Weiter
+ + neue Dogfight-Karten: Catastrophe, Klaustrophobie I+II, Ocean, Trade Made
+   neues Minispiel (im Extra-Archiv): GS-Doppelkopf
+
+v0.92 (10.01.04)
+ * BUGFIXES
+ + Aenderung der Aufloesung nun moeglich! 
+   (Spielfeld in 640x480, 800x600, 1024x768, 1280x1024 und 1600x1200 Pixeln)
+   (ueberbrueckbar fuer bestimmte Levels, z.B. Minigames)
+
+v0.91 (08.11.03)
+ * einige BUGFIXES
+
+v0.9 (02.10.03)
+ + neue Dogfight-Karten: Marmap & Shopping
+   neue Missionskarten: Frapela 6-10, Gravity Force Levels 4+5+8
+   neue Rennkarten: Frarace 2+3, Fraren 1-10
+   neue Minispiele (im Extra-Archiv): GS Loopz, GS Tron, GS Lemmings und
+   GS PipeMania
+ + zwei neue Waffen: Laser und Bumper Bombs
+ + neues Schiffsextra: Deflektor
+ + Waffen sind nun unterschiedlich effektiv gegen Schilde und Huelle,
+   verursachen teilw. Rueckstoss und ermoeglichen Upgrades (durch Extras 
+   aktiviert); Raketen, Minen und Sonden sind nun abschiessbar
+ + Bei wenig Huelle (zufaelliger) Schaden an Schiffsystemen
+ + Ausgeweitetes Extra-System (Unverwundbarkeit, Schildaufladung,
+   Waffen-Upgrades usw.)
+ + Getrennte Darstellung von Missionen/Rennen in der Level-Auswahl
+ + Einstellungsmenue fuer Spezialtasten (Pause, Screenshot usw.)
+   ACHTUNG: beim Update von einer aelteren Version bitte die neuen
+   Tasten definieren oder die Datei dat/keys.dat loeschen, sodass sie
+   von GS neu angelegt werden kann
+ + Computergegner nun eincompiliert (d.h. Levels mit aktiviertem Gegner
+   sind schneller). "use_script_computer_player" in dat/gs.cfg muss dazu
+   auf "0" stehen!
+ + veraenderte Verzeichnisstruktur (Unterverz. fuer einzelne Spielmodi)
+ + Option fuer (Menue-)Musiklautstaerke
+ + andere Menuemusik
+ + Wechsel der Scripting-Engine auf neue Version. Diverse Aenderungen,
+   siehe script.txt und upgrade.txt (fuer Levelprogrammierer)
+ * BUGFIXES (Abstürze bei Levels mit Gravitationsfallen, falsche Waffen-
+   Anzeige im Schiffseditor, Highscore-Unstimmigkeiten, nicht alle 
+   Schiffe wurden in Schiffsauswahl angezeigt, u.a.)
+
+v0.89 (30.05.03)
+ + Scriptgesteuerter Computergegner fuer Dogfight-Levels! (thx 2 Frapela)
+ + neue Karten: Arena 1+2, Frapela 5, Frako 1, Frapa 1-3, Shoot Cross
+ + Neue Minispiele: Bling Bling Scramble, GS Ball, BoloBall,
+   GS Backgammon, GS Snake, GS Invader, GS Vier Gewinnt, 
+   GS Kalahari und GS Tetris
+ + Extra-Menuepunkt fuer "Minispiele" (Idee by Simon) mit der Moeglichkeit,
+   eine Levelinfo-Textdatei anzuzeigen
+ + Gravitationswaende (wie in GF) eingebaut
+ + Neue Infodatei "tips.txt" (fuer Levelscripter)
+ * Scripting-Erweiterung (z.B. zur kompletten Tastatur- und Mausabfrage,
+   leichte Aenderungen in remove-Funktionen, zus. Funktionen, um direkt
+   auf die Karte zu zeichnen (siehe script.txt))
+ * Bugfixes
+ 
+v0.88b (25.11.02)
+ * diverse BUGFIXES und Anti-Cheating-Patches :)
+ * Internet-Higshcore-Problem endgueltig geloest!
+ + kleinere Scripting-Erweiterungen (einfache Schussfunktion fuer
+   User-Gegner, einfachere/einheitliche Aenderung von Schiffswerten usw.)
+ + neue Karten: Die Levelserie "Frapela 1-4", ein neuer Race-Level
+   und "GS-Breakout!"
+
+v0.88a (15.10.02)
+ * BUGFIXES (Highscore-Probleme, Level-Probleme etc.)
+ + neuer Zweispieler-Level: "Weapons"
+
+v0.88 (13.10.02)
+ + neue Zweispielerkarte: "Bling Bling Scramble"
+ + neue Race-Karten: "Nuke_ra1" und "Nuke_ra2"
+ * BUGFIXES (u.a. zaehlten die Bigbombs nur 4 statt 25 Hitpoints, wenn
+   sie Objekte trafen).
+ * kleinere Aenderungen im Race-Modus (fuer mehr Fairness & gegen Cheaten).
+   Ausserdem laesst sich im Zweispielermodus nun die Anzahl der Runden
+   einstellen.
+ * Aenderungen im Higscore-System fuer Single Player Levels, u.a. zaehlt nun
+   auch die benoetigte Zeit.
+ * Einige Levelverzeichnisse zusammengeefasst (bessere Uebersicht).
+ + Kleine Anzeige in der Statistik, ob man seinen eigenen Highscore
+   gebrochen hat.
+ * Highscore-Dateien landen nun zentral im /hiscores-Unterverzeichnis.
+ + Script: I/O-Funktionen (Dateien erstellen/auslesen etc.), 
+   Schiffe lassen sich nun in Level-Scripts laden (um z.B. Schiffe waehrend
+   einer Mission auszutauschen oder um ein Schiff vorzugeben),
+   Scrolling-Grenzen lassen sich setzen und einige kleinere Erweiterungen.
+ * kleinere spieltechnische Aenderungen
+ + Offizielle Freigabe des Quellcodes
+
+v0.85 (10.09.02)
+ + neue Karten: "Nuke_DM4", "Streifen", "Mars" und "GS Asteroids"
+ + RENNMODUS! (Ein- und Zweispielermodi, Netzwerk erst mit v0.9)
+ + vorlaeufige Highscore-Funktion fuer Internet-Highscores
+ + Waypoints nun auch fuer Objekte moeglich
+ + Panel im Einspielermodus nun auch als OSD nutzbar
+ + User-Bilder/Animation nun auch in OSDs moeglich
+ + User-FMPs moeglich (es kann also die gesamte Landschaft ausgetauscht
+   werden)
+ + User-Statistiken moeglich
+ + Funktionsbibliotheken erweitert (z.B. zur Schalter- und Tuersteuerung)
+   und dokumentiert (funclib.txt)
+ * Soundfunktionen ausgebessert. Zusaetzliche Funktion, um Standard-
+   Sounds dynamisch durch eigene zu ersetzen.
+ * Scripting-Funktionen leicht erweitert, Dokumentation (vor allem der
+   Hook-Funktionen) verbessert
+ * Einige kleinere Bugs behoben
+
+v0.82 (22.06.02)
+ * BUGFIXES (u.a. Raketen-Steuerungs-Fehler [schalteten kein Ziel mehr
+   auf])
+ + neue Dogfight-Karte ("Anomal")
+
+v0.81 (17.06.02)
+ * BUGFIXES (behebt schlimmste Fehler aus v0.8)
+
+v0.8 (16.06.02)
+ + NETZWERKMODUS! (erste, unperfekte Version)
+ + GEGNER!
+ + EINSPIELER-MODUS!
+ + Wand-Abprall-Schilde! (Ermoeglichen auch Spielerkollisionen)
+ + neue Karten: "Nuke_DM2" und "Nuke_DM3" und vier Einspieler-Levels
+ + šbersetzung ins Kroatische
+ + Verbesserte šbersichtskarten mit ungefaehrer Groessenangabe
+ + Um die wichtigsten Spezialobjekte erweiterte Radaranzeige
+ + Extras verbrauchen nun "Extra-Energie" statt Treibstoff
+   (Aufladung der Extra-Energie ist abh„ngig von der Treibstoff-Einstellung)
+ + WICHTIG: Umstellung der Level-Verzeichnisstruktur (ein Verzeichnis pro
+   Level, das /maps-Verzeichnis faellt weg)
+ + Moeglichkeit zum Integrieren eigener Objekte, Gegner und Sounds 
+   per Script
+ + Neue OSD-Funktion "draw_typewriter_text" (hauptsaechlich fuer Missions-
+   Briefings bei Single Player benutzt)
+ * diverse spieltechnische Aenderungen: 
+   Die Waffenkapazitaet ist nun auch stark abhaengig von der Zahl der
+   Waffenschaechte, der Treibstoff reicht laenger, Raketen verlieren die
+   Zielauffassung auf getarnte Spieler nicht vollstaendig, getarnte Spieler
+   koennen nicht feuern, ...
+ * einige Bugfixes (u.a. Radar-Anzeige)
+
+v0.71 (20.12.01)
+ + Zwei neue Karten: "Nuke_DM1" & "Rock Arena"
+ * Lande-Bug behoben (Schiffe konnten keine Fracht mehr aufnehmen)
+ * "Waffen-Aufladung" der Schiffe modifiziert (fairere Maximaleinstellungen)
+
+v0.7 (01.12.01)
+ + Neuer Spielmodus: "Hunter-Hunted"
+ + Neues Schiffs-Extra: Tarnmodus
+ + Neue Waffe: Killer-Sonde
+ + Neue Waffe: Delirium-Bombe
+ + Menue-Musik
+ + Maus-Cursor ist nun etwas auffaelliger
+ + Joystick (bzw. Joypad)-Unterstuetzung
+ * Etwas weniger Raketen verfuegbar (auch sind diese schwaecher), weniger 
+   Treibstoffverbrauch, Abschuss-Zaehler leicht geaendert (Frags verringern 
+   sich nicht mehr, wenn man abgeschossen wird) und sonstige kleinere
+   Einstellungsaenderungen (Schiffe sind etwas widerstandsfaehiger)
+   sowie Bugfixes.
+ + FAQ erweitert
+ + zwei neue Karten: "Donut" & "The Move"
+ + das Schiffsauswahlmenue verfuegt nun ueber mehrere Seiten, wodurch die
+   maximale Schiffsanzahl jetzt bei 200 liegt.
+
+v0.6 (30.08.01)
+ + OSD (On Screen Display)
+ + Anzeige der uebrigen Spielzeit per Script (Details in libosd.sc)
+ + optionale Bonus-Punkte (fuer Level-Scripts)
+ + "Hook"-Funktionen fuer Level-Scripts
+ + per Script implementierter "Capture the Flag"-Modus!
+ + "Fracht" auf Basen
+ + Automatisches Auftanken auf Heimatbasis
+ + Zeitangabe "0 min" im Menu steht fuer "unendlich"
+ + Eigene Schildanimationen sind nun moeglich!
+ * ESC-Taste im Menu ist nun aequivalent zum jew. "Zurueck"-Button
+   (sofortiges Beenden mit Shift+ESC)
+ * Viiiele Bugfixes (u.a. nicht funktionierende Reparatur der Schiffshuelle)
+ * Ein paar wenige Optimierungen
+
+v0.5 (15.07.01)
+ ! Erste offiziell veroeffentlichte Version!
+ + Menue-System (Main, Options, Controls, Ship Builder, Splitscreen, Stats)
+ + Sound eingebaut (keine Musik)
+ + Mehrsprachen-Support integriert (Deutsch & Englisch)
+ + Ingame-Scripting-Support (erste API)
+ + Karten nun aufgespalten in Control-File, Map-File, Init-Script 
+   und Ingame-Script
+ + Support fuer "Ein-Bildschirm-Karten" (Multiplayer in GF)
+ + Verschiedene Farben fuer vordefinierte Schiffe
+ + (Waffe) Minen eingebaut
+ + Extras eingebaut!
+ + Erste Dokumentation
+ + Schiffs-Erstellungs-Doku
+ + Script-Doku (erste Version)
+ * Schiffsbilder um Afterburner-Frame erweitert
+ * Viele Bugfixes
+
+v0.4 (09.05.01)
+ + Frag-System funktioniert
+ + Status-Overlay fuer Spieler
+ + (fast) alle Standardwaffen (ausser Minen) implementiert
+ + neue Waffe: Freezer
+ + neue Waffe: Shrinker
+ * kleinere Verschoenerungen und Bugfixes
+ * Balancing
+
+v0.3 (27.04.01)
+ + Basen eingebaut
+ + Objekte eingebaut
+ + Erzeugen von Basen und Objekten per Script
+ + zweites & drittes Schiff designed
+ + Anzeige von Frags & uebrigen Schuessen im Panel
+ + Schiffs-Import ueber Scripte
+ + erstes Balancing von "Piranha", "Razor" und "Bomber"
+ * Bugfixes
+ 
+v0.2 (25.04.01)
+ + Panel (fast) voll funktionsfaehig
+ + Radar eingebaut
+ * Landen auf Landschaft
+ * Anfaenge von Scripting-Support
+ 
+v0.1 (24.04.01)
+ * Version mit den wichtigsten Features:
+    - 2 Player Splitscreen
+    - Schildsystem, Waffensystem
+    - funktionsfaehiges Panel
+    - Code komplett reorganisiert
+    - spielbar

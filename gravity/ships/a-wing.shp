@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.89: Ship Definition
+
+type                 = CUSTOM
+image                = "a-wing.tga"
+name                 = "A-Wing"
+description          = "StarWars-Series: Raumjaeger und Aufklaerungsraumschiff by ThS"
+
+hull                 = 6
+shield               = 8
+radar_zoom           = 19
+weapon_slots         = 4
+
+weapon_storage       = 36
+weapon_recharge      = 21
+
+shield_recharge      = 61
+hull_repair          = 18
+wall_shield          = 0
+
+turn_speed           = 61
+maximum_speed        = 39
+acceleration         = 27
+
+fuel_consumption     = 50
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_MINE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE

@@ -1,0 +1,33 @@
+-- klaustr
+-- control file
+
+author	           = "TStubi"
+min_version         = 0.6
+max_players         = 2
+style               = GRASS
+
+map                 = "klausp.mar"
+initscript          = "klausp.ini"
+script              = "klausp.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name               = "Claustrophobia II"
+  description        = "The special edition of 'Claustrophobia'"
+  activate_extra_str = "" 
+else
+  name               = "Klaustrophobie II"
+  description        = "Klaustrophobie - die Special Edition"
+  activate_extra_str = ""
+end
+
+onescreen_map       = 1
+onescreen_map_x     = 20
+onescreen_map_y     = 32
+
+
+required_resolution = 640
+
+singleplayer        = 0
+capture_the_flag    = 0
+hunter_hunted       = 0

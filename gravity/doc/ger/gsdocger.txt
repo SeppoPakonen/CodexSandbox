@@ -1,0 +1,250 @@
+...........................................................................
+=======================> Gravity Strike, v0.94 <===========================
+
+       _________       ___     __    _  _   ___   ___  __  __
+      / ________)     | _ \   /  \  | || | |   | |   | \ \/ /
+     / /   _________  |   /  / /\ \ | || |  | |   | |   \  /
+    / /   / ________) | \ \  | __ | \ \/ /  | |   | |   / /
+   / /___/ /____      |_|\_\ |_||_|  \__/  |___|  |_|  /_/
+   \  ___\ \___ \__    ___   ___    ___   _  __  ___
+    \ \   \____\ \ \  |   | | _ \  |   | | |/ / | __|
+     \ \_______/ /\ \  | |  |   /   | |  |   /  |  \         _    _    
+      \_________/_/ /  | |  | \ \   | |  |   \  | _/   \  / / \  (_)
+         (_________/   |_|  |_|\_\ |___| |_|\_\ |___|   \/  \_/ o /
+
+
+
+1.  Einfuehrung
+2.  Features
+3.  Systemanforderungen
+4.  Kommandozeile, Spezialtasten
+5.  Sonstige Infos / Netzwerkmodus
+6.  Download / Kontakt
+7.  Rechtliches
+8.  Credits
+
+
+1. EINFUEHRUNG
+
+Gravity Strike ist der offizielle Nachfolger des von mir ebenfalls
+programmierten Gravity Force. Siehe:
+
+www.gravity-force.de
+
+Gravity Strike ist neuer, besser, schoener und wird staendig weiter 
+entwickelt. Bis Version 0.8 war Gravity Strike ein reines Multiplayer-
+Spiel (Splitscreen), ab dieser Version wurden Netzwerk- und Einspieler-
+Modi implementiert.
+
+
+2. FEATURES
+
+Im folgenden hauptsaechlich die Dinge, die Gravity Strike von Gravity Force
+unterscheiden:
+
+  - besserer Code, der nun auf allen unterstuetzten Plattformen ohne
+    Probleme laufen sollte.
+
+  - Splitscreen-Modus, Einspieler- und Netzwerk-Support (ab Version 0.8).
+
+  - selbst erstellbare Schiffe. Es lassen sich vordefinierte Schiffsbilder
+    auswaehlen sowie eigene importieren. Die Schiffseigenschaften koennen
+    fuer jedes Schiff individuell eingestellt werden (zehn verschiedene
+    Werte). Jedes Schiff kann auch mit einer speziellen Waffenausstattung
+    versehen werden.
+
+    Ein Schiff besteht einfach aus einer ASCII-Datei, die sogar bearbeitet
+    werden kann. Somit koennen neue Schiffe einfach in das /ships-Verzeichnis
+    kopiert werden und stehen fortan im Spiel zur Verfuegung.
+
+  - mehr Waffen. Bis jetzt sind verfuegbar: Single Gun, Double Gun,
+    Bomb, Bigbomb, Mines, Rockets, Shrinker, Freezer, Probe und Delirium
+    Bomb.
+
+  - komponentenbasierte Karten: Die Karten sind aufgespalten in Kontroll-
+    Datei (/levels/name/xxx.lvl), Ini-Datei (/levels/name/xxx.ini), 
+    Scripting-Datei (/levels/name/xxx.sc) und die eigentliche Karte 
+    (/levels/name/xxx.mar).
+
+    Bis auf den ersten Dateinamen (der Kontrolldatei) sind alle anderen
+    beliebig, da die anderen Namen dort hinterlegt sind. Jeder Level hat
+    sein eigenes Unterverzeichnis unter /levels.
+
+    Im Gegensatz zu GF ist keine "Spezialaktion" in den Levels hardcodiert,
+    wodurch sich die Karten, genau wie die Schiffe, ohne Probleme erweitern
+    und austauschen lassen. Ab Version 0.8 lassen sich sogar eigene 
+    Objektgrafiken und Sounds in selbst erstellte Levels integrieren.
+
+  - Scripting-Support in der Sprache "Lua" (www.lua.org).
+    Dies erlaubt es etwas programmierfreudigen Spielern, neue interessante
+    Levels zu gestalten, ohne dazu ins Programm eingreifen zu muessen.
+    Was dabei alles moeglich ist, zeigen die enthaltenen Levels teilweise
+    sehr eindrucksvoll.
+    Mehr dazu in scripts.txt.
+
+
+3. SYSTEMANFORDERUNGEN
+
+   Mindestens empfohlen: Pentium 200, 16 MB RAM
+   Betriebssystem: reines DOS, Windows 95/98/ME/NT4/2000/XP, oder Linux.
+
+   Diese Liste ist nach Performance geordnet, was vor allem fuer schwaechere
+   Rechner wichtig sein kann: Die DOS-Version ist die schnellste, die
+   Windows-Versionen sind "fast" so schnell und die Linux-Version ist
+   leider die langsamste.
+
+   Sollte Performance ein Prob sein: Die DOS-Version laeuft ohne Probleme
+   auch unter Win95/98/ME.
+
+   Manche Einspieler-Levels (z.B. "The Tower") mit vielen Gegnern und
+   Scripting-Aktionen benoetigen einen weit schnelleren Rechner.
+   
+   Eine Maus wird zur Bedienung des Menues benoetigt.
+
+   Eine Soundkarte wird empfohlen.
+   
+   Fuer den Netzwerkmodus wird bei der Windows-Version ein TCP/IP-Netzwerk
+   benoetigt, bei der DOS-Version ein IPX-Netzwerk (IPX kann auch unter
+   Windows installiert werden, wenn die DOS-Version im DOS-Fenster ver-
+   wendet wird).
+   
+   Die Installation ist denkbar einfach: Einfach das Archiv auspacken und
+   "gs.exe" starten. Alle Dateien, die zum Spielen notwendig sind, befinden
+   sich in einem Verzeichnis. Es wird auch bei der Windows-Version nichts
+   in das Windows-Verzeichnis kopiert. Eine Deinstallation ist demzufolge
+   also ein Loeschen des GS-Verzeichnisses.
+
+
+4. KOMMANDOZEILE, SPEZIALTASTEN
+
+   GS kann mit speziellen Parametern gestartet werden (Aufruf von gs.exe
+   bzw. gswin.exe gefolgt von einem oder mehreren der folgenden Werte):
+
+   /debug           Schreibt diverse Debug-Meldungen in die Datei "gs.log"
+
+   /window          Versucht, GS im Fenstermodus zu starten (Windows/Linux).
+
+   /noclip          Startet GS ohne die Zwischenablage-Funktion fuer die
+                    Highscores. Nuetzlich, wenn diese Probleme macht oder man
+                    nicht wuenscht, dass GS den Inhalt des Clipboards ueber-
+                    schreibt.
+
+   /nocrcmessage    Wenn Leveldaten veraendert wurden, gibt GS normalerweise
+                    beim Levelstart eine Meldung aus, dass die Highsocres nicht
+                    mehr funktionieren werden. Wen das stoert (z.B. Levelbauer)
+                    kann dieses Dialogfenster mit diesem Parameter deaktivieren.
+  
+
+   Im Spiel sind folgende Spezial-Tasten verfuegbar. Diese lassen sich im
+   Menue umdefinieren:
+ 
+   F12		    Screenshot erstellen (befindet sich danach als
+                    TGA-Datei im GS-Verzeichnis)
+
+   POS1/PAUSE       Pausiert das Spiel. Die PAUSE-Taste funktioniert nur
+                    in der DOS-Version
+
+   ROLLEN	    (ScrollLock) Schaltet das Panel am unteren
+                    Bildschirmrand ein und aus
+
+
+
+5. SONSTIGE INFOS / NETZWERKMODUS
+
+   Das Menue sollte sich hoffentlich halbwegs intuitiv bedienen lassen.
+
+   Das Herumdoktern an diversen Init- oder Scripting-Dateien kann zu
+   unvorhersehbaren Folgen fuehren, die sehr kreativ sein koennen.
+
+   Die Aufloesung in den Optionseinstellungen wird nur bei Levels
+   angewendet, die keine feste Aufloesung erfordern. Wenn ein Level eine
+   beliebige Aufloesung vorsieht, befindet sich unterhalb der Minikarte
+   im Menue der Text "Aufloesung: Variabel". 
+   Falls eine gewaehlte Einstellung der Aufloesung aufgrund der Grafik-
+   karte nicht darstellbar ist, wird automatisch die Standardaufloesung
+   640x480 verwendet und eine Warnung in das Logfile gs.log geschrieben.
+   
+   Der Netzwerkmodus hat im Moment noch seine Eigenheiten, siehe dazu
+   die Datei "netbug.txt". Fuer die DOS-Version (IPX) sind keine ge-
+   sonderten Einstellungen notwendig. Bei der Win-Version muss in der
+   Datei "dat/gs.cfg" noch die "broadcast_address" abgeaendert werden.
+   Wenn die eigene IP-Adresse z.B. 192.168.1.1 ist, dann ist die
+   Broadcast-Adresse hoechstwahrscheinlich die 192.168.1.255. Diese
+   Einstellung muss bei allen Computern im Netzwerk dieselbe sein,
+   ansonsten funktioniert ueberhaupt nichts :-)
+   
+   Der Netzwerkmodus wird mit Version 0.9 komplett umgeschrieben, wodurch
+   er dann hoffentlich besser laufen sollte.
+
+
+   
+6. DOWNLOAD / KONTAKT
+
+   Alle Versionen lassen sich in ihrer neuesten Version jeweils von
+
+   www.gravity-strike.de
+
+   herunterladen.
+   
+   Auf dieser Seite gibt es auch ein Feedback-Formular, ein Gaestebuch 
+   sowie ein Forum. Bitte fleissig benutzen!
+
+
+7. RECHTLICHES
+
+   Gravity Strike ist FREEWARE, d.h. es darf frei weitergegeben (kopiert)
+   oder auf Webseiten angeboten werden, sofern dies unkommerziell geschieht.
+   Das heisst: Sobald in irgend einer Weise Geld fuer dieses Spiel verlangt
+   wird, ist meine Einwilligung erforderlich (die in speziellen Faellen,
+   z.B. Free/Shareware-CDs, gewaehrt wird).
+
+   Wer jedoch denkt, er haette fuenf Euro fuer dieses Spiel uebrig, kann
+   an einer speziellen Aktion teilnehmen und somit noch gleichzeitig anderen
+   Menschen/Tieren bzw. der Umwelt etwas gutes tun. Fuer Details siehe...
+
+   www.gravity-strike.de/freeware.html
+
+
+7. CREDITS
+
+   Fuer die aus Gravity Force entnommen Grafiken und Sounds gelten haupt-
+   saechlich dessen Credits.
+
+   Der neue Code ist fast komplett von mir. Ebenso die meisten neuen 
+   Grafiken.
+
+   Fuer das Scripting der Levels und Init-Files wurde die Scriptsprache
+   "Lua" verwendet (www.lua.org), sowie das Tool "tolua" (siehe Download-
+   Verweise auf lua.org).
+   
+   Die Menue-Musik stammt aus dem Internet (modarchive.com) und traegt den
+   Originaltitel "Old School Girl".
+
+   Die Uebersetzung ins Kroatische stammt von boro505@yahoo.com.
+
+   Das ASCII-Logo zu Beginn dieser Anleitung wurde von Simon 
+   (eiderdaus@haefft.de) entworfen.
+      
+   Weiterhin moechte ich mich herzlichst bei allen bedanken, die mit ihren
+   Tips, Ideen sowie ihren genialen Schiffen und Levels massgeblich zur 
+   Entwicklung von GS beitragen und beigetragen haben. Eine Uebersicht der
+   bisher veroeffentlichten Schiffe und Levels mit Angabe der Autoren
+   findet sich auf gravity-strike.de.
+      
+   Benutzt wurden die folgenden frei verfuegbaren Programme / Bibliotheken:
+
+     -> DJGPP (C++-Compiler fuer DOS)
+     -> Allegro 4 (Spiele-Bibliothek, www.allegro.cc)
+     -> AllegTTF 2.0 (Bib. fuer Antialiased-Fonts)
+     -> JGMod (MOD-Player-Library)
+     -> RakNet (Netzwerk-Bibliothek)
+     -> Lua (Scripting-Engine)
+
+
+Ich wuensche viel Spass,
+und fuer jegliche Anregungen bin ich natuerlich jederzeit dankbar :-)
+
+Jens Hassler
+
+jh@gravity-strike.de
+www.gravity-strike.de

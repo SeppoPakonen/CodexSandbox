@@ -1,0 +1,38 @@
+-- GRAVITY STRIKE v0.5: Ship Definition
+
+type                 = CUSTOM
+image                = "bc.tga"
+name                 = "Battle Cruiser"
+
+if (LANGUAGE == LANG_DE) then
+  description        = "Ehemals als Basis, dient dieser schwerer Kreuzer nun als ultimative Festung, gegen die nur schwer anzukommen ist."
+else
+  description        = "Once a base, this heavy cruiser is now a very powerful fighting ship."
+end
+
+hull                 = 20
+shield               = 20
+radar_zoom           = 1
+weapon_slots         = 6
+
+weapon_storage       = 30
+weapon_recharge      = 14
+
+shield_recharge      = 32
+hull_repair          = 35
+
+turn_speed           = 30
+maximum_speed        = 16
+acceleration         = 14
+
+fuel_consumption     = 28
+
+extras               = E_NONE
+
+weapon_slot_1        = W_DOUBLE
+weapon_slot_2        = W_ROCKET
+weapon_slot_3        = W_BOMB
+weapon_slot_4        = W_MINE
+weapon_slot_5        = W_FREEZER
+weapon_slot_6        = W_SHRINKER
+

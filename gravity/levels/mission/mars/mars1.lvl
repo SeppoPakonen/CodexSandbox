@@ -1,0 +1,32 @@
+-- Mars Mission I
+-- cr8ed by Simon
+
+author		   = "Simon"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "mars.mar"
+initscript         = "mars1.ini"
+script             = ""
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Mars Mission I"
+  description      = "Ihr erster Einsatz auf dem Mars. Waehlen Sie ein mittelstark bewaffnetes Schiff und erkunden Sie das Teschtgebiet."
+  missiondesc      = "[w:10][c:white][u]Mars, Teschtgebiet[/u][br][w:60][br]" ..
+           "[s:5][c:yellow]Herzlich willkommen auf Simons offiziellem [c:white]Teschtgebiet[c:yellow]. In ein paar Tagen werden hier einige umfangreiche Scriptteschts durchgefuehrt. Also rauemen Sie bitte etwas auf, das Gelaende sieht ja mit diesen vielen Gegnern fuerchterlich aus. Ausserdem erwarten wir noch zwei Frachtpakete, bitte holen Sie diese.[w:30][br]" ..
+                     "[c:orange]Achtung - es gibt einen geheimen [c:white]Todesraum[c:orange]! [w:60][c:yellow]Aber das ist bekanntlich nur ein Name, wie der [c:white]Verbotene Raum[c:yellow] oder der [c:white]Raum ohne Wiederkehr[c:yellow]![w:60][c:green][br]:-)"
+else                 
+  name             = "Mars Mission I"
+  description      = "Your first operation on Mars. Choose a medium-armed ship and explore 'Tescht Area'."
+  missiondesc      = "[w:10][c:white][u]Mars, Tescht Area[/u][br][w:60][br]" ..
+"[c:yellow]Welcome to Simon's official Tescht Area. The next days some scripting teschts will run here. So tidy up the map please 'cause it really does look messed up with all those enemy ships. There are also two cargo packs to be carried to our homebase.[br][w:30][c:orange]Watch out - there is a secret [c:white]Death Chamber[c:orange]! [w:60][c:yellow]But as known well, that is only a name, such like [c:white]Forbidden Chamber[c:yellow] or the [c:white]Chamber with no return[c:yellow]![w:60][c:green] :-)"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

@@ -1,0 +1,3716 @@
+............................................................................
+= GS-Script =============> Gravity Strike, v0.94 <==========================
+
+
+Erstellung eigener Scripte
+==========================
+
+1. Einfuehrung
+2. Uebersicht
+3. Lua - Kurzuebersicht
+4. Uebersicht ueber Funktionen & Eigenschaften
+   0) Einfuehrung
+   a) Log-Funktionen
+   b) Globale Variablen
+   c) Spieler
+   d) Basen
+   e) Objekte
+   f) Gegner
+   g) Karte
+   h) Panels
+   i) Effekt: Pixel
+   j) Effekt: Explosionen
+   k) Effekt: Krater
+   l) Effekt: Schuesse
+   m) Eingabe (Tastatur etc.)
+   n) Sound
+   o) OSD
+   p) User-Images
+   q) User-Statistik
+5. Das Spielernummer-Problem
+6. "Hook"-Funktionen
+7. Wissenswertes
+8. Ende
+A1. Anhang 1: Tastatur-Scancodes
+   
+
+1. Einfuehrung
+==============
+
+Dieser Text beschreibt, wie man eigene Scripte fuer GS-Level erstellt
+und was man dabei beachten sollte.
+
+Wer noch niemals programmiert hat, sollte sich jedoch darauf gefasst machen,
+dass es nicht so einfach ist und man viele Fehler machen kann.
+
+Die Scriptsprache heisst Lua. Die dazugehoerige Dokumentation laesst sich
+auf www.lua.org betrachten. In Punkt 3 habe ich jedoch eine Kurzuebersicht
+zusammengestellt, die den Einstieg erleichtern sollte.
+
+Lua ist eine Mischung aus C, Basic und Pascal und eigentlich sehr einfach
+zu erlernen, sofern man schon ein wenig Erfahrung in einer dieser drei
+Sprachen hat.
+
+Wie man schon am Umfang dieser Datei erkennen kann, laesst sich mit dieser
+Scriptsprache ziemlich viel anfangen. Man hat Zugriff auf fast alle Dinge
+wie Spieler, Objekte, Gegner, Effekte... Im Grunde lassen sich mit GS-
+Script sogar kleine Minispiele innerhalb von GS erstellen (siehe z.B.
+"GS Asteroids" und "GS Breakout").
+
+Diese Dokumentation dient vor allem als Referenz. Beispiele findet man
+zur Genuege in vielen Levelscripten.
+
+
+2. Uebersicht
+=============
+
+Lua wird von Gravity Strike an verschiedenen Orten verwendet:
+
+  -> Konfigurationsfiles: /dat/gs.cfg und /dat/text.lua
+  -> Schiffs-Definitionen: /ships/*.shp
+  -> Level-Definitionen: /levels/*.lvl
+  -> Spiel-Scripte: /levels/*.ini und /levels/*.sc
+
+In den Konfigurationsfiles und den *.lvl-Dateien werden einfach nur globale
+Variablen definiert, die von GS ausgelesen und verarbeitet werden.
+
+Die Level-Init- und Level-Script-Dateien enthalten jedoch vollstaendigen
+und teilweise komplexen Code. Dazu stellt Gravity Strike eine Menge
+Funktionen bereit, mit denen man aus dem Script heraus vielfaeltige 
+Aktionen ausloesen kann.
+
+GS-Levels sind aufgespalten in insgesamt 4 Dateien. Die Datei mit der
+Endung "lvl" ist die einzige Datei mit fester Endung. Alle diese Dateien
+werden von GS eingelesen und verarbeitet. Diese lvl-Datei enthaelt 
+Informationen ueber die drei anderen notwendigen Dateien, die waeren:
+
+  -> map: Die eigentliche Karte (ohne Objekte/Gegner).
+  -> initscript: Scriptfile, das beim Start des Levels genau einmal 
+     ausgefuehrt wird.
+  -> script: Scriptfile, das in jedem Spieltakt einmal ausgefuehrt wird.
+  
+Wer schon sowas wie Spiele programmiert hat, wird ungefaehr den grund-
+legenden Aufbau eines solchen Programms kennen: Man definiert zuerst die
+notwendigen Funktionen und Variablen und fuehrt dann eine zentrale Schleife
+aus, bis das Programm endet.
+
+So laeuft es auch mit den zwei wichtigen Scripts: Das Initscript wird
+nur ein einziges Mal ausgefuehrt, genau bevor der Level beginnt. Also
+definiert man dort alle Variablen und Funktionen, die man im Hauptscript
+verwenden moechte.
+
+Das Hauptscript, das auf diese Weise sehr klein werden kann (weil man nur
+Funktionen aufruft), wird 60 Mal pro Sekunde ausgefuehrt. Dies sollte man
+in seine Ueberlegungen, was man tun moechte, mit einbeziehen :-)
+
+
+3. Lua - Kurzuebersicht
+=======================
+
+Diese Uebersicht richtet sich an Leute, die schon wissen, was Variablen,
+Schleifen und Funktionen sind, die also die grundlegenden Begriffe schon
+kennen. Wer diese Anforderung nicht erfuellt, sollte zuerst mal einen
+Programmier-Einfuehrungskurs machen :-)
+
+
+* Allgemeines
+
+  Kommentare in Lua werden durch ein "--" eingeleitet und gelten bis zum
+  Ende der Zeile.
+  
+  Lua ist (wie C[++]) "case-sensitive", d.h. dass Gross- und Kleinschreibung
+  unterschieden werden: "testvar" und "TESTVAR" und "Testvar" sind jeweils
+  UNTERSCHIEDLICHE Variablennamen!
+
+  Am besten man schreibt alles klein :-)
+  
+
+* Einfache Variablen
+
+  Eine Variable in Lua kann sowohl Strings (Texte) als auch Zahlen (egal
+  ob Gleitkomma oder Ganzzahl) aufnehmen. Es ist dazu keine gesonderte
+  Auszeichnung erforderlich. Wer schon mal Perl programmiert hat: Dort
+  ist es dasselbe. Variablen muessen ergo auch nicht deklariert werden,
+  sie werden einfach bei ihrer ersten Verwendung erzeugt.
+  
+  testvariable = 5
+  testvariable2 = testvariable * 10
+  testtext = "hallo"
+  
+  testvariable hat nun also den Wert "5" und testvariable2 hat "50".
+
+  Wie man sieht, muessen die Zeilenenden nicht abgeschlossen werden.
+  Wer moechte, kann dies jedoch mit einem Semikolon (";") tun und
+  somit mehrere Anweisungen in eine Zeile packen (wie in C oder Pascal).
+
+  Variablen koennen "local" (lokal) definiert werden, d.h. in Schleifen
+  oder Funktionen verlieren sie ihre Lebensdauer am Ende dieses Blocks.
+  Aus Performance-Gruenden sollte man so viele Variablen wie moeglich als
+  "local" definieren:
+  
+  local testvariable
+
+  Lua enthaelt noch eine sehr schoene Sache, die es sonst in kaum einer
+  Programmiersprache gibt. Man kann z.B. schreiben:
+  
+  vara, varb = 47, 53
+  
+  Dies weist "vara" die Zahl 47 zu und "varb" die Zahl 53.
+  Damit kann man z.B. schnell zwei Variablen vertauschen:
+  
+  vara, varb = varb, vara
+
+    
+* Arrays (Felder)
+
+  Ein Array wird in Lua wie folgt definiert:
+  
+  testarray = {}
+  
+  Dadurch wird ein leeres Array erzeugt. Diesem koennen nun Werte zu-
+  gewiesen werden:
+  
+  testarray[1] = 5
+  testarray[2] = 53
+  testarray[3] = "test"
+  
+  Ein Array kann sowohl Text als auch Zahlen enthalten. 
+
+  Es kann auch in Listenform mit Werten gefuellt werden:
+  
+  testarray = { 5, 53, "test" }
+  
+  Dies haette denselben Effekt wie obige drei Zeilen.
+
+  Zu beachten ist, dass der erste Array-Eintrag mit "1" angesprochen wird
+  und nicht mit "0" wie in den meisten anderen Sprachen!
+  
+  Es gibt auch noch schoene Spielereien, wie z.B.:
+  
+  testarray = { zahl = 50, text = "hallo", nochnezahl = 47 }
+  
+  Jetzt koennte man die Werte dieses Arrays wie folgt ansprechen:
+  
+  testarray.zahl
+  testarray.text
+  testarray.nochnezahl
+  
+  Dies waere dann im Grunde dasselbe wie eine Struktur in C oder in Pascal.
+
+  Man kann auch Arrays in Arrays packen. Es gibt viele Moeglichkeiten.
+  
+    
+* Schleifen
+
+  Die einfachste Version der for-Schleife:
+  
+  for zaehler = start, ende do
+    -- Programmcode
+  end
+
+  Zusaetzlich kann noch eine Schrittweite angegeben werden (diese ist
+  standardmaessig "1"):
+  
+  for zaehler = start, ende, schrittweite do
+    -- Programmcode
+  end
+  
+  Eine while-Schleife (kopfgesteuert):
+
+  while ausdruck do
+    -- Programmcode
+  end
+  
+  Und eine repeat-until-Schleife (fussgesteuert):
+  
+  repeat
+    -- Programmcode
+  until ausdruck
+  
+
+* if-Statement  
+
+  Das wichtigste ueberhaupt :-)
+  
+  if ausdruck then
+    -- Code
+  elseif ausdruck then
+    -- Code
+  else
+    -- Code
+  end
+  
+  Die beiden mittleren Statements (elseif und else) sind natuerlich
+  optional. Meistens sieht eine if-Abfrage also z.B. so aus:
+  
+  if vara > varb then
+    -- Code
+  end
+  
+  Ein Ausdruck wird als "wahr" angesehen, wenn er nicht den Wert "nil"
+  enthaelt. "nil" ist NICHT "0" wie in vielen anderen Sprachen!
+  
+  a = nil
+  if a then do_something() end
+  
+  tut also nichts.
+  
+  Verschiedene Ausdruecke koennen ueber "and" und "or" verknuepft und mit
+  Klammern gruppiert werden:
+  
+  if (vara > 30 and vara < 50) or (varb > 20 and varb < 40) then
+  end
+
+  Die Operatoren orientieren sich an C, also schreibt man "==" fuer einen
+  Vergleich (und nicht nur "=", was eine Zuweisung waere). Allerdings steht
+  hier "~=" fuer "ungleich".
+  
+  ==        -> gleich
+  ~=        -> ungleich
+  >         -> groesser als
+  <         -> kleiner als
+  >=        -> groesser oder gleich
+  <=        -> kleiner oder gleich  
+    
+  
+* Funktionen  
+
+  Funktionen werden wie folgt definiert:
+  
+  function funktionsname( parameter1, parameter2, ... )
+    -- Code
+  end
+  
+  Sie koennen einen oder mehrere Werte mit "return" zurueckgeben. Hier
+  ein Beispiel:
+  
+  function multipliziere( a, b )
+    return a*b
+  end
+  
+  Dies laesst sich aufrufen ueber:
+  
+  a = multipliziere( 5, 6 )
+  
+  Oder etwas mit mehreren Rueckgabewerten:
+  
+  function ein_doofer_test( a, b, c )
+    a = b
+    b = c
+    c = a+b
+    return a, b, c
+  end
+  
+  Dies koennte folgendermassen aufgerufen werden:
+  
+  x, y, z = ein_doofer_test( 5, 2, 54 )
+
+
+* RESERVIERTE Woerter
+
+  Die folgenden Bezeichner duerfen nicht fuer Variablen,
+  Funktionen und aehnliches verwendet werden, da sie innerhalb Lua
+  eine eigene Bedeutung haben:
+  
+  
+    and       break     do        else      elseif
+    end       false     for       function  global
+    if        in        local     nil       not
+    or        repeat    return    then      true
+    until     while
+   
+  
+  Die folgenden Funktionsnamen sollten ebenfalls nicht verwendet
+  werden. Wenn man dies tut, kann man die Ursprungsfunktionen nicht
+  mehr ansprechen.
+  
+    assert        collectgarbage   dofile       error  
+    getglobals    getmetatable     getmode      gcinfo
+    ipairs        loadfile         loadstring   next
+    pairs         pcall            print        rawget
+    rawset        require          setglobals   setmetatable
+    setmode       tonumber         tostring     type
+    unpack
+    
+
+* Einige allgemeine verwendbare Funktionen:
+
+  ACHTUNG: Ab GS v0.9 muessen einige Funktionsnamen anders geschrieben
+  werden, da sie jetzt jeweils Teil von Funktionsgruppen sind.
+  So wird vor alle mathematischen Funktionen z.B. ein "math." gestellt.
+
+  dofile("datei")       -> aehnlich einem #include-Kommando in C. Fuehrt
+                           die Script-Datei "datei" an der entsprechenden 
+                           Stelle aus.
+                           Dadurch lassen sich z.B. Scripts mit allgemeinen
+                           Funktionen einbinden (z.B. libeff.sc).
+
+  table.getn(array)     -> liefert die Anzahl der Eintraege in einem Feld.
+  
+  type(variable)        -> liefert den Typ (als String) der uebergebenen 
+                           Variable: "number", "table", "string", 
+                           "function" oder "nil"
+                           
+
+  Mathematische Funktionen:
+   
+       math.abs     math.acos    math.asin    math.atan    math.atan2
+       math.ceil    math.cos     math.deg     math.exp     math.floor
+       math.log     math.log10   math.max     math.min     math.mod
+       math.pow     math.rad     math.sin     math.sqrt    math.tan
+       math.frexp   math.ldexp   math.random  math.randomseed
+
+  Sowie "math.pi" als globale Variable. 
+  Die Erklaerungen dazu werde ich mir schenken :-)
+  
+  ACHTUNG: Ein Winkel wird in "Radians", nicht mehr in
+  "Degrees" (Grad) wie bei Lua 4 (GS bis v0.89) ausgedrueckt.
+  Das System ist nun gleich wie bei C(++).
+  Zur Konvertierung existieren die Funktionen rad und deg.
+
+  ACHTUNG: math.mod liefert auch Kommawerte zurueck. Die bisher in GS
+  verwendete mod-Funktion (bis v0.89) lieferte nur Ganzzahlen (Integers).
+  Das "alte" mod ist ueber die Funktion "int_mod()" ansprechbar. In der
+  global.ini gibt es eine Kompatibilitaetsfunktion mod(), die int_mod()
+  aufruft. D.h. alte Scripte muessen nicht angepasst werden.
+
+  Weiterhin liefert die Funktion "math.random" ohne Parameter einen Wert 
+  zwischen 0 und 1. Mit Parameter n (z.B. random(47)) liefert sie einen 
+  Wert zwischen 1 und n. Mit zwei Parametern (l und n) liefert sie einen 
+  Wert zwischen l und n.
+
+  
+  String-Funktionen:
+  
+  Hier die wichtigsten (es gibt noch mehr).
+  
+  string.format("format", variablen, ...)
+  
+         Formatiert einen String aus verschiedenen Variablentypen anhand
+         "format", das diverse Steuerzeichen enthalten kann. Fuer jedes
+         Steuerzeichen wird eine der folgenden Variablen (in Reihenfolge)
+         eingesetzt. Die Steuerzeichen sind dieselben wie in C, hier die
+         wichtigsten:
+         
+         %s        -> Ein String (Text)
+         %d        -> Eine Ganzzahl
+         %f        -> Eine Fliesskommazahl
+         
+         Dazu kann bei den Zahlen noch eine Genauigkeit und Groesse an-
+         gegeben werden. So formatiert "%.2f" eine Fliesskommazahl auf
+         zwei Nachkommastellen, und "%02d" formatiert eine Ganzzahl auf
+         eine Laenge von 2 Stellen, wobei der Rest mit Nullen aufgefuellt
+         wird.
+         
+  string.len(s)
+  
+         Liefert die Laenge des Strings "s".
+        
+  string.upper(s)
+  
+         Liefert den String "s" in Grossbuchstaben.
+
+  string.lower(s)
+  
+         Liefert den String "s" in Kleinbuchstaben.
+  
+  Es gibt noch eine Menge mehr Funktionen zur String-Manipulation. Siehe
+  dazu die Lua-Doku.       
+  
+         
+  Datei/IO-Funktionen:
+  
+  Mit Lua lassen sich seit GS Version 0.86 auch Dateien erzeugen bzw.
+  auslesen. Dies kann man z.B. zur dauerhaften Zwischenspeicherung diverser
+  Scriptwerte fuer einen Level verwenden.
+
+  Die zurueck gegebenen Handles von io.open koennen haben dann selbst
+  Funktionen, mit denen sie beschrieben oder ausgelesen werden koennen.
+  
+  handle = io.open("dateiname", "modus")
+  
+         Oeffnet bzw. erzeugt eine Datei. "handle" ist ein beliebiger
+         Variablenname, "dateiname" ein Dateiname incl. Pfad, und 
+         "modus" ist (analog zu C) einer der folgenden Werte:
+           
+           r        -> Lesen (Read)
+           w        -> Schreiben (Write)
+           a        -> Hinzufuegen (Append)
+           
+         Um Dateien im aktuellen Level-Verzeichnis (da sind sie aufgeraeumt)
+         zu erstellen, existiert die globale Variable "LEVEL_DIR". Diese
+         enthaelt den Pfad des aktuellen Levels. Um eine Datei im aktuellen
+         Levelverzeichnis zu erstellen, koennte man also schreiben:
+         
+           meinedatei = io.open(LEVEL_DIR .. "/datei.txt", "w")
+             
+  io.close(handle)
+  
+         Schliesst eine geoeffnete Datei. Erwartet ein Handle.
+         Auch: "meinedatei:close()"
+         
+  meinedatei:write("daten", ...)
+  
+         Schreibt einen Text in die durch das Handle "meinedatei" definierte 
+         Datei. 
+         Statt einem Text in Anfuehrungszeichen koennen auch Zahlen 
+         angegeben werden. "\n" wird dabei z.B. als Zeilenumbruch verwendet. 
+         Es koennen beliebig viele Daten durch Komma getrennt angegeben
+         werden.
+         
+  zeile = meinedatei:read()
+  
+         Liest die naechste Zeile der Datei mit dem Handle "meinedatei"
+         und gibt sie zurueck.
+         Die Funktion kann auch noch mehr, z.B. nur das naechste Wort
+         lesen oder gleich den ganzen Dateiinhalt. Siehe dazu die 
+         Beschreibung der Funktion in der offiziellen Lua-Dokumentation.
+
+  Um alle Zeilen einer Datei nacheinander auszulesen, kann folgende
+  For-Schleife verwendet werden:
+  
+  for zeile in meinedatei:lines() do
+    -- irgendwas mit zeile anstellen
+  end
+
+
+  
+  O/S-Funktionen:
+
+  os.date(format)
+         
+         Liefert ohne Argumente einen String mit aktuellem Datum und
+         Zeit.
+
+         Optional kann fuer format ein String angegeben werden, der 
+         das Datum formatiert oder Zusatzfunktionen aktiviert.
+
+         Die wichtigste dabei ist der String "*t" als format-Argument.
+         Dann liefert der Aufruf von os.date("*t") ein Array mit
+         folgenden Feldern: year, month, day, hour, min, sec, wday und
+         yday.
+
+         meindatum = os.date("*t")
+         
+         Dann steht in "meindatum.year" das aktuelle vierstellige Jahr.
+         
+
+  os.remove("dateiname")
+  
+         Loescht die Datei mit dem angegebenen Namen (Vorsicht!).
+
+
+  os.rename("alter-dateiname", "neuer-dateiname")
+  
+         Benennt die gegebene Datei um.
+  
+
+Dies duerfte als Ueberblick genuegen. Wer mehr wissen will, schaut sich die
+bisher enthaltenen Level-Scripte an oder vertieft sich in die Dokumentation
+zu Lua, die auf lua.org zu finden ist.
+
+
+4. Uebersicht ueber Funktionen & Eigenschaften
+==============================================
+
+ 0) Einfuehrung
+ 
+    Um moeglichen Fehlern halbwegs auf die Spur zu kommen, sollte man 
+    GS beim Testen moeglichst mit der Option "debug" (gs.exe /debug)
+    starten. Dies schreibt alle moeglichen Meldungen in die Datei "gs.log".
+    Ausschau halten sollte man vor allem nach "SCRIPT ERROR".
+    
+    Eine aussagekraeftigere Methode ist es jedoch, die Standard-Fehlerausgabe
+    (Standard Error) von GS in eine Datei umzuleiten. Dies gelingt z.B. mit 
+    dem Programm "redir.exe", das sich in der ZIP-Datei des GS-Map-Editors
+    befindet.
+    
+    Wenn man Fehler macht, koennen einige Dinge geschehen: Im besten Fall
+    geschieht einfach nichts, d.h. das Script enthaelt Syntaxfehler und
+    wird gar nicht ausgefuehrt. Im schlechtesten Fall (der schon durch einen
+    Fehler in der Schreibweise einer Funktion hervorgerufen werden kann)
+    stuerzt das Programm ab oder verhaelt sich aeusserst seltsam.
+    
+    Syntaxfehler, also Fehler in Lua-Kontrollstrukturen, kann man auf-
+    spueren, indem man sich auf "www.lua.org" das Lua-Paket herunterlaedt
+    und dann den Compiler "luac" ueber die Scriptdatei jagt. Dieser
+    Compiler findet jedoch keine fehlerhaft geschriebenen Funktionen! Die
+    Interaktion zwischen dem Programm und Lua erfolgt erst im Spiel.
+
+    Sollte man einmal in einer Endlosschleife gefangen sein, kann man 
+    das Programm meist ueber die Tastenkombi "STRG+ALT+ENDE" beenden. 
+    Ansonsten: Task abschiessen ;-)
+    
+    Fuer irgendwelche Abstuerze, die durch GS-Script verursacht werden
+    koennen, uebernehme ich natuerlich keinerlei Verantwortung. Wer es
+    macht, sollte sich darueber im klaren sein, dass er ziemlich penibel
+    arbeiten muss.
+
+    Die meisten aufzurufenden Funktionen und Eigenschaften sind in Instanzen
+    diverser Klassen enthalten. Der Aufruf sieht demzufolge wie folgt aus:
+    
+    Eine Funktion aus der Instanz testklasse:  testklasse:testfunktion()
+    Eine Eigenschaft aus dieser Instanz:       testklasse.testeigenschaft
+    
+    Fuer Funktionen wird also der Doppelpunkt und fuer Eigenschaften der
+    Punkt verwendet.
+    
+    Eine Funktion einer Instanz innerhalb einer anderen Instanz (z.B. bei 
+    den Effekten) wird wie folgt aufgerufen: 
+    oberklasse.unterklasse:funktion()
+ 
+    Die Typen von Eigenschaften, Parametern und Rueckgabewerten werden
+    in C-Form angegeben: 
+    
+    int        -> Ganzzahl
+    float      -> Kommazahl
+    char*      -> String (Zeichenkette)
+    void       -> kein Rueckgabewert
+ 
+    bzw. ein anderer Datentyp wie Object* fuer einen Zeiger auf eine
+    Instanz der Klasse "Object".
+           
+    In der Beschreibung koennen in Klammern folgende Infos stehen:
+    
+    (ro)       -> read only (nur lesen)
+
+    Zusaetzlich zu den globalen Variablen existiern noch die folgenden
+    Konstanten, die abfragbar sind (alle gross geschrieben):
+    
+    LANGUAGE                -> enthaelt LANG_DE oder LANG_EN oder ...?
+    LANG_DE                 -> Deutsche Sprache eingestellt
+    LANG_EN                 -> Englische Sprache eingestellt
+    LANG_CR                 -> Kroatische Sprache eingestellt
+    VERSION                 -> Zahlenwert (Fliesskomma) mit aktueller
+                               Spielversion (z.B. 0.6).
+
+                               
+ a) Log-Funktionen: Aufruf ueber Instanz "errors"
+    ---------------------------------------------
+    
+    Um eine Meldung in die GS-Log-Datei (gs.log im Hauptverzeichnis)
+    zu schreiben (z.B. zur Fehlersuche), kann man eine der folgenden 
+    Funktionen aufrufen, die sich nur in der Art ihrer Parameter 
+    unterscheiden:
+    
+    (void) log(int level, char *str1, char *str2, int zahl);
+    (void) log(int level, char *str1, char *str2, char *str3);
+    (void) log(int level, char *str1, char *str2);
+    (void) log(int level, char *str1, float fzahl, float fzahl2=0);
+    (void) log(int level, char *str1);
+    
+    "level" gibt den Log-Level an. Bei "2" wird die Info nur ins Log
+    geschrieben, wenn GS mit dem Parameter "/debug" aufgerufen wurde.
+    Bei "1" (Warnung) oder "0" (Fehler) wird die Meldung IMMER in das
+    Log geschrieben.
+    
+    Die str- und zahl-Variablen duerften sich von selbst erklaeren.
+                                    
+    
+ b) Globale Variablen: Aufruf ueber Instanz "globals"
+    -------------------------------------------------
+  
+    Globale Variablen definieren einige grundlegende Parameter, die die
+    Spielumgebung beschreiben. Diese Instanz enthaelt fast
+    ausschliesslich Eigenschaften.
+    Ein Aufruf in Lua saehe daher z.B. folgendermassen aus:
+    
+    globals.soundvol
+    
+    Im folgenden alle les- bzw. schreibbaren Eigenschaften:
+    
+    -- Allgemein
+    
+    (int)   fps                  -> (ro) momentane Frames per Seconds (Bilder
+                                    pro Sekunde). Moegliche Werte: 0-60.
+    (int)   game_time            -> (ro) Vergangene Zeit in Ticks (60 pro 
+                                    Sekunde). ACHTUNG: Zaehlt bei aktivierter
+                                    Pause weiter!
+    (int)   second_time          -> (ro) Vergangene Zeit in Sekunden, wird
+                                    gestoppt bei Pause.
+    (int)   splitscreen          -> (ro) 1, wenn Splitscreen, sonst 0.
+    (int)   onescreen_map        -> (ro) 1, wenn Ein-Bildsch.-Karte, sonst 0.
+    (int)   network_game         -> (ro) 1, wenn Netzwerkspiel, sonst 0.
+    (int)   players              -> (ro) Anzahl der Spieler
+    (int)   exit_level           -> wenn 1, wird Level sofort beendet
+    (int)   language             -> Zu verwendende Sprache. Definiert sind
+                                    die globalen Werte:
+                                    LANG_EN (englisch)
+                                    LANG_DE (deutsch)
+   
+    -- Bildschirm
+
+    (int)   game_resolution_x    -> (ro) Aufloesung in X-Richtung (640,800,1024...)
+    (int)   game_resolution_y    -> (ro) Aufloesung in Y-Richtung (480,600,768...)
+    
+    (int)   playscreen_width     -> (ro) Breite des Bildschirms (norm. 640)
+    (int)   playscreen_height    -> (ro) Hoehe des Bildschirms (norm. 480)
+    (int)   panel_full_height    -> (ro) Hoehe des Panels am unteren Rand
+
+    -- Farben
+    
+    (int)   col_white            -> (ro) Weiss
+    (int)   col_grey             -> (ro) Grau
+    (int)   col_dgrey            -> (ro) Dunkles Grau
+    (int)   col_yellow           -> (ro) Gelb
+    (int)   col_red              -> (ro) Rot
+    (int)   col_bred             -> (ro) Helles Rot
+    (int)   col_blue             -> (ro) Blau
+    (int)   col_lblue            -> (ro) Helles Blau
+    (int)   col_green            -> (ro) Gruen
+    (int)   col_black            -> (ro) Schwarz
+    (int)   col_orange           -> (ro) Orange
+    
+    (zu Farben siehe auch die Funktion globals:make_color(), s.u.)
+    
+    (int)   tbl_blue[10]         -> (ro) Array mit sortierten Blauwerten
+    (int)   tbl_white[10]        -> (ro) mit Weiss
+    (int)   tbl_bluewhite[10]    -> (ro) mit Blauweiss
+    (int)   tbl_green[10]        -> (ro) mit Gruen
+    (int)   tbl_yellow[10]       -> (ro) mit Gelb
+    (int)   tbl_red[10]          -> (ro) mit Rot
+    (int)   tbl_all[256]         -> (ro) 256 zufaellig ausgewaehlte Farbwerte
+
+    -- Umgebung
+
+    (int)   plus_x               -> Legt fest, nach wieviel Pixeln die
+                                    Karte neu gezeichnet wird bzw. wieviel
+                                    Pixel in x-Richtung im Speicher gehalten
+                                    werden (Standard: 1500). Muss nur
+                                    fuer Spezialzwecke geaendert werden.
+    (int)   plus_y               -> Dasselbe fuer y-Richtung.
+        
+    (float) gravity_percent      -> Gravitation in Prozent (-1 bis +2)
+    (float) level_gravity        -> Hauptgravitation (fuer Spieler)
+    (float) particle_gravity     -> Gravitation fuer Partikel (Pixel)
+    (float) bomb_gravity         -> Gravitation fuer Bomben
+    
+    -- Setup-Optionen
+    
+    (int)   pixamount            -> Wieviele Pixel darstellen? (0-200)
+    (int)   soundvol             -> Lautstaerke der Sounds (0-100)
+    
+    -- Spieler
+    
+    (int)   shoot_speed          -> Schussgeschwindigkeits-Multiplikator
+    (int)   shoot_speed_bomb     -> ...fuer Bomben
+    (int)   player_respawn       -> Respawn-Zeit fuer Spieler in Ticks
+                                    (def.: 5 Sekunden, also 300 Ticks)
+
+    -- Sonstiges
+    (int)   do_all_hooks         -> wenn 1, werden alle Enemy- und Object-
+                                    Hook-Funktionen ausgefuehrt (Standard).
+                                    Siehe dazu den entspr. Abschnitt.
+    (UserStats) user_stats[10]   -> 10 User-Statistik-Zeilen, siehe
+                                    Punkt p) User-Statistik.
+    (int)   score_per_second     -> definiert, wie viele Punkte pro Sekunde
+                                    in der Levelstatistik abgezogen werden
+                                    sollen. Standard ist 2.
+    
+    -- Zweispieler-Optionen
+    
+    (int)   activate_extra       -> (ro) "1", wenn Button "Activate Extra" im
+                                    Menue betaetigt.
+    (int)   capture_the_flag     -> (ro) "1", wenn Button "Capture the Flag" im
+                                    Menue betaetigt.
+    (int)   extra_amount         -> Menge der eingestellten Extras
+    (int)   max_frags            -> Ende bei x Abschuessen
+    (int)   max_time             -> Ende bei x Sekunden
+
+    (int)   computer_player      -> Computerspieler aktiviert?
+    (int)   computer_player_strength -> Staerke des Computergegners (0-10)
+
+    (int)   handicap             -> Handicap-Modus aktiviert (1)? Siehe gsPlayer
+    
+    -- Level-Infos
+
+    level_info    level_files[]  -> (ro) Array mit Informationen ueber alle Levels
+    int           selected_level -> (ro) Nummer des aktuellen Levels in level_files[]
+    int           max_levels     -> (ro) Anzahl der Level-Infos in level_files[]
+
+    level_info ist eine Struktur, die folgende Variablen enthaelt. Einige davon
+    sind auch in der normalen globals-Klasse enthalten. level_info enthaelt nach
+    dem Start von GS Informationen ueber alle Levels im "level"-Ordner. Zudem
+    lassen sich bestimmte Dinge wie z.B. der Levelname nur ueber diese Struktur
+    abfragen.
+
+    (char*)   map_style          -> Kartenstil (fmp-Datei)
+    (int)     onescreen_map      -> Flag fuer Onescreen-Map
+    (int)     map_start_x        -> X-Start bei Onescreen-Map
+    (int)     map_start_y        -> Y-Start bei Onescreen-Map
+    (char*)   activate_extra_str -> Text, der bei "activate extra" angez. wird
+    (char*)   activate_extra_bar_str -> Text, der bei "activate extra bar" angez. wird
+     int)     activate_ctf       -> Capture the Flag moeglich?
+    (int)     activate_hh        -> Hunter Hunted moeglich?
+    (int)     activate_singleplayer -> Singleplayer moeglich?
+    (int)     activate_mingame   -> Minigame moeglich?
+    (float)   min_version        -> Minimale Spielversion
+    (int)     max_players        -> Max. Anzahl Spieler
+    (char*)   name               -> Levelname (max. 50 Zeichen)
+    (char*)   desc               -> Levelbeschreibung (max. 200 Zeichen)
+    (char*)   missiondesc        -> Level-Missionsbeschreibung (max. 1000 Z.)
+    (char*)   leveldir           -> Name des Level-Unterverzeichnisses
+    (char*)   levelfile          -> Dateiname des lvl-Files
+    (char*)   mapfile            -> Dateiname des mar-Files
+    (char*)   initscriptfile     -> Dateiname des ini-Files
+    (char*)   scriptfile         -> Dateiname des sc-Files
+    (char*)   author             -> Level-Autor
+
+    Interessant sind meistens wohl nur die Informationen ueber den aktuellen
+    Level. Dies ist (da Lua-Arrays bei 1 beginnen!) "selected_level+1",
+    also z.B.:
+
+    globals.level_files[globals.selected_level+1].name
+
+    
+    globals enthaelt noch eine kleine Funktion, mit der Farben erzeugt
+    werden koennen:
+    
+    (int)    make_color(int r, int g, int b)
+    
+             Dieser Aufruf (z.B. globals:make_color(255,255,255) fuer
+             Weiss) waehlt aus der GS-Palette die beste Farbe aus, die
+             zu den uebergebenen RGB-Werten passt und gibt sie zurueck.
+             Diese Farbe kann dann in allen Funktionen verwendet werden,
+             die eine der "globals.col_x"-Variablen erwarten.
+
+
+    Ausserdem ist in globals noch eine Funktion definiert, mit der aufeinander
+    aufbauende Levels erzeugt werden koennen. 
+
+    (void)   create_level_done_file()
+
+             Diese Funktion schreibt eine Datei in das /state-Verzeichnis, die
+             angibt, dass dieser Level vom aktuellen Spieler erfolgreich 
+             abgeschlossen wurde. Wenn in einer anderen LVL-Datei mittels 
+             "depends_on" dieser Level angegeben wurde, wird diese Datei 
+             ausgewertet. Siehe dazu auch "maps.txt".
+
+
+ c) Spieler: Aufruf ueber Instanz-Array "player"
+    --------------------------------------------
+ 
+    player enthaelt alle wichtigen Funktionen und Eigenschaften, die jeden
+    Spieler im Spiel beschreiben. Ein Aufruf einer Funktion sieht z.B.
+    so aus:
+    
+    player[1]:get_xspd()
+    
+    Dies liefert die X-Geschwindigkeit von Spieler 1. Die momentane Spieler-
+    zahl kann ueber "globals.players" abgefragt werden.
+
+    Im folgenden nun alle Funktionen und Eigenschaften:
+
+    -- Datentypen 
+        
+    (Struktur) weaponslot:
+    
+      Jedes Schiff hat sechs Slots, in denen jeweils genau eine Waffe Platz
+      findet. Diese Slots werden wie folgt definiert:
+      
+      (int) type                 -> Typ der Waffe:
+                                    W_FAKE,
+                                    W_SINGLE, W_DOUBLE, W_BOMB, W_BIGBOMB,
+                                    W_ROCKET, W_MINE, W_SHRINKER, W_FREEZER,
+                                    W_PROBE, W_GAS, W_LASER, W_BUMPER,
+                                    W_SHOTGUN
+                                    
+      (int) bullets              -> Verfuegbare Munition: "-1" fuer un-
+                                    endlich (bei W_SINGLE Standard).                                   
+                                    
+      (int) reload               -> Aufladerate in Ticks (wenn dieser Wert
+                                    also "60" ist, dann ist die Waffe nach
+                                    einer Sekunde wieder geladen).
+
+    (Struktur) statistics:
+      
+      Diese Statistik wird waehrend dem Spiel staendig aktualisiert und
+      dient letztlich der Auswertung, wer gewonnen hat. Sie hat folgende
+      Eigenschaften:
+      
+      (int) frags                -> Anzahl der Abschuesse
+      (int) suicides             -> Anzahl der Selbstmorde
+      (int) bullets_shot         -> Zahl der abgefeuerten Schuesse
+      (int) bullets_hit          -> Zahl der Schuesse, die ihr Ziel fanden :)
+      (int) extras_taken         -> Anzahl der aufgenommenen Extras
+      (int) bonus                -> Bonuspunkte (frei veraenderbar, werden
+                                    in Statistik angezeigt, wenn ungleich 0)
+      (int) enemy_bonus          -> Gegnerbonus (Single Player)
+      (int) lostlifes            -> Verlorene Schiffe (Single Player)
+      (int) mission_status       -> Missions-Status (Single Player)
+
+
+    (Konstanten) Spielerwerte:
+
+      Diese Konstanten werden in den Funktionen
+        set_ship_value
+        get_ship_value
+      benutzt, um waehrend der Laufzeit Schiffswerte zu veraendern. Die
+      meisten erwarten Werte zwischen 0 und 100, Ausnahmen sind im
+      folgenden aufgefuehrt. Die Werte entsprechen den Werten in den
+      shp-Dateien.
+
+      PV_HULL           (Huelle, 0-20)
+      PV_SHIELD         (Schilde, 0-20)
+      PV_HULL_RE        (Huellenaufladung, 0-100)
+      PV_SHIELD_RE      (Schildaufladung, 0-100)
+      PV_WALLSHIELD     (Wandschildaufladung, 0-100)
+      PV_WEAPON_RE      (Waffenaufladung, 0-100)
+      PV_RADAR_ZOOM     (Radar-Zoom, 0-20)
+      PV_WEAPON_SLOTS   (Waffenslots, 0-6)
+      PV_TURN_SPEED     (Drehgeschwindigkeit, 0-100)
+      PV_MAX_SPEED      (Maximalgeschwindigkeit, 0-100)
+      PV_ACCELERATION   (Beschleunigung, 0-100)
+      PV_FUEL_CONS      (Treibstoffverbrauch, 0-100)
+      PV_WEAPON_STORAGE (Waffenkapazitaet, 0-100)
+
+
+    (Konstanten) Extras:
+    
+      Ein Schiff kann jeweils genau eine zusaetzliche Extra-Eigenschaft haben.
+      Diese kann ueber "get_extra()" abgerufen und ueber "set_extra()" gesetzt
+      werden. Die momentan verfuegbaren Extra-Eigenschaften sind:
+      
+      EXTRA_AFTERBURNER          -> Afterburner
+      EXTRA_CLOAK                -> Tarnmodus
+      EXTRA_DEFLECTOR	         -> Deflektor
+
+
+    (Konstanten) Systemschaeden:
+      
+      Wenn die Huelle eines Schiffes unter 50% sinkt, wird ein zufaelliger
+      Schaden ausgewaehlt, der das Schiff so lange betrifft, bis die Huelle
+      sich wieder bis mindestens 70% aufgebaut hat. Ein Schiff kann nicht 
+      mehrere Schaeden gleichzeitig haben.
+      
+      DAMAGE_NONE                -> Kein Schaden
+      DAMAGE_THRUSTER            -> Antriebsstoerung
+      DAMAGE_STEERING            -> Steuerungsprobleme
+      DAMAGE_FUEL                -> Treibstoffleck
+      DAMAGE_WEAPONS             -> Waffenausfall
+      DAMAGE_SHIELD              -> Schildsystemausfall
+      DAMAGE_LANDING             -> Ausfall Landestabilisatoren (Schiff kann
+                                    hoechstens eine halbe Sekunde landen und
+                                    explodiert dann)
+      DAMAGE_RADAR               -> Ausfall Radarsystem
+      
+      Ueber get_damage() und set_damage() kann der Schadensstatus abgefragt und
+      gesetzt werden.
+                                                                          
+
+    (Fairplay-Option) Handicaps:
+
+      Im Zweispielermodus lassen sich "Handicaps" aktivieren. Dies setzt eine
+      Fairplay-Option in Kraft, die fuer einen Staerke-Ausgleich sorgen soll.
+      Wer einen Gegner abschiesst, erhoeht den eigenen Handicap-Wert (0-10).
+      Wer selbst abgeschossen wird, verringert seinen Handicap-Wert.
+      Jeder Handicap-Punkt verringert die Schiffswerte
+	max_hull, max_shield, hull_repair, shield_recharge, 
+        wall_shield_recharge, turn_speed, max_speed, player_acc, 
+        fuel_dec, extra_recharge
+      um einen bestimmten Prozentwert. Das bedeutet: Je hoeher das Handicap,
+      desto schwaecher, langsamer und verbrauchsstaerker ist das Schiff.
+
+      Mit den Funktionen set_handicap() und get_handicap() laesst sich auch
+      direkt Einfluss auf das aktuelle Handicap nehmen.
+
+      Ein Aufruf von get_max_hull() etc. liefert, unabhaengig vom akt. Handicap,
+      immer den urspruenglichen Wert. Moechte man den aktuellen Wert (in den
+      das Handicap einberechnet wurde), kann man diese Funktionen mit dem Parameter
+      1 aufrufen, also get_max_hull(1).
+
+      Maximal gibt es 10 Handicap-Stufen. Diese verringern die Werte um jeweils
+      8%, also maximal 80%.
+    
+
+    -- Funktionen und Eigenschaften von player
+
+    -- Allgemeines
+
+    (controls*) controls         -> ein Controls-Objekt (siehe Punkt i)
+
+    -- Position / Bewegung
+    
+    (float) get_x()              -> liefert X-Koordinate des Schiffes
+    (float) get_y()              -> liefert Y-Koordinate des Schiffes
+    (void)  set_x(float n)       -> Setzt X-Position auf "n"
+    (void)  set_y(float n)       -> Setzt Y-Position auf "n"
+    
+    (float) get_xspd()           -> liefert X-Geschwindigkeit
+    (float) get_yspd()           -> liefert Y-Geschwindigkeit
+    (void)  set_xspd(float n)    -> Setzt X-Geschw. auf "n"
+    (void)  set_yspd(float n)    -> Setzt Y-Geschw. auf "n"
+
+    (int)   get_homebase()       -> liefert Nummer der Heimatbasis
+    (void)  set_homebase(int n)  -> setzt Heimatbasis "n" (veraendert
+                                    die Variablen "home_x" und "home_y").
+    (int)   get_home_x()         -> liefert X-Position des Startortes
+    (int)   get_home_y()         -> liefert Y-Position des Startortes
+    (void)  set_home_x(int n)    -> setzt X-Position des Startortes
+    (void)  set_home_y(int n)    -> setzt Y-Position des Startortes
+
+    (void)  return_home()        -> befoerdert Spieler nach (home_x,home_y)
+
+        
+    -- Einwirkung auf Drehung / Triebwerke
+    
+    (int)   get_thrust()         -> liefert 1, wenn Triebwerk aktiviert
+    (void)  set_thrust()         -> aktiviert Triebwerk fuer einen Tick
+                                    (fuer kontinuierliche Beschleunigung
+                                    muss diese Funktion in jedem Loop einmal
+                                    ausgefuehrt werden).
+    (int)   get_extra_action()   -> liefert 1, wenn Extra-Action aktiviert 
+                                    (z.B. Afterburner, wenn get_extra()
+                                    EXTRA_AFTERBURNER liefert)
+    (void)  set_extra_action()   -> aktiviert Extra-Action (es gelten
+                                    dieselben Anmerkungen wie zu "thrust").
+    
+    (float) get_head()           -> liefert Drehung in Grad (0-359)
+    (void)  set_head(float n)    -> setzt Drehung in Grad
+    
+    (void)  turn_to(int x, int y)
+                                 -> leitet eine Drehung in Richtung von
+                                    (x,y) ein.
+    (float) get_head_to()        -> liefert Gradposition, in die sich das
+                                    Schiff drehen soll.
+    (void)  set_head_to(float n) -> setzt Gradposition, in die sich das
+                                    Schiff drehen soll (wird von "turn_to"
+                                    benutzt).                                                                
+
+                                   
+    -- Allgemeine Angaben zum Schiff / Spieler
+                                                                        
+    (int)   get_width()          -> liefert Breite des Schiffes
+    (int)   get_height()         -> liefert Hoehe des Schiffes
+    (int)   get_shield_w()       -> liefert Breite des Schildes
+    (int)   get_shield_h()       -> liefert Hoehe des Schildes
+    (int)   get_sig()            -> liefert Signatur des Schiffs 
+                                    (fuer Netzwerkspiel)
+                                    
+    (char*) get_name()           -> liefert Name des Spielers
+    (void)  set_name(char* n)    -> setzt Name des Spielers (max. 12 Zeichen)
+    (char*) get_ship_name()      -> liefert Name des Schiffes
+    (void)  set_ship_name(char *n)
+                                 -> setzt Name des Schiffes (max. 20 Zeichen)
+    (char*) get_ship_desc()      -> liefert Beschreibung des Schiffes
+    (void)  set_ship_desc(char *n)
+                                 -> setzt Beschreibung (max. 150 Zeichen)
+                                 
+                                 
+    -- Status des Schiffes / Spielers
+
+    (int)   load_ship(char *dateiname)
+            
+            Laedt eine neue Schiffsdatei (.shp) und wechselt das Schiff
+            entsprechend gegen das neue aus. Dieses sollte sich am besten
+            im Levelverzeichnis befinden, weil der Inhalt des /ships-
+            Verzeichnisses bei jedem Spieler anders sein kann. Der Name
+            des Level-Verzeichnisses steht in der globalen Variablen
+            LEVEL_DIR. Ein Aufruf saehe z.B. folgendermassen aus:
+            
+            player[1]:load_ship(LEVEL_DIR .. "/myship.shp")
+            
+            Dies wuerde die Datei "myship.shp" im aktuellen Level-Verzeichnis
+            laden und Spieler 1 zuweisen. Die Funktion liefert ungleich 0
+            zurueck, wenn ein Fehler auftaucht (z.B. Schiff nicht gefunden).
+            
+     (int)  load_image(char *dateiname)
+     
+            Laedt ein neues Schiffsbild, behaelt aber die Schiffs-
+            einstellungen bei. Zum Aufruf siehe "load_ship".
+            Das Bild muss im TGA-, PCX- oder BMP-Format vorliegen und
+            dem ueblichen Standard fuer GS-Schiffe entsprechen.
+ 
+    (void)  show_thrust_frame(int n) 
+                                 -> Schaltet (wenn 1 uebergeben) das 
+                                    Triebwerksframe ein, unabhaengig davon,
+                                    ob gerade Gas gegeben wird oder nicht.
+
+    (void)  set_ship_value(int w, int val)
+                                 -> setzt den Schiffswert "w" (eine der o.g.
+                                    Schiffs-Konstanten, z.B. PV_HULL) auf
+                                    den Wert "val".
+    (int)   get_ship_value(int w)
+                                 -> liefert den Schiffswert "w".
+                                                            
+    (int)  get_hitby()           -> liefert SIGNATUR des Spielers, der zuletzt getroffen hat
+    (int)  get_killedby()        -> liefert Signatur des Spielers, der den letzten "Todestreffer" erzielte
+                                    (einsetzbar z.B. in hook_player_dead_x, liefert -1 bei Selbstmord)
+    (void)  set_hitby(int n)     -> setzt Signatur des Spielers, der diesen Spieler zuletzt getroffen hat
+    (int)   get_hitbyweap()      -> liefert Nummer der Waffe, die den Spieler zuletzt getroffen hat. -1 bei Selbstmord.
+    (int)   get_dead()           -> liefert 1, wenn Spieler tot
+    (void)  set_dead()           -> laesst Spieler explodieren
+    (int)   get_lifes()          -> liefert uebrige Schiffe (Single Player)
+    (void)  set_lifes(int n)     -> setzt uebrige Leben (Single Player)
+    (int)   get_freezed()        -> wenn groesser als 0 -> Spieler eingefroren
+    (void)  set_freezed(int n)   -> friert Spieler fuer "n" Ticks ein
+    (int)   get_shrinked()       -> wenn groesser als 0 -> Spieler verkleinert
+    (void)  set_shrinked(int n)  -> verkleinert Spieler fuer "n" Ticks
+    (int)   get_delirium()       -> wenn groesser als 0 -> Spieler im Delirium
+    (void)  set_delirium(int n)  -> Spieler bleibt fuer "n" Ticks im Delirium
+    
+    (int)   get_land()           -> 1, wenn Spieler gelandet
+    (void)  set_land(int n)      -> setzt "land"-Flag (Spieler bewegt sich nicht)
+    (int)   get_land_dur()       -> Ticks, die Spieler schon gelandet ist (0 bei Flug)
+    (int)   get_land_base()      -> liefert Nummer der Landebasis
+    (void)  set_land_base(int n) -> setzt Nummer der Landebasis
+
+    (float) get_hull()           -> liefert verbleibende Hitpoints der Huelle
+    (void)  set_hull(float n)    -> setzt Hitpoints der Huelle
+    (float) get_shield()         -> liefert verbleibende Hitpoints der Schilde
+    (void)  set_shield(float n)  -> setzt Hitpoints der Schilde
+    (float) get_wall_shield()    -> liefert verbleibende Hitpoints der Abprall-Schilde
+    (void)  set_walll_shield(float n) -> setzt Hitpoints der Abprall-Schilde
+    (float) get_fuel()           -> liefert verbleibenden Sprit
+    (void)  set_fuel(float n)    -> setzt verfuegbaren Sprit
+    (int)   get_weight()         -> liefert Gewicht des Spielers (0-20)
+    (void)  set_weight(int n)    -> setzt Spielergewicht (0-20)
+    (int)   get_max_weight()     -> liefert maximales Spielergewicht (20)
+    (float) get_weight_factor()  -> setzt Gewichtsfaktor
+    (void)  set_weight_factor(float n) -> liefert Gewichtsfaktor
+        
+    (int)   get_max_hull(int h=0) -> liefert maximale Huelle (Hitpoints)
+    (int)   get_max_shield(int h=0)     -> liefert maximale Schilde
+    (int)   get_max_fuel()       -> liefert maximale Treibstoffmenge
+    (int)   get_max_wall_shield() -> liefert maximale Abprall-Schilde
+    
+    (void)  set_max_shield(int n)-> setzt maximale Schildaufladung
+    (void)  set_max_hull(int n)  -> setzt maximale Huellenaufladung
+    
+    (float) get_hull_repair(int h=0) -> liefert Huellenaufladung
+    (void)  set_hull_repair(float n)
+                                 -> setzt Huellenaufladung (Wert pro Tick)
+    (float) get_shield_recharge(int h=0)
+                                 -> liefert Schildaufladerate
+    (void)  set_shield_recharge(float n)
+                                 -> setzt Schildaufladerate
+    (float) get_wall_shield_recharge(int h=0)    
+                                 -> liefert Wandschild-Laderate
+    (void)  set_walll_shield_recharge(float n) 
+                                 -> setzt Wandschild-Laderate
+    (float) get_fuel_dec(int h=0) -> liefert Treibstoffabnahme
+    (void)  set_fuel_dec(float n)
+                                 -> setzt Treibstoffabnahme
+    (float) get_max_speed(int h=0) -> liefert Maximalgeschwindigkeit
+    (void)  set_max_speed(float n)
+                                 -> setzt Maximalgeschwindigkeit
+    (float) get_player_acc(int h=0) -> liefert Schiffsbeschleunigung
+    (void)  set_player_acc(float n)
+                                 -> setzt Schiffsbeschleunigung
+    (float) get_turn_speed(int h=0)
+                                 -> liefert Drehgeschwindigkeit (Grad / Tick)
+    (void)  set_turn_speed(float n)
+                                 -> setzt Drehgeschwindigkeit (Grad / Tick)
+    (void)  set_max_radar_zoom(int n)
+                                 -> setzt Radar-Zoom (0-20)
+    (int)   get_max_radar_zoom() -> liefert Radar-Zoom
+    (void)  set_weapon_storage(float n)
+                                 -> setzt Waffenkapazitaet
+    (float) get_weapon_storage() -> liefert Waffenkapazitaet
+    (void)  set_weapon_recharge(float n) // DEAKTIVIERT!
+                                 -> setzt Waffenladerate - funktioniert nicht
+                                    im Spiel. Zur Steuerung der Laderate sind
+                                    die reload-Werte der einzelnen Waffen 
+                                    anzupassen.
+    (float) get_weapon_recharge()
+                                 -> liefert Waffenladerate
+
+    (float) get_extra_power()   -> liefert Extra-Aufladestatus
+    (void)  set_extra_power(int n)
+                                 -> setzt Extra-Aufladestatus
+    (float) get_extra_recharge(int h=0) -> liefert Extra-Aufladerate
+    (void)  set_extra_recharge(float n)
+                                 -> setzt Extra-Aufladerate
+    (int)   get_max_extra_power()-> liefert maximale Extrast„rke (100)
+            
+                                         
+    (void)  set_rocket_turn_speed(float n)
+                                 -> setzt Raketen-Dreh-Geschwindigkeit
+    (float) get_rocket_turn_speed()
+                                 -> liefert Raketen-Dreh-Geschwindigkeit                             
+                                                                                                                             
+    (int)   get_ship_type()      -> liefert Schiffstyp:
+                                    SHIP_PIRANHA, SHIP_RAZOR, SHIP_BOMBER
+                                    oder SHIP_CUSTOM (user-definiert)
+     
+    (int)   get_damage()         -> liefert aktuellen Schaden, ansonsten
+                                    DAMAGE_NONE
+    (void)  set_damage(int n)    -> setzt Schaden auf Konstante "n" (s.o.);
+                                    Die automatische Reparatur wird durch
+                                    Benutzung dieser Funktion ausser Kraft ge-
+                                    setzt. Schadenreparatur erfolgt durch Auf-
+                                    ruf mit DAMAGE_NONE als Parameter.
+
+    (int)   get_handicap()       -> liefert aktuellen Handicap-Wert
+    (void)  set_handicap(int n)  -> set Handicap (0 [kein Handicap] bis 10).
+                                    Je hoeher das Handicap gesetzt ist, desto
+                                    langsamer und schwaecher wird das Schiff.
+
+    int     get_recoil()         -> liefert 1, wenn Rueckstosseffekte aktiviert sind (Std.)
+    void    set_recoil(int n)    -> 1 (Rueckstoss aktiviert) oder 0 (deaktiviert)
+
+
+    -- Waffen & Extras
+
+    (int)   get_extra()          -> liefert evtl. vorhandenes Extra (z.B. EXTRA_AFTERBURNER)    
+    (void)  set_extra(int n)     -> setzt ein Extra
+    
+    (int)   get_active_weapon()  -> liefert aktiven Waffenschacht (0-5)
+    (void)  set_active_weapon(int n)
+                                 -> setzt aktiven Schacht
+    (int)   get_avail_weapon_slots()
+                                 -> liefert max. verfuegbare Schaechte
+    (void)  set_avail_weapon_slots(int n)
+                                 -> setzt verfuegbare Waffenschaechte (0-5)
+    (weaponslot) *get_weapon_slot(int n)
+                                 -> liefert weaponslot-Struktur (s.o.) von
+                                    Schacht "n".
+    (void)  set_weapon_slot(int n, weaponslot *w)
+                                 -> setzt Waffenschacht "n" auf weaponslot-
+                                    Struktur "w".
+    (void)  set_weapon_bullets(int slot, int bullets)
+                                 -> setzt Munitionszahl in Schacht "slot"
+                                    auf "bullets" Schuss
+    (int)   get_weapon_bullets(int slot)
+                                 -> liefert Munitionszahl in Slot "slot"
+    (void)  deactivate_weapon_slot(int n)
+                                 -> Deaktiviert Slot n (praktisch, um 
+                                    Waffen temporaer zu deaktivieren)                                                                       
+    (void)  activate_weapon_slot(int n)
+                                 -> Aktiviert Slot n (nur noetig, wenn
+                                    er deaktiviert wurde)                                    
+    (void)  set_weapon(int n, int w, int bullets, int reload)
+                                 -> setzt Waffe in Schacht "n" auf Typ "w"
+                                    mit "bullets" Schuessen und "reload"
+                                    Aufladerate.
+    (void)  shoot()              -> feuert aktive Waffe.
+                                    
+                                                                            
+    -- Statistik
+    
+    (int)   get_time_alive()     -> liefert Zeit, die Spieler bereits am 
+                                    Leben ist (in Ticks)
+    (int)   get_frags()          -> liefert Zahl der Abschuesse
+    (int)   get_suicides()       -> liefert Zahl der Selbstmorde
+    (void)  inc_frags()          -> erhoeht Abschuss-Zahl um 1
+    (void)  dec_frags()          -> vermindert Abschuss-Zahl um 1
+    (void)  inc_suicides()       -> erhoeht Selbstmord-Zahl um 1    
+    (void)  inc_bonus(int n)     -> erhoeht Bonuspunkte um n (Def.: 1)
+    (void)  dec_bonus(int n)     -> verringert Bonuspunkte um n
+    (int)   get_bonus()          -> liefert aktuelle Bonuspunkte
+    (void)  inc_enemy_bonus(int n) -> erhoeht Enemy-Bonuspunkte um n (Def.: 1)
+    (void)  dec_enemy_bonus(int n) -> verringert Enemy-Bonuspunkte um n
+    (void)  inc_bullets_shot(int n) -> erhoeht verschossene Projektile
+    (int)   get_bullets_shot()    -> liefert bisher verschossene Projektile
+    (void)  inc_bullets_hit(int n) -> erhoeht getroffene Projektile
+    (int)   get_bullets_hit()      -> liefert Projektile, die getroffen haben
+    (void)  set_mission_status(int n) -> 1 fuer "Mission gewonnen"
+    (int)   get_mission_status    -> liefert Missionsstatus (1 = done, -1 = failed)
+    (statistics) *get_statistics()
+                                 -> liefert Struktur mit momentaner Stat.
+    (void)  set_statistics(statistics *n)
+                                 -> setzt Statistik auf (statistics) n (s.o.)
+
+    -- Sonstiges
+
+    (void)  set_user_int(int n, int d)  
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Ganzzahl)
+    (void)  set_user_float(int n, float d);
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Kommazahl)
+    (int)   get_user_int(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+    (float) get_user_float(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+
+    
+    (void)  set_dont_continue(int n) -> nutzbar in Hook-Funktionen (s.u.)
+    (void)  set_do_hooks(int n)  -> nutzbar in Hook-Funktionen (schaltet
+                                    Hook-Funktionen fuer diesen Spieler ein
+                                    oder aus).
+ 
+
+ d) Basen: Aufruf ueber Instanz "bases"
+    -----------------------------------
+    
+    Wie die meisten Objekte in GS sind die Basen als "verkettete Liste"
+    (linked list) realisiert. Dies bedeutet: Sie sind kein fest
+    dimensioniertes Array, deshalb kann man auch nicht direkt und ohne
+    Umwege auf eine bestimmte Basis zugreifen. Man vergibt deshalb jeder
+    erstellten Basis eine Nummer, ueber die man diese Basis 'suchen' kann.
+
+    Jeder Basis kann ein Frachtpaket zugewiesen werden, das aufgenommen und
+    zur Heimatbasis zurueckgebracht werden kann. Siehe dazu den Abschnitt
+    nach der Funktionsbeschreibung.
+        
+    "bases" enthaelt nur wenige Funktionen, der Verstaendlichkeit halber
+    hiermit in voller Schreibweise:
+    
+    (Base*) bases:add(int num, int type, int x, int y)
+    
+             Erstellt eine Basis mit Nummer "num" und Typ "type" an den
+             Koordinaten "x", "y". x und y sind die Startkoordinaten der
+             Landeflaeche (abfragbar ueber land_x und land_y) und nicht
+             die linke obere Ecke des Bildes der Basis. Ein Base-Objekt
+             der erstellten Basis wird schliesslich zurueckgegeben.
+           
+             "type" kann sein: PLAYER_BASE, CARGO_BASE, ENEMY_S_BASE,
+             ENEMY_L_BASE, ENEMY_BASE_LEFT, ENEMY_BASE_RIGHT,
+             ENEMBY_BASE_MIDDLE, CUSTOM_BASE.
+           
+             Eine CUSTOM_BASE ist unsichtbar. Damit kann man also z.B. 
+             eine Landebasis auf einem Gebaeudedach realisieren. Wenn man
+             eine Custom-Base erstellt, kann man noch einen zusaetzlichen
+             Parameter uebergeben (hinter "y"): Er gibt an, wie breit die
+             (unsichtbare) Landebasis sein soll. Als Standardwert wird hier
+             33 Pixel angenommen.
+           
+    (Base*) bases:get_base(int n)
+    
+             Liefert das Objekt des Typs "Base" der Basis mit Nummer "n".
+             Dieses Objekt kann dann bearbeitet werden. Die Funktionen
+             und Eigenschaften werden unten aufgefuehrt.
+             
+    (Base*) bases:get_first_base()
+    
+             Liefert die erste Basis der verketteten Liste. Damit koennen
+             in einer Schleife alle Basen bearbeitet werden:
+
+             ==================================================
+             curbase = bases:get_first_base()
+             
+             while (curbase) do
+               local nextbase = curbase:get_next()
+               
+               -- irgendwas mit "curbase" anstellen
+               
+               curbase = nextbase
+             end
+             ==================================================
+
+             Zu beachten ist hier und bei allen anderen Listen (Objekte,
+             v.a. Pixel), dass so ein Schleifendurchlauf pro Tick aeussert
+             lange dauert und daher langsamere Rechner schnell an ihre
+             Grenzen kommen koennen. Siehe dazu bitte Punkt 5: "Hook"-
+             Funktionen.
+                          
+    (int)   bases:get_count()
+    
+             Liefert die Anzahl der bisher erstellten Basen.        
+    
+
+    Im folgenden nun alle Funktionen des Typs "Base":
+    
+    (Base*) get_next()           -> liefert "Base"-Objekt der naechsten
+                                    Basis innerhalb der Liste bzw. "nil",
+                                    wenn letzte Basis.
+    (Base*) get_prev()           -> liefert "Base"-Objekt der vorherigen B.
+    
+    (float) get_x()              -> liefert X-Koordinate der Basis
+    (float) get_y()              -> liefert Y-Koordinate der Basis
+    (void)  set_x(float n)       -> setzt X-Koordinate
+    (void)  set_y(float n)       -> setzt Y-Koordinate
+    
+    (int)   get_width()          -> liefert Breite der Basis
+    (int)   get_height()         -> liefert Hoehe der Basis
+    
+    (int)   get_land_x()         -> liefert X-Koord. der Landeflaeche
+    (int)   get_land_y()         -> liefert Y-Koord. der Landeflaeche
+    (int)   get_land_w()         -> liefert Breite der Landeflaeche
+    (void)  set_land_x(int n)    -> setzt X-Koord. der Landeflaeche
+    (void)  set_land_y(int n)    -> setzt Y-Koord. der Landeflaeche
+    (void)  set_land_w(int n)    -> setzt Breite der Landeflaeche
+    
+    (int)   get_type()           -> liefert Typ der Basis (siehe oben)
+    (int)   get_nr()             -> liefert Nummer der Basis (bei "add"
+                                    angegeben)
+                                    
+    (void)  set_cargo_type(int n) -> setzt Fracht-Typ. Moeglichkeiten:
+                                    CARGO_NORMAL (normale Fracht)
+                                    CARGO_OBJECT (Ein Objekt, s.u.)
+    (int)   get_cargo_type()     -> liefert Fracht-Typ oder CARGO_NONE, wenn 
+                                    keine Fracht.
+    (void)  set_cargo_object(Object *) -> setzt Fracht-Objekt: Eine Instanz
+                                    eines zuvor ueber objects:add() er-
+                                    stellten Objekts.
+    (void)  set_cargo_weight(int n) -> setzt Fracht-Gewicht:
+                                    CARGO_NORMAL -> Gewicht (1-20)
+                                    CARGO_OBJECT -> Gewicht des Objekts
+    (int)   get_cargo_weight()   -> liefert dieses Gewicht.
+    (void)  set_cargo_name(char *) -> setzt Fracht-Name (optional)
+    
+    (void)  set_refuel_percent(int n, int pl)
+                                 -> gibt an, dass diese Basis Auftankfunktion
+                                    besitzt. "n" ist dabei eine Prozentzahl 
+                                    zwischen 0 und 100+ (kann groesser als
+                                    100 sein). Diese Zahl gibt an, wie schnell
+                                    aufgetankt wird. Bei "100" wird genau so
+                                    schnell getankt wie auf der Heimatbasis.
+                                    Bei "pl" kann optional (der Parameter
+                                    kann weggelassen werden) die Signatur 
+                                    eines Spielers angegeben werden, der auf
+                                    dieser Basis auftanken darf. Standard-
+                                    maessig koennen alle Spieler auf der 
+                                    Basis tanken.
+     (int)  get_refuel_percent() -> liefert die o.g. Prozentzahl
+     (int)  get_refuel_player()  -> liefert o.g. Spielersignatur (oder 0)
+              
+
+    Die Sache mit der Fracht
+    ------------------------
+    
+    Jeder Basis kann eine Fracht zugewiesen werden. Folgendes Beispiel:
+    
+    mybase = bases:add(5, CARGO_BASE, 230, 320)
+    mybase:set_cargo_type(CARGO_NORMAL)
+    mybase:set_cargo_weight(10)
+    
+    Dies erstellt eine Basis und ein normales Frachtpaket mit dem
+    Gewicht "10". Dieses kann von einem Spieler aufgenommen werden, wodurch
+    sich sein Gewicht um 10 Punkte erhoeht (das Maximalgewicht eines
+    Spielers kann ueber player[x]:get_max_weight() abgefragt werden und
+    ist standardmaessig 20). Die Fracht wird nicht aufgenommen, wenn sie
+    das zulaessige Gesamtgewicht des Spielers ueberschreitet.
+    
+    Auf der Heimatbasis wird die Fracht wieder abgeliefert. Wichtig dabei:
+    Es gibt NUR ein Gewicht! Man kann nach dem Aufnehmen einer Fracht nicht
+    mehr herausfinden, welche Frachtpakete (z.B. ein "Vierer" und ein
+    voellig anderes) der Spieler mit sich traegt. Wenn das noetig ist, muss
+    man das im Script durch eigene Statusvariablen ueberwachen.
+    
+    Die Fracht von CARGO_NORMAL wird je nach Gewicht entsprechend
+    gross angezeigt. Zusaetzlich zu dieser normalen Fracht gibt es noch
+    eine Objekt-Fracht, vornehmlich, um z.B. das kleine Maennchen (OBJ_MAN1)
+    zu transportieren. 
+    Dazu bedient man sich einem kleinen Trick: Man erstellt ein beliebiges
+    Objekt (irgendwo, wo es nicht stoeren kann), setzt es auf "invisible"
+    und "borgt" sich von ihm die Grafik fuer die Fracht:
+    
+    mybase = bases:add(5, CARGO_BASE, 320, 230)
+    myman = objects:add(100, OBJ_MAN1, 0, 0)
+    myman:set_invisible(1)
+    
+    mybase:set_cargo_type(CARGO_OBJECT)
+    mybase:set_cargo_object(myman)
+    mybase:set_cargo_weight(5)
+    mybase:set_cargo_name("Mr. Schlumpf")
+    
+    Hier erstellen wir also ein Objekt (das Maennchen) und setzen es auf
+    unsichtbar. Dann weisen wir dieses Maennchen der Fracht zu. Es erhaelt
+    auch noch einen Namen: Mr. Schlumpf. Dieser wird angezeigt, wenn das
+    Maennchen aufgeladen wird.
+    Dieses Objekt wird auch nicht zerstoert, wenn die Fracht aufgenommen
+    wurde, es kann so oft wie noetig benutzt werden - man leiht sich quasi
+    nur die Grafik, sonst nichts.
+    
+    Zur zusaetzlichen Einflussnahme lassen sich noch die Hook-Funktionen
+      hook_player_takes_cargo und
+      hook_player_returns_cargo
+    definieren. Siehe dazu den Abschnitt ueber die Hook-Funktionen in diesem
+    Text.  
+    
+    Die Auswirkung des Frachtgewichts auf das Spielerschiff laesst sich mit
+      player[x]:set_weight_factor(y)
+    veraendern. weight_factor steht standardmaessig auf 1. Die Anweisung
+      player[1]:set_weight_factor(2)
+    verdoppelt demnach das "spuerbare" Gewicht fuer Spieler 1. Wird dieser
+    Wert auf 0 gesetzt, ist Fracht ueberhaupt nicht spuerbar.
+    
+    Mit dem Spielergewicht ist allerdings vorsichtig umzugehen. Wenn die
+    Gravitation zu hoch ist, das Gewicht zu gross und die Spieler-Be-
+    schleunigung zu klein, dann kann das Schiff u.U. nicht mehr abheben!
+    
+                                        
+ e) Objekte: Aufruf ueber Instanz "objects"
+    ---------------------------------------
+    
+    Objekte in GS sind alle Dinge, die eigentlich keine Funktion haben
+    als bloed in der Gegend herumzustehen (z.B. Gebaeude oder die
+    Leuchtpfaehle bei den Basen). Mit allen Objekten koennen Spieler
+    kollidieren.
+    
+    Zudem gibt es noch sog. Spezialobjekte. Diese interagieren in gewisser
+    Weise mit Spielern oder Schuessen. Dazu gehoeren z.B. Teleporter oder
+    die "Gummiwaende". D.h. der Spieler kann ueber Spezialobjekte drueber-
+    fliegen, waehrend er an Normalo-Objekten zerschellt.
+
+    Seit Version 0.8 kann man auch eigene Objekte in das Spiel einbinden,
+    siehe Funktion "image:load()".
+        
+    Objekte sind wie die Basen als verkettete Liste realisiert. Doch zuerst
+    eine Uebersicht ueber alle bereits integrierten Objekte:
+    
+      OBJ_PILE,
+      OBJ_TUNNEL1,
+      OBJ_BUILDING1,
+      OBJ_BUILDING2,
+      OBJ_BUILDING3,
+      OBJ_BUILDING4,
+      OBJ_BUILDING4_2,
+      OBJ_BUILDING_GRAV,
+      OBJ_POOL1,
+      OBJ_POOL2,
+      OBJ_PPILE1,
+      OBJ_PPILE2,
+      OBJ_MAN1,
+      OBJ_DOORH,
+      OBJ_DOORV,
+      OBJ_DOORH2,
+      OBJ_DOORV2,
+      OBJ_SWITCHR,
+      OBJ_SWITCHL,
+      OBJ_SWITCHU,
+      OBJ_SWITCHD,
+      OBJ_RACEPOLEL,
+      OBJ_RACEPOLER,
+      OBJ_RACEPOLEU,
+      OBJ_RACEPOLED,
+      OBJ_TREE,
+      OBJ_TREE2,
+      OBJ_STONE_B1,
+      OBJ_STONE_S1,
+      OBJ_STONE_S2
+
+    Und die Spezialobjekte:
+
+      SPOBJ_BUMPL,               -> die Gummiwaende
+      SPOBJ_BUMPR,
+      SPOBJ_BUMPU,
+      SPOBJ_BUMPD,
+      SPOBJ_EXTRA,               -> Extra, das u.a. bei Abschuss erscheint
+      SPOBJ_TELEPORT1,           -> grosser Teleporter (Schiffe & Schuesse)
+      SPOBJ_TELEPORT2,           -> kleiner Teleporter (nur Schuesse)
+      SPOBJ_GRAVTRAP,            -> Gravitationsquelle
+      SPOBJ_FLAG,                -> Flagge (z.B. fuer Capture the Flag)
+      SPOBJ_GWALL_L,             -> die Gravitationswaende
+      SPOBJ_GWALL_R,
+      SPOBJ_GWALL_U,
+      SPOBJ_GWALL_D
+
+    Zur Darstellung der Objekte auf dem Bildschirm muss man folgendes
+    wissen: Der Hintergrund jedes Objekts wird beim Loeschen des Bild-
+    schirms (das aus Geschwindigkeitsgruenden kein komplettes Loeschen
+    ist) schwarz gezeichnet. Da dies sehr stoerend wirken wuerde bei
+    feststehenden Objekten, die teilweise in der Landschaft "stecken",
+    gibt es die Variablen bound_x, bound_y, bound_w und bound_h. Diese
+    enthalten jeweils plus- oder minus-Werte. Der rechteckige "Loesch-
+    Kasten" hat deshalb die Startkoordinaten (x-bound_x, y-bound_y) und
+    die Hoehe/Breite (width-bound_w, height-bound_h).
+    Moechte man bestimmte Objekte durch die Gegend bewegen, bei denen
+    diese "bound"-Werte gesetzt sind (fast alle statischen), muss man
+    diese auf "0" setzen, damit das Objekt keine "Spur" nachzieht :-).
+
+    Dann noch ein paar Worte zu den Frames: Jedes Objekt hat ein oder
+    mehrere Bilder, die hintereinander durchlaufen werden. Mit der Funktion
+    "get_maxframe()" laesst sich die Nummer des letzten Frames ermitteln
+    (das erste hat 0, das zweite 1, usw. also von 0-maxframe).
+    "get_dispframe()" liefert das momentan sichtbare Frame. Nach 
+    "get_maxframet()" (max frame time) Ticks wird das Frame um eins weiter-
+    geschaltet, und danach wieder auf "get_startframe()" gesetzt (startframe
+    ist meistens 0).
+    Noch einige Anmerkungen zu den "besonderen" Objekten:
+    
+    OBJ_SWITCHx        Schalter haben zwei Zustaende, 0 oder 1. Bei Beschuss
+                       aendert sich dieser Zustand. 0 ist aus, 1 ist an.
+                       Der momentane Zustand kann ueber get_dispframe() und
+                       set_dispframe() gelesen bzw. gesetzt werden.
+                       
+    OBJ_DOORx          Tueren sind spezieller: Sie haben insgesamt 4 Frames
+                       (get_maxframe liefert 3), doch im "geschlossenen" 
+                       Zustand werden nur die Frames 1-3 angezeigt. Frame 0
+                       ist das Frame der offenen Tuer (also ohne Laser).
+                       "startframe" ist normalerweise hier 1.
+                       
+                       Um eine Tuer nun zu oeffnen, muss "maxframe" auf
+                       0 gesetzt werden (keine Animation, set_maxframe(0))
+                       und startframe sowie dispframe ebenso 
+                       (set_startframe(0), set_dispframe(0)).
+                       
+                       Um sie wieder zu schliessen, wird "maxframe" auf
+                       3 zurueckgesetzt und "startframe" sowie "dispframe" 
+                       wieder auf 1 gesetzt.
+    
+    
+    Nun, wie bei den Basen, die Auflistung der Funktionen von "objects",
+    wie zuvor in voller Schreibweise:
+
+    (Object*) objects:add(int num, int type, int x, int y, int user=0, int ft=0)
+
+             Erstellt ein Objekt des Typs "type" (alle OBJ_*) mit Nummer
+             "num" an den Koordinaten "x"/"y" und gibt es zurueck.
+             
+             Als Typ kann auch eine von images:load() zurueckgelieferte
+             Bildnummer verwendet werden. Damit wird ein User-Objekt
+             erstellt. Siehe Abschnitt n).
+
+             Die letzten beiden Argumente sind optional:
+
+             "user" hat bis jetzt bei normalen Objekten keine Funktion.
+
+             "ft" ist die maximale Frame-Zeit, d.h. wie lange ein Bild der
+             Animation (sofern es eine gibt) angezeigt wird. Bleibt dieser
+             Wert auf "0" bzw. wird er nicht angegeben, wird die Standard-
+             Zeit (je nach Objekt eine andere) verwendet.
+
+    (Object*) objects:add_special(int num, int type, int x, int y, int user=0, int ft=0)
+
+             Erstellt ein Spezial-Objekt des Typs "type" (alle SPOBJ_*) mit
+             Nummer "num" an den Koordinaten "x"/"y" und gibt es zurueck.
+
+             Die letzten beiden Argumente sind optional (siehe "add").
+
+             Fuer "user" gibt es unterschiedliche Bedeutungen, je nach
+             Objekt. Die Objekte, die "user" abfragen, sind:
+
+             SPOBJ_EXTRA        -> Typ des Extras. Folgende sind definiert:
+                                   > 0: Munitionspack der angegebenen Staerke
+                                        (typische Werte: ca. 0-30)
+                                    -1: Waffenupgrade (zufaellige Waffe)
+                                    -2: voller Treibstoff (wenn notwendig, 
+                                        ansonsten autom. Munitionspack)
+                                    -3: voller Schild/Huelle (wenn notwendig,
+                                        ansonsten autom. Munitionspack)
+                                    -4: voller Wandschild (wenn notwendig, 
+                                        ansonsten autom. Munitionspack)
+                                    -5: Unzerstoerbarkeit, Dauer 10-25 Sek.
+
+             SPOBJ_TELEPORT1/2  -> Nummer des "verbundenen" Teleporters.
+
+             SPOBJ_GRAVTRAP     -> Staerke der Gravitationsquelle (0-100)
+             SPOBJ_GWALL_*      -> Staerke der Gravitationsquelle (0-200)
+             
+             SPOBJ_FLAG         -> Farbe der Flagge (0-5)
+
+    (Object*) objects:get_first_object()
+
+             Liefert das erste Objekt in der Liste. Fuer eine Anwendung,
+             wie man alle Objekt damit in einer Schleife durchgeht, siehe
+             "bases:get_first_base()".
+
+    (Object*) objects:get_first_spobject()
+
+             Liefert das erste Spezialobjekt in der Liste.
+
+    (Object*) objects:get_object(int n)
+
+             Liefert das Objekt mit Nummer "n".
+
+    (Object*) objects:get_spobject(int n)
+
+             Liefert das Spezialobjekt mit Nummer "n".
+
+    (int)   objects:get_count()
+
+             Liefert die Anzahl aller Objekte in der Liste.
+
+
+    Im folgenden nun alle auf "Object" anwendbaren Funktionen:
+
+    (void)  remove()             -> loescht das Objekt. Es ist zu beachten,
+                                    dass hinterher nicht mehr darauf zuge-
+                                    griffen wird!
+                                    
+    (Object*) get_next()         -> liefert das naechste Objekt (oder nil)
+    (Object*) get_prev()         -> liefert das vorherige Objekt (oder nil
+
+    (int)   get_type()           -> liefert den Typ des Objekts
+    (int)   get_nr()             -> liefert die Nummer des Objekts
+    (int)   is_special()         -> liefert 1, wenn Objekt ein Spezial-
+                                    Objekt ist, ansonsten 0
+
+    (int)   get_x()              -> liefert X-Koordinate
+    (int)   get_y()              -> liefert Y-Koordinate
+    (float) get_xspd()           -> liefert X-Geschwindigkeit
+    (float) get_yspd()           -> liefert Y-Geschwindigkeit
+    (void)  set_x(int n)         -> setzt X-Position
+    (void)  set_y(int n)         -> setzt Y-Position
+    (void)  set_xspd(float n)    -> setzt X-Geschw.
+    (void)  set_yspd(float n)    -> setzt Y-Geschw.
+
+    (int)   get_maxframe()       -> liefert die maximale Framezahl
+    (void)  set_maxframe()       -> setzt die maximale Framezahl
+    (int)   get_maxframet()      -> liefert die momentane Frame-Geschw.
+    (void)  set_maxframet()      -> setzt die Frame-Geschwindigkeit
+    (int)   get_curframe()       -> liefert aktuelles Frame
+    (void)  set_curframe()       -> setzt aktuelles Frame
+    (int)   get_curframet()      -> liefert die momentane Frame-Geschw.
+    (void)  set_curframet()      -> setzt die aktuelle Frame-Geschwindigkeit
+    (int)   get_dispframe()      -> liefert das momentan sichtbare Frame
+    (void)  set_dispframe()      -> setzt das sichtbare Frame
+    (int)   get_startframe()     -> liefert Start-Frame (normalerweise 0)
+    (void)  set_startframe()     -> setzt Start-Frame
+
+    (int)   get_width()          -> liefert Breite
+    (int)   get_height()         -> liefert Hoehe
+    (void)  set_bound_x(int n)   -> setzt bound_x (siehe oben)
+    (void)  set_bound_y(int n)   -> setzt bound_y
+    (void)  set_bound_w(int n)   -> setzt bound_w
+    (void)  set_bound_h(int n)   -> setzt bound_h
+
+    (float) get_hit()            -> liefert, wie stark das Obj. getroffen ist
+    (int)   get_maxhit()         -> liefert maximale Hitpoints des Objekts
+    (void)  set_hit(float n)     -> setzt momentane Hitpoints
+    (void)  set_maxhit()         -> setzt maximale Hitpoints
+    (int)   get_onehit()         -> liefert 1, wenn Objekt gerade getroffen
+                                    wurde
+    (int)   get_hitby()          -> liefert Signatur des Spielers, der
+                                    das Objekt zuletzt getroffen hat
+    (float) get_hitby_sx()       -> liefert die X-Geschw. des letzten 
+                                    Schusses, der das Objekt traf
+    (float) get_hitby_sy()       -> liefert Y-Geschw. des letzten Treffers
+
+    (int)   get_user()           -> liefert "user"-Wert
+    (void)  set_user(int n)      -> setzt "user"-Wert
+
+    (int)   get_active()         -> liefert 1, wenn Objekt aktiviert ist
+    (void)  set_active(int n)    -> bei 1 ist Objekt aktiviert (Standard)
+    (int)   get_invisible()      -> liefert 1, wenn Objekt unsichtbar ist
+    (void)  set_invisible(int n) -> bei 1 ist Objekt unsichtbar
+
+    (void)  set_user_int(int n, int d)  
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Ganzzahl)
+    (void)  set_user_float(int n, float d);
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Kommazahl)
+    (int)   get_user_int(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+    (float) get_user_float(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+
+    (void)  set_dont_continue(int n) -> nutzbar in Hook-Funktionen (s.d.)
+    (void)  set_do_hooks(int n)  -> nutzbar in Hook-Funktionen (schaltet
+                                    Hook-Funktionen fuer diesen Gegner ein
+                                    oder aus).
+                                    
+    (void)  set_dont_update(int n) -> Wenn dont_update auf 1 gesetzt wird, wird
+                                    das Objekt nicht mehr automatisch
+                                    aktualisiert und neu gezeichnet. Das Objekt
+                                    wird damit "Teil" der Landschaft und kann
+                                    mit draw() bei Bedarf neu gezeichnet werden.
+    (int)   get_dont_update()    -> liefert 1, wenn dont_update gesetzt ist.
+    (void)  draw()               -> zeichnet das Objekt neu
+                                    (wenn dont_update gesetzt ist).
+
+
+ f) Gegner: Aufruf ueber Instanz "enemies"
+    --------------------------------------
+
+    Mit der Einfuehrung von Gegnern in Version 0.8 koennen mit GS-Script
+    nun auch spannende Single- und Multiplayer-Levels mit feindlichen oder
+    freundlichen Gegnern programmiert werden.
+    
+    Es lassen sich diverse Gegnertypen einbinden - diese werden haupt-
+    saechlich unterteilt in Tuerme und Schiffe. Tuerme sind stationaer,
+    Schiffe bewegen sich. Zusaetzlich gibt es noch zwei mobile Plattformen,
+    die Tuerme transportieren. Und weiterhin koennen auch noch selbst
+    erstellte Gegner importiert und ihr Verhalten komplett selbst 
+    programmiert werden.
+    
+    Den Schiffen lassen sich eine beliebige Anzahl Waypoints zuweisen,
+    die jeweils mit einer bestimmten Geschwindigkeit abgeflogen werden.
+        
+    Hier die bereits integrierten Gegner:
+
+    Tuerme: 
+    
+      E_TOWER_SINGLE             -> der normale "Einer"-Turm aus GF
+      E_TOWER_THREE              -> die kleine, drei Schuesse abgebende 
+                                    Kuppel
+      E_TOWER_FLAK               -> ein schweres Geschuetz, das Bomben
+                                    nach oben schiesst, die in der Luft
+                                    explodieren
+      E_TOWER_PULSE              -> Der verrueckte Puls-Shooter aus GF
+                                    
+    Schiffe:
+    
+      E_SHIP_BLUE1               -> Der "kleine Blaue"
+      E_SHIP_BLUE2               -> Der "grosse Blaue"
+      E_SHIP_BIGRED              -> Der "dicke Rote"
+      E_SHIP_RELASH              -> Mr. Relashs Schiff aus GF Level 6
+      E_SHIP_BIGBOSS             -> Der Endgegner aus GF Level 7
+      
+    Sonstige:
+
+      E_TANK_MOBILETOWER         -> Eine fahrende Plattform, die einen
+                                    beliebigen Turm tragen kann
+      E_TANK_FLYINGTOWER         -> Eine fliegende Plattform, die einen
+                                    beliebigen Turm tragen kann
+      E_USER                     -> Selbst erstellter Gegner
+
+    
+    Jedem Gegner werden bei seiner Erstellung fuenf Festwerte zugewiesen
+    sowie sechs andere Werte, die je nach Gegner unterschiedlich sein 
+    koennen und sein grundlegendes (Feuer-)Verhalten beschreiben.
+    
+    ACHTUNG ab v0.9: Der bei add() angegebene Wert fuer die Schusstaerke 
+    gilt fuer Huelle und Schilde. Wenn unterschiedliche Hitpoints angegeben
+    werden muessen, kann dies ueber die Funktionen set_bullet_hull_hitp() und
+    set_bullet_shield_hitp() (s.u.) erfolgen.
+
+    (Enemy*) enemies:add(int num, int type, int x, int y, int player_sig,
+                         float user1=0, float user2=0, float user3=0,
+                         float user4=0, float user5=0, float user6=0)
+
+             Erstellt einen Gegner des Typs "type" (alle E_*) mit der
+             (eindeutigen) Nummer "num" an den Koordinaten x/y und gibt
+             ihn zurueck. 
+
+             Mit "player_sig" wird die Gesinnung des Gegners angegeben.
+             Diese kann sein:
+             
+             -> Spieler-Signatur:    Schuesse dieses Gegners treffen nur
+                                     Spieler und Gegner, die nicht die
+                                     angegebene Signatur aufweisen.
+                                     
+             -> 0               :    Schuesse dieses Gegners treffen nur
+                                     Spieler, aber keine anderen Gegner.
+                                     
+             -> -1              :    Schuesse dieses Gegners treffen alle
+                                     anderen Spieler und Gegner (damit ist
+                                     der Gegner absolut neutral).
+             
+             user1 bis user6 haben je nach Gegnertyp unterschiedliche 
+             Bedeutungen. Diese sind:
+             
+             E_SHIP_BIGRED: 
+               user1 bis user6: Keine Bedeutung
+
+             E_SHIP_BLUE1, E_SHIP_BLUE2:
+               user1: Feuerfrequenz (in Ticks, z.B. "60" fuer einen Schuss
+                      pro Sekunde).
+               user2: Aktivierungsradius (in Pixeln). Geraet ein Spieler in
+                      diesen Radius, faengt der Gegner an zu feuern.
+               user3: Schussgeschwindigkeit (Pixel pro Tick).
+               user4: Schuss-Staerke (wieviele Hitpoints ein Treffer abzieht).
+               user5: Keine Bedeutung
+               user6: Typ der abzufeuernden Waffe (Standard: W_SINGLE)
+
+             E_SHIP_BIGBOSS:
+               user1 bis user4: Wie E_SHIP_BLUE1
+               user5: Drehgeschwindigkeit der Raketen (Standard: 0.03)
+               user6: Keine Bedeutung
+
+             E_TOWER_SINGLE:
+               user1: Richtung des Turms. Einer der vier Werte:
+                      D_LEFT, D_RIGHT, D_UP oder D_DOWN.
+               user2: Feuerfrequenz
+               user3: Aktivierungsradius
+               user4: Schussgeschwindigkeit
+               user5: Schuss-Staerke
+               user6: Typ der abzufeuernden Waffe (Std.: W_SINGLE)
+                     
+             E_TOWER_FLAK:
+               user1: Zeit, bis Bombe explodiert (wird zusaetzlich um
+                      bis zu 60 Ticks, zufallsgesteuert, verlaengert bzw.
+                      verringert).
+               user2 bis user5 wie bei E_TOWER_SINGLE.
+               user6: Keine Bedeutung
+             
+             E_TOWER_THREE:
+               user1: Feuerfrequenz
+               user2: Aktivierungsradius
+               user3: Schussgeschwindigkeit
+               user4: Schuss-Staerke
+               user5: Keine Bedeutung
+               user6: Typ der abzufeuernden Waffe (Std.: W_SINGLE)
+
+             E_TOWER_PULSE:
+               user1: Feuerfrequenz
+               user2: Aktivierungsradius
+               user3: Schussgeschwindigkeit
+               user4: Schuss-Staerke
+               user5: Keine Bedeutung
+               user6: Keine Bedeutung
+               
+             E_TANK_MOBILETOWER, E_TANK_FLYINGTOWER:
+               user1: Typ des zu tragenden Turms (E_TOWER_*)
+               user2 bis user6 wie bei E_TOWER_SINGLE
+               
+             E_USER:
+               user1: Nummer der per "images:load()" geladenen Gegner-
+                      Animation (siehe Abschnitt n)).
+               user2: Schussfrequenz (Ticks)
+               user3: Schussgeschwindigkeit X-Richtung
+               user4: Schussgeschwindigkeit Y-Richtung
+                      (wird bei einem dieser beiden Werte "-1000" angegeben,
+                      wird eine Zufallszahl zwischen -2 und +2 verwendet)
+               user5: Schuss-Staerke
+               user6: Typ der abzufeuernden Waffe (alle moeglich)
+ 
+    (Enemy*) enemies:get_first_enemy()
+
+             Liefert den ersten Gegner in der Liste. Fuer eine Anwendung,
+             wie man alle Gegner damit in einer Schleife durchgeht, siehe
+             "bases:get_first_base()".
+
+    (Enemy*) enemies:get_enemy(int n)
+
+             Liefert den Gegner mit Nummer "n".
+
+    (int)   enemies:get_count()
+
+             Liefert die Anzahl aller Gegner in der Liste.
+
+
+    Im folgenden nun alle auf "Enemy" anwendbaren Funktionen (aehnlich zu
+    den Object-Funktionen):
+
+    (void)   shoot()		 -> ruft die Standard-Schuss-Funktion auf
+    
+
+    (gsWaypoint*) wp             -> Waypoint-Handler (siehe unten)
+
+    (void)   remove()            -> entfernt diesen Gegner. Dies fuehrt
+                                    NICHT zu einer Explosion. Dafuer am
+                                    besten mit set_hit() Hitpoints >=
+                                    get_maxhit() setzen.
+        
+    (Enemy*) get_next()          -> liefert naechsten Gegner (oder nil)
+    (Enemy*) get_prev()          -> liefert vorherigen Gegner (oder nil)
+    (Enemy*) get_connected()     -> liefert "verbundenen" Gegner (z.B. bei 
+                                    E_TANK_*)
+
+    (int)   get_type()           -> liefert den Typ des Gegners
+    (int)   get_nr()             -> liefert die Nummer des Gegners
+    (int)   get_sig()            -> liefert Signatur (Gesinnung)
+
+    (int)   get_x()              -> liefert X-Koordinate
+    (int)   get_y()              -> liefert Y-Koordinate
+    (float) get_xspd()           -> liefert X-Geschwindigkeit
+    (float) get_yspd()           -> liefert Y-Geschwindigkeit
+    (void)  set_x(int n)         -> setzt X-Position
+    (void)  set_y(int n)         -> setzt Y-Position
+    (void)  set_xspd(float n)    -> setzt X-Geschw.
+    (void)  set_yspd(float n)    -> setzt Y-Geschw.
+
+    (int)   get_maxframe()       -> liefert die maximale Framezahl
+    (void)  set_maxframe()       -> setzt die maximale Framezahl
+    (int)   get_maxframet()      -> liefert die momentane Frame-Geschw.
+    (void)  set_maxframet()      -> setzt die Frame-Geschwindigkeit
+    (int)   get_curframe()       -> liefert aktuelles Frame
+    (void)  set_curframe()       -> setzt aktuelles Frame
+    (int)   get_curframet()      -> liefert die momentane Frame-Geschw.
+    (void)  set_curframet()      -> setzt die aktuelle Frame-Geschwindigkeit
+    (int)   get_dispframe()      -> liefert das momentan sichtbare Frame
+    (void)  set_dispframe()      -> setzt das sichtbare Frame
+    (int)   get_startframe()     -> liefert Start-Frame (normalerweise 0)
+    (void)  set_startframe()     -> setzt Start-Frame
+
+    (int)   get_width()          -> liefert Breite
+    (int)   get_height()         -> liefert Hoehe
+    (void)  set_bound_x(int n)   -> setzt bound_x (siehe oben)
+    (void)  set_bound_y(int n)   -> setzt bound_y
+    (void)  set_bound_w(int n)   -> setzt bound_w
+    (void)  set_bound_h(int n)   -> setzt bound_h
+
+    (float) get_hit()            -> liefert momentane Hitpoints
+    (int)   get_maxhit()         -> liefert maximale Hitpoints des Gegners
+    (void)  set_hit(float n)     -> setzt momentane Hitpoints
+    (void)  set_maxhit()         -> setzt maximale Hitpoints
+    (int)   get_onehit()         -> liefert 1, wenn Gegner gerade getroffen
+                                    wurde
+    (int)   get_hitby()          -> liefert Signatur des Spielers, der
+                                    das Objekt zuletzt getroffen hat
+    (float) get_hitby_sx()       -> liefert die X-Geschw. des letzten 
+                                    Schusses, der das Objekt traf
+    (float) get_hitby_sy()       -> liefert Y-Geschw. des letzten Treffers
+
+    (int)   get_user()           -> liefert "user"-Wert
+    (void)  set_user(int n)      -> setzt "user"-Wert
+
+    (void)  set_bullet_speed(float n) -> set Schussgeschwindigkeit
+    (float) get_bullet_speed()   -> liefert Schussgeschwindigkeit
+    (void)  set_bullet_freq(int n) -> setzt Schussfrequenz
+    (float) get_bullet_freq()    -> liefert Schussfrequenz
+    (void)  set_bullet_strength(float n) -> setzt Schussstaerke
+    (float) get_bullet_strength() -> liefert Schussstaerke
+    (void)  set_bullet_hull_hitp(float n) -> setzt Huellen-Hitpoints
+    (float) get_bullet_hull_hitp() -> liefert Huellen-Hitpoitns
+    (void)  set_bullet_shield_hitp(float n) -> setzt Schild-Hitpoitns
+    (float) get_bullet_shield_hitp() -> liefert Schild-Hitpoints
+    
+    (int)   get_active()         -> liefert 1, wenn Gegner aktiviert ist
+    (void)  set_active(int n)    -> bei 1 ist Gegner aktiviert (Standard)
+    (int)   get_freezed()        -> liefert >0, wenn Gegner eingefroren ist
+    (void)  set_freezed(int n)   -> friert Gegner fuer n Ticks ein
+    (int)   get_shrinked()       -> liefert >0, wenn Gegner verkleinert ist
+    (void)  set_shrinked(int n)  -> verkleinert Gegner fuer n Ticks
+    (void)  set_maxshrink(float n) -> Maximale Shrinkstaerke (def.: 0.4)
+    (float) get_maxshrink()      -> liefert max. Shrinkstaerke
+
+    (void)  set_user_int(int n, int d)  
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Ganzzahl)
+    (void)  set_user_float(int n, float d);
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Kommazahl)
+    (int)   get_user_int(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+    (float) get_user_float(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+
+    (void)  set_dont_continue(int n) -> nutzbar in Hook-Funktionen (s.d.)
+    (void)  set_do_hooks(int n)  -> nutzbar in Hook-Funktionen (schaltet
+                                    Hook-Funktionen fuer diesen Gegner ein
+                                    oder aus).
+
+
+    WAYPOINT-System fuer Gegner und Objekte
+    ---------------------------------------
+    
+    Wenn einem Gegner oder Objekt Waypoints zugewiesen werden, dann wird dieser 
+    diese Punkte nacheinander abfliegen. Das Objekt "wp" eines Gegners/Objekts 
+    wird hierzu benutzt. 
+    Ein kleines Beispiel:
+    
+    meingegner = enemies:add(1, E_SHIP_BIGRED, 150, 250, -1, 0, 0, 0, 0, 0)
+    meingegner.wp:add( 150, 250, 1.0 )
+    meingegner.wp:add( 400, 500, 0.4 )
+    meingegner.wp:add( 168, 300, 0.7, 120 )
+    meingegner.wp:add( 120, 300, 1.5 )
+
+    Dieser Gegner fliegt also zuerst von seiner Startposition (150, 250)
+    zum ersten Waypoint. Dessen Koordinaten sind hier identisch, deshalb
+    wird der Gegner gleich beginnen, mit der Geschwindigkeit 0.4 zum
+    zweiten Waypoint zu fliegen (bei 400, 500). Schliesslich gehts mit
+    Geschwindigkeit 0.7 weiter zum dritten Waypoint, wo er (vierter 
+    Parameter) 120 Ticks (also 2 Sekunden) wartet, usw.
+
+    Wie die Waypoints abgearbeitet werden, kann man ueber set_mode() definieren.
+    Es gibt 3 verschiedene Modi:
+    
+    0  =>  Abarbeitung 0-1-2-3-0-1-2-3 (Standard)
+           (am Ende auf gerade Linie zurueck zum Anfang)
+
+    1  =>  Abarbeitung 0-1-2-3-2-1-0-1
+           (am Ende der Strecke wird umgedreht)
+
+    2  =>  Abarbeitung 0-1-2-3-stop
+           (am Ende der Strecke wird angehalten)
+
+    Das wp-Objekt kennt mehrere Funktionen:
+    
+    (int) get_count()            -> liefert Anzahl der Waypoints
+    (int) get_current()          -> liefert Waypoint, der gerade ange-
+                                    steuert wird.
+    (void) set_current(int n)    -> n wird zum aktuellen Waypoint
+    (void) set_next()            -> aktiviert naechsten Waypoint
+    (void) set_mode(int n)       -> setzt WP-Modus auf n (s.o.)
+    (int)  get_mode()            -> liefert aktuellen WP-Modus
+
+    (Waypoint*) add(int x, int y, float speed=1, float pause=0)
+                                 -> erstellt Waypoint an Koordinaten x/y
+                                    mit Geschwindigkeit speed und der
+                                    Pause pause.
+    (Waypoint*) get(int n)       -> liefert Waypoint mit Nummer n
+    (void) remove(Waypoint *n)   -> zerstoert Waypoint-Objekt n
+    (void) remove_all()          -> zerstoert alle Waypoints
+    
+    
+    Ein zurueckgeliefertes "Waypoint"-Objekt definiert genau einen
+    Waypoint. Mit den folgenden Funktionen kann man auf die einzelnen
+    Eigenschaften zugreifen:
+    
+    (int) get_x()                -> liefert X-Koordinate
+    (int) get_y()                -> liefert Y-Koordinate
+    (float) get_speed()          -> liefert Geschwindigkeit
+    (int)  get_pause()           -> liefert Pause
+    (int)  get_curpause()        -> liefert bereits abgelaufene Zeit an
+                                    aktuellem Waypoint (wenn pause def.)
+    (void) set_x(int n)          -> setzt X-Koordinate
+    (void) set_y(int n)          -> setzt Y-Koordinate
+    (void) set_speed(float n)    -> setzt Geschwindigkeit
+    (void) set_pause(int n)      -> setzt Pause
+    (void) set_curpause(int n)   -> setzt aktuelle Pausenzeit
+            
+        
+ g) Karte: Aufruf ueber Instanz-Array "playmap"
+    -------------------------------------------
+
+    Bei Splitscreen werden zwei Karten benutzt (playmap[1] und playmap[2]),
+    bei Onescreen-Karten und Single-Player bzw. Netzwerk nur eine, also
+    playmap[1].
+
+    Ein Aufruf sieht z.B. folgendermassen aus:
+
+    playmap[1]:get_scroll_x()
+
+    Im folgenden die wichtigsten Funktionen:
+
+    (int)   get_scroll_x()       -> Scrolling in X-Richtung (0 = linker Rand)
+    (int)   get_scroll_y()       -> Scrolling in Y-Richtung (0 = oberer Rand)
+    (char*) get_style()          -> liefert Dateiname der akt. FMP-Datei
+
+    (void)  request_redraw()     -> erzwingt das Neuzeichnen der Karte
+
+    (void)  restrict_scroll_x(int min, int max)
+    
+             Beschraenkt das Scrolling in horizontaler (X) Richtung
+             auf die durch min und max gegebenen Pixelwerte. Dabei ist
+             ein Scrolling von "0" der linke Rand, ein Scrolling von "640"
+             genau eine Bildschirmbreite. Setzt man also min und max beide
+             auf "0", dann findet kein Scrolling in X-Richtung mehr statt.
+             
+             Dieselbe Funktion existiert fuer die vertikale Richtung:
+             restrict_scroll_y(int min, int max)
+    
+    (void)  scroll_to(int x, int y, float s=0)
+
+             Scrollt Karte mit Geschwindigkeit "s" an die spezifizierte
+             Position. Wird "s" weggelassen, wird zur gewuenschten Position
+             "gesprungen".
+
+    (void)  scroll_to(player, float speed=0)
+
+             Erwartet ein Spieler-Objekt (z.B. "player[2]") und scrollt
+             die Karte, so dass dieser Spieler in der Mitte steht (wenn
+             dies moeglich ist). Wenn speed weggelassen wird, wird zur
+             Spielerposition "gesprungen".
+
+    (void)  scroll()
+
+             Diese Funktion wird normalerweise bei grossen (scrollenden)
+             Karten automatisch aufgerufen.
+             Wer jedoch eine Ein-Bildschirm-Karte (Onescreen-Map) scrollen
+             moechte, muss diese Funktion im Hauptscript aufrufen.
+
+    (int)   is_pixel(int x, int y)
+
+             Liefert 1, wenn sich an x/y ein Pixel befindet (also ein Teil
+             der Umgebung). Funktioniert nur, wenn sich der Pixel auf dem
+             momentan geladenen Teil der Karte befindet.
+
+    (int)   get_pixel(int x, int y)
+
+             Liefert die Farbe des Pixels an der Position x/y. Gibt die
+             Nummer der Farbe innerhalb der Palette zurueck.
+             Funktioniert (wie is_pixel) nur, wenn sich der Pixel auf dem
+             momentan geladenen Teil der Karte befindet.
+
+    (int)   is_tile(int x, int y)
+
+             Liefert 1, wenn sich an x/y ein Tile der Map befindet. Diese
+             Funktion funktioniert fuer die gesamte Karte, deren Groesse
+             maximal 100x100 Tiles betraegt. Ein Tile hat in GS genau
+             48x48 Pixel.
+
+    (int)   is_on_screen(int x, int y, int width, int height)
+
+             Liefert 1, wenn sich die angegebene Box zumindest teilweise
+             auf dem sichtbaren Bildschirm befindet.
+
+    (int)   is_on_map(int x, int y, int width, int height)
+
+             Liefert 1, wenn sich die angegebene Box zumindest teilweise
+             auf dem gerade geladenen Teil der Karte befindet.
+
+
+    Die folgenden Funktionen zeichnen direkt auf die Karte. Die dadurch
+    verursachten Aenderungen werden bei einem Neuzeichnen der Karte allerdings
+    geloescht! Dieses Neuzeichnen tritt auf, da nicht die komplette Karte im
+    Speicher gehalten werden kann. Alle globals.plus_x bzw. globals.plus_y
+    Pixel (standardmaessig 1500) erfolgt ein Neuzeichnen der Karte. Man kann
+    bei scrollbaren Karten mit diesen globals-Werten spielen oder sich beim
+    Zeichnen auf nicht-scrollbare Karten beschraenken.
+
+    Ausserdem ist zu bedenken, dass draw_-Befehle, die direkt in der INI-Datei
+    angegeben werden, nicht angezeigt werden, weil die INI GS-intern vor dem
+    Zeichnen der Spielkarte ausgefuehrt wird. D.h. Zeichnungen auf der Karte
+    werden sofort wieder ueberschrieben.
+
+    Wer gleich bei Levelstart Objekte auf den Bildschirm zeichnen moechte,
+    schreibt die entsprechenden Befehle am besten innerhalb der Funktion
+      hook_init_level_x()
+    (siehe unten), die ausgefuehrt wird, kurz bevor dem Spieler ein Bild
+    angezeigt wird.
+
+    (void)  draw_pixel(int col, int x, int y)
+
+             Zeichnet einen einzelnen Bildpunkt mit Farbe col bei x/y.
+
+    (void)  draw_line(int col, int x1, int y1, int x2, int y2)
+
+             Zeichnet eine Linie von x1/y1 nach x2/y2 mit Farbe col.
+
+    (void)  draw_circle(int col, int x, int y, int r)
+
+             Zeichnet einen Kreis an Position x/y mit dem Radius r und
+             der Farbe col.
+
+    (void)  draw_filled_circle(int col, int x, int y, int r)
+
+             Zeichnet einen gefuellten Kreis an Position x/y mit dem Radius 
+             r und der Farbe col.
+
+    (void)  draw_ellipse(int col, int x, int y, int rx, int ry)
+
+             Zeichnet eine Ellipse an Position x/y mit dem Radius rx/ry und
+             der Farbe col.
+
+    (void)  draw_filled_ellipse(int col, int x, int y, int rx, int ry)
+
+             Zeichnet einen gefuellten Kreis an Position x/y mit dem Radius 
+             rx/ry und der Farbe col.
+
+    (void)  draw_rectangle(int col=0, int x1=0, int y1=0, int x2=0, int y2=0)
+
+             Zeichnet ein (ungefuelltes) Rechteck von Position x1/y1 nach
+             x2/y2 mit Farbe col.
+
+    (void)  draw_filled_rectangle(int col, int x1, int y1, int x2, int y2)
+
+             Zeichnet ein gefuelltes Rechteck von x1/y1 nach x2/y2 mit Farbe
+             col.
+
+    (void)  draw_text(int font, char *text, int col, int x, int y)
+
+             Zeichnet den Text-String "text" mit dem Zeichensatz "font" an
+             Position x/y in der Farbe col.
+
+    (void)  fill_area(int col, int x, int y)
+
+             Fuellt einen geschlossenen Bereich um den Punkt x/y mit der
+             Farbe "col".
+
+    (void)  draw_sprite(int imgnum, int px, int py, int frame=0)
+    
+             Zeichnet ein ueber images:load geladenes Bild (imgnum) 
+             an Position px/py. Wird "frame" angegeben, dann wird das
+             entsprechende Frame gezeichnet, ansonsten wird Frame 0 benutzt.
+
+
+ h) Panels: Aufruf ueber Instanz-Array "gpanel"
+    -------------------------------------------
+
+    Bei Splitscreen werden zwei Panels benutzt (gpanel[1] und gpanel[2]),
+    bei Onescreen- und Singleplayer/Netzwerk-Karten nur eines, also 
+    gpanel[1].
+
+    Im folgenden die wichtigsten Funktionen und Eigenschaften.
+
+    (gsOsd*) osd                 -> ein OSD-Objekt, siehe Punkt OSD.
+                                    gpanel[1].osd:get_osdbit(1000) liefert
+                                    im Fullscreen-Modus z.B. das Osd-Bitmap
+                                    der rechten Panel-Seite.
+
+    (void)  update_all()         -> Updatet alle Anzeigen mit neuen Werten
+    (void)  update_shields()     -> Updatet Huellen/Schildanzeige
+    (void)  update_weapons()     -> Updatet Waffenanzeige
+    (void)  update_bullets()     -> Updatet verbleibende Munition
+    (void)  update_frags()       -> Updatet Abschussanzeige
+    (void)  update_extra_energy() -> Updatet Extra-Energie-Anzeige
+    (void)  update_fuel()        -> Updatet Spritanzeige
+                                        
+    (void)  set_debug(int n)     -> aktiviert/deaktiviert Debug-Modus
+    (int)   get_debug()          -> liefert 1, wenn Debug-Modus aktiviert
+
+    (void)  set_active(int n)    -> aktiviert/deaktiviert Panel (0=unsichtbar)
+    (int)   get_active()         -> liefert 1, wenn Panel sichtbar
+
+    (int)   get_radar_zoom()     -> liefert eingestellten Radar-Zoom
+    (void)  set_radar_zoom(int n) -> setzt neuen Radar-Zoom
+    
+             
+ i) Effekt "Pixel": Aufgerufen ueber Instanz "effects.pixels"
+    ---------------------------------------------------------
+
+    Mit Pixeln lassen sich in GS einige schoene Dinge anstellen, z.B.
+    spruehende Fontaenen, heftige Explosionen oder spurenziehende 
+    Projektile. Es gibt zwei verschiedene Pixel-Arten: Die 'normalen' 
+    (ein Pixel gross, verschiedene Farben) und die 'Debris-Pixels'. 
+    Letztere sind Bitmaps, die aber wie die Pixel behandelt werden. Nur 
+    koennen sie ihre Farbe nicht aendern.
+
+    Die Pixel sind natuerlich ebenfalls wieder als "linked list" realisiert
+    (wie Objekte und Basen). Ich rate jedoch davon ab, die gesamte Liste
+    bei jedem Durchlauf des Main Loops (also 60 Mal pro Sekunde) durchzu-
+    gehen, um mit jedem Pixel irgendwas anzustellen. Da oftmals ueber 1000
+    Pixel auf einmal dargestellt werden, kann das Spiel ins Stocken ge-
+    raten und sogar einfrieren. Diese Performance-Probleme sind der Grund,
+    wieso die Pixel in den enthaltenen Levels nicht von den Gummiwaenden
+    abprallen oder beim Bildschirmaustritt auf den zwei letzten Deathmatch-
+    Karten nicht wieder auf der anderen Seite hereinkommen.
+
+    Ein einzelner Pixel ist ein Objekt der Klasse "Pixel", deren Eigen-
+    schaften ich der Vollstaendigkeit halber beschreiben werde. Es ist
+    also moeglich, auf jedes Pixel zuzugreifen.
+
+    Aufgerufen werden folgende Funktion wie folgt (Beispiel):
+
+    effects.pixels:get_first()
+
+    "effects.pixels:" lasse ich nun weg, das Prinzip muesste klar sein.
+
+    Zuerst einmal die vordefinierten Pixeltypen:
+
+      PIX_WHITE,
+      PIX_YELLOW,
+      PIX_GREEN,
+      PIX_BLUE,
+      PIX_BLUEWHITE,
+      PIX_RED,
+      PIX_ALL,
+      PIX_DEBRIS1,        (blau)
+      PIX_DEBRIS2,        (rotbraun)
+      PIX_DEBRIS3,        (grau)
+      PIX_DEBRIS4,        (blauweiss)
+      PIX_DEBRIS5         (orange-weiss)
+
+
+    (Pixel*) get_first()
+
+             Liefert das erste Pixel der Liste.
+
+    (Pixel*) get_last()
+
+             Liefert das letzte Pixel der Liste.
+
+    (int)    get_count()
+
+             Liefert die momentane Anzahl der in der Liste enthaltenen Pixel.
+
+    (void)   add(int anzahl, int startx, int starty, int xradius, int yradius,
+                 float xab, float yab, int speed, int type, int maxtable,
+                 int lifetime=2000, int fadespeed=0,
+                 int max_xab=1500, int max_yab=1500)
+
+             Die Hauptfunktion :-)
+
+             Die letzten vier Parameter sind optional, die anderen sind
+             zwingend.
+
+             anzahl     -> Wieviele Pixel sollen erschaffen werden?
+             startx     -> Wo sollen sie erscheinen?
+             starty     -> Dasselbe mit y... :)
+             xradius    -> Definiert mit yradius einen Kasten, in dem die
+                           Pixel zufallsverteilt erscheinen.
+             yradius    -> siehe xradius
+             xab        -> Staerke der urspruenglichen "x-Bewegung"
+                           (Bsp.: wenn "-2", dann schiessen die Pixel nach
+                           links).
+             yab        -> siehe xab, dasselbe fuer y-Bewegung
+             speed      -> das kann ich nicht beschreiben. Einfach aus-
+                           probieren (Werte zw. 0-1000 z.B.) :-)
+             type       -> Einer der weiter oben angegebenen Typen
+             maxtable   -> Je kleiner der Wert, desto dunkler sind die
+                           normalen Pixel (maximal: 10). Hat keine Aus-
+                           wirkung auf "Debris-Pixel".
+             lifetime   -> Zeit in Ticks, die die Pixel "leben" duerfen.
+             fadespeed  -> Wie schnell werden die Pixel nach und nach
+                           dunkler? (Groesserer Wert = laengere Zeit).
+                           Hat keine Auswirkung auf "Debris Pixel".
+             max_xab    -> Die maximale Abweichung der Pixel vom Startort.
+                           Nach dessen Ueberschreitung werden sie vernichtet.
+                           1500 waeren 750 Pixel nach links und 750 Pixel
+                           nach rechts.
+             max_yab    -> Siehe max_xab, bezogen auf y.
+
+
+    Jetzt noch die Eigenschaften & Funktionen eines einzelnen Pixels:
+
+    (int)    color               -> Farbe des Pixels
+    (int)    lifetime            -> Verbleibende Lebenszeit in Ticks
+    (int)    max_xab             -> siehe oben
+    (int)    max_yab             -> ebenfalls
+    (int)    dspd                -> siehe oben fuer "dspeed"
+    (int)    bounce              -> (ro) wie oft ist der Pixel schon aufgekommen?
+    (int)    user                -> noch nicht belegt
+
+    (Pixel*) get_next()          -> liefert naechsten Pixel in Liste
+    (Pixel*) get_prev()          -> liefert vorhergehenden Pixel
+
+    (float)  get_x()             -> liefert X-Koordinate
+    (float)  get_y()             -> liefert Y-Koordinate
+    (void)   set_x(float n)      -> setzt X-Koordinate
+    (void)   set_y(float n)      -> setzt Y-Koordinate
+    (float)  get_xspd()          -> liefert X-Geschw.
+    (float)  get_yspd()          -> liefert Y-Geschw.
+    (void)   set_xspd(float n)   -> setzt X-Geschw.
+    (void)   set_yspd(float n)   -> setzt Y-Geschw.
+
+
+ j) Effekt "Explosionen": Aufgerufen ueber Instanz "effects.explosions"
+    -------------------------------------------------------------------
+
+    Explosionen in GS koennen sehr kleine sein, wie sie beim Auftreffen
+    von Debris-Pixeln auf dem Boden entstehen, oder sehr grosse, wie sie
+    bei der Explosion der Bigbomb erscheinen.
+
+    Die folgenden Explosionstypen sind definiert:
+
+      EXP_SMALL_1,
+      EXP_SMALL_2,
+      EXP_SMALL_3,
+      EXP_MED_1,
+      EXP_BIG_1,
+      EXP_BIG_2
+
+    Explosionen wurden - man koennte es fast ahnen - ebenfalls als verkettete
+    Liste implementiert. Ein Beispielaufruf einer Funktion saehe deshalb
+    folgendermassen aus:
+
+    effects.explosions:get_first()
+
+    Und hier die aufrufbaren Funktionen:
+
+    (Explosion*) get_first()
+         
+             Liefert das erste Explosionsobjekt aus der Liste.
+
+    (Explosion*) get_last()
+
+             Liefert das letzte Explosionsobjekt aus der Liste.
+
+    (int)        get_count()
+
+             Liefert die Anzahl der momentanen Explosionen.
+
+    (Explosion*) add(int type, int speed, int start, int x, int y)
+
+             Erzeugt eine Explosion des Typs "type" (siehe oben) an den
+             Koordinaten x/y. "speed" legt fest, wie lange ein Frame der
+             Explosion dargestellt wird (je kleiner dieser Wert, desto
+             schneller laeuft die Explosion). "start" gibt eine Verzoegerung
+             in Ticks an, nach der die Explosion beginnt ("60" an dieser
+             Stelle wuerde die Explosion nach einer Sekunde erscheinen
+             lassen).
+             Das erzeugte Explosion-Objekt wird zurueckgeben.
+
+
+    Und hier noch die Funktionen und Eigenschaften eines "Explosion"-Objekts:
+
+    (Explosion*) get_next()      -> liefert naechste Explosion aus Liste
+    (Explosion*) get_prev()      -> liefert vorherige Explosion
+
+    (int)    get_x()             -> X-Position
+    (int)    get_y()             -> Y-Position
+    (int)    get_width()         -> Breite der Explosion
+    (int)    get_height()        -> Hoehe der Explosion
+    (int)    get_type()          -> Typ der Explosion
+    (int)    get_starttime()     -> Die verbleibende Start-Verzoegerung (s.o.)
+    (int)    get_curframe()      -> Das momentan sichtbare Frame
+    (int)    get_maxframe()      -> Frames der Animation
+    (int)    get_maxframet()     -> Dauer eines Frames
+    
+    
+ k) Effekt "Krater": Aufgerufen ueber Instanz "effects.craters"
+    -----------------------------------------------------------
+
+    Krater in den Waenden erscheinen bei Spieler- oder Bombenkollisionen.
+    Per Script kann man aber auch eigene Krater erschaffen.
+
+    Sie sind wie Explosionen als verkettete Liste aufgebaut.
+
+    Hier die aufrufbaren Funktionen (aehnlich wie bei den Explosionen):
+
+    (Crater*) get_first()
+         
+             Liefert das erste Crater-Objekt aus der Liste.
+
+    (Crater*) get_last()
+
+             Liefert das letzte Crater-Objekt aus der Liste.
+
+    (int)     get_count()
+
+             Liefert die Anzahl der aktuell erstellten Krater.
+
+    (Crater*) add(int x, int y, int size)
+
+             Erzeugt einen Krater an der Position x/y mit dem Radius
+             "size".
+             Das erzeugte Krater-Objekt wird zurueckgeben.
+
+    (void)    remove(Crater *n)
+           
+             Entfernt das Crater-Objekt "n" aus der Liste (die Landschaft
+             wird aber nicht sofort wiederhergestellt, sondern erst dann,
+             wenn die Karte neu aufgebaut wird!)
+
+
+    Und hier noch die Funktionen und Eigenschaften eines "Krater"-Objekts:
+
+    (Crater*) get_next()         -> liefert naechsten Krater aus Liste
+    (Crater*) get_prev()         -> liefert vorherigen Krater
+
+    (int)    get_x()             -> X-Position
+    (int)    get_y()             -> Y-Position
+    (int)    get_size()          -> Radius (in Pixeln) des Kraters
+    (void)   set_x(int n)        -> setzt X-Position auf n
+    (void)   set_y(int n)        -> setzt Y-Position auf n
+    (void)   set_size(int n)     -> setzt Radius auf n
+    
+
+ l) Effekt "Schuesse": Aufgerufen ueber Instanz "effects.bullets"
+    -------------------------------------------------------------
+
+    Die diversen Waffen in GS koennen entweder von der Spielerposition
+    oder von einer beliebigen anderen Position aus abgefeuert werden.
+    Jeder Schuss enthaelt die Nummer (Signatur) des abfeuernden Spielers,
+    sodass man von den eigenen Waffen nicht verletzt werden kann.
+
+    Aus Gruenden der Uebersicht hier noch einmal die Waffentypen:
+
+      W_FAKE,                  -> Fake-Schuss (nicht sichtbar, nuetzlich
+                                  fuer Script-Programmierung)
+      W_SINGLE,                -> Single Blaster
+      W_DOUBLE,                -> Double Blaster
+      W_BOMB,                  -> Bomben
+      W_BIGBOMB,               -> Bigbomb
+      W_MINE,                  -> Minen
+      W_ROCKET,                -> Raketen
+      W_FREEZER,               -> Freezer
+      W_SHRINKER,              -> Shrinker
+      W_PROBE,                 -> Sonde
+      W_GAS                    -> Delirium-Bombe
+      W_LASER                  -> Laser
+      W_BUMPER                 -> Bumper-Bombe
+      W_SHOTGUN		       -> Schrotflinte
+
+    Ein Funktionsaufruf koennte so aussehen: effects.bullets:get_first()
+    Und hier die ueblichen Funktionen.
+
+    (Bullet*) get_first()
+
+             Liefert den ersten Schuss aus der Liste.
+
+    (int)     get_count()
+
+             Liefert die Anzahl der momentan bewegten Schuesse.
+
+    (Bullet*) add(int type, player)
+
+             Erzeugt einen Schuss des angegebenen Typs vom Schiff des
+             angegebenen Spielers (z.B. "player[1]"), ohne dass dessen
+             Statistik in irgendeiner Weise beruehrt wird. Von dieser
+             Statistik bzw. der verfuegbaren Schuesse abgesehen ist
+             dies aequivalent zu "player[1]:shoot()".
+
+    (Bullet*) add(int type, int player, int enemynr, 
+                  int x, int y, float xspeed, float yspeed, 
+                  float strength, float shield_hitp, float hull_hitp,
+                  float puser, int upgrade)
+
+             Dies erzeugt ein Projektil vom Typ "type" an den Koordinaten
+             x/y und uebergibt ihm die Startgeschwindigkeiten "xspeed" und
+             "yspeed". Das Projektil hat die Staerke "strength" im Singleplayer-
+             Modus bzw. "hull_hitp" (Huelle) und "shield_hitp" (Schilde) im
+             Mehrspielermodus (in Hitpoints). 
+             Wird fuer "player" eine Spielersignatur angegeben,
+             verhaelt sich der Schuss wie eine Waffe dieses Spielers. Wird
+             "-1" angegeben, ist die Waffe neutral, d.h. sie trifft alle
+             Spieler. "enemynr" muss angegeben werden, wenn das Projektil
+             von einem Gegner abgefeuert wird (die Nummer des Gegners ist
+             hier einzutragen). "upgrade" gibt den Upgrade-Level der Waffe an;
+             Aktuell funktionieren bei manchen Waffen hier die Werte 0-2.
+             
+             Beide add-Funktionen geben ein Bullet-Objekt zurueck, dem
+             man zusaetzliche Eigenschaften (siehe unten) zuweisen kann.
+
+             Die Waffe W_DOUBLE kann nicht mit dieser Funktion gefeuert
+             werden, da sie prinzipiell aus zwei staerkeren W_SINGLE-
+             Schuessen besteht.
+             
+             "strength" hat bei bestimmten Waffen eine andere Bedeutung:
+             
+             W_FREEZER, W_SHRINKER :
+               
+               Gibt die Dauer des Freeze- bzw. Shrinkvorgangs in Ticks an
+               (also 60*5 fuer 5 Sekunden).
+
+
+             "puser" hat je nach Waffe unterschiedliche Bedeutungen:
+             
+             W_FAKE, W_SINGLE, W_BOMB, W_BIGBOMB, W_LASER, W_BUMPER,
+             W_SHOTGUN :
+             
+               keine Bedeutung
+               
+             W_ROCKET :
+             
+               Der Wert gibt an, wie schnell sich die Rakete drehen kann. 
+               Dies ist standardmaessig "0.05". Wer also hier "0.01" 
+               uebergibt, erzeugt Raketen, denen eine alte Oma
+               ausweichen koennte. Und mit "0.2" (z.B.) haben auch Profis 
+               in schnelleren Schiffen ihre Probleme...
+               
+             W_MINE : 
+             
+               Der Wert bestimmt den Aktivierungsradius in Pixeln, d.h.
+               der minimale Abstand, der erforderlich ist, um die Mine zu
+               zuenden. Dieser Wert steht standardmaessig auf "25".
+               Bei "5" muesste man die Mine ueberfliegen, um sie zu
+               aktivieren.
+               
+             W_PROBE :
+               
+               Der Wert gibt an, wie lange die Sonde "leben" soll (in
+               Sekunden). Standardmaessig ist dieser Wert "10" Sekunden.
+
+
+     Ein "Bullet"-Objekt hat folgende Eigenschaften/Funktionen:
+
+     (Bullet*) get_next()        -> liefert naechstes Projektil aus Liste
+     (Bullet*) get_prev()        -> liefert vorheriges Projektil
+
+     (void)  remove()            -> entfernt das aktuelle Projektil
+     
+     (float) get_x()             -> liefert X-Position
+     (float) get_y()             -> liefert Y-Position
+     (void)  set_x(float n)      -> setzt X-Position
+     (void)  set_y(float n)      -> setzt Y-Position
+     (float) get_xspd()          -> liefert X-Geschwindigkeit
+     (float) get_yspd()          -> liefert Y-Geschwindigkeit
+     (void)  set_xspd(float n)   -> setzt X-Geschwindigkeit
+     (void)  set_yspd(float n)   -> setzt Y-Geschwindigkeit
+     (int)   get_min_x()         -> definiert mit den anderen min/max-
+                                    Werten einen Kasten, in dem sich das
+                                    Projektil bewegen darf. Tritt es ber
+                                    den Rand, wird es vernichtet.
+     (int)   get_min_y()
+     (int)   get_max_x()
+     (int)   get_max_y()
+     (void)  set_min_x(int n)
+     (void)  set_min_y(int n);
+     (void)  set_max_x(int n)
+     (void)  set_max_y(int n);
+
+     (int)   get_ttl()           -> liefert "Time to live"-Wert in Frames
+                                    (wenn dieser 0 erreicht, wird das
+                                    Projektil zerstoert).
+     (void)  set_ttl(int n)      -> setzt TTL-Wert
+          
+     (int)   get_type()          -> liefert Typ
+     (int)   get_by_player()     -> liefert Signatur des "Eigentuemers"
+     (void)  set_by_player(int n) -> setzt Signatur des Eigentuemers
+     (int)   get_by_enemy()      -> liefert Nummer des Gegners (wenn von
+                                    Gegner abgefeuertes Projektil)
+     (void)  set_by_enemy(int n) -> setzt Nummer des abfeuernden Gegners
+     (float) get_strength()      -> liefert Staerke (in Hitpoints)
+     (void)  set_strength(float n) -> setzt Staerke
+     (float)   get_hull_hitp()   -> liefert Huellen-Hitpoints
+     (void)  set_hull_hitp(ifloatn)-> setzt Huellen-Hitpoints
+     (float)   get_shield_hitp()   -> liefert Schild-Hitpoints
+     (void)  set_shield_hitp(float n)-> setzt Schild-Hitpoints
+     (int)   get_user()          -> liefert user-Wert (siehe oben)
+     (void)  set_user(int n)     -> setzt user-Wert
+     (int)   get_width()         -> liefert Breite des Projektils
+     (void)  set_width(int n)    -> setzt Breite des projektils
+     (int)   get_height()        -> liefert Hoehe des Projektils
+     (void)  set_height(int n)   -> setzt Hoehe des projektils
+     (int)   get_invisible()     -> liefert 1, wenn Projektil unsichtbar
+     (void)  set_invisible(int n)-> laesst Projektil unsichtbar werden
+                                    (Wirkung bleibt)
+
+     (void)  set_user_int(int n, int d)  
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Ganzzahl)
+     (void)  set_user_float(int n, float d);
+                                 -> Setzt den User-Wert Nr. n (0-19) auf den Wert d (Kommazahl)
+     (int)   get_user_int(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+     (float) get_user_float(int n);
+                                 -> Liefert User-Wert Nr. n (0-19)
+
+
+ m) Eingabe (Tastatur etc.): Aufgerufen ueber "controls"-Objekt
+    -----------------------------------------------------------
+
+    Jeder Spieler hat ein "Controls"-Objekt, das fuer die Eingaben 
+    zustaendig ist.
+    Eine Abfrage saehe fuer Spieler 2 z.B. so aus:
+
+    if (player[2].controls:special() == 1) then
+      -- irgendwas
+    end
+
+    Hier nun also die Funktionen...
+
+    (void)   disable()           -> deaktiviert Spieler-Kontrollen, d.h.
+                                    das Schiff bewegt sich nicht mehr auf
+                                    Tastendruck
+    (void)   enable()            -> aktiviert Spieler-Kontrollen wieder
+    (int)    get_disabled()      -> liefert 1, wenn Kontrollen deaktiviert
+    
+    (int)    left()              -> 1, wenn Taste "links" gedrueckt
+    (int)    right()             -> 1, wenn Taste "rechts" gedrueckt
+    (int)    thrust()            -> Taste "Triebwerk"
+    (int)    shoot()             -> Taste "feuern"
+    (int)    special()           -> Taste "Spezial"
+    (int)    extra_action()      -> Taste "Extra-Aktion"
+    (int)    nw()                -> Taste "naechste Waffe" (next weapon)
+    (int)    pw()                -> Taste "vorherige Waffe" (prev weapon)
+    (int)    w1()                -> Taste "Waffe 1"
+    (int)    w2()                -> Taste "Waffe 2"
+    (int)    w3()                -> Taste "Waffe 3"
+    (int)    w4()                -> Taste "Waffe 4"
+    (int)    w5()                -> Taste "Waffe 5"
+    (int)    w6()                -> Taste "Waffe 6"
+
+    
+    Zur reinen, aber vollstaendigen Tastaturabfrage existiert zusaetzlich
+    noch die Funktion hook_keyboard_hit_x() (siehe dort), die sich am besten
+    fuer einzelne Tastenabfragen eignet.
+    
+    Zur kontinuierlichen Abfrage (z.B. Spielerbewegung) hat man mit der
+    objektunabhaengigen Funktion "get_key" Zugriff auf alle, auch 
+    gleichzeitig gedrueckten Tasten:
+    
+    (int)    get_key(int scancode)
+    
+             Liefert "1", wenn Taste "scancode" gedrueckt. Im Anhang 1
+             befindet sich eine Liste mit den entspr. Scancode-Konstanten.
+             
+             ACHTUNG: Diese Funktion ist NICHT an das controls-Objekt
+             gebunden. Der Aufruf erfolgt einfach mit "get_key()".
+    
+             
+    Zur Mausabfrage existieren ebenfalls zwei Funktionen (objekt-
+    unabhaengig!):
+    
+    (int, int) get_mouse_xy()
+    
+             Liefert beim Aufruf ZWEI Argumente (aktuelle x- und y-Position
+             der Maus) bezogen auf den Bildschirm, d.h. von 0,0 bis 640,480.
+             
+             Lua-Beispiel:
+             mx, my = get_mouse_xy()
+             
+             
+    (int, int) get_mouse_buttons()
+    
+             Liefert beim Aufruf ZWEI Argumente, und zwar entweder NIL
+             (Maustaste nicht gedrueckt) oder 1 (Maustaste gedrueckt).
+             Das erste Resultat steht fuer die linke Taste, das zweite
+             fuer die rechte.
+             
+             Lua-Beispiel:
+             links, rechts = get_mouse_buttons()
+
+
+    (void) set_mouse_xy(int mx, int my)
+
+             Setzt den Mauszeiger an die Koordinaten mx/my.
+    
+             
+
+ n) Sound: Aufgerufen ueber "gsound"-Objekt
+    ---------------------------------------
+
+    Ueber eine einfache Funktion lassen sich alle in GS enthaltenen Sounds
+    aufrufen. Zusaetzlich lassen sich eigene Sounds und Musikstuecke
+    einbinden. 
+    
+    Zuerst die Uebersicht ueber alle integrierten Sounds:
+
+      SOUND_MENU_CHANGE,
+      SOUND_MENU_SELECT,
+      SOUND_MENU_CHANGEBAR,
+      SOUND_MENU_NONO,
+      SOUND_MENU_KEYPRESSED,
+      SOUND_MENU_SHOOT,
+      SOUND_MENU_DEAD,
+
+      SOUND_EXTRA_TAKEN,
+      SOUND_CARGO_TAKEN,
+      SOUND_CARGO_RETURNED,
+      SOUND_DO_SWITCH,
+      SOUND_BUMP_WALL,
+      SOUND_SHIELD_HIT,
+      SOUND_HULL_HIT,
+      SOUND_WALL_HIT,
+      SOUND_SHIP_HIT,
+      SOUND_SHOOT_EMPTY,
+      SOUND_SHOOT_SINGLE,
+      SOUND_SHOOT_DOUBLE,
+      SOUND_SHOOT_BOMB,
+      SOUND_SHOOT_BIGBOMB,
+      SOUND_SHOOT_ROCKET,
+      SOUND_SHOOT_FREEZER,
+      SOUND_SHOOT_SHRINKER,
+      SOUND_SHOOT_PROBE,
+      SOUND_SHOOT_MINE,
+      SOUND_SHOOT_GAS,
+      SOUND_SHOOT_BUMPER,
+      SOUND_SHOOT_SHOTGUN,
+      SOUND_BEAM_SHIP,
+      SOUND_BEAM_BULLET,
+
+      SOUND_EXPL_SMALL1,
+      SOUND_EXPL_SMALL2,
+      SOUND_EXPL_MEDIUM1,
+      SOUND_EXPL_MEDIUM2,
+      SOUND_EXPL_MEDIUM3,
+      SOUND_EXPL_BIG1
+
+    Die Funktionen werden ueber das "gsound"-Objekt aufgerufen, also z.B.:
+      gsound:play_sound(...)
+
+    (void)  play_sound(int sound, int x=0, int y=0, int v=100)
+
+             Spielt den Ton "sound" (siehe oben) mit Lautstaerke "v" (0-100)
+             Position "x/y". Wird hier nichts oder 0 angegeben, 'befindet'
+             sich der Sound in Bildmitte.
+                          
+    (int)   load_sound(char *filename)
+    
+             Laedt das Soundfile "filename" im aktuellen Level-Verzeichnis
+             und gibt eine Nummer zurueck, die in der Funktion "play_sound"
+             (Parameter "sound") verwendet werden kann. Diese Funktion 
+             laedt WAV- und VOC-Samples in 8 und 16bit, jeweils in Mono
+             oder Stereo.
+             
+    (void)  replace_sound(int sound, int replace)
+    
+             Ersetzt den Standard-Sound "sound" (z.B. SOUND_SHOOT_BOMB)
+             mit dem User-Sound "replace" (Rueckgabewert von load_sound).
+                         
+    (void)  load_music(char *filename)
+    
+             Laedt die per "filename" angegebene Musik-Datei im Format
+             MOD, S3M oder XM. Mit der naechsten Funktion wird sie
+             abgespielt.
+             
+    (void)  start_music()
+    
+             Spielt die per load_music geladene Musik ab.
+             
+    (void)  stop_music()
+    
+             Stoppt die Musik.
+             
+    (void)  destroy_music()
+    
+             Entfernt die geladene Musikdatei aus dem Speicher. Muss
+             nicht explizit aufgerufen werden.
+             
+    (void)  set_music_volume(int n)
+    
+             Setzt die Musiklautstaerke auf einen Wert zw. 0 und 150.
+             
+    (int)   get_music_volume()
+    
+             Liefert die Musiklautstaerke.
+
+
+ o) OSD (On Screen Display): Aufgerufen ueber "osd"-Objekt
+    ------------------------------------------------------
+
+    Jede Karte enthaelt das Objekt "osd", ueber welches man diverse OSDs
+    erzeugen kann, also Texte und Grafiken, die irgendwo herumhaengen. 
+    Diese OSDs koennen entweder absolute Koordinaten haben, sich also an 
+    einem bestimmten Punkt der Karte befinden, oder sie koennen 
+    Bildschirm-Koordinaten haben, wodurch sie sich immer an derselben 
+    Stelle auf dem Bildschirm befinden.
+
+    Es koennen beliebig viele OSD-Objekte angelegt werden, man sollte diese
+    jedoch aus Performance-Gruenden moeglichst klein halten.
+    
+    Das Standard-OSD, das von GS benutzt wird (auf dem z.B. die Texte
+    fuer Capture the Flag oder bei der Extra-Aufnahme angezeigt werden)
+    hat die Signatur 1000.
+
+    Beispiel fuer den Aufruf der "add"-Funktion fuer die erste Spielkarte:
+
+    playmap[1].osd:add(bla...)
+
+    Ein OSD-Objekt wird mit dieser add-Funktion erzeugt:
+
+    OsdBitmap* add(int sig, int x, int y, int w, int h, int mode)
+
+               Erzeugt ein OSD-Bitmap-Objekt und gibt es zurueck.
+               "sig" ist dabei eine beliebige Zahl zwischen 0-999
+               (Sigs ab 1000 sind fuer das Host-Programm reserviert).
+               "x" und "y" geben die Koordinaten der oberen linken Ecke an.
+               "w" und "h" sind Breite und Hoehe der "Zeichenflaeche".
+               "mode" kann sein: OSDBIT_SCREEN fuer Bildschirmkoordinaten
+               oder OSDBIT_MAP fuer Kartenkoordinaten.
+
+    OsdBitmap* add_label(int sig, int x, int y, int mode, int font,
+                         char *t, int col=0, int rect=0)
+
+               Erzeugt ein OSD-Bitmap-Objekt in der exakten Groesse des
+               ihm uebergebenen Textes "t" mit dem Zeichensatz "font" und
+               dem Modus "mode" (siehe "add").
+               Mit "col" kann dem Text eine andere Farbe gegeben werden,
+               und wenn "rect" auf 1 gesetzt wird, wird um dieses erzeugte
+               "Label" ein Rahmen gezeichnet.
+
+    OsdBitmap* get_osdbit(int sig)
+
+               Liefert das OSD-Bitmap-Objekt mit der entsprechenden Signatur.
+
+    (void)     remove(OsdBitmap*)
+    
+               Loescht ein OSD-Bitmap-Objekt aus der Liste.
+               
+
+    Beispiel:
+
+    myosd = playmap[1].osd:add(1, 250, 100, 100, 50, OSDBIT_SCREEN)
+
+    ist aequivalent zu...
+
+    playmap[1].osd:add(1, 250, 100, 100, 50, OSDBIT_SCREEN)
+    myosd = playmap[1].osd:get_osdbit(1)
+
+
+    Mit diesem erzeugten OSD-Objekt lassen sich nun einige Dinge anstellen:
+    Man kann darauf zeichnen und vor allem Texte darauf schreiben. Somit
+    lassen sich OSD-Objekte fuer alle moeglichen Dinge einsetzen, z.B. als
+    Missionsbeschreibung zu Level-Beginn, als Status-Balken am Bildschirmrand
+    fuer irgend etwas, oder auch als "Label" fuer bestimmte wichtige Objekte
+    oder Basen. Ein OSD-Objekt kann sich sogar bewegen. Natuerlich schwebt
+    es immer ueber allen anderen Grafiken des Spiels.
+
+    Die verfuegbaren Farben sind im globals-Objekt definiert. Hier nochmal
+    die moeglichen Farben:
+
+    globals.col_white            -> Weiss
+    globals.col_grey             -> Grau
+    globals.col_dgrey            -> Dunkles Grau
+    globals.col_yellow           -> Gelb
+    globals.col_red              -> Rot
+    globals.col_bred             -> Helles Rot
+    globals.col_blue             -> Blau
+    globals.col_lblue            -> Helles Blau
+    globals.col_green            -> Gruen
+    globals.col_black            -> Schwarz
+    globals.col_orange           -> Orange
+
+    Fuer die Schriften gibt es verschiedene Fonts. Diese sind im speziellen:
+
+    FONT_ICE                     -> Die krakelige Schrift der Menuebuttons :-)
+    FONT_BANK                    -> Bank Gothic (benutzt im Menue als
+                                    Bezeichnung des momentanen Bildschirms)
+    FONT_IMPACT10                -> Impact in Groesse 10 (empfehlenswert
+                                    fuer normale Schrift)
+    FONT_IMPACT14                -> Impact in Groesse 14 (empfehlenswert
+                                    fuer Ueberschriften)
+    FONT_LCD                     -> grosser LCD-Font
+    FONT_KEYPUNCH                -> Keypunch (benutzt im Menue in der
+                                    Tastenkonfiguration)
+    FONT_MINIFONT                -> Der superkleine Font, mit dem im Spiel
+                                    die Spielernamen geschrieben werden
+
+    Und nun die Funktion des OSD-Bitmaps:
+
+    -- Statusfunktionen
+    (float)  get_x()             -> liefert X-Koordinate
+    (float)  get_y()             -> liefert Y-Koordinate
+    (void)   set_x(float n)      -> setzt X-Koordinate
+    (void)   set_y(float n)      -> setzt Y-Koordinate
+    (int)    get_width()         -> liefert Breite
+    (int)    get_height()        -> liefert Hoehe
+    (int)    get_mode()          -> liefert Modus
+    (int)    get_sig()           -> liefert Signatur
+    (int)    get_active()        -> liefert 1, wenn Bitmap aktiviert
+    (int)    get_timeout()       -> liefert momentanen Timeout-Wert
+
+    (void)   set_mode(int n)     -> setzt Modus
+    (void)   set_active(int n)   -> aktiviert (1) oder deaktiviert (0) OSD-Bitmap
+				    bei 0 wird OSD geleert (clear)
+    (void)   set_visible(int n)  -> zeigt OSD an (1) oder versteckt es (0)
+    (int)    get_visible()       -> liefert 1, wenn OSD sichtbar ist, sonst 0
+    (void)   set_timeout(int n)  -> setzt einen Timeout in Ticks, nach dessen
+                                    Ablauf das OSD geloescht und deaktiviert
+                                    wird
+
+    -- Zeichenfunktionen
+    (void)   clear(int col=0)
+
+             Fuellt das Bitmap mit der angegebenen Farbe. Wird die Farbe
+             weggelassen, wird es mit Farbe 0 (schwarz=transparent)
+             gefuellt.
+
+    (void)   draw_pixel(int col, int x, int y)
+
+             Zeichnet einen einzelnen Bildpunkt mit Farbe col bei x/y.
+
+    (void)   draw_line(int col, int x1, int y1, int x2, int y2)
+
+             Zeichnet eine Linie von x1/y1 nach x2/y2 mit Farbe col.
+
+    (void)   draw_circle(int col, int x, int y, int r)
+
+             Zeichnet einen Kreis an Position x/y mit dem Radius r und
+             der Farbe col.
+
+    (void)   draw_filled_circle(int col, int x, int y, int r)
+
+             Zeichnet einen gefuellten Kreis an Position x/y mit dem Radius 
+             r und der Farbe col.
+
+    (void)   draw_ellipse(int col, int x, int y, int rx, int ry)
+
+             Zeichnet eine Ellipse an Position x/y mit dem Radius rx/ry und
+             der Farbe col.
+
+    (void)   draw_filled_ellipse(int col, int x, int y, int rx, int ry)
+
+             Zeichnet einen gefuellten Kreis an Position x/y mit dem Radius 
+             rx/ry und der Farbe col.
+
+    (void)   draw_rectangle(int col=0, int x1=0, int y1=0, int x2=0, int y2=0)
+
+             Zeichnet ein (ungefuelltes) Rechteck von Position x1/y1 nach
+             x2/y2 mit Farbe col. Werden die Werte weggelassen, zeichnet die
+             Funktion ein Rechteck von 0/0 nach Breite-1/Hoehe-1, also rund-
+             herum.
+
+    (void)   draw_filled_rectangle(int col, int x1, int y1, int x2, int y2)
+
+             Zeichnet ein gefuelltes Rechteck von x1/y1 nach x2/y2 mit Farbe
+             col. Ist col=0, dann ist dieser Bereich transparent.
+
+    (void)   draw_text(int font, char *text, int col=0,
+                       int x=0, int y=0, int align=0)
+
+             Zeichnet den Text-String "text" mit dem Zeichensatz "font" an
+             Position x/y in der Farbe col. Bei "align" bedeutet "0"
+             eine Ausrichtung am linken Rand, bei "1" wird der Text
+             horizontal zentriert.
+             Wenn der Text-String laenger ist als die Zeichenflaeche, so
+             wird er automatisch umgebrochen.
+
+    (void)   draw_typewriter_text(char *text, int starty=10, int speed=3, int rect=1, int remove=0)
+    
+             Initiiert die Ausgabe eines Typewriter-Textes (der Text baut
+             sich buchstabenweise auf). Der Text "text" kann diverse
+             Steuerkommandos enthalten (siehe unten), die Parameter sind
+             alle optional. "starty" gibt an, in welcher H”he der Text im
+             OSD starten soll (von oben), "speed" definiert die Pause in
+             Ticks zwischen den einzelnen Buchstaben und "rect" gibt an,
+             ob ein Rechteck um das OSD gezeichnet werden soll (ja, wenn 1).
+             Ist "remove" = 1, wird das OSD geloescht, sobald der Spieler
+             Schub gibt.
+             
+             Der Text kann bis zu 4000 Zeichen lang sein und darf folgende
+             Kommandos enthalten:
+             
+             [c:farbe]    -> gibt die Farbe der weiteren Buchstaben an. 
+                             farbe kann sein:
+                             yellow, green, white, orange, black
+                             
+             [f:font]     -> Der Font (Zeichensatz) der folgenden Buch-
+                             staben. font kann sein:
+                             impact10, impact14, minifont
+                             
+             [u] [/u]     -> Der in diesen Tags eingeschlossene Text wird
+                             unterstrichen dargestellt. Beispiel:
+                             "Jetzt kommt ein [u]unterstrichenes[/u] Wort."
+                             
+             [center]     -> Schaltet vom linksbuendigen Modus in den
+                             zentrierten. Vorsicht, kann zu Darstellungs-
+                             problemen fuehren.
+                             
+             [left]       -> Schaltet entsprechend wieder zurueck.
+             
+             [br]         -> Harter Zeilenumbruch. Wie in HTML.
+             
+             [clr]        -> Loescht allen Text vom OSD.
+             
+             [ret]        -> Geht zurueck in die linke obere OSD-Ecke.
+             
+             [w:ticks]    -> Wartet 'ticks' Ticks (Pause). Z.B. "[w:60]"
+                             fuer eine einsekuendige Pause.
+                             
+             [s:ticks]    -> Veraendert Tippgeschwindigkeit. 'ticks' ist
+                             die neue Wartezeit zwischen den Buchstaben.
+             
+             In den lvl-Files zu den Einspieler-Missionen gibt es genuegend
+             Beispiele.
+
+            
+    (UserImageAnim*) add_image(int imgnum, int x, int y, int maxframet=5, int loop=1)
+    
+             Erzeugt ein neues User-Bild mit der (durch die Funktion
+             images:load() zurueckgelieferten) Nummer "imgnum" an der 
+             Position "x/y" und durchlaeuft seine Frames mit Pausen
+             von "maxframet" Ticks. Wenn "loop" auf "0" gesetzt wird, 
+             dann wird die Animation nur einmal abgespielt - danach wird
+             das Bild geloescht.
+             
+     (void)  remove_image(UserImageAnim *image)
+     
+             Loescht ein durch "add_image" zurueckgeliefertes Bild 
+             vom OSD. (Hintergrund wird mit letzter Fuellfarbe gefuellt).
+             
+
+ p) User-Images: Aufgerufen ueber Instanz "images"
+    ----------------------------------------------
+    
+    Bei Objekten, Gegnern und OSDs koennen selbst erstellte Bilder und
+    Animationen verwendet werden. Das Format dieser Bilder entspricht
+    dem Format der Schiffsbilder, also gleich grosse, nebeneinander
+    liegende Kaesten (bis zu 50 Animationsphasen).
+   
+     
+    (int)   images:load(char *filename, int rotate=0)
+    
+             Laedt das Bild "filename" im aktuellen Level-Verzeichnis und
+             gibt eine Nummer zurueck, die bei der Erstellung von Gegnern, 
+             Objekten und OSDs an der entsprechenden Stelle verwendet werden
+             kann (siehe dort).
+             
+             Wenn fuer "rotate" eine Gradzahl (0-359) angegeben wird, dann
+             wird das Bild entsprechend gedreht geladen.
+
+
+    (void)  images:remove(int sig)
+    
+             Entfernt das Bild mit der Signatur "sig" aus dem Speicher. Danach
+             kann es nicht mehr verwendet werden.
+
+
+             
+ q) User-Statistik: Aufgerufen ueber "user_stats"-Array in "globals"
+    ----------------------------------------------------------------
+
+    Fuer eigene Scripte ist es oftmals (vor allem fuer Einspieler-Levels)
+    erwuenscht, eine eigene Levelstatistik gestalten zu koennen. Genau
+    dies ist mit dem user_stats-Array moeglich.
+    
+    Um User-Statistiken verwenden zu koennen, muss die use_user_stats-
+    Variable in "globals" gesetzt werden:
+    
+      globals.use_user_stats = 1
+      
+    Dann lassen sich mit den Funktionen der Klasse UserStats bis zu zehn
+    eigene Statistikzeilen fuer Ein- und Zweispielermodi definieren. Ein
+    Objekt dieser Klasse wird angesprochen ueber:
+    
+      globals.user_stats[zeilennummer]:funktion()
+      
+    Um in Zeile 4 der Statistik den Text "Test" zu setzen, lautet der 
+    Aufruf also:
+    
+      globals.user_stats[4]:set_text("Test")
+    
+    Hier nun die einzelnen Funktionen einer solchen user_stats-Zeile:
+
+    (void)  set_text(char *text)
+
+             Setzt den Text, der in der linken Spalte angezeigt wird.
+             
+    (void)  set_textcolor(int col)
+     
+             Setzt die Farbe, in der dieser Text erscheint. Kann z.B.
+             eine globals.col_x-Variable sein oder eine ueber 
+             globals:make_color() erzeugte Farbe.
+             
+    (void)  set_plusx(int n)
+    
+             Gibt an, wie weit der Text in der linken Spalte nach rechts
+             gerueckt wird. Ist normalerweise 0, wird nur fuer Spezial-
+             zwecke gebraucht.
+             
+    (void)  set_value(int player, char *text)
+    
+             Setzt den Wert fuer Spieler "player" (im Zweispielermodus
+             0 oder 1) auf den Text "text".
+             
+    (void)  set_value(int player, int zahl)
+             
+             Dasselbe wie die erste set_value-Funktion, nur dass diese
+             eine Zahl statt dem Text erwartet.
+             
+    (void)  set_valuecolor(int player, int col)
+    
+             Setzt die Farbe, mit der der Wert fuer Spieler "player"
+             angezeigt wird. Siehe set_textcolor.
+    
+    Weiterhin lassen sich mit entsprechenden get-Funktionen die schon
+    gesetzten Werte abfragen:
+    
+    (char*) get_text()
+    (int)   get_textcolor()
+    (int)   get_plusx()
+    (char*) get_value(int player)
+    (int)   get_valuecolor(int player)
+    
+    
+    WICHTIG: Damit Highscores fuer einen Level mit User-Statistik erstellt
+    werden, muss der erreichte Punktestand in einer bestimmten Variable
+    gespeichert werden. Diese wird dann von GS interpretiert. Dieser
+    Funktion kann man einen Text oder eine Zahl zuweisen. Der Text wird
+    eigentlich nur vom Race-Modus-Script benutzt.
+    
+    (void)  globals:set_highscore(int score)
+    (void)  globals:set_highscore(char *score)
+
+    
+
+5. Das Spielernummer-Problem
+============================
+
+Durch das Hinzufuegen des Netzwerkmodus ergibt sich folgendes Problem: Im
+normalen Zweispielerbetrieb hat man genau zwei Spieler, die in GS-Script
+ueber player[1] und player[2] ansprechbar sind. player[1] ist dabei der
+"linke" und player[2] der "rechte". 
+
+Im Netzwerkspiel jedoch laeuft nun auf jedem Rechner so ein Script. Und auf
+jedem Rechner ist der "eigene" Spieler "player[1]" (der woanders z.B. dann
+player[3] ist).
+
+Deshalb hat jeder Spieler eine sog. "Signatur" im Tausenderbereich. Alle
+Funktionen, die Spielernummern erwarten, erwarten diese Signatur eines
+Spielers, mit der dieser eindeutig identifizierbar ist, egal wie das
+"player"-Array organisiert ist. 
+
+Um nun direkt auf einen bestimmten Spieler, dessen Signatur man kennen muss,
+zuzugreifen, verwendet man entweder die Funktion
+
+get_player_nr_by_sig(signatur)
+
+...welche die Nummer im "player"-Array zurueckliefert. Da in Lua dummerweise
+alle Arrays aber bei 1 statt bei 0 (wie in C) beginnen, muss man die von
+dieser Funktion zurueckgegebene Nummer noch um 1 erhoehen.
+
+Zusaetzlich gibt es noch die Funktion
+
+get_player_by_sig(signatur)
+
+...welche ein komplettes Spielerobjekt zurueckgibt, auf das man dann
+wie bei z.B. bei "player[2]" zugreifen kann.
+  
+
+
+6. "Hook"-Funktionen
+====================
+
+Das Abarbeiten einer Liste mit vielen Objekten pro "Tick" kann u.a. sehr
+lange dauern und aeltere Computer schnell an ihre Grenzen treiben. Lua ist
+zwar recht schnell, aber 'eigentlich' nicht fuer Echtzeit-Spiele ge-
+schrieben. Hat man nun z.B. 100 Objekte, die man ueber eine Schleife
+abarbeitet (in jedem Game-Tick, also 60*100=6000 Schleifendurchlaeufe/sec),
+so ist ein Pentium II 233 (bspw.) damit hoffnungslos ueberfordert.
+
+Deshalb gibt es sog. "Hook"-Funktionen. Dies sind Funktionen mit fest-
+gelegten Namen, die man im Init-Script definieren kann und vom Host-Programm
+(also GS) bei Bedarf aufgerufen werden. Hier gehts also andersrum: Alle
+anderen Funktionen sind in GS definiert und werden von Lua aufgerufen, diese
+sind jedoch in Lua definiert und werden von GS aufgerufen :-).
+
+Vor allem fuer eigene Gegner oder Objekte sind Hook-Funktionen sehr wichtig.
+Mit ihrer Hilfe laesst sich z.B. das Gegnerverhalten (wenn er getroffen
+oder zerstoert wird) vollstaendig steuern.
+
+Hook-Funktionen werden automatisch benutzt, wenn sie definiert wurden. 
+Beispiel:
+
+function hook_object_dead_0(o)
+  -- irgendwas mit "o" anstellen, wenn dieses zerstoert wird
+end
+
+Von jeder Hook-Funktion kann man 5 verschiedene definieren. Die Zahl (0-4)
+wird an die Funktion angehaengt (z.B. "_0" oder "_1"). Meistens wird man
+nur "_0" benutzen und alles in diese Funktion packen (das ist auch
+schneller!), aber manchmal moechte man externen Code einbinden, in dem schon
+Hook-Funktionen definiert sind. In den beigelegten Libs (z.B. libctf.sc)
+werden die Hook-Funktionen von _5 bis _9 benutzt, diese sind also reserviert
+und sollten nicht verwendet werden.
+
+Entsprechend dieser Logik ist in den folgenden Funktionsnamen das "x" durch
+eine Zahl zwischen 0 und 4 zu ersetzen, also am besten 0.
+
+Bei vielen Hook-Funktionen (bei Gegnern und Objekten) laesst sich eine
+bestimmte Variable "dont_continue" ueber "set_dont_continue(1)" setzen. Und 
+zwar jeweils nur in der Hook-Funktion und dort nur fuer die erste uebergebene
+Variable (bei hook_player_with_spobject also nur fuer "pl"). 
+Wird dies getan, dann wird der im Hauptprogramm fuer diese Aktion definierte
+Code nicht ausgefuehrt, d.h. man kann z.B. bei hook_enemy_dead die Pixel-
+Explosion eines Gegners je nach Bedarf veraendern.
+Die Variable wird beim naechsten Aufruf der Hook-Funktion wieder zurueck-
+gesetzt, gilt also nur einmalig. Sie sollte am Ende der Hook-Funktion fuer
+das erste uebergebene Objekt aufgerufen werden. Bei hook_player_with_spobject
+also durch "pl:set_dont_continue(1)".
+
+Die Enemy- und Object-Hook-Funktionen werden nur dann ausgefuehrt, wenn
+die globale Variable "globals.do_all_hooks" gesetzt ist (Standard), oder
+wenn die Eigenschaft "do_hooks" eines Objekts oder Gegners auf 1 gesetzt
+wird. Durch Nullsetzen der globalen Variablen kann man somit die Hook-
+Funktionen ganz speziell fuer bestimmte Objekte/Gegner aktivieren. Vor 
+allem bei hook_object/enemy_update fuehrt dies zu einer Verbesserung der
+Performance, da diese Funktion 60 Mal pro Sekunde aufgerufen wird.
+
+Die speziellen Kollisionsfunktionen (enemy_with_enemy und 
+object_with_object) werden intern in GS nicht benoetigt und daher nur
+aufgerufen, wenn die entsprechenden Hook-Funktionen definiert wurden.
+
+Fuer jede Hook-Funktion ist beschrieben, wann sie aufgerufen wird, welche
+Variablen in ihr uebergeben werden und welche Funktionen im Programmcode von
+GS vor und nach der Hook-Funktion ausgefuehrt werden. Wenn man 
+set_dont_continue(1) fuer ein Objekt (z.B.) definiert, werden die "danach"-
+Funktionen von GS nicht mehr ausgefuehrt (nuetzlich, um z.B. bei Objekten
+oder Gegnern eigene Explosionen erstellen zu koennen).
+
+Zuerst eine Kurzuebersicht ueber alle aktuell vorhandenen Hook-Funktionen:
+
+    * hook_object_dead_x(ob)
+    * hook_object_hit_x(ob, weapon, hitpoints, fx, fy)
+    * hook_object_update_x(ob)
+    * hook_object_with_object_x(ob1, ob2)
+    * hook_player_with_spobject_x(pl, ob)
+    * hook_enemy_dead_x(en)
+    * hook_enemy_hit_x(en, weapon, hitpoints, fx, fy)
+    * hook_enemy_shoot_x(en)
+    * hook_enemy_update_x(en)
+    * hook_player_with_enemy_x(pl, en)
+    * hook_enemy_with_enemy_x(en1, en2)
+    * hook_player_dead_x(pl)
+    * hook_player_respawn_x(pl)
+    * hook_player_hit_x(pl, weapon, hitpoints, fxspd, fyspd)
+    * hook_player_takes_cargo_x(pl, ba)
+    * hook_player_returns_cargo_x(pl)
+    * hook_player_land_x(pl, ba)
+    * hook_bullet_destroyed_x(bullet)
+    * hook_keyboard_hit_x(key)
+    * hook_init_level_x()
+    * hook_exit_level_x()
+
+  
+  Und die detaillierte Version:
+  
+
+  * hook_object_dead_x(ob)
+    
+      -> Aufrufzeitpunkt:   Bevor ein Objekt zerstoert wird.
+         Variable n:        "ob" ist vom Typ "Object" (ob:get_hitby() liefert
+                            zum Beispiel die Signatur des Spielers, der es 
+                            zerstoert hat).
+         Funktionen davor:  --
+         Funktionen danach: Explosionen, Pixel, Sounds
+         set_dont_continue: Ja.
+         
+  * hook_object_hit_x(ob, weapon, hitpoints, fx, fy)
+    
+      -> Aufrufzeitpuntk:   Wenn ein Objekt von einer Waffe
+                            getroffen wird.
+         Variablen:         "ob" ist vom Typ "Object".
+                            "weapon" gibt die Waffe an (z.B. W_SINGLE).
+                            "hitpoints" gibt an, wie stark der Treffer war.
+                            "fx" und "fy" definieren die Koordinaten,
+                            auf denen das Projektil eingeschlagen ist.
+         Funktionen davor:  Eigenschaft "hitby" wird zugewiesen (d.h.
+                            ob:get_hitby() liefert Signatur des Spielers,
+                            der das Objekt getroffen hat).
+         Funktionen danach: Hitpoints des Objekts werden erhoeht.
+                            Evtl. vorhandene Spezialaktionen des Objekts
+                            werden ausgefuehrt (Spezialobj.).
+         set_dont_continue: Ja. (Fuehrt bei Spezialobjekten dazu, dass
+                            das Projektil bei Treffen des Objekts zerstoert
+                            wird [normalerweise nur bei normalen Objekten])
+
+  * hook_object_update_x(ob)
+    
+      -> Aufrufzeitpunkt:   Beim Update eines Objekts (60 Mal pro Sekunde!).
+         Variablen:         "ob" ist vom Typ "Object".
+         Funktionen davor:  --
+         Funktionen danach: Bewegung des Objekts, Frame-Steuerung, 
+                            Spezialaktionen, "Objekt tot?"-Abfrage,
+                            spezielle Kollisionserkennung.
+         set_dont_continue: Ja.
+
+  * hook_object_with_object_x(ob1, ob2)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Objekt mit einem anderen Objekt
+                            kollidiert. Gilt auch fuer Spezialobjekte.
+                            (Ob ob1/ob2 Spezialobjekte sind, laesst sich
+                            ueber die Funktion "is_special()" abfragen).
+                            ob1 oder ob2 muessen sich bewegen, ansonsten
+                            wird die Funktion nicht aufgerufen.
+         Variablen:         "ob1" und "ob2" sind vom Typ "Object".
+         Funktionen davor:  --
+         Funktionen danach: --
+         set_dont_continue: Nein.
+         
+  * hook_player_with_spobject_x(pl, ob)
+  
+      -> Aufrufzeitpunkt:   Ein Spieler kollidiert mit einem Spezialobjekt.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+                            "ob" ist vom Typ "Object".
+         Funktionen davor:  --
+         Funktionen danach: Aktionen des entspr. Spezialobjekts (z.B. 
+                            Extra-Aufnahme, Teleporter, Gummiwand).
+         set_dont_continue: Ja.
+         
+  * hook_enemy_dead_x(en)
+    
+      -> Aufrufzeitpunkt:   Bei der Zerstoerung eines Gegners.
+         Variablen:         "en" ist vom Typ "Enemy".
+         Funktionen davor:  --
+         Funktionen danach: Enemy-Bonus des Spielers erhoehen, Sounds und
+                            Explosionen.
+         set_dont_continue: Ja.
+
+  * hook_enemy_hit_x(en, weapon, hitpoints, fx, fy)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Gegner von einer Waffe getroffen wird.
+         Variablen:         "en" ist vom Typ "Enemy".
+                            "weapon" gibt die Waffe an (z.B. W_SINGLE).
+                            "hitpoints" gibt an, wie stark der Treffer war.
+                            "fx" und "fy" definieren die Koordinaten,
+                            an denen das Projektil eingeschlagen ist.
+         Funktionen davor:  bullets_hit-Statistik des Spielers wird erhoeht.
+                            Eigenschaft "hitby" wird zugewiesen (d.h.
+                            ob:get_hitby() liefert Signatur des Spielers,
+                            der das Objekt getroffen hat).
+         Funktionen danach: Hitpoints des Gegners werden erhoeht.
+                            Spezialaktionen werden aktiviert (z.B. bei
+                            Shrinker & Freezer).
+                            Sounds, Pixel, Explosionen.
+         set_dont_continue: Ja.
+
+  * hook_enemy_shoot_x(en)
+    
+      -> Aufrufzeitpunkt:   Wenn ein Gegner feuert.
+         Variablen:         "en" ist vom Typ "Enemy".
+         Funktionen davor:  --
+         Funktionen danach: Sound, Erzeugung des Projektils.
+         set_dont_continue: Ja.
+         
+  * hook_enemy_update_x(en)
+    
+      -> Aufrufzeitpunkt:   Wenn ein Gegner upgedatet wird (60x pro Sek.!).
+         Variablen:         "en" ist vom Typ "Enemy".
+         Funktionen davor:  --
+         Funktionen danach: Abfrage, ob Spieler in Reichweite ist.
+                            Framesteuerung, evtl. Feuern.
+                            Bewegung.
+         set_dont_continue: Ja.
+         
+  * hook_player_with_enemy_x(pl, en)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Spieler mit einem Gegner kollidiert.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+                            "en" ist vom Typ "Enemy".
+         Funktionen davor:  --
+         Funktionen danach: Zerstoerung des Gegners, wenn verkleinert.
+                            Hitpoints von Gegner und Spieler erhoehen.
+                            Geschwindigkeit von Spieler umkehren (Abprall-
+                            Effekt).
+         set_dont_continue: Ja.
+
+  * hook_enemy_with_enemy_x(en1, en2)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Gegner mit einem anderen Gegner
+                            kollidiert.
+         Variablen:         "en1" und "en2" sind vom Typ "Enemy".
+         Funktionen davor:  --
+         Funktionen danach: --
+         set_dont_continue: Nein.
+                                 
+  * hook_player_dead_x(pl)
+    
+      -> Aufrufzeitpunkt:   Wenn ein Spieler zerstoert wird.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+         Funktionen davor:  --
+         Funktionen danach: Explosions-Sounds/Effekte/Pixel, evtl. Krater
+                            erzeugen, Extra setzen, Leben abziehen (Single-
+                            Player), Panel updaten, Koordinaten auf Heimat-
+                            basis setzen.
+         set_dont_continue: Nein.
+
+  * hook_player_respawn_x(pl)
+    
+      -> Aufrufzeitpunkt:   Wenn ein Spieler neu initialisiert wird.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+         Funktionen davor:  Initialisierung der Standardwerte
+         Funktionen danach: --
+         set_dont_continue: Nein.
+         
+  * hook_player_hit_x(pl, weapon, hitpoints, fxspd, fyspd)
+    
+      -> Aufrufzeitpunkt:   Wenn ein Spieler von einer Waffe getroffen wird.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+                            "weapon" gibt die Waffe an (z.B. W_SINGLE).
+                            "hitpoints" gibt an, wie stark der Treffer war.
+                            "fxspd" und "fyspd" definieren die Geschwindigkeit,
+                            mit der das Projektil eingeschlagen hat.
+         Funktionen davor:  Eigenschaft "hitby" wird zugewiesen (d.h.
+                            pl:get_hitby() liefert Signatur des Spielers,
+                            der den Spieler getroffen hat).
+         Funktionen danach: Schilde bzw. Huelle werden um Hitpoints 
+                            verringert.
+                            Sound, Schildanimation, Explosion.
+                            Check, ob Spieler tot ist.
+         set_dont_continue: Ja.
+      
+  * hook_player_takes_cargo_x(pl, ba)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Spieler auf einer Basis Fracht
+                            aufnimmt.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+                            "ba" ist vom Typ "Base".
+         Funktionen davor:  Frachtgewicht wird zum Spielergewicht addiert.
+                            "Fracht"-Nachricht wird auf OSD 1000 
+                            geschrieben.
+         Funktionen danach: Sound.
+                            Loeschen der Fracht von Basis.
+         set_dont_continue: Ja.
+
+  * hook_player_returns_cargo_x(pl)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Spieler Fracht auf seiner Heimatbasis
+                            abliefert.
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+         Funktionen davor:  "Fracht erhalten"-Nachricht wird auf OSD 1000 
+                            geschrieben.
+         Funktionen danach: Sound.
+                            Spielergewicht auf 0 setzen.
+         set_dont_continue: Ja.
+
+  * hook_player_land_x(pl, ba)
+  
+      -> Aufrufzeitpunkt:   Wenn ein Spieler auf irgendeiner Basis landet
+                            (genau 10 Frames [1/60s] nach der Landung).
+         Variablen:         "pl" ist vom Typ "gsPlayer".
+                            "ba" ist vom Typ "Base".
+         Funktionen davor:  --
+         Funktionen danach: --
+         set_dont_continue: Nein.
+
+  * hook_bullet_destroyed_x(bullet)
+    
+      -> Aufrufzeitpunkt:   Wenn ein Projektil zerstoert wird (Wand, Gegner,
+                            Spieler getroffen oder ausserhalb Reichweite).
+         Variablen:         "bullet" ist vom Typ "Bullet".
+         Funktionen davor:  --
+         Funktionen danach: Projektil wird entfernt.
+         set_dont_continue: Ja.
+         
+  * hook_keyboard_hit_x(key)
+  
+      -> Aufrufzeitpunkt:   Wenn eine Taste auf der Tastatur gedrueckt wird.
+         Variablen:         "key" enthaelt Scancode der Taste (siehe
+                            Anhang 1)
+         Funktionen davor:  --
+         Funktionen danach: --
+         set_dont_continue: Nein.
+
+  * hook_init_level_x()
+  
+      -> Aufrufzeitpunkt:   Kurz bevor bei Levelstart die Karte angezeigt wird.
+         Variablen:         --
+         Funktionen davor:  --
+         Funktionen danach: --
+         set_dont_continue: Nein.
+         
+  * hook_exit_level_x()
+  
+      -> Aufrufzeitpunkt:   Bei Level-Ende (regulaer oder ESC-Abbruch).
+         Variablen:         --
+         Funktionen davor:  --
+         Funktionen danach: --
+         set_dont_continue: Nein.
+
+
+
+7. Wissenswertes
+================
+
+Programmieren ist nicht allzu einfach, wenn man es noch nie gemacht hat.
+Von daher gibt es einiges zu beachten.
+
+GS-Script ist keine schoene Entwicklungsumgebung, die einen auf jeden
+moeglichen Syntaxfehler aufmerksam macht. Und es ist auch nicht dafuer
+geeignet, riesige Funktionen zu schreiben. Aber das soll es auch nicht tun.
+Der einzige Zweck ist das Erstellen kleinerer Funktionsscripte fuer neue
+Levels in Gravity Strike.
+
+Rein theoretisch kann man auch einen Computergegner realisieren (rein
+theoretisch), aber das traue ich selbst mir nicht zu ;-). (Gruende sind
+das komplizierte Flugmodell und die Kollisionsprobleme mit der Umgebung).
+
+Also, wie schon zuvor gesagt: Bei einem kleinen Syntaxfehler
+(Falschschreiben eines Befehls) wird das Programm moeglicherweise ab-
+stuerzen. 
+
+Beim irrtuemlichen Erzeugen einer Endlosschleife wird das Programm haengen
+bleiben: "while 1 do end" reicht dafuer schon aus.
+
+In einem solchen Fall laesst sich das Programm meist noch ueber die
+Tastenkombi...
+
+STRG+ALT+ENDE
+
+...beenden. Funktioniert auch dies nicht mehr, hilft nur noch ein Abschuss
+des entsprechenden Tasks.
+
+Reine Syntaxfehler, die auf Lua-Syntax basieren, lassen sich noch ueber den
+Lua-Compiler "luac" aufspueren. 
+Falsch geschriebene Funktionen jedoch, die aus dem C-Programm exportiert
+sind, werden erst zur Laufzeit ueberprueft. Entsprechende Fehlermeldungen
+landen in "Standard Error", das ist je nach System ein anderer Ort. 
+
+Am schnellsten lernt man GS-Script, indem man sich die mitgelieferten
+Level-Scripte anschaut und zu ergruenden versucht, was diese tun.
+
+Die Datei "scriptex.txt" enthaelt zudem einige Beispiele, die genau be-
+schreiben, wie man konkrete 'Aufgaben' loesen kann.
+
+Noch eine wichtige Sache:
+
+Das Levelscript wird 60 Mal pro Sekunde ausgefuehrt. Ist Performance
+wichtig, dann kann man das Script auch nur jedes zweite Frame (also 30
+Mal) ausfuehren lassen:
+
+if mod(globals.game_time, 2) == 0 then
+  -- hier der gesamte Code
+end
+
+Die Spielzeit in Frames wird hierbei durch 2 geteilt. Wenn der Rest "0" ist,
+was jedes 2. Frame der Fall ist, wird der Code ausgefuehrt.
+
+Dies laesst sich auch nutzen, um bestimmte Aktionen z.B. alle vier Sekunden
+auszufuehren:
+
+if mod(globals.game_time, 240) == 0 then
+  -- wird alle 4 Sekunden (60*4) ausgefuehrt
+end
+
+Wenn man nur nach den Sekunden gehen wuerde, haette man das Problem, dass
+eine Sekunde genau 60 Frames dauert. Ein Kommando wie...
+
+if mod(globals.second_time, 4) == 0 then
+end
+
+...wuerde den Inhalt dieser if-Abfrage also jede 4. Sekunde 60 Mal 
+hintereinander aufrufen (bis die Sekunde nicht mehr durch 4 teilbar ist).
+
+In scriptex.txt befinden sich Beispiele, die das praxisnaeher demonstrieren.
+
+ 
+8. Ende
+=======
+
+Ich hoffe, dass dieser Text halbwegs verstaendlich ist und einige 
+verrueckte Leser etwas damit anfangen koennen, und - hoffentlich - 
+eigene Levels damit erstellen.
+
+Wenn Probleme auftauchen, helfe ich natuerlich sehr gerne. Bei Fragen, 
+Anregungen oder Kritik also schreiben an: jh@gravity-strike.de
+
+
+Viel Spass mit GS!
+Jens Hassler
+www.gravity-strike.de
+
+
+
+A1: Tastatur-Scancodes
+======================
+
+ Konstante             Scancode
+
+ KEY_A                 1
+ KEY_B                 2
+ KEY_C                 3
+ KEY_D                 4
+ KEY_E                 5
+ KEY_F                 6
+ KEY_G                 7
+ KEY_H                 8
+ KEY_I                 9
+ KEY_J                 10
+ KEY_K                 11
+ KEY_L                 12
+ KEY_M                 13
+ KEY_N                 14
+ KEY_O                 15
+ KEY_P                 16
+ KEY_Q                 17
+ KEY_R                 18
+ KEY_S                 19
+ KEY_T                 20
+ KEY_U                 21
+ KEY_V                 22
+ KEY_W                 23
+ KEY_X                 24
+ KEY_Y                 25
+ KEY_Z                 26
+ KEY_0                 27
+ KEY_1                 28
+ KEY_2                 29
+ KEY_3                 30
+ KEY_4                 31
+ KEY_5                 32
+ KEY_6                 33
+ KEY_7                 34
+ KEY_8                 35
+ KEY_9                 36
+ KEY_0_PAD             37
+ KEY_1_PAD             38
+ KEY_2_PAD             39
+ KEY_3_PAD             40
+ KEY_4_PAD             41
+ KEY_5_PAD             42
+ KEY_6_PAD             43
+ KEY_7_PAD             44
+ KEY_8_PAD             45
+ KEY_9_PAD             46
+ KEY_F1                47
+ KEY_F2                48
+ KEY_F3                49
+ KEY_F4                50
+ KEY_F5                51
+ KEY_F6                52
+ KEY_F7                53
+ KEY_F8                54
+ KEY_F9                55
+ KEY_F10               56
+ KEY_F11               57
+ KEY_F12               58
+ KEY_ESC               59
+ KEY_TILDE             60
+ KEY_MINUS             61
+ KEY_EQUALS            62
+ KEY_BACKSPACE         63
+ KEY_TAB               64
+ KEY_OPENBRACE         65
+ KEY_CLOSEBRACE        66
+ KEY_ENTER             67
+ KEY_COLON             68
+ KEY_QUOTE             69
+ KEY_BACKSLASH         70
+ KEY_BACKSLASH2        71
+ KEY_COMMA             72
+ KEY_STOP              73
+ KEY_SLASH             74
+ KEY_SPACE             75
+ KEY_INSERT            76
+ KEY_DEL               77
+ KEY_HOME              78
+ KEY_END               79
+ KEY_PGUP              80
+ KEY_PGDN              81
+ KEY_LEFT              82
+ KEY_RIGHT             83
+ KEY_UP                84
+ KEY_DOWN              85
+ KEY_SLASH_PAD         86
+ KEY_ASTERISK          87
+ KEY_MINUS_PAD         88
+ KEY_PLUS_PAD          89
+ KEY_DEL_PAD           90
+ KEY_ENTER_PAD         91
+ KEY_PRTSCR            92
+ KEY_PAUSE             93
+ KEY_ABNT_C1           94
+ KEY_YEN               95
+ KEY_KANA              96
+ KEY_CONVERT           97
+ KEY_NOCONVERT         98
+ KEY_AT                99
+ KEY_CIRCUMFLEX        100
+ KEY_COLON2            101
+ KEY_KANJI             102
+
+ KEY_LSHIFT            103
+ KEY_RSHIFT            104
+ KEY_LCONTROL          105
+ KEY_RCONTROL          106
+ KEY_ALT               107
+ KEY_ALTGR             108
+ KEY_LWIN              109
+ KEY_RWIN              110
+ KEY_MENU              111
+ KEY_SCRLOCK           112
+ KEY_NUMLOCK           113
+ KEY_CAPSLOCK          114

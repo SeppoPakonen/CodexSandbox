@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.7: Ship Definition
+
+type                 = CUSTOM
+image                = "thunder.tga"
+name                 = "Thunderd"
+description          = "A tough ship with fair weapons."
+
+hull                 = 7
+shield               = 10
+radar_zoom           = 0
+weapon_slots         = 3
+
+weapon_storage       = 59
+weapon_recharge      = 77
+
+shield_recharge      = 18
+hull_repair          = 21
+
+turn_speed           = 42
+maximum_speed        = 42
+acceleration         = 30
+
+fuel_consumption     = 58
+
+extras               = E_NONE
+
+weapon_slot_1        = W_DOUBLE
+weapon_slot_2        = W_FREEZER
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_NONE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE
+

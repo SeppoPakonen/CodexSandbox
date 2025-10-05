@@ -1,0 +1,401 @@
+ ...........................................................................
+= GS-Script =============> Gravity Strike, v0.93 <==========================
+
+
+-!-!-!-!-!-! THIS DOCUMENT IS NOT YET COMPLETE !-!-!-!-!-! -
+
+
+Scripting Reference
+===================
+
+1. Introduction
+2. Overview
+3. Short Lua overview
+
+Not included sections:
+
+4. Function and properties overview
+   0) Introduction
+   a) Log functions
+   b) Global variables
+   c) Players
+   d) Bases
+   e) Objects
+   f) Enemies
+   g) Map
+   h) Panels
+   i) Effect: Pixels
+   j) Effect: Explosions
+   k) Effect: Craters
+   l) Effect: Bullets
+   m) Input (Keyboard, ...)
+   n) Sound
+   o) OSD
+   p) User images
+   q) User statistics
+5. That damn player number problem
+6. "Hook" functions
+7. Other interesting stuff
+8. End
+X. Additional: Keyboard scancodes
+
+
+
+1. Introduction
+===============
+
+This text describes how to create own scripts for Gravity Strike levels and
+what you should keep an eye on. It serves mostly as a command reference:
+Script examples can be found in almost every level.
+
+If you have never programmed anything in the past, be prepared: It's not that
+easy and there's a huge amount of mistakes you could possibly make. But don't
+let them discourage you.
+
+The name of the scripting language is "Lua", its documentation can be viewed
+on http://www.lua.org. However, chapter 3 (Short Lua overview) shows the
+most commonly used commands to get you started.
+
+Lua is basically C, Basic and Pascal rolled together to a scripting language.
+If you already have experience in one out of these "big" languages, you can
+learn to program in Lua rather quickly.
+
+The size of this plain text file could already show you how much is possible
+with GS script. You have full access to almost all important things such as
+players, objects, enemies, effects, controls... Basically, it's even possible
+to write your own game, one which has nothing to do with the usual GS game
+idea. This has already been done a lot in the past, with results such as
+"GS Asteroids", "GS Lemmings" or "GS Doppelkopf", a very complex card game.
+
+
+
+2. Overview
+===========
+
+Lua is used by Gravity Strike in many different files:
+
+  -> Configuration files: /dat/gs.cfg und /dat/text.lua
+  -> Ship definitions: /ships/*.shp
+  -> Level definitions: /levels/*.lvl
+  -> Level scripts: /levels/*.ini und /levels/*.sc
+
+Config files and level definitions (*.lvl) only contain a bunch of variables
+which are read by the main program.
+
+But level scripts (*.ini and *.sc) contain "real" script code which can be
+more or less complex. Gravity Strike provides a lot of functions and allows
+you to do almost everything you want via this scripting.
+
+GS levels are split up into several components:
+
+  -> The level definition (*.lvl) is the only file with a set type (lvl :-).
+     Among other variables, the other level file names are listed in here.
+     Information on how to create this file is given in "maps.txt".
+  -> The map (*.mar) contains the landscape. Only the plain landscape!
+  -> The init script (*.ini) is run exactly once at the beginning of your
+     level. You usually set up bases and objects here and define your own
+     functions if you need them.
+  -> The in-game script (*.sc) is run 60 times per second. If you want to
+     e.g. check if the player has entered a certain area, you could be
+     create a function in the init script which checks his coordinates.
+     If the function is then called in the in-game script, the check takes
+     place in every game tick.
+  
+This is nothing else but a normal game structure: First, the environment
+is set up and necessary functions are defined (in the *.ini script). Then,
+a loop is run to control your game and trigger things at certain times
+- this would be a function call in the *.sc script.
+
+
+
+3. Short Lua overview
+=====================
+
+This is an overview for those who already know the basics of programming.
+If you are familar with terms like "variable", "function" or "loop", just
+go ahead. Otherwise, you could need a little programming introduction first :-)
+
+
+
+  -- General things
+
+  Comments are started with two dashes, just like before "General things".
+  Everything in the same line after -- is then a comment.
+
+  Lua is a case sensitive language, just like C or C++. This means, "testvar",
+  "TESTVAR" and "TestVar" are treated as completely different variable names.
+
+
+
+  -- Simple variables
+
+  Variables usually contain integers, float numbers or text strings.
+  You DO NOT have to declare them, they're created when they are filled with
+  content for the first time. Just like this:
+  
+    testvar = 5
+    testvar2 = testvar * 10
+    some_genius_text = "Hello World"
+  
+  testvar now has the value 5, and testvar2 has the value 50.
+
+  You don't have to finish a line with anything certain. However, you can use
+  semicolons and put more than one command into the same line:
+
+    testvar = 5; testvar2 = testvar*10
+
+  ...would have the same effect.
+
+  You can set up local variables. These will only last until a script block
+  ends. If you set up an "if"-statement and create local variables in it,
+  the program will forget them after "end" (just as an example). This will
+  improve the performance in some cases as the variable is not kept in
+  memory for long. Another example:
+
+    testvar = 5  
+    if a > b then
+      local testvar = 10
+    end
+
+  After "end", testvar has the value 5 again.
+
+  A very cool Lua feature is the following:
+
+    var1, var2, = 42, 123
+  
+  var1 now has the value 42 and var2 has the value 123. You could swap two
+  variables very quickly with this way:
+
+    var1, var2 = var2, var1
+
+
+
+  -- Arrays
+
+  This is a list of variables. Let's start with an example.
+  
+    testarray = {}
+
+    testarray[1] = 5
+    testarray[2] = 53
+    testarray[3] = "test"
+
+  Okay then, the first line creates a new, empty array. The other three
+  lines will then fill it with values. ONE IMPORTANT THING: There is no such
+  thing as a zeroth Lua array entry. The first entry is always "1".
+
+    testarray = { 5, 53, "test" }
+  
+  ...would have exactly the same result as the above four lines. 
+
+  You can also create array properties, which is basically the same as a
+  structure in C or Pascal:
+
+    testarray = { number = 50, text = "hello", anothernumber = 47 }
+  
+  ...would create three array entries accessible like this:
+  
+    testarray.number
+    testarray.text
+    testarray.anothernumber
+  
+  You could create multi-dimensional arrays if you need them, "simply" by
+  creating an array with other arrays in it:
+
+    myarray = {}
+    myarray[1] = {}
+    myarray[1][1] = 42
+
+
+    
+
+  
+
+  -- "if" statement
+
+  Most. Important thing. Ever.
+  
+    if expression then
+      -- Code
+    elseif expression then
+      -- Code
+    else
+      -- Code
+    end
+  
+  "elseif" and "else" are of course optional. Usually, an "if" stement looks
+  just like this:
+  
+    if vara > varb then
+      -- Code
+    end
+  
+  An expression is true as long as it does not contain the value "nil". "nil"
+  is not zero! "nil" is, instead, the value of every undefined variable. If
+  there is no variable "a" or if there was a command "a = nil", then
+  
+    if a then do_something() end
+  
+  ...would do nothing. But, watch out, ...
+  
+    a = nil
+    if a > 10 then do_something() end
+
+  would have GS crash as "nil" is not zero :-)
+
+  There are locial connectors like "and" as well as "or" and "not". You can
+  set up a line like this and use brackets to make everything clear:
+  
+    if (vara > 30 and vara < 50) or (varb > 20 and varb < 40) and not varc then
+      -- Code
+    end
+
+  You can use the following operators to compare two values:
+  
+  ==        -> equals
+  ~=        -> does not equal (don't use != instead)
+  >         -> greater than
+  <         -> smaller than
+  >=        -> greater than or equal
+  <=        -> smaller than or equal
+
+
+
+  -- Loops
+
+  A simple version of the "for" loop is the following. It will run the given
+  code ten times in a row with "something" always being a different number
+  (starting at 1, the last time it would be 10):
+
+    for something = 1, 10 do
+      -- code
+    end
+
+  Additionally, you can define skips. The following example will run the given
+  code five times with "n" being 2, 4, 6, 8 and 10 once:
+  
+    for n = 2, 10, 2 do
+      -- code
+    end
+  
+  The "while" loop is repeated as long as the expression in the first line
+  is different from "nil". "while 1 do end" would therefore have the script
+  hang :-)
+
+    while expression do
+      -- code
+    end
+  
+  Finally, the "repeat" - "until" loop is, when finished, repeated if the
+  statement at its end is not true yet:
+  
+    repeat
+      -- code
+    until expression
+
+
+  
+  -- Functions
+
+  Functions are defined in the following way. If you don't need any arguments
+  for it, then the line would be "function my_cool_function()", with nothing
+  in between the brackets.
+  
+    function my_cool_function(parameter1, parameter2, ...)
+      -- code
+    end
+  
+  You can have the function return one or more values:
+  
+    function multiply(a, b)
+      return a*b
+    end
+
+    function one_great_function(a, b, c)
+      a = b
+      b = c
+      c = a+b
+      return a, b, c
+    end
+
+  These two functions can now be called and their returned values can be
+  stored in variables like this:
+  
+    a = multiply(5, 6)
+  
+    x, y, z = one_great_function( 5, 2, 54 )
+
+
+
+  -- Reserved words
+
+  These words may not be used as function or variable names in your scripts.
+  They serve already a purpose as Lua keywords:
+  
+    and       break     do        else      elseif
+    end       false     for       function  global
+    if        in        local     nil       not
+    or        repeat    return    then      true
+    until     while
+
+  The following words are also used in Lua. It is possible to use them as
+  names for your variables and functions, but if you do so, you cannot
+  access the original function anymore:
+  
+    assert        collectgarbage   dofile       error  
+    getglobals    getmetatable     getmode      gcinfo
+    ipairs        loadfile         loadstring   next
+    pairs         pcall            print        rawget
+    rawset        require          setglobals   setmetatable
+    setmode       tonumber         tostring     type
+    unpack
+
+
+
+  -- General functions
+
+  ATTENTION: Since GS v0.9, some functions are called in a different way
+  than before, as they are nowadays part of function groups. Some older
+  scripts use e.g. "random()" instead of "math.random()" and are only
+  made compatible with "compat.lua". Please watch out for scripts that
+  need this file to be run if you want to use them as examples.
+
+  dofile("file")        -> Runs the script "file" at the according position.
+                           You can include, for example, libraries with
+                           additional functions for certain things.
+                           The work path is always the one of the "gs.exe".
+
+  table.getn(array)     -> returns the number of entries the array has
+  
+  type(variable)        -> returns the type of a variable:
+                           "number", "table", "string", 
+                           "function" or "nil"
+
+  Mathematical functions:
+   
+       math.abs     math.acos    math.asin    math.atan    math.atan2
+       math.ceil    math.cos     math.deg     math.exp     math.floor
+       math.log     math.log10   math.max     math.min     math.mod
+       math.pow     math.rad     math.sin     math.sqrt    math.tan
+       math.frexp   math.ldexp   math.random  math.randomseed
+
+  ...as well as "math.pi" als a global variable.
+
+  Some functions require one argument, e.g. "math.sin(math.pi/2)", others
+  require more than one, such as "math.max(...)".
+  
+  Angles are not given in degrees, but in radians.
+  "math.rad(...)" and "math.deg(...)" can convert angles.
+
+  "math.mod(number, divisor)" returns the rest of "number/divisor". This
+  can also be a float. If you want only integers as returned values, use
+  "int_mod(number, divisor)". "mod(..., ...)", as used in GS before Lua 5,
+  also results in "int_mod()" as long as "global_script = 1" is set in
+  the *.lvl file.
+
+  Usage of "math.random()":
+
+  math.random()                  -> retuns a random float between 0 and 1
+  math.random(x)                 -> retuns a random integer between 1 and x
+  math.random(x, y)              -> retuns a random integer between x and y
+  

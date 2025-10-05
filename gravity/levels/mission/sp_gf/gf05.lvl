@@ -1,0 +1,43 @@
+-- Level-Datei
+-- Remake von Gravity Force Level 5
+-- von Frapela
+-- 13.08.2003
+
+author	         = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = STONE
+map              = "gf05.mar"
+initscript       = "gf05.ini"
+script           = "gf05.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Gravity Force: Level 5"
+  description = "GF Level 5, Rette Mr. Relash! (Schwierigkeit: Mittel) Umsetzung fuer GS von Frapela"
+  missiondesc = "[f:impact14][c:yellow]LEVEL 5       [c:white]BIG BROTHER I "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]DAS ZIEL DIESER UMFANGREICHEN MISSION IST ES, EINES DER FEINDLICHEN 'MUTTERSCHIFFE' ZU ZERSTOEREN. "..
+                "[w:50][br][br][br][br][br]UM DIES ZU ERREICHEN, MUESSEN SIE EINEN GEWISSEN MR. RELASH RETTEN. ER IST DIE EINZIGE PERSON, DIE VERRUECKT GENUG IST, UNSEREN 'BOMBER' ZU FLIEGEN. "..
+                "[w:50][br][br][br][br][br]KAEMPFEN SIE SICH DURCH DIE FEINDLICHEN LINIEN UND BRINGEN SIE IHN SICHER NACH HAUSE. "..
+                "[w:50][br][br][br][br][br][center][c:yellow]WENN MR. RELASH STIRBT, IST DIE GESAMTE MISSION EIN FEHLSCHLAG! "
+elseif (LANGUAGE == LANG_EN) then
+  name        = "Gravity Force: Level 5"
+  description = "GF Level 5, Rescue Mr. Relash! (Difficulty: Medium) Remake for GS by Frapela"
+  missiondesc = "[f:impact14][c:yellow]LEVEL 5       [c:white]BIG BROTHER I "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]THE GOAL OF THIS BIG MISSION IS TO DESTROY ONE OF THE ENEMY'S 'MOTHERSHIPS'. "..
+                "[w:50][br][br][br][br][br]IN THE FIRST TASK TO ACCOMPLISH THIS, YOU MUST RESCUE MR. RELASH. HE IS THE ONLY PERSON WHO IS CRAZY ENOUGH TO FLY OUR 'BOMBER'. "..
+                "[w:50][br][br][br][br][br]FIGHT YOUR WAY THROUGH THE ENEMY LINES AND BRING THIS GUY HOME. SAFELY! "..
+                "[w:50][br][br][br][br][br][center][c:yellow]IF MR. RELASH DIES, THE WHOLE MISSION IS A FAILURE! "
+elseif (LANGUAGE == LANG_CR) then
+  name        = "Gravity Force: Level 5"
+  description = "GF Level 5, Rescue Mr. Relash! (Difficulty: Medium) Remake for GS by Frapela"
+  missiondesc = "[f:impact14][c:yellow]LEVEL 5       [c:white]VELKY BRAT I "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]ULOHOU V TEJTO VELKEJ MISII JE ZNICIT JEDNU NEPRIATELSKU MATERSKU LOD. "..
+                "[w:50][br][br][br][br][br]NA SPLNENIE PRVEJ ULOHY MUSIS ZACHRANIT MR. RELASH. JE JEDINY, KTO JE DOSTATOCNE BLAZNIVY LETIET S NASIM 'BOMBARDEROM'. "..
+                "[w:50][br][br][br][br][br]PREBOJUJ SA CEZ NEPRIATELSKU LINIU A PRIVEZ CHLAPKA DOMOV. BEZPECNE! "..
+                "[w:50][br][br][br][br][br][center][c:yellow]AK MR. RELASH ZOMRIE, CELA MISIA BUDE NEUSPESNA! "
+end

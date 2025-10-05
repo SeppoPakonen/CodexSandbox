@@ -1,0 +1,27 @@
+-- TicTacToe
+-- control file
+-- map by: Tobias Gärtner
+
+author             = "Tobias Gaertner"
+style              = GRASS
+
+map                = "tictacto.mar"
+initscript         = "tictacto.ini"
+script             = "tictacto.sc"
+name               = "TicTacToe"
+global_script      = 1
+max_players        = 6
+min_version        = 0.6
+
+if (LANGUAGE == LANG_EN) then
+  description      = "A map, which reminds you on the game TicTacToe."
+else
+  description      = "Eine Karte, die an das Spiel TicTacToe erinnert."
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+hunter_hunted      = 1
+  
+activate_extra_str = ""
+

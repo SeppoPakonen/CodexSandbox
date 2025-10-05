@@ -1,0 +1,26 @@
+-- deatchmatch 42
+-- control file
+-- map by: Eike Thies
+
+author	           = "Eike Thies"
+style              = GRASS
+
+map                = "dm42.mar"
+initscript         = "dm42.ini"
+script             = "dm42.sc"
+min_version        = 0.6
+max_players        = 4
+global_script      = 1
+
+if (LANGUAGE == LANG_EN) then
+  name             = "deatchmatch 42"
+  description      = "deatchmatch 42"
+else
+  name             = "deatchmatch 42"
+  description      = "deatchmatch 42"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+activate_extra_str = ""
+hunter_hunted      = 1

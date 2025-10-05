@@ -1,0 +1,403 @@
+...........................................................................
+= GS-Hilfsfunktionen === > Gravity Strike, v0.9 <==========================
+
+
+GS-Funktionsbibliotheken fuer eigene Scripte
+============================================
+
+1. Einfuehrung
+2. Funktionsuebersicht
+   a) libhelp:  generelle Hilfsfunktionen (Bewegung etc.)
+   b) libextra: Respawning Extras
+   c) libsw:    Tuersteuerung, Schaltersteuerung, Tuer/Schalter-Verbindungen
+   d) libcargo: Frachtfunktionen
+   e) libosd:   OSD & Co.
+   f) libeff:   Effekte
+
+
+1. Einfuehrung
+==============
+
+Im /levels-Verzeichnis von GS befinden sich mehrere ".sc"-Dateien, die
+mit "lib" beginnen. Darin befinden sich Lua-Funktionen, die in eigenen
+Scripten verwendet werden koennen (man muss ja das Rad nicht immer neu
+erfinden).
+
+Dabei sollte man nur die Funktionen einbinden, die man wirklich benoetigt.
+Das Einbinden geschieht ueber einen Aufruf von "dofile", z.B.:
+
+dofile("./levels/libhelp.sc")
+
+Damit wird die Datei libhelp.sc aus dem /levels-Verzeichnis in den 
+eigenen Code eingebunden und ihre Funktionen stehen zur Verfuegung.
+
+Die Verwendung der einzelnen Funktionen wird, jeweils mit Beispielen, im
+naechsten Kapitel beschrieben. Einige Funktionen muessen innerhalb von
+Hook-Funktionen (siehe entspr. Abschnitt in script.txt) aufgerufen werden,
+damit sie funktionieren. Ein entsprechendes Beispiel unter der jeweiligen
+Funktion soll dies jeweils verdeutlichen.
+
+Die Dateien "gm_hh.sc", "gm_ctf.sc" und "gm_race.sc" enthalten die 
+zusaetzlichen Spielmodi. Sie gehoeren demnach nicht zu den hier 
+besprochenen Funktionsbibliotheken.
+
+Diese Bibliotheken werden natuerlich nach und nach erweitert.
+
+
+2. Funktionsuebersicht
+======================
+
+a) libhelp.sc: generelle Hilfsfunktionen (Bewegung etc.)
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   collision( x1, y1, w1, h1, x2, y2, w2, h2 )
+     
+       Berechnet, ob eine Kollision zwischen zwei Rechtecken stattgefunden
+       hat.
+       
+       Erwartet: Koordinaten des ersten Rechtecks (x1, y1)
+                 Breite und Hoehe des ersten Rechtecks (w1, h1)
+                 Koordinaten des zweiten Rechtecks (x2, y2)
+                 Breite und Hoehe des zweiten Rechtecks (w2, h2)
+                 
+       Liefert:  nil, wenn keine Kollision
+                 1, wenn Kollision
+  
+                 
+   distance( x1, y1, x2, y2 )
+       
+       Berechnet den Abstand (in Pixeln) zwischen zwei Punkten.
+       
+       Erwartet: Koordinaten des ersten Punkts (x1, y1)
+                 Koordinaten des zweiten Punkts (x2, y2)
+                 
+       Liefert:  Abstand.
+        
+   
+   get_speed_2_move_to( from_x, from_y, to_x, to_y, hops )
+   
+       Diese Funktion sollte eigentlich, vor allem durch die Waypoint-
+       Funktionen, nicht mehr benoetigt werden.
+   
+       Erwartet: Startkoordinaten (from_x, from_y)
+                 Zielkoordinaten (to_x, to_y)
+                 Anzahl Schritte (hops)
+                
+       Liefert:  x-Geschwindigkeit, y-Geschwindigkeit
+       
+       
+   player_in_area(num, x1, y1, x2, y2)
+   
+       Prueft, ob ein Spieler mit einem bestimmten Bereich kollidiert
+       ist.
+       
+       Erwartet: Nummer des Spielers (1, 2, ...) (num)
+                 Koordinaten der linken oberen Bereichs-Ecke (x1,y1)
+                 Koordinaten der untern rechten Bereichs-Ecke (x2,y2)
+    
+       Liefert:  1, wenn Spieler in diesem Bereich.
+                 nil, wenn nicht.
+       
+       Beispiel:
+       
+       -- Wenn Spieler in bestimmten Bereich kommt, gilt Level als
+       -- geschafft
+       if player_in_area(1, 140, 220, 310, 560) then
+         player[1]:set_mission_status(1)
+       end
+       
+
+b) libextra: Respawning Extras
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Respawning Extras sind wieder-erscheinende Extras. D.h. man erstellt
+   an einer Position ein Extra mit einer bestimmten Staerke und gibt an,
+   nach wie vielen Sekunden nach dem Aufnehmen durch einen Spieler es
+   wieder erscheinen soll.
+   
+   add_respawning_extra( x, y, staerke, sekunden )
+   
+       Wird normalerweise im INI-Script aufgerufen. Erzeugt ein
+       wieder-erscheinendes Extra.
+       
+       Erwartet: Koordinaten, an denen das Extra erscheinen soll (x,y)
+                 Staerke des Extras (staerke)
+                 Zeit in Sekunden, nach der es erscheinen soll (sekunden)
+       
+       Liefert:  --
+       
+       Beispiel:
+       
+       add_respawning_extra( 420, 537, 20, 60 )
+       
+       
+   check_respawning_extras()
+   
+       Damit die Extras funktionieren, muss mit dieser Funktion, die 
+       normalerweise im sc-Script steht, ueberprueft werden, ob sich
+       etwas getan hat.
+       
+       Erwartet: --
+       Liefert:  --
+       
+       
+c) libsw.sc: Tuersteuerung, Schaltersteuerung, Tuer/Schalter-Verbindungen
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Mit diesen Funktionen lassen sich Schalter und Tueren auf einfache
+   Weise ansteuern und miteinander verbinden.
+   
+   open_door( tuer )
+   
+       Oeffnet eine Tuer (bzw. Lichtschranke).
+       
+       Erwartet: Ein Tuer-"Object"
+       Liefert:  --
+       
+       Beispiel:
+       
+       meine_tuer = objects:add( 1, OBJ_DOORH, 420, 537 )
+       open_door(meine_tuer)
+
+              
+   close_door( tuer )
+   
+       Schliesst eine Tuer.
+       
+       Erwartet: Ein Tuer-"Objekt"
+       Liefert:  --
+       
+       Beispiel: Siehe open_door().
+       
+   
+   door_status( tuer )
+   
+       Liefert den Status einer Tuer.
+       
+       Erwartet: Ein Tuer-"Object"
+       Liefert:  0, wenn Tuer geschlossen
+                 1, wenn Tuer geoeffnet
+                 -1, wenn uebergebenes Objekt keine Tuer ist 
+   
+                 
+   switch_on( schalter )
+   
+       Aktiviert einen Schalter (auf gruen schalten).
+       
+       Erwartet: Ein Schalter-"Object"
+       Liefert:  --
+       
+       Beispiel:
+       
+       mein_schalter = objects:add( 1, OBJ_SWITCHD, 220, 237 )
+       switch_on(mein_schalter)
+
+                        
+   switch_off( schalter )
+   
+       Deaktiviert einen Schalter (auf rot schalten).
+       
+       Erwartet: Ein Schalter-"Object"
+       Liefert:  --
+       
+       Beispiel: siehe switch_on().
+       
+                 
+   switch_status( schalter )
+   
+       Liefert den Status eines Schalters
+       
+       Erwartet: Ein Schalter-"Object"
+       Liefert:  0, wenn Schalter deaktiviert
+                 1, wenn Schalter aktiviert
+                 -1, wenn uebergebenes Objekt kein Schalter ist
+
+                    
+   register_door_with_switch( tuer, schalter )
+   
+       Verbindet eine Tuer mit einem Schalter, d.h. mit dem Schalter kann
+       die Tuer schliesslich ein- und ausgeschaltet werden. Damit dies
+       funktioniert, muss zusaetzlich die Funktion check_door_switch
+       eingebunden werden (siehe unten).
+       
+       Erwartet: Ein Tuer-"Object"
+                 Ein Schalter-"Object"
+                 
+       Liefert:  --
+       
+       Beispiel: siehe check_door_switch()
+    
+          
+    check_door_switch( schalter )
+    
+       Diese Funktion wird innerhalb der Hook-Funktion
+         hook_object_hit
+       aufgerufen. D.h. jedes Mal, wenn ein Objekt (z.B. der Schalter)
+       getroffen wird, wird diese Funktion ausgefuehrt.
+       
+       Erwartet: Schalter-"Object"
+       Liefert:  --
+       
+       Komplettes Beispiel:
+       
+       tuer1     = objects:add( 1, OBJ_DOORH2, 445, 255 )
+       schalter1 = objects:add( 2, OBJ_SWITCHD, 100, 50 )
+
+       register_door_with_switch( tuer1, schalter1 )
+       
+       function hook_object_hit_0( ob )
+         check_door_switch(ob)
+       end
+
+
+d) libcargo.sc: Frachtsteuerung
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Mit diesen Funktionen laesst sich relativ einfach ein "Fracht"-Level
+   erstellen. Es muessen dazu drei verschiedene Funktionen an der
+   jeweils richtigen Stelle im INI-Script aufgerufen werden. Zuerst
+   ein komplettes Beispiel:
+
+     init_cargo()
+
+     function hook_player_returns_cargo_0(pl)
+       check_cargo_return(pl)
+     end
+
+     function hook_player_dead_0(pl)
+       check_cargo_dead(pl)
+     end
+
+   Und nun die Beschreibungen der einzelnen Funktionen:
+
+   init_cargo()
+
+       Muss aufgerufen werden, nachdem alle Basen mit Fracht erstellt
+       wurden. Diese Funktion ermittelt das Frachtgewicht auf allen Basen
+       und setzt einen internen Zaehler.
+       
+       Erwartet: --
+       Liefert:  --
+
+
+    check_cargo_return( pl )
+
+       Diese Funktion muss innerhalb der Hook-Funktion
+         hook_player_returns_cargo_0(pl)
+       aufgerufen werden. Das Spieler-Objekt "pl" wird ihr dabei einfach
+       uebergeben.
+
+       Die Funktion ueberprueft, ob bereits alle Fracht angekommen ist
+       und beendet den Level, wenn dies der Fall sein sollte.
+
+       Erwartet: Ein Spieler-Object
+       Liefert:  --
+
+       Beispiel:
+
+       function hook_player_returns_cargo_0(pl)
+         check_cargo_return(pl)
+       end
+
+
+    check_cargo_dead( pl )
+
+       Diese Funktion muss innerhalb der Hook-Funktion
+         hook_player_dead_0(pl)
+       aufgerufen werden.
+
+       Sie prueft, ob ein Spieler mit eingeladener Fracht zerstoert wurde
+       und beendet den Level in diesem Fall ("Mission fehlgeschlagen").
+
+       Erwartet: Ein Spieler-Object
+       Liefert:  --
+
+       Beispiel:
+
+       function hook_player_dead_0(pl)
+         check_cargo_dead(pl)
+       end
+             
+
+e) libosd: OSD & Co.
+   ~~~~~~~~~~~~~~~~~
+   Diese Datei enthaelt OSD-spezifische Funktionen (OSD = On Screen 
+   Display).
+   
+   init_remaining_time_osd1( x, y )
+   
+       Erstellt eine kleine, digitale Rest-Levelzeit-Anzeige. Wird vom
+       globalen Script (global.ini / global.sc) in fast jedem Level
+       benutzt. Muss und sollte daher nicht manuell aufgerufen werden.
+       
+       Erwartet: Koordinaten des OSDs (x, y)
+       Liefert:  --
+       
+       
+   check_remaining_time_osd1()
+   
+       Aktualisiert die Zeitanzeige in dem durch init_remaining_time_osd1
+       erstellten OSD. Wird im SC-Script aufgerufen (vor allem in 
+       global.sc - sollte daher nicht manuell verwendet werden).
+       
+       Erwartet: --
+       Liefert:  --
+       
+       
+   show_player_message( titel, farbe1, text, farbe2, timeout, screen, rect )
+   
+       Schreibt eine Nachricht auf das Standard-OSD.
+       
+       Erwartet: Titel der Nachricht (titel)
+                 Farbe des Titels (farbe1), z.B. "globals.col_yellow"
+                 Text der Nachricht (text)
+                 Farbe des Textes (farbe2)
+                 Zeit (in Ticks), nach der das OSD verschwindet (timeout)
+                 Bildschirm, auf dem es dargestellt wird (screen)
+                   (1 = links, 2 = rechts)
+                 Rechteck um die Nachricht (rect) (1 = Rechteck, 2 = ohne)
+                 
+       Liefert:  --
+       
+       Beispiel:
+       
+       show_player_message( "ACHTUNG", globals.col_yellow,
+                            "Dein Schiff fliegt auseinander!", globals.col_white,
+                            60*3, 1, 1 )
+       
+       
+   init_base_labels()    
+    
+       Erzeugt kleine Labels mit dem Spielernamen unter den jeweiligen
+       Heimatbasen. Wird normalerweise im Netzwerkmodus automatisch durch
+       die global.ini aufgerufen.
+       
+       Erwartet: --
+       Liefert:  --
+       
+
+f) libeff.sc: Diverse Effekte
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Diese Datei enthaelt diverse Effekte, vor allem die beiden im global-
+   Script verwendeten Schadenseffekte fuer Spieler und Gegner.
+   
+   effect_player_damage( spieler )
+   
+       Erzeugt, je nach Schaden, eine entsprechende Zahl Explosionen unter
+       dem Spieler. Wird normalerweise im global.sc-Script aufgerufen,
+       sollte also nicht anderweitig verwendet werden. 
+       
+       Erwartet: Spielernummer (1, 2, 3, ...) (spieler)
+       Liefert:  --
+       
+       
+   effect_enemy_damage()
+   
+       Erzeugt Explosionen unter angeschlagenen Gegnern. Wird automatisch
+       von global.sc aufgerufen, sollte also nicht anderweitig verwendet
+       werden.
+       
+       Erwartet: --
+       Liefert:  --
+       
+   
+
+Jens Hassler 
+jh@gravity-strike.de
+www.gravity-strike.de

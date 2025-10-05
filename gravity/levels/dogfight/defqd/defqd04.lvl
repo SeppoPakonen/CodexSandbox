@@ -1,0 +1,29 @@
+-- QD04: Endless
+-- control file
+
+author	           = "Jens"
+min_version     = 0.6
+max_players     = 2
+style           = STONE
+
+map             = "gfqd04.mar"
+initscript      = "defqd04.ini"
+script          = "defqd04.sc"
+global_script   = 1
+
+if (LANGUAGE == LANG_EN) then
+  name          = "QD04: Endless"
+  description   = "The fourth onescreen multiplayer map out of 'Gravity Force': No borders!"
+else
+  name          = "QD04: Grenzenlos"
+  description   = "Die vierte Multiplayer-Karte aus 'Gravity Force': Keine Grenzen!"
+end
+
+onescreen_map   = 1
+onescreen_map_x = 100
+onescreen_map_y = 100
+
+capture_the_flag = 0
+hunter_hunted    = 0
+
+required_resolution = 640

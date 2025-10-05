@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.71: Ship Definition
+
+type                 = CUSTOM
+image                = "kitvjb.bmp"
+name                 = "Kitvanischer Jagdbomber"
+description          = "Robustes Schiff mit guter Bewaffnung"
+
+hull                 = 5
+shield               = 20
+radar_zoom           = 7
+weapon_slots         = 4
+
+weapon_storage       = 32
+weapon_recharge      = 35
+
+shield_recharge      = 65
+hull_repair          = 0
+
+turn_speed           = 38
+maximum_speed        = 31
+acceleration         = 40
+
+fuel_consumption     = 22
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_BIGBOMB
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE

@@ -1,0 +1,15 @@
+-- INI file
+-- created by GS-Map-Editor v0.6
+
+mybase = bases:add(  0, ENEMY_S_BASE,  330,  541 )
+mybase = bases:add(  1, ENEMY_S_BASE,  380,  543 )
+mybase = bases:add(  2, ENEMY_S_BASE,  430,  542 )
+
+myob = objects:add(  0, OBJ_RACEPOLED,  585,  377 )
+myob = objects:add(  1, OBJ_RACEPOLEU,  600,  535 )
+myob = objects:add(  2, OBJ_RACEPOLEU,  432,  195 )
+myob = objects:add(  3, OBJ_RACEPOLED,  421,   67 )
+myob = objects:add(  4, OBJ_RACEPOLER,  119,  356 )
+myob = objects:add(  5, OBJ_RACEPOLEL,  240,  352 )
+
+globals.race_laps = 5

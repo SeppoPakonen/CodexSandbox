@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.82: Ship Definition
+
+type                 = CUSTOM
+image                = "tiger.bmp"
+name                 = "tiger"
+description          = "Fast, lots of weapons, but low hull and shields..."
+
+hull                 = 3
+shield               = 3
+radar_zoom           = 0
+weapon_slots         = 6
+
+weapon_storage       = 100
+weapon_recharge      = 100
+
+shield_recharge      = 9
+hull_repair          = 9
+wall_shield          = 5
+
+turn_speed           = 45
+maximum_speed        = 46
+acceleration         = 46
+
+fuel_consumption     = 44
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_BOMB
+weapon_slot_3        = W_BIGBOMB
+weapon_slot_4        = W_SHRINKER
+weapon_slot_5        = W_FREEZER
+weapon_slot_6        = W_GAS

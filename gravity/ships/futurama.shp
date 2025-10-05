@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.94net: Ship Definition
+
+type                 = CUSTOM
+image                = "futurama.bmp"
+name                 = "Futurama"
+description          = "Nachbau des FUTURAMA-Schiffes. Das Raumschiff ist ein wendiger Kaempfer, ausserdem ein listungsfaehiger Frachter. - by Simon"
+
+hull                 = 9
+shield               = 9
+radar_zoom           = 14
+weapon_slots         = 5
+
+weapon_storage       = 45
+weapon_recharge      = 55
+
+shield_recharge      = 23
+hull_repair          = 23
+wall_shield          = 0
+
+turn_speed           = 47
+maximum_speed        = 56
+acceleration         = 52
+
+fuel_consumption     = 22
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_BOMB
+weapon_slot_4        = W_BIGBOMB
+weapon_slot_5        = W_FREEZER
+weapon_slot_6        = W_NONE

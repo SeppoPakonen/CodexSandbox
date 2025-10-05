@@ -1,0 +1,156 @@
+...........................................................................
+= Eigene Schiffe =======> Gravity Strike, v0.9 <===========================
+
+
+Erstellen eines eigenen Schiffes
+================================
+
+Gravity Strike bietet die Moeglichkeit, selbst gezeichnete Schiffe in das
+Spiel zu integrieren. Dabei kann sogar (optional) eine eigene 
+Schildanimation definiert werden.
+
+Dieser Text beschreibt, wie dies funktioniert.
+
+Auch wenn er etwas laenger geworden ist, so ist es doch nicht so kompliziert
+wie es sich anhoeren koennte. Es gibt nur einige Dinge zu beachten.
+
+-. Das Schiff darf hoechstens 17 x 17 Pixel gross sein. Die Mindestgroesse
+   ist auf 5x5 Pixel festgelegt.
+
+-. Es sind vier Schiffsbilder notwendig: Eines ohne aktivierte Triebwerke,
+   zwei mit aktivierten Triebwerken und eines fuer den Fall, dass der
+   Afterburner aktiviert wird.
+
+-. Diese vier "Ansichten" werden in einem einzigen Bild gespeichert. Das
+   Format dieses Bildes muss entweder TGA, PCX oder BMP sein.
+
+-. Das Bild enthaelt 256 Farben (8 Bit). Die verwendete Palette muss
+   dieselbe sein wie die Palette des Spiels.
+
+-. Der Name dieser Bilddatei ist beliebig.
+
+-. Als Beispiel dient eigentlich jede Grafikdatei im /ships-Verzeichnis.
+
+
+Anhand des Programms "Corel Photo Paint 6" erklaere ich nun schrittweise,
+wie man ein Schiff erstellt. Diese Vorgehensweise laesst sich, bis auf
+einige Kleinigkeiten bzgl. der Palette, auch in allen anderen Grafik-
+Programmen anwenden.
+
+1. Ueberlegen, wie gross das neue Schiff sein soll. Die Maximalgroesse
+   betraegt 17x17 Pixel.
+
+   Nehmen wir an, man moechte ein 13x15 Pixel grosses Schiff erstellen
+   (es empfiehlt sich, fuer die Breite einen ungeraden Wert zu nehmen,
+   damit man spaeter beim Designen eine Mitte hat):
+
+   Die notwendige Bildgroesse berechnet sich folgendermassen:
+
+   Breite*4 + 5
+   Hoehe    + 2
+
+   In unserem Beispiel also "13*4+5=57" und "15+2=17" Pixel. Wir legen also
+   ein neues Bild mit einer 256farbigen Palette an, das eine Groesse von
+   exakt 57x17 Pixel hat.
+
+
+2. Importieren der GS-Palette:
+
+   Dazu benoetigt man eine Beispieldatei wie z.B. "bull.tga". Diese laedt
+   man in Photo Paint und speichert dessen Palette dann ueber...
+
+   / Bild / Farbtabelle / [Button] Speichern
+
+   ...auf der Festplatte.
+
+   Diese abgespeicherte Palette kann man nun wieder im neu angelegten
+   Bild ueber...
+
+   / Bild / Farbtabelle / [Button] Oeffnen
+
+   ...geladen werden. Dieser Dialog erscheint uebrigens sofort, wenn man
+   ein neues Palettenbild anlegt.
+
+   Die Hintergrundfarbe des Bildes MUSS Paletten-Index 0 sein, also
+   reines Schwarz.
+
+
+3. Zur Bearbeitung vergroessert man das Bild am besten auf 600% (oder mehr).
+
+   Nun muessen Rahmen (ungefuellte Rechtecke) gezeichnet werden.
+   Und zwar genau vier Stueck, die aneinanderliegen. Diese drei Rahmen
+   haben jeweils eine Groesse von
+
+   (gewuenschte Schiffsbreite) + 2
+   (gewuenschte Schiffshoehe)  + 2
+
+   Siehe dazu auch als Beispiel die Datei "bull.tga".
+
+   Die Farbe des Rahmens ist beliebig. Es sollte jedoch eine sein, die
+   nicht im Schiffsbild selbst vorkommt!
+
+   In unserem Beispiel (Schiffsgroesse: 13x15) waeren es also vier Recht-
+   ecke der Groesse 15x17 Pixel. Wenn man zuvor richtig gerechnet hat,
+   muessten sie genau in das Bild passen.
+
+   In ASCII sieht das so aus (jedex x entspricht einer Pixellinie):
+  
+   xxxxxxxxxxxxxxxxxxxxxxxxx
+   x     x     x     x     x
+   x     x     x     x     x
+   xxxxxxxxxxxxxxxxxxxxxxxxx
+
+   Nun hat man vier exakt gleich grosse Felder.
+
+
+4. Schiff designen!
+
+   Man sollte einige Dinge beachten:
+
+   a) Das Schiff sollte links und rechts, sowie oben und unten, an die
+      Kanten des Rahmens anstossen. Man kann sich die untere Kante als
+      die Landebasis vorstellen. Genau in dieser Position wird das Schiff
+      spaeter im Spiel auf der Basis stehen.
+
+   b) Aufgrund der Kollisionserkennung (die stur nach einem Kasten arbeitet,
+      der Hoehe und Breite eines einzelnen Rahmens entspricht) ist es ratsam,
+      die Proportionen nicht zu verquer zu waehlen (das waere z.B. ein
+      Schiff in der Form eines schlanken Kreuzes - der Freiraum in den
+      'Ecken' wuerde trotz des Leer-Raums Kollisionen verursachen).
+
+      
+5. Schildanimation
+
+   Ab GS v0.6 kann das Schiffsbild auch eine Schildanimation enthalten.
+   Wenn diese fehlt, dann wird die normale Animation benutzt.
+   
+   Genau wie bei dem Schiffsbild befinden sich die einzelnen Schild-Bilder
+   in rechteckigen Kaesten. Die Aussenlinien dieser Kaesten muessen
+   DIESELBE Farbe haben wie die Kaesten des Schiffes.
+   
+   Es koennen zwischen einem und zehn Bilder definiert werden. Alle muessen
+   gleich gross sein.
+   Der Kasten mit dieser Reihe der Schildbilder befindet sich mit mindestens
+   einem Pixel Abstand UNTER dem Schiffsbild, d.h. die beiden Kaesten
+   duerfen nicht aneinander stossen!
+   
+   Wie das aussieht, ist schlecht zu beschreiben: Am besten, man schaut
+   sich einfach die zahlreichen Beispiele im "ships"-Ordner an. 
+   Die Animation wird bei einem Schildtreffer im Spiel ueber das Schiffs-
+   Bild gelegt.
+      
+
+E. Bild speichern und in GS im Ship-Builder-Menue ueber "Import Image"
+   ins Spiel importieren. Das Bild wird automatisch ins /ships-Verzeichnis
+   kopiert, sofern es nicht schon dort liegt. Wenn man alles korrekt 
+   gemacht hat, klappt das ohne Probleme.
+
+
+X. Wer das persoenliche Schiff an andere weitergeben moechte bzw. wenn
+   es in einer spaeteren Version von GS mit enthalten sein soll, der
+   sollte sich einfach auf gravity-strike.de als User registrieren und
+   sein Schiff dann in die Schiffsdatenbank hochladen.
+
+
+Viel Spass!
+Jens Hassler (jh@gravity-strike.de)

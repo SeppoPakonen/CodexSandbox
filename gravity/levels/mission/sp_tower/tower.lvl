@@ -1,0 +1,51 @@
+-- The Tower
+-- control file
+-- June 2002, jh
+
+author	           = "Jens"
+min_version        = 0.8
+max_players        = 1
+style              = STONE
+
+map                = "tower.mar"
+initscript         = "tower.ini"
+script             = "tower.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "The Tower"
+  description      = "Zerstoeren Sie einen feindlichen Geschuetzturm. (Schwierigkeit: Hoch. Schneller Rechner benoetigt!)"
+  missiondesc      = "[s:5][c:white][u]Guten Tag, Commander![/u][w:60][br][w:20][br]" ..
+                     "[c:yellow]Die Zeit der Bonbon-Missionen ist vorbei, nun geht " ..
+                     "es ans Eingemachte.[w:30] Der Feind hat einen starken Geschuetzturm " ..
+                     "gebaut, der von einer grossen Flotte beschuetzt wird.[w:60] " ..
+                     "[c:orange]Ihre Mission ist es, diesen Turm zu zerstoeren.[w:60][br][w:60][br]" ..
+                     "[c:yellow]Der Feind wird es Ihnen nicht leicht machen, also nehmen Sie " ..
+                     "Ihr staerkstes Schiff.[w:20] Die feindlichen Schiffe scheinen immer neu " ..
+                     "aufzutauchen, egal wieviele wir zerstoeren.[w:20] Wahrscheinlich existiert ein " ..
+                     "geheimer Generatorraum, der genuegend Energie liefern kann, um den Turm " ..
+                     "sowie eine Schiffsfabrik zu versorgen.[w:20] Dies sind alle Informationen, " ..
+                     "die wir haben. Nun liegt es an Ihnen.[w:60][br][w:30][br]" ..
+                     "[c:white]Viel Glueck, Commander. Und bleiben Sie am Leben!"
+else                 
+  name             = "The Tower"
+  description      = "Destroy the enemy's rocket tower. (Difficulty: High. You need a fast machine to play this one)"
+  missiondesc      = "[s:5][c:white][u]Good morning, Commander![/u][w:60][br][w:20][br]" ..
+                     "[c:yellow]The time of puppet missions is gone, now we come to " ..
+                     "the real missions.[w:30] The enemy has built a heavy rocket tower " ..
+                     "which is guarded by many ships of his fleet.[w:60] " ..
+                     "[c:orange]Your mission is to destroy this tower.[w:60][br][w:60][br]" ..
+                     "[c:yellow]The enemy is very good equipped, so take your heaviest ship. " ..
+                     "[w:20]The enemy ships seem to appear again each time " ..
+                     "we shoot one.[w:20] So we think they have a secret room with " ..
+                     "generators powerful enough to support their ship factory and the " ..
+                     "rocket tower. This is all the information we have. Now it's up to you.[w:60][br][w:30][br]" ..
+                     "[c:white]Good luck, Commander. And keep alive!"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

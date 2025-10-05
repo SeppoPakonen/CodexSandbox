@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "f-22.tga"
+name                 = "F-22"
+description          = "The F-22 raptor is a fast ship that is good for dogfighting."
+
+hull                 = 4
+shield               = 4
+radar_zoom           = 0
+weapon_slots         = 2
+
+weapon_storage       = 42
+weapon_recharge      = 59
+
+shield_recharge      = 23
+hull_repair          = 18
+
+turn_speed           = 64
+maximum_speed        = 54
+acceleration         = 58
+
+fuel_consumption     = 64
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_ROCKET
+weapon_slot_3        = W_NONE
+weapon_slot_4        = W_NONE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE
+

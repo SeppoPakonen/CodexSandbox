@@ -1,0 +1,143 @@
+...........................................................................
+= FAQ ==================> Gravity Strike, v0.9 <===========================
+
+
+Frequently Asked Questions
+==========================
+
+1. What are the rules for "Capture the Flag"?
+2. What are the rules for "Hunter-Hunted"?
+3. Are there any additional keys?
+4. Are there cheats?
+5. The keys don't work sometimes, what's the reason?
+6. Is there anything I need to know when using a joystick?
+
+
+===========================================================================   
+   
+1. What are the rules for "Capture the Flag"?
+   ------------------------------------------
+
+   If you activate CtF you can acquire bonus points by taking the flag
+   of your enemy and returning it to your own homebase.
+   
+   In more detail: Every player has a flag. And every player can transport
+   every flag to every point on the map. But one player can only transport
+   one flag at a time. With the EXTRA key (ENTER or TAB in the default
+   configuration) you can release the flag and throw it away.
+   
+   Your mission is to steal the flag of your enemy and return it to your own
+   base. If you accomplish this goal, the following things are happening:
+   
+   a) the flag will be "beamed" back to the enemy's base.
+   b) the player who owns the flag will be destroyed (increasing its
+      "suicide" counter)
+   c) the winning player (who stole the enemy's flag) gains 500 extra
+      points.
+
+   Have fun!
+
+===========================================================================      
+   
+2. What are the rules for "Hunter-Hunted"?
+   ---------------------------------------
+
+   Hunter-Hunted ('HH'), is a game mode existing in many games (e.g. GTA).
+   
+   Both players have a limited time reserve which is displayed in the upper
+   left corner. This time can be changed in the menu ("max time"). If you 
+   want to play 10 minutes, set this time to 5 minutes.
+   
+   In the beginning both players are 'neutral'. But if one kills the other,
+   the roles change: The killing player will be the "hunted", the killed
+   player will be the "hunter".
+
+   If you are "hunter", your time will decrease, until you kill the hunted
+   player. The roles will then change again until the time of one player
+   runs out.
+   
+   The hunter has to eliminate the hunted as fast as possible while the
+   hunted has to try to stay alive as long as he can. If the hunters time
+   reaches 0, the hunted has won (and gains bonus points: His remaining time
+   in seconds * 20).
+   
+   The weapons of the hunted player will be deactivated. Only the Single 
+   Blaster will be available (so it's wise to take this weapon with you).
+   
+   The hunted will also be "illuminated" with yellow pixels.
+
+   Have fun while trying to stay alive :-)
+
+   
+===========================================================================         
+
+3. Are there any additional keys?
+   ------------------------------
+
+   The key "0" reveals a debugging panel with some numbers (the x/y position
+   of the left player and the current frames per second (fps)).   
+  
+   With "F12" you can take a screenshot. This will be placed as a TGA bitmap
+   inside the root directory of the game.
+
+   
+===========================================================================         
+
+4. Are there Cheats?
+   -----------------
+   
+   None official :o)
+ 
+   No, there are no cheats implemented, because this is a multiplayer game
+   for which cheats would be useless and unfair.
+
+   But you can change some things with the implemented scripting language.
+   A line in "/levels/global.ini" like...
+   
+   player[1]:set_fuel_dec(0)
+   
+   ...will give unlimited fuel to the first (left) player.
+  
+   You can change most of the options in this way. If you have questions
+   then just write me and I'll help.
+   
+===========================================================================         
+
+6. Some keys doesn't seem to work sometimes, what's the reason?
+   ------------------------------------------------------------
+
+   Keyboards are not built to support more than a specific amount of
+   keys pressed at the same time (because of the matrix structure).
+
+   In games this can cause some very strange effects like "hanging keys".   
+
+   Some keyboards seem to be able to support more pressed keys than others.
+   The maximum is between 3 and 5 keys (well, it depends on the position
+   of the keys pressed).
+      
+   The only solution to this problem: One player has to use a joypad.   
+
+   Or you wait until the networking version is ready :o)
+      
+===========================================================================         
+
+7. Is there something I need to know when using joysticks?
+   -------------------------------------------------------
+
+   Gravity Strike supports joysticks and joypads up to 4 buttons in the
+   DOS version and up to 6 buttons in the Win version.   
+
+   You can use up to 2 joysticks.
+   
+   If you play the Win version you have to make sure that ALL sticks are
+   correctly calibrated in the Windows control panel.
+
+   I tested the joystick support with a Gravis Gamepad connected to the
+   game port and a Logitech Wingman Digital 3D connected to the USB port.
+
+===========================================================================         
+
+
+Jens Hassler
+jh@gravity-strike.de
+www.gravity-strike.de

@@ -1,0 +1,30 @@
+-- Level-Datei
+-- Frarace3
+-- von Frapela
+-- 23.08.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author	           = "Frapela"
+min_version        = 0.89
+max_players        = 2
+style              = GRASS
+map                = "frarace3.mar"
+initscript         = "frarace3.ini"
+script             = "frarace3.sc"
+global_script      = 1
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+race               = 1
+singleplayer       = 1
+activate_extra_str = ""
+
+if (LANGUAGE == LANG_DE) then
+  name               = "Frarace 03"
+  description        = "Wildwasserfahrt! von Frapela"
+--  missiondesc        = "VIEL ERFOLG!"
+else
+  name               = "Frarace 03"
+  description        = "With your ship in a torrent! by Frapela"
+--  missiondesc        = "GOOD LUCK!" 
+end

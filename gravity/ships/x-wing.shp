@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "x-wing.tga"
+name                 = "X-Wing"
+description          = "StarWars-Series: The legendary X-Wing by ThS"
+
+hull                 = 8
+shield               = 9
+radar_zoom           = 17
+weapon_slots         = 4
+
+weapon_storage       = 38
+weapon_recharge      = 43
+
+shield_recharge      = 56
+hull_repair          = 42
+
+turn_speed           = 49
+maximum_speed        = 29
+acceleration         = 31
+
+fuel_consumption     = 41
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_MINE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE

@@ -1,0 +1,27 @@
+-- Strike
+-- control file
+-- map by: Eike Thies
+
+author             = "Eike Thies"
+min_version        = 0.6
+max_players        = 6
+style              = GRASS
+
+map                = "strike.mar"
+initscript         = "strike.ini"
+script             = "strike.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_EN) then
+  name             = "Strike"
+  description      = "2 bases, 2 players, but only one winner. "
+else
+  name             = "Strike"
+  description      = "2 Basen, 2 Spieler, aber nur 1 Gewinner."
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+hunter_hunted      = 1
+
+activate_extra_str = ""

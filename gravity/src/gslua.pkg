@@ -1,0 +1,1791 @@
+/*
+ *   GRAVITY STRIKE -- gslua.pkg
+ *
+ *
+ *   (c) Copyright 2001/2004 by Jens Hassler <jh@gravity-strike.de>
+ *       www.gravity-strike.de
+ *
+ *   see source.txt for details
+ *
+ */
+
+$#include "gsbase.h"
+$#include "gsplayer.h"
+$#include "gsobject.h"
+$#include "gsglob.h"
+$#include "gspixel.h"
+$#include "gscontrl.h"
+$#include "gsexplo.h"
+$#include "gsbullet.h"
+$#include "gsmap.h"
+$#include "gseffect.h"
+$#include "gsscript.h"
+$#include "gsosd.h"
+$#include "gserror.h"
+$#include "gsnetw.h"
+$#include "gssound.h"
+$#include "gsenemy.h"
+$#include "gsframes.h"
+$#include "gspanel.h"
+
+#define KB_SHIFT_FLAG         0x0001
+#define KB_CTRL_FLAG          0x0002
+#define KB_ALT_FLAG           0x0004
+#define KB_LWIN_FLAG          0x0008
+#define KB_RWIN_FLAG          0x0010
+#define KB_MENU_FLAG          0x0020
+#define KB_SCROLOCK_FLAG      0x0100
+#define KB_NUMLOCK_FLAG       0x0200
+#define KB_CAPSLOCK_FLAG      0x0400
+#define KB_INALTSEQ_FLAG      0x0800
+#define KB_ACCENT1_FLAG       0x1000
+#define KB_ACCENT2_FLAG       0x2000
+#define KB_ACCENT3_FLAG       0x4000
+#define KB_ACCENT4_FLAG       0x8000
+
+#define KEY_A                 1
+#define KEY_B                 2
+#define KEY_C                 3
+#define KEY_D                 4
+#define KEY_E                 5
+#define KEY_F                 6
+#define KEY_G                 7
+#define KEY_H                 8
+#define KEY_I                 9
+#define KEY_J                 10
+#define KEY_K                 11
+#define KEY_L                 12
+#define KEY_M                 13
+#define KEY_N                 14
+#define KEY_O                 15
+#define KEY_P                 16
+#define KEY_Q                 17
+#define KEY_R                 18
+#define KEY_S                 19
+#define KEY_T                 20
+#define KEY_U                 21
+#define KEY_V                 22
+#define KEY_W                 23
+#define KEY_X                 24
+#define KEY_Y                 25
+#define KEY_Z                 26
+#define KEY_0                 27
+#define KEY_1                 28
+#define KEY_2                 29
+#define KEY_3                 30
+#define KEY_4                 31
+#define KEY_5                 32
+#define KEY_6                 33
+#define KEY_7                 34
+#define KEY_8                 35
+#define KEY_9                 36
+#define KEY_0_PAD             37
+#define KEY_1_PAD             38
+#define KEY_2_PAD             39
+#define KEY_3_PAD             40
+#define KEY_4_PAD             41
+#define KEY_5_PAD             42
+#define KEY_6_PAD             43
+#define KEY_7_PAD             44
+#define KEY_8_PAD             45
+#define KEY_9_PAD             46
+#define KEY_F1                47
+#define KEY_F2                48
+#define KEY_F3                49
+#define KEY_F4                50
+#define KEY_F5                51
+#define KEY_F6                52
+#define KEY_F7                53
+#define KEY_F8                54
+#define KEY_F9                55
+#define KEY_F10               56
+#define KEY_F11               57
+#define KEY_F12               58
+#define KEY_ESC               59
+#define KEY_TILDE             60
+#define KEY_MINUS             61
+#define KEY_EQUALS            62
+#define KEY_BACKSPACE         63
+#define KEY_TAB               64
+#define KEY_OPENBRACE         65
+#define KEY_CLOSEBRACE        66
+#define KEY_ENTER             67
+#define KEY_COLON             68
+#define KEY_QUOTE             69
+#define KEY_BACKSLASH         70
+#define KEY_BACKSLASH2        71
+#define KEY_COMMA             72
+#define KEY_STOP              73
+#define KEY_SLASH             74
+#define KEY_SPACE             75
+#define KEY_INSERT            76
+#define KEY_DEL               77
+#define KEY_HOME              78
+#define KEY_END               79
+#define KEY_PGUP              80
+#define KEY_PGDN              81
+#define KEY_LEFT              82
+#define KEY_RIGHT             83
+#define KEY_UP                84
+#define KEY_DOWN              85
+#define KEY_SLASH_PAD         86
+#define KEY_ASTERISK          87
+#define KEY_MINUS_PAD         88
+#define KEY_PLUS_PAD          89
+#define KEY_DEL_PAD           90
+#define KEY_ENTER_PAD         91
+#define KEY_PRTSCR            92
+#define KEY_PAUSE             93
+#define KEY_ABNT_C1           94
+#define KEY_YEN               95
+#define KEY_KANA              96
+#define KEY_CONVERT           97
+#define KEY_NOCONVERT         98
+#define KEY_AT                99
+#define KEY_CIRCUMFLEX        100
+#define KEY_COLON2            101
+#define KEY_KANJI             102
+#define KEY_EQUALS_PAD        103  /* MacOS X */
+#define KEY_BACKQUOTE         104  /* MacOS X */
+#define KEY_SEMICOLON         105  /* MacOS X */
+#define KEY_COMMAND           106  /* MacOS X */
+
+#define KEY_MODIFIERS         107
+
+#define KEY_LSHIFT            107
+#define KEY_RSHIFT            108
+#define KEY_LCONTROL          109
+#define KEY_RCONTROL          110
+#define KEY_ALT               111
+#define KEY_ALTGR             112
+#define KEY_LWIN              113
+#define KEY_RWIN              114
+#define KEY_MENU              115
+#define KEY_SCRLOCK           116
+#define KEY_NUMLOCK           117
+#define KEY_CAPSLOCK          118
+
+#define KEY_MAX               119
+
+// OBJECTS
+
+enum OBJECT_TYPE {
+  OBJ_PILE,
+  OBJ_TUNNEL1,
+  OBJ_BUILDING1,
+  OBJ_BUILDING2,
+  OBJ_BUILDING3,
+  OBJ_BUILDING4,
+  OBJ_BUILDING4_2,
+  OBJ_BUILDING_GRAV,
+  OBJ_POOL1,
+  OBJ_POOL2,
+  OBJ_PPILE1,
+  OBJ_PPILE2,
+  OBJ_MAN1,
+  OBJ_DOORH,
+  OBJ_DOORV,
+  OBJ_DOORH2,
+  OBJ_DOORV2,
+  OBJ_SWITCHR,
+  OBJ_SWITCHL,
+  OBJ_SWITCHU,
+  OBJ_SWITCHD,
+  OBJ_RACEPOLEL,
+  OBJ_RACEPOLER,
+  OBJ_RACEPOLEU,
+  OBJ_RACEPOLED,
+  OBJ_TREE,
+  OBJ_TREE2,
+  OBJ_STONE_B1,
+  OBJ_STONE_S1,
+  OBJ_STONE_S2,
+  OBJ_BLOCK_1,
+  OBJ_BLOCK_2
+};
+
+enum SPOBJECT_TYPE {
+  SPOBJ_BUMPL,
+  SPOBJ_BUMPR,
+  SPOBJ_BUMPU,
+  SPOBJ_BUMPD,
+  SPOBJ_EXTRA,
+  SPOBJ_TELEPORT1,
+  SPOBJ_TELEPORT2,
+  SPOBJ_GRAVTRAP,
+  SPOBJ_FLAG,
+  SPOBJ_BACKTILE1,
+  SPOBJ_GWALL_L,
+  SPOBJ_GWALL_R,
+  SPOBJ_GWALL_U,
+  SPOBJ_GWALL_D
+};  
+
+class Object
+{ 
+    gsWaypoint  *wp;
+    
+    // get/put
+    Object      *get_prev()                        { return prev; }
+    Object      *get_next()                        { return next; }
+    void        set_prev(Object *n)                { prev = n; }
+    void        set_next(Object *n)                { next = n; }
+    void        set_type(int n)                    { type = n; }
+    int         get_type()                         { return type; }
+    int         get_nr()                           { return nr; }
+    int         is_special();
+    void        set_maxframe(int n)                { maxframe = n; }
+    int         get_maxframe()                     { return maxframe; }
+    void        set_maxframet(int n)               { maxframet = n; }
+    int         get_maxframet()                    { return maxframet; }
+    void        set_curframe(int n)                { curframe = n; }
+    int         get_curframe()                     { return curframe; }
+    void        set_curframet(int n)               { curframet = n; }
+    int         get_curframet()                    { return curframet; }
+    void        set_dispframe(int n)               { dispframe = n; }
+    int         get_dispframe()                    { return dispframe; }
+    void        set_startframe(int n)              { startframe = n; }
+    int         get_startframe()                   { return startframe; }
+    int         get_x()                            { return x; }
+    int         get_y()                            { return y; }
+    float       get_xspd()                         { return xspd; }
+    float       get_yspd()                         { return yspd; }
+    void        set_x(int n)                       { x = n; }
+    void        set_y(int n)                       { y = n; }
+    void        set_xspd(float n)                  { xspd = n; }
+    void        set_yspd(float n)                  { yspd = n; }
+    int         get_width()                        { return w; }
+    int         get_height()                       { return h; }
+    void        set_bound_x(int n)                 { bound_x = n; }
+    void        set_bound_y(int n)                 { bound_y = n; }
+    void        set_bound_w(int n)                 { bound_w = n; }
+    void        set_bound_h(int n)                 { bound_h = n; }
+    void        add_hitpoints(int from, float n, int weap, int fx, int fy, float fxspd, float fyspd)     { hit += n; onehit = TRUE; hitby = from; }
+    float       get_hit()                          { return hit; }
+    int         get_maxhit()                       { return maxhit; }
+    void        set_hit(float n)                     { hit = n; }
+    void        set_maxhit(int n)                  { maxhit = n; }
+    int         get_hitby()                        { return hitby; }
+    float       get_hitby_sx();
+    float       get_hitby_sy();
+    int         get_user()                         { return user; }
+    void        set_user(int n)                    { user = n; }
+    int         get_active()                       { return active; }
+    void        set_active(int n)                  { active = n; }
+    int         get_teleport_time()                { return teleport_time; }
+    int         get_invisible();
+    void        set_invisible(int n);
+    void        set_dont_continue(int n);        
+    int         get_do_hooks();
+    void        set_do_hooks(int n);
+    void        set_dont_update(int n);
+    int         get_dont_update();
+    void        remove();
+    int         get_remove();
+    class gsMap *get_restrict_to_map();
+    void set_restrict_to_map(class gsMap *);
+
+    void        set_user_int(int n, int d);
+    void        set_user_float(int n, float d);
+    int         get_user_int(int n);
+    float       get_user_float(int n);
+
+    
+    void        script_redraw @ draw();
+};
+
+class gsObject
+{
+    // get / set
+    Object *get_first_object()                     { return first_object; }
+    Object *get_last_object()                      { return last_object; }
+    Object *get_first_spobject()                   { return first_spobject; }
+    Object *get_last_spobject()                    { return last_spobject; }
+    int  get_count()                               { return count; }
+
+    // functions
+    Object *add(int num, int t, int x, int y, int user=0, int pf=0);
+    Object *add_special(int num, int t, int x, int y, int user=0, int pf=0);
+    void remove_for_script @ remove(Object *);
+    void remove_for_script @ remove_special(Object *);
+    Object *get_object(int);                       // return object with nr ...
+    Object *get_spobject(int);                     // return special object with nr ...   
+};
+
+extern gsObject *objects;
+
+
+// BULLETS
+
+enum WEAPON_TYPE
+{
+  W_SINGLE,
+  W_DOUBLE,
+  W_BOMB,
+  W_BIGBOMB,
+  W_ROCKET,
+  W_MINE,
+  W_FREEZER,
+  W_SHRINKER,
+  W_PROBE,
+  W_GAS,
+  W_LASER,
+  W_BUMPER,
+  W_SHOTGUN,
+  W_ACID,
+  W_USER,
+  W_FAKE,
+  W_NONE
+};
+
+class Bullet
+{
+  public:
+    // get / set
+    float  get_x()                                 { return x; }
+    float  get_y()                                 { return y; }
+    float  get_xspd()                              { return xspd; }
+    float  get_yspd()                              { return yspd; }
+    Bullet *get_prev()                             { return prev; }
+    Bullet *get_next()                             { return next; }
+    void   set_x(float n)                          { x = n; }
+    void   set_y(float n)                          { y = n; }
+    void   set_xspd(float n)                       { xspd = n; }
+    void   set_yspd(float n)                       { yspd = n; }
+    int    get_width();
+    int    get_height();
+    void   set_width(int n);
+    void   set_height(int n);
+    int    get_min_x()                             { return min_x; }
+    int    get_min_y()                             { return min_y; }
+    int    get_max_x()                             { return max_x; }
+    int    get_max_y()                             { return max_y; }
+    void   set_min_x(int n);
+    void   set_min_y(int n);
+    void   set_max_x(int n);
+    void   set_max_y(int n);
+    int    get_by_player()                         { return by_player; }
+    void   set_by_player(int n);
+    int    get_by_enemy();
+    void   set_by_enemy(int n);
+    float    get_strength()                          { return strength; }
+    void   set_strength(float n);
+    float    get_hull_hitp();
+    void   set_hull_hitp(float n);
+    float    get_shield_hitp();
+    void   set_shield_hitp(float n);
+    int    get_type()                              { return type; }
+    int    get_ttl();
+    void   set_ttl(int n);
+    int    get_user();
+    void   set_user(float n);
+    int    get_invisible();
+    void   set_invisible(int n);
+    int    get_upgrade();
+    void   set_upgrade(int n);
+    int    get_target();
+    void   set_target(int n);
+    void   set_hit(float n);
+    void   set_maxhit(int n);
+    float  get_hit();
+    int    get_maxhit();
+    int    get_dont_continue();
+    void   set_dont_continue(int n);
+    int    get_do_hooks();
+    void   set_do_hooks(int n);
+    void   remove();
+    int    get_remove();
+
+    void        set_user_int(int n, int d);
+    void        set_user_float(int n, float d);
+    int         get_user_int(int n);
+    float       get_user_float(int n);
+};
+
+
+class gsBullet
+{
+    int get_count()                                { return count; }
+    Bullet *get_first()                            { return first_bullet; }
+
+    Bullet* add(int t, class gsPlayer *);
+    Bullet *add(int t, unsigned long psig, int enemy_nr, int px, int py, float pxspd, float pyspd, float pstrength, float puser, int pupgrade=0, int net_dont_kill=0);
+    Bullet *add(int t, unsigned long psig, int enemy_nr, int px, int py, float pxspd, float pyspd, float pstrength, int pshield, int phull, float puser, int pupgrade=0, int net_dont_kill=0);
+
+    void remove_for_script @ remove(Bullet *);
+};
+
+// PLAYER
+
+enum predefined_ships {
+  SHIP_PIRANHA,
+  SHIP_RAZOR,
+  SHIP_BOMBER,
+  SHIP_CUSTOM
+};
+
+enum PLAYER_VALUES {
+  PV_HULL,
+  PV_SHIELD,
+  PV_HULL_RE,
+  PV_SHIELD_RE,
+  PV_WALLSHIELD,
+  PV_WEAPON_RE,
+  PV_RADAR_ZOOM,
+  PV_WEAPON_SLOTS,
+  PV_TURN_SPEED,
+  PV_MAX_SPEED,
+  PV_ACCELERATION,
+  PV_FUEL_CONS,
+  PV_WEAPON_STORAGE
+};                          
+
+// values are for bitfield
+enum EXTRA_ABILITIES {
+  EXTRA_NONE         = 0,
+  EXTRA_AFTERBURNER  = 1,
+  EXTRA_CLOAK        = 2,
+  EXTRA_DEFLECTOR    = 4 
+};
+
+enum PLAYER_DAMAGE {
+  DAMAGE_NONE,
+  DAMAGE_THRUSTER,
+  DAMAGE_STEERING,
+  DAMAGE_FUEL,
+  DAMAGE_WEAPONS,
+  DAMAGE_SHIELD,
+  DAMAGE_LANDING,
+  DAMAGE_RADAR,
+  DAMAGE_MAXDAMAGE
+};
+
+typedef struct weaponslot {
+  int type;                                        // type of bullet
+  int bullets;                                     // amount of bullets left
+  int reload;                                      // reload rate (in frames)
+  int cur_reload;                                  // current reload time
+  int upgrade;
+  int max_upgrades;
+  int active;
+} weaponslot;
+/*
+typedef struct extraslot {
+  int type;                                        // type of extra
+  int energy;                                      // amount of energy left
+  int reload;                                      // reload rate (in frames)
+  int cur_reload;                                  // current reload time
+} extraslot;
+*/
+
+typedef struct statistics {
+  const char *pname;
+  int frags;
+  int suicides;
+  int bullets_shot;
+  int bullets_hit;
+  int extras_taken;
+  int max_time_alive;
+  int laptime[10];
+  long int bonus;
+  long int enemy_bonus;
+  int mission_status;
+  int lostlifes;
+  int used_time;
+  long int plsig;
+  bool set;          
+} statistics;
+            
+
+class gsPlayer
+{
+    // constructor, destructor
+//    gsPlayer(int num, int ship, int col, char *shipfile = NULL, class gsMap * = NULL);
+//    ~gsPlayer();
+
+    // variables
+    class   gsControl *controls;                   // player controls
+
+    // get/set
+    float   get_x()                             { return xpos; }
+    void    set_x(float a)                      { xpos = a; }
+    float   get_y()                             { return ypos; }
+    void    set_y(float a)                      { ypos = a; }
+    float   get_xspd()                             { return xspd; }
+    float   get_yspd()                             { return yspd; }
+    void    set_xspd(float a)                      { xspd = a; }
+    void    set_yspd(float a)                      { yspd = a; }
+    float   get_xacc()                             { return xacc; }
+    float   get_yacc()                             { return yacc; }
+    void    set_xacc(float a);
+    void    set_yacc(float a);
+    void    set_xacc2(float a)                     { xacc2 = a; }
+    void    set_yacc2(float a)                     { yacc2 = a; }
+    void    set_thrust()                           { thrust = 1; }
+    int     get_thrust()                           { return thrust; }
+    void    show_thrust_frame(int n);
+    void    set_extra_action();
+    int     get_extra_action();
+    int     get_extra();
+    void    set_extra(int n);
+    int     get_lifes();
+    void    set_lifes(int n);
+
+    void    set_invulnerability(int n)             { invulnerability = n; }
+    int     get_invulnerability()                  { return invulnerability; }
+            
+    int     get_width()                            { return width; }
+    int     get_height()                           { return height; }
+    int     get_owidth()                           { return owidth; }
+    int     get_oheight()                          { return oheight; }
+    int     get_back_width()                       { return back_width; }
+    int     get_back_height()                      { return back_height; }
+    int	    get_shield_w();
+    int	    get_shield_h();
+
+    float   get_head()                             { return head; }
+    void    set_head(float a)                      { head = a; }
+    float   get_head_to()                          { return head_to; }
+    void    set_head_to(float a)                   { head_to = a; }
+    void    turn_to(int x, int y);
+
+    int     get_network();
+    unsigned long     get_sig()                              { return sig; }
+    void    set_sig(unsigned long a)                         { sig = a; }
+
+    int     get_frags()                            { return stats.frags; }
+    void    set_frags(int n)                       { stats.frags = n; }
+    void    inc_frags();
+    void    dec_frags();
+    int     get_suicides()                         { return stats.suicides; }
+    void    inc_suicides()                         { stats.suicides++; }
+    void    inc_bonus(int n=1)                     { stats.bonus += n; }
+    void    dec_bonus(int n=1)                     { stats.bonus -= n; }
+    void    inc_enemy_bonus(int n=1);
+    void    dec_enemy_bonus(int n=1);
+    void    inc_bullets_shot(int n=1);
+    int     get_bullets_shot();
+    void    inc_bullets_hit(int n=1);
+    int     get_bullets_hit();
+    void    set_mission_status(int n);
+    long int get_bonus()                           { return stats.bonus; }
+    statistics *get_statistics();
+    void    set_statistics(statistics *n);
+    
+    int     get_homebase()                         { return homebase; }
+    void    set_homebase(int);
+    int     get_home_x()                           { return home_x; }
+    int     get_home_y()                           { return home_y; }
+    void    set_home_x(int a)                      { home_x = a; }
+    void    set_home_y(int a)                      { home_y = a; }
+
+    char    *get_name()                            { return name; }
+    void    set_name(const char *a)                { strncpy(name, a, 12); strupr(name); }
+    char    *get_ship_name()                       { return ship_name; }
+    void    set_ship_name(const char *a)           { strncpy(ship_name, a, 20); }
+    char    *get_ship_desc()                       { return ship_desc; }
+    void    set_ship_desc(const char *a)           { strncpy(ship_desc, a, 150); }
+    char    *get_shipimage_filename()              { return shipimage_file; }
+
+    void    set_percent_value(int n, int v)        { if (n < 20 || n > 0) percent_value[n] = v; }
+    int     get_percent_value(int n)               { return percent_value[n]; }
+
+    void    set_dead()                             { dead = 1; }
+    int     get_dead()                             { return dead; }
+    void    set_freezed(int n)                     { freezed = n; }
+    int     get_freezed()                          { return freezed; }
+    void    set_shrinked(int n)                    { shrinked = n; }
+    int     get_shrinked()                         { return shrinked; }
+    void    set_delirium(int n);
+    int     get_delirium();
+
+    int     get_hitby()                            { return hitby; }
+    int     get_killedby();
+    void    set_hitby(int n);
+    void    set_killedby(int n);
+    int     get_hitbyweap();
+    void    set_hitbyweap(int n);
+    int     get_time_alive();
+    
+    int     get_damage();
+    void    set_damage(int n);
+    
+    void    set_land(int n)                        { land = n; }
+    int     get_land()                             { return land; }
+    int     get_land_dur();
+    void    set_land_base(int n)                   { land_base = n; }
+    int     get_land_base()                        { return land_base; }
+
+    int     get_weight();
+    void    set_weight(int n);
+    float   get_weight_factor();
+    void    set_weight_factor(float n);
+    float   get_hull()                             { return hull; }
+    float   get_shield()                           { return shield; }
+    float   get_fuel()                             { return fuel; }
+    void    set_hull(float n)                      { hull = n; }
+    void    set_shield(float n)                    { shield = n; }
+    void    set_fuel(float n)                      { fuel = n; }
+    void    set_wall_shield(float n);
+    float   get_wall_shield();
+    void    set_wall_shield_recharge(float n);
+    float   get_wall_shield_recharge(int h=0);
+    float   get_max_fuel()                         { return max_fuel; }
+    float   get_max_hull(int h=0);
+    float   get_max_shield(int h=0);
+    void    set_max_shield(int n)                  { max_shield = n; }
+    void    set_max_hull(int n)                    { max_hull = n; }
+    float   get_max_wall_shield();
+    void    set_hull_repair(float n)               { hull_repair = n; }
+    float   get_hull_repair(int h=0);
+    float   get_shield_recharge(int h=0);
+    void    set_shield_recharge(float n)           { shield_recharge = n; }
+    float   get_fuel_dec(int h=0);
+    void    set_fuel_dec(float n)                  { fuel_dec = n; }
+    float   get_max_speed(int h=0);
+    void    set_max_speed(float n)                 { max_speed = n; }
+    float   get_player_acc(int h=0);
+    void    set_player_acc(float n)                { player_acc = n; }
+    float   get_turn_speed(int h=0);
+    void    set_turn_speed(float n)                { turn_speed = n; }
+    void    set_ship_type(predefined_ships n)      { ship_type = n; }
+    int     get_ship_type()                        { return ship_type; }
+    void    set_max_radar_zoom(int n)              { max_radar_zoom = n; }
+    int     get_max_radar_zoom()                   { return max_radar_zoom; }
+    void    set_weapon_storage(float n)            { weapon_storage = n; }
+    float   get_weapon_storage()                   { return weapon_storage; }
+    int     get_locked_player()                    { return locked_player; }
+    float   get_rocket_turn_speed()                { return rocket_turn_speed; }
+    void    set_rocket_turn_speed(float n)         { rocket_turn_speed = n; }
+    float   get_weapon_recharge()                  { return weapon_recharge; }
+    void    set_weapon_recharge(float n)           { weapon_recharge = n; }
+    float   get_extra_power();
+    void    set_extra_power(int n);
+    float   get_extra_recharge(int h=0);
+    void    set_extra_recharge(float n);
+    int     get_max_extra_power();
+    
+    int     get_active_weapon()                    { return active_weapon; }
+    void    set_active_weapon(int n);
+    int     get_extra();
+    void    set_extra(int n);
+    weaponslot *get_weapon_slot(int n);
+    void    set_weapon_slot(int n, weaponslot *w);
+    int     get_avail_weapon_slots()               { return avail_weapon_slots; }
+    void    set_avail_weapon_slots(int n)          { if (n >= 0 && n <= 6) avail_weapon_slots = n; }
+    void    set_weapon_bullets(int slot, int bull);
+    int     get_weapon_bullets(int slot);
+    void    activate_weapon_slot(int n);
+    void    deactivate_weapon_slot(int n);
+
+    void    set_ship_value(int what, int val);
+    int     get_ship_value(int what);
+        
+    void    set_status_mode(int n)                 { show_status_mode = n; }
+    void    show_status_set_map(class gsMap *m);
+    void    show_status()                          { show_status_flag = 1; }
+    void    hide_status()                          { show_status_flag = 0; }
+
+    int     get_handicap();
+    void    set_handicap(int n);
+
+    int     get_recoil();
+    void    set_recoil(int n);
+
+    void    set_dont_continue(int n);
+    int     get_do_hooks();
+    void    set_do_hooks(int n);
+
+    void        set_user_int(int n, int d);
+    void        set_user_float(int n, float d);
+    int         get_user_int(int n);
+    float       get_user_float(int n);
+    
+    // functions
+    void reinit();                                 // reinit player after death
+    void set_standard_bullets();                   // sets all weapons with standard amount of bullets
+    void return_home();                            // set player to his home
+    void set_weapon(int n, int m, int bullets=0, int recharge=-1);  // set weapon slot n to weapon m
+    void shoot();                                  // player shoots active_weapon
+    void hit(int frompl, int fromen, float hullhit, float shieldhit, int weapon=0, int xspd=0, int yspd=0);                     // hit by weapon from player "from" with strength "n"
+    
+    int load_ship(char *n);
+    int load_image(char *n);
+};
+
+int get_player_nr_by_sig(unsigned long);                     // get array number by signature
+gsPlayer *get_player_by_sig(unsigned long);
+extern gsPlayer *player[8];
+
+
+// BASES
+
+enum BASE_TYPE {
+  PLAYER_BASE,
+  CARGO_BASE,
+  ENEMY_S_BASE,
+  ENEMY_L_BASE,
+  ENEMY_BASE_LEFT,
+  ENEMY_BASE_MIDDLE,
+  ENEMY_BASE_RIGHT,
+  RELOAD_BASE,
+  CUSTOM_BASE
+};
+
+enum CARGO_TYPE {
+  CARGO_NONE,
+  CARGO_NORMAL,
+  CARGO_OBJECT
+};
+
+class Base
+{
+    // constr./destr.
+//    Base(int num, BASE_TYPE t, int x, int y, int c=0, int ca=0);
+//    ~Base();
+  
+    // get/put
+    float get_x()                                  { return x; }
+    float get_y()                                  { return y; }
+    float get_xspd()                               { return xspd; }
+    float get_yspd()                               { return yspd; }
+    void set_x(float n)                            { x = n; }
+    void set_y(float n)                            { y = n; }
+    void set_xspd(float n)                         { xspd = n; }
+    void set_yspd(float n)                         { yspd = n; }
+    int get_width()                                { return image->w; }
+    int get_height()                               { return image->h; }
+    Base *get_prev()                               { return prev; }
+    Base *get_next()                               { return next; }
+    void set_prev(Base *n)                         { prev = n; }
+    void set_next(Base *n)                         { next = n; }
+    float get_land_x()                             { return land_x; }
+    float get_land_y()                             { return land_y; }
+    int get_land_w()                               { return land_w; }
+    void set_land_x(float w)                       { land_x = w; }
+    void set_land_y(float w)                       { land_y = w; }
+    void set_land_w(int w)                         { land_w = w; }
+    void set_type(BASE_TYPE n)                     { type = n; }
+    BASE_TYPE get_type()                           { return type; }
+    void set_cargo_type(int n)                     { cargo_type = (CARGO_TYPE)n; }
+    int  get_cargo_type()                          { return cargo_type; }
+    void set_cargo_weight(int n);
+    int  get_cargo_weight();
+    Object *get_cargo_object()                     { return cargo_object; }
+    void set_cargo_object(Object *);
+    void set_cargo_name(char *);
+    char *get_cargo_name();
+    int  get_nr()                                  { return nr; }
+    int  get_player_on_base()                      { return player_on_base; }
+    void set_player_on_base(int n)                 { player_on_base = n; }
+    void set_refuel_percent(int n, int pl = 0);
+    int  get_refuel_percent();
+    int  get_refuel_player();
+  
+    // functions
+//    void draw(class gsMap *);
+//    void kill_landscape(class gsMap *);
+//    void update();
+//    void hit(int);
+};
+
+class gsBase
+{
+    // get / set
+    Base *get_first_base()                         { return first_base; }
+    Base *get_last_base()                          { return last_base; }
+    int  get_count()                               { return count; }
+
+    // functions
+    Base *add(int num, int t, int x, int y, int user=0, int c=0);  // add a base
+//    void update();                                 // update base animation (?)
+//    void draw(class gsMap *);
+//    void kill_landscape(class gsMap *);            // kill landscape over landing pad
+//    void check_if_landed(class gsPlayer *);        // check if player has landed
+    Base *get_base(int);                           // return base with nr ...
+};
+
+extern gsBase *bases;
+
+
+// PIXELS
+
+class Pixel
+{
+  int   color;                                     // color
+  int   tcolor;                                    // ??
+  int   lifetime;                                  // max pixel life
+  int   max_xab;                                   // maximum travel in x direction
+  int   max_yab;                                   // maximum travel in y direction
+  int   dspd;                                      // fading speed
+  int   bounce;                                    // bounce count
+  int   vdec;                                      // speed decrease
+
+  float get_x()                                    { return x; }
+  float get_y()                                    { return y; }
+  void set_x(float w)                              { x = w; }
+  void set_y(float w)                              { y = w; }
+  float get_xspd()                                 { return xspd; }
+  float get_yspd()                                 { return yspd; }
+  void set_xspd(float w)                           { xspd = w; }
+  void set_yspd(float w)                           { yspd = w; }
+
+  Pixel *get_prev()                                { return prev; }
+  Pixel *get_next()                                { return next; }
+  
+//  void draw(class gsMap *);
+//  void draw(BITMAP *);
+//  void move(float gravity);
+};
+
+enum PIXELRAIN_TYPES
+{
+  PIX_WHITE,
+  PIX_YELLOW,
+  PIX_GREEN,
+  PIX_BLUE,
+  PIX_BLUEWHITE,
+  PIX_RED,
+  PIX_ALL,
+  PIX_DEBRIS1,
+  PIX_DEBRIS2,
+  PIX_DEBRIS3,
+  PIX_DEBRIS4,
+  PIX_DEBRIS5
+};         
+
+class gsPixelRain
+{
+  // get / put
+  Pixel *get_first()                               { return first_pixel; }
+  Pixel *get_last()                                { return last_pixel; }
+  int   get_count()                                { return count; }
+
+  // functions
+  void add(int anz, int startx, int starty, int xradius, int yradius,
+           float xab, float yab, int spd,
+           int what, int maxtable=10, int lifetime=2000, int dspd=0,
+           int max_xab=1500, int max_yab=1500, float vdec=0);
+//  void draw(class gsMap *);
+//  void draw(BITMAP *);
+//  void move(float gravity);
+//  void check_collisions(class gsMap *);
+//  void clear(class gsMap *);
+//  void clear(BITMAP *);
+};
+
+
+// GLOBALS
+
+typedef struct level_info {
+  const char   *map_style;                                // style of map
+  int    onescreen_map;                            // is it a onescreen map?
+  int    map_start_x;                              // x offset for os map
+  int    map_start_y;                              // y offset for os map
+  const char*  activate_extra_str;                       // string for "activate" button
+  const char*  activate_extra_bar_str;
+  int    activate_ctf;                             // activate capture the flag?
+  int    activate_hh;
+  int    activate_global_script;                   // activate global script functions?
+  int    activate_race;
+  int    activate_minigame;
+  int    activate_singleplayer;
+  float  min_version;
+  int    max_players;
+  const char*  name;                                     // name of level
+  const char*  desc;                                     // description of level
+  const char*  missiondesc;
+  const char*  leveldir;
+  const char*  levelfile;                                // filename of level file
+  const char*  mapfile;                                  // filename of map file (.mar)
+  const char*  initscriptfile;                           // filename of init script
+  const char*  scriptfile;                               // filename of game script
+  const char*  author;
+} level_info;
+
+
+enum GS_FONTS {
+  FONT_ICE,
+  FONT_BANK,
+  FONT_IMPACT10,
+  FONT_IMPACT14,
+  FONT_LCD,
+  FONT_KEYPUNCH,
+  FONT_VERDANA,
+  FONT_MINIFONT
+};
+
+class UserStats {
+    void    set_text(char *n);
+    void    set_textcolor(int n);
+    void    set_value(int pl, char *n);
+    void    set_value(int pl, int n);
+    void    set_valuecolor(int pl, int n);
+    void    set_plusx(int n);
+
+    char*   get_text();
+    int     get_textcolor();
+    char*   get_value(int pl);
+    int     get_valuecolor(int pl);
+    int     get_plusx();
+};
+
+class gsGlobals
+{
+    // control flow
+    const int  fps;
+    const int fpst;                       // frames per seconds
+    const int  game_time;
+    const int overall_game_time;    // game timers
+    const int  second_time;                     // second timer
+    const int           splitscreen;                     // splitscreen game?
+    const int           onescreen_map;                   // map only one screen big?
+    const int           players;                         // how much players?
+    const int           game_mode;                       // mode of game
+    const int           singleplayer;                    // single player mode?
+    const int           minigame;
+    const int           network_game;                    // is this a network game?
+    const int           use_joystick;                    // joystick active?
+    const int           joystick_installed;              // is joystick installed? 
+
+    // graphics
+    const int           game_resolution_x;
+    const int           game_resolution_y;
+    const int           tile_w;                          // width of tile in pixels
+    const int           tile_h;                          // height of tile
+    const int           map_w;                           // width of map in tiles
+    const int           map_h;                           // height of map
+    const int           playscreen_width;                // width of vis. screen
+    const int           playscreen_full_width;           // width of full screen
+    const int           playscreen_split_width;          // width of splitted screen
+    const int           playscreen_height;               // height of vis. screen
+    const int           playscreen_full_height;          // height of full screen
+    const int           playscreen1_sx;                  // x start of playscr1
+    const int           playscreen2_sx;                  // x start of playscr2
+    const int           panel_full_width;                // full width of panel
+    const int           panel_full_height;               // full height of panel
+    const int           panel_half_width;                // half width of panel (2p)
+    const int           panel_half_height;               // 2p panel height
+    const int           panel_full_x;                    // panel coordinates
+    const int           panel_full_y;
+
+    const int           col_white;                       // some color definitions
+    const int           col_grey;
+    const int           col_dgrey;
+    const int           col_yellow;
+    const int           col_red;
+    const int           col_bred;
+    const int           col_blue;
+    const int           col_lblue;
+    const int           col_green;
+    const int           col_black;
+    const int           col_orange;
+    const int tbl_blue[21];
+    const int tbl_white[21];
+    const int tbl_bluewhite[21];
+    const int tbl_green[21];
+    const int tbl_yellow[21];
+    const int tbl_red[21];
+    const int tbl_all[256];
+
+    // environment
+    const int           slow_computer;
+
+    // setup options
+    const int           activate_extra;                  // activate level extras?
+    const int           activate_extra_bar;                  // activate level extras?
+    const int           activate_extra_bar @ extra_bar;
+    const int           capture_the_flag;                // ctf mode activated?
+    const int           hunter_hunted;                   // hh mode activated?
+    const int           race;                            // race mode activated?
+
+    // player
+    const int           color[10];                       // colors of players
+
+    // datafiles
+    const char          *data_dir;                    // dir with data files
+    const char          *ship_dir;                    // dir with ship defs
+    const char          *level_dir;                   // dir with level defs
+    const char          *map_dir;                     // dir with map files
+    const char          *script_dir;                  // dir with script files
+    const char          *hiscore_dir;                 // dir with hiscore files
+    const char          *configfile_name;             // name of globconfig file
+    const char          *datafile_name;               // name of data file
+    const char          *soundfile_name;              // name of sound data file
+    const char          *shipdata_name;               // name of ship data file
+    const char          *fontdata_name;               // name of font data file
+    const char          *menu_datafile_name;          // name of menu data file
+    const char          *language_file_name;          // name of language file
+    const char          *keyboard_file_name;          // name of keyboard config file
+    const char          *global_ini;                  // name of global init file
+    const char          *global_sc;                   // name of global script file
+    const char          *hiscore_file_name;           // name of hiscore file
+    const char          *def_ship;                    // name of default ship
+    const char          *def_level;                   // name of default level
+
+    const level_info    level_files[MAX_LEVELS];                // array containing info about level files
+    const int           selected_level;                  // selected level (num in level_files[])
+    const char          *last_level;                  // last level played (twoplayer)
+    const char          *last_splevel;                // last single player level played
+    const int           max_levels;                      // how much level files?
+
+    // functions
+    int  make_color(int r, int g, int b);          // (for scripts)
+    int  get_level_num_from_filename(char *n);     // see left :-)
+    void set_highscore(char *n)                    { strncpy(score_string, n, 49); }
+    void set_highscore(int n)                      { sprintf(score_string, "%d", n); }
+    void create_level_done_file();
+    
+    // script-changable values
+    float         gravity_percent;                 // glob gravity in percent (-1 to +2)
+    float         level_gravity;                   // global gravity
+    float         particle_gravity;                // gravity for particles
+    float         bomb_gravity;                    // gravity for bombs
+    int           exit_level;                      // exit current level
+    int           max_craters;                     // maximum craters allowed
+    int           language;                        // language to use (defined in gslng.h)
+    int           plus_x;                          // increm. of map
+    int           plus_y;                          // - " -
+    int           pixamount;                       // amount of pixels to display (0-200)
+    int           soundvol;                        // volume of sound
+    int           race_laps;                       // race laps
+    int           shoot_speed;                     // speed of normal bullets
+    int           shoot_speed_bomb;                // speed of bombs
+    int           player_respawn;                  // time for players to respawn (frames)
+    int           player_indestructible;           // time players are indestructible after respawn
+    int           extra_amount;                    // how much extras? (1 to 10)
+    int           max_frags;                       // frags at which game ends?
+    int           max_time;                        // minutes game lasts?
+    int           do_all_hooks;                    // do all hook functions (objects & enemies?)
+    int           computer_player;                 // activate computer player?
+    int           computer_player_strength;        // strength of computer player (0-10)
+    int           use_script_computer_player;      // use script player instead of built in
+    int           use_user_stats;
+    UserStats     user_stats[10];                  // 10 rows of user stats
+    int           score_per_second;                // minus score per second (default: 5)
+    int           handicap;                        // handicap mode activated?
+};
+
+extern gsGlobals *globals;
+
+
+// CONTROLS
+
+enum input_types {
+  LOCAL_SINGLE,
+  LOCAL1,
+  LOCAL2
+};
+
+enum player_controls {
+  LEFT,
+  RIGHT,
+  SHOOT,
+  THRUST,
+  NEXT_WEAPON,
+  PREV_WEAPON,
+  WEAPON_1,
+  WEAPON_2,
+  WEAPON_3,
+  WEAPON_4,
+  WEAPON_5,
+  WEAPON_6,
+  EXTRA_ACTION,
+  SPECIAL,
+  TEMP1,
+  TEMP2,
+  TEMP3,
+  SP_PAUSE,
+  SP_SCREENSHOT,
+  SP_PANEL,
+  SP_DEBUG,
+  SP_CHAT,
+  TEMP9,
+  // 2 player match: player 1
+  LEFT_L1,
+  RIGHT_L1,
+  SHOOT_L1,
+  THRUST_L1,
+  NEXT_WEAPON_L1,
+  PREV_WEAPON_L1,
+  WEAPON_1_L1,
+  WEAPON_2_L1,
+  WEAPON_3_L1,
+  WEAPON_4_L1,
+  WEAPON_5_L1,
+  WEAPON_6_L1,
+  EXTRA_ACTION_L1,
+  SPECIAL_L1,
+  TEMP1_L1,
+  TEMP2_L1,
+  TEMP3_L1,
+  TEMP4_L1,
+  TEMP5_L1,
+  TEMP6_L1,
+  TEMP7_L1,
+  TEMP8_L1,
+  TEMP9_L1,
+  // 2 player match: player 2
+  LEFT_L2,
+  RIGHT_L2,
+  SHOOT_L2,
+  THRUST_L2,
+  NEXT_WEAPON_L2,
+  PREV_WEAPON_L2,
+  WEAPON_1_L2,
+  WEAPON_2_L2,
+  WEAPON_3_L2,
+  WEAPON_4_L2,
+  WEAPON_5_L2,
+  WEAPON_6_L2,
+  EXTRA_ACTION_L2,
+  SPECIAL_L2,
+  TEMP1_L2,
+  TEMP2_L2,
+  TEMP3_L2,
+  TEMP4_L2,
+  TEMP5_L2,
+  TEMP6_L2,
+  TEMP7_L2,
+  TEMP8_L2,
+  TEMP9_L2
+};
+
+class gsControl
+{
+    // get/set
+    void set_key(player_controls k, int n);
+    int  get_key(player_controls k)                { return key_layout[k]; }
+
+    // functions
+    void  update();
+    int   get_pressed_key();
+    
+    void  enable();
+    void  disable();
+    int   get_disabled();
+
+    int   left();
+    int   right();
+    int   thrust();
+    int   shoot();
+    int   special();
+    int   extra_action();
+
+    int   nw();
+    int   pw();
+
+    int   w1();
+    int   w2();
+    int   w3();
+    int   w4();
+    int   w5();
+    int   w6();
+};
+                 
+
+
+
+// MAPS
+
+enum MAP_STYLE {
+  MAP_GRASS,
+  MAP_STONE
+};
+
+class gsMap
+{
+    class gsOsd *osd;
+
+    // get/put
+    int get_scroll_x()                             { return scroll_x; }
+    int get_scroll_y()                             { return scroll_y; }
+    int get_scroll_to_x()                          { return scroll_to_x; }
+    int get_scroll_to_y()                          { return scroll_to_y; }
+    int get_map_x()                                { return map_x; }
+    int get_map_y()                                { return map_y; }
+    float get_scroll_speed_x();
+    float get_scroll_speed_y();
+    float get_fscroll_x()                          { return fscroll_x; }
+    float get_fscroll_y()                          { return fscroll_y; }
+    int is_redraw_needed()                         { return redraw_needed; }
+    void request_redraw()                          { redraw_needed = TRUE; }
+    char *get_style();
+
+    void restrict_scroll_x(int min, int max);
+    void restrict_scroll_y(int min, int max);
+    
+    // functions
+    void scroll_to(int x, int y, float s=0);
+    void scroll_to(class gsPlayer *);
+    void scroll_to(class gsPlayer *, float s);
+    void scroll();
+    void redraw();
+
+    int  is_pixel(int x, int y);
+    int  get_pixel(int x, int y);
+    int  is_tile(int x, int y);
+    int  is_on_screen(int x, int y, int w, int h);
+    int  is_on_map(int x, int y, int w, int h);
+    
+    void draw_rectangle(int col, int x1, int y1, int x2, int y2);
+    void draw_filled_rectangle(int col, int x1, int y1, int x2, int y2);
+    void draw_pixel(int col, int px, int py);
+    void draw_circle(int col, int px, int py, int r);
+    void draw_filled_circle(int col, int px, int py, int r);
+    void draw_ellipse(int col, int px, int py, int rx, int ry);
+    void draw_filled_ellipse(int col, int px, int py, int rx, int ry);
+    void draw_line(int col, int x1, int y1, int x2, int y2);
+    void draw_text(int fnum, char *t, int col, int px, int py);
+    void draw_sprite(int imgnum, int px, int py, int frame=0);
+    void fill_area(int col, int px, int py);
+};
+
+extern gsMap *playmap[2];
+
+enum EXPLOSION_TYPES
+{
+  EXP_SMALL_1,
+  EXP_SMALL_2,
+  EXP_SMALL_3,
+  EXP_SMALL_4,
+  EXP_MED_1,
+  EXP_BIG_1,
+  EXP_BIG_2
+};
+
+// EXPLOSIONS
+
+class Explosion
+{
+  Explosion *get_prev()                            { return prev; }
+  Explosion *get_next()                            { return next; }
+  
+  int get_x();
+  int get_y();
+  int get_width();
+  int get_height();
+  int get_type();
+  int get_starttime();
+  int get_curframe();
+  int get_maxframe();
+  int get_maxframet();
+  unsigned long get_player_sig();
+};
+
+class gsExplosion
+{
+  Explosion *get_first()                           { return first_exp; }
+  Explosion *get_last()                            { return last_exp; }
+  int get_count()                                  { return count; }
+
+  // functions
+  Explosion *add(int what, int speed, int pstart, int px, int py);
+};
+
+class Crater
+{
+  public:
+    int      get_x()                               { return x; }
+    void     set_x(int n)                          { x = n; }
+    int      get_y()                               { return y; }
+    void     set_y(int n)                          { y = n; }
+    int      get_size()                            { return size; }
+    void     set_size(int n)                       { size = n; }
+    Crater   *get_prev()                           { return prev; }
+    void     set_prev(Crater *n)                   { prev = n; }
+    Crater   *get_next()                           { return next; }
+    void     set_next(Crater *n)                   { next = n; }
+};
+
+class gsCrater
+{
+    // get / set
+    Crater *get_first();
+    Crater *get_last();
+    int  get_count()                               { return count; }
+
+    // Functions
+    void add(int x, int y, int size, int instantdraw=1);
+    void remove(Crater *);
+};
+
+
+// EFFECTS
+
+class gsEffect
+{
+  gsPixelRain  *pixels;
+  gsBullet     *bullets;
+  gsExplosion  *explosions;
+  gsCrater     *craters;
+};
+
+extern gsEffect *effects;
+
+
+// OSD
+
+enum OSDBIT_MODES {
+  OSDBIT_SCREEN,
+  OSDBIT_MAP,
+  OSDBIT_PANEL
+};
+
+class UserImageAnim
+{
+    UserImageAnim *get_prev()                      { return prev; }
+    UserImageAnim *get_next()                      { return next; }
+
+    int    get_x();
+    int    get_y();
+    int    get_loop();
+    int    get_curframe()                          { return curframe; }
+    int    get_curframet()                         { return curframet; }
+    int    get_maxframe()                          { return maxframe; }
+    int    get_maxframet()                         { return maxframet; }
+    void   set_curframe(int n)                     { curframe = n; }
+    void   set_maxframe(int n)                     { maxframe = n; }
+    void   set_curframet(int n)                    { curframet = n; }
+    void   set_maxframet(int n)                    { maxframet = n; }
+    int    get_startframe();
+    void   set_startframe(int n);
+    int    get_image();
+    void   set_image(int n);
+};
+
+class OsdBitmap
+{
+    // get/set
+    OsdBitmap *get_prev()                          { return prev; }
+    OsdBitmap *get_next()                          { return next; }
+    float  get_x()                                 { return x; }
+    float  get_y()                                 { return y; }
+    void   set_x(float n);
+    void   set_y(float n);
+    int    get_width()                             { return w; }
+    int    get_height()                            { return h; }
+    int    get_mode()                              { return mode; }
+    int    get_sig()                               { return sig; }
+//    BITMAP *get_bitmap()                           { return bitmap; }
+    int    get_active()                            { return active; }
+    int    get_timeout()                           { return remtime; }
+    int    get_last_clear_color()                  { return last_clear_color; }
+    
+    OsdBitmap *get_prev();
+    OsdBitmap *get_next();
+    void   set_mode(int n)                         { mode = n; }
+    void   set_active(int n)                       { active = n; }
+    void   set_timeout(int n)                      { active = 1; remtime = n; }    
+    void   set_visible(int n);
+    int    get_visible();
+   
+    // drawing functions
+    void clear(int col=0);
+    void draw_pixel(int col, int x, int y);
+    void draw_rectangle(int col=0, int x1=0, int y1=0, int x2=0, int y2=0);
+    void draw_filled_rectangle(int col, int x1, int y1, int x2, int y2);
+    void draw_line(int col, int x1, int y1, int x2, int y2);
+    void draw_circle(int col, int x, int y, int r);
+    void draw_filled_circle(int col, int x, int y, int r);
+    void draw_ellipse(int col, int x, int y, int rx, int ry);
+    void draw_filled_ellipse(int col, int x, int y, int rx, int ry);
+    void fill_area(int col, int x, int y);
+    void draw_text(int f, char *t, int col=0, int x=0, int y=0, int mode=0);
+    void draw_typewriter_text(char *t, int starty=10, int speed=3, int rect=1, int remove=0);
+    UserImageAnim *add_image(int num, int px, int py, int maxframet=5, int loop=1);
+    void remove_image(UserImageAnim *);
+};
+
+class gsOsd
+{
+    // get/set
+    OsdBitmap *get_first_osdbit()                  { return first_osdbit; }
+    OsdBitmap *get_last_osdbit()                   { return last_osdbit; }
+
+    // functions
+    OsdBitmap *add(int sig, int x, int y, int w, int h, int mode);
+    OsdBitmap *add_label(int sig, int x, int y, int mode, int fnum, char *t, int col=0, int rect=0);
+    void remove(OsdBitmap *);
+    OsdBitmap *get_osdbit(int sig);
+};
+
+class gsError
+{
+    void log(int, char *, char *, long);
+    void log(int, char *, char *, char *);
+    void log(int, char *, char *);
+    void log(int, char *, float, float=0);
+    void log(int, char *);
+};
+
+extern gsError *errors;
+
+
+class gsNetPlayer
+{
+  gsPlayer   *player;                              // temporary player class
+  bool       network;                              // this is a non-local network player
+  const char       *name;                             // player name
+  const char       *ship_file;                        // ship file
+  const char       *shipimg_file;                     // ship img file
+  PlayerID   net_id;                               // RakNet network id
+  bool       ready;                                // player is ready (menu)
+  bool       in_game;
+};
+
+class gsChat
+{
+    void add(char *msg, char *player, int color=0);// add a message to the array
+    char *get_message(int num);                    // return message no num
+    char *get_player(int num);                     // return player name who posted message num
+    char *get_message_with_playername(int num, char *buf);    // return message with preceding player name
+    int  get_color(int num);                       // get color of message num
+    int  get_count()                               { return count; }
+
+    void clear();                                  // clear all messages
+};
+
+class gsNetwork
+{
+    gsChat       chat;                             // chat message handler
+
+    // get/set/is
+    int is_server()                                { if (mode == NET_SERVER) return 1; else return 0; }
+    int is_client()                                { if (mode == NET_CLIENT) return 1; else return 0; }
+
+    gsNetPlayer *get_netplayer(int n);
+    gsNetPlayer *get_netplayer_by_id(PlayerID id);
+    int get_netplayers()                           { return netplayers; }
+};
+
+extern gsNetwork *net;
+
+
+// SOUNDS
+
+enum GS_SOUNDS {
+  SOUND_MENU_CHANGE,
+  SOUND_MENU_SELECT,
+  SOUND_MENU_CHANGEBAR,
+  SOUND_MENU_NONO,
+  SOUND_MENU_KEYPRESSED,
+  SOUND_MENU_SHOOT,
+  SOUND_MENU_DEAD,
+
+  SOUND_EXTRA_TAKEN,
+  SOUND_CARGO_TAKEN,
+  SOUND_CARGO_RETURNED,
+  SOUND_DO_SWITCH,
+  SOUND_BUMP_WALL,
+  SOUND_SHIELD_HIT,
+  SOUND_HULL_HIT,
+  SOUND_WALL_HIT,
+  SOUND_SHIP_HIT,
+  SOUND_SHOOT_EMPTY,
+  SOUND_SHOOT_SINGLE,
+  SOUND_SHOOT_DOUBLE,
+  SOUND_SHOOT_BOMB,
+  SOUND_SHOOT_BIGBOMB,
+  SOUND_SHOOT_ROCKET,
+  SOUND_SHOOT_FREEZER,
+  SOUND_SHOOT_SHRINKER,
+  SOUND_SHOOT_PROBE,
+  SOUND_SHOOT_MINE,
+  SOUND_SHOOT_GAS,
+  SOUND_SHOOT_BUMPER,
+  SOUND_SHOOT_SHOTGUN,
+  SOUND_SHOOT_ACID,
+  SOUND_BEAM_SHIP,
+  SOUND_BEAM_BULLET,
+
+  SOUND_EXPL_SMALL1,
+  SOUND_EXPL_SMALL2,
+  SOUND_EXPL_MEDIUM1,
+  SOUND_EXPL_MEDIUM2,
+  SOUND_EXPL_MEDIUM3,
+  SOUND_EXPL_BIG1
+};
+
+class gsSound
+{
+  public:
+    int get_play_music()                           { return status_play_music; }
+    int get_play_sound()                           { return status_play_sound; }
+
+    void play_sound(int sound, int x=0, int y=0, int v=100, int f=1000);
+    int load_sound(char *f);
+    void replace_sound(int what, int with);
+    
+    void load_music(char *f);
+    void start_music();
+    void stop_music();
+    void destroy_music();
+    void set_music_volume(int n);
+    int get_music_volume();
+};
+
+extern gsSound *gsound;
+
+// WAYPOINTS
+
+class Waypoint {
+  public:
+    Waypoint(int x, int y, int speed=1, int pause=0);
+    void set_next(Waypoint *n)                   { next = n; }
+    Waypoint *get_next()                         { return next; }
+
+    int get_x()                                  { return x; }
+    int get_y()                                  { return y; }
+    float get_speed()                              { return speed; }
+    int get_pause();
+    int get_curpause();
+    void set_x(int n)                            { x = n; }
+    void set_y(int n)                            { y = n; }
+    void set_speed(float n)                        { speed = n; }
+    void set_pause(int n);
+    void set_curpause(int n);
+};
+
+class gsWaypoint
+{
+  public:
+    int get_count()                              { return count; }
+    int get_mode()                               { return mode; }
+    void set_mode(int n)                         { mode = n; }
+    int get_current()                            { return current; }
+    void set_current(int n)                      { current = n; }
+
+    Waypoint *add(int x, int y, float spd=1, int pause=0);
+    void remove(Waypoint *);
+    void remove_all();
+    Waypoint *get(int n);
+};
+
+
+// ENEMIES
+
+enum DIRECTION
+{
+  D_LEFT,
+  D_RIGHT,
+  D_UP,
+  D_DOWN
+};
+
+enum ENEMY_TYPE
+{
+  E_NONE,
+  E_USER,
+  E_TOWER_SINGLE,
+  E_TOWER_FLAK,
+  E_TOWER_THREE,
+  E_TOWER_PULSE,
+  E_TANK_MOBILETOWER,
+  E_TANK_FLYINGTOWER,
+  E_SHIP_BLUE1,
+  E_SHIP_BLUE2,
+  E_SHIP_BIGRED,
+  E_SHIP_PROBE1,
+  E_SHIP_PROBE2,
+  E_SHIP_RELASH,
+  E_SHIP_BIGBOSS
+};
+
+class Enemy
+{
+  public:
+    gsWaypoint  *wp;
+    
+    // get / set
+    Enemy       *get_prev()                        { return prev; }
+    Enemy       *get_next()                        { return next; }
+    Enemy       *get_connected();
+    void        set_connected(Enemy *);
+    void        set_prev(Enemy *n)                 { prev = n; }
+    void        set_next(Enemy *n)                 { next = n; }
+    void        set_type(int n)                    { type = n; }
+    int         get_type()                         { return type; }
+    int         get_nr()                           { return nr; }
+    void        set_nr(int n);
+    unsigned long get_sig();
+    void        set_sig(unsigned long n);
+    void        set_maxframe(int n)                { maxframe = n; }
+    int         get_maxframe()                     { return maxframe; }
+    void        set_maxframet(int n)               { maxframet = n; }
+    int         get_maxframet()                    { return maxframet; }
+    void        set_dispframe(int n)               { dispframe = n; }
+    int         get_dispframe()                    { return dispframe; }
+    void        set_curframe(int n)                { curframe = n; }
+    int         get_curframe()                     { return curframe; }
+    void        set_curframet(int n)               { curframet = n; }
+    int         get_curframet()                    { return curframet; }
+    void        set_startframe(int n)              { startframe = n; }
+    int         get_startframe()                   { return startframe; }
+    float       get_x()                            { return x; }
+    float       get_y()                            { return y; }
+    void        set_x(int n)                       { x = n; }
+    void        set_y(int n)                       { y = n; }
+    int         get_width()                        { return w; }
+    int         get_height()                       { return h; }
+    void        set_bound_x(int n)                 { bound_x = n; }
+    void        set_bound_y(int n)                 { bound_y = n; }
+    void        set_bound_w(int n)                 { bound_w = n; }
+    void        set_bound_h(int n)                 { bound_h = n; }
+    int         get_xradius();
+    void        set_xradius(int n);
+    int         get_yradius();
+    void        set_yradius(int n);
+    float       get_xspd()                         { return xspd; }
+    float       get_yspd()                         { return yspd; }
+    void        set_xspd(float n)                  { xspd = n; }
+    void        set_yspd(float n)                  { yspd = n; }
+    float       get_hit()                          { return hit; }
+    int         get_maxhit()                       { return maxhit; }
+    void        set_hit(float n)                     { hit = n; }
+    void        set_maxhit(int n)                  { maxhit = n; }
+    int         get_onehit()                       { return onehit; }
+    int         get_hitby()                        { return hitby; }
+    float       get_hitby_sx()                     { return hitby_sx; }
+    float       get_hitby_sy()                     { return hitby_sy; }
+    int         get_user()                         { return user; }
+    void        set_user(int n)                    { user = n; }
+    void        set_bullet_speed(float n);
+    float       get_bullet_speed();
+    void        set_bullet_speed_x(float n);
+    float       get_bullet_speed_x();
+    void        set_bullet_speed_y(float n);
+    float       get_bullet_speed_y();
+    void        set_bullet_freq(int n);
+    float       get_bullet_freq();
+    void        set_bullet_strength(float n);
+    float       get_bullet_strength();
+    void        set_bullet_hull_hitp(float n)      { bullet_hitp_hull = n; }
+    float         get_bullet_hull_hitp()             { return bullet_hitp_hull; }
+    void        set_bullet_shield_hitp(float n)    { bullet_hitp_shield = n; }
+    float         get_bullet_shield_hitp()           { return bullet_hitp_shield; }
+    void        set_bullet_type(int n);
+    int         get_bullet_type();
+    int         get_active()                       { return active; }
+    void        set_active(int n)                  { active = n; }
+    int         get_teleport_time()                { return teleport_time; }
+    void        set_teleport_time(int n)           { teleport_time = n; }
+    void        set_invisible(int n)               { invisible = n; }
+    int         get_invisible()                    { return invisible; }
+    int         get_freezed()                      { return freezed; }
+    int         get_shrinked()                     { return shrinked; }
+    void        set_freezed(int n);
+    void        set_shrinked(int n);
+    void        set_maxshrink(float n);
+    float       get_maxshrink();
+    void        set_dont_continue(int n);
+    int         get_do_hooks();
+    void        set_do_hooks(int n);        
+    RLE_SPRITE* get_current_sprite();
+    void        remove();
+    int         get_remove();
+
+    void        set_user_int(int n, int d);
+    void        set_user_float(int n, float d);
+    int         get_user_int(int n);
+    float       get_user_float(int n);
+
+    void        find_path(int tx, int ty);
+
+    // normal functions
+    virtual void hit(int from, float n, int x=0, int y=0, float fxspd=0, float fyspd=0, int weapon=-1);
+    virtual void shoot();
+
+    // abstract functions
+    virtual void move() = 0;
+    virtual void update() = 0;
+    virtual void draw(class gsMap *);
+    virtual void dead() = 0;
+};
+
+class gsEnemy
+{
+  public:
+    int get_count()                                { return count; }
+    Enemy *get_first_enemy()                       { return first_enemy; }
+    Enemy *get_enemy(int n);
+
+    Enemy *add(int num, /*ENYM_TYPE*/int t, int px, int py, unsigned long psig=-1, float user1=0, float user2=0, float user3=0, float user4=0, float user5=0, float user6=0);
+    void remove_for_script @ remove(Enemy *);
+};
+
+extern gsEnemy *enemies;
+
+
+// Frames / Image Handler
+
+enum GSFR_SPRITE_DATA {
+  DATA_RLE,
+  DATA_BITMAP
+};
+
+class Frame
+{
+    int get_kill()                                   { return kill; }
+    int get_w()                                      { return w; }
+    int get_h()                                      { return h; }
+    int get_disptime()                               { return disptime; }
+    void set_disptime(int n)                         { disptime = n; }
+    int get_type()                                   { return type; }
+    void *get_data()                                 { return data; }
+};
+
+class Image
+{
+    int get_framecount()                             { return framecount; }
+    Image *get_prev()                                { return prev; }
+    Image *get_next()                                { return next; }
+    void  set_next(Image *n)                         { next = n; }
+    void  set_prev(Image *n)                         { prev = n; }
+    unsigned long get_sig();
+
+    // functions
+//    void add_frames_from_imagefile(char *filename, int type, int t=0, int dont_touch_filename=0); // loads frame sequence from a file
+    RLE_SPRITE *get_rle_frame(int num);              // return frame with num
+};
+
+class gsImage
+{
+    Image *get_first()                               { return first_image; }
+    Image *get_last()                                { return last_image; }
+    int   get_count()                                { return count; }
+
+    // functions
+    Image *add();
+    int   load(char *, int rotate=0);
+    void  remove(Image *);
+    void  remove(int);
+    Image *get_image(int num);
+};
+
+extern gsImage *images;
+
+
+class gsPanel
+{
+  class gsOsd *osd;
+  
+  void set_debug(int n);
+  int  get_debug();
+  void set_active(int n);
+  int  get_active();
+  void set_radar_zoom(int n);
+  int  get_radar_zoom();
+  
+  void update_all();
+  void update_lifes();
+  void update_shields();
+  void update_weapons();
+  void update_bullets();
+  void update_fuel();
+  void update_frags();
+  void update_radar();
+  void update_extra_energy();
+};
+
+extern gsPanel *gpanel[2];

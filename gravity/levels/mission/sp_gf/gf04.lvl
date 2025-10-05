@@ -1,0 +1,40 @@
+-- Level-Datei
+-- Remake von Gravity Force Level 4
+-- von Frapela
+-- 11.08.2003
+
+author	         = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "gf04.mar"
+initscript       = "gf04.ini"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Gravity Force: Level 4"
+  description = "GF Level 4, Fracht einsammeln! (Schwierigkeit: Mittel) Umsetzung fuer GS von Frapela"
+  missiondesc = "[center][f:impact14][c:yellow]LEVEL 4 "..
+                "[center][f:impact14][c:white]SCHWERE LADUNG "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]FLIEGEN SIE DURCH DEN TELEPORTER, UM INS ZIELGEBIET ZU GELANGEN. "..
+                "[w:50][br][br][br][br][br]JEDES MAL, WENN SIE EIN FRACHT-PAKET EINLADEN, WIRD EINE WEITERE TUER GEOFFNET. WENN SIE ALLE PAKETE EINGESAMMELT HABEN, DANN KEHREN SIE ZUR BASIS ZURUECK. "..
+                "[w:50][br][br][br][br][center][c:yellow]WENN SIE FRACHT VERLIEREN, SCHEITERT IHRE MISSION! "
+elseif (LANGUAGE == LANG_EN) then
+  name        = "Gravity Force: Level 4"
+  description = "GF Level 4, Collect cargo packets! (Difficulty: Medium) Remake for GS by Frapela"
+  missiondesc = "[f:impact14][c:yellow]LEVEL 4    [c:white]HEAVY LOAD "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]FLY THROUGH THE TELEPORTER TO START YOUR JOURNEY. "..
+                "[w:50][br][br][br][br][br]EVERY TIME YOU TAKE UP A CARGO POD, A DOOR WILL BE OPENED. IF YOUR CARGO HOLD IS FULL THEN RETURN TO YOUR HOMEBASE. "..
+                "[w:50][br][br][br][br][center][c:yellow]IF YOU LOSE ANY CARGO, YOUR MISSION FAILS! "
+elseif (LANGUAGE == LANG_CR) then
+  name        = "Gravity Force: Level 4"
+  description = "GF Level 4, Collect cargo packets! (Difficulty: Medium) Remake for GS by Frapela"
+  missiondesc = "[f:impact14][c:yellow]LEVEL 4   [c:white]TAZKE NAKLADANIE "..
+                "[w:50][f:impact10][br][br][br][br][br][c:orange]PRELET CEZ TELEPORT A ZACNI SVOJU MISIU. "..
+                "[w:50][br][br][br][br][br]ZAKAZDYM, KED ZOBERIES NAKLAD NAKLADOVE DEVERE SA OTVORIA. AK BUDES MAT VSETOK NAKLADøVRAT SA NA ZAKLADNU. "..
+                "[w:50][br][br][br][br][center][c:yellow]AK STRATIS HOCIAKY NAKLAD, MISIA BUDE NEUSPESNA! "
+end

@@ -1,0 +1,27 @@
+-- Symmetric
+-- control file
+-- map by: Tobias Gaertner
+
+author             = "Tobias Gaertner"
+min_version        = 0.6
+max_players        = 6
+style              = STONE
+
+map                = "gfdm01.mar"
+initscript         = "def00.ini"
+script             = "def00.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_EN) then
+  name             = "Symmetric"
+  description      = "Symmetric dogfight map"
+else
+  name             = "Symmetric"
+  description      = "Symmetrische Dogfight-Karte"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+hunter_hunted      = 1
+  
+activate_extra_str = ""

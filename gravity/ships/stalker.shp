@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "stalker.tga"
+name                 = "Stalker"
+description          = "Der MicroCorp Stalker ist eine Frei zugängliche Version des MicroCorp Dargon."
+
+hull                 = 10
+shield               = 10
+radar_zoom           = 20
+weapon_slots         = 5
+
+weapon_storage       = 42
+weapon_recharge      = 21
+
+shield_recharge      = 21
+hull_repair          = 21
+
+turn_speed           = 46
+maximum_speed        = 34
+acceleration         = 35
+
+fuel_consumption     = 55
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_BOMB
+weapon_slot_5        = W_FREEZER
+weapon_slot_6        = W_NONE

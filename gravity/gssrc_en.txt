@@ -1,0 +1,185 @@
+Gravity Strike -- Sourcecode
+============================
+
+
+Introduction
+------------
+
+This is the complete source code to Gravity Strike. It can be compiled
+under DOS (DJGPP), Windows (e.g. Visual C++) and Linux (gcc/g++).
+Because GS is using some additional libraries, these must also be
+installed on your machine. This text shows you how to do.
+
+The explanations are intended for Linux users because this is the only
+system no binaries are available for.
+
+
+Restrictions
+------------
+
+The file "gshiscor.cpp" is heavily stripped down. This is because you
+could easily cheat by changing the code contained in this file to 
+reach better scores and post them on the Internet Highscore tables.
+
+The highscore functions are not available when compiling GS from source.
+Source.
+
+
+"Open Source"
+-------------
+
+This source code is distributed as "oppen source". Everyone may create
+his own version of GS or use some parts of the code for own projects.
+
+But if you do, you should be fair enough to give me a credit somewhere
+in your code or your documentation.
+
+If you intend to create a slightly modified version of GS and distribute
+it as "your work": Don't do it. It's not funny, it's not fair. Better
+look at the code and learn how to write a game like this on your own.
+
+Thanks.
+
+
+
+Prerequisites
+-------------
+
+To compile GS you need the following libraries which are all available
+for free and can be compiled on all major operating systems:
+
+-  Allegro 4.x (www.allegro.cc)
+
+   Easy: Download TAR archive, untar into some directory, run "./configure",
+   compile with "make" and install with "make install" (as root).
+
+
+-  AllegTTF 2.0 (http://huizen.dds.nl/~deleveld/allegttf.htm)
+
+   Download TAR, unpack, compile and install with "make".
+
+
+-  JGMod
+
+   Download archive, unpack, then run "sh fixunix.sh" to convert files
+   to Unix format. Then run "make" and "make install".
+
+
+-  Libnet 0.10.10
+
+   Networking functions are not yet supported in Linux. Also I'll change  
+   the library with the next version of GS. But you need Libnet to compile
+   GS properly.
+
+   Download, unpack, then copy the file "linux.mak" from "/makfiles" to
+   the file "port.mak". Finally run "make" and "make install".
+
+
+-  Lua 5 with tolua 5 (www.lua.org)
+
+   Please use the archive you can download from gravity-strike.de. It
+   contains all needed files.
+
+   Unpack it and then do the following things:
+
+   1. Compile Lua with "make" and "make install".
+
+   2. Change dir to "tolua" and do "make" and "make install".
+
+
+
+Check, Check, Check
+-------------------
+
+If you did all of the above you should finde the following files on
+your machine:
+
+/usr/local/include:
+
+        allegro (directory)
+        allegttf.h
+        lauxlib.h
+        linalleg.h
+        luadebug.h
+        xalleg.h
+        allegro.h
+        jgmod.h
+        libnet.h
+        lua.h
+        lualib.h
+        tolua.h
+
+
+/usr/local/lib:
+
+        liballeg-4.0.2.so
+        liballeg.so.4.0 -> liballeg-4.0.2.so
+        liballeg.a
+        liballeg_unsharable.a
+        libalttf.a
+        libjgmod.so
+        liblua.a
+        liblualib.a
+        libnet.a
+        libtolua.a
+
+The Allegro libs may look different on your system. This is normal and
+depends on the way you compiled and installed this library.
+
+
+Finally: Compiling GS
+---------------------
+
+Your GS directory should look approximately like the following
+listing:
+
+/dat
+/doc
+/hiscores
+/levels
+/ships
+/src
+fixunix.sh
+
+The directory "src" and the file "fixunix.sh" are part of the
+Source archive. The other files are part of any other GS archive 
+you can download on the website.
+
+Now run "sh fixunix.sh" to convert all files to Unix format.
+
+Then change into the "src" directory and run "make". This should
+compile all files without errors and produce the file "gslnx" in
+the main GS directory.
+
+
+Starting GS
+-----------
+
+You get the best results when starting GS under X with Root rights.
+Then the fast DGA driver is used. If you start GS as normal user,
+it uses the XWindows driver which is veeeery sloooow.
+
+The best way for playing GS as normal user is to give the file
+root rights. Do the following as root:
+
+chmod 04755 gslnx
+chown root gslnx
+
+Then you can start GS as normal user.
+
+
+Problems?
+---------
+
+Linux support is not heavily tested by myself so there may be bugs
+or some problems I might not know about. So: If you find something
+unusual, then please drop me a mail.
+
+You can reach me at any time under:
+  
+ jh@gravity-strike.de
+
+
+
+Well then, have fun! :-)
+Jens Hassler

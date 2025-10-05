@@ -1,0 +1,247 @@
+...........................................................................
+= FAQ ==================> Gravity Strike, v0.9 <===========================
+
+
+Moeglicherweise im Kopf des Spielers auftauchende Fragen
+========================================================
+
+1. Wie funktioniert Capture the Flag?
+2. Wie funktioniert Hunter-Hunted?
+3. Warum kann ich einen Spieler nicht gleich nach dessen Wieder-Erscheinen
+   zerstoeren?
+4. Gibt es irgendwelche Zusatztasten?
+5. Gibt es Cheats?
+6. Die Tasten haken manchmal, woran liegt das?
+7. Was muss ich bei angeschlossenen Joysticks beachten?
+8. Wie geht das mit den Highscores?
+9. GS ist in manchen Levels ewig langsam!
+
+
+===========================================================================   
+   
+1. Wie funktioniert Capture the Flag?
+   ----------------------------------
+
+   Wenn CtF aktiviert wurde (sofern der Level dies zulaesst), dann lassen
+   sich durch das einfache Aufsammeln gegnerischer Flaggen ziemlich viele
+   Punkte scheffeln (um es mal grob zu sagen) :-).
+   
+   Genauer: Jeder Spieler hat eine Flagge. Und jeder Spieler kann jede
+   Flagge aufnehmen und woanders hin transportieren. Aber jeder Spieler kann
+   immer nur eine Flagge transportieren. Diese Flagge kann er jederzeit
+   ueber die "Extra"-Taste (in der Voreinstellung ENTER bzw. TAB) wieder
+   abwerfen.
+   
+   Die Aufgabe besteht nun darin, die Flagge des Gegners zu klauen und zur
+   eigenen Basis zu transportieren. Wenn man dies geschafft hat, passieren
+   folgende Dinge:
+   
+   a) die Flagge wird wieder an ihren Ursprungsort zurueckge"beamt"
+   b) der Spieler, dem die Flagge gehoert, wird zerstoert (womit sich
+      seine "Selbstmord"-Quote erhoeht)
+   c) der siegreiche Spieler (der die Flagge geklaut hat) erhaelt 500
+      Bonuspunkte.
+
+   Und ach ja nochmal: GS-CtF ist nicht vergleichbar mit CtF aus First
+   Person Shootern, da die eigene Flagge dort nicht transportiert werden
+   kann und zudem "zu Hause" sein muss, damit man gewinnt. Fuer Zweispieler-
+   Gefechte waere sowas meiner Ansicht nach sinnlos, ich denke dass es so
+   mehr Spass macht.
+         
+   Das duerfte wohl nicht allzu kompliziert sein. Viel Spass :-)
+
+   NEU in v0.8 - NETZWERKMODUS
+   
+   Vorerst gibt es kein Teamspiel, d.h. jeder Spieler hat einfach seine
+   Flagge, die ein anderer nicht bekommen sollte. In sp„teren Versionen
+   wird man auch in Teams gegeneinander antreten k”nnen.
+   
+===========================================================================      
+   
+2. Wie funktioniert 'Hunter-Hunted'?
+   ---------------------------------
+
+   Hunter-Hunted, kurz 'HH', ist ein Spielmodus, der wie CtF in vielen
+   Spielen existiert, z.B. in GTA.
+   
+   Beide Spieler haben eine bestimmte Zeitreserve, die in der oberen linken
+   Ecke anstatt der Standardzeit dargestellt wird. Diese Zeitreserve laesst
+   sich im Menue bei der "maximalen Zeit" veraendern. Wer 10 Minuten
+   spielen will, stellt diese Zeit also auf 5 Minuten (da jeweils nur die 
+   Zeit eines Spielers ablaeuft).
+   
+   Zuerst sind beide Spieler 'neutral'. Wenn dann jedoch einer vom anderen
+   getoetet wird, aendern sich die Rollen: Der Getoetete wird zum "Jaeger",
+   der andere zum "Gejagten". 
+   
+   Waehrend der Zeit, in der jemand "Jaeger" ist, verringert sich seine
+   Zeit. Und zwar so lange, bis der Jaeger den Gejagten abschiesst. Dann
+   vertauschen sich die Rollen: Der Jaeger wird zum Gejagten und umgekehrt.
+   
+   Der Jaeger muss daher versuchen, den Gejagten so schnell wie moeglich
+   zu finden und zu eliminieren. Denn wenn seine Zeit abgelaufen ist, hat
+   der Gejagte gewonnen (und erhaelt Bonuspunkte: Die ihm verbleibenden
+   Sekunden * 20).
+   
+   Um es dem Jaeger etwas einfacher zu machen, werden alle Waffen des
+   Gejagten bis auf seine Standardwaffe (Single Blaster - diese sollte man
+   also auf jeden Fall einpacken) deaktiviert.
+   
+   Zusaetzlich wird der Gejagte "illuminiert", d.h. es ist sofort klar,
+   wer Jaeger und Gejagter ist.
+
+   Viel Spass beim "am Leben bleiben" :-)
+
+   NEU in v0.8 - NETZWERKMODUS
+   
+   Ein Spieler ist jeweils der Gejagte, der von allen anderen Spielern
+   gejagt wird. Der Spieler, der den Gejagten abschiesst, wird selbst zum
+   Gejagten.
+   
+===========================================================================   
+
+3. Warum kann ich einen Spieler nicht gleich nach dessen Wieder-Erscheinen
+   zerstoeren?
+   ------------------------------------------------------------------------
+   
+   Die Spieler sind nach dem "Respawn" 3 Sekunden lang unverwundbar. Das
+   ist eine "Fairness"-Einstellung *g*.
+
+   
+===========================================================================         
+
+4. Gibt es irgendwelche Zusatztasten?
+   ----------------------------------
+   
+   Mit der Taste "0" laesst sich statt dem Panel des linken Spielers eine
+   Art "Debug-Panel" anzeigen, das u.a. die X/Y-Position des linken Spielers
+   zeigt sowie die momentan erreichte fps-Zahl (Bilder pro Sekunde, sollte
+   um die 60 herum sein).
+   
+   Mit F12 laesst sich ein Screenshot erstellen. Diese liegen dann als TGA
+   im Hauptverzeichnis des Spiels.
+
+   
+===========================================================================         
+
+4. Gibt es Cheats?
+   ---------------
+   
+   Keine offiziellen :o)
+   
+   Nein, es sind keine Cheats implementiert, weil dies ein Multiplayer-
+   Spiel ist und Cheats demzufolge sinnlos und unfair waeren.
+   
+   Wer sich jedoch, nach Absprache mit seinem Spielpartner, ein paar Vor-
+   oder Nachteile verschaffen will, kann z.B. die "global.ini" ein wenig
+   veraendern. Ein Zeile wie...
+   
+   player[1]:set_fuel_dec(0)
+   
+   ...fuehrt im Spiel zum Beispiel dazu, dass Spieler 1 (der linke) ueber
+   unendliche Treibstoffreserven verfuegt. Das kann man natuerlich auch 
+   fuer beide Spieler machen, wenn man keine Lust hat, immer auf den bloeden
+   Sprit zu schauen.
+   
+   Auf diese Weise lassen sich auch die meisten anderen Werte veraendern,
+   z.B. die Aufladung der Schilde, der Waffen etc.
+
+   Wer Fragen dazu hat und aus script.txt nicht schlau wird, kann mir gerne
+   schreiben, ich beisse nicht :-)
+   
+===========================================================================         
+
+6. Die Tasten haken manchmal, woran liegt das?
+   -------------------------------------------
+
+   Tastaturen haben aufgrund ihrer Bauweise in Form einer Matrix ein
+   Problem, wenn mehrere Tasten gleichzeitig betaetigt werden.
+   
+   In Spielen kann das dann dazu fuehren, dass ab und zu eine Taste zu
+   "haengen" scheint oder gar nicht reagiert. Das ist natuerlich bei
+   Zweispielermatches ab und zu problematisch.
+   
+   Manche Tastaturen verkraften mehr gedrueckte Tasten als andere, ausser-
+   dem kommt es darauf an, welche Tasten jeweils gleichzeitig betaetigt
+   werden. Meistens liegt das Maximum bei 3 bis 5 Tasten.
+   
+   Die einzige Abhilfe, wenn dieses Problem akut wird und z.B. Aenderungen
+   an der Tastenkonfig nichts nuetzen: Ein Spieler muss ein Gamepad 
+   benutzen.
+
+   Oder man wartet auf die Netzwerkversion :o)
+      
+===========================================================================         
+
+7. Was muss ich bei angeschlossenen Joysticks beachten?
+   ----------------------------------------------------
+   
+   Gravity Strike unterstuetzt in jeder Version theoretisch Joysticks und
+   Joypads mit 4 Tasten. Die Windows-Version unterstuetzt alle in der 
+   Systemsteuerung korrekt installierten Sticks mit bis zu 6 Tasten.
+
+   Maximal werden 2 Joysticks unterstuetzt.
+   
+   Zu beachten ist unbedingt, dass ALLE angeschlossenen Sticks unter
+   Windows korrekt kalibriert sind! Ansonsten kann es zu Problemen bei
+   der Tastenzuweisung in GS kommen.
+   
+   Bei einem Test gab es keine Probleme mit einem ueber Gameport ange-
+   schlossenen Gravis Gamepad sowie einem gleichzeitig ueber USB 
+   installierten Logitech Wingman Digital 3D (auch wenn das Spiel mit
+   dem letzteren natrlich unspielbar ist).
+
+===========================================================================         
+
+8. Wie geht das mit den Highscores?
+   --------------------------------
+   
+   Seit Version 0.85 sind grundlegende Highscore-Funktionen fuer die
+   Einspieler-Levels (einschl. Renn-Karten) implementiert.
+   
+   Dabei wird eine Textdatei mit dem aktuellen Highscore im /hiscores-
+   Unterverzeichnis erstellt. Diese Datei wird nur upgedatet, wenn der 
+   Spielername anders ist als der gespeicherte oder die eigene Punktzahl 
+   besser ist als die letzte. Somit enthalten diese Highscore-Dateien 
+   immer den jeweils besten Wert.
+   Gleichzeitig mit dem Speichern in einer Textdatei landen diese sechs
+   Zeilen auch noch in der Windows-Zwischenablage. Wenn das Probleme machen
+   sollte, kann man diese Clipboard-Funktion mit der Option "/noclip" beim
+   Programmstart deaktivieren.
+   
+   Auf gravity-strike.de gibt es die Sektion "Highscores", wo man diese
+   Zeilen eintragen kann. Die erreichte Punktzahl wird dann in die Tabellen
+   mit aufgenommen.
+   
+   Pruefsummen beugen einer mutwilligen Veraenderung der Highscore- und auch
+   der Leveldateien vor. Im letzteren Fall erhaelt man beim Spielstart eine
+   entsprechende Meldung. Veraenderte Levels erzeugen keine Highscore-
+   Dateien.
+
+   
+===========================================================================         
+
+8. GS ist in manchen Levels ewig langsam!
+   --------------------------------------
+   
+   GS enthaelt ein Feature, das es erlaubt, eigene Levels mit einer
+   Scriptsprache zu programmieren. Die Ausfuehrung von Scripten ist
+   (verglichen mit "echtem", also compilierten Programmcode) sehr
+   langsam.
+   
+   Wenn nun also ein Level sehr viel Gebrauch von gescripteten Aktionen
+   macht und zudem noch eine Menge Gegner enthaelt (wie z.B. die Levels
+   "Tower" und "Tower 2"), kann dies selbst schnelle Rechner in die Knie
+   zwingen.
+   
+   Abhilfe kann man schaffen, indem man in der Datei dat/gs.cfg die
+   Variable "slow_computer" auf "1" setzt. Dann werden einige Effekte
+   ausgeschaltet. Zusaetzlich kann man noch die Pixelzahl in den Optionen
+   verringern.
+   
+   
+===========================================================================         
+
+Jens Hassler
+jh@gravity-strike.de
+www.gravity-strike.de

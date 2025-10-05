@@ -1,0 +1,37 @@
+-- Mars Mission V
+-- cr8ed by Simon
+
+author		   = "Simon"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "green.mar"
+initscript         = "mars5.ini"
+script             = "mars5.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Mars Mission V"
+  description      = "Koennen Sie der martianischen Regierung Ihre Fluggkuenste beweisen? Nehmen Sie an dieser Elite-Fortbildung teil!"
+
+missiondesc = "[w:10][c:white][u]Unbekannter Planet, Green Arena[/u][br][w:60][br][c:yellow][s:5]" ..
+"Herzlich Willkommen bei unserer Flug- und Kampf-Fortbildung, organisiert vom martianischen Regierungszentrum in [c:white]Zidia City[c:yellow]. Zur Sicherheit finden unsere ''Kriegsspiele'' immer auf unbewohnten Planeten statt.[w:60][br][c:orange]Heute haben wir fuenf Angriffswellen fuer Sie vorbereitet.[c:yellow][w:30] Schon im Vorraus viel Spass damit![w:30] Ein paar Tipps noch:[w:60][br]Nachdem Sie eine Angriffswelle ueberstanden haben, sollten Sie in die Naehe unserer Basis zurueckkehren, um nicht von der naechsten Welle zerstoert zu werden.[w:30] Wenn alle Wellen geschafft sind, landen Sie bitte wieder![w:60][c:green] :-)"
+else
+
+
+
+  name             = "Mars Mission V"
+  description      = "Show the martian government your skills in this battle arena!"
+  missiondesc      = "[w:10][c:white][u]Unknown Planet, Green Arena[/u][br][w:60][br][c:yellow][s:5]Welcome to our flight and combat training, organized by the Martian government center in [c:white]Zidia City[c:yellow]. For safety, we run these ''war games'' on non-colonisized planets.[w:60][br][c:orange]Today there are five attack waves waiting for you.[c:yellow][w:30] Have a lot of fun![w:30] Okay, a tip:[w:60][br]When you make it through an attack wave, go back to your base - otherwise you can be killed by the next wave![w:30] And: If you survive the last wave, please land here![w:60][c:green] :-)"
+end
+
+onescreen_map      = 1
+onescreen_map_x     = 16
+onescreen_map_y     = 36
+
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

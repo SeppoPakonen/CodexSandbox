@@ -1,0 +1,31 @@
+-- Mars Mission II
+-- cr8ed by Simon
+
+author		   = "Simon"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "mars.mar"
+initscript         = "mars2.ini"
+script             = ""
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Mars Mission II"
+  description      = "Nachdem der 'Todesraum' kolonisiert wurde, haben Rebellen das Teschtgebiet erneut unsicher gemacht."
+  missiondesc      = "[w:10][c:white][u]Mars, Zidia City[/u][br][w:60][br]" ..
+           "[s:5][c:yellow]Im jetzt bewohnbaren [c:white]Todesraum[c:yellow] haben wir vor Kurzem die Stadt [c:white]Zidia City[c:yellow] gegruendet. Die Weltraum-Rebellen haben allerdings den Teleporter zur Erde blockiert, so dass die Stadt von der Aussenwelt abgeschnitten ist. Schiffe, die unsere Stadt verlassen wollen, werden von ihnen ins schwer bewachte [c:white]Teschtgebiet[c:yellow] umgeleitet. [w:60][br]Ihre Mission ist es nun, einen gewissen [c:white]Mr. Hassler[c:yellow] zu retten, der irgendwo dort draussen gefangen gehalten wird. Er ist der einzige, der den [c:white]Zidia City[c:yellow]-Teleporter wieder funktionstuechtig scripten kann.[w:60][br][c:green]:-)"
+else                 
+  name             = "Mars Mission II"
+  description      = "After the 'Death Chamber' was colonized, rebels gained control over Tescht Area again."
+  missiondesc      = "[w:10][c:white][u]Mars, Zidia City[/u][br][w:60][br]" ..
+           "[s:5][c:yellow]As you made living possible in the [c:white]Death Chamber[c:yellow] during your last mission, we founded [c:white]Zidia City[c:yellow] there. But the space rebels recently blocked our teleporter to Earth, so the city's apart from the outer world. Everyone who tries to leave is brought to the well-defended [c:white]Tescht Area[c:yellow].[w:60][br]Your Quest is to rescue [c:white]Mr. Hassler[c:yellow] as he got trapped somewhere out here. He's the only guy who can re-script the blocked teleporter of [c:white]Zidia City[c:yellow].[w:60][c:green] :-)"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

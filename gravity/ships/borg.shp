@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "borg.tga"
+name                 = "Borg"
+description          = "Wir sind die Borg. Widerstand ist zwecklos!"
+
+hull                 = 15
+shield               = 13
+radar_zoom           = 3
+weapon_slots         = 5
+
+weapon_storage       = 27
+weapon_recharge      = 34
+
+shield_recharge      = 36
+hull_repair          = 47
+
+turn_speed           = 31
+maximum_speed        = 27
+acceleration         = 29
+
+fuel_consumption     = 47
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_FREEZER
+weapon_slot_5        = W_SHRINKER
+weapon_slot_6        = W_NONE
+

@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "battle.tga"
+name                 = "Ressistance Battlecrusier"
+description          = "A long-range attack ship. The same race as the Defense Vessel."
+
+hull                 = 14
+shield               = 14
+radar_zoom           = 0
+weapon_slots         = 4
+
+weapon_storage       = 11
+weapon_recharge      = 63
+
+shield_recharge      = 48
+hull_repair          = 49
+
+turn_speed           = 23
+maximum_speed        = 21
+acceleration         = 14
+
+fuel_consumption     = 53
+
+extras               = E_NONE
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_BOMB
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE
+

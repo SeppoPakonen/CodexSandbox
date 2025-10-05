@@ -1,0 +1,26 @@
+-- Arena1
+-- control file
+-- map by: Rudolf
+
+author	           = "Rudolf"
+style              = GRASS
+
+map                = "arena2.mar"
+initscript         = "arena2.ini"
+script             = "arena2.sc"
+min_version        = 0.6
+max_players        = 4
+global_script      = 1
+
+if (LANGUAGE == LANG_EN) then
+  name             = "Arena2"
+  description      = "A big Arena map"
+else
+  name             = "Arena2"
+  description      = "Big Arena Map"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+activate_extra_str = ""
+hunter_hunted      = 1

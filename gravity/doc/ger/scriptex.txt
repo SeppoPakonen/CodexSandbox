@@ -1,0 +1,161 @@
+...........................................................................
+= GS-Script ============> Gravity Strike, v0.88 <==========================
+
+
+Beispiele fuer typische GS-Scripte
+==================================
+
+0. Einfuehrung
+1. "Wenn Schalter gedrueckt, zerstoere Spieler x"
+2. Balken mit verbleibender Zeit am oberen Bildschirmrand
+
+
+0. Einfuehrung
+--------------
+
+Dieser Text beschreibt einige (einfache) Scripte im Detail, die so oder 
+in abgewandelter Form in einem wirklichen GS-Level zum Einsatz kommen 
+koennten.
+
+Die Scripte sind getestet und sollten so funktionieren. Jede Aufgabe ist
+aufgeteilt in die vier Bereiche...
+
+  Aufgabe
+  Wissenswertes
+  INIT-Script
+  LEVEL-Script
+  
+Wobei die zwei letzteren Bereiche 'echten' Code mit Kommentaren (eingeleitet
+durch "--") enthalten.
+
+Fuer Fragen: jh@gravity-strike.de
+Fuer Levels: www.gravity-strike.de
+
+Viel Spass!
+Jens Hassler
+
+
+=========================================================================
+1. "Wenn Schalter gedrueckt, zerstoere Spieler x"
+=========================================================================
+
+Aufgabe
+~~~~~~~
+Wenn ein Spieler einen Schalter aktiviert, soll der jeweils andere Spieler
+zerstoert werden.
+
+
+Wissenswertes
+~~~~~~~~~~~~~
+Die Schalter-Objekte OBJ_SWITCHL, OBJ_SWITCHR, OBJ_SWITCHU und OBJ_SWITCHD 
+koennen jeweils zwei Zustaende/Bilder/Frames annehmen: 0 oder 1. Das jeweils 
+sichtbare Frame laesst sich ueber die Methode "get_dispframe()" abfragen.
+
+Um herauszufinden, wer den Schalter 'beschossen' hat, rufen wir bei einer
+Zustandsaenderung die Methode "get_hitby()" auf, die die Signatur des 
+Spielers zurueckgibt, der zuletzt getroffen hat. Um aus dieser Signatur
+die Nummer des Spielers im player-Array herauszufinden, wird die Funktion
+get_player_nr_by_sig(sig) aufgerufen.
+
+ACHTUNG: Spieler-Nummern, die von Funktionen zurueckgegeben werden (wie
+get_hitby()) beginnen bei "0". Das Spieler-Array selbst beginnt in Lua
+jedoch bei "1"! Das bedeutet, dass Spieler "0" in Lua Spieler "1" ist.
+
+
+INIT-Script
+~~~~~~~~~~~
+-- zuerst erstellen wir den Schalter, geben ihm die ID-Nummer 10
+objects:add( 10, OBJ_SWITCHD, 320, 200 )
+
+-- nun definieren wir ein globales Objekt, das den Schalter beschreibt
+schalter = objects:get_object(10)
+
+-- um den letzten Zustand des Schalters zu speichern (um zu erkennen,
+-- ob sich der Zustand geaendert hat), definieren wir eine weitere globale
+-- Variable und weisen ihr das momentane Frame des Schalters zu
+letzter_zustand = schalter:get_dispframe()
+
+
+LEVEL-Script
+~~~~~~~~~~~~
+-- wenn dispframe ungleich letzter_zustand, dann ist was passiert...
+if schalter:get_dispframe() ~= letzter_zustand then
+
+  -- Hier wird playerhit mit der Signatur des Spielers gefuellt, der
+  -- getroffen hat. Diese Sig wird danach in die Spielernummer umgewandelt
+  playerhit = schalter:get_hitby()
+  playerhit = get_player_nr_by_sig(playerhit)
+
+  -- wenn Spieler 1 (hier: 0) getroffen hat, zerstoere Spieler 2
+  -- (aber nur, wenn Spieler nicht schon tot ist)
+  if playerhit == 0 then
+    if (player[2]:get_dead() == 0) then player[2]:set_dead() end
+
+  -- ansonsten: zerstoere Spieler 1 (wenn nicht schon tot)
+  else
+    if (player[1]:get_dead() == 0) then player[1]:set_dead() end
+  end
+
+  -- nun setzen wir letzter_zustand auf den momentanen zustand, sonst
+  -- wuerde der zerstoerte Spieler immer wieder zerstoert werden :-)
+  letzter_zustand = schalter:get_dispframe()
+
+end
+
+
+=========================================================================
+2. Balken mit verbleibender Spielzeit am oberen Bildschirmrand
+=========================================================================
+
+Aufgabe
+~~~~~~~
+Am oberen Bildschirmrand soll ein Balken angezeigt werden, der sich
+langsam fuellt. Die Spielzeit ist vorbei, wenn der Balken "voll" ist.
+
+
+Wissenswertes
+~~~~~~~~~~~~~
+Hierzu bedienen wir uns dem OSD-Objekt der Spielkarte (playmap[1].osd).
+Auf diesem koennen wir ohne Probleme unseren Balken zeichnen.
+
+Die maximale Spielzeit in Sekunden steht in globals.max_time, die momentane
+Spielzeit steht in globals.game_time. globals.max_time multiplizieren wir
+mit 60, um aus den Sekunden die Game-Ticks zu berechnen.
+
+Dieses Beispiel soll nur fuer Spielkarte 1 gelten (also die linke). Es kann
+ohne weiteres auch fuer die andere Karte benutzt werden.
+
+
+INIT-Script
+~~~~~~~~~~~
+-- zuerst erstellen wir ein entsprechend grosses OSD-Objekt mit Screen-
+-- Koordinaten om oberen Bildschirmrand und weisen es der Variablen
+-- "myosd" zu. Das OSD steht hier bei den Koordinaten 10/10, hat die
+-- Laenge von 202 Pixeln und eine Hoehe von 12 Pixeln.
+myosd = playmap[1].osd:add( 1, 10, 10, 202, 12, OSDBIT_SCREEN )
+
+-- nun zeichnen wir ein weisses Rechteck um den Zeichenbereich herum
+myosd:draw_rectangle()
+
+-- jetzt die Funktion, die wir vom Level-Script aus aufrufen werden.
+-- Sie bringt den Balken auf den neuesten Stand, fuellt ihn langsam mit
+-- gelber Farbe.
+function update_osd()
+  -- Der Wert "t" ist die Breite des Balkens geteilt durch die maximale
+  -- Spielzeit in Game-Ticks (Sekunden*60). Der Balken wird immer um den
+  -- Wert "t" erweitert.
+  local t = (myosd:get_w()-3) / (globals.max_time*60)
+  
+  -- Hiermit wird nun ein mit der Farbe gelb gefuelltes Rechteck gezeichnet,
+  -- und zwar von der Position t*Spielzeit+1 bis t*Spielzeit+t+1. Die Hoehe
+  -- ergibt sich aus der Hoehe des OSDs minus 2.
+  myosd:draw_filled_rectangle(globals.col_yellow,
+                              t * globals.game_time+1, 1,
+                              t * globals.game_time+t+1, myosd:get_h()-2)
+end
+
+
+LEVEL-Script
+~~~~~~~~~~~~
+-- einfach nur ein Aufruf unserer Funktion...
+update_osd()

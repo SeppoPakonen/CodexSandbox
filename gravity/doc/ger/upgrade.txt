@@ -1,0 +1,111 @@
+...........................................................................
+= Upgrade-Info ==========> Gravity Strike, v0.94 <=========================
+
+
+Upgrade-Informationen fuer Levelprogrammierer
+=============================================
+
+v0.93 -> v0.94
+ o zusaetzliche Waypoint-Funktion "set_mode()", mit der die Art der 
+   Abarbeitung der Waypoints veraendert werden kann.
+
+ o zusaetzliche Objekt/Gegner-Funktion "find_path(targetx, targety)".
+   Diese findet selbst auf einer komplexen Karte automatisch den 
+   kuerzesten Weg zu den angegebenen Zielkoordinaten und setzt Waypoints,
+   um dorthin zu gelangen.
+
+ o Die Enemy-, Object- und Bullet-Objekte unterstuetzen nun jeweils
+   20 frei definierbare User-Werte (Integer und Float). Hierin koennen
+   Werte gespeichert werden, die sonst umstaendlich ueber zusaetzliche
+   Arrays verwaltet werden muessten:
+   set_user_int(int n, int d);
+   set_user_float(int n, float d);
+   get_user_int(int n);
+   get_user_float(int n);
+
+
+v0.92 -> v0.93
+ o zusaetzliche OSD-Option "visible" (set_visible())
+   (ein OSD kann unabhaengig vom active-Status ein- und ausgeblendet
+   werden)
+
+ o Durch die Rueckstosseffekte ergeben sich evtl. Probleme mit bestimmten
+   Levels. Der Rueckstoss eines Spielerschiffes laesst sich daher mit der
+   Funktion player[x]:set_recoil(0) ausschalten.
+
+ o Startparameter gegen Leveldateiveraenderungsdialogfeld beim Start von
+   GS (/nocrcmessage).
+
+ o neue Waffe: W_SHOTGUN
+
+
+v0.91 -> v0.92
+
+ o zusaetzliche LVL-Option: required_resolution
+
+   Damit kann eine feste Aufloesung fuer das Level angegeben werden. Wird
+   die Option nicht verwendet, wird die Aufloesung verwendet, die der 
+   Spieler in den Spieloptionen eingestellt hat. Zur Abfrage existieren:
+
+   globals.game_resolution_x
+   globals.game_resolution_y
+
+
+v0.89 -> v0.9
+
+ o geaenderte Funktionsaufrufe (durch Trennung von Schild/Huellen-Hitpoints):
+ 
+    - effects.bullets:add()
+
+      (Bullet*) add(int type, int player, int enemynr, 
+                    int x, int y, float xspeed, float yspeed, 
+                    int strength, int shield_hitp, int hull_hitp, 
+                    float puser, int upgrade)
+
+ o neue Features:
+ 
+    - SPOBJ_EXTRA -> user-Wert kann nun Minuswerte annehmen, die weitere
+      Extramoeglichkeiten angeben (z.B. Waffenupgrade, Unverwundbarkeit)
+      
+    - neue Waffentypen: W_LASER und W_BUMPER
+
+    - in den LVL-Dateien kann nun ein "author"-Tag stehen, das im Menue
+      angezeigt wird
+
+ o Durch den Wechsel von Lua 4 zu Lua 5 ergeben sich einige Neuerungen, die
+   unbedingt beachtet werden muessen:
+
+    -  Einige Funktionsnamen Lua-interner Funktionen muessen anders geschrieben
+       werden, da sie jetzt jeweils Teil von Funktionsgruppen sind.
+       So wird vor alle mathematischen Funktionen z.B. ein "math." gestellt,
+       vor allen IO-Funktionen ein "io." usw.
+       Siehe dazu script.txt
+       
+       Um alte Scripte schnell kompatibel zu machen, kann die Datei compat.lua
+       am Anfang eingebunden werden:
+       
+       dofile("./levels/compat.lua")
+
+    -  Die Funktion math.mod liefert nun auch Kommawerte zurueck. Die bisher in GS
+       verwendete mod-Funktion (bis v0.89) lieferte nur Ganzzahlen (Integers).
+       Das "alte" mod ist ueber die Funktion "int_mod()" ansprechbar. In der
+       global.ini gibt es eine Kompatibilitaetsfunktion mod(), die int_mod()
+       aufruft. D.h. alte Scripte muessen nicht angepasst werden. In Zukunft
+       sollte math.mod fuer Fliesskomma und int_mod fuer Ganzzahlen verwendet
+       werden.
+
+     - ein anderer Bug (?) betrifft den direkten Vergleich von Klasseninstanzen 
+       untereinander. Beispiel:
+
+       function hook_player_dead_0(pl)
+         if pl == player[1] then 
+         end
+       end
+
+       Dies fuehrt zum Totalabsturz von GS. Anstatt "pl" direkt mit "player[]" zu 
+       vergleichen, sollte auf Klassenfunktionen zurueckgegriffen werden. Richtig
+       heisst es also:
+
+       if pl:get_sig() == player[1]:get_sig() then 
+       end
+

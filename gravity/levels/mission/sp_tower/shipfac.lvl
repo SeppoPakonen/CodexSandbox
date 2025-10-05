@@ -1,0 +1,46 @@
+-- The Factory
+-- control file
+-- June 2002, jh
+
+author	           = "Jens"
+min_version        = 0.8
+max_players        = 1
+style              = STONE
+
+map                = "tower.mar"
+initscript         = "shipfac.ini"
+script             = "shipfac.sc"
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "The Tower, Mission 2"
+  description      = "Beschuetzen Sie Mr. Relash auf einer schwierigen Spionagemission. (Schwierigkeit: Hoch. Benoetigt moderat schnellen Rechner)."
+  missiondesc      = "[s:5][c:white][u]Guten Tag, Commander![/u][w:60][br][w:20][br]" ..
+                     "[c:yellow]Unsere Wissenschaftler waren aeusserst angetan von " ..
+                     "der feindlichen Schiffsfabrik, die Sie in der letzten Mission " ..
+                     "gefunden haben. Wir wuerden diese gerne untersuchen.[w:60] " ..
+                     "Leider wurde sie wieder in Betrieb genommen und produziert " ..
+                     "Schiffe, die unserem unbewaffneten Kreuzer gefaehrlich werden " ..
+                     "koennten. [c:orange]Ihre Mission besteht darin, dieses Schiff zur " ..
+                     "Fabrik - und sicher zurueck - zu begleiten.[w:30][c:yellow] " ..
+                     "Sie sind unser bester Pilot. Beweisen Sie es! " ..
+                     "[w:60][br][w:30][br][c:white]Viel Erfolg, Commander!"
+else                 
+  name             = "The Tower, Mission 2"
+  description      = "Guard Mr. Relash on a tough spy mission. (Difficulty: High. You need a moderately fast computer)."
+  missiondesc      = "[s:5][c:white][u]Good morning, Commander![/u][w:60][br][w:20][br]" ..
+                     "[c:yellow]Our scientist are very interested in the enemy's force field " ..
+                     "ship factory. We'd like to scan this thing thoroughly.[w:60] " ..
+                     "Unfortunately it is producing ships again which may harm " ..
+                     "our science ship. [c:orange]Your mission is to escort our ship " ..
+                     "to the factory - and safely back.[w:30][c:yellow] " ..
+                     "You are our best pilot. Prove it! " ..
+                     "[w:60][br][w:30][br][c:white]Take tare, Commander!"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

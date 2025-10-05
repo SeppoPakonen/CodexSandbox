@@ -1,0 +1,28 @@
+-- Level-Datei
+-- Frapela10
+-- von Frapela
+-- 10.09.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author		    = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "frapel10.mar"   -- von Jens, GF-Test-Level 5
+initscript       = "frapel10.ini"
+script           = "frapel10.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Frapela 10"
+  description = "Tuer an Tuer! mit Frapela"
+  missiondesc = "[f:impact14][c:white]Verborgene Mechanismen ( z. B.: Lichtschranken oder Gewichtsensoren ) oeffnen Tueren! "
+else
+  name        = "Frapela 10"
+  description = "The Doors! by Frapela"
+  missiondesc = "[f:impact14][c:white]Secret mechanisms ( for example: light sensor or weight sensor ) open doors! "
+end

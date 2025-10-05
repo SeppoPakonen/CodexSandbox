@@ -1,0 +1,30 @@
+-- nuke_ra2
+-- control file
+
+author	           = "Nukem"
+min_version        = 0.85
+max_players        = 2
+style              = GRASS
+
+map                = "nuke_ra2.mar"
+initscript         = "nuke_ra2.ini"
+script             = ""
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "nuke_ra2"
+  description      = "Tja zur Map laesst sich nicht viel sagen, also: gl und hf"
+                      
+else                 
+  name             = "nuke_ra2"
+  description      = "There is nothing to say, except: hf and gl"
+                      
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+race               = 1
+singleplayer       = 1
+  
+activate_extra_str = ""

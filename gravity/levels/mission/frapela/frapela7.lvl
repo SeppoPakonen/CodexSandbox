@@ -1,0 +1,32 @@
+-- Level-Datei
+-- Frapela7
+-- von Frapela
+-- 18.08.2003
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author		    = "Frapela"
+min_version      = 0.89
+max_players      = 1
+style            = GRASS
+map              = "frapela7.mar"   -- von Jens, GF-Level 5 bis 7
+initscript       = "frapela7.ini"
+script           = "frapela7.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Frapela 07"
+  description = "Das GS-Quiz! von Frapela"
+  missiondesc = "[f:impact14][c:yellow]Anleitung: "..
+                "[w:50][f:impact10][c:white][br]Lade das Paket ein, welches auf der Basis mit der richtigen Antwort steht. Mit 'F' bzw. 'Q' kannst du dir die Frage noch einmal ansehen! "..
+                "[w:20][c:orange]Ist die Antwort falsch, verlierst du ein Schiff! "
+else
+  name        = "Frapela 07"
+  description = "The GS-Quiz! by Frapela"
+  missiondesc = "[f:impact14][c:yellow]Instruction: "..
+                "[w:50][f:impact10][c:white][br]Load the parcel, which is on the base with the right answer. With 'F' or 'Q' you can see the question again! "..
+                "[w:20][c:orange]Is the answer wrong, you loose a ship! "
+end

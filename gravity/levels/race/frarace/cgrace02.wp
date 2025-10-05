@@ -1,0 +1,132 @@
+-- CG-Race 02
+-- Wegpunkte-Tabelle
+-- von Frapela
+-- 23. November 2004
+
+weg_punkt_max = 10
+
+function weg_punkt_ermittlung( gegner_nr )
+  if     weg_punkt[gegner_nr] == 0 then
+    if     gegner_nr == 1 then
+      bewaffnung()
+      wp_x_koor[gegner_nr] = 1020 - 8
+      wp_y_koor[gegner_nr] =  830
+      gegner[gegner_nr] = enemies:add( gegner_nr, E_USER, wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], 0, gegner_bild[gegner_nr], 630 + math.random(1, 100) - ( CG_schuss * 100 ), -1000, -1000, CG_schuss-1, waffen_art )
+      gegner[gegner_nr] : set_maxhit( math.random(CG_schuss, CG_schuss*6) )
+      weg_punkt[gegner_nr] = 8
+    elseif gegner_nr == 2 then
+      bewaffnung()
+      wp_x_koor[gegner_nr] = 1020 - 8
+      wp_y_koor[gegner_nr] =  870
+      gegner[gegner_nr] = enemies:add( gegner_nr, E_USER, wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], 0, gegner_bild[gegner_nr], 630 + math.random(1, 100) - ( CG_schuss * 100 ), -1000, -1000, CG_schuss-1, waffen_art )
+      gegner[gegner_nr] : set_maxhit( math.random(CG_schuss, CG_schuss*6) )
+      weg_punkt[gegner_nr] = 8
+    elseif gegner_nr == 3 then
+      bewaffnung()
+      wp_x_koor[gegner_nr] =  920 - 8
+      wp_y_koor[gegner_nr] =  830
+      gegner[gegner_nr] = enemies:add( gegner_nr, E_USER, wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], 0, gegner_bild[gegner_nr], 630 + math.random(1, 100) - ( CG_schuss * 100 ), -1000, -1000, CG_schuss-1, waffen_art )
+      gegner[gegner_nr] : set_maxhit( math.random(CG_schuss, CG_schuss*6) )
+      weg_punkt[gegner_nr] = 9
+    elseif gegner_nr == 4 then
+      bewaffnung()
+      wp_x_koor[gegner_nr] =  920 - 8
+      wp_y_koor[gegner_nr] =  870
+      gegner[gegner_nr] = enemies:add( gegner_nr, E_USER, wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], 0, gegner_bild[gegner_nr], 630 + math.random(1, 100) - ( CG_schuss * 100 ), -1000, -1000, CG_schuss-1, waffen_art )
+      gegner[gegner_nr] : set_maxhit( math.random(CG_schuss, CG_schuss*6) )
+      weg_punkt[gegner_nr] = 9
+    elseif gegner_nr == 5 then
+      bewaffnung()
+      wp_x_koor[gegner_nr] =  820 - 8
+      wp_y_koor[gegner_nr] =  830
+      gegner[gegner_nr] = enemies:add( gegner_nr, E_USER, wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], 0, gegner_bild[gegner_nr], 630 + math.random(1, 100) - ( CG_schuss * 100 ), -1000, -1000, CG_schuss-1, waffen_art )
+      gegner[gegner_nr] : set_maxhit( math.random(CG_schuss, CG_schuss*6) )
+      weg_punkt[gegner_nr] = 9
+    elseif gegner_nr == 6 then
+      bewaffnung()
+      wp_x_koor[gegner_nr] =  820 - 8
+      wp_y_koor[gegner_nr] =  870
+      gegner[gegner_nr] = enemies:add( gegner_nr, E_USER, wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], 0, gegner_bild[gegner_nr], 630 + math.random(1, 100) - ( CG_schuss * 100 ), -1000, -1000, CG_schuss-1, waffen_art )
+      gegner[gegner_nr] : set_maxhit( math.random(CG_schuss, CG_schuss*6) )
+      weg_punkt[gegner_nr] = 9
+    end
+  elseif weg_punkt[gegner_nr] ==  1 then
+    local x1 =  670 - gegner[gegner_nr]:get_width()
+    local y1 =  820
+    local y2 =  925 - gegner[gegner_nr]:get_height()
+    local y3 = ( y2 - y1 ) / 6
+    wp_x_koor[gegner_nr] = x1
+    wp_y_koor[gegner_nr] = math.random( y1, y2 - (y3*(CG_flug_kunst-1)) )
+  elseif weg_punkt[gegner_nr] ==  2 then
+    local x1 =  531
+    local x2 =  620 - gegner[gegner_nr]:get_width()
+    local y1 =  770
+    local x3 = ( x2 - x1 ) / 6
+    wp_x_koor[gegner_nr] = math.random( x1 + (x3*(CG_flug_kunst-1)), x2 )
+    wp_y_koor[gegner_nr] = y1
+  elseif weg_punkt[gegner_nr] ==  3 then
+    local x1 =  538
+    local x2 =  612 - gegner[gegner_nr]:get_width()
+    local y1 =  724 - gegner[gegner_nr]:get_height()
+    local x3 = ( x2 - x1 ) / 6
+    wp_x_koor[gegner_nr] = math.random( x1 + (x3*(CG_flug_kunst-1)), x2 )
+    wp_y_koor[gegner_nr] = y1
+  elseif weg_punkt[gegner_nr] ==  4 then
+    local x1 =  670 - gegner[gegner_nr]:get_width()
+    local y1 =  579
+    local y2 =  667 - gegner[gegner_nr]:get_height()
+    local y3 = ( y2 - y1 ) / 6
+    wp_x_koor[gegner_nr] = x1
+    wp_y_koor[gegner_nr] = math.random( y1 + (y3*(CG_flug_kunst-1)), y2 )
+  elseif weg_punkt[gegner_nr] ==  5 then
+    local x1 =  820
+    local y1 =  579
+    local y2 =  660 - gegner[gegner_nr]:get_height()
+    local y3 = ( y2 - y1 ) / 6
+    wp_x_koor[gegner_nr] = x1
+    wp_y_koor[gegner_nr] = math.random( y1 + (y3*(CG_flug_kunst-1)), y2 )
+  elseif weg_punkt[gegner_nr] ==  6 then
+    local x1 =  960
+    local y1 =  579
+    local y2 =  667 - gegner[gegner_nr]:get_height()
+    local y3 = ( y2 - y1 ) / 6
+    wp_x_koor[gegner_nr] = x1
+    wp_y_koor[gegner_nr] = math.random( y1 + (y3*(CG_flug_kunst-1)), y2 )
+  elseif weg_punkt[gegner_nr] ==  7 then
+    local x1 = 1011
+    local x2 = 1148 - gegner[gegner_nr]:get_width()
+    local y1 =  716 - gegner[gegner_nr]:get_height()
+    local x3 = ( x2 - x1 ) / 6
+    wp_x_koor[gegner_nr] = math.random( x1, x2 - (x3*(CG_flug_kunst-1)) )
+    wp_y_koor[gegner_nr] = y1
+  elseif weg_punkt[gegner_nr] ==  8 then
+    local x1 = 1018
+    local x2 = 1140 - gegner[gegner_nr]:get_width()
+    local y1 =  764
+    local x3 = ( x2 - x1 ) / 6
+    wp_x_koor[gegner_nr] = math.random( x1, x2 - (x3*(CG_flug_kunst-1)) )
+    wp_y_koor[gegner_nr] = y1
+  elseif weg_punkt[gegner_nr] ==  9 then
+    local x1 =  960
+    local y1 =  820
+    local y2 =  925 - gegner[gegner_nr]:get_height()
+    local y3 = ( y2 - y1 ) / 6
+    wp_x_koor[gegner_nr] = x1
+    wp_y_koor[gegner_nr] = math.random( y1, y2 - (y3*(CG_flug_kunst-1)) )
+  elseif weg_punkt[gegner_nr] == 10 then
+    local x1 =  761
+    local y1 =  828
+    local y2 =  925 - gegner[gegner_nr]:get_height()
+    local y3 = ( y2 - y1 ) / 6
+    wp_x_koor[gegner_nr] = x1
+    wp_y_koor[gegner_nr] = math.random( y1, y2 - (y3*(CG_flug_kunst-1)) )
+  end
+  if weg_punkt[gegner_nr] == 1 then   -- eine Runde geschafft
+    gegner_runde[gegner_nr] = gegner_runde[gegner_nr] + 1
+  end
+  weg_punkt[gegner_nr] = weg_punkt[gegner_nr] + 1
+  if weg_punkt[gegner_nr] > weg_punkt_max then
+    weg_punkt[gegner_nr] = 1
+  end
+  gegner[gegner_nr].wp:add( wp_x_koor[gegner_nr], wp_y_koor[gegner_nr], CG_flug_tempo + math.random(), 0 )
+end   -- weg_punkt_ermittlung( gegner_nr )

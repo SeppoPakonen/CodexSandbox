@@ -1,0 +1,28 @@
+-- Level-Datei
+-- Fraren 06
+-- von Frapela
+-- 15.09.2003
+-- Update: 09.11.2003
+
+min_version      = 0.9
+max_players      = 1
+style            = GRASS
+map              = "fraren06.mar"
+initscript       = "fraren06.ini"
+script           = "frarenxx.sc"
+global_script    = 1
+onescreen_map    = 0
+capture_the_flag = 0
+hunter_hunted    = 0
+singleplayer     = 1
+author	         = "Frapela"
+
+if (LANGUAGE == LANG_DE) then
+  name        = "Fraren 06"
+  description = "Fracht-Rennen! von Frapela"
+  missiondesc = "[f:impact14][c:white]Sammele alle 5 Frachtpakete so schnell es geht ein und bringe sie zurueck zur Heimatbasis! "
+else
+  name        = "Fraren 06"
+  description = "Cargo-Race! by Frapela"
+  missiondesc = "[f:impact14][c:white]Collect all five parcels as fast as possible! "
+end

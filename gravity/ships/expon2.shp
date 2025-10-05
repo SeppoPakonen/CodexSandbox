@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.7: Ship Definition
+
+type                 = CUSTOM
+image                = "expon2.tga"
+name                 = "Exponent II"
+description          = "An alien type fighter. Watch out."
+
+hull                 = 9
+shield               = 9
+radar_zoom           = 0
+weapon_slots         = 3
+
+weapon_storage       = 24
+weapon_recharge      = 80
+
+shield_recharge      = 24
+hull_repair          = 19
+
+turn_speed           = 51
+maximum_speed        = 35
+acceleration         = 42
+
+fuel_consumption     = 42
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SHRINKER
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_PROBE
+weapon_slot_4        = W_NONE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE
+

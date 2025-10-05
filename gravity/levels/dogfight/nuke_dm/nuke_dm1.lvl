@@ -1,0 +1,25 @@
+-- Nuke_dm1
+-- control file
+-- by Torsten Bergmann (nukem2001@gmx.de)
+
+author	            = "Nukem"
+min_version         = 0.6
+max_players         = 2
+style               = GRASS
+
+map                 = "nuke_dm1.mar"
+initscript          = "nuke_dm1.ini"
+script              = ""
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name              = "Nuke_dm1"
+  description       = "2 places to start, 1 place to fight"
+else
+  name              = "Nuke_dm1"
+  description       = "2 Startplaetze, 1 Schlachtfeld"
+end
+
+onescreen_map       = 0
+capture_the_flag    = 1
+hunter_hunted       = 1

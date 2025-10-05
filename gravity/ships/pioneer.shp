@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.7: Ship Definition
+
+type                 = CUSTOM
+image                = "pioneer.bmp"
+name                 = "Pioneer"
+description          = "Weltraum-Pionier. Starkes und bewegliches Kampfschiff. Hat Nachbrenner und setzt Killer-Probes ein."
+
+hull                 = 9
+shield               = 7
+radar_zoom           = 10
+weapon_slots         = 5
+
+weapon_storage       = 46
+weapon_recharge      = 51
+
+shield_recharge      = 35
+hull_repair          = 31
+
+turn_speed           = 40
+maximum_speed        = 37
+acceleration         = 39
+
+fuel_consumption     = 34
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_BOMB
+weapon_slot_4        = W_FREEZER
+weapon_slot_5        = W_PROBE
+weapon_slot_6        = W_NONE

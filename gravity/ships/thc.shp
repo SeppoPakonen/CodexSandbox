@@ -1,0 +1,32 @@
+-- GRAVITY STRIKE v0.6: Ship Definition
+
+type                 = CUSTOM
+image                = "thc.tga"
+name                 = "THC>2573"
+description          = "Ein schwerer Tauranischer Kreuzer, der nur eine Projektion ist. Langsam, aber sparsam."
+
+hull                 = 10
+shield               = 9
+radar_zoom           = 0
+weapon_slots         = 5
+
+weapon_storage       = 54
+weapon_recharge      = 30
+
+shield_recharge      = 32
+hull_repair          = 41
+
+turn_speed           = 30
+maximum_speed        = 15
+acceleration         = 32
+
+fuel_consumption     = 69
+
+extras               = E_AFTERBURNER
+
+weapon_slot_1        = W_SINGLE
+weapon_slot_2        = W_DOUBLE
+weapon_slot_3        = W_ROCKET
+weapon_slot_4        = W_BOMB
+weapon_slot_5        = W_BIGBOMB
+weapon_slot_6        = W_NONE

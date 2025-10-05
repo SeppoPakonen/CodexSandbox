@@ -1,0 +1,30 @@
+-- Frapela1
+-- control file
+-- von Frapela
+-- 14.11.2002
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author		    = "Frapela"
+min_version          = 0.8
+max_players          = 1
+style                = GRASS
+
+map                  = "frapela1.mar"
+initscript           = "frapela1.ini"
+script               = "frapela1.sc"
+global_script        = 1
+
+if (LANGUAGE == LANG_DE) then
+  name               = "Frapela 01"
+  description        = "Alle Paket sind verschwunden. Kannst du sie zurueckholen?"
+  missiondesc        = "Suche alle Fracht-Pakete und bringe sie hierher!"
+else
+  name               = "Frapela 01"
+  description        = "easy level !?!"
+  missiondesc        = "search all packets and get them!" 
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1

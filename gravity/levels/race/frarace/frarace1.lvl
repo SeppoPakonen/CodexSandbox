@@ -1,0 +1,34 @@
+-- Frarace1
+-- control file
+-- von Frapela abgeschrieben
+-- 24.11.2002
+-- 11.09.2003: Namensänderung für das GS-Menu
+
+author	             = "Frapela"
+min_version          = 0.8
+max_players          = 2
+style                = STONE
+
+map                  = "frarace1.mar"
+initscript           = "frarace1.ini"
+script               = ""
+global_script        = 1
+
+if (LANGUAGE == LANG_DE) then
+  name               = "Frarace 01"
+  description        = "Gib Gas!"
+--  missiondesc        = "VIEL ERFOLG!"
+else
+  name               = "Frarace 01"
+  description        = "Hurry up!"
+--  missiondesc        = "GOOD LUCK!" 
+end
+
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+race               = 1
+singleplayer       = 1
+  
+activate_extra_str = ""

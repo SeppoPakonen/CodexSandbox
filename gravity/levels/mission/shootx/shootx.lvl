@@ -1,0 +1,38 @@
+-- Shoot Cross
+-- cr8ed by Simon
+
+min_version         = 0.89
+max_players         = 1
+style               = GRASS
+
+map                 = "shootx.mar"
+initscript          = "shootx.ini"
+script              = "shootx.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_DE) then
+  author            = "Simon"
+  name              = "Shoot Cross"
+  description       = "Liefern Sie den Bewohnern der GS-Strasse ihre Zeitungen! Je schneller Sie sind, um so hoeher werden Sie bezahlt."
+else
+  author            = "Simon"
+  name              = "Shoot Cross"
+  description       = "Deliver the newspapers to the people in GS Avenue! The faster you fly, the higher your income will be."
+end
+
+singleplayer        = 1
+
+-- "The Route Of All Evil", one of the greatest (guess what?) Futurama episodes (right!) has
+-- inspired me a lot while creating this... also Snowboard Kids 2, as the name's from it.
+-- Then there's two buildings I sort of "borrowed" from Professor Tim's Incredible Machines
+-- (very cool game) cause they really fit into the GS universe.
+
+-- The "perfect delivery" bonus for using only as many papers as needed for all 20 mailboxes
+-- adds 20 bucks to your final score. This is quite a lot - think of fifteen extra seconds
+-- for accuracy at hard-to-reach boxes and you're still five points ahead of everyone else.
+
+-- Another hint for getting a higher score: Practice, practice, practice... When I created
+-- this, I played it more than 50 times and only got scores over $140 on the day it had
+-- been completed (without the "perfect" bonus).
+
+-- Sure, I know 80 percent of those guys ever reading this are german, but who cares :-)

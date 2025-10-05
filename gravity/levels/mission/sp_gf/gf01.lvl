@@ -1,0 +1,42 @@
+-- GF level 1
+-- control file
+-- May 2002, jh
+
+author		   = "Jens"
+min_version        = 0.8
+max_players        = 1
+style              = GRASS
+
+map                = "gf01.mar"
+initscript         = "gf01.ini"
+script             = ""
+global_script      = 1
+
+if (LANGUAGE == LANG_DE) then
+  name             = "Gravity Force: Level 1"
+  description      = "GF Level 1, Fracht einsammeln (Schwierigkeit: Sehr einfach)"
+  missiondesc      = "[s:5][c:white][u]Willkommen, Commander![/u][w:60][br][w:20][br]" ..
+                     "[c:yellow]Beginnen wir mit einer einfachen Mission:[w:20] " ..
+                     "Fliegen Sie zu den beiden feindlichen Basen, " ..
+                     "schnappen Sie sich die Frachtpakete und bringen Sie " ..
+                     "diese heil zurueck zur Basis.[w:30] [c:orange]Wenn Ihr beladenes " ..
+                     "Schiff zerstoert wird, scheitert Ihre Mission. [w:60][br][w:20][br]" ..
+                     "[c:green]Viel Glueck, Commander!"
+else                 
+  name             = "Gravity Force: Level 1"
+  description      = "GF Level 1, Collect cargo packets (Difficulty: Very easy)"
+  missiondesc      = "[s:5][c:white][u]Welcome, Commander![/u][w:60][br][w:20][br]" ..
+                     "[c:yellow]Let's begin with an easy mission:[w:20] " ..
+                     "Fly to both enemy bases, capture the cargo packets " ..
+                     "and return them to your homebase.[w:30] " ..
+                     "[c:orange]If your loaded ship is destroyed, your " ..
+                     "mission fails. [w:60][br][w:20][br]" ..
+                     "[c:green]Good luck, Commander!"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 0
+hunter_hunted      = 0
+singleplayer       = 1
+  
+activate_extra_str = ""

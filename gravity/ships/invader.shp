@@ -1,0 +1,33 @@
+-- GRAVITY STRIKE v0.7: Ship Definition
+
+type                 = CUSTOM
+image                = "invader.tga"
+name                 = "Invader"
+description          = "The Invader is a slow, but hihly effective ship. Once it's over its target, its history."
+
+hull                 = 6
+shield               = 8
+radar_zoom           = 0
+weapon_slots         = 3
+
+weapon_storage       = 100
+weapon_recharge      = 100
+
+shield_recharge      = 12
+hull_repair          = 14
+
+turn_speed           = 29
+maximum_speed        = 10
+acceleration         = 33
+
+fuel_consumption     = 69
+
+extras               = E_NONE
+
+weapon_slot_1        = W_DOUBLE
+weapon_slot_2        = W_PROBE
+weapon_slot_3        = W_BIGBOMB
+weapon_slot_4        = W_NONE
+weapon_slot_5        = W_NONE
+weapon_slot_6        = W_NONE
+

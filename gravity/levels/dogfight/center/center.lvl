@@ -1,0 +1,28 @@
+-- Center
+-- control file
+-- map & script by: Tobias Gaertner
+
+author	           = "Tobias Gaertner"
+style              = GRASS
+
+map                = "center.mar"
+initscript         = "center.ini"
+script             = "center.sc"
+name               = "Center"
+
+min_version        = 0.6
+max_players        = 4
+
+if (LANGUAGE == LANG_EN) then
+  description      = "It's all about the center!"
+else
+  description      = "Hier gehts nur um das Zentrum!"
+end
+
+onescreen_map      = 0
+capture_the_flag   = 1
+hunter_hunted      = 1
+global_script      = 1
+  
+activate_extra_str = ""
+

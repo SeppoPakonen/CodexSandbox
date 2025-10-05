@@ -1,0 +1,53 @@
+...........................................................................
+= Bugs =================> Gravity Strike, v0.9 <===========================
+
+
+Momentan bekannte Bugs
+======================
+
+ -> Versionen: WINDOWS, (LINUX)
+    Auf bestimmten Rechnern mit Windows NT 4 verursacht die Windows-Version
+    periodische "Ruckler", bei denen auf die Festplatte zugegriffen wird.
+    Ich konnte dieser Eigenartigkeit leider noch nicht naeher auf den Grund
+    gehen, weil ich selbst kein NT4 installiert habe.
+    
+    Aehnliche Ruckler habe ich auch bei der Linux-Version festgestellt,
+    allerdings nicht so ausgepraegt.
+
+ -> Versionen: LINUX
+    Zumindest in meiner Version klingt der Sound sehr blechern und absolut
+    nicht in Ordnung. Auch hier bin ich erstmal ratlos, ich muss es auf
+    mehr Systemen testen, um die Ursache zu finden.
+
+ -> Versionen: DOS
+    Die Musik und auch der Sound im Spiel kann nach einiger Zeit blechern
+    klingen. Ein Neustart hilft ;).
+    
+ -> Versionen: Alle
+    Ab und zu gibt es Grafikfehler. So koennen Grafikteile an Stellen
+    haengen bleiben, wo sie nicht hingehoeren, ab und zu zeigen sich 
+    seltsame Pixelstuecke in neuen Kratern etc.
+    Auch ist die Krater-Anzahl begrenzt, sodass nach einiger Zeit die
+    grossen Krater wieder "zuwachsen".
+    Diese Fehler sollten einfach so hingenommen werden, weil sie beim
+    Spielen nicht unbedingt stoerend sind und mit der Grafik-"Engine"
+    zusammenhaengen, die ich in langen Naechten zusammengepfriemelt habe :*)
+
+ -> Versionen: Alle
+    Nach dem ersten Wechsel Menue->Spiel->Menue sehen die Buchstaben etwas
+    schlechter aus. Ursache leider noch unbekannt...
+
+ -> Versionen: Alle
+    Die Radaranzeige kann je nach eingestelltem Rader-Zoom-Level mehr oder
+    weniger nicht ganz stimmen, d.h. bei grossen Karten werden Objekte evtl.
+    in der Wand angezeigt.    
+
+ -> Versionen: Alle
+    Die Abprallschilde funktionieren teilweise etwas seltsam. D.h. man kann
+    sich in einer Wand "verfangen" oder irgendwie hineingeraten und sterben
+    etc...
+    
+Bugreports bitte an jh@gravity-strike.de!
+
+Danke,
+Jens Hassler

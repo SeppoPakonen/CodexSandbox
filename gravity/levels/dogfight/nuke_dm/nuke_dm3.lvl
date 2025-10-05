@@ -1,0 +1,24 @@
+-- Nuke_dm1
+-- control file
+
+author	           = "Nukem"
+min_version         = 0.6
+max_players         = 6
+style               = GRASS
+
+map                 = "nuke_dm3.mar"
+initscript          = "nuke_dm3.ini"
+script              = "nuke_dm3.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_EN) then
+  name              = "Nuke_dm3"
+  description       = "-"
+else
+  name              = "Nuke_dm3"
+  description       = "-"
+end
+
+onescreen_map       = 0
+capture_the_flag    = 1
+hunter_hunted       = 1

@@ -1,0 +1,25 @@
+-- Weapon Storage
+-- cr8ed by Simon
+
+min_version         = 0.85
+max_players         = 2
+style               = GRASS
+
+map                 = "weapons.mar"
+initscript          = "weapons.ini"
+script              = "weapons.sc"
+global_script       = 1
+
+if (LANGUAGE == LANG_DE) then
+  author            = "Simon"
+  name              = "Weapon Storage"
+  description       = "Ueberall auf diesem Gelaende gibt es Waffenkisten. Sammeln Sie die Waffen Ihrer Wahl - und gehen Sie zum Angriff ueber!"
+else
+  author            = "Simon"
+  name              = "Weapon Storage"
+  description       = "There's weapon crates all over this area. Collect the weapons you want - and ATTACK !!"
+end
+
+onescreen_map       = 0
+capture_the_flag    = 0
+hunter_hunted       = 0
