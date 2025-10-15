@@ -1,0 +1,48 @@
+# Gravity Strike -- src/Makefile.in
+# Template for autotools
+
+# Compiler settings
+CXX = @CXX@
+CC = @CC@
+CXXFLAGS = @CXXFLAGS@ @ALLEGRO_CFLAGS@ @ALLEGTTFCFLAGS@
+CFLAGS = @CFLAGS@ @ALLEGRO_CFLAGS@ @ALLEGTTFCFLAGS@
+LDFLAGS = @LDFLAGS@ @ALLEGRO_LIBS@ @ALLEGTTFLIBS@ -ljgmod -lalttf -llua -llualib -ltolua -lnet
+
+# Object directory
+OBJDIR = obj
+
+# Source files (these would be substituted by configure script)
+SRCS_CPP = @SRCS_CPP@
+SRCS_C = @SRCS_C@
+
+# Generate object files
+OBJS_CPP = $(SRCS_CPP:.cpp=.o)
+OBJS_C = $(SRCS_C:.c=.o)
+
+# Combined object files
+OBJS = $(OBJS_CPP) $(OBJS_C)
+
+GSEXE = ../gslnx
+
+RM = /bin/rm -f
+
+all: $(GSEXE)
+
+$(GSEXE): $(OBJS)
+	@echo "Linking $(GSEXE)..."
+	$(CXX) $(OBJS) -o $(GSEXE) $(LDFLAGS)
+	@echo "Build complete: $(GSEXE)"
+
+# Compilation rules would be here
+# Note: The actual pattern rules would depend on how autotools substitutes the files
+
+clean:
+	@echo "Cleaning build files..."
+	$(RM) *.o menu/*.o enemies/*.o weapons/*.o contrib/*.o
+	@echo "Clean complete."
+
+install: $(GSEXE)
+	@echo "Installing executable..."
+	@install -m 755 $(GSEXE) $(DESTDIR)$(bindir)/
+
+.PHONY: all clean install
