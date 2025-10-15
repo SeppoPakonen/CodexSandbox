@@ -59,7 +59,7 @@ for free and can be compiled on all major operating systems:
    Download TAR, unpack, compile and install with "make".
 
 
--  JGMod
+
 
    Download archive, unpack, then run "sh fixunix.sh" to convert files
    to Unix format. Then run "make" and "make install".
@@ -103,7 +103,7 @@ your machine:
         luadebug.h
         xalleg.h
         allegro.h
-        jgmod.h
+        
         libnet.h
         lua.h
         lualib.h
@@ -117,7 +117,7 @@ your machine:
         liballeg.a
         liballeg_unsharable.a
         libalttf.a
-        libjgmod.so
+        
         liblua.a
         liblualib.a
         libnet.a

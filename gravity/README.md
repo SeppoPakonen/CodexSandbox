@@ -8,7 +8,7 @@ To compile Gravity Strike, you need the following libraries installed:
 
 - Allegro 4.x (graphics and game library)
 - AllegTTF 2.0 (TrueType font support)
-- JGMod (MOD music playback)
+- Allegro 5 audio codecs (MOD music playback)
 - Lua 5 (scripting support)
 - tolua 5 (Lua binding generator)
 - Libnet (networking functions)
@@ -18,14 +18,14 @@ To compile Gravity Strike, you need the following libraries installed:
 On Ubuntu/Debian systems:
 ```bash
 sudo apt-get install build-essential liballegro4-dev liballegro-ttf-dev \
-    liblua5.3-dev libtolua++5.1-dev libjgmod-dev \
+    liblua5.3-dev libtolua++5.1-dev liballegro5-dev liballegro-acodec5-dev \
     libnet1-dev
 ```
 
 On Fedora/RHEL systems:
 ```bash
 sudo dnf install gcc gcc-c++ allegro-devel allegro-ttf-devel \
-    lua-devel tolua++-devel jgmod-devel libnet-devel
+    lua-devel tolua++-devel allegro5-devel libnet-devel
 ```
 
 On Gentoo systems:
@@ -33,7 +33,7 @@ On Gentoo systems:
 # Install allegro with legacy support
 emerge -av media-libs/allegro media-libs/allegro-ttf \
     dev-lang/lua dev-lua/tolua++ \
-    media-libs/jgmod dev-libs/libnet
+    media-libs/allegro dev-libs/libnet
 ```
 
 Note: Gravity Strike requires Allegro 4.x, but many modern systems only have Allegro 5.x installed. 

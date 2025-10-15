@@ -73,11 +73,13 @@ gsSound::gsSound()
       status_play_sound = 1;
 
       // load music
-      if (install_mod(8) < 0)
+      // Allegro 5 automatically handles audio streaming allocation
+      // The acodec addon should already be installed in allegro5_wrapper.cpp
+      if (!al_is_audio_installed())
       {
         status_play_music = 0;
-        errors->log(2, "init", "FAILED allocating voices for music files");
-      } // install_mod
+        errors->log(2, "init", "FAILED initializing audio system for music files");
+      }
 
     }
   }
@@ -169,20 +171,26 @@ void gsSound::load_music(char *f)
     return;
   }
 
-  game_music = load_mod(mypath);
-  set_mod_volume(150);
-  music_volume = 150;
-  status_play_game_music = 1;
+  game_music = al_load_audio_stream(mypath, 4, 2048);  // 4 samples in queue, 2048 bytes per sample
+  if (game_music) {
+    al_set_audio_stream_gain(game_music, 1.0);  // This will be adjusted by set_music_volume
+    music_volume = 150;
+    status_play_game_music = 1;
+  } else {
+    game_music = NULL;
+    status_play_game_music = 0;
+    errors->log(1, "FAILED to load music file!", mypath);
+  }
 }
 
 void gsSound::load_menu_music()
 {
-  mymusic = load_mod(menu_music_path);
+  mymusic = al_load_audio_stream(menu_music_path, 4, 2048);  // 4 samples in queue, 2048 bytes per sample
 
   if (mymusic)
   {
+    al_set_audio_stream_gain(mymusic, 1.0);  // This will be adjusted by set_music_volume
     errors->log(2, "menu init", "loading menu music done", get_filename(menu_music_path));
-    set_mod_volume(150);
     music_volume = 150;
     status_play_menu_music = 1;
   }
@@ -197,8 +205,8 @@ void gsSound::destroy_music()
 {
   if (game_music)
   {
-    stop_mod();
-    destroy_mod(game_music);
+    al_stop_audio_stream(game_music);
+    al_destroy_audio_stream(game_music);
     status_play_game_music = 0;
     game_music = NULL;
   }
@@ -208,8 +216,8 @@ void gsSound::destroy_menu_music()
 {
   if (mymusic)
   {
-    stop_mod();
-    destroy_mod(mymusic);
+    al_stop_audio_stream(mymusic);
+    al_destroy_audio_stream(mymusic);
     mymusic = NULL;
     status_play_menu_music = 0;
   }
@@ -217,24 +225,36 @@ void gsSound::destroy_menu_music()
 
 void gsSound::start_menu_music()
 {
-  if (status_play_sound && status_play_music && status_play_menu_music) play_mod(mymusic, 1);
+  if (status_play_sound && status_play_music && status_play_menu_music) {
+    al_play_audio_stream(mymusic);
+  }
 }
 
 void gsSound::start_music()
 {
-  if (status_play_sound && status_play_music && status_play_game_music) play_mod(game_music, 1);
+  if (status_play_sound && status_play_music && status_play_game_music) {
+    al_play_audio_stream(game_music);
+  }
 }
 
 void gsSound::stop_music()
 {
-  if (status_play_sound && status_play_music && status_play_game_music) stop_mod();
+  if (status_play_sound && status_play_music && status_play_game_music) {
+    al_stop_audio_stream(game_music);
+  }
 }
 
 void gsSound::set_music_volume(int v)
 {
   if (status_play_sound && status_play_music && v >= 0 && v <= 150)
   {
-    set_mod_volume(v);
+    float gain = v / 150.0f;  // Convert to 0.0-1.0 range for Allegro 5
+    if (mymusic) {
+      al_set_audio_stream_gain(mymusic, gain);
+    }
+    if (game_music) {
+      al_set_audio_stream_gain(game_music, gain);
+    }
     music_volume = v;
   }
 }

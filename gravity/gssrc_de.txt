@@ -2,27 +2,27 @@ Gravity Strike -- Sourcecode
 ============================
 
 
-Einführung
+Einfï¿½hrung
 ----------
 
 Dies ist der komplette Quellcode von Gravity Strike. Er kann unter DOS
 (DJGPP), Windows (z.B. Visual C++) und Linux (gcc/g++) compiliert werden.
-Da GS jedoch diverse Zusatz-Bibliotheken einsetzt, müssen auch diese
+Da GS jedoch diverse Zusatz-Bibliotheken einsetzt, mï¿½ssen auch diese
 korrekt installiert sein. Dieser Text beschreibt, was konkret zu tun ist.
 
-Hauptsächlich sind die Beschreibungen auf Linux ausgerichtet, da es für die
+Hauptsï¿½chlich sind die Beschreibungen auf Linux ausgerichtet, da es fï¿½r die
 anderen Betriebssysteme fertige Binaries zum Download gibt.
 
 
-Einschränkungen
+Einschrï¿½nkungen
 ---------------
 
 Der Quellcode ist komplett bis auf die Datei "gshiscor.cpp". Der Inhalt der
 dortigen Funktionen wurde entfernt, da man mit Hilfe des dort enthaltenen
-Codes relativ einfach cheaten könnte und das Internet-Highscore-System
-demnach unbrauchbar werden würde.
+Codes relativ einfach cheaten kï¿½nnte und das Internet-Highscore-System
+demnach unbrauchbar werden wï¿½rde.
 
-Die Highscore-Funktionen sind also nicht verfügbar, wenn GS selbst
+Die Highscore-Funktionen sind also nicht verfï¿½gbar, wenn GS selbst
 compiliert wird. Sorry.
 
 
@@ -30,15 +30,15 @@ Zur "Offenheit"
 ---------------
 
 Der vorliegende Quellcode ist als "Open Source" zu verstehen. Jeder, der
-möchte, kann aus ihm ein eigenes GS entwickeln oder Teile des Codes für
+mï¿½chte, kann aus ihm ein eigenes GS entwickeln oder Teile des Codes fï¿½r
 eigene Projekte verwenden.
 
 Allerdings, und darauf lege ich Wert, sollte derjenige dann die Courage
 haben, mir dies per Mail mitzuteilen oder mich namentlich in seiner
-Dokumentation oder Quellcode erwähnen. Das wäre nur fair.
+Dokumentation oder Quellcode erwï¿½hnen. Das wï¿½re nur fair.
 
-Sollte irgend jemand die idiotische Idee haben, GS mit leichten Änderungen
-allein als "sein Werk" unters Volk bringen zu wollen, dann wäre das ein
+Sollte irgend jemand die idiotische Idee haben, GS mit leichten ï¿½nderungen
+allein als "sein Werk" unters Volk bringen zu wollen, dann wï¿½re das ein
 eklatanter Vertrauensbruch. Ich kann niemanden davon abhalten, also bitte
 ich einfach darum, dass verantwortungsvoll mit dem Code umgegangen wird.
 Danke.
@@ -47,14 +47,14 @@ Danke.
 Voraussetzungen
 ---------------
 
-Um GS compilieren zu können, müssen folgende Bibliotheken unter Linux
+Um GS compilieren zu kï¿½nnen, mï¿½ssen folgende Bibliotheken unter Linux
 vorhanden sein bzw. installiert werden:
 
 -  Allegro 4.x (www.allegro.cc)
    
    Sehr einfach: Tar-Archiv herunterladen, in ein beliebiges Verzeichnis
    entpacken, darin "./configure" aufrufen, dann mit "make" compilieren
-   und schließlich (als Root) mit "make install" installieren.
+   und schlieï¿½lich (als Root) mit "make install" installieren.
 
    Man sollte darauf achten, dass die X-Bibliotheken und -Header unter 
    /usr/X11/include bzw. /usr/X11/lib korrekt installiert wurden. Bei einer
@@ -68,7 +68,7 @@ vorhanden sein bzw. installiert werden:
    installieren.
 
 
--  JGMod
+
 
    Archiv (ZIP?) herunterladen, entpacken, und dann zuerst die Dateien
    mit "sh fixunix.sh" ins Unix-Format konvertieren. Dann mit ins src-
@@ -79,21 +79,21 @@ vorhanden sein bzw. installiert werden:
 -  Libnet 0.10.10
 
    Eigentlich werden Netzwerkfunktionen bis jetzt unter Linux noch nicht
-   wirklich unterstützt, und außerdem wird Libnet in Version 0.9 durch
-   eine andere Netzwerkbibliothek ersetzt, doch für das Compilieren von
+   wirklich unterstï¿½tzt, und auï¿½erdem wird Libnet in Version 0.9 durch
+   eine andere Netzwerkbibliothek ersetzt, doch fï¿½r das Compilieren von
    GS ist sie notwendig.
 
    Also: Herunterladen, entpacken, dann die Datei "linux.mak" aus dem
-   Verzeichnis /makfiles in die Datei "port.mak" kopieren. Schließlich
+   Verzeichnis /makfiles in die Datei "port.mak" kopieren. Schlieï¿½lich
    mit "make" compilieren und mit "make install" (als Root) installieren.
 
 
 -  Lua 5 mit tolua 5 (www.lua.org)
 
    Dazu benutzt man am besten das Paket, das sich auf gravity-strike.de
-   herunterladen lässt. Es enthält alle notwendigen Dateien.
+   herunterladen lï¿½sst. Es enthï¿½lt alle notwendigen Dateien.
 
-   Dieses Paket entpackt man in ein beliebiges Verzeichnis und führt
+   Dieses Paket entpackt man in ein beliebiges Verzeichnis und fï¿½hrt
    dann folgende Schritte aus:
 
    1. Lua mit "make" compilieren und mit "make install" installieren
@@ -107,7 +107,7 @@ vorhanden sein bzw. installiert werden:
 Check, Check, Check
 -------------------
 
-Wenn man die Voraussetzungen erfüllt hat, müssten sich nun die folgenden
+Wenn man die Voraussetzungen erfï¿½llt hat, mï¿½ssten sich nun die folgenden
 Dateien auf dem eigenen System befinden. Die Pfade koennen je nach
 Linux-Distribution verschieden sein. Meistens duerfte es folgendermaszen
 aussehen:
@@ -121,7 +121,7 @@ aussehen:
         luadebug.h
         xalleg.h
         allegro.h
-        jgmod.h
+        
         libnet.h
         lua.h
         lualib.h
@@ -135,23 +135,23 @@ aussehen:
         liballeg.a
         liballeg_unsharable.a
         libalttf.a
-        libjgmod.so
+        
         liblua.a
         liblualib.a
         libnet.a
         libtolua.a
 
-Die Allegro-Bibliotheken können je nach Version und Installationsvarianten
-(z.B. zusätzlich als statische und Debug-Lib) anders erscheinen.
+Die Allegro-Bibliotheken kï¿½nnen je nach Version und Installationsvarianten
+(z.B. zusï¿½tzlich als statische und Debug-Lib) anders erscheinen.
 
-Wenn diese Voraussetzungen erfüllt sind, kann man daran gehen, GS zu
+Wenn diese Voraussetzungen erfï¿½llt sind, kann man daran gehen, GS zu
 compilieren.
 
 
 Endspurt: GS compilieren
 ------------------------
 
-Beim Herunterladen des Source hat man die Möglichkeit, nur den Source, nur
+Beim Herunterladen des Source hat man die Mï¿½glichkeit, nur den Source, nur
 die Datendateien oder den Source incl. Datendateien herunterzuladen. Egal,
 was man tut, letzten Endes sollte das GS-Verzeichnis folgenden Aufbau
 haben:
@@ -170,7 +170,7 @@ vorhanden. Die anderen Dateien befinden sich im Daten-Archiv.
 Zur Sicherheit ruft man vorher noch "sh fixunix.sh" auf, um alle Dateien
 ins Unix-Format zu konvertieren.
 
-Schließlich wechselt man ins "src"-Verzeichnis und compiliert dort GS mit
+Schlieï¿½lich wechselt man ins "src"-Verzeichnis und compiliert dort GS mit
 einem simplen "make". Dies sollte automatisch und ohne Fehler (und wenigen
 Warnungen) durchlaufen und die Datei "gslnx" im Hauptverzeichnis des
 Spiels erstellen.
@@ -179,20 +179,20 @@ Spiels erstellen.
 Vor der Ziellinie: GS starten
 -----------------------------
 
-Die besten Ergebnisse erhält man, wenn man GS unter X mit Root-Rechten
-ausführt. Dann kann nämlich der schnelle DGA-Treiber verwendet werden.
-Führt man GS nur mit User-Rechten aus, wird der XWindows-Treiber
+Die besten Ergebnisse erhï¿½lt man, wenn man GS unter X mit Root-Rechten
+ausfï¿½hrt. Dann kann nï¿½mlich der schnelle DGA-Treiber verwendet werden.
+Fï¿½hrt man GS nur mit User-Rechten aus, wird der XWindows-Treiber
 verwendet, der enorm langsam ist und GS selbst auf einem Gigahertz-Rechner
-zum Krüppel mutieren lässt.
+zum Krï¿½ppel mutieren lï¿½sst.
 
-Ein Aufruf mit "su" führt dabei leider nicht zum gewünschten Ergebnis.
+Ein Aufruf mit "su" fï¿½hrt dabei leider nicht zum gewï¿½nschten Ergebnis.
 Stattdessen sollte man als Root mit "chmod 04755 gslnx" und "chown root
 gslnx" der Datei Root-Berechtigung geben.
 
-Dann kann man sie auch als normaler Benutzer ausführen.
+Dann kann man sie auch als normaler Benutzer ausfï¿½hren.
 
-Theoretisch läuft die compilierte Datei auch ohne X unter einer normalen
-Konsole. Voraussetzung dafür ist, dass der Framebuffer-Treiber (fbcon)
+Theoretisch lï¿½uft die compilierte Datei auch ohne X unter einer normalen
+Konsole. Voraussetzung dafï¿½r ist, dass der Framebuffer-Treiber (fbcon)
 korrekt installiert wurde. Auf meinem System konnte ich das nicht testen.
 
 
@@ -202,16 +202,16 @@ Gestolpert? Wenn Probs auftauchen
 Obige Vorgehensweise habe ich auf einem frisch installierten System mit
 SuSE 8.0 Professional getestet. Unter anderen Linux-Distributionen mag die
 eine oder andere Sache anders oder vielleicht sogar nicht funktionieren.
-Über Rückmeldungen würde ich mich deshalb sehr freuen.
+ï¿½ber Rï¿½ckmeldungen wï¿½rde ich mich deshalb sehr freuen.
 
 Ich bin jederzeit per Mail erreichbar:
   
  jh@gravity-strike.de
 
-Außerdem bin ich immer im Forum zu finden und lese dort jedes Posting:
+Auï¿½erdem bin ich immer im Forum zu finden und lese dort jedes Posting:
  
  http://www.gravity-strike.de/forum
 
 
-Was bleibt ist "Viel Spaß" zu wünschen! :-)
+Was bleibt ist "Viel Spaï¿½" zu wï¿½nschen! :-)
 Jens Hassler

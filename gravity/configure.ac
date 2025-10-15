@@ -4,8 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([gravity-strike], [1.0], [jh@gravity-strike.de])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_FILES([Makefile src/Makefile])
-AM_INIT_AUTOMAKE([foreign -Wall -Werror])
+AM_INIT_AUTOMAKE([foreign subdir-objects -Wall -Werror])
 
 # Checks for programs.
 AC_PROG_CXX
@@ -95,14 +94,14 @@ else
 fi
 
 # Checks for libraries
-AC_CHECK_LIB([jgmod], [JG_Init], [], [AC_MSG_ERROR([jgmod library not found])])
+
 AC_CHECK_LIB([lua], [lua_open], [], [AC_MSG_ERROR([lua library not found])])
 AC_CHECK_LIB([lualib], [luaopen_base], [], [AC_MSG_ERROR([lualib library not found])])
 AC_CHECK_LIB([tolua], [tolua_open], [], [AC_MSG_ERROR([tolua library not found])])
 AC_CHECK_LIB([net], [libnet_init], [], [AC_MSG_ERROR([libnet library not found])])
 
 # Checks for header files.
-AC_CHECK_HEADERS([allegro5.h allegro5/allegro.h jgmod.h lua.h lualib.h tolua.h libnet.h])
+AC_CHECK_HEADERS([allegro5.h allegro5/allegro.h lua.h lualib.h tolua.h libnet.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 

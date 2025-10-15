@@ -194,7 +194,7 @@ gslnx_SOURCES = src/cos.h \
                 src/weapons/buser.h
 
 gslnx_CXXFLAGS = @ALLEGRO_CFLAGS@ @ALLEGTTFCFLAGS@
-gslnx_LDFLAGS = @ALLEGRO_LIBS@ @ALLEGTTFLIBS@ -ljgmod -lalttf -llua -llualib -ltolua -lnet
+gslnx_LDFLAGS = @ALLEGRO_LIBS@ @ALLEGTTFLIBS@ -lalttf -llua -llualib -ltolua -lnet
 
 # Extra files for distribution
 EXTRA_DIST = ../fixunix.sh ../gssrc_en.txt ../gssrc_de.txt ../keyboard.dat

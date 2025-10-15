@@ -36,7 +36,7 @@ else
     ALLEGRO_CFLAGS := $(shell allegro5-config --cflags)
 endif
 
-LDFLAGS = -ljgmod -lalttf -llua -llualib -ltolua -lnet $(ALLEGRO_LIBS)
+LDFLAGS = -lalttf -llua -llualib -ltolua -lnet $(ALLEGRO_LIBS)
 CXXFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4
 CFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4
 

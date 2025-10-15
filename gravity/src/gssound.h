@@ -13,8 +13,9 @@
 #define _GSSOUND_
 
 #include "gssndat.h"
+#include <allegro5/allegro_audio.h>
 
-#include <jgmod.h>
+
 
 enum GS_SOUNDS {
   SOUND_MENU_CHANGE,
@@ -77,8 +78,8 @@ class gsSound
     int player_thrust;                             // thrusters of any player on?
     int music_volume;
     char menu_music_path[80];
-    JGMOD *mymusic;
-    JGMOD *game_music;
+    ALLEGRO_AUDIO_STREAM *mymusic;
+    ALLEGRO_AUDIO_STREAM *game_music;
     SAMPLE *user_sample[100];                      // storage for user samples
     int replaced_sounds[100];                      // user-replaced standard sounds
     int samplecount;                               // how much user samples?
