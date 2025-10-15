@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 //#include <string.h>
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _GSMAIN_
 #define _GSMAIN_

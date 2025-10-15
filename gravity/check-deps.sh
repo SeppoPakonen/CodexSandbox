@@ -20,11 +20,15 @@ else
     MISSING_DEPS=1
 fi
 
-# Check for Allegro
+# Check for Allegro (either via allegro-config or pkg-config for Allegro 4)
 if command -v allegro-config &> /dev/null; then
-    echo "✓ Allegro library: found"
+    echo "✓ Allegro library: found (allegro-config)"
+elif pkg-config allegro4-config --exists 2>/dev/null; then
+    echo "✓ Allegro library: found (pkg-config allegro4-config)"
+elif [ -f "/usr/lib64/liballeg-4.2.so" ] || [ -f "/usr/lib/liballeg-4.2.so" ] || [ -f "/usr/lib64/liballeg.so" ] && ldconfig -p | grep -q "liballeg"; then
+    echo "✓ Allegro library: found (system library)"
 else
-    echo "✗ Allegro library: not found (required)"
+    echo "✗ Allegro library: not found (required - Allegro 4.x needed)"
     MISSING_DEPS=1
 fi
 

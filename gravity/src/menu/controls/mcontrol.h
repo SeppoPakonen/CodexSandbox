@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _MCONTROL_
 #define _MCONTROL_

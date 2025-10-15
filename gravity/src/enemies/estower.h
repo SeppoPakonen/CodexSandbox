@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _E_SINGLE_TOWER_
 #define _E_SINGLE_TOWER_

@@ -22,7 +22,7 @@
 #include "../gserror.h"
 #include "gsmd.h"
 #include "gsmenu.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 
 mOptions::mOptions()
 {

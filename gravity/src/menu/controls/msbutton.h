@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _MSBUTTON_
 #define _MSBUTTON_

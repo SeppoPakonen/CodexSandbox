@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _MOPTIONS_
 #define _MOPTIONS_

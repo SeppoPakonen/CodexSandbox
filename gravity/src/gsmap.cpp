@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "gsmap.h"
 #include "gserror.h"
 #include "gsglob.h"

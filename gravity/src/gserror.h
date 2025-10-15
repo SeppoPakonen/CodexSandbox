@@ -10,7 +10,7 @@
  */
 
 #include <stdio.h>
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _GSERROR_
 #define _GSERROR_

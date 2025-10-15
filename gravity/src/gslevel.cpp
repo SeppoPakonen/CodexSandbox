@@ -29,7 +29,7 @@
 #include "gsenemy.h"
 #include "gsplcomp.h"
 #include "gslng.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 
 RGB_MAP     rgb_table;
 COLOR_MAP   light_table;

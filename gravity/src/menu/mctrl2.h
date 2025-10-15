@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _MENUCONTROLS2P_
 #define _MENUCONTROLS2P_

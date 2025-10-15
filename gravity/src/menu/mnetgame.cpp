@@ -10,7 +10,7 @@
  */
 
 #include "mnetgame.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "controls/mtypes.h"
 #include "../gshelper.h"
 #include "../gslng.h"

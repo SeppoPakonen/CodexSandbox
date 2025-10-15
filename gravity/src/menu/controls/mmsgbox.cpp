@@ -10,7 +10,7 @@
  */
 
 #include "mmsgbox.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "../../gsclear.h"
 #include "../../gsglob.h"
 #include "../../gslng.h"

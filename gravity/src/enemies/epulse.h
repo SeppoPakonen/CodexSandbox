@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _E_PULSE_TOWER_
 #define _E_PULSE_TOWER_

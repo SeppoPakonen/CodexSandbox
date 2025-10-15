@@ -13,7 +13,32 @@ CXX = g++
 CC = gcc
 CFLAGS += -O2 -Wall -Wextra -std=c11
 CXXFLAGS += -O2 -Wall -Wextra -std=c++11
-LDFLAGS = -ljgmod -lalttf -llua -llualib -ltolua -lnet `allegro-config --libs`
+
+# Try to determine Allegro 5 configuration method
+ifeq ($(shell which allegro5-config 2>/dev/null),)
+    ifneq ($(shell pkg-config allegro5 --libs 2>/dev/null),)
+        # Try the Allegro 5 specific pkg-config
+        ALLEGRO_LIBS := $(shell pkg-config allegro5 --libs)
+        ALLEGRO_CFLAGS := $(shell pkg-config allegro5 --cflags)
+    else
+        # Try standard allegro-config for Allegro 5 if nothing else works
+        ifneq ($(shell which allegro-config 2>/dev/null),)
+            ALLEGRO_LIBS := $(shell allegro-config --libs)
+            ALLEGRO_CFLAGS := $(shell allegro-config --cflags)
+        else
+            # Default fallback (this will likely fail but at least the error is cleaner)
+            ALLEGRO_LIBS := -lallegro -lallegro_image -lallegro_primitives -lallegro_ttf -lallegro_audio -lallegro_acodec
+        endif
+    endif
+else
+    # allegro5-config is available (typical on Debian/Ubuntu)
+    ALLEGRO_LIBS := $(shell allegro5-config --libs)
+    ALLEGRO_CFLAGS := $(shell allegro5-config --cflags)
+endif
+
+LDFLAGS = -ljgmod -lalttf -llua -llualib -ltolua -lnet $(ALLEGRO_LIBS)
+CXXFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4
+CFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4
 
 # Source directories
 SRCDIR = src
@@ -99,7 +124,19 @@ check-deps:
 	@echo "Checking dependencies..."
 	@which g++ > /dev/null || (echo "ERROR: g++ compiler not found" && exit 1)
 	@which gcc > /dev/null || (echo "ERROR: gcc compiler not found" && exit 1)
-	@which allegro-config > /dev/null || (echo "ERROR: Allegro development libraries not found. Install liballegro4-dev or allegro-devel." && exit 1)
+	@if ! which allegro5-config > /dev/null && ! pkg-config allegro5 --exists 2>/dev/null && ! ldconfig -p 2>/dev/null | grep -q "liballegro.so.5"; then \
+		if pkg-config allegro --exists 2>/dev/null; then \
+			echo "NOTE: Allegro 4 found but Gravity Strike requires Allegro 5.x for the updated version"; \
+			echo "Please install Allegro 5 development libraries:"; \
+			echo "  Debian/Ubuntu: sudo apt-get install liballegro5-dev liballegro-image5-dev liballegro-ttf5-dev liballegro-audio5-dev liballegro-acodec5-dev"; \
+			echo "  Fedora/RHEL: sudo dnf install allegro5-devel allegro5-image-devel allegro5-ttf-devel allegro5-audio-devel allegro5-acodec-devel"; \
+			exit 1; \
+		else \
+			echo "ERROR: Allegro 5 development libraries not found."; \
+			echo "Install liballegro5-dev (Debian/Ubuntu) or allegro5-devel (Fedora/RHEL)"; \
+			exit 1; \
+		fi \
+	fi
 	@which lua > /dev/null || (echo "ERROR: Lua interpreter not found. Install liblua5.3-dev or lua-devel." && exit 1)
 	@echo "All required dependencies found."
 

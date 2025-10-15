@@ -10,7 +10,7 @@
  */
 
 #include "mship.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "../../gsplayer.h"
 #include "../../gsclear.h"
 #include "../../gsglob.h"

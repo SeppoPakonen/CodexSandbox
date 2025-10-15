@@ -29,7 +29,7 @@
 #include "gsreplay.h"
 #include "gsenemy.h"
 #include "gshiscor.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 
 #define MISSION_DONE_PAUSE      60*4
 

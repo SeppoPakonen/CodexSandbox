@@ -33,7 +33,7 @@
 #include "gsreplay.h"
 #include "gsenemy.h"
 #include "gshelper.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "gsframes.h"
 #include "gshiscor.h"
 #include "gsplcomp.h"

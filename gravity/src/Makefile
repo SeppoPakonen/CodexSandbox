@@ -7,7 +7,7 @@ CXX = g++
 CC = gcc
 CXXFLAGS ?= -O2 -Wall -std=c++11
 CFLAGS ?= -O2 -Wall -std=c11
-LDFLAGS = -ljgmod -lalttf -llua -llualib -ltolua -lnet `allegro-config --libs`
+LDFLAGS = -ljgmod -llua -llualib -ltolua -lnet -lallegro -lallegro_image -lallegro_font -lallegro_ttf -lallegro_audio -lallegro_acodec -lallegro_primitives `allegro5-config --libs`
 
 # Object directory (create if it doesn't exist)
 OBJDIR = obj
@@ -17,14 +17,16 @@ SRCDIR = .
 SRCS_CPP = $(wildcard $(SRCDIR)/*.cpp $(SRCDIR)/menu/*.cpp $(SRCDIR)/enemies/*.cpp $(SRCDIR)/weapons/*.cpp $(SRCDIR)/contrib/*.cpp)
 SRCS_C = $(wildcard $(SRCDIR)/*.c $(SRCDIR)/contrib/*.c)
 CSRCS = mappyal.c contrib/md5.c
+WRAPPER_CSRC = allegro5_wrapper.cpp
 
 # Generate object files
 OBJS_CPP = $(SRCS_CPP:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 OBJS_C = $(SRCS_C:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+WRAPPER_OBJS = $(WRAPPER_CSRC:%.cpp=$(OBJDIR)/%.o)
 COBJS = $(CSRCS:%.c=$(OBJDIR)/%.o)
 
 # Combined object files
-OBJS = $(OBJS_CPP) $(OBJS_C) $(COBJS)
+OBJS = $(OBJS_CPP) $(OBJS_C) $(WRAPPER_OBJS) $(COBJS)
 
 GSEXE = ../gslnx
 

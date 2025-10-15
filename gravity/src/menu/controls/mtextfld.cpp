@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "mtextfld.h"
 #include "../../gsclear.h"
 #include "../../gsglob.h"

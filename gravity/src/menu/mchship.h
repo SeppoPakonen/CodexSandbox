@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _MCHOOSESHIP_
 #define _MCHOOSESHIP_

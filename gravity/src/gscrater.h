@@ -15,7 +15,7 @@
      Handling of craters in map
 */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _GSCRATER_
 #define _GSCRATER_

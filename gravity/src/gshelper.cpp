@@ -9,8 +9,8 @@
  *
  */
 
-#include "allegttf.h"
-#include "allegro.h"
+#include "allegro5_wrapper.h"
+#include "allegro5_wrapper.h"
 #ifdef ALLEGRO_WINDOWS
   #include "winalleg.h"
 #endif

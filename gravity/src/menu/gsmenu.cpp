@@ -10,7 +10,7 @@
  */
 
 #include <time.h>
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 #include "gsmenu.h"
 #include "mstars.h"
 #include "mpixels.h"

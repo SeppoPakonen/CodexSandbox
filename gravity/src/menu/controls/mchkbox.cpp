@@ -13,7 +13,7 @@
 #include "../../gsclear.h"
 #include "../../gsglob.h"
 #include "../gsmd.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 
 void mCheckBox::create(int px, int py, int dx, int dy, int pw, int ph)
 {

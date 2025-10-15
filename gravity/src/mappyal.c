@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <allegro.h>
+#include "allegro5_wrapper.h"
 
 #ifdef __cplusplus
 #error "Hey, stop compiling mappyal.c as C++!, see MappyAL readme.txt"

@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _GS_SINGLE_LEVEL_
 #define _GS_SINGLE_LEVEL_

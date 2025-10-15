@@ -30,7 +30,7 @@
 #include "gsplcomp.h"
 #include "gslng.h"
 #include "gsnetw.h"
-#include "allegttf.h"
+#include "allegro5_wrapper.h"
 
 extern RGB_MAP     rgb_table;
 extern COLOR_MAP   light_table;

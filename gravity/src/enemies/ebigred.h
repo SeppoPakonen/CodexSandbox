@@ -9,7 +9,7 @@
  *
  */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _E_SHIP_BIGRED_
 #define _E_SHIP_BIGRED_

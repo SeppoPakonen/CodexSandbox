@@ -16,7 +16,7 @@
 
 */
 
-#include "allegro.h"
+#include "allegro5_wrapper.h"
 
 #ifndef _GSEFFECT_
 #define _GSEFFECT_
