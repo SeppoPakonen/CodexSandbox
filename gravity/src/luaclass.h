@@ -23,7 +23,7 @@ public:
 			close();
 		}
 		
-		state = lua_open(); 
+		state = luaL_newstate(); 
 	}
 	
 	void close(void)
@@ -61,12 +61,12 @@ public:
 	bool isstring(int index) { return lua_isstring(state, index)!=0; }
 	bool iscfunction(int i) { return lua_iscfunction(state, i)!=0; }
 				
-	bool equal(int i1, int i2) { return lua_equal(state, i1, i2)!=0; }
-	bool lessthan(int i1, int i2) { return lua_lessthan(state, i1, i2)!=0; }
+	bool equal(int i1, int i2) { return lua_compare(state, i1, i2, LUA_OPEQ)!=0; }
+	bool lessthan(int i1, int i2) { return lua_compare(state, i1, i2, LUA_OPLT)!=0; }
 	
 	double tonumber(int index) { return lua_tonumber(state, index); }
 	const char * tostring(int i) { return lua_tostring(state, i); }
-	size_t strlen(int index) { return lua_strlen(state, index); }
+	size_t strlen(int index) { return lua_rawlen(state, index); }
 	lua_CFunction tocfunction(int i) { return lua_tocfunction(state, i); }
 
 	void * touserdata(int i) { return lua_touserdata(state, i);	}
@@ -108,8 +108,8 @@ public:
 	void rawset(int index) { lua_rawset(state, index); }
 	void rawseti(int index, int n) { lua_rawseti(state, index, n); }
 
-	void getfenv(int index) { lua_getfenv(state, index); }
-	int setfenv(int index) { return lua_setfenv(state, index); }
+	void getfenv(int index) { lua_getupvalue(state, index, 1); }
+	int setfenv(int index) { return lua_setupvalue(state, index, 1) != NULL; }
 
 /*
 ** "do" functions (run Lua code)
@@ -121,27 +121,28 @@ public:
     return 0;
 	}
 
-	int dofile(const char * filename) { return lua_dofile(state, filename); }
-	int dostring(const char * str) { return lua_dostring(state, str); }
+	int dofile(const char * filename) { return luaL_dofile(state, filename); }
+	int dostring(const char * str) { return luaL_dostring(state, str); }
 	int dobuffer(const char *buff, size_t size, const char * name)
 	{
-		return lua_dobuffer(state, buff, size, name);
+		return luaL_loadbuffer(state, buff, size, name) || lua_pcall(state, 0, LUA_MULTRET, 0);
 	}	
 
 /*
 ** Garbage-collection functions
 */
-	int getgcthreshold(void) { return lua_getgcthreshold(state); }
-	int getgccount(void) { return lua_getgccount(state); }
+	int getgcthreshold(void) { return 0; /* Deprecated in Lua 5.1+ */ }
+	int getgccount(void) { return 0; /* Deprecated in Lua 5.1+ */ }
 	void setgcthreshold(int newthreshold)
 	{
-		lua_setgcthreshold(state, newthreshold);
+		/* Deprecated in Lua 5.1+, use lua_gc instead */
+		lua_gc(state, LUA_GCCOLLECT, 0);
 	}		
 
 /*
 ** miscellaneous functions
 */
-	void unref(int ref) { lua_unref(state, ref); }
+	void unref(int ref) { luaL_unref(state, LUA_REGISTRYINDEX, ref); }
 		
 	int next(int index) { return lua_next(state, index); }
 	void concat(int n) { lua_concat(state, n); }
@@ -210,12 +211,12 @@ public:
 // standard API ends
 
 // lib functions
-	void open_base(void) { luaopen_base(state); }
-	void open_io(void) { luaopen_io(state); }
-	void open_string(void) { luaopen_string(state); }
-	void open_math(void) { luaopen_math(state); }
-	void open_table(void) { luaopen_table(state); }
-	void open_debug(void) { luaopen_debug(state); }
+	void open_base(void) { luaL_requiref(state, "_G", luaopen_base, 1); lua_pop(state, 1); }
+	void open_io(void) { luaL_requiref(state, LUA_IOLIBNAME, luaopen_io, 1); lua_pop(state, 1); }
+	void open_string(void) { luaL_requiref(state, LUA_STRLIBNAME, luaopen_string, 1); lua_pop(state, 1); }
+	void open_math(void) { luaL_requiref(state, LUA_MATHLIBNAME, luaopen_math, 1); lua_pop(state, 1); }
+	void open_table(void) { luaL_requiref(state, LUA_TABLIBNAME, luaopen_table, 1); lua_pop(state, 1); }
+	void open_debug(void) { luaL_requiref(state, LUA_DBLIBNAME, luaopen_debug, 1); lua_pop(state, 1); }
 		
 };
 
