@@ -1,0 +1,1 @@
+/home/sblo/CodexSandbox/mania/csharp/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttribute.cs

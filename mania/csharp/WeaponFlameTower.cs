@@ -71,8 +71,8 @@ public class WeaponFlameTower : WeaponBase
 		CollisionEvent val = collisionEvents[UnityEngine.Random.Range(0, max)];
 		if (UnityEngine.Random.value < 0.1f && other.tag == "Untagged")
 		{
-			UnityEngine.Object.Destroy(UnityEngine.Object.Instantiate((UnityEngine.Object)bs.res.fire, ((CollisionEvent)(ref val)).get_intersection(), Quaternion.identity), 5f);
-			Bullet.Hole(bs.res.hole2, ((CollisionEvent)(ref val)).get_intersection(), ((CollisionEvent)(ref val)).get_normal());
+			UnityEngine.Object.Destroy(UnityEngine.Object.Instantiate((UnityEngine.Object)bs.res.fire, val.get_intersection(), Quaternion.identity), 5f);
+			Bullet.Hole(bs.res.hole2, val.get_intersection(), val.get_normal());
 		}
 		else
 		{
