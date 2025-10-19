@@ -12,7 +12,7 @@ DATADIR = $(PREFIX)/share/gravity
 CXX = g++
 CC = gcc
 CFLAGS += -O2 -Wall -Wextra -std=c11
-CXXFLAGS += -O2 -Wall -Wextra -std=c++11
+CXXFLAGS += -O2 -Wall -Wextra -std=c++11 -fpermissive
 
 # Try to determine Allegro 5 configuration method
 ifeq ($(shell which allegro5-config 2>/dev/null),)
@@ -36,9 +36,9 @@ else
     ALLEGRO_CFLAGS := $(shell allegro5-config --cflags)
 endif
 
-LDFLAGS = -lalttf -llua5.4 -ltolua -lnet $(ALLEGRO_LIBS)
-CXXFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4
-CFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4
+LDFLAGS = -llua5.4 -ltolua++ -lallegro_font $(ALLEGRO_LIBS)
+CXXFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4 -I./src
+CFLAGS += $(ALLEGRO_CFLAGS) -I/usr/include/lua5.4 -I./src
 
 # Source directories
 SRCDIR = src
@@ -46,8 +46,15 @@ OBJDIR = obj
 SOURCEDIR = $(SRCDIR)
 
 # Find all source files
-CPP_SOURCES := $(wildcard $(SRCDIR)/*.cpp $(SRCDIR)/menu/*.cpp $(SRCDIR)/enemies/*.cpp $(SRCDIR)/weapons/*.cpp $(SRCDIR)/contrib/*.cpp)
+CPP_SOURCES := $(wildcard $(SRCDIR)/*.cpp $(SRCDIR)/menu/*.cpp $(SRCDIR)/menu/controls/*.cpp $(SRCDIR)/enemies/*.cpp $(SRCDIR)/weapons/*.cpp $(SRCDIR)/contrib/*.cpp)
 C_SOURCES := $(wildcard $(SRCDIR)/*.c $(SRCDIR)/contrib/*.c)
+# Exclude mappyal_compat.c as it conflicts with allegro5_wrapper.cpp
+C_SOURCES := $(filter-out $(SRCDIR)/mappyal_compat.c, $(C_SOURCES))
+# Exclude mappyal.c as it's now compiled as C++ with allegro5_wrapper.cpp
+C_SOURCES := $(filter-out $(SRCDIR)/mappyal.c, $(C_SOURCES))
+
+# Add tolua.cpp explicitly since it's needed for compilation
+CPP_SOURCES += $(SRCDIR)/tolua.cpp
 
 # Generate object files
 OBJECTS := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(CPP_SOURCES)) \
@@ -85,6 +92,19 @@ clean:
 	@rm -rf $(OBJDIR)
 	@rm -f $(TARGET)
 	@echo "Clean complete."
+
+# Clean temporary autotools files but preserve build.sh
+clean-autotools:
+	@echo "Cleaning autotools temporary files..."
+	@rm -rf .deps autom4te.cache .libs _build build-aux
+	@rm -f .DS_Store config.log config.status Makefile.in aclocal.m4 libtool
+	@find . -name "Makefile.in" -type f -delete 2>/dev/null || true
+	@find . -name "*.tar.gz" -type f -delete 2>/dev/null || true
+	@echo "Autotools temporary files cleaned, build.sh preserved."
+
+# Full clean including autotools files
+distclean: clean clean-autotools
+	@echo "Distribution clean complete."
 
 install: $(TARGET)
 	@echo "Installing Gravity Strike..."
@@ -144,6 +164,8 @@ help:
 	@echo "Gravity Strike Makefile targets:"
 	@echo "  all         - Build the game (default)"
 	@echo "  clean       - Remove build files"
+	@echo "  clean-autotools - Clean temporary autotools files (preserves build.sh)"
+	@echo "  distclean   - Full clean including autotools files"
 	@echo "  install     - Install the game to system"
 	@echo "  uninstall   - Remove the game from system"
 	@echo "  dist        - Create distribution archive"

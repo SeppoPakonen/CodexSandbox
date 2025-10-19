@@ -69,16 +69,22 @@ void Bullet::move(int n)
 
 void Bullet::save_background(gsMap *m)
 {
-  if (backbuf && use_backbuf)
-    if (m->is_on_map(x, y, backbuf->w, backbuf->h))
-      blit(m->get_vscreen(), backbuf, (int)x-m->get_map_x(), (int)y-m->get_map_y()-backbuf->h/2, 0, 0, backbuf->w, backbuf->h);
+  if (backbuf && use_backbuf) {
+    int backbuf_w = get_bitmap_width(backbuf);
+    int backbuf_h = get_bitmap_height(backbuf);
+    if (m->is_on_map(x, y, backbuf_w, backbuf_h))
+      blit(m->get_vscreen(), backbuf, (int)x-m->get_map_x(), (int)y-m->get_map_y()-backbuf_h/2, 0, 0, backbuf_w, backbuf_h);
+  }
 }
 
 void Bullet::restore_background(gsMap *m)
 {
-  if (backbuf && use_backbuf)
-    if (m->is_on_map(x, y, backbuf->w, backbuf->h))
-      blit(backbuf, m->get_vscreen(), 0, 0, (int)x-m->get_map_x(), (int)y-m->get_map_y()-backbuf->h/2, backbuf->w, backbuf->h);
+  if (backbuf && use_backbuf) {
+    int backbuf_w = get_bitmap_width(backbuf);
+    int backbuf_h = get_bitmap_height(backbuf);
+    if (m->is_on_map(x, y, backbuf_w, backbuf_h))
+      blit(backbuf, m->get_vscreen(), 0, 0, (int)x-m->get_map_x(), (int)y-m->get_map_y()-backbuf_h/2, backbuf_w, backbuf_h);
+  }
 }
 
 void Bullet::move()

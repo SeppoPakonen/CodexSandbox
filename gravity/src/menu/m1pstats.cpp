@@ -113,7 +113,7 @@ void m1PStats::init_hiscore_notification(int mode, char *saveret)
   FONT *f = (FONT*)globals->fontdat[FONT_IMPACT10].dat;
   int l = text_length(f, tmp);
 
-  button[M_1PSTATS_LASTHI]->set_dest_x(SCREEN_W/2 - l/2);
+  button[M_1PSTATS_LASTHI]->set_dest_x(globals->menu_resolution_x/2 - l/2);
 }
 
 void m1PStats::init_normal(int scatter)

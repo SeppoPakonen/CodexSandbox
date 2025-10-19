@@ -469,7 +469,7 @@ void OsdBitmap::update_typewriter_text()
               typewriter.attr.color);
 
     if (typewriter.attr.underlined)
-      hline(bitmap, typewriter.cur_x, typewriter.cur_y + text_height(myfont) - 1, typewriter.cur_x + char_length, typewriter.attr.color);
+      line(bitmap, typewriter.cur_x, typewriter.cur_y + text_height(myfont) - 1, typewriter.cur_x + char_length, typewriter.cur_y + text_height(myfont) - 1, typewriter.attr.color);
 
     char tmpstr[2]; tmpstr[0] = typewriter.text[typewriter.curpos]; tmpstr[1] = '\0';
     char_length = text_length(myfont, tmpstr);

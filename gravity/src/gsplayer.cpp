@@ -137,7 +137,7 @@ gsPlayer::gsPlayer(long num, int mship, int col, char *shipfile, gsMap *pmap)
 
   network = 0;
 
-  for (int un=0; n < 20; n++)
+  for (int un=0; un < 20; un++)
   {
     user_int[un] = 0;
     user_float[un] = 0;
@@ -1746,7 +1746,7 @@ void gsPlayer::check_object_collisions()
 
 // check collisions with enemies
 
-      /* TODO (#1#): Pixel-Perfect Collision System zumindest für 
+      /* TODO (#1#): Pixel-Perfect Collision System zumindest fï¿½r 
                      Spieler/Gegner-Kollisionen */
 
 void gsPlayer::check_enemy_collisions()

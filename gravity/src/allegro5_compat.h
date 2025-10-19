@@ -19,13 +19,10 @@
 typedef ALLEGRO_BITMAP BITMAP;
 typedef ALLEGRO_COLOR PALETTE;
 typedef ALLEGRO_COLOR RGB;
-typedef ALLEGRO_DATAFILE DATAFILE;
-typedef struct {
-    void *dat;
-    int type;
-    long size;
-    void *extra;
-} DATAFILE_STRUCT;
+
+// DATAFILE is already defined in allegro5_wrapper.h
+// We'll keep the definition from allegro5_wrapper.h which is:
+// typedef struct { void *dat; int type; long size; void *extra; } DATAFILE_STRUCT, *DATAFILE;
 
 // Define Allegro 5 equivalents for Allegro 4 functions
 #define allegro_init() (al_init(), al_install_keyboard(), al_install_mouse(), al_install_joystick(), al_install_timer())

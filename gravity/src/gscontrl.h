@@ -13,7 +13,7 @@
 
 #include "network/LinkedList.h"
 
-using namespace BasicDataStructures;
+//using namespace BasicDataStructures;  // Comment out since BasicDataStructures not available
 
 #ifndef _GSCONTROL_
 #define _GSCONTROL_

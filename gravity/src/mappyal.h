@@ -1,9 +1,7 @@
 /* Header file for mappyAL V1.0 */
 /* (C)2001 Robin Burrows  -  rburrows@bigfoot.com */
 
-#ifdef __cplusplus
 extern "C" {
-#endif
 
 #define MER_NONE 0		/* All the horrible things that can go wrong */
 #define MER_OUTOFMEM 1
@@ -48,6 +46,8 @@ unsigned char user5, user6, user7;	/* user byte data */
 unsigned char tl : 1;				/* bits for collision detection */
 unsigned char tr : 1;
 unsigned char bl : 1;
+#ifndef BLKSTR_DEFINED
+#define BLKSTR_DEFINED
 unsigned char br : 1;
 unsigned char trigger : 1;			/* bit to trigger an event */
 unsigned char unused1 : 1;
@@ -109,14 +109,20 @@ BLKSTR * MapGetBlock (int, int);
 void MapSetBlockInPixels (int, int, int);
 void MapSetBlock (int, int, int);
 void MapRestore (void);
+// Include guard for function declarations
+#ifndef MAPPYAL_FUNCTIONS_DECLARED
+#define MAPPYAL_FUNCTIONS_DECLARED
 void MapInitAnims (void);
 void MapUpdateAnims (void);
-void MapDrawBG (BITMAP *, int, int, int, int, int, int);
-void MapDrawBGT (BITMAP *, int, int, int, int, int, int);
-void MapDrawFG (BITMAP *, int, int, int, int, int, int, int);
-void MapDrawRow (BITMAP *, int, int, int, int, int, int, int, void (*cellcall) (int cx, int cy, int dx, int dy));
+void MapDrawBG (BITMAP *bmp, int mapxo, int mapyo, int mapx, int mapy, int mapw, int maph);
+void MapDrawBGT (BITMAP *bmp, int mapxo, int mapyo, int mapx, int mapy, int mapw, int maph);
+void MapDrawFG (BITMAP *bmp, int mapxo, int mapyo, int mapx, int mapy, int mapw, int maph, int maprw);
+void MapDrawRow (BITMAP *bmp, int mapxo, int mapyo, int mapx, int mapy, int mapw, int maph, int maprw, void (*cellcall) (int cx, int cy, int dx, int dy));
 BITMAP * MapMakeParallaxBitmap (BITMAP *, int);
-void MapDrawParallax (BITMAP *, BITMAP *, int, int, int, int, int, int);
+void MapDrawParallax (BITMAP *bmp, BITMAP *pbmp, int xo, int yo, int x, int y, int w, int h);
+#endif // MAPPYAL_FUNCTIONS_DECLARED
+
+} // Close extern "C" block
 
 #ifdef __cplusplus
 }

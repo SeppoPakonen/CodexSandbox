@@ -15,7 +15,7 @@
 
 #define VERY_LONG_TIME   9999.9
 
-#include "network/rand.h"
+#include <stdlib.h>
 
 inline int fast_ftol(const float a)
 {

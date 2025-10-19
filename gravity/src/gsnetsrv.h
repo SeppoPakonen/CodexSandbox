@@ -21,7 +21,7 @@
 #include "network/PacketEnumerations.h"
 #include "network/BitStream.h"
 
-using namespace RakNet;
+//using namespace RakNet;  // Comment out since RakNet not available
 
 class gsNetServer
 {

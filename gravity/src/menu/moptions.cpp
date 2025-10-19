@@ -9,7 +9,7 @@
  *
  */
 
-/* DONE (#2#): Option für Musiklautstärke */
+/* DONE (#2#): Option fï¿½r Musiklautstï¿½rke */
 
 
 #include "moptions.h"
@@ -306,7 +306,7 @@ void mOptions::draw(BITMAP *v)
   h = (int)button[M_OPTIONS_RESOLUTION]->get_bar()->get_h();
 
   char rtext[20];
-  sprintf(rtext, "%d x %d", globals->game_resolution[globals->use_resolution_nr]);
+  sprintf(rtext, "%d x %d", globals->game_resolution[globals->use_resolution_nr].x, globals->game_resolution[globals->use_resolution_nr].y);
   f = (FONT*)globals->fontdat[FONT_IMPACT10].dat;
   tlen = text_length(f, rtext);
 

@@ -24,6 +24,7 @@
 #include "gslng.h"
 #include "network/StringCompressor.h"
 #include "network/GetTime.h"
+#include "network/UtilityFunctions.h"
 
 gsChat::gsChat()
 {
@@ -238,14 +239,14 @@ void gsNetwork::create_local_player(char *name, char *ship)
   netplayer[0] = new gsNetPlayer(name, ship, id);
 }
 
-void gsNetwork::write_string_to_bitstream(char *myString, RakNet::BitStream *output)
+void gsNetwork::write_string_to_bitstream(char *myString, BitStream *output)
 {
-  stringCompressor->EncodeString(myString, 256, output);
+  StringCompressor::Instance()->EncodeString(myString, 256, output);
 }
 
 void gsNetwork::write_bitstream_to_string(char *myString, BitStream *input)
 {
-  stringCompressor->DecodeString(myString, 256, input);
+  StringCompressor::Instance()->DecodeString(myString, 256, input);
 }
 
 void gsNetwork::create_timestamped_bitstream_packet(BitStream *bs)
@@ -425,7 +426,7 @@ void gsNetwork::create_shipfile_packet(BitStream *p, PlayerID player_id)
     {
       packfile_password(globals->pwd);
       PACKFILE *shp = pack_fopen(shippath, "rp");
-      pack_fread(shipbuf, shipsize, shp);
+      pack_fread(shipbuf, sizeof(char), shipsize, shp);
       pack_fclose(shp);
       packfile_password(NULL);
     }
@@ -1521,8 +1522,12 @@ void gsNetwork::game_process_player_status(Packet *packet)
       weaponslot *ws = mypl->player->get_weapon_slot(n);
       int bullets; 
       char upgrade;
-      p.Read((int)bullets);
-      p.Read((char)upgrade);
+      int temp_bullets;
+      char temp_upgrade;
+      p.Read(temp_bullets);
+      p.Read(temp_upgrade);
+      bullets = temp_bullets;
+      upgrade = temp_upgrade;
 
       ws->bullets = bullets;
       ws->upgrade = upgrade;
@@ -2046,7 +2051,9 @@ void gsNetwork::game_process_player_statistics(Packet *packet)
 
   // other player requests our stats?
   bool request;
-  p.Read((bool)request);
+  bool temp_request;
+  p.Read(temp_request);
+  request = temp_request;
 
   // read stats
   statistics myplstats;
@@ -2185,22 +2192,22 @@ void gsNetwork::game_process_enemy_object_update(Packet *packet)
 
   // enemy or object?
   char type;
-  p.Read((char)type);
+  p.Read(type);
 
   // signature
   int sig;
-  p.Read((int)sig);
+  p.Read(sig);
 
   // pos & spd
   float x, y, xspd, yspd;
-  p.Read((float)x);
-  p.Read((float)y);
-  p.Read((float)xspd);
-  p.Read((float)yspd);
+  p.Read(x);
+  p.Read(y);
+  p.Read(xspd);
+  p.Read(yspd);
 
   // current waypoint
   int curwp;
-  p.Read((int)curwp);
+  p.Read(curwp);
 
   // interpolation
   float delaymult = 60.0 / float(1000.0/(float)delay);
@@ -2350,7 +2357,7 @@ void gsNetwork::game_process_map_state(Packet *packet)
 
   // create craters
   int crater_count;
-  p.Read((int)crater_count);
+  p.Read(crater_count);
 
   for (n=0; n < crater_count; n++)
   {

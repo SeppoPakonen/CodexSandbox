@@ -14,7 +14,7 @@
 
 //#include <lua.h>
 #include "luaclass.h"
-#include <tolua.h>
+#include "tolua.h"
 
 #include "gsglob.h"
 

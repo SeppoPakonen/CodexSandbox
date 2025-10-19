@@ -1,0 +1,9 @@
+// Additional helper functions for Allegro 4 compatibility
+float distance(int x1, int y1, int x2, int y2) {
+    // Calculate Euclidean distance between two points
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+    return sqrtf(dx*dx + dy*dy);
+}
+
+// End of file

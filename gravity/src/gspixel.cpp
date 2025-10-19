@@ -79,8 +79,8 @@ void Pixel::draw(gsMap *m)
     int nx = fast_ftol(x);
     int ny = fast_ftol(y);
 
-//    putpixel(m->get_vscreen(),(int)x - m->get_map_x(),(int)y - m->get_map_y(),color);
-    m->get_vscreen()->line[ny - m->get_map_y()][nx - m->get_map_x()] = color;
+    // Replace direct pixel access with proper Allegro 5 function call
+    putpixel(m->get_vscreen(), nx - m->get_map_x(), ny - m->get_map_y(), color);
     clearlist->add(m, nx, ny, 1, 1);
   }
 }
@@ -99,7 +99,7 @@ void Pixel::draw(BITMAP *m)
   else
   {
     putpixel(m, nx, ny, color);
-//    m->line[(int)y][(int)x] = color;
+//    putpixel(m, (int)x, (int)y, color);
     clearlist->add(m, nx, ny, 1, 1);
   }
 }
@@ -453,7 +453,7 @@ void gsPixelRain::clear(gsMap *m)
   {
     next_pixel = temp->next;
 
-    m->get_vscreen()->line[(int)temp->y - m->get_map_y()][(int)temp->x - m->get_map_x()] = 0;
+    putpixel(m->get_vscreen(), (int)temp->x - m->get_map_x(), (int)temp->y - m->get_map_y(), 0);
 //    putpixel(m->get_vscreen(), (int)temp->x - m->get_map_x(), (int)temp->y - m->get_map_y(), 0);
 
     temp = next_pixel;
@@ -468,7 +468,7 @@ void gsPixelRain::clear(BITMAP *m)
   {
     next_pixel = temp->next;
 
-    m->line[(int)temp->y][(int)temp->x] = 0;
+    putpixel(m, (int)temp->x, (int)temp->y, 0);
 //    putpixel(m, (int)temp->x, (int)temp->y, 0);
 
     temp = next_pixel;

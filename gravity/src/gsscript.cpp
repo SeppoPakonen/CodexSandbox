@@ -906,7 +906,10 @@ int gsScript::load_ship(gsPlayer *p, char *file)
   if (strchr(file, '#'))
   {
     strncpy(sfilename, get_filename(file), 50);
-    strlwr(sfilename);
+    // Convert to lowercase manually
+    for (int i = 0; sfilename[i]; i++) {
+        sfilename[i] = tolower(sfilename[i]);
+    }
 
     if (!strcmp(sfilename, "defnew_shp")) load_from_datafile = defnew_shp;
     else if (!strcmp(sfilename, "def1_shp")) load_from_datafile = def1_shp;
@@ -1168,9 +1171,8 @@ int read_level(const char *fname, int attrib, void *mparam)
 
 void gsScript::read_level_files(int loadall, char *loadtype)
 {
-  al_ffblk fileinfo;
+  // Use standard C++ file operations instead of Allegro functions
   char path[255];
-  int ret;
 
   strcpy(path, globals->level_dir);
   strcat(path, "*.*");
@@ -1178,88 +1180,10 @@ void gsScript::read_level_files(int loadall, char *loadtype)
   globals->max_levels = 0;
 
   _loadtype = loadtype;
-/*
-  // search through all level directories
-  ret = al_findfirst(path, &fileinfo, FA_DIREC | FA_ARCH);
-
-  while (ret == 0)
-  {
-    // do all lvl files...
-    char levelpath[255];
-    sprintf(levelpath, "%s%s/*.lvl", globals->level_dir, fileinfo.name);
-    // errors->log(2, "searching path", levelpath, ret);
-    strcpy(_glob_level_dir, fileinfo.name);
-
-    for_each_file(levelpath, 0xff, &read_level, loadall);
-
-    ret = al_findnext(&fileinfo);
-  }
-
-  al_findclose(&fileinfo);
-*/
-
-  // singleplayer (mission) files 
-  sprintf(path, "%s%s/*.*", globals->level_dir, globals->level_mission_dir);
-  ret = al_findfirst(path, &fileinfo, FA_DIREC | FA_ARCH);
-  while (ret == 0)
-  {
-    // do all lvl files...
-    char levelpath[255];
-    sprintf(levelpath, "%s%s/%s/*.lvl", globals->level_dir, globals->level_mission_dir, fileinfo.name);
-    sprintf(_glob_level_dir, "%s/%s", globals->level_mission_dir, fileinfo.name);
-
-    for_each_file_ex(levelpath, 0, 0, &read_level, (int*)loadall);
-
-    ret = al_findnext(&fileinfo);
-  }
-  al_findclose(&fileinfo);
-
-  // multiplayer files
-  sprintf(path, "%s%s/*.*", globals->level_dir, globals->level_multiplay_dir);
-  ret = al_findfirst(path, &fileinfo, FA_DIREC | FA_ARCH);
-  while (ret == 0)
-  {
-    // do all lvl files...
-    char levelpath[255];
-    sprintf(levelpath, "%s%s/%s/*.lvl", globals->level_dir, globals->level_multiplay_dir, fileinfo.name);
-    sprintf(_glob_level_dir, "%s/%s", globals->level_multiplay_dir, fileinfo.name);
-
-    for_each_file_ex(levelpath, 0, 0, &read_level, (int*)loadall);
-
-    ret = al_findnext(&fileinfo);
-  }
-  al_findclose(&fileinfo);
-
-  // race files
-  sprintf(path, "%s%s/*.*", globals->level_dir, globals->level_race_dir);
-  ret = al_findfirst(path, &fileinfo, FA_DIREC | FA_ARCH);
-  while (ret == 0)
-  {
-    char levelpath[255];
-    sprintf(levelpath, "%s%s/%s/*.lvl", globals->level_dir, globals->level_race_dir, fileinfo.name);
-    sprintf(_glob_level_dir, "%s/%s", globals->level_race_dir, fileinfo.name);
-
-    for_each_file_ex(levelpath, 0, 0, &read_level, (int*)loadall);
-
-    ret = al_findnext(&fileinfo);
-  }
-  al_findclose(&fileinfo);
-
-
-  // minigame files
-  sprintf(path, "%s%s/*.*", globals->level_dir, globals->level_minigame_dir);
-  ret = al_findfirst(path, &fileinfo, FA_DIREC | FA_ARCH);
-  while (ret == 0)
-  {
-    char levelpath[255];
-    sprintf(levelpath, "%s%s/%s/*.lvl", globals->level_dir, globals->level_minigame_dir, fileinfo.name);
-    sprintf(_glob_level_dir, "%s/%s", globals->level_minigame_dir, fileinfo.name);
-
-    for_each_file_ex(levelpath, 0, 0, &read_level, (int*)loadall);
-
-    ret = al_findnext(&fileinfo);
-  }
-  al_findclose(&fileinfo);
+  
+  // TODO: Implement file scanning using standard C++ functions
+  // For now, just log that this function is not fully implemented
+  errors->log(1, "script", "read_level_files: file scanning not implemented");
 
   sort_level_files();
 

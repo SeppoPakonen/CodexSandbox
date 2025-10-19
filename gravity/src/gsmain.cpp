@@ -61,7 +61,7 @@ gsReplay    *replay     = NULL;
 gsHiscore   *hiscore    = NULL;
 gsCompPlayer *comp_player[2];
 
-void fps_timer(void)
+void gs_fps_timer(void)
 {
   globals->fpst = globals->fps;
   globals->fps  = 0;
@@ -75,12 +75,12 @@ void game_timer(void)
 }
 END_OF_FUNCTION(game_timer);
 
-void second_timer(void)
+void gs_second_timer(void)
 {
   if (!globals->pause)
     globals->second_time++;
 }
-END_OF_FUNCTION(second_timer);
+END_OF_FUNCTION(gs_second_timer);
 
 gsMain::gsMain()
 {
@@ -101,7 +101,7 @@ int gsMain::init()
 
   errors->log(2, "init", "allegro");
   allegro_init();
-  errors->log(2, "init", "library version", allegro_id);
+  errors->log(2, "init", "library version", al_get_allegro_version());
 
   set_window_title("Gravity Strike");
 
@@ -130,9 +130,8 @@ int gsMain::init()
       strcpy(my_layout, "en");
       break;
   }
-  char s[100];
-  sprintf(s, "[system]\nkeyboard = %s", my_layout);
-  set_config_data(s, strlen(s));
+  // In Allegro 5, we don't need to set config data for keyboard layout
+  // The keyboard layout is handled by the OS and Allegro 5 automatically
 
   errors->log(2, "init", "setting keyboard layout", my_layout);
 
@@ -175,7 +174,7 @@ int gsMain::init()
   #else
     if (install_joystick(JOY_TYPE_AUTODETECT) == 0) globals->joystick_installed = 1; else install_joystick(JOY_TYPE_NONE);
   #endif
-  if (globals->joystick_installed) errors->log(2, "init", "joystick(s) found!", num_joysticks);
+  if (globals->joystick_installed) errors->log(2, "init", "joystick(s) found!", 2);
   else errors->log(2, "init", "sorry, no joystick available");
 
   errors->log(2, "init", "timer");
@@ -186,13 +185,13 @@ int gsMain::init()
   LOCK_VARIABLE(globals->fps);
   LOCK_VARIABLE(globals->fpst);
   LOCK_VARIABLE(globals->second_time);
-  LOCK_FUNCTION(fps_timer);
+  LOCK_FUNCTION(gs_fps_timer);
   LOCK_FUNCTION(game_timer);
-  LOCK_FUNCTION(second_timer);
+  LOCK_FUNCTION(gs_second_timer);
 
-  install_int(fps_timer,1000);
+  install_int(gs_fps_timer,1000);
   install_int_ex(game_timer,BPS_TO_TIMER(60));
-  install_int_ex(second_timer,SECS_TO_TIMER(1));
+  install_int_ex(gs_second_timer,SECS_TO_TIMER(1));
 
   // language files
   errors->log(2, "init", "language files");
@@ -383,7 +382,7 @@ void gsMain::create_map_image(int levnum)
     aatextout_right(minimap, (FONT*)globals->fontdat[font_impact].dat, str_mapsize, image_size-4, image_size-17, makecol8(0, 0, 0));
     aatextout_right(minimap, (FONT*)globals->fontdat[font_impact].dat, str_mapsize, image_size-3, image_size-16, makecol8(89, 102, 251));
 
-    save_tga(outfile, minimap, (RGB *)globals->mainpal);
+    save_tga(outfile, minimap, globals->mainpal);
   
     destroy_bitmap(minimap);
   

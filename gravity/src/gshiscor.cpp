@@ -60,8 +60,9 @@ void gsHiscore::make_crc_file()
   /* SOURCE CODE DISTRIBUTION: Code removed. Please check source.txt */
 }
 
-int gsHiscore::do_crc_checks()
+int gsHiscore::do_crc_checks(char *dir)
 {
+  (void)dir;  // unused parameter
   /* SOURCE CODE DISTRIBUTION: Code removed. Please check source.txt */
   return 0;
 }

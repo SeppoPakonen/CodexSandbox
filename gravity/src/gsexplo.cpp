@@ -35,8 +35,8 @@ Explosion::Explosion(long pplayer_sig, int ptype, int pmaxframe, int pmaxframet,
   {
     expl_player = get_player_nr_by_sig(player_sig);
     BITMAP *bmpbit = player[expl_player]->get_shield_frame(0);
-    w = bmpbit->w;
-    h = bmpbit->h;
+    w = get_bitmap_width(bmpbit);
+    h = get_bitmap_height(bmpbit);
     bw = w + 10;
     bh = h + 10;
     x = (int)player[expl_player]->get_x() + player[expl_player]->get_width()/2 - w/2;
@@ -45,15 +45,15 @@ Explosion::Explosion(long pplayer_sig, int ptype, int pmaxframe, int pmaxframet,
   else if (ptype == effect_gravfield_1)
   {
     expl_player = get_player_nr_by_sig(player_sig);
-    w = bw = ((BITMAP*)dat[type].dat)->w;
-    h = bh = ((BITMAP*)dat[type].dat)->h;
+    w = bw = get_bitmap_width((BITMAP*)dat[type].dat);
+    h = bh = get_bitmap_height((BITMAP*)dat[type].dat);
     x = (int)player[expl_player]->get_x() + player[expl_player]->get_width()/2 - w/2;
     y = (int)player[expl_player]->get_y() + player[expl_player]->get_height()/2 - h/2;
   }
   else
   {
-    w = bw = ((BITMAP*)dat[type].dat)->w;
-    h = bh = ((BITMAP*)dat[type].dat)->h;
+    w = bw = get_bitmap_width((BITMAP*)dat[type].dat);
+    h = bh = get_bitmap_height((BITMAP*)dat[type].dat);
   }
 
   background = create_bitmap(bw,bh);

@@ -14,6 +14,9 @@
 #include "gsnetw.h"
 #include "gsnetsrv.h"
 
+// Include the statistics header
+#include "network/RakNetStatistics.h"
+
 gsNetServer::gsNetServer()
 {
   interface = RakNetworkFactory::GetRakServerInterface();
@@ -192,7 +195,7 @@ void gsNetServer::process_packets()
 			  break;
 		  case ID_AUTOPATCHER_REQUEST_FILE_LIST:      // Request for a list of files served by the autopatcher. Send to Autopatcher::SendDownloadableFileList(packet->playerId).
         #ifdef _DEBUG 
-          errors->log(2, "net server", "ID_AUTOPATCHER_REQUEST_FILE_LÌST", p->playerId.binaryAddress);
+          errors->log(2, "net server", "ID_AUTOPATCHER_REQUEST_FILE_Lï¿½ST", p->playerId.binaryAddress);
         #endif
 			  break;
 		  case ID_AUTOPATCHER_FILE_LIST:              // Got a list of files served by a remote autopatcher. Send to Autopatcher::OnAutopatcherFileList(packet, bool);

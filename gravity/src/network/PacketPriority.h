@@ -1,0 +1,37 @@
+/*
+ * Stub for PacketPriority.h
+ * This is a minimal stub to allow compilation
+ */
+
+#ifndef PacketPriority_h
+#define PacketPriority_h
+
+// Define constants that were used directly in the code
+#define LOW_PRIORITY 0
+#define MEDIUM_PRIORITY 1
+#define HIGH_PRIORITY 2
+#define CRITICAL_PRIORITY 3
+
+#define UNRELIABLE 0
+#define RELIABLE 1
+#define RELIABLE_ORDERED 2
+#define UNRELIABLE_SEQUENCED 3
+#define RELIABLE_SEQUENCED 4
+
+// Enums for compatibility
+enum PacketPriority {
+    PACKET_PRIORITY_LOW = LOW_PRIORITY,
+    PACKET_PRIORITY_MEDIUM = MEDIUM_PRIORITY,
+    PACKET_PRIORITY_HIGH = HIGH_PRIORITY,
+    PACKET_PRIORITY_CRITICAL = CRITICAL_PRIORITY
+};
+
+enum PacketReliability {
+    PACKET_RELIABILITY_UNRELIABLE = UNRELIABLE,
+    PACKET_RELIABILITY_RELIABLE = RELIABLE,
+    PACKET_RELIABILITY_RELIABLE_ORDERED = RELIABLE_ORDERED,
+    PACKET_RELIABILITY_UNRELIABLE_SEQUENCED = UNRELIABLE_SEQUENCED,
+    PACKET_RELIABILITY_RELIABLE_SEQUENCED = RELIABLE_SEQUENCED
+};
+
+#endif

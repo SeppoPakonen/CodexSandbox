@@ -224,7 +224,7 @@ void Image::create_n_a_frame(int type)
   BITMAP *user_bit = create_bitmap(50, 25);
   clear(user_bit);
   rect(user_bit, 0, 0, 49, 24, globals->col_white);
-  textout_centre(user_bit, font, "n/a", 25, 10, globals->col_yellow);
+  textout_centre(user_bit, (ALLEGRO_FONT*)NULL, "n/a", 25, 10, globals->col_yellow);
 
   RLE_SPRITE *user_rle = get_rle_sprite(user_bit);
   frame[framecount] = new Frame(user_rle, type, 1, 0, 0, 0);

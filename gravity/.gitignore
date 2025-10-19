@@ -1,0 +1,24 @@
+# Build artifacts
+obj/
+*.o
+*.a
+*.so
+*.exe
+*.out
+
+# Log files
+*.log
+make_output*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Other generated files
+config.log

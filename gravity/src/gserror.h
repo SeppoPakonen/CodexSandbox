@@ -34,6 +34,7 @@ class gsError
     // first int = facility: 0=error, 1=warn, 2=info
     void log(int, char *, char *, long);
     void log(int, char *, char *, char *);
+    void log(int, char *, char *, const char *);
     void log(int, char *, char *, char *, long);
     void log(int, char *, char *);
     void log(int, char *, float, float=0);

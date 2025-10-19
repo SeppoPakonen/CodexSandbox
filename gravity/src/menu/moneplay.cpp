@@ -278,7 +278,8 @@ int mOnePlayer::handle_controls()
       globals->race = 0;
     }
 
-    if (minimap) destroy_bitmap(minimap); minimap = NULL;
+    if (minimap) destroy_bitmap(minimap); 
+    minimap = NULL;
 
     char path[150];
     char npath[150];
@@ -287,8 +288,19 @@ int mOnePlayer::handle_controls()
                              globals->level_files[globals->selected_level].mapfile);
     replace_extension(npath, path, "tga", 150);
 
-    if (exists(npath))
-      minimap = load_tga(npath, NULL);
+    if (exists(npath)) {
+      // Use Allegro 5 function instead
+      ALLEGRO_BITMAP *al_minimap = al_load_bitmap(npath);
+      if (al_minimap) {
+        // Create a new BITMAP wrapper for the ALLEGRO_BITMAP
+        minimap = create_bitmap(al_get_bitmap_width(al_minimap), al_get_bitmap_height(al_minimap));
+        if (minimap) {
+          minimap->bitmap = al_minimap;
+        } else {
+          al_destroy_bitmap(al_minimap);
+        }
+      }
+    }
       
     // resolution info
     int reqres = globals->level_files[globals->selected_level].require_resolution_nr;

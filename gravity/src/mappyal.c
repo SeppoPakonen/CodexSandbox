@@ -605,13 +605,15 @@ char ascnum[80];
 		i++;
 	}
 	i = mapnumblockstr; while (i) {
-		((BITMAP *) myblkstrpt->bgoff) = abmTiles[myblkstrpt->bgoff];
+		// For Allegro 5 compatibility, store the pointer in the bgoff field
+		// This is a type punning approach where integer offsets are replaced with pointers
+		memcpy(&(myblkstrpt->bgoff), &(abmTiles[myblkstrpt->bgoff]), sizeof(void*));
 		if (myblkstrpt->fgoff!=0)
-			((BITMAP *) myblkstrpt->fgoff) = abmTiles[myblkstrpt->fgoff];
+			memcpy(&(myblkstrpt->fgoff), &(abmTiles[myblkstrpt->fgoff]), sizeof(void*));
 		if (myblkstrpt->fgoff2!=0)
-			((BITMAP *) myblkstrpt->fgoff2) = abmTiles[myblkstrpt->fgoff2];
+			memcpy(&(myblkstrpt->fgoff2), &(abmTiles[myblkstrpt->fgoff2]), sizeof(void*));
 		if (myblkstrpt->fgoff3!=0)
-			((BITMAP *) myblkstrpt->fgoff3) = abmTiles[myblkstrpt->fgoff3];
+			memcpy(&(myblkstrpt->fgoff3), &(abmTiles[myblkstrpt->fgoff3]), sizeof(void*));
 		myblkstrpt++; i--;
 	}
 

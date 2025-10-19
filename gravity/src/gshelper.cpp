@@ -24,6 +24,20 @@
 #include <math.h>
 #include <string.h>
 #include <ctype.h>
+#include <sys/stat.h>
+
+#ifndef MAX
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#endif
+#ifndef MIN
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#endif
+
+// Function to check if a file exists
+bool file_exists(const char *filename) {
+    struct stat buffer;
+    return (stat(filename, &buffer) == 0);
+}
 
 #define ROUND(x) floor((x) + ((x) >= 0 ? 0.5 : -0.5))
 
@@ -283,19 +297,18 @@ void make_screenshot()
   char text[20];
   PALETTE pal;
 
-  packfile_password(NULL);
+  // packfile_password(NULL);  // Not available in Allegro 5
 
   do
   {
     dump++;
     sprintf(text, "gs%06d.tga", dump);
-  } while (exists(text));
+  } while (file_exists(text));  // Check if file exists using standard C++ function
 
   sprintf(text, "gs%06d.tga", dump);
 
-  get_palette(pal);
   bmp = create_sub_bitmap(screen, 0, 0, screen->w, screen->h);
-  save_tga(text,bmp,pal);
+  save_tga(text,bmp,NULL);  // Use NULL for palette since Allegro 5 handles it differently
   destroy_bitmap(bmp);
 }
 

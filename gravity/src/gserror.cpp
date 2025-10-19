@@ -122,6 +122,17 @@ void gsError::log(int fac, char *l)
   close_log();
 }
 
+void gsError::log(int fac, char *l1, char *l2, const char *l3)
+{
+  open_log();
+  if (fac <= loglevel)
+  {
+    get_timestamp(timestamp);
+    fprintf(logfile, "%s\t%s:\t%s (%s)\n", timestamp, l1, l2, l3);
+  }
+  close_log();
+}
+
 void gsError::er_exit(char *t, int n)
 {
   set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);

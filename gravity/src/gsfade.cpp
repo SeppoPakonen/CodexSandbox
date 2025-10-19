@@ -24,13 +24,9 @@ gsFade::gsFade()
 
   for (int n=0; n < 256; n++)
   {
-    white_palette[n].r = 63;
-    white_palette[n].g = 63;
-    white_palette[n].b = 63;
-
-    red_palette[n].r = 63;
-    red_palette[n].g = 0;
-    red_palette[n].b = 0;
+    // For Allegro 5 compatibility, using 0-255 range for RGB values
+    white_palette[n] = al_map_rgb(255, 255, 255);
+    red_palette[n] = al_map_rgb(255, 0, 0);
   }
 
   get_palette(cur_palette);
@@ -88,29 +84,17 @@ void gsFade::update()
 
 void gsFade::fade_from_range(RGB *temp, const RGB *t, int from, int to, float speed)
 {
-  int n;
-
-  if (fade_pos > fade_opos)
-  {
-    for (n=from; n <= to; n++)
-    {
-      if ( temp[n].r < t[n].r) temp[n].r++;
-      else if (temp[n].r > t[n].r) temp[n].r--;
-
-      if (temp[n].g < t[n].g) temp[n].g++;
-      else if (temp[n].g > t[n].g) temp[n].g--;
-
-      if (temp[n].b < t[n].b) temp[n].b++;
-      else if (temp[n].b > t[n].b) temp[n].b--;
-
-//      set_color(n, &temp[n]);
-    } // for n
-
+  // In Allegro 5, we don't manipulate palettes directly. Instead, we use overlay effects.
+  // This function now serves as a placeholder for fade calculations.
+  // The actual fading effect would be implemented using alpha blending over the screen.
+  (void)temp; (void)t; (void)from; (void)to; (void)speed; // avoid unused parameter warnings
+  
+  if (fade_pos > fade_opos) {
     fade_opos = fade_pos;
-
-    set_palette_range(temp, from, to, 0);
+    // In Allegro 5, the actual fade effect would be implemented differently
+    // using draw functions with appropriate alpha values
   }
-
+  
   fade_pos += speed;
 }
 

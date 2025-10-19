@@ -230,7 +230,7 @@ void gsNetClient::process_packets()
 			  break;
 		  case ID_AUTOPATCHER_REQUEST_FILE_LIST:      // Request for a list of files served by the autopatcher. Send to Autopatcher::SendDownloadableFileList(packet->playerId).
         #ifdef _DEBUG 
-          errors->log(2, "net client", "ID_AUTOPATCHER_REQUEST_FILE_LÌST", p->playerId.binaryAddress);
+          errors->log(2, "net client", "ID_AUTOPATCHER_REQUEST_FILE_Lï¿½ST", p->playerId.binaryAddress);
         #endif
 			  break;
 		  case ID_AUTOPATCHER_FILE_LIST:              // Got a list of files served by a remote autopatcher. Send to Autopatcher::OnAutopatcherFileList(packet, bool);
@@ -587,7 +587,7 @@ void gsNetClient::menu_client_receive_update(Packet *packet)
     if (temp_player)
     {
       net->write_bitstream_to_string(&temp_player->name[0], &p);
-      p.Read((bool)temp_player->ready);
+      p.Read(temp_player->ready);
     }
     else return;
   }
@@ -601,7 +601,7 @@ void gsNetClient::menu_client_receive_update(Packet *packet)
   p.Read(globals->capture_the_flag);
   p.Read(globals->hunter_hunted);
   bool server_in_game;
-  p.Read((bool)server_in_game);
+  p.Read(server_in_game);
   net->set_server_in_game(server_in_game);
 
   // set server to ready
@@ -789,5 +789,7 @@ void gsNetClient::game_receive_server_misc(Packet *packet)
   p.Read(typeId);
 
   // game time
-  p.Read((int)globals->second_time);
+  int temp_time;
+  p.Read(temp_time);
+  globals->second_time = temp_time;
 }

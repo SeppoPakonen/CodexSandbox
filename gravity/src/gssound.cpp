@@ -42,13 +42,15 @@ gsSound::gsSound()
     }
   }
 
-  reserve_voices(16, -1);
-  set_volume_per_voice(0);
+  // Reserve voices - using Allegro 5 audio instead
+  // reserve_voices(16, -1);
+  // set_volume_per_voice(0);
 
-  if (install_sound(DIGI_AUTODETECT, MIDI_NONE, ""))
+  // Initialize Allegro 5 audio system
+  if (!al_install_audio())
   {
-    allegro_message("ERROR: couldn't initialize sound card!\nthe error was: %s\nstarting without sound...", allegro_error);
-    errors->log(1, "ERROR initializing sound", allegro_error);
+    allegro_message("ERROR: couldn't initialize sound card!\nthe error was: %s\nstarting without sound...", "al_install_audio failed");
+    errors->log(1, "ERROR initializing sound", "al_install_audio failed");
     status_play_sound = 0;
     status_play_music = 0;
   }
@@ -87,7 +89,7 @@ gsSound::gsSound()
 
 gsSound::~gsSound()
 {
-  remove_sound();
+  // remove_sound();  // Not needed in Allegro 5
   if (globals->sounddat) unload_datafile(globals->sounddat); globals->sounddat = NULL;
 }
 
@@ -205,7 +207,7 @@ void gsSound::destroy_music()
 {
   if (game_music)
   {
-    al_stop_audio_stream(game_music);
+    al_set_audio_stream_playing(game_music, false);
     al_destroy_audio_stream(game_music);
     status_play_game_music = 0;
     game_music = NULL;
@@ -216,7 +218,7 @@ void gsSound::destroy_menu_music()
 {
   if (mymusic)
   {
-    al_stop_audio_stream(mymusic);
+    al_set_audio_stream_playing(mymusic, false);
     al_destroy_audio_stream(mymusic);
     mymusic = NULL;
     status_play_menu_music = 0;
@@ -226,21 +228,21 @@ void gsSound::destroy_menu_music()
 void gsSound::start_menu_music()
 {
   if (status_play_sound && status_play_music && status_play_menu_music) {
-    al_play_audio_stream(mymusic);
+    al_set_audio_stream_playing(mymusic, true);
   }
 }
 
 void gsSound::start_music()
 {
   if (status_play_sound && status_play_music && status_play_game_music) {
-    al_play_audio_stream(game_music);
+    al_set_audio_stream_playing(game_music, true);
   }
 }
 
 void gsSound::stop_music()
 {
   if (status_play_sound && status_play_music && status_play_game_music) {
-    al_stop_audio_stream(game_music);
+    al_set_audio_stream_playing(game_music, false);
   }
 }
 

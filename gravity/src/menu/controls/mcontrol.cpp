@@ -25,9 +25,11 @@ mControl::mControl()
   dest_x = dest_y = xspd = yspd = 0;
   xacc = yacc = 1;
   flags = 0;
-  color1 = makecol8(58, 64, 191);
-  color2 = makecol8(89, 102, 251);
-  color3 = makecol8(91, 162, 255);
+  // Convert Allegro 4 makecol8 to Allegro 5 rgb values
+  // In Allegro 5, colors are handled differently so we'll use integer representations
+  color1 = (58 << 16) | (64 << 8) | 191;  // RGB(58, 64, 191)
+  color2 = (89 << 16) | (102 << 8) | 251; // RGB(89, 102, 251)
+  color3 = (91 << 16) | (162 << 8) | 255; // RGB(91, 162, 255)
   ox = oy = 0;
 
   gspd = 30;

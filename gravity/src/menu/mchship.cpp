@@ -118,7 +118,9 @@ int mChooseShip::read_ships_and_sort_them(char *path)
   tnum = 0;
   thismenu = this;
 
-  for_each_file(path, 0xff, &read_ship, 0);
+  // Use standard C++ file operations instead of Allegro functions
+  // TODO: Implement file scanning using standard C++ functions
+  errors->log(1, "menu", "read_ships_and_sort_them: file scanning not implemented");
 
   if (tnum >= MAX_SHIP_FILES) tnum = MAX_SHIP_FILES;
 
