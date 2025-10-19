@@ -1,2 +1,0 @@
--- QD02: Bumping Around
--- level script

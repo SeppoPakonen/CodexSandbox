@@ -1,2 +1,0 @@
--- fracht
--- script file
