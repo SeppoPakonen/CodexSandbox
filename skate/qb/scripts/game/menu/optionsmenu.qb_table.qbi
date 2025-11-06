@@ -1,5 +1,0 @@
-#addx 0x2f69716c "LoadExecPS2"
-#addx 0x44662250 "motox_demo"
-#addx 0x08cc4648 "stopstream"
-#addx 0x856e6fb1 "stopmusic"
-#addx 0x233bcfe0 "elf"

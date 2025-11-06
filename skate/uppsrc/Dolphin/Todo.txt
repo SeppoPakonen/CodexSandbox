@@ -1,3 +1,0 @@
-
- 
- - check all "GXWGFifo.u32 = (u32) " if they are pointer stuff
