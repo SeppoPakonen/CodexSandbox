@@ -1,3 +1,0 @@
--- Symmetric
--- script file
-
