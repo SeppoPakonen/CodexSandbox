@@ -217,26 +217,30 @@ void OSInitThreadQueue(OSThreadQueue* queue) {
 	// No thread queue support in SDL version.
 }
 
-s32 OSResumeThread(OSThread* thread) {
-	// Not implemented in SDL version.
+s32 OSResumeThread(OSThread* thrd) {
+	thrd->thrd.Start([=]{
+		if (thrd->func)
+			thrd->func(thrd);
+	});
 	return 0;
 }
-BOOL OSCreateThread(OSThread*  thread,
+BOOL OSCreateThread(OSThread*  thrd,
 		void* (*func)(void*),
 		void*      param,
 		void*      stack,
 		u32        stackSize,
 		OSPriority priority,
 		u16        attr) {
-	TODO // convert OSThread to be ::Upp::Thread
+	thrd->func = func;
+	return true;
 }
         
 void OSSetAlarm(OSAlarm* alarm, OSTime tick, OSAlarmHandler handler) {
 	// Alarm not supported in SDL version.
 }
 
-s32 OSSuspendThread(OSThread* thread) {
-	// Not implemented; return 0.
+s32 OSSuspendThread(OSThread* thrd) {
+	
 	return 0;
 }
 

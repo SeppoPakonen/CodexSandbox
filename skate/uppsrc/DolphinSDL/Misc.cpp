@@ -1,7 +1,7 @@
 #include "DolphinSDL.h"
 
 void std::OurPrintf(const char* txt) {
-	TODO
+	LOG(txt);
 }
 
 void LCDisable() {
@@ -94,7 +94,8 @@ void GXSetScissorBoxOffset(s32 x_off, s32 y_off) {
 }
 
 GXBreakPtCallback GXSetBreakPtCallback(GXBreakPtCallback cb) {
-	TODO
+	LOG("GXSetBreakPtCallback: pass");
+	return cb;
 }
 
 void GXSetTevKAlphaSel(GXTevStageID stage, GXTevKAlphaSel sel) {

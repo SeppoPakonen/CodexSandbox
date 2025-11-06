@@ -6,5 +6,6 @@ file
 	OpenGL.h,
 	Primitives.h,
 	Enums.h,
+	Graphics.cpp,
 	GlobalApi.h;
 

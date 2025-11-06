@@ -35,8 +35,8 @@ static bool sIsPrefixedWith(const char *p_string, const char *p_prefix)
 		return false;
 	}
 
-	char p_buf[100];
-	Dbg_MsgAssert(string_len<100,("String too long for buffer"));
+	char p_buf[1000];
+	Dbg_MsgAssert(string_len<1000,("String too long for buffer"));
 	strcpy(p_buf,p_string);
 	p_buf[prefix_len]=0;
 	if (stricmp(p_buf,p_prefix)==0)

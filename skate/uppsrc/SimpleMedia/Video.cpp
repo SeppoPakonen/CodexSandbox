@@ -60,11 +60,11 @@ void VIDDestroyDecoder(VAUDDecoder dec) {
 
 
 
-void GQRSetup6(int, int, int, int) {
-	TODO
+void GQRSetup6(int x_scale, int x_type, int y_scale, int y_type) {
+	LOG("GQRSetup6: pass");
 }
 
-void GQRSetup7(int, int, int, int) {
-	TODO
+void GQRSetup7(int x_scale, int x_type, int y_scale, int y_type) {
+	LOG("GQRSetup7: pass");
 }
 

@@ -630,19 +630,24 @@ void NsDisplay::init( void )
     init_queue(&DoneQ);
 
     OSInitThreadQueue( &waitingDoneRender );
-
-    // Creates a new thread. The thread is suspended by default.
-    OSCreateThread(
-        &CUThread,                          // ptr to the thread to init
-        CleanupThread,               		// ptr to the start routine
-        0,                                  // param passed to start routine
-        CUThreadStack+sizeof(CUThreadStack),// initial stack address
-        sizeof CUThreadStack,
-        14,                                 // scheduling priority
-        OS_THREAD_ATTR_DETACH);             // detached by default
-
-    // Starts the thread
-    OSResumeThread(&CUThread);
+	
+	if (1) {
+		LOG("NsDisplay::init(): warning: not starting CleanupThread");
+	}
+	else {
+	    // Creates a new thread. The thread is suspended by default.
+	    OSCreateThread(
+	        &CUThread,                          // ptr to the thread to init
+			CleanupThread,						// ptr to the start routine
+	        0,                                  // param passed to start routine
+	        CUThreadStack+sizeof(CUThreadStack),// initial stack address
+	        sizeof CUThreadStack,
+	        14,                                 // scheduling priority
+	        OS_THREAD_ATTR_DETACH);             // detached by default
+	
+	    // Starts the thread
+	    OSResumeThread(&CUThread);
+	}
 
     myXFB1 = hwFrameBuffer1;
     myXFB2 = hwFrameBuffer2;

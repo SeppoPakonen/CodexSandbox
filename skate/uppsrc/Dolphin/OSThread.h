@@ -127,7 +127,11 @@ struct OSThread
 
     u8*             stackBase;  // the thread's designated stack (high address)
     u32*            stackEnd;   // last word of stack (low address)
+    
+    ::Upp::Thread thrd;
+    void* (*func)(void*) = 0;
 };
+
 
 // Thread states
 enum OS_THREAD_STATE
