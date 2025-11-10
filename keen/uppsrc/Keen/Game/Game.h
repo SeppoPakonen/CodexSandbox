@@ -9,6 +9,16 @@ namespace Game {
 void Bootstrap();
 }
 
+// Game loop and related functions from original ck_game.c
+void CK_GameLoop();
+void CK_LoadLevel(bool doCache, bool silent);
+
+void CK_BeginCacheBox(const char *title, int numChunks);
+void CK_UpdateCacheBox(void);
+void CK_FinishCacheBox(void);
+
+#include "Main.h"
+#include "Play.h"
 #include "Map.h"
 #include "Assets.h"
 #include "Resources.h"

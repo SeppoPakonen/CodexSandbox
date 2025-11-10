@@ -41,15 +41,15 @@
 ### Game Logic Files (Game/ subpackage)
 - [ ] **GAME001** - Convert `ck_act.c` - Action Manager (Actor animations and behaviors)
 - [ ] **GAME002** - Convert `ck_cross.c` - Cross-platform utilities
-- [ ] **GAME003** - Convert `ck_game.c` - Game Manager (Main game loop, save/load, level loading) - PRIORITY
+- [x] **GAME003** - Convert `ck_game.c` - Game Manager (Main game loop, save/load, level loading) - PRIORITY
 - [ ] **GAME004** - Convert `ck_inter.c` - Game Interactions (Title screen, help screens)
 - [ ] **GAME005** - Convert `ck_keen.c` - Keen-specific game logic
-- [ ] **GAME006** - Convert `ck_main.c` - Main entry point (Entry point and initialization) - PRIORITY
+- [x] **GAME006** - Convert `ck_main.c` - Main entry point (Entry point and initialization) - PRIORITY
 - [ ] **GAME007** - Convert `ck_map.c` - Map handling and spawning
 - [ ] **GAME008** - Convert `ck_misc.c` - Miscellaneous game objects
 - [ ] **GAME009** - Convert `ck_obj.c` - Object spawning and utilities
 - [ ] **GAME010** - Convert `ck_phys.c` - Physics engine
-- [ ] **GAME011** - Convert `ck_play.c` - Play loop (Core gameplay loop, collision, object processing) - PRIORITY
+- [x] **GAME011** - Convert `ck_play.c` - Play loop (Core gameplay loop, collision, object processing) - PRIORITY
 - [ ] **GAME012** - Convert `ck_quit.c` - Quit game functions
 - [ ] **GAME013** - Convert `ck_text.c` - Text handling and UI
 
@@ -111,6 +111,9 @@
 - [x] **GAME010** - Game assets → `Assets.cpp` - Asset loading utilities
 - [x] **GAME011** - Game resources → `Resources.cpp` - Resource management
 - [x] **GAME012** - Core gameplay → `Game.cpp` - Bootstrap and entry point
+- [x] **GAME013** - Convert `ck_game.c` → `Game/Game.cpp` - Game Manager (Main game loop, save/load, level loading) - PRIORITY
+- [x] **GAME014** - Convert `ck_main.c` → `Game/Main.cpp` - Main entry point (Entry point and initialization) - PRIORITY
+- [x] **GAME015** - Convert `ck_play.c` → `Game/Play.cpp` - Play loop (Core gameplay loop, collision, object processing) - PRIORITY
 
 ### OPL Components
 - [x] **OPL001** - OPL emulator → `Opl.cpp` - OPL audio emulation interface
@@ -132,8 +135,5 @@
 - [x] **INFRA008** - String utilities with `Str::Parser`, `Str::Token`, `Str::Table`
 
 ## Priority Order for Remaining Tasks
-1. **GAME003** - `ck_game.c` - Need the main game loop functionality
-2. **GAME006** - `ck_main.c` - Need the main entry point
-3. **GAME011** - `ck_play.c` - Need the core play loop
-4. **GAME001** - `ck_act.c` - Need action/animation system
-5. All episode-specific files (4, 5, 6) in dependency order
+1. **GAME001** - `ck_act.c` - Need action/animation system
+2. All episode-specific files (4, 5, 6) in dependency order
