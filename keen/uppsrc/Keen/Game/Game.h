@@ -42,5 +42,6 @@ void CK_FinishCacheBox(void);
 #include "Ck4Ep.h"
 #include "Ck5Ep.h"
 #include "Ck6Ep.h"
+#include "Physics.h"
 
 END_UPP_NAMESPACE
