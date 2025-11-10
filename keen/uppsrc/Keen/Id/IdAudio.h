@@ -1,6 +1,7 @@
 // Audio facade (null backend initially)
 #pragma once
 
+#include <Base/UAE/Types.h>
 
 namespace Audio {
 
@@ -23,4 +24,7 @@ public:
 };
 
 }
+
+// For compatibility with the original code structure
+typedef int16_t soundnames;
 

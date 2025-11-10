@@ -1,11 +1,11 @@
 #include "Game.h"
+#include "Config.h"
 #include <cstdarg>
 #include <cstdio>
 #include <cstdlib>
 #include <cctype>
 #include <unistd.h>  // for isatty
 
-NAMESPACE_UPP
 
 const char *ck_cross_logLevel_strings[] = {
 	"normal",
@@ -122,5 +122,3 @@ size_t CK_Cross_strscpy(char* dst, const char* src, size_t bufsiz)
 	}
 	Quit("strscpy: Buffer too small!");
 };
-
-END_UPP_NAMESPACE

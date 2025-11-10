@@ -38,3 +38,26 @@ private:
 };
 
 }
+
+// For compatibility with the original code structure
+enum IN_Direction {
+    IN_dir_None = -1,
+    IN_dir_Left = 0,
+    IN_dir_Right = 1,
+    IN_dir_Up = 2,
+    IN_dir_Down = 3
+};
+
+enum IN_Motion {
+    IN_motion_Left = -1,
+    IN_motion_None = 0,
+    IN_motion_Right = 1
+};
+
+typedef struct IN_ControlFrame
+{
+    bool jump, pogo, button2, button3;
+    int x, y;
+    IN_Motion xDirection, yDirection;
+    IN_Direction dir;
+} IN_ControlFrame;

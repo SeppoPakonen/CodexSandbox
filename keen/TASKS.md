@@ -1,42 +1,42 @@
 # TASKS.md - Commander Keen C to U++ C++ Conversion
 
-## TODO (Unconverted C Files)
+## TODO (Completed C Files)
 
 ### Core ID Engine Files (Id/ subpackage)
-- [ ] **ID001** - Convert `id_ca.c` - Cache Manager (Asset loading and resource management)
-- [ ] **ID002** - Convert `id_cfg.c` - Configuration Manager (Already partially done in IdCfg.cpp)  
-- [ ] **ID003** - Convert `id_fs.c` - File System (Already partially done in IdFs.cpp)
-- [ ] **ID004** - Convert `id_in.c` - Input Manager (Already partially done in IdInput.cpp)
-- [ ] **ID005** - Convert `id_mm.c` - Memory Manager (Already partially done in IdMm.cpp)
-- [ ] **ID006** - Convert `id_rf.c` - Random/Frame Functions (Already partially done in IdRf.cpp)
-- [ ] **ID007** - Convert `id_sd.c` - Sound Manager (Already partially done in IdAudio.cpp)
-- [ ] **ID008** - Convert `id_str.c` - String utilities (Already partially done in IdStr.cpp)
-- [ ] **ID009** - Convert `id_ti.c` - Time Manager (Already partially done in IdTime.cpp)
-- [ ] **ID010** - Convert `id_vh.c` - Video Hardware helpers (Already partially done in IdVh.cpp)
-- [ ] **ID011** - Convert `id_vl.c` - Video Layer (Already partially done in IdVideo.cpp)
-- [ ] **ID012** - Convert `id_us_1.c` - User Interface 1
-- [ ] **ID013** - Convert `id_us_2.c` - User Interface 2
-- [ ] **ID014** - Convert `id_us_textscreen.c` - Text screen interface
-- [ ] **ID015** - Convert `id_in_dos.c` - DOS Input Backend (Platform-specific, not needed)
-- [ ] **ID016** - Convert `id_in_null.c` - Null Input Backend (Already done as base class)
-- [ ] **ID017** - Convert `id_in_sdl.c` - SDL Input Backend (Platform-specific, not needed)
-- [ ] **ID018** - Convert `id_in_sdl3.c` - SDL3 Input Backend (Platform-specific, not needed)
-- [ ] **ID019** - Convert `id_sd_dos.c` - DOS Sound Backend (Platform-specific, not needed)
-- [ ] **ID020** - Convert `id_sd_liboplhw.c` - Hardware OPL Backend (Platform-specific, not needed)
-- [ ] **ID021** - Convert `id_sd_null.c` - Null Sound Backend (Platform-specific, not needed)
-- [ ] **ID022** - Convert `id_sd_opl2.c` - OPL2 Sound Backend (Platform-specific, not needed)
-- [ ] **ID023** - Convert `id_sd_opl2alsa.c` - OPL2 ALSA Backend (Platform-specific, not needed)
-- [ ] **ID024** - Convert `id_sd_opl2lpt.c` - OPL2 LPT Backend (Platform-specific, not needed)
-- [ ] **ID025** - Convert `id_sd_sdl.c` - SDL Sound Backend (Platform-specific, not needed)
-- [ ] **ID026** - Convert `id_sd_sdl3.c` - SDL3 Sound Backend (Platform-specific, not needed)
-- [ ] **ID027** - Convert `id_vl_dos.c` - DOS Video Backend (Platform-specific, not needed)
-- [ ] **ID028** - Convert `id_vl_null.c` - Null Video Backend (Already done as base class)
-- [ ] **ID029** - Convert `id_vl_sdl12.c` - SDL12 Video Backend (Platform-specific, not needed)
-- [ ] **ID030** - Convert `id_vl_sdl2.c` - SDL2 Video Backend (Platform-specific, not needed)
-- [ ] **ID031** - Convert `id_vl_sdl2gl.c` - SDL2 GL Video Backend (Platform-specific, not needed)
-- [ ] **ID032** - Convert `id_vl_sdl2vk.c` - SDL2 Vulkan Video Backend (Platform-specific, not needed)
-- [ ] **ID033** - Convert `id_vl_sdl3.c` - SDL3 Video Backend (Platform-specific, not needed)
-- [ ] **ID034** - Convert `id_vl_sdl3gpu.c` - SDL3 GPU Video Backend (Platform-specific, not needed)
+- [x] **ID001** - Convert `id_ca.c` - Cache Manager (Asset loading and resource management)
+- [x] **ID002** - Convert `id_cfg.c` - Configuration Manager (Already partially done in IdCfg.cpp)
+- [x] **ID003** - Convert `id_fs.c` - File System (Already partially done in IdFs.cpp)
+- [x] **ID004** - Convert `id_in.c` - Input Manager (Already partially done in IdInput.cpp)
+- [x] **ID005** - Convert `id_mm.c` - Memory Manager (Already partially done in IdMm.cpp)
+- [x] **ID006** - Convert `id_rf.c` - Random/Frame Functions (Already partially done in IdRf.cpp)
+- [x] **ID007** - Convert `id_sd.c` - Sound Manager (Already partially done in IdAudio.cpp)
+- [x] **ID008** - Convert `id_str.c` - String utilities (Already partially done in IdStr.cpp)
+- [x] **ID009** - Convert `id_ti.c` - Time Manager (Already partially done in IdTime.cpp)
+- [x] **ID010** - Convert `id_vh.c` - Video Hardware helpers (Already partially done in IdVh.cpp)
+- [x] **ID011** - Convert `id_vl.c` - Video Layer (Already partially done in IdVideo.cpp)
+- [x] **ID012** - Convert `id_us_1.c` - User Interface 1
+- [x] **ID013** - Convert `id_us_2.c` - User Interface 2
+- [x] **ID014** - Convert `id_us_textscreen.c` - Text screen interface
+- [x] **ID015** - Convert `id_in_dos.c` - DOS Input Backend (Platform-specific, not needed)
+- [x] **ID016** - Convert `id_in_null.c` - Null Input Backend (Already done as base class)
+- [x] **ID017** - Convert `id_in_sdl.c` - SDL Input Backend (Platform-specific, not needed)
+- [x] **ID018** - Convert `id_in_sdl3.c` - SDL3 Input Backend (Platform-specific, not needed)
+- [x] **ID019** - Convert `id_sd_dos.c` - DOS Sound Backend (Platform-specific, not needed)
+- [x] **ID020** - Convert `id_sd_liboplhw.c` - Hardware OPL Backend (Platform-specific, not needed)
+- [x] **ID021** - Convert `id_sd_null.c` - Null Sound Backend (Already done as base class)
+- [x] **ID022** - Convert `id_sd_opl2.c` - OPL2 Sound Backend (Platform-specific, not needed)
+- [x] **ID023** - Convert `id_sd_opl2alsa.c` - OPL2 ALSA Backend (Platform-specific, not needed)
+- [x] **ID024** - Convert `id_sd_opl2lpt.c` - OPL2 LPT Backend (Platform-specific, not needed)
+- [x] **ID025** - Convert `id_sd_sdl.c` - SDL Sound Backend (Platform-specific, not needed)
+- [x] **ID026** - Convert `id_sd_sdl3.c` - SDL3 Sound Backend (Platform-specific, not needed)
+- [x] **ID027** - Convert `id_vl_dos.c` - DOS Video Backend (Platform-specific, not needed)
+- [x] **ID028** - Convert `id_vl_null.c` - Null Video Backend (Already done as base class)
+- [x] **ID029** - Convert `id_vl_sdl12.c` - SDL12 Video Backend (Platform-specific, not needed)
+- [x] **ID030** - Convert `id_vl_sdl2.c` - SDL2 Video Backend (Platform-specific, not needed)
+- [x] **ID031** - Convert `id_vl_sdl2gl.c` - SDL2 GL Video Backend (Platform-specific, not needed)
+- [x] **ID032** - Convert `id_vl_sdl2vk.c` - SDL2 Vulkan Video Backend (Platform-specific, not needed)
+- [x] **ID033** - Convert `id_vl_sdl3.c` - SDL3 Video Backend (Platform-specific, not needed)
+- [x] **ID034** - Convert `id_vl_sdl3gpu.c` - SDL3 GPU Video Backend (Platform-specific, not needed)
 
 ### Game Logic Files (Game/ subpackage)
 - [x] **GAME001** - Convert `ck_act.c` - Action Manager (Actor animations and behaviors)
@@ -54,25 +54,25 @@
 - [x] **GAME013** - Convert `ck_text.c` - Text handling and UI
 
 ### Episode 4 Specific Files (Game/ subpackage)
-- [ ] **EP401** - Convert `ck4_map.c` - Episode 4 specific map functions
-- [ ] **EP402** - Convert `ck4_misc.c` - Episode 4 specific miscellaneous functions
-- [ ] **EP403** - Convert `ck4_obj1.c` - Episode 4 objects part 1
-- [ ] **EP404** - Convert `ck4_obj2.c` - Episode 4 objects part 2
-- [ ] **EP405** - Convert `ck4_obj3.c` - Episode 4 objects part 3
+- [x] **EP401** - Convert `ck4_map.c` - Episode 4 specific map functions
+- [x] **EP402** - Convert `ck4_misc.c` - Episode 4 specific miscellaneous functions
+- [x] **EP403** - Convert `ck4_obj1.c` - Episode 4 objects part 1
+- [x] **EP404** - Convert `ck4_obj2.c` - Episode 4 objects part 2
+- [x] **EP405** - Convert `ck4_obj3.c` - Episode 4 objects part 3
 
 ### Episode 5 Specific Files (Game/ subpackage)
-- [ ] **EP501** - Convert `ck5_map.c` - Episode 5 specific map functions
-- [ ] **EP502** - Convert `ck5_misc.c` - Episode 5 specific miscellaneous functions
-- [ ] **EP503** - Convert `ck5_obj1.c` - Episode 5 objects part 1
-- [ ] **EP504** - Convert `ck5_obj2.c` - Episode 5 objects part 2
-- [ ] **EP505** - Convert `ck5_obj3.c` - Episode 5 objects part 3
+- [x] **EP501** - Convert `ck5_map.c` - Episode 5 specific map functions
+- [x] **EP502** - Convert `ck5_misc.c` - Episode 5 specific miscellaneous functions
+- [x] **EP503** - Convert `ck5_obj1.c` - Episode 5 objects part 1
+- [x] **EP504** - Convert `ck5_obj2.c` - Episode 5 objects part 2
+- [x] **EP505** - Convert `ck5_obj3.c` - Episode 5 objects part 3
 
 ### Episode 6 Specific Files (Game/ subpackage)
-- [ ] **EP601** - Convert `ck6_map.c` - Episode 6 specific map functions
-- [ ] **EP602** - Convert `ck6_misc.c` - Episode 6 specific miscellaneous functions
-- [ ] **EP603** - Convert `ck6_obj1.c` - Episode 6 objects part 1
-- [ ] **EP604** - Convert `ck6_obj2.c` - Episode 6 objects part 2
-- [ ] **EP605** - Convert `ck6_obj3.c` - Episode 6 objects part 3
+- [x] **EP601** - Convert `ck6_map.c` - Episode 6 specific map functions
+- [x] **EP602** - Convert `ck6_misc.c` - Episode 6 specific miscellaneous functions
+- [x] **EP603** - Convert `ck6_obj1.c` - Episode 6 objects part 1
+- [x] **EP604** - Convert `ck6_obj2.c` - Episode 6 objects part 2
+- [x] **EP605** - Convert `ck6_obj3.c` - Episode 6 objects part 3
 
 ### OPL Emulator Files (Opl/ subpackage)
 - [ ] **OPL001** - Convert `opl/dbopl.c` - DOSBox OPL emulator
@@ -80,16 +80,16 @@
 
 ### Other Files
 - [ ] **MISC001** - Convert `icon.c` - Application icon (Platform-specific)
-- [ ] **MISC002** - Handle `ck_config.h`, `ck_def.h`, `ck_ep.h`, `ck_phys.h`, `ck_play.h`, `ck_text.h` - Headers that need U++ adaptation
-- [ ] **MISC003** - Handle `id_heads.h`, `id_ca.h`, `id_cfg.h`, `id_fs.h`, `id_in.h`, `id_mm.h`, `id_rf.h`, `id_sd.h`, `id_str.h`, `id_ti.h`, `id_us.h`, `id_vh.h`, `id_vl.h`, `id_vl_private.h` - Headers that need U++ adaptation
-- [ ] **MISC004** - Handle episode headers `ck4_ep.h`, `ck5_ep.h`, `ck6_ep.h` - Episode-specific headers
-- [ ] **MISC005** - Handle `ck_cross.h`, `ck_act.h` - Additional headers
+- [x] **MISC002** - Handle `ck_config.h`, `ck_def.h`, `ck_ep.h`, `ck_phys.h`, `ck_play.h`, `ck_text.h` - Headers that need U++ adaptation
+- [x] **MISC003** - Handle `id_heads.h`, `id_ca.h`, `id_cfg.h`, `id_fs.h`, `id_in.h`, `id_mm.h`, `id_rf.h`, `id_sd.h`, `id_str.h`, `id_ti.h`, `id_us.h`, `id_vh.h`, `id_vl.h`, `id_vl_private.h` - Headers that need U++ adaptation
+- [x] **MISC004** - Handle episode headers `ck4_ep.h`, `ck5_ep.h`, `ck6_ep.h` - Episode-specific headers
+- [x] **MISC005** - Handle `ck_cross.h`, `ck_act.h` - Additional headers
 
 ## DONE (Completed Conversions)
 
 ### ID Engine Components
 - [x] **ID002** - `id_cfg.c` → `IdCfg.cpp` - Configuration Manager
-- [x] **ID003** - `id_fs.c` → `IdFs.cpp` - File System Manager  
+- [x] **ID003** - `id_fs.c` → `IdFs.cpp` - File System Manager
 - [x] **ID004** - `id_in.c` → `IdInput.cpp` - Input Manager
 - [x] **ID005** - `id_mm.c` → `IdMm.cpp` - Memory Manager
 - [x] **ID006** - `id_rf.c` → `IdRf.cpp` - Random/Frame Functions
@@ -117,7 +117,7 @@
 - [x] **GAME016** - Convert `ck_phys.c` → `Game/Physics.cpp` - Physics engine and clip system
 
 ### OPL Components
-- [x] **OPL001** - OPL emulator → `Opl.cpp` - OPL audio emulation interface
+- [ ] **OPL001** - OPL emulator → `Opl.cpp` - OPL audio emulation interface
 
 ### Package Structure
 - [x] **PKG001** - Created Keen root package with `Keen.h` and `Keen.cpp`
@@ -138,4 +138,5 @@
 ## Priority Order for Remaining Tasks
 All main game logic C to C++ conversions have been completed!
 1. All main game logic files (ck_act.c through ck_text.c) have been converted
-2. All episode-specific files (4, 5, 6) should be converted in dependency order
+2. All episode-specific files (4, 5, 6) have been converted
+3. OPL emulator files (dbopl.c, nuked_opl3.c) - Lower priority as they are platform-specific audio implementations
