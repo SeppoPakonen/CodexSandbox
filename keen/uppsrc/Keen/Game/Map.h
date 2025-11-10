@@ -1,22 +1,26 @@
-// Simple map skeleton for gameplay porting
-#pragma once
+#ifndef UPP_KEEN_MAP_H
+#define UPP_KEEN_MAP_H
 
-#include <cstdint>
-#include <vector>
+#include "Game.h"
 
-namespace Game {
+NAMESPACE_UPP
 
-class Map {
-public:
-    bool LoadUser(const char* filename);
-    int Width() const { return width_; }
-    int Height() const { return height_; }
-    const std::vector<uint16_t>& Tiles() const { return tiles_; }
-private:
-    int width_ = 0;
-    int height_ = 0;
-    std::vector<uint16_t> tiles_;
-};
+void CK_DemoSignSpawn();
+void CK_UpdateScoreBox(CK_object *scorebox);
+void CK_SpawnMapKeen(int tileX, int tileY);
+void CK_ScanForLevelEntry(CK_object *obj);
+void CK_MapKeenStill(CK_object *obj);
+void CK_MapKeenWalk(CK_object *obj);
+void CK_AnimateMapTeleporter(int tileX, int tileY);
+void CK_MapFlagSpawn(int tileX, int tileY);
+void CK_FlippingFlagSpawn(int tileX, int tileY);
+void CK_MapFlagThrown(CK_object *obj);
+void CK_MapFlagFall(CK_object *obj);
+void CK_MapFlagLand(CK_object *obj);
+void CK_Map_SetupFunctions();
 
-}
+extern chunk_id_t ck_mapKeenBaseFrame[];
 
+END_UPP_NAMESPACE
+
+#endif
