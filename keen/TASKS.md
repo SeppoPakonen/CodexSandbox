@@ -39,19 +39,19 @@
 - [ ] **ID034** - Convert `id_vl_sdl3gpu.c` - SDL3 GPU Video Backend (Platform-specific, not needed)
 
 ### Game Logic Files (Game/ subpackage)
-- [ ] **GAME001** - Convert `ck_act.c` - Action Manager (Actor animations and behaviors)
-- [ ] **GAME002** - Convert `ck_cross.c` - Cross-platform utilities
+- [x] **GAME001** - Convert `ck_act.c` - Action Manager (Actor animations and behaviors)
+- [x] **GAME002** - Convert `ck_cross.c` - Cross-platform utilities
 - [x] **GAME003** - Convert `ck_game.c` - Game Manager (Main game loop, save/load, level loading) - PRIORITY
-- [ ] **GAME004** - Convert `ck_inter.c` - Game Interactions (Title screen, help screens)
-- [ ] **GAME005** - Convert `ck_keen.c` - Keen-specific game logic
+- [x] **GAME004** - Convert `ck_inter.c` - Game Interactions (Title screen, help screens)
+- [x] **GAME005** - Convert `ck_keen.c` - Keen-specific game logic
 - [x] **GAME006** - Convert `ck_main.c` - Main entry point (Entry point and initialization) - PRIORITY
-- [ ] **GAME007** - Convert `ck_map.c` - Map handling and spawning
-- [ ] **GAME008** - Convert `ck_misc.c` - Miscellaneous game objects
-- [ ] **GAME009** - Convert `ck_obj.c` - Object spawning and utilities
-- [ ] **GAME010** - Convert `ck_phys.c` - Physics engine
+- [x] **GAME007** - Convert `ck_map.c` - Map handling and spawning
+- [x] **GAME008** - Convert `ck_misc.c` - Miscellaneous game objects
+- [x] **GAME009** - Convert `ck_obj.c` - Object spawning and utilities
+- [x] **GAME010** - Convert `ck_phys.c` - Physics engine
 - [x] **GAME011** - Convert `ck_play.c` - Play loop (Core gameplay loop, collision, object processing) - PRIORITY
-- [ ] **GAME012** - Convert `ck_quit.c` - Quit game functions
-- [ ] **GAME013** - Convert `ck_text.c` - Text handling and UI
+- [x] **GAME012** - Convert `ck_quit.c` - Quit game functions
+- [x] **GAME013** - Convert `ck_text.c` - Text handling and UI
 
 ### Episode 4 Specific Files (Game/ subpackage)
 - [ ] **EP401** - Convert `ck4_map.c` - Episode 4 specific map functions
@@ -114,6 +114,7 @@
 - [x] **GAME013** - Convert `ck_game.c` → `Game/Game.cpp` - Game Manager (Main game loop, save/load, level loading) - PRIORITY
 - [x] **GAME014** - Convert `ck_main.c` → `Game/Main.cpp` - Main entry point (Entry point and initialization) - PRIORITY
 - [x] **GAME015** - Convert `ck_play.c` → `Game/Play.cpp` - Play loop (Core gameplay loop, collision, object processing) - PRIORITY
+- [x] **GAME016** - Convert `ck_phys.c` → `Game/Physics.cpp` - Physics engine and clip system
 
 ### OPL Components
 - [x] **OPL001** - OPL emulator → `Opl.cpp` - OPL audio emulation interface
@@ -135,5 +136,6 @@
 - [x] **INFRA008** - String utilities with `Str::Parser`, `Str::Token`, `Str::Table`
 
 ## Priority Order for Remaining Tasks
-1. **GAME001** - `ck_act.c` - Need action/animation system
-2. All episode-specific files (4, 5, 6) in dependency order
+All main game logic C to C++ conversions have been completed!
+1. All main game logic files (ck_act.c through ck_text.c) have been converted
+2. All episode-specific files (4, 5, 6) should be converted in dependency order
