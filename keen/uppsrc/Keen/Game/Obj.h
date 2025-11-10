@@ -5,6 +5,8 @@
 
 NAMESPACE_UPP
 
+// extern chunk_id_t CK_ItemSpriteChunks[];  // Moved to Defs.h
+
 void CK_SpawnItem(int tileX, int tileY, int itemNumber);
 void CK_SpawnCentilifeNotify(int tileX, int tileY);
 void CK_SpawnAxisPlatform(int tileX, int tileY, int direction, bool purple);
@@ -27,8 +29,6 @@ void CK_TurretShoot(CK_object *obj);
 void CK_TurretShotCol(CK_object *me, CK_object *other);
 void CK_TurretShotDraw(CK_object *obj);
 void CK_OBJ_SetupFunctions();
-
-extern chunk_id_t CK_ItemSpriteChunks[];
 
 END_UPP_NAMESPACE
 

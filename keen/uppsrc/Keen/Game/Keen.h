@@ -5,6 +5,21 @@
 
 NAMESPACE_UPP
 
+typedef struct CK_keenState
+{
+	int jumpTimer;
+	int poleGrabTime;
+	bool jumpIsPressed;
+	bool jumpWasPressed;
+	bool pogoIsPressed;
+	bool pogoWasPressed;
+	bool shootIsPressed;
+	bool shootWasPressed;
+
+	bool keenSliding;
+	CK_object *platform;
+} CK_keenState;
+
 extern CK_keenState ck_keenState;
 
 void CK_KeenColFunc(CK_object *a, CK_object *b);

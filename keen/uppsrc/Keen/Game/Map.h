@@ -5,6 +5,8 @@
 
 NAMESPACE_UPP
 
+// extern chunk_id_t ck_mapKeenBaseFrame[];  // Moved to Defs.h
+
 void CK_DemoSignSpawn();
 void CK_UpdateScoreBox(CK_object *scorebox);
 void CK_SpawnMapKeen(int tileX, int tileY);
@@ -18,8 +20,6 @@ void CK_MapFlagThrown(CK_object *obj);
 void CK_MapFlagFall(CK_object *obj);
 void CK_MapFlagLand(CK_object *obj);
 void CK_Map_SetupFunctions();
-
-extern chunk_id_t ck_mapKeenBaseFrame[];
 
 END_UPP_NAMESPACE
 

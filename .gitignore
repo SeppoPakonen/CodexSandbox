@@ -1,1 +1,46 @@
-.aider*
+# Build artifacts
+build/
+*.o
+*.a
+*.so
+*.exe
+*.dll
+*.dylib
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executables
+pinball_game
+
+# Logs
+*.log
+*.out
+
+# Compiled files
+*.obj
+*.bin
+
+# Dependencies
+lib/
+deps/
+
+# Runtime data
+*.tmp
+tmp/
+
+# Pinball project specific entries (from Pinball repo)
