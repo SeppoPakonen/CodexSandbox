@@ -1,0 +1,48 @@
+# Build directories
+build/
+bin/
+cmake-build-*/
+
+# Compiled files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Executables
+golf3d
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Git files
+.git/
+!.gitignore
+
+# Shadertoy original file
+Xl2fRw.json
