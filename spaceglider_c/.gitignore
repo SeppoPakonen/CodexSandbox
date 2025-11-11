@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+*.o
+
+# Executables
+*.exe
+*.out
+spaceglider
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Distribution artifacts
+dist/
+*.tar.gz
+*.zip
