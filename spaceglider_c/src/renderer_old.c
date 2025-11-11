@@ -2,6 +2,8 @@
 #include "spaceglider/types.h"
 #include <GL/gl.h>
 #include <stdio.h>
+#include <math.h>
+#define M_PI 3.14159265358979323846
 
 void initialize_old_renderer() {
     // Initialize OpenGL states for fixed function pipeline

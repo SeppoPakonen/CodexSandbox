@@ -82,6 +82,10 @@ void update_orbital_mechanics(VehicleState* vehicle, const PlanetData* planet, f
     vehicle->orbitr.x += vehicle->orbitv.x * delta_time;
     vehicle->orbitr.y += vehicle->orbitv.y * delta_time;
     vehicle->orbitr.z += vehicle->orbitv.z * delta_time;
+    
+    // planet parameter is used in more complex implementations,
+    // but for now we just use the velocity directly
+    (void)planet; // Suppress unused parameter warning
 }
 
 // Update physics for the game

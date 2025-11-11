@@ -3,7 +3,7 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -O2 -I./include
-LDFLAGS = -lglfw -lGL -lGLU -lm
+LDFLAGS = -lglfw -lGL -lGLU -lGLEW -lm
 TARGET = spaceglider
 SRCDIR = src
 SOURCES = $(SRCDIR)/main.c $(SRCDIR)/game_logic.c $(SRCDIR)/physics.c $(SRCDIR)/input.c \
