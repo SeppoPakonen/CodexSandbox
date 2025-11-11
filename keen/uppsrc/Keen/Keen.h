@@ -11,3 +11,4 @@ NAMESPACE_UPP
 
 END_UPP_NAMESPACE
 
+using namespace Upp;

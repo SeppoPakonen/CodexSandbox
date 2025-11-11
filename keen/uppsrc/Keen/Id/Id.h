@@ -34,3 +34,5 @@ NAMESPACE_UPP
 #include "IdRf.h"
 
 END_UPP_NAMESPACE
+
+using namespace Upp;
