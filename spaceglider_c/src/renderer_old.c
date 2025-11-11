@@ -1,175 +1,124 @@
 #include "renderer_old.h"
+#include "spaceglider/types.h"
 #include <GL/gl.h>
-#include <GL/glu.h>
 #include <stdio.h>
 #include <math.h>
+#define M_PI 3.14159265358979323846
 
 void initialize_old_renderer() {
-    // Set up OpenGL state for fixed pipeline rendering
+    // Initialize OpenGL states for fixed function pipeline
+    glShadeModel(GL_SMOOTH);
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK);
-    glFrontFace(GL_CCW);
-    
-    // Enable lighting for basic 3D effects
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     
-    GLfloat light_pos[] = { 0.0f, 0.0f, 1.0f, 0.0f };
-    glLightfv(GL_LIGHT0, GL_POSITION, light_pos);
+    // Set up basic lighting
+    GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
+    GLfloat light_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
+    GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    GLfloat light_position[] = { 0.0f, 0.0f, 0.0f, 1.0f };
     
-    // Set up material properties
-    GLfloat mat_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
-    GLfloat mat_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
-    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     
-    printf("Old school renderer initialized\n");
-}
-
-void render_spacecraft(const VehicleState* vehicle_state) {
-    glPushMatrix();
+    // Enable color material
+    glEnable(GL_COLOR_MATERIAL);
+    glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
     
-    // Position the spacecraft
-    glTranslatef(vehicle_state->localr.x, vehicle_state->localr.y, vehicle_state->localr.z);
-    
-    // Apply rotation - use the localB matrix from the vehicle state
-    float rotation_matrix[16] = {
-        vehicle_state->localB.m[0][0], vehicle_state->localB.m[1][0], vehicle_state->localB.m[2][0], 0.0f,
-        vehicle_state->localB.m[0][1], vehicle_state->localB.m[1][1], vehicle_state->localB.m[2][1], 0.0f,
-        vehicle_state->localB.m[0][2], vehicle_state->localB.m[1][2], vehicle_state->localB.m[2][2], 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f
-    };
-    glMultMatrixf(rotation_matrix);
-    
-    // Draw a simple representation of the spacecraft
-    // A basic cone or arrow shape
-    glColor3f(1.0f, 1.0f, 1.0f);  // White color for spacecraft
-    
-    // Draw a simple cone representing the spacecraft
-    glPushMatrix();
-    glRotatef(-90.0f, 1.0f, 0.0f, 0.0f); // Point cone in +Z direction
-    
-    // Draw the main body (cylinder/cone)
-    GLUquadric* quad = gluNewQuadric();
-    gluCylinder(quad, 0.5, 1.0, 3.0, 16, 1); // Base radius, top radius, height
-    gluDeleteQuadric(quad);
-    
-    glPopMatrix();
-    
-    glPopMatrix();
-}
-
-void render_planet(const PlanetData* planet_data) {
-    glPushMatrix();
-    
-    // Position the planet at origin
-    glTranslatef(0.0f, 0.0f, 0.0f);
-    
-    // Draw a basic sphere representing the planet
-    glColor3f(0.2f, 0.5f, 1.0f); // Blue color for water planet
-    
-    GLUquadric* quad = gluNewQuadric();
-    gluQuadricDrawStyle(quad, GLU_FILL);
-    gluSphere(quad, planet_data->radius * 0.001f, 50, 50); // Scale down for visualization
-    
-    gluDeleteQuadric(quad);
-    glPopMatrix();
-}
-
-void render_hud(const GameState* game_state, const VehicleState* vehicle_state) {
-    // Save the current matrix state
-    glMatrixMode(GL_PROJECTION);
-    glPushMatrix();
-    glLoadIdentity();
-    
-    // Switch to orthographic projection for HUD
-    gluOrtho2D(0.0, 800.0, 0.0, 600.0);  // Assuming 800x600 window
-    
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glLoadIdentity();
-    
-    // Disable depth testing for HUD
-    glDisable(GL_DEPTH_TEST);
-    
-    // Set color for HUD elements
-    glColor3f(0.0f, 1.0f, 0.0f);  // Green for HUD
-    
-    // For now, skip text rendering since GLUT is not available
-    // In a complete implementation, you would use a different text rendering approach
-    // such as texture-based fonts or integrated text rendering library
-    
-    // As a placeholder, we could draw simple geometric indicators
-    // Draw a simple throttle indicator (vertical bar)
-    glColor3f(0.0f, 1.0f, 0.0f); // Green
-    glBegin(GL_QUADS);
-        glVertex2f(10.0f, 540.0f);  // Bottom left
-        glVertex2f(20.0f, 540.0f);  // Bottom right  
-        glVertex2f(20.0f, 540.0f + 100.0f * vehicle_state->throttle);  // Top right
-        glVertex2f(10.0f, 540.0f + 100.0f * vehicle_state->throttle);  // Top left
-    glEnd();
-    
-    // Draw a simple crosshair in the center
-    glColor3f(0.0f, 1.0f, 0.0f); // Green
-    glBegin(GL_LINES);
-        // Horizontal line
-        glVertex2f(395.0f, 300.0f);
-        glVertex2f(405.0f, 300.0f);
-        // Vertical line
-        glVertex2f(400.0f, 295.0f);
-        glVertex2f(400.0f, 305.0f);
-    glEnd();
-    
-    // Re-enable depth testing
-    glEnable(GL_DEPTH_TEST);
-    
-    // Restore matrices
-    glMatrixMode(GL_PROJECTION);
-    glPopMatrix();
-    glMatrixMode(GL_MODELVIEW);
-    glPopMatrix();
+    printf("Old school renderer initialized (fixed pipeline)\n");
 }
 
 void render_with_old_renderer(const GameState* game_state, const VehicleState* vehicle_state, const PlanetData* planet_data) {
-    // Set up perspective projection
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(45.0, 800.0/600.0, 0.1, 100000.0);  // 45 degree FOV
-    
-    // Set up view matrix based on camera
+    // Set camera position and orientation using fixed pipeline
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    // Set camera position and orientation
-    // For simplicity, we'll use a basic camera look-at
-    float cam_x = vehicle_state->localr.x + 10.0f;
-    float cam_y = vehicle_state->localr.y + 10.0f;
-    float cam_z = vehicle_state->localr.z + 10.0f;
+    // Apply camera transformation using the game state
+    // This is a simplified camera transformation
+    glTranslatef(-game_state->campos.x, -game_state->campos.y, -game_state->campos.z);
     
-    float look_at_x = vehicle_state->localr.x;
-    float look_at_y = vehicle_state->localr.y;
-    float look_at_z = vehicle_state->localr.z;
+    // Apply rotation from camera frame (simplified)
+    // In a real implementation, this would properly convert the orientation matrix to OpenGL
+    glMultMatrixf((float*)&game_state->camframe.m[0][0]);
     
-    float up_x = 0.0f;
-    float up_y = 0.0f;
-    float up_z = 1.0f;
-    
-    gluLookAt(cam_x, cam_y, cam_z, look_at_x, look_at_y, look_at_z, up_x, up_y, up_z);
-    
-    // Clear the color and depth buffers
-    glClearColor(0.0f, 0.0f, 0.2f, 1.0f); // Dark blue background (space)
+    // Render scene using immediate mode
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    // Render the scene
-    render_planet(planet_data);
-    render_spacecraft(vehicle_state);
+    // Render planet (simplified as a sphere)
+    glColor3f(0.3f, 0.6f, 0.9f);  // Blue color for planet
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);  // Planet at origin
+    glScalef(planet_data->radius, planet_data->radius, planet_data->radius);
     
-    // Render HUD elements
-    render_hud(game_state, vehicle_state);
+    // Draw a simple sphere approximation using quad strips
+    const int slices = 20;
+    const int stacks = 20;
+    
+    for (int i = 0; i < stacks; i++) {
+        float phi1 = M_PI * (-0.5f + (float)i / stacks);
+        float phi2 = M_PI * (-0.5f + (float)(i + 1) / stacks);
+        
+        glBegin(GL_QUAD_STRIP);
+        for (int j = 0; j <= slices; j++) {
+            float theta = 2.0f * M_PI * (float)j / slices;
+            
+            float x1 = cosf(phi1) * cosf(theta);
+            float y1 = sinf(phi1);
+            float z1 = cosf(phi1) * sinf(theta);
+            
+            float x2 = cosf(phi2) * cosf(theta);
+            float y2 = sinf(phi2);
+            float z2 = cosf(phi2) * sinf(theta);
+            
+            glNormal3f(x1, y1, z1);
+            glVertex3f(x1, y1, z1);
+            
+            glNormal3f(x2, y2, z2);
+            glVertex3f(x2, y2, z2);
+        }
+        glEnd();
+    }
+    glPopMatrix();
+    
+    // Render vehicle (simplified as a cone)
+    glColor3f(0.8f, 0.8f, 0.2f);  // Yellow color for vehicle
+    glPushMatrix();
+    glTranslatef(vehicle_state->localr.x, vehicle_state->localr.y, vehicle_state->localr.z);
+    
+    // Apply orientation from vehicle's localB matrix
+    glMultMatrixf((float*)&vehicle_state->localB.m[0][0]);
+    
+    // Draw a simple cone to represent the vehicle
+    const int segments = 16;
+    glBegin(GL_TRIANGLES);
+    for (int i = 0; i < segments; i++) {
+        float angle1 = 2.0f * M_PI * i / segments;
+        float angle2 = 2.0f * M_PI * (i + 1) / segments;
+        
+        // Base triangle
+        glVertex3f(0.0f, 0.0f, 0.0f);
+        glVertex3f(0.2f * cosf(angle1), 0.0f, 0.2f * sinf(angle1));
+        glVertex3f(0.2f * cosf(angle2), 0.0f, 0.2f * sinf(angle2));
+        
+        // Side triangle
+        glVertex3f(0.2f * cosf(angle1), 0.0f, 0.2f * sinf(angle1));
+        glVertex3f(0.2f * cosf(angle2), 0.0f, 0.2f * sinf(angle2));
+        glVertex3f(0.0f, 0.5f, 0.0f);
+    }
+    glEnd();
+    glPopMatrix();
+    
+    // Render other game elements as needed
+    // This is where terrain, stars, etc. would be rendered in immediate mode
 }
 
 void cleanup_old_renderer() {
-    // No special cleanup needed for fixed pipeline renderer
+    // Disable lighting and other fixed pipeline features
+    glDisable(GL_LIGHTING);
+    glDisable(GL_LIGHT0);
+    glDisable(GL_COLOR_MATERIAL);
+    
     printf("Old school renderer cleaned up\n");
 }
