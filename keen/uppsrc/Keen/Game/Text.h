@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ifndef CK_TEXT_H
 #define CK_TEXT_H
 
-#include "Game.h"
+//#include "Game.h"
 
 void HelpScreens(void);
 void help_endgame(void);

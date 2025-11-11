@@ -1,9 +1,9 @@
 #ifndef CK4_OBJ2_H
 #define CK4_OBJ2_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 4 object functions (formerly in ck4_obj2.c)
 
@@ -59,6 +59,6 @@ void CK4_PlatformDraw(CK_object *obj);
 
 void CK4_Obj2_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

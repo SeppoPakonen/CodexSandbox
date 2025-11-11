@@ -1,9 +1,9 @@
 #ifndef CK4_OBJ1_H
 #define CK4_OBJ1_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 4 object functions (formerly in ck4_obj1.c)
 
@@ -64,6 +64,6 @@ void CK4_SkypestDraw(CK_object *obj);
 
 void CK4_Obj1_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

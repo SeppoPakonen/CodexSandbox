@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_ACT_H
 #define UPP_KEEN_ACT_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 void CK_ACT_SetupFunctions();
 void CK_ACT_AddFunction(const char *fnName, CK_ACT_Function fn);
@@ -24,6 +24,6 @@ void CK_VAR_SetInt(const char *name, intptr_t val);
 void CK_VAR_SetString(const char *name, const char *val);
 void CK_VAR_LoadVars(const char *filename);
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

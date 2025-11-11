@@ -1,9 +1,9 @@
 #ifndef CK4_OBJ3_H
 #define CK4_OBJ3_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 4 object functions (formerly in ck4_obj3.c)
 
@@ -64,6 +64,6 @@ void CK4_WetsuitCol(CK_object *a, CK_object *b);
 
 void CK4_Obj3_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

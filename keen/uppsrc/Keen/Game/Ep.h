@@ -20,9 +20,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ifndef UPP_CK_EP_H
 #define UPP_CK_EP_H
 
-#include <Base/UAE/Types.h>
+//#include <Base/UAE/Types.h>
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 struct CK_object;
 
@@ -56,6 +56,6 @@ typedef struct CK_EpisodeDef
 
 extern CK_EpisodeDef *ck_currentEpisode;
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

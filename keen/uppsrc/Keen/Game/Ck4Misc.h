@@ -1,9 +1,9 @@
 #ifndef CK4_MISC_H
 #define CK4_MISC_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 4 specific functions (formerly in ck4_misc.c)
 
@@ -31,6 +31,6 @@ void CK4_KeenSwimDraw(CK_object *obj);
 
 void CK4_Misc_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

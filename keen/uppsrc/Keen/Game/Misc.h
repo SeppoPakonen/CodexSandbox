@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_MISC_H
 #define UPP_KEEN_MISC_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 void CK_SetDraw(CK_object *obj);
 void CK_Fall(CK_object *obj);
@@ -23,6 +23,6 @@ void CK_DieOnContactDraw(CK_object *obj);
 void CK_ShrapnelTileCol(CK_object *obj);
 void CK_Misc_SetupFunctions(void);
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

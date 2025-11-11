@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_MAP_H
 #define UPP_KEEN_MAP_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // extern chunk_id_t ck_mapKeenBaseFrame[];  // Moved to Defs.h
 
@@ -21,6 +21,6 @@ void CK_MapFlagFall(CK_object *obj);
 void CK_MapFlagLand(CK_object *obj);
 void CK_Map_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

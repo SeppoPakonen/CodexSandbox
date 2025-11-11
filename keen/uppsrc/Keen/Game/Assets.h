@@ -1,8 +1,8 @@
 // Simple asset helpers for early bring-up
 #pragma once
 
-#include <cstdint>
-#include <vector>
+//#include <cstdint>
+//#include <vector>
 
 namespace Game {
 

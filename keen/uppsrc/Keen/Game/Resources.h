@@ -1,7 +1,7 @@
 // Minimal resources helper: paletted tileset loader
 #pragma once
 
-#include "Assets.h"
+//#include "Assets.h"
 
 namespace Game {
 

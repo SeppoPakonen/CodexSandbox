@@ -1,9 +1,9 @@
 #ifndef CK5_OBJ2_H
 #define CK5_OBJ2_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 5 object functions (formerly in ck5_obj2.c)
 
@@ -43,6 +43,6 @@ void CK5_ShellyAirTileCol(CK_object *obj);
 
 void CK5_Obj2_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

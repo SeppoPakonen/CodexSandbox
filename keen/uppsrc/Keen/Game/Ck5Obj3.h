@@ -1,9 +1,9 @@
 #ifndef CK5_OBJ3_H
 #define CK5_OBJ3_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 5 object functions (formerly in ck5_obj3.c)
 
@@ -85,6 +85,6 @@ void CK5_QEDSpawn(int tileX, int tileY);
 
 void CK5_Obj3_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

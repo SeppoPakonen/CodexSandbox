@@ -1,9 +1,9 @@
 #ifndef CK6_OBJ2_H
 #define CK6_OBJ2_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 6 object functions (formerly in ck6_obj2.c)
 
@@ -55,6 +55,6 @@ void CK6_FlectDraw(CK_object *obj);
 
 void CK6_Obj2_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

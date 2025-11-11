@@ -1,9 +1,9 @@
 #ifndef CK6_MISC_H
 #define CK6_MISC_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 6 miscellaneous functions (formerly in ck6_misc.c)
 
@@ -17,6 +17,6 @@ void CK6_ShowGetSandwich();
 void CK6_ShowGetRope();
 void CK6_ShowGetPasscard();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

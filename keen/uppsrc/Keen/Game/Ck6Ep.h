@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_CK6_EP_H
 #define UPP_KEEN_CK6_EP_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 /*
  * Contains definitions relevant only to Keen 6
@@ -69,6 +69,6 @@ void CK_SpawnMapKeen(int tileX, int tileY);
 
 /* ck6_misc.c */
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_DEFS_H
 #define UPP_KEEN_DEFS_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 struct CK_object;  // Forward declaration
 
@@ -317,12 +317,6 @@ void US_CenterWindow(int16_t w, int16_t h);
 bool IN_DemoGetMode(void);
 
 // Forward declaration for input frame - should be defined in IdInput
-typedef struct IN_ControlFrame
-{
-    int16_t xDirection;
-    int16_t yDirection;
-} IN_ControlFrame;
-
 extern IN_ControlFrame ck_inputFrame;
 void MM_SetPurge(void **ptr, int level);
 
@@ -334,38 +328,6 @@ typedef struct VH_BitmapTableEntry
 } VH_BitmapTableEntry;
 
 VH_BitmapTableEntry *VH_GetBitmapTableEntry(int16_t chunk);
-
-// Various missing constants and enums
-typedef enum CK_objectType
-{
-	OBJ_INACTIVE = 0,
-	OBJ_ACTIVE = 1,
-	OBJ_ALWAYS_ACTIVE = 2,
-	OBJ_EXISTS_ONLY_ONSCREEN = 3
-} CK_objActiveType;
-
-typedef enum CK_ClipType
-{
-	CLIP_not = 0,
-	CLIP_normal,
-	CLIP_simple,
-} CK_ClipType;
-
-#define CT_Friendly 1
-#define OBJ_ALWAYS_ACTIVE 2
-#define CLIP_not 0
-#define CLIP_normal 1
-#define PRIORITIES 4  // or whatever the correct value should be
-
-// Input related
-typedef enum IN_motion
-{
-    IN_motion_None = 0,
-    IN_motion_Left = 1,
-    IN_motion_Right = 2,
-    IN_motion_Up = 3,
-    IN_motion_Down = 4
-} IN_motion;
 
 // Add missing macros if needed
 #define CK_ACTION(name) (name)
@@ -463,6 +425,6 @@ typedef struct CK_object
 	struct CK_object *prev;
 } CK_object;
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

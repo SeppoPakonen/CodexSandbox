@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_KEEN_H
 #define UPP_KEEN_KEEN_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 typedef struct CK_keenState
 {
@@ -72,6 +72,6 @@ void CK_ShotDrawFunc(CK_object *obj);
 void CK_KeenSpawnShot(CK_object *obj);
 void CK_KeenSetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_OBJ_H
 #define UPP_KEEN_OBJ_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // extern chunk_id_t CK_ItemSpriteChunks[];  // Moved to Defs.h
 
@@ -30,6 +30,6 @@ void CK_TurretShotCol(CK_object *me, CK_object *other);
 void CK_TurretShotDraw(CK_object *obj);
 void CK_OBJ_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

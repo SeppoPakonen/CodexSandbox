@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_INTER_H
 #define UPP_KEEN_INTER_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // From the original C file ck_inter.c
 extern int ck_startingSavedGame;
@@ -21,6 +21,6 @@ void CK_SubmitHighScore(int score, uint16_t arg_4);
 void CK_DoHighScores();
 void CK_SetDefaultHighScores();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

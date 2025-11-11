@@ -20,9 +20,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ifndef UPP_CK_CONFIG_H
 #define UPP_CK_CONFIG_H
 
-#include <Base/UAE/Types.h>
+//#include <Base/UAE/Types.h>
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // =================================
 // Episode Selection
@@ -154,6 +154,6 @@ NAMESPACE_UPP
 // Read uncompressed audio data (AUDIOT, AUDIOHED)
 //#define CA_AUDIOUNCOMPRESSED
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif //UPP_CK_CONFIG_H

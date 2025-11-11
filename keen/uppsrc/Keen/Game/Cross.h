@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_CROSS_H
 #define UPP_KEEN_CROSS_H
 
-#include "Game.h"
+////#include "Game.h"
 
-NAMESPACE_UPP
+////NAMESPACE_UPP
 
 // Add printf format-string warnings on compilers which support them
 #ifdef __GNUC__
@@ -51,6 +51,6 @@ int CK_Cross_strncasecmp(const char *s1, const char *s2, size_t n);
 // Safe strcpy variant which Quit()s if the buffer is too small.
 size_t CK_Cross_strscpy(char* dst, const char* src, size_t bufsiz);
 
-END_UPP_NAMESPACE
+////END_UPP_NAMESPACE
 
 #endif

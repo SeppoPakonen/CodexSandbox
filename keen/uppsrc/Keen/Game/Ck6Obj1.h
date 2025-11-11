@@ -1,9 +1,9 @@
 #ifndef CK6_OBJ1_H
 #define CK6_OBJ1_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 6 object functions (formerly in ck6_obj1.c)
 
@@ -65,6 +65,6 @@ extern int16_t ck6_smashScreenOfs[];
 
 void CK6_Obj1_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

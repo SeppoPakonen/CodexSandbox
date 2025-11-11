@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_PHYSICS_H
 #define UPP_KEEN_PHYSICS_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 void CK_ResetClipRects(CK_object *obj);
 void CK_SetOldClipRects(CK_object *obj);
@@ -36,6 +36,6 @@ extern int16_t ck_nextX;
 extern int16_t ck_nextY;
 extern bool ck_keenIgnoreVertClip;
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

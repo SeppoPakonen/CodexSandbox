@@ -4,6 +4,7 @@ uses
 
 file
 	AGENTS.md,
+	Game.h,
 	Cross.h,
 	Cross.cpp,
 	Defs.h,
@@ -29,7 +30,6 @@ file
 	Ck6Ep.h,
 	Ck4Map.h,
 	Ck4Map.cpp,
-	Game.h,
 	Game.cpp,
 	Assets.h,
 	Assets.cpp,

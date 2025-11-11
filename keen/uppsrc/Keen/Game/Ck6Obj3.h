@@ -1,9 +1,9 @@
 #ifndef CK6_OBJ3_H
 #define CK6_OBJ3_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Episode 6 object functions (formerly in ck6_obj3.c)
 
@@ -43,6 +43,6 @@ void CK6_CeilickCol(CK_object *a, CK_object *b);
 
 void CK6_Obj3_SetupFunctions();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

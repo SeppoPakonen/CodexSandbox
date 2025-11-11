@@ -20,9 +20,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ifndef CK5_EP_H
 #define CK5_EP_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 /*
  * Contains definitions relevant only to Keen 5
@@ -87,6 +87,6 @@ void CK5_AnimateMapElevator(int tileX, int tileY, int dir);
 void CK5_ExplodeGalaxy();
 void CK5_FuseMessage();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

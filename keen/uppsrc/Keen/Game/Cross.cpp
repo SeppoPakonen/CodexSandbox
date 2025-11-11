@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <cctype>
 #include <unistd.h>  // for isatty
-
+#include <Keen/Id/Id.h>
 
 const char *ck_cross_logLevel_strings[] = {
 	"normal",

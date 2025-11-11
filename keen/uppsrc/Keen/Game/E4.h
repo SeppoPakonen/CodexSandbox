@@ -20,9 +20,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ifndef CK4_EP_H
 #define CK4_EP_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 /*
  * Contains definitions relevant only to Keen 4
@@ -98,6 +98,6 @@ void CK_MapFlagSpawn(int tileX, int tileY);
 void CK_StunCreature(CK_object *creature, CK_object *stunner, CK_action *new_creature_act);
 void CK4_EndingPurge(void);
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

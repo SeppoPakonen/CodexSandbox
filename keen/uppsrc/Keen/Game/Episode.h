@@ -1,19 +1,11 @@
 #ifndef UPP_KEEN_EPISODE_H
 #define UPP_KEEN_EPISODE_H
 
-#include "Game.h"
+//#include "Game.h"
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 struct CK_object;
-
-typedef enum CK_Episode
-{
-	EP_Nil,
-	EP_CK4,
-	EP_CK5,
-	EP_CK6,
-} CK_Episode;
 
 //This structure defines an episode of Commander Keen, providing
 //function pointers to episode specific code and data.
@@ -37,6 +29,6 @@ typedef struct CK_EpisodeDef
 
 extern CK_EpisodeDef *ck_currentEpisode;
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif

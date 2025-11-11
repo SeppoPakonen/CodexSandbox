@@ -1,9 +1,9 @@
 #ifndef UPP_KEEN_PLAY_H
 #define UPP_KEEN_PLAY_H
 
-#include <Keen/Id/Id.h>
+//#include <Keen/Id/Id.h>
 
-NAMESPACE_UPP
+//NAMESPACE_UPP
 
 // Function declarations from original ck_play.h
 // Status window constants
@@ -58,6 +58,6 @@ void CK_ShowStatusWindow(void);
 void CK_PlayDemo(int demoChunk);
 void CK_PlayLoop();
 
-END_UPP_NAMESPACE
+//END_UPP_NAMESPACE
 
 #endif
