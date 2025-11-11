@@ -153,7 +153,7 @@ void render_old_school(GameState* state) {
             glBegin(GL_TRIANGLE_FAN);
             glVertex2f(x, y);
             for (int j = 0; j <= 16; j++) {
-                float angle = 2.0f * M_PI * j / 16.0f;
+                float angle = 2.0f * 3.14159265359f * j / 16.0f;
                 glVertex2f(x + 8.0f * cosf(angle), y + 8.0f * sinf(angle));
             }
             glEnd();
@@ -163,7 +163,7 @@ void render_old_school(GameState* state) {
             glBegin(GL_TRIANGLE_FAN);
             glVertex2f(x, y);
             for (int j = 0; j <= 16; j++) {
-                float angle = 2.0f * M_PI * j / 16.0f;
+                float angle = 2.0f * 3.14159265359f * j / 16.0f;
                 glVertex2f(x + 6.0f * cosf(angle), y + 6.0f * sinf(angle));
             }
             glEnd();
@@ -172,7 +172,7 @@ void render_old_school(GameState* state) {
             glColor3f(0.3f, 0.3f, 0.3f);
             glBegin(GL_LINES);
             for (int j = 0; j < 8; j++) {
-                float angle = 2.0f * M_PI * j / 8.0f;
+                float angle = 2.0f * 3.14159265359f * j / 8.0f;
                 float inner_x = x + 4.0f * cosf(angle);
                 float inner_y = y + 4.0f * sinf(angle);
                 float outer_x = x + 6.0f * cosf(angle);
