@@ -1,0 +1,47 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+dist/
+
+# Executables
+*.exe
+*.out
+rollercoaster
+game
+a.out
+
+# Libraries
+*.so
+*.dylib
+*.dll
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.log
+*.o
+*.a
+*.obj
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Debug and profiling
+*.dSYM/
+*.profdata
+*.gcda
+*.gcno
+
+# Binutils
+*.map
+*.sym
+*.lst
