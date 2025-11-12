@@ -3,49 +3,41 @@
 
 //*******************************************************************************
 //                                                                              
-//       Demo Unit for SOLDAT                                                   
+//       Demo Unit for SOLDAT                                                    
 //                                                                              
 //       Copyright (c) 2002 Michal Marcinkowski          
 //                                                                              
 //*******************************************************************************
 
+#include "Constants.h"
+#include "Vector.h"
+#include "Sprites.h"
+#include "Net.h"
 #include <string>
 #include <vector>
 #include <memory>
 #include <fstream>
-#include <cstdint>
-#include "Vector.h"
-#include "Sprites.h"
-#include "Net.h"
-#include "Constants.h"
-#include "Version.h"
+#include "SysUtils.h"  // Assuming this contains DateTimeToUnix and other utilities
 
-// Constants
-const std::string DEMO_MAGIC = "SOLDEM";
+const char DEMO_MAGIC[6] = {'S', 'O', 'L', 'D', 'E', 'M'};
 
-// Structures
+#pragma pack(push, 1)  // Pascal records are tightly packed
 struct TDemoHeader {
     char Header[6];
     uint16_t Version;
     char MapName[161];  // 0-indexed array of 161 elements
     int32_t StartDate;
     int32_t TicksNum;
-    
+
     TDemoHeader() {
-        std::fill(Header, Header + 6, 0);
+        std::copy(DEMO_MAGIC, DEMO_MAGIC + 6, Header);
         Version = 0;
         std::fill(MapName, MapName + 161, 0);
         StartDate = 0;
         TicksNum = 0;
     }
 };
-
-// Forward declarations
-class TDemo;
-class TDemoRecorder;
-#ifdef CLIENT_CODE
-class TDemoPlayer;
-#endif
+#pragma pack(pop)
 
 class TDemo {
 protected:
@@ -58,8 +50,9 @@ protected:
 public:
     TDemo() : FActive(false), FName(""), FOldCam(0) {
         FDemoFile = std::make_shared<std::vector<uint8_t>>();
+        FDemoHeader = TDemoHeader();
     }
-    
+
     bool GetActive() const { return FActive; }
     void SetActive(bool value) { FActive = value; }
     const std::string& GetName() const { return FName; }
@@ -73,6 +66,7 @@ private:
     int CreateDemoPlayer();
 #ifndef SERVER_CODE
     void SaveCamera();
+    void SavePosition();
 #endif
 
 public:
@@ -82,14 +76,11 @@ public:
     void StopRecord();
     void SaveRecord(const void* R, int Size);
     void SaveNextFrame();
-#ifndef SERVER_CODE
-    void SavePosition();
-#endif
     
     int GetTicksNum() const { return FTicksNum; }
 };
 
-#ifdef CLIENT_CODE
+#ifndef SERVER_CODE
 class TDemoPlayer : public TDemo {
 private:
     int32_t FSkipTo;
@@ -108,7 +99,7 @@ public:
 
 // Global variables
 extern std::unique_ptr<TDemoRecorder> DemoRecorder;
-#ifdef CLIENT_CODE
+#ifndef SERVER_CODE
 extern std::unique_ptr<TDemoPlayer> DemoPlayer;
 #endif
 extern uint16_t RSize;
@@ -116,87 +107,148 @@ extern uint8_t FreeCam;
 extern uint8_t NoTexts;
 
 namespace DemoImpl {
-    inline bool TDemoRecorder::StartRecord(const std::string& Filename) {
-        // Result := False;
-        bool result = false;
-        
+    inline int TDemoRecorder::CreateDemoPlayer() {
+        if (Sprite[MAX_SPRITES].Active) {
+            MainConsole.Console("Failed to create Demo Recorder player. Demos can be recorded with up to 31 players", INFO_MESSAGE_COLOR);
+            StopRecord();
+            return -1;
+        }
+
+        TPlayer* player = new TPlayer();  // Assuming TPlayer has a constructor
+        player->DemoPlayer = true;
+        player->Name = "Demo Recorder";
+        player->Team = TEAM_SPECTATOR;
+        player->ControlMethod = HUMAN;
+
+#ifdef SERVER_CODE
+        player->Peer = UINT32_MAX;  // Equivalent to High(LongWord)
+#endif
+
+        TVector2 a;
+        a.x = MIN_SECTORZ * Map.SectorsDivision * 0.7f;
+        a.y = MIN_SECTORZ * Map.SectorsDivision * 0.7f;
+
+        int p = CreateSprite(a, Vector2(0, 0), 1, MAX_SPRITES, player, true);
+        if ((p > 0) && (p < MAX_SPRITES + 1)) {
+#ifdef SERVER_CODE
+            ServerSyncCvars(p, player->Peer, true);
+            ServerSendPlayList(player->Peer);
+#else
+            ServerSyncCvars(p, 0, true);
+            ServerSendPlayList(0);
+#endif
+            ServerVars(p);
+            ServerSendNewPlayerInfo(p, JOIN_NORMAL);
+            ServerThingMustSnapshotOnConnect(p);
+            Sprite[p].Player.DemoPlayer = true;
+            SpriteParts.Pos[p] = Vector2(0, 0);
+            return p;
+        }
+
+        return -1;
+    }
+
 #ifndef SERVER_CODE
-        // if DemoPlayer.Active then Exit;
+    inline void TDemoRecorder::SaveCamera() {
+        // TMsg_ClientSpriteSnapshot_Dead msg;  // Assuming this struct exists
+        // msg.Header.ID = MsgID_ClientSpriteSnapshot_Dead;
+        // msg.CameraFocus = CameraFollowSprite;
+        // SaveRecord(msg, sizeof(msg));
+    }
+
+    inline void TDemoRecorder::SavePosition() {
+        // TMsg_ServerSpriteDelta_Movement movementMsg;  // Assuming this struct exists
+        // movementMsg.Header.ID = MsgID_Delta_Movement;
+        //
+        // movementMsg.Num = MySprite;
+        // movementMsg.Velocity = SpriteParts.Velocity[MySprite];
+        // movementMsg.Pos = SpriteParts.Pos[MySprite];
+        // movementMsg.ServerTick = MainTickCounter;
+        //
+        // EncodeKeys(Sprite[MySprite], movementMsg.Keys16);
+        //
+        // movementMsg.MouseAimX = Sprite[MySprite].Control.MouseAimX;
+        // movementMsg.MouseAimY = Sprite[MySprite].Control.MouseAimY;
+        //
+        // SaveRecord(movementMsg, sizeof(movementMsg));
+    }
+#endif
+
+    inline bool TDemoRecorder::StartRecord(const std::string& Filename) {
+        bool result = false;
+
+#ifndef SERVER_CODE
         if (DemoPlayer && DemoPlayer->GetActive()) {
             return false;
         }
 #endif
 
-        // Create new demo file (memory stream)
         FDemoFile = std::make_shared<std::vector<uint8_t>>();
+
+        std::string filenameOnly = ExtractFileName(Filename);
         
-        // TODO: Console message about recording demo
-        // MainConsole.Console(...);
-        
-        size_t lastSlash = Filename.find_last_of("/\\");
-        FName = (lastSlash != std::string::npos) ? 
-                Filename.substr(lastSlash + 1) : Filename;
+        std::wstring wideStr(filenameOnly.begin(), filenameOnly.end());
+        MainConsole.Console(L"Recording demo: " + wideStr, INFO_MESSAGE_COLOR);
+
+        FName = filenameOnly;
         FActive = true;
         FOldCam = 255;
         FTicksNum = 0;
 
         // Set up header
-        std::fill(FDemoHeader.Header, FDemoHeader.Header + 6, 0);
-        std::copy(DEMO_MAGIC.begin(), DEMO_MAGIC.end(), FDemoHeader.Header);
+        std::copy(DEMO_MAGIC, DEMO_MAGIC + 6, FDemoHeader.Header);
         FDemoHeader.TicksNum = 0;
-        FDemoHeader.StartDate = /* TODO: DateTimeToUnix(Now) */ 0;
+        FDemoHeader.StartDate = DateTimeToUnix(Now());  // Assuming these functions exist
         FDemoHeader.Version = DEMO_VERSION;
 
         std::fill(FDemoHeader.MapName, FDemoHeader.MapName + 161, 0);
-        // TODO: Copy map name to header
-        // StringToArray(FDemoHeader.MapName, Map.Name);
+        StringToArray(FDemoHeader.MapName, Map.Name);
 
         // Write header to file
-        // TODO: Write header to memory stream
-        // FDemoFile.WriteBuffer(FDemoHeader, SizeOf(FDemoHeader));
-        
+        // FDemoFile->WriteBuffer(FDemoHeader, sizeof(FDemoHeader));  // Would need implementation
+
         int spriteID = CreateDemoPlayer();
-        
+
         if (spriteID == MAX_SPRITES) {
-            result = true;  // Success
+            result = true;
         }
-        
+
         return result;
     }
 
     inline void TDemoRecorder::StopRecord() {
-        if (!FActive) {
+        if (!Active) {
             return;
         }
 
-        // TODO: Console message
-        // MainConsole.Console(...);
+        std::wstring wideStr(FName.begin(), FName.end());
+        MainConsole.Console(L"Demo stopped (" + wideStr + L")", INFO_MESSAGE_COLOR);
 
-        // Remove demo player
-        // Sprite[MAX_SPRITES].Kill;
+        Sprite[MAX_SPRITES].Kill();
 
-        // Update header
+        // Go back to beginning of file to update header
+        // FDemoFile->Position = 0;  // Would need implementation
+
         FDemoHeader.Version = DEMO_VERSION;
         FDemoHeader.TicksNum = FTicksNum;
 
-        // Update map name in header
         std::fill(FDemoHeader.MapName, FDemoHeader.MapName + 161, 0);
-        // TODO: Copy map name to header
-        // StringToArray(FDemoHeader.MapName, Map.Name);
+        StringToArray(FDemoHeader.MapName, Map.Name);
 
-        // Save file
-        // TODO: Save file to disk
-        // FDemoFile.SaveToFile(UserDirectory + 'demos/' + FName);
+        // FDemoFile->WriteBuffer(FDemoHeader, sizeof(FDemoHeader));  // Would need implementation
+
+        try {
+            // FDemoFile->SaveToFile(UserDirectory + "demos/" + FName);  // Would need implementation
+        } catch (const std::exception& e) {
+            std::string errMsg = "Failed to save demo file: ";
+            errMsg += e.what();
+            std::wstring wideErr(errMsg.begin(), errMsg.end());
+            MainConsole.Console(wideErr, INFO_MESSAGE_COLOR);
+        }
 
         FActive = false;
-        FName.clear();
-        FDemoFile.reset();
-    }
-
-    inline int TDemoRecorder::CreateDemoPlayer() {
-        // TODO: Implement demo player creation
-        // This would create a special sprite for demo recording
-        return -1;
+        FName = "";
+        FDemoFile.reset();  // Equivalent to Free() in Pascal
     }
 
     inline void TDemoRecorder::SaveRecord(const void* R, int Size) {
@@ -208,22 +260,9 @@ namespace DemoImpl {
             return;
         }
 
-        // Write size first
-        // FDemoFile.Write(Size, SizeOf(RSize));
-        
-        // Write actual data
-        // FDemoFile.Write(R, Size);
+        // FDemoFile->Write(Size, sizeof(RSize));  // Would need implementation
+        // FDemoFile->Write(R, Size);  // Would need implementation
     }
-
-#ifndef SERVER_CODE
-    inline void TDemoRecorder::SaveCamera() {
-        // TODO: Implement camera saving
-    }
-
-    inline void TDemoRecorder::SavePosition() {
-        // TODO: Implement position saving
-    }
-#endif
 
     inline void TDemoRecorder::SaveNextFrame() {
         if (!FActive) {
@@ -232,7 +271,8 @@ namespace DemoImpl {
 
         // Save record type
         RSize = 1;
-        // FDemoFile.Write(RSize, SizeOf(RSize));
+
+        // FDemoFile->Write(RSize, sizeof(RSize));  // Would need implementation
 
         // Save camera change
 #ifndef SERVER_CODE
@@ -245,55 +285,42 @@ namespace DemoImpl {
         FTicksNum++;
     }
 
-#ifdef CLIENT_CODE
+#ifndef SERVER_CODE
     inline bool TDemoPlayer::OpenDemo(const std::string& Filename) {
         bool result = false;
-        
         FDemoFile = std::make_shared<std::vector<uint8_t>>();
-        
-        // Load file into memory
+
         std::ifstream file(Filename, std::ios::binary);
         if (!file.is_open()) {
-            // TODO: Log error
+            std::string errMsg = "Failed to load demo file: Could not open file";
+            std::wstring wideErrMsg(errMsg.begin(), errMsg.end());
+            MainConsole.Console(wideErrMsg, INFO_MESSAGE_COLOR);
             return false;
         }
-        
-        file.seekg(0, std::ios::end);
-        size_t fileSize = file.tellg();
-        file.seekg(0, std::ios::beg);
-        
-        FDemoFile->resize(fileSize);
-        file.read(reinterpret_cast<char*>(FDemoFile->data()), fileSize);
-        file.close();
-        
+
         // Read header
-        size_t pos = 0;
-        std::copy(FDemoFile->begin(), FDemoFile->begin() + sizeof(TDemoHeader), 
-                  reinterpret_cast<uint8_t*>(&FDemoHeader));
-        pos += sizeof(TDemoHeader);
-        
-        // Check header
-        if (std::string(FDemoHeader.Header, 6) != DEMO_MAGIC) {
-            // TODO: Log error
+        file.read(reinterpret_cast<char*>(&FDemoHeader), sizeof(FDemoHeader));
+
+        if (std::string(FDemoHeader.Header, 6) != std::string(DEMO_MAGIC, 6)) {
+            std::string errMsg = "The provided file is not valid: " + FName;
+            std::wstring wideErrMsg(errMsg.begin(), errMsg.end());
+            MainConsole.Console(wideErrMsg, INFO_MESSAGE_COLOR);
             return false;
-        }
-        
-        if (FDemoHeader.Version != DEMO_VERSION) {
-            // TODO: Log version error
+        } else if (FDemoHeader.Version != DEMO_VERSION) {
+            std::string errMsg = "Wrong demo version: " + std::to_string(DEMO_VERSION) + " - " + 
+                                std::to_string(FDemoHeader.Version);
+            std::wstring wideErrMsg(errMsg.begin(), errMsg.end());
+            MainConsole.Console(wideErrMsg, INFO_MESSAGE_COLOR);
             return false;
+        } else {
+            FName = ExtractFileName(Filename);
+            std::wstring wideFName(FName.begin(), FName.end());
+            MainConsole.Console(L"Playing demo " + wideFName, INFO_MESSAGE_COLOR);
+            Spectator = 1;  // Assuming this is a global variable
+            FActive = true;
+            result = true;
         }
-        
-        size_t lastSlash = Filename.find_last_of("/\\");
-        FName = (lastSlash != std::string::npos) ? 
-                Filename.substr(lastSlash + 1) : Filename;
-        
-        // TODO: Console message
-        // MainConsole.Console(_('Playing demo') + ' ' + WideString(FName), INFO_MESSAGE_COLOR);
-        
-        // Spectator := 1;
-        FActive = true;
-        result = true;
-        
+
         return result;
     }
 
@@ -302,31 +329,118 @@ namespace DemoImpl {
             return;
         }
 
-        // TODO: Console message
-        // MainConsole.Console('Demo stopped', INFO_MESSAGE_COLOR);
+        MainConsole.Console(L"Demo stopped", INFO_MESSAGE_COLOR);
 
-        FDemoFile.reset();
+        FDemoFile.reset();  // Equivalent to Free()
 
         FActive = false;
     }
 
     inline void TDemoPlayer::ProcessDemo() {
-        // TODO: Implement demo processing
-        // This would read demo data and replay the game state
+        char readBuf[16384];  // Array[0..16383] of Char
+        
+        while (FActive) {
+            // Check if we've reached the end of the demo file
+            // This would need actual file position checking implementation
+            // if (FDemoFile->Position == FDemoFile->Size) {
+            //     StopDemo();
+            //     ExitToMenu();  // Assuming this function exists
+            //     return;
+            // }
+            
+            // Would need actual file reading implementation
+            // try
+            //     FDemoFile->Read(RSize, sizeof(RSize));
+            // except
+            //     return;
+            // end;
+
+            if ((FSkipTo > 0) && (MainTickCounter >= FSkipTo)) {
+                FSkipTo = -1;
+                ShouldRenderFrames = true;  // Assuming this is a global variable
+                GOALTICKS = static_cast<int>(demo_speed.Value() * DEFAULT_GOALTICKS);  // Assuming demo_speed exists
+            }
+
+            if (RSize == 0) {
+                // FDemoFile->Position := FDemoFile->Position + 2;  // Would need implementation
+                return;
+            }
+
+            if (RSize == 1) {  // next frame
+                return;
+            }
+
+            // Would need actual file reading implementation
+            // try
+            //     FDemoFile->Read(ReadBuf, RSize);
+            // except
+            //     return;
+            // end;
+
+            // For now, just simulating the network message handling:
+            // packet := UDP.NetworkingUtil.AllocateMessage(RSize);
+            // packet.m_pData := @ReadBuf;
+            // UDP.HandleMessages(packet);
+            // packet^.m_pData := nil;
+            // packet.m_pfnRelease(packet);
+        }
     }
 
     inline void TDemoPlayer::Position(int Ticks) {
         FSkipTo = Ticks;
-        // ShouldRenderFrames := False;
+        ShouldRenderFrames = false;
 
         if (FSkipTo < MainTickCounter) {
-            // Reset demo position and game state
-            // FDemoFile.Seek(SizeOf(FDemoHeader), soFromBeginning);
-            // MainTickCounter := 0;
-            // And reset all game objects...
+            // FDemoFile->Seek(sizeof(FDemoHeader), std::ios::beg);  // Would need implementation
+            // Assuming Seek from beginning of file
+
+            MainTickCounter = 0;
+
+            for (int i = 1; i <= MAX_SPRITES; i++) {
+                Sprite[i].Kill();
+            }
+            for (int i = 1; i <= MAX_BULLETS; i++) {
+                Bullet[i].Kill();
+            }
+            for (int i = 1; i <= MAX_SPARKS; i++) {
+                Spark[i].Kill();
+            }
+            for (int i = 1; i <= MAX_THINGS; i++) {
+                Thing[i].Kill();
+            }
+
+            // Reset World and Big Texts
+            for (int i = 0; i <= MAX_BIG_MESSAGES; i++) {
+                // Big Text
+                BigText[i] = L"";
+                BigDelay[i] = 0;
+                BigScale[i] = 0;
+                BigColor[i] = 0;
+                BigPosX[i] = 0;
+                BigPosY[i] = 0;
+                BigX[i] = 0;
+                // World Text
+                WorldText[i] = L"";
+                WorldDelay[i] = 0;
+                WorldScale[i] = 0;
+                WorldColor[i] = 0;
+                WorldPosX[i] = 0;
+                WorldPosY[i] = 0;
+                WorldX[i] = 0;
+            }
+
+            // Reset ABOVE CHAT MESSAGE
+            for (int i = 1; i <= MAX_SPRITES; i++) {
+                ChatDelay[i] = 0;
+                ChatMessage[i] = L"";
+                ChatTeam[i] = false;
+            }
+
+            MainConsole.Count = 0;
+            BigConsole.Count = 0;
         }
 
-        // GOALTICKS := DEFAULT_GOALTICKS * 20;
+        GOALTICKS = DEFAULT_GOALTICKS * 20;
     }
 #endif
 }
@@ -334,24 +448,24 @@ namespace DemoImpl {
 // Using declarations to bring into global namespace
 using DemoImpl::TDemo;
 using DemoImpl::TDemoRecorder;
-#ifdef CLIENT_CODE
+#ifndef SERVER_CODE
 using DemoImpl::TDemoPlayer;
 #endif
 
 // Global variables
 extern std::unique_ptr<TDemoRecorder> DemoRecorder;
-#ifdef CLIENT_CODE
+#ifndef SERVER_CODE
 extern std::unique_ptr<TDemoPlayer> DemoPlayer;
 #endif
-extern uint16_t RSize = 0;
-extern uint8_t FreeCam = 0;
+extern uint16_t RSize;
+extern uint8_t FreeCam;
 extern uint8_t NoTexts = 0;
 
-// Initialize global variables
+// Initialize global objects
 namespace DemoImpl {
     inline void DemoInit() {
         DemoRecorder = std::make_unique<TDemoRecorder>();
-#ifdef CLIENT_CODE
+#ifndef SERVER_CODE
         DemoPlayer = std::make_unique<TDemoPlayer>();
 #endif
     }

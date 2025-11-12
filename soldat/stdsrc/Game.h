@@ -3,9 +3,9 @@
 
 //*******************************************************************************
 //                                                                              
-//       Game Unit                                                              
+//       Game Unit for SOLDAT                                                   
 //                                                                              
-//       Copyright (c) 2012-2013 Gregor A. Cieslak      
+//       Copyright (c) 2012 Gregor A. Cieslak          
 //                                                                              
 //*******************************************************************************
 
@@ -23,11 +23,7 @@
 #include "Util.h"
 #include <vector>
 #include <string>
-
-// Forward declarations
-struct TSHA1Digest;
-struct TMapInfo;
-struct ParticleSystem;
+#include <memory>
 
 // Structures
 struct TKillSort {
@@ -38,7 +34,7 @@ struct TKillSort {
     uint32_t Color;
 };
 
-// Declare global variables
+// Global variables
 extern int Ticks;
 extern int TicksPerSecond;
 extern int Frames;
@@ -123,13 +119,13 @@ extern float GameWidthHalf;
 extern float GameHeightHalf;
 #endif
 
-// Ping improvement vars
-extern TVector2 OldSpritePos[MAX_SPRITES + 1][MAX_OLDPOS + 1];
+// Ping improvement variables
+extern TVector2 OldSpritePos[MAX_SPRITES + 1][MAX_OLDPOS + 1];  // Pascal arrays start from 1
 
-// Survival vars
+// Survival variables
 extern uint8_t AliveNum;
-extern int TeamAliveNum[6];
-extern int TeamPlayersNum[5];
+extern uint8_t TeamAliveNum[6];
+extern uint8_t TeamPlayersNum[5];
 extern bool SurvivalEndRound;
 extern bool WeaponsCleaned;
 
@@ -144,7 +140,7 @@ extern int TimeLimitCounter;
 extern int StartHealth;
 extern int TimeLeftSec;
 extern int TimeLeftMin;
-extern uint8_t WeaponSel[MAX_SPRITES + 1][MAIN_WEAPONS + 1];
+extern uint8_t WeaponSel[MAX_SPRITES + 1][MAIN_WEAPONS + 1];  // Pascal arrays start from 1
 
 extern int TeamScore[6];
 extern int TeamFlag[5];
@@ -161,7 +157,7 @@ extern int MapIndex;
 
 extern TWaypoints BotPath;
 
-extern TKillSort SortedPlayers[MAX_SPRITES + 1];
+extern TKillSort SortedPlayers[MAX_SPRITES + 1];  // Pascal arrays start from 1
 #ifndef SERVER_CODE
 extern TKillSort SortedTeamScore[MAX_SPRITES + 1];
 extern int HeartbeatTime;
@@ -169,12 +165,12 @@ extern int HeartbeatTimeWarnings;
 #endif
 
 // Game entities
-extern TSprite Sprite[MAX_SPRITES + 1];
-extern TBullet Bullet[MAX_BULLETS + 1];
+extern TSprite Sprite[MAX_SPRITES + 1];  // Pascal arrays start from 1
+extern TBullet Bullet[MAX_BULLETS + 1];  // Pascal arrays start from 1
 #ifndef SERVER_CODE
-extern TSpark Spark[MAX_SPARKS + 1];
+extern TSpark Spark[MAX_SPARKS + 1];  // Pascal arrays start from 1
 #endif
-extern TThing Thing[MAX_THINGS + 1];
+extern TThing Thing[MAX_THINGS + 1];  // Pascal arrays start from 1
 
 // Voting
 extern bool VoteActive;
@@ -185,8 +181,8 @@ extern std::string VoteReason;
 extern int VoteTimeRemaining;
 extern uint8_t VoteNumVotes;
 extern uint8_t VoteMaxVotes;
-extern bool VoteHasVoted[MAX_SPRITES + 1];
-extern int VoteCooldown[MAX_SPRITES + 1];
+extern bool VoteHasVoted[MAX_SPRITES + 1];  // Pascal arrays start from 1
+extern int VoteCooldown[MAX_SPRITES + 1];  // Pascal arrays start from 1
 extern bool VoteKickReasonType;
 
 // Function declarations
@@ -211,62 +207,70 @@ void ChangeMap();
 void SortPlayers();
 
 namespace GameImpl {
+    // Timing variables
+    inline uint64_t TimeInMilLast = 0;
+    inline uint64_t TimeInMil = 0;
+    inline uint32_t TimePassed = 0;
+    inline int Seconds = 0;
+    inline int SecondsLast = 0;
+
     inline void Number27Timing() {
-        // Simplified implementation - in real code this would use proper timing functions
-        // TimeInMilLast := TimeInMil;
-        // TimeInMil := GetTickCount64;
-        // Additional timing logic would go here
+        TimeInMilLast = TimeInMil;
+        TimeInMil = GetTickCount64();  // Assuming this function exists or is replaced with std::chrono equivalent
+        if ((TimeInMil - TimeInMilLast) > 2000) {
+            TimeInMilLast = TimeInMil;  // safety precaution
+        }
+
+        TimePassed += static_cast<uint32_t>(TimeInMil - TimeInMilLast);
+        SecondsLast = Seconds;
+        Seconds = static_cast<int>(TimePassed / 1000);
+
+        if (Seconds != SecondsLast) {  // new Second
+            TicksPerSecond = Ticks;
+            Ticks = 0;
+
+            FramesPerSecond = Frames;
+            Frames = 0;
+        }
+
+        Frames++;
+
+        TickTimeLast = TickTime;
+
+        double divisor = (1000.0 / GOALTICKS);
+        if (divisor != 0) {
+            TickTime = static_cast<int>(TimePassed / divisor);
+        } else {
+            TickTime = 0;
+        }
     }
 
     inline void UpdateGameStats() {
-        // This function would save game statistics to a file
-        // Implementation would require file I/O operations
+        // Game Stats save
+        if (log_enable.Value()) {
+            // This would create and save statistics to a file
+            // For now, just a placeholder implementation
+            // TStringList s;
+            // s.Add("In-Game Statistics");
+            // s.Add("Players: " + IntToStr(PlayersNum));
+            // etc...
+            // s.SaveToFile(UserDirectory + "logs/gamestat.txt");
+        }
     }
 
     inline void ToggleBulletTime(bool TurnOn, int Duration) {
+#ifdef SERVER_CODE
+        // Trace('ToggleBulletTime');
+#endif
+
         if (TurnOn) {
             BulletTimeTimer = Duration;
             GOALTICKS = DEFAULT_GOALTICKS / 3;
         } else {
             GOALTICKS = DEFAULT_GOALTICKS;
         }
+
         Number27Timing();
-    }
-
-    inline bool PointVisible(float X, float Y, int i) {
-#ifdef SERVER_CODE
-        const int GAME_WIDTH = MAX_GAME_WIDTH; // Assuming MAX_GAME_WIDTH is defined
-        const int GAME_HEIGHT = 480;
-#else
-        int GAME_WIDTH = GameWidth;
-        int GAME_HEIGHT = GameHeight;
-#endif
-
-        if ((i > MAX_PLAYERS) || (i < 1)) {
-            return false;
-        }
-
-        float SX = SpriteParts.Pos[i].x - ((SpriteParts.Pos[i].x - Sprite[i].Control.MouseAimX) / 2);
-        float SY = SpriteParts.Pos[i].y - ((SpriteParts.Pos[i].y - Sprite[i].Control.MouseAimY) / 2);
-
-        return (X > (SX - GAME_WIDTH)) && (X < (SX + GAME_WIDTH)) && 
-               (Y > (SY - GAME_HEIGHT)) && (Y < (SY + GAME_HEIGHT));
-    }
-
-    inline bool PointVisible2(float X, float Y, int i) {
-#ifdef SERVER_CODE
-        const int GAME_WIDTH = MAX_GAME_WIDTH; // Assuming MAX_GAME_WIDTH is defined
-        const int GAME_HEIGHT = 480;
-#else
-        const int GAME_WIDTH = 600;
-        const int GAME_HEIGHT = 440;
-#endif
-
-        float SX = SpriteParts.Pos[i].x;
-        float SY = SpriteParts.Pos[i].y;
-
-        return (X > (SX - GAME_WIDTH)) && (X < (SX + GAME_WIDTH)) && 
-               (Y > (SY - GAME_HEIGHT)) && (Y < (SY + GAME_HEIGHT));
     }
 
 #ifndef SERVER_CODE
@@ -284,15 +288,73 @@ namespace GameImpl {
     }
 #endif
 
+    inline bool PointVisible(float X, float Y, int i) {
+#ifdef SERVER_CODE
+        // TODO: check why numbers differ on server and client
+        const int GAME_WIDTH = MAX_GAME_WIDTH;
+        const int GAME_HEIGHT = 480;
+#else
+        // workaround because of variables instead of constants
+        int GAME_WIDTH = GameWidth;
+        int GAME_HEIGHT = GameHeight;
+#endif
+
+        bool result = false;
+
+        if ((i > MAX_PLAYERS) || (i < 1)) {
+            return false;
+        }
+
+        float SX = SpriteParts.Pos[i].x - ((SpriteParts.Pos[i].x - Sprite[i].Control.MouseAimX) / 2);
+        float SY = SpriteParts.Pos[i].y - ((SpriteParts.Pos[i].y - Sprite[i].Control.MouseAimY) / 2);
+
+        if ((X > (SX - GAME_WIDTH)) && (X < (SX + GAME_WIDTH)) &&
+            (Y > (SY - GAME_HEIGHT)) && (Y < (SY + GAME_HEIGHT))) {
+            result = true;
+        }
+        return result;
+    }
+
+    inline bool PointVisible2(float X, float Y, int i) {
+#ifdef SERVER_CODE
+        // TODO: check why numbers differ on server and client
+        const int GAME_WIDTH = MAX_GAME_WIDTH;
+        const int GAME_HEIGHT = 480;
+#else
+        const int GAME_WIDTH = 600;
+        const int GAME_HEIGHT = 440;
+#endif
+
+        bool result = false;
+
+        float SX = SpriteParts.Pos[i].x;
+        float SY = SpriteParts.Pos[i].y;
+
+        if ((X > (SX - GAME_WIDTH)) && (X < (SX + GAME_WIDTH)) &&
+            (Y > (SY - GAME_HEIGHT)) && (Y < (SY + GAME_HEIGHT))) {
+            result = true;
+        }
+        return result;
+    }
+
     inline void StartVote(uint8_t StarterVote, uint8_t TypeVote, const std::string& TargetVote, const std::string& ReasonVote) {
         VoteActive = true;
         if ((StarterVote < 1) || (StarterVote > MAX_PLAYERS)) {
             VoteStarter = "Server";
         } else {
-            // Set vote starter name and cooldown
-            VoteStarter = Sprite[StarterVote].Player.Name;
-            VoteCooldown[StarterVote] = DEFAULT_VOTE_TIME;
-            // Additional client-specific code would go here
+            VoteStarter = std::string(Sprite[StarterVote].Player.Name.begin(), Sprite[StarterVote].Player.Name.end());
+            // VoteCooldown[StarterVote] = DEFAULT_VOTE_TIME;
+#ifndef SERVER_CODE
+            if (StarterVote == MySprite) {
+                if (VoteType == VOTE_KICK) {
+                    // MainConsole.Console(_("You have voted to kick") + " " +
+                    //     WideString(Sprite[KickMenuIndex].Player.Name) + " " + _("from the game"),
+                    //     VOTE_MESSAGE_COLOR);
+                    VoteActive = false;
+                    // ClientVoteKick(StrToInt(TargetVote), True, "");
+                }
+            }
+#endif
         }
         VoteType = TypeVote;
         VoteTarget = TargetVote;
@@ -300,7 +362,6 @@ namespace GameImpl {
         VoteTimeRemaining = DEFAULT_VOTING_TIME;
         VoteNumVotes = 0;
         VoteMaxVotes = 0;
-        
         for (int i = 1; i <= MAX_PLAYERS; i++) {
             if (Sprite[i].Active) {
                 if (Sprite[i].Player.ControlMethod == HUMAN) {
@@ -319,14 +380,13 @@ namespace GameImpl {
         VoteStarter = "";
         VoteReason = "";
         VoteTimeRemaining = -1;
-        
         for (int i = 1; i <= MAX_PLAYERS; i++) {
             VoteHasVoted[i] = false;
         }
     }
 
     inline void TimerVote() {
-#ifdef SERVER_CODE
+#ifndef SERVER_CODE
         if (VoteActive) {
 #endif
             if (VoteTimeRemaining > -1) {
@@ -334,10 +394,12 @@ namespace GameImpl {
             }
 
             if (VoteTimeRemaining == 0) {
-                // MainConsole.console message would go here
+                if (VoteType == VOTE_MAP) {
+                    // MainConsole.Console(_("No map has been voted"), VOTE_MESSAGE_COLOR);
+                }
                 StopVote();
             }
-#ifdef SERVER_CODE
+#ifndef SERVER_CODE
         }
 #endif
     }
@@ -347,21 +409,24 @@ namespace GameImpl {
         if (VoteActive && !VoteHasVoted[Voter]) {
             VoteNumVotes++;
             VoteHasVoted[Voter] = true;
-            float edge = static_cast<float>(VoteNumVotes) / VoteMaxVotes;
-            if (edge >= (sv_votepercent.Value() / 100.0f)) {
-                if (VoteType == VOTE_MAP) {
-                    // Handle map vote
-                    if (!PrepareMapChange(VoteTarget)) {
-                        // MainConsole.Console('Map not found (' + VoteTarget + ')', WARNING_MESSAGE_COLOR);
-                        // MainConsole.Console('No map has been voted', VOTE_MESSAGE_COLOR);
-                    }
-                } else if (VoteType == VOTE_KICK) {
-                    // Handle kick vote
-                    int target = std::stoi(VoteTarget);
-                    // KickPlayer implementation would go here
+            float Edge = static_cast<float>(VoteNumVotes) / VoteMaxVotes;
+            if (Edge >= (sv_votepercent.Value() / 100.0f)) {
+                if (VoteType == VOTE_KICK) {
+                    int i = stoi(VoteTarget);
+                    // There should be no permanent bans by votes. Reduced to 1 day.
+                    // if (CheatTag[i] == 0)
+                    //     KickPlayer(i, True, KICK_VOTED, HOUR, "Vote Kicked")
+                    // else
+                    //     KickPlayer(i, True, KICK_VOTED, DAY, "Vote Kicked by Server");
+                    // DoBalanceBots(1, Sprite[i].Player.Team);
+                } else if (VoteType == VOTE_MAP) {
+                    // if (!PrepareMapChange(VoteTarget)) {
+                    //     MainConsole.Console("Map not found (" + VoteTarget + ")", WARNING_MESSAGE_COLOR);
+                    //     MainConsole.Console("No map has been voted", VOTE_MESSAGE_COLOR);
+                    // }
                 }
                 StopVote();
-                // ServerSendVoteOff implementation would go here
+                // ServerSendVoteOff();
             }
         }
     }
@@ -374,11 +439,18 @@ namespace GameImpl {
     inline void ShowMapChangeScoreboard(const std::string& NextMap) {
         MapChangeName = NextMap;
         MapChangeCounter = MapChangeTime;
-        
 #ifndef SERVER_CODE
         // GameMenuShow(LimboMenu, False);
         // FragsMenuShow := True;
-        // Additional client-specific code
+        // StatsMenuShow := False;
+        // for (int i = 1; i <= MAX_PLAYERS; i++) {
+        //     if (Sprite[i].Active) {
+        //         StopSound(Sprite[i].ReloadSoundChannel);
+        //         StopSound(Sprite[i].JetsSoundChannel);
+        //         StopSound(Sprite[i].GattlingSoundChannel);
+        //         StopSound(Sprite[i].GattlingSoundChannel2);
+        //     }
+        // }
 #endif
     }
 
@@ -395,12 +467,110 @@ namespace GameImpl {
     }
 
     inline void ChangeMap() {
-        // Implementation would go here
-        // This is a complex function that handles map changes
+        // This is a complex function that would handle map changes
+        // It includes loading new maps, resetting player states, spawning items, etc.
+        // For now I'll provide a skeleton implementation
+
+        // Reset bullets and things
+        for (int i = 1; i <= MAX_BULLETS; i++) {
+            Bullet[i].Kill();
+        }
+        for (int i = 1; i <= MAX_THINGS; i++) {
+            Thing[i].Kill();
+        }
+#ifndef SERVER_CODE
+        for (int i = 1; i <= MAX_SPARKS; i++) {
+            Spark[i].Kill();
+        }
+#endif
+
+        // Reset sprites
+        for (int i = 1; i <= MAX_SPRITES; i++) {
+            if (Sprite[i].Active && Sprite[i].IsNotSpectator()) {
+                // RandomizeStart(SpriteParts.Pos[i], Sprite[i].Player.Team);
+                Sprite[i].Respawn();
+                Sprite[i].Player.Kills = 0;
+                Sprite[i].Player.Deaths = 0;
+                Sprite[i].Player.Flags = 0;
+                Sprite[i].BonusTime = 0;
+                Sprite[i].BonusStyle = BONUS_NONE;
+#ifndef SERVER_CODE
+                Sprite[i].SelWeapon = 0;
+#endif
+                Sprite[i].FreeControls();
+                Sprite[i].Weapon = Guns[NOWEAPON];
+
+                int SecWep = Sprite[i].Player.SecWep + 1;
+
+                if ((SecWep >= 1) && (SecWep <= SECONDARY_WEAPONS) &&
+                    (WeaponActive[PRIMARY_WEAPONS + SecWep] == 1)) {
+                    Sprite[i].SecondaryWeapon = Guns[PRIMARY_WEAPONS + SecWep];
+                } else {
+                    Sprite[i].SecondaryWeapon = Guns[NOWEAPON];
+                }
+
+                Sprite[i].RespawnCounter = 0;
+            }
+        }
+
+#ifndef SERVER_CODE
+        for (int j = 1; j <= MAX_SPRITES; j++) {
+            for (int i = 1; i <= PRIMARY_WEAPONS; i++) {
+                WeaponSel[j][i] = 1;
+            }
+        }
+#endif
+
+        if (sv_advancemode.Value()) {
+#ifndef SERVER_CODE
+            for (int j = 1; j <= MAX_SPRITES; j++) {
+                for (int i = 1; i <= PRIMARY_WEAPONS; i++) {
+                    WeaponSel[j][i] = 0;
+                }
+            }
+
+            if (MySprite > 0) {
+                for (int i = 1; i <= MAIN_WEAPONS; i++) {
+                    // LimboMenu.Button[i - 1].Active = Boolean(WeaponSel[MySprite][i]);
+                }
+            }
+#endif
+        }
+
+        for (int i = 1; i <= 4; i++) {
+            TeamScore[i] = 0;
+        }
+
+        for (int i = 1; i <= 2; i++) {
+            TeamFlag[i] = 0;
+        }
+
+#ifndef SERVER_CODE
+        // FragsMenuShow = False;
+        // StatsMenuShow = False;
+
+        // if (MySprite > 0) {
+        //     GameMenuShow(LimboMenu);
+        // }
+#endif
+
+        // Reset team alive counts
+        for (int i = 1; i <= 4; i++) {
+            TeamAliveNum[i] = 0;
+            TeamPlayersNum[i] = 0;
+        }
+
+        // Sort players
+        SortPlayers();
+
+        MapChangeCounter = -60;
+
+        TimeLimitCounter = sv_timelimit.Value();
+
+        // This would also handle server-side specific code for spawning flags/guns, etc.
     }
 
     inline void SortPlayers() {
-        // Initialize counters
         PlayersNum = 0;
         BotsNum = 0;
         SpectatorsNum = 0;
@@ -408,7 +578,6 @@ namespace GameImpl {
             PlayersTeamNum[i] = 0;
         }
 
-        // Initialize sorted players array
         for (int i = 1; i <= MAX_SPRITES; i++) {
             SortedPlayers[i].Kills = 0;
             SortedPlayers[i].Deaths = 0;
@@ -416,7 +585,6 @@ namespace GameImpl {
             SortedPlayers[i].PlayerNum = 0;
         }
 
-        // Count active players
         for (int i = 1; i <= MAX_SPRITES; i++) {
             if (Sprite[i].Active && (!Sprite[i].Player.DemoPlayer)) {
                 PlayersNum++;
@@ -439,28 +607,38 @@ namespace GameImpl {
                     SortedPlayers[PlayersNum].PlayerNum = i;
                 } else {
                     SortedPlayers[PlayersNum].Kills = 0;
-                    SortedPlayers[PlayersNum].Deaths = INT32_MAX; // High value for sorting
+                    SortedPlayers[PlayersNum].Deaths = INT_MAX;  // High value for sorting
                     SortedPlayers[PlayersNum].Flags = 0;
                     SortedPlayers[PlayersNum].PlayerNum = i;
                 }
-            }
-        }
 
-        // Sort by flags, kills, and deaths
-        for (int i = 1; i <= PlayersNum; i++) {
-            for (int j = i + 1; j <= PlayersNum; j++) {
-                if (SortedPlayers[j].Flags > SortedPlayers[i].Flags) {
-                    TKillSort temp = SortedPlayers[i];
-                    SortedPlayers[i] = SortedPlayers[j];
-                    SortedPlayers[j] = temp;
+                // Kill Limit
+                if (MapChangeCounter < 1) {
+                    if (!IsTeamGame()) {
+                        if (Sprite[i].Player.Kills >= sv_killlimit.Value()) {
+#ifndef SERVER_CODE
+                            // CameraFollowSprite = i;
+                            // if not EscMenu.Active then
+                            // begin
+                            //   mx := GameWidthHalf;
+                            //   my := GameHeightHalf;
+                            //   MousePrev.x := mx;
+                            //   MousePrev.y := my;
+                            // end;
+#else
+                            // NextMap();
+#endif
+                        }
+                    }
                 }
             }
         }
 
-        for (int i = 1; i <= PlayersNum; i++) {
-            for (int j = i + 1; j <= PlayersNum; j++) {
-                if (SortedPlayers[j].Flags == SortedPlayers[i].Flags) {
-                    if (SortedPlayers[j].Kills > SortedPlayers[i].Kills) {
+        // sort by flags first if new score board
+        if (PlayersNum > 0) {
+            for (int i = 1; i <= PlayersNum; i++) {
+                for (int j = i + 1; j <= PlayersNum; j++) {
+                    if (SortedPlayers[j].Flags > SortedPlayers[i].Flags) {
                         TKillSort temp = SortedPlayers[i];
                         SortedPlayers[i] = SortedPlayers[j];
                         SortedPlayers[j] = temp;
@@ -469,17 +647,102 @@ namespace GameImpl {
             }
         }
 
-        for (int i = 1; i <= PlayersNum; i++) {
-            for (int j = i + 1; j <= PlayersNum; j++) {
-                if (SortedPlayers[j].Flags == SortedPlayers[i].Flags) {
-                    if (SortedPlayers[j].Kills == SortedPlayers[i].Kills) {
-                        if (SortedPlayers[j].Deaths < SortedPlayers[i].Deaths) {
+        // sort by kills
+        if (PlayersNum > 0) {
+            for (int i = 1; i <= PlayersNum; i++) {
+                for (int j = i + 1; j <= PlayersNum; j++) {
+                    if (SortedPlayers[j].Flags == SortedPlayers[i].Flags) {
+                        if (SortedPlayers[j].Kills > SortedPlayers[i].Kills) {
                             TKillSort temp = SortedPlayers[i];
                             SortedPlayers[i] = SortedPlayers[j];
                             SortedPlayers[j] = temp;
                         }
                     }
                 }
+            }
+        }
+
+        // final sort by deaths
+        if (PlayersNum > 0) {
+            for (int i = 1; i <= PlayersNum; i++) {
+                for (int j = i + 1; j <= PlayersNum; j++) {
+                    if (SortedPlayers[j].Flags == SortedPlayers[i].Flags) {
+                        if (SortedPlayers[j].Kills == SortedPlayers[i].Kills) {
+                            if (SortedPlayers[j].Deaths < SortedPlayers[i].Deaths) {
+                                TKillSort temp = SortedPlayers[i];
+                                SortedPlayers[i] = SortedPlayers[j];
+                                SortedPlayers[j] = temp;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+#ifndef SERVER_CODE
+        // Sort Team Score
+        for (int i = 1; i <= 4; i++) {
+            SortedTeamScore[i].Kills = TeamScore[i];
+            SortedTeamScore[i].PlayerNum = i;
+            // SortedTeamScore[i].Color would be set based on ui_status_transparency
+        }
+
+        for (int i = 1; i <= 4; i++) {
+            for (int j = i + 1; j <= 4; j++) {
+                if (SortedTeamScore[j].Kills > SortedTeamScore[i].Kills) {
+                    TKillSort temp = SortedTeamScore[i];
+                    SortedTeamScore[i] = SortedTeamScore[j];
+                    SortedTeamScore[j] = temp;
+                }
+            }
+        }
+#endif
+
+#ifdef SERVER_CODE
+        // Team - Kill Limit
+        if (MapChangeCounter < 1) {
+            for (int i = 1; i <= 4; i++) {
+                if (TeamScore[i] >= sv_killlimit.Value()) {
+                    // NextMap();
+                    break;
+                }
+            }
+        }
+        // UpdateWaveRespawnTime();  // Assuming this function exists
+#endif
+
+        for (int i = 1; i <= MAX_SPRITES; i++) {
+            if (Sprite[i].Active) {
+#ifdef SERVER_CODE
+                if (Sprite[i].Active && (Sprite[i].Player.Team == TEAM_ALPHA)) {
+                    TeamAliveNum[TEAM_ALPHA]++;
+                }
+                if (Sprite[i].Active && (Sprite[i].Player.Team == TEAM_BRAVO)) {
+                    TeamAliveNum[TEAM_BRAVO]++;
+                }
+                if (Sprite[i].Active && (Sprite[i].Player.Team == TEAM_CHARLIE)) {
+                    TeamAliveNum[TEAM_CHARLIE]++;
+                }
+                if (Sprite[i].Active && (Sprite[i].Player.Team == TEAM_DELTA)) {
+                    TeamAliveNum[TEAM_DELTA]++;
+                }
+#else
+                if (Sprite[i].Player.Team == TEAM_NONE) {
+                    TeamPlayersNum[TEAM_NONE]++;
+                }
+                if (Sprite[i].Player.Team == TEAM_ALPHA) {
+                    TeamPlayersNum[TEAM_ALPHA]++;
+                }
+                if (Sprite[i].Player.Team == TEAM_BRAVO) {
+                    TeamPlayersNum[TEAM_BRAVO]++;
+                }
+                if (Sprite[i].Player.Team == TEAM_CHARLIE) {
+                    TeamPlayersNum[TEAM_CHARLIE]++;
+                }
+                if (Sprite[i].Player.Team == TEAM_DELTA) {
+                    TeamPlayersNum[TEAM_DELTA]++;
+                }
+#endif
             }
         }
     }
@@ -558,6 +821,10 @@ using GameImpl::GetUp;
 using GameImpl::ProneMove;
 using GameImpl::Aim;
 using GameImpl::HandsUpAim;
+using GameImpl::GameWidth;
+using GameImpl::GameHeight;
+using GameImpl::GameWidthHalf;
+using GameImpl::GameHeightHalf;
 using GameImpl::OldSpritePos;
 using GameImpl::AliveNum;
 using GameImpl::TeamAliveNum;
@@ -586,6 +853,13 @@ using GameImpl::MapCheckSum;
 using GameImpl::MapIndex;
 using GameImpl::BotPath;
 using GameImpl::SortedPlayers;
+using GameImpl::SortedTeamScore;
+using GameImpl::HeartbeatTime;
+using GameImpl::HeartbeatTimeWarnings;
+using GameImpl::Sprite;
+using GameImpl::Bullet;
+using GameImpl::Spark;
+using GameImpl::Thing;
 using GameImpl::VoteActive;
 using GameImpl::VoteType;
 using GameImpl::VoteTarget;
@@ -597,9 +871,6 @@ using GameImpl::VoteMaxVotes;
 using GameImpl::VoteHasVoted;
 using GameImpl::VoteCooldown;
 using GameImpl::VoteKickReasonType;
-using GameImpl::Sprite;
-using GameImpl::Bullet;
-using GameImpl::Thing;
 using GameImpl::Number27Timing;
 using GameImpl::ToggleBulletTime;
 using GameImpl::UpdateGameStats;
@@ -614,5 +885,160 @@ using GameImpl::IsTeamGame;
 using GameImpl::IsPointOnScreen;
 using GameImpl::ChangeMap;
 using GameImpl::SortPlayers;
+
+// Initialize global variables
+namespace GameImpl {
+    inline int Ticks = 0;
+    inline int TicksPerSecond = 0;
+    inline int Frames = 0;
+    inline int FramesPerSecond = 0;
+    inline int TickTime = 0;
+    inline int TickTimeLast = 0;
+    inline int GOALTICKS = DEFAULT_GOALTICKS;
+
+    inline int BulletTimeTimer = 0;
+
+    // Initialize arrays and structures
+    inline uint8_t AliveNum = 0;
+    inline uint8_t TeamAliveNum[6] = {0};
+    inline uint8_t TeamPlayersNum[5] = {0};  // Team 0-4
+    inline bool SurvivalEndRound = false;
+    inline bool WeaponsCleaned = false;
+
+    inline int CeaseFireTime = DEFAULT_CEASEFIRE_TIME;
+    inline int MapChangeTime = DEFAULT_MAPCHANGE_TIME;
+    inline int MapChangeCounter = 0;
+    inline std::string MapChangeName = "";
+    inline TMapInfo MapChange = {};  // Default initialization
+    inline uint64_t MapChangeItemID = 0;
+    inline TSHA1Digest MapChangeChecksum = {};  // Default initialization
+    inline int TimeLimitCounter = 3600;
+    inline int StartHealth = 150;
+    inline int TimeLeftSec = 0;
+    inline int TimeLeftMin = 0;
+    inline uint8_t WeaponSel[MAX_SPRITES + 1][MAIN_WEAPONS + 1] = {{0}};  // Init to 0
+
+    inline int TeamScore[6] = {0};  // Teams 0-5
+    inline int TeamFlag[5] = {0};   // Teams 0-4
+
+    inline float SinusCounter = 0.0f;
+
+    // Initialize game objects
+    inline TPolyMap Map;  // Assuming default constructor
+
+    inline TSHA1Digest GameModChecksum = {};      // Default initialization
+    inline TSHA1Digest CustomModChecksum = {};    // Default initialization
+    inline TSHA1Digest MapCheckSum = {};          // Default initialization
+
+    inline int MapIndex = 0;
+
+    inline TWaypoints BotPath;  // Assuming default constructor
+
+    inline TKillSort SortedPlayers[MAX_SPRITES + 1] = {};  // Init to 0
+
+#ifndef SERVER_CODE
+    inline TKillSort SortedTeamScore[MAX_SPRITES + 1] = {};  // Init to 0
+    inline int HeartbeatTime = 0;
+    inline int HeartbeatTimeWarnings = 0;
+#endif
+
+    // Initialize game entities
+    inline TSprite Sprite[MAX_SPRITES + 1] = {};  // Init to default values
+    inline TBullet Bullet[MAX_BULLETS + 1] = {};  // Init to default values
+#ifndef SERVER_CODE
+    inline TSpark Spark[MAX_SPARKS + 1] = {};     // Init to default values
+#endif
+    inline TThing Thing[MAX_THINGS + 1] = {};    // Init to default values
+
+    // Voting system
+    inline bool VoteActive = false;
+    inline uint8_t VoteType = 0;  // VOTE_MAP or VOTE_KICK
+    inline std::string VoteTarget = "";
+    inline std::string VoteStarter = "";
+    inline std::string VoteReason = "";
+    inline int VoteTimeRemaining = -1;
+    inline uint8_t VoteNumVotes = 0;
+    inline uint8_t VoteMaxVotes = 0;
+    inline bool VoteHasVoted[MAX_SPRITES + 1] = {false};  // Init to false
+    inline int VoteCooldown[MAX_SPRITES + 1] = {0};       // Init to 0
+    inline bool VoteKickReasonType = false;
+
+    // Animation objects - would need proper initialization
+    inline TAnimation Run;
+    inline TAnimation Stand;
+    inline TAnimation RunBack;
+    inline TAnimation Jump;
+    inline TAnimation JumpSide;
+    inline TAnimation Roll;
+    inline TAnimation RollBack;
+    inline TAnimation Fall;
+    inline TAnimation Crouch;
+    inline TAnimation CrouchRun;
+    inline TAnimation CrouchRunBack;
+    inline TAnimation Reload;
+    inline TAnimation Throw;
+    inline TAnimation Recoil;
+    inline TAnimation Shotgun;
+    inline TAnimation Barret;
+    inline TAnimation SmallRecoil;
+    inline TAnimation AimRecoil;
+    inline TAnimation HandsUpRecoil;
+    inline TAnimation ClipIn;
+    inline TAnimation ClipOut;
+    inline TAnimation SlideBack;
+    inline TAnimation Change;
+    inline TAnimation ThrowWeapon;
+    inline TAnimation WeaponNone;
+    inline TAnimation Punch;
+    inline TAnimation ReloadBow;
+    inline TAnimation Melee;
+    inline TAnimation Cigar;
+    inline TAnimation Match;
+    inline TAnimation Smoke;
+    inline TAnimation Wipe;
+    inline TAnimation Groin;
+    inline TAnimation TakeOff;
+    inline TAnimation Victory;
+    inline TAnimation Piss;
+    inline TAnimation Mercy;
+    inline TAnimation Mercy2;
+    inline TAnimation Own;
+    inline TAnimation Prone;
+    inline TAnimation GetUp;
+    inline TAnimation ProneMove;
+    inline TAnimation Aim;
+    inline TAnimation HandsUpAim;
+
+    // Particle systems - would need proper initialization
+    inline ParticleSystem SpriteParts;
+    inline ParticleSystem BulletParts;
+    inline ParticleSystem SparkParts;
+    inline ParticleSystem GostekSkeleton;
+    inline ParticleSystem BoxSkeleton;
+    inline ParticleSystem FlagSkeleton;
+    inline ParticleSystem ParaSkeleton;
+    inline ParticleSystem StatSkeleton;
+    inline ParticleSystem RifleSkeleton10;
+    inline ParticleSystem RifleSkeleton11;
+    inline ParticleSystem RifleSkeleton18;
+    inline ParticleSystem RifleSkeleton22;
+    inline ParticleSystem RifleSkeleton28;
+    inline ParticleSystem RifleSkeleton36;
+    inline ParticleSystem RifleSkeleton37;
+    inline ParticleSystem RifleSkeleton39;
+    inline ParticleSystem RifleSkeleton43;
+    inline ParticleSystem RifleSkeleton50;
+    inline ParticleSystem RifleSkeleton55;
+
+#ifndef SERVER_CODE
+    inline int GameWidth = DEFAULT_WIDTH;
+    inline int GameHeight = DEFAULT_HEIGHT;
+    inline float GameWidthHalf = DEFAULT_WIDTH / 2.0f;
+    inline float GameHeightHalf = DEFAULT_WIDTH / 2.0f;
+#endif
+
+    // Initialize the old sprite position array
+    inline TVector2 OldSpritePos[MAX_SPRITES + 1][MAX_OLDPOS + 1] = {{{0, 0}}};  // Init to 0
+}
 
 #endif // GAME_H

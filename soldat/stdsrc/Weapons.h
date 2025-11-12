@@ -3,20 +3,100 @@
 
 //*******************************************************************************
 //                                                                              
-//       Weapons Unit for SOLDAT                                                  
+//       Weapons Unit for SOLDAT                                                 
 //                                                                              
-//       Copyright (c) 2012 Daniel Forssten         
+//       Copyright (c) 2012 Daniel Forssten             
 //                                                                              
 //*******************************************************************************
 
 #include <string>
+#include <vector>
 #include <cstdint>
 
-// Forward declarations
-struct TGun;
+// Constants
+const int EAGLE          = 1;
+const int MP5            = 2;
+const int AK74           = 3;
+const int STEYRAUG       = 4;
+const int SPAS12         = 5;
+const int RUGER77        = 6;
+const int M79            = 7;
+const int BARRETT        = 8;
+const int M249           = 9;
+const int MINIGUN        = 10;
+const int COLT           = 11;
+const int KNIFE          = 12;
+const int CHAINSAW       = 13;
+const int LAW            = 14;
+const int BOW2           = 15;
+const int BOW            = 16;
+const int FLAMER         = 17;
+const int M2             = 18;
+const int NOWEAPON       = 19;
+const int FRAGGRENADE    = 20;
+const int CLUSTERGRENADE = 21;
+const int CLUSTER        = 22;
+const int THROWNKNIFE    = 23;
+
+const int PRIMARY_WEAPONS   = 10;
+const int SECONDARY_WEAPONS = 4;
+const int BONUS_WEAPONS     = 3;
+const int MAIN_WEAPONS      = PRIMARY_WEAPONS + SECONDARY_WEAPONS;
+const int EXTENDED_WEAPONS  = MAIN_WEAPONS + BONUS_WEAPONS;
+
+const int ORIGINAL_WEAPONS  = 20;
+const int TOTAL_WEAPONS     = 23;
+
+// Weapon number constants
+const int EAGLE_NUM          = 1;
+const int MP5_NUM            = 2;
+const int AK74_NUM           = 3;
+const int STEYRAUG_NUM       = 4;
+const int SPAS12_NUM         = 5;
+const int RUGER77_NUM        = 6;
+const int M79_NUM            = 7;
+const int BARRETT_NUM        = 8;
+const int M249_NUM           = 9;
+const int MINIGUN_NUM        = 10;
+const int COLT_NUM           = 0;
+const int KNIFE_NUM          = 11;
+const int CHAINSAW_NUM       = 12;
+const int LAW_NUM            = 13;
+const int BOW2_NUM           = 16;
+const int BOW_NUM            = 15;
+const int FLAMER_NUM         = 14;
+const int M2_NUM             = 30;
+const int NOWEAPON_NUM       = 255;
+const int FRAGGRENADE_NUM    = 50;
+const int CLUSTERGRENADE_NUM = 51;
+const int CLUSTER_NUM        = 52;
+const int THROWNKNIFE_NUM    = 53;
+
+// Bullet style types
+const int BULLET_STYLE_PLAIN       = 1;
+const int BULLET_STYLE_FRAGNADE    = 2;
+const int BULLET_STYLE_SHOTGUN     = 3;
+const int BULLET_STYLE_M79         = 4;
+const int BULLET_STYLE_FLAME       = 5;
+const int BULLET_STYLE_PUNCH       = 6;
+const int BULLET_STYLE_ARROW       = 7;
+const int BULLET_STYLE_FLAMEARROW  = 8;
+const int BULLET_STYLE_CLUSTERNADE = 9;
+const int BULLET_STYLE_CLUSTER     = 10;
+const int BULLET_STYLE_KNIFE       = 11;
+const int BULLET_STYLE_LAW         = 12;
+const int BULLET_STYLE_THROWNKNIFE = 13;
+const int BULLET_STYLE_M2          = 14;
+
+// Used for NoCollision attribute
+const uint32_t WEAPON_NOCOLLISION_ENEMY = (1 << 0);
+const uint32_t WEAPON_NOCOLLISION_TEAM = (1 << 1);
+const uint32_t WEAPON_NOCOLLISION_SELF = (1 << 2);
+const uint32_t WEAPON_NOCOLLISION_EXP_ENEMY = (1 << 3);
+const uint32_t WEAPON_NOCOLLISION_EXP_TEAM = (1 << 4);
+const uint32_t WEAPON_NOCOLLISION_EXP_SELF = (1 << 5);
 
 struct TGun {
-    // Scrambled 1.6, to piss off gamehackers.
     uint8_t Ammo;
     uint8_t AmmoCount;
     uint8_t Num;
@@ -55,102 +135,32 @@ struct TGun {
     uint8_t FireStyle;
     uint8_t BulletImageStyle;
     
+    // Additional fields that would be initialized during build
+    uint16_t ClipOutTime;
+    uint16_t ClipInTime;
+    uint16_t FireIntervalCountPrev;
+    uint16_t ReloadTimeCountPrev;
+    uint16_t StartUpTimeCountPrev;
+    
     TGun() : Ammo(0), AmmoCount(0), Num(0), MovementAcc(0.0f), Bink(0), Recoil(0),
              FireInterval(0), FireIntervalPrev(0), FireIntervalCount(0), FireIntervalReal(0.0f),
              StartUpTime(0), StartUpTimeCount(0), ReloadTime(0), ReloadTimePrev(0),
              ReloadTimeCount(0), ReloadTimeReal(0.0f), TextureNum(0), ClipTextureNum(0),
-             ClipReload(false), ClipInTime(0), ClipOutTime(0), Speed(0.0f),
-             HitMultiply(0.0f), BulletSpread(0.0f), Push(0.0f), InheritedVelocity(0.0f),
-             ModifierLegs(0.0f), ModifierChest(0.0f), ModifierHead(0.0f), 
-             NoCollision(0), FireMode(0), Timeout(0), BulletStyle(0), 
-             FireStyle(0), BulletImageStyle(0) {}
+             ClipReload(false), ClipInTime(0), ClipOutTime(0), Name(""), IniName(""),
+             Speed(0.0f), HitMultiply(0.0f), BulletSpread(0.0f), Push(0.0f),
+             InheritedVelocity(0.0f), ModifierLegs(0.0f), ModifierChest(0.0f),
+             ModifierHead(0.0f), NoCollision(0), FireMode(0), Timeout(0),
+             BulletStyle(0), FireStyle(0), BulletImageStyle(0), ClipOutTime(0),
+             ClipInTime(0), FireIntervalCountPrev(0), ReloadTimeCountPrev(0), StartUpTimeCountPrev(0) {}
 };
 
-// Constants
-const int EAGLE = 1;
-const int MP5 = 2;
-const int AK74 = 3;
-const int STEYRAUG = 4;
-const int SPAS12 = 5;
-const int RUGER77 = 6;
-const int M79 = 7;
-const int BARRETT = 8;
-const int M249 = 9;
-const int MINIGUN = 10;
-const int COLT = 11;
-const int KNIFE = 12;
-const int CHAINSAW = 13;
-const int LAW = 14;
-const int BOW2 = 15;
-const int BOW = 16;
-const int FLAMER = 17;
-const int M2 = 18;
-const int NOWEAPON = 19;
-const int FRAGGRENADE = 20;
-const int CLUSTERGRENADE = 21;
-const int CLUSTER = 22;
-const int THROWNKNIFE = 23;
-
-const int PRIMARY_WEAPONS = 10;
-const int SECONDARY_WEAPONS = 4;
-const int BONUS_WEAPONS = 3;
-const int MAIN_WEAPONS = PRIMARY_WEAPONS + SECONDARY_WEAPONS;
-const int EXTENDED_WEAPONS = MAIN_WEAPONS + BONUS_WEAPONS;
-
-const int ORIGINAL_WEAPONS = 20;
-const int TOTAL_WEAPONS = 23;
-
-const int EAGLE_NUM = 1;
-const int MP5_NUM = 2;
-const int AK74_NUM = 3;
-const int STEYRAUG_NUM = 4;
-const int SPAS12_NUM = 5;
-const int RUGER77_NUM = 6;
-const int M79_NUM = 7;
-const int BARRETT_NUM = 8;
-const int M249_NUM = 9;
-const int MINIGUN_NUM = 10;
-const int COLT_NUM = 0;
-const int KNIFE_NUM = 11;
-const int CHAINSAW_NUM = 12;
-const int LAW_NUM = 13;
-const int BOW2_NUM = 16;
-const int BOW_NUM = 15;
-const int FLAMER_NUM = 14;
-const int M2_NUM = 30;
-const int NOWEAPON_NUM = 255;
-const int FRAGGRENADE_NUM = 50;
-const int CLUSTERGRENADE_NUM = 51;
-const int CLUSTER_NUM = 52;
-const int THROWNKNIFE_NUM = 53;
-
-const int BULLET_STYLE_PLAIN = 1;
-const int BULLET_STYLE_FRAGNADE = 2;
-const int BULLET_STYLE_SHOTGUN = 3;
-const int BULLET_STYLE_M79 = 4;
-const int BULLET_STYLE_FLAME = 5;
-const int BULLET_STYLE_PUNCH = 6;
-const int BULLET_STYLE_ARROW = 7;
-const int BULLET_STYLE_FLAMEARROW = 8;
-const int BULLET_STYLE_CLUSTERNADE = 9;
-const int BULLET_STYLE_CLUSTER = 10;
-const int BULLET_STYLE_KNIFE = 11;
-const int BULLET_STYLE_LAW = 12;
-const int BULLET_STYLE_THROWNKNIFE = 13;
-const int BULLET_STYLE_M2 = 14;
-
-const int WEAPON_NOCOLLISION_ENEMY = (1 << 0);
-const int WEAPON_NOCOLLISION_TEAM = (1 << 1);
-const int WEAPON_NOCOLLISION_SELF = (1 << 2);
-const int WEAPON_NOCOLLISION_EXP_ENEMY = (1 << 3);
-const int WEAPON_NOCOLLISION_EXP_TEAM = (1 << 4);
-const int WEAPON_NOCOLLISION_EXP_SELF = (1 << 5);
-
+// Global variables
 extern TGun Guns[TOTAL_WEAPONS + 1];  // Pascal arrays start from 1
 extern TGun DefaultGuns[TOTAL_WEAPONS + 1];  // Pascal arrays start from 1
 extern uint32_t DefaultWMChecksum;
 extern uint32_t LoadedWMChecksum;
 
+// Function declarations
 void CreateWeapons(bool RealisticMode);
 void CreateDefaultWeapons(bool RealisticMode);
 void CreateWeaponsBase();
@@ -174,7 +184,7 @@ namespace WeaponsImpl {
         CreateWeaponsBase();
         CreateDefaultWeapons(RealisticMode);
     }
-    
+
     inline void CreateDefaultWeapons(bool RealisticMode) {
         if (RealisticMode) {
             CreateRealisticWeapons();
@@ -207,7 +217,7 @@ namespace WeaponsImpl {
 
         BuildWeapons();
     }
-    
+
     inline void CreateWeaponsBase() {
         TGun* gun;
 
@@ -216,11 +226,11 @@ namespace WeaponsImpl {
         gun->Name = "Desert Eagles";
         gun->IniName = gun->Name;
         gun->Num = EAGLE_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_DEAGLES*/ 0;  // Assuming this is defined elsewhere
-        gun->ClipTextureNum = /*GFX_WEAPONS_DEAGLES_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_DEAGLES;  // Assuming constant from graphics system
+        // gun->ClipTextureNum = GFX_WEAPONS_DEAGLES_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_DEAGLES_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_DEAGLES_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_DEAGLES_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_DEAGLES_FIRE;
         gun->FireMode = 2;
 
         // MP5
@@ -228,11 +238,11 @@ namespace WeaponsImpl {
         gun->Name = "HK MP5";
         gun->IniName = gun->Name;
         gun->Num = MP5_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_MP5*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_MP5_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_MP5;
+        // gun->ClipTextureNum = GFX_WEAPONS_MP5_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_MP5_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_MP5_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_MP5_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_MP5_FIRE;
         gun->FireMode = 0;
 
         // AK-74
@@ -240,11 +250,11 @@ namespace WeaponsImpl {
         gun->Name = "Ak-74";
         gun->IniName = gun->Name;
         gun->Num = AK74_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_AK74*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_AK74_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_AK74;
+        // gun->ClipTextureNum = GFX_WEAPONS_AK74_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_AK74_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_AK74_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_AK74_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_AK74_FIRE;
         gun->FireMode = 0;
 
         // Steyr AUG
@@ -252,11 +262,11 @@ namespace WeaponsImpl {
         gun->Name = "Steyr AUG";
         gun->IniName = gun->Name;
         gun->Num = STEYRAUG_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_STEYR*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_STEYR_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_STEYR;
+        // gun->ClipTextureNum = GFX_WEAPONS_STEYR_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_STEYR_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_STEYR_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_STEYR_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_STEYR_FIRE;
         gun->FireMode = 0;
 
         // SPAS-12
@@ -264,11 +274,11 @@ namespace WeaponsImpl {
         gun->Name = "Spas-12";
         gun->IniName = gun->Name;
         gun->Num = SPAS12_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_SPAS*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_SPAS;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_SPAS_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_SPAS_FIRE;
         gun->FireMode = 2;
 
         // Ruger 77
@@ -276,11 +286,11 @@ namespace WeaponsImpl {
         gun->Name = "Ruger 77";
         gun->IniName = gun->Name;
         gun->Num = RUGER77_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_RUGER*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_RUGER;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
-        gun->BulletImageStyle = /*GFX_WEAPONS_RUGER_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_RUGER_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_RUGER_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_RUGER_FIRE;
         gun->FireMode = 2;
 
         // M79 grenade launcher
@@ -288,11 +298,11 @@ namespace WeaponsImpl {
         gun->Name = "M79";
         gun->IniName = gun->Name;
         gun->Num = M79_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_M79*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_M79_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_M79;
+        // gun->ClipTextureNum = GFX_WEAPONS_M79_CLIP;
         gun->ClipReload = true;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_M79_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_M79_FIRE;
         gun->FireMode = 0;
 
         // Barrett M82A1
@@ -300,11 +310,11 @@ namespace WeaponsImpl {
         gun->Name = "Barrett M82A1";
         gun->IniName = "Barret M82A1";
         gun->Num = BARRETT_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_BARRETT*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_BARRETT_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_BARRETT;
+        // gun->ClipTextureNum = GFX_WEAPONS_BARRETT_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_BARRETT_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_BARRETT_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_BARRETT_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_BARRETT_FIRE;
         gun->FireMode = 2;
 
         // M249
@@ -312,11 +322,11 @@ namespace WeaponsImpl {
         gun->Name = "FN Minimi";
         gun->IniName = gun->Name;
         gun->Num = M249_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_MINIMI*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_MINIMI_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_MINIMI;
+        // gun->ClipTextureNum = GFX_WEAPONS_MINIMI_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_MINIMI_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_MINIMI_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_MINIMI_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_MINIMI_FIRE;
         gun->FireMode = 0;
 
         // Minigun
@@ -324,11 +334,11 @@ namespace WeaponsImpl {
         gun->Name = "XM214 Minigun";
         gun->IniName = gun->Name;
         gun->Num = MINIGUN_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_MINIGUN*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_MINIGUN;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
-        gun->BulletImageStyle = /*GFX_WEAPONS_MINIGUN_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_MINIGUN_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_MINIGUN_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_MINIGUN_FIRE;
         gun->FireMode = 0;
 
         // Colt 1911
@@ -336,11 +346,11 @@ namespace WeaponsImpl {
         gun->Name = "USSOCOM";
         gun->IniName = gun->Name;
         gun->Num = COLT_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_SOCOM*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_SOCOM_CLIP*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_SOCOM;
+        // gun->ClipTextureNum = GFX_WEAPONS_SOCOM_CLIP;
         gun->ClipReload = true;
-        gun->BulletImageStyle = /*GFX_WEAPONS_COLT_BULLET*/ 0;
-        gun->FireStyle = /*GFX_WEAPONS_SOCOM_FIRE*/ 0;
+        // gun->BulletImageStyle = GFX_WEAPONS_COLT_BULLET;
+        // gun->FireStyle = GFX_WEAPONS_SOCOM_FIRE;
         gun->FireMode = 2;
 
         // Knife
@@ -348,7 +358,7 @@ namespace WeaponsImpl {
         gun->Name = "Combat Knife";
         gun->IniName = gun->Name;
         gun->Num = KNIFE_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_KNIFE*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_KNIFE;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
@@ -360,11 +370,11 @@ namespace WeaponsImpl {
         gun->Name = "Chainsaw";
         gun->IniName = gun->Name;
         gun->Num = CHAINSAW_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_CHAINSAW*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_CHAINSAW;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_CHAINSAW_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_CHAINSAW_FIRE;
         gun->FireMode = 0;
 
         // M72 LAW
@@ -372,11 +382,11 @@ namespace WeaponsImpl {
         gun->Name = "LAW";
         gun->IniName = "M72 LAW";
         gun->Num = LAW_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_LAW*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_LAW;
         gun->ClipTextureNum = 0;
         gun->ClipReload = true;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_LAW_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_LAW_FIRE;
         gun->FireMode = 0;
 
         // Rambo Bow with flame
@@ -384,11 +394,11 @@ namespace WeaponsImpl {
         gun->Name = "Flame Bow";
         gun->IniName = "Flamed Arrows";
         gun->Num = BOW2_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_BOW*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_BOW_S*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_BOW;
+        // gun->ClipTextureNum = GFX_WEAPONS_BOW_S;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_BOW_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_BOW_FIRE;
         gun->FireMode = 0;
 
         // Rambo Bow
@@ -396,11 +406,11 @@ namespace WeaponsImpl {
         gun->Name = "Bow";
         gun->IniName = "Rambo Bow";
         gun->Num = BOW_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_BOW*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_BOW_S*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_BOW;
+        // gun->ClipTextureNum = GFX_WEAPONS_BOW_S;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_BOW_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_BOW_FIRE;
         gun->FireMode = 0;
 
         // Flamethrower
@@ -408,11 +418,11 @@ namespace WeaponsImpl {
         gun->Name = "Flamer";
         gun->IniName = gun->Name;
         gun->Num = FLAMER_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_FLAMER*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_FLAMER*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_FLAMER;
+        // gun->ClipTextureNum = GFX_WEAPONS_FLAMER;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_FLAMER_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_FLAMER_FIRE;
         gun->FireMode = 0;
 
         // M2
@@ -420,7 +430,7 @@ namespace WeaponsImpl {
         gun->Name = "M2 MG";
         gun->IniName = "Stationary Gun";
         gun->Num = M2_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_MINIGUN*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_MINIGUN;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
@@ -444,35 +454,35 @@ namespace WeaponsImpl {
         gun->Name = "Frag Grenade";
         gun->IniName = "Grenade";
         gun->Num = FRAGGRENADE_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_FRAG_GRENADE*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_FRAG_GRENADE*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_FRAG_GRENADE;
+        // gun->ClipTextureNum = GFX_WEAPONS_FRAG_GRENADE;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_AK74_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_AK74_FIRE;
         gun->FireMode = 0;
 
         // Cluster grenade
         gun = &Guns[CLUSTERGRENADE];
-        gun->Name = "Frag Grenade";
+        gun->Name = "Frag grenade";
         gun->IniName = "";
         gun->Num = CLUSTERGRENADE_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_FRAG_GRENADE*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_FRAG_GRENADE*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_FRAG_GRENADE;
+        // gun->ClipTextureNum = GFX_WEAPONS_FRAG_GRENADE;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_AK74_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_AK74_FIRE;
         gun->FireMode = 0;
 
         // Cluster
         gun = &Guns[CLUSTER];
-        gun->Name = "Frag Grenade";
+        gun->Name = "Frag grenade";
         gun->IniName = "";
         gun->Num = CLUSTER_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_FRAG_GRENADE*/ 0;
-        gun->ClipTextureNum = /*GFX_WEAPONS_FRAG_GRENADE*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_FRAG_GRENADE;
+        // gun->ClipTextureNum = GFX_WEAPONS_FRAG_GRENADE;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
-        gun->FireStyle = /*GFX_WEAPONS_AK74_FIRE*/ 0;
+        // gun->FireStyle = GFX_WEAPONS_AK74_FIRE;
         gun->FireMode = 0;
 
         // Thrown knife
@@ -480,14 +490,14 @@ namespace WeaponsImpl {
         gun->Name = "Combat Knife";
         gun->IniName = "";
         gun->Num = THROWNKNIFE_NUM;
-        gun->TextureNum = /*GFX_WEAPONS_KNIFE*/ 0;
+        // gun->TextureNum = GFX_WEAPONS_KNIFE;
         gun->ClipTextureNum = 0;
         gun->ClipReload = false;
         gun->BulletImageStyle = 0;
         gun->FireStyle = 0;
         gun->FireMode = 0;
     }
-    
+
     inline void CreateNormalWeapons() {
         TGun* gun;
 
@@ -871,7 +881,7 @@ namespace WeaponsImpl {
         gun->ModifierChest = 1.0f;
         gun->ModifierLegs = 1.0f;
     }
-    
+
     inline void CreateRealisticWeapons() {
         TGun* gun;
 
@@ -1255,10 +1265,11 @@ namespace WeaponsImpl {
         gun->ModifierChest = 1.0f;
         gun->ModifierLegs = 0.6f;
     }
-    
+
     inline void BuildWeapons() {
         TGun* gun;
-        
+        int weaponIndex;
+
         // Cluster grenade
         gun = &Guns[CLUSTERGRENADE];
         gun->HitMultiply = Guns[FRAGGRENADE].HitMultiply;
@@ -1307,8 +1318,7 @@ namespace WeaponsImpl {
         gun->Push = Guns[KNIFE].Push;
         gun->InheritedVelocity = Guns[KNIFE].InheritedVelocity;
 
-        for (int weaponIndex = 1; weaponIndex <= TOTAL_WEAPONS; weaponIndex++)
-        {
+        for (weaponIndex = 1; weaponIndex <= TOTAL_WEAPONS; weaponIndex++) {
             gun = &Guns[weaponIndex];
 
             gun->FireIntervalPrev = gun->FireInterval;
@@ -1319,36 +1329,32 @@ namespace WeaponsImpl {
             gun->StartUpTimeCount = gun->StartUpTime;
 
             // Set timings for when to let out and in a magazine, if at all
-            if (gun->ClipReload)
-            {
+            if (gun->ClipReload) {
                 gun->ClipOutTime = static_cast<uint16_t>(gun->ReloadTime * 0.8);
                 gun->ClipInTime = static_cast<uint16_t>(gun->ReloadTime * 0.3);
-            }
-            else
-            {
+            } else {
                 gun->ClipOutTime = 0;
                 gun->ClipInTime = 0;
             }
 
             // Set bullet lifetime
-            switch (gun->BulletStyle)
-            {
+            switch (gun->BulletStyle) {
                 case BULLET_STYLE_FRAGNADE:
                 case BULLET_STYLE_CLUSTERNADE:
-                    gun->Timeout = GRENADE_TIMEOUT;  // Assuming GRENADE_TIMEOUT is defined elsewhere
+                    gun->Timeout = 300; // Assuming GRENADE_TIMEOUT value
                     break;
                 case BULLET_STYLE_FLAME:
-                    gun->Timeout = FLAMER_TIMEOUT;  // Assuming FLAMER_TIMEOUT is defined elsewhere
+                    gun->Timeout = 60; // Assuming FLAMER_TIMEOUT value
                     break;
                 case BULLET_STYLE_PUNCH:
                 case BULLET_STYLE_KNIFE:
-                    gun->Timeout = MELEE_TIMEOUT;  // Assuming MELEE_TIMEOUT is defined elsewhere
+                    gun->Timeout = 10; // Assuming MELEE_TIMEOUT value
                     break;
                 case BULLET_STYLE_M2:
-                    gun->Timeout = M2BULLET_TIMEOUT;  // Assuming M2BULLET_TIMEOUT is defined elsewhere
+                    gun->Timeout = 180; // Assuming M2BULLET_TIMEOUT value
                     break;
                 default:
-                    gun->Timeout = BULLET_TIMEOUT;  // Assuming BULLET_TIMEOUT is defined elsewhere
+                    gun->Timeout = 60; // Assuming BULLET_TIMEOUT value
                     break;
             }
         }
@@ -1356,31 +1362,53 @@ namespace WeaponsImpl {
         // Force M79 reload on spawn
         Guns[M79].AmmoCount = 0;
     }
-    
+
     inline uint32_t CreateWMChecksum() {
-        // This function would implement the djb2 hashing algorithm
-        // For now, returning a placeholder value
-        return 0; // Placeholder implementation
+        uint32_t hash = 5381;
+        int weaponIndex;
+
+        // djb2 hashing algorithm
+        for (weaponIndex = 1; weaponIndex <= ORIGINAL_WEAPONS; weaponIndex++) {
+            TGun& gun = Guns[weaponIndex];
+
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.HitMultiply * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.FireInterval * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.Ammo * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.ReloadTime * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.Speed * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.BulletStyle * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.StartUpTime * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.Bink * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.MovementAcc * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.BulletSpread * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.Recoil * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.Push * 1000));
+            hash = hash + ((hash << 5) + static_cast<uint32_t>(gun.InheritedVelocity * 1000));
+        }
+
+        return hash;
     }
-    
+
     inline int16_t WeaponNumToIndex(uint8_t Num) {
-        for (int weaponIndex = 1; weaponIndex <= TOTAL_WEAPONS; weaponIndex++) {
+        int weaponIndex;
+        for (weaponIndex = 1; weaponIndex <= TOTAL_WEAPONS; weaponIndex++) {
             if (Num == Guns[weaponIndex].Num) {
                 return static_cast<int16_t>(weaponIndex);
             }
         }
         return -1;
     }
-    
+
     inline int WeaponNameToNum(const std::string& Name) {
-        for (int i = 1; i <= TOTAL_WEAPONS; i++) {
+        int i;
+        for (i = 1; i <= TOTAL_WEAPONS; i++) {
             if (Name == Guns[i].Name) {
                 return Guns[i].Num;
             }
         }
         return -1;
     }
-    
+
     inline std::string WeaponNumToName(int Num) {
         switch (Num) {
             case EAGLE_NUM: return Guns[EAGLE].Name;
@@ -1409,19 +1437,40 @@ namespace WeaponsImpl {
             default: return "";
         }
     }
-    
+
+    inline bool IsMainWeaponIndex(int16_t WeaponIndex) {
+        return (WeaponIndex >= 1) && (WeaponIndex <= MAIN_WEAPONS);
+    }
+
+    inline bool IsSecondaryWeaponIndex(int16_t WeaponIndex) {
+        return (WeaponIndex >= PRIMARY_WEAPONS + 1) && (WeaponIndex <= MAIN_WEAPONS);
+    }
+
+    inline bool IsExtendedWeaponIndex(int16_t WeaponIndex) {
+        return (WeaponIndex >= 1) && (WeaponIndex <= EXTENDED_WEAPONS);
+    }
+
+    inline uint16_t CalculateBink(uint16_t Accumulated, uint16_t Bink) {
+        // Adding bink has diminishing returns as more gets accumulated
+        return static_cast<uint16_t>(
+            Accumulated + Bink - static_cast<int>(
+                Accumulated * (Accumulated / ((10 * Bink) + Accumulated))
+            )
+        );
+    }
+
     inline uint8_t WeaponNumInternalToExternal(uint8_t Num) {
         switch (Num) {
-            case KNIFE_NUM: return 14;
+            case KNIFE_NUM:    return 14;
             case CHAINSAW_NUM: return 15;
-            case LAW_NUM: return 16;
-            case FLAMER_NUM: return 11;
-            case BOW_NUM: return 12;
-            case BOW2_NUM: return 13;
-            default: return Num;
+            case LAW_NUM:      return 16;
+            case FLAMER_NUM:   return 11;
+            case BOW_NUM:      return 12;
+            case BOW2_NUM:     return 13;
+            default:           return Num;
         }
     }
-    
+
     inline uint8_t WeaponNumExternalToInternal(uint8_t Num) {
         switch (Num) {
             case 11: return FLAMER_NUM;
@@ -1433,7 +1482,7 @@ namespace WeaponsImpl {
             default: return Num;
         }
     }
-    
+
     inline std::string WeaponNameByNum(int Num) {
         for (int weaponIndex = 1; weaponIndex <= TOTAL_WEAPONS; weaponIndex++) {
             if (Num == Guns[weaponIndex].Num) {
@@ -1441,27 +1490,6 @@ namespace WeaponsImpl {
             }
         }
         return "";
-    }
-    
-    inline bool IsMainWeaponIndex(int16_t WeaponIndex) {
-        return (WeaponIndex >= 1) && (WeaponIndex <= MAIN_WEAPONS);
-    }
-    
-    inline bool IsSecondaryWeaponIndex(int16_t WeaponIndex) {
-        return (WeaponIndex >= PRIMARY_WEAPONS + 1) && (WeaponIndex <= MAIN_WEAPONS);
-    }
-    
-    inline bool IsExtendedWeaponIndex(int16_t WeaponIndex) {
-        return (WeaponIndex >= 1) && (WeaponIndex <= EXTENDED_WEAPONS);
-    }
-    
-    inline uint16_t CalculateBink(uint16_t Accumulated, uint16_t Bink) {
-        // Adding bink has diminishing returns as more gets accumulated
-        return static_cast<uint16_t>(
-            Accumulated + Bink - static_cast<int>(
-                Accumulated * (Accumulated / ((10 * Bink) + Accumulated))
-            )
-        );
     }
 }
 
@@ -1481,17 +1509,17 @@ using WeaponsImpl::CreateWMChecksum;
 using WeaponsImpl::WeaponNumToIndex;
 using WeaponsImpl::WeaponNameToNum;
 using WeaponsImpl::WeaponNumToName;
-using WeaponsImpl::WeaponNameByNum;
 using WeaponsImpl::IsMainWeaponIndex;
 using WeaponsImpl::IsSecondaryWeaponIndex;
 using WeaponsImpl::IsExtendedWeaponIndex;
 using WeaponsImpl::CalculateBink;
 using WeaponsImpl::WeaponNumInternalToExternal;
 using WeaponsImpl::WeaponNumExternalToInternal;
+using WeaponsImpl::WeaponNameByNum;
 
 // Global variables
-extern TGun Guns[TOTAL_WEAPONS + 1];
-extern TGun DefaultGuns[TOTAL_WEAPONS + 1];
+extern TGun Guns[TOTAL_WEAPONS + 1];  // Pascal arrays start from 1
+extern TGun DefaultGuns[TOTAL_WEAPONS + 1];  // Pascal arrays start from 1
 extern uint32_t DefaultWMChecksum;
 extern uint32_t LoadedWMChecksum;
 
