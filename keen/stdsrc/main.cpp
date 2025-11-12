@@ -11,6 +11,9 @@ int main(int argc, char* argv[]) {
     
     std::cout << "Commander Keen Standard C++ Application Initialized!" << std::endl;
     
+    // Check for required game data files and show verbose messages
+    Application::LogMissingGameFiles();
+    
     // Test memory allocation using our RAII manager
     auto memoryPtr = MemoryManager_AutoPtr<int>(MemoryManager::Allocate<int>(10), 10);
     if (memoryPtr) {

@@ -30,6 +30,10 @@ public:
     static void SetRunning(bool state) { running = state; }
     static void Run();
     
+    // File validation methods
+    static bool ValidateGameDataFiles(int episode = 0); // 0 = auto-detect
+    static void LogMissingGameFiles(int episode = 0);
+    
     // Access to core systems
     static MemoryManager* GetMemoryManager() { return memoryManager.get(); }
     static ConfigManager* GetConfigManager() { return &configManager; }
