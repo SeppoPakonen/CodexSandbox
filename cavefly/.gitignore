@@ -1,0 +1,41 @@
+# Build artifacts
+bin/
+*.o
+*.a
+*.so
+*.exe
+*.out
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*~
+build/
+cmake-build-*/
+
+# Log files
+*.log
+
+# Compiled files
+*.obj
+*.ilk
+*.pdb
+
+# Configuration files that may contain sensitive data
+config.ini
+.env
