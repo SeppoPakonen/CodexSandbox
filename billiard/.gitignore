@@ -1,0 +1,36 @@
+# Executables
+billiard
+*.exe
+*.out
+
+# Build artifacts
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+
+# Temporary files
+*.tmp
+*.temp
+*~
+\#*\#
+*.swp
+*.swo
+
+# Debug and profiling
+*.dSYM/
+*.prof
+*.gcda
+*.gcno
+
+# IDE files
+.vscode/
+.idea/
+*.sw?
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
