@@ -22,7 +22,6 @@ desktop.ini
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-Makefile
 
 # Executables
 pinball_game
