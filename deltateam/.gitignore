@@ -1,0 +1,72 @@
+# Build directories
+build/
+cmake-build-*/
+
+# Executables
+deltateam
+deltateam.exe
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+.DS_Store?
+*.swp
+*.swo
+*~
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Compiler output
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Debug and profiling
+*.dSYM/
+*.profdata
+*.gcda
+*.gcno
+
+# Log files
+*.log
+*.out
+
+# Temporary files
+tmp/
+temp/
+
+# Git backup files
+*~
+
+# Package manager
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Assets that might be generated
+assets/generated/
+*.tmp
+*.temp
+
+# Any build artifacts
+bin/
+obj/
+dist/
