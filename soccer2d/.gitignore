@@ -1,0 +1,35 @@
+# Build artifacts
+obj/
+build/
+soccer2d
+soccer2d_shader
+soccer2d_term
+soccer2d_gl
+*.o
+*.a
+*.so
+
+# Dependencies
+vendor/
+external/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+*~
+
+# Editor backups
+*#
+*~
+.*.swp
+*.bak
+*.tmp
