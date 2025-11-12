@@ -1,0 +1,30 @@
+# Build outputs
+build/
+cmake-build-*/
+out/
+bin/
+obj/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.o
+*.a
+*.so
+*.exe
+
+# Debug and release builds
+debug/
+release/
+Debug/
+Release/
