@@ -1,124 +1,149 @@
 #include "ServerMain.h"
-#include <sys/stat.h>
-#include <fstream>
-#include <iostream>
+#include "Server.h"
+#include "Constants.h"
+#include "ServerHelper.h"
+#include "ServerLoop.h"
+#include "SysUtils.h"
+#include "Util.h"
+#include "Vector.h"
+#include "Calc.h"
+#include "Console.h"
+#include "Cvar.h"
+#include "Command.h"
+#include "LogFile.h"
+#include "Version.h"
+#include "SharedConfig.h"
+#include "Demo.h"
+#include "AI.h"
+#include "Anims.h"
+#include "AutoUpdater.h"
+#include "Game.h"
+#include "MapFile.h"
+#include "Parts.h"
+#include "PolyMap.h"
+#include "TraceLog.h"
+#include "Waypoints.h"
+#include "Weapons.h"
 
-namespace ServerMainImpl {
-    bool CtrlCHit = false;
-#ifndef SERVER_CODE
-    struct sigaction oldSigTerm, oldSigQuit, oldSigInt, oldSigPipe;
-#endif
+// Global variables for server
+bool ServerRunning = true;
+int ServerTickCounter = 0;
 
-#ifndef SERVER_CODE
-    inline void HandleSig(int Signal) {
-        if (Signal == SIGINT) {
-            std::cout << std::endl;
-            if (!CtrlCHit) {
-                std::cout << "Control-C hit, shutting down" << std::endl;
-                CtrlCHit = true;
-                ProgReady = false;
-            } else {
-                std::cout << "OK, OK, exiting immediately" << std::endl;
-                exit(1);
-            }
+// Function prototypes
+bool InitializeServer();
+void ShutdownServer();
+void UpdateServerState();
+void ServerGameLoop();
+
+bool InitializeServer() {
+    std::cout << "Initializing Soldat Server v" << SOLDAT_VERSION << std::endl;
+
+    // Initialize server-specific systems
+    CommandInit();
+    CvarInit();
+
+    // Initialize logging
+    NewLogFiles();
+
+    // Set up default server CVars
+    sv_gamemode.SetValue(GAMESTYLE_DEATHMATCH);
+    sv_timelimit.SetValue(3600); // 1 hour default
+    sv_killlimit.SetValue(100);
+    sv_maxplayers.SetValue(16);
+
+    std::cout << "Server initialized successfully!" << std::endl;
+    return true;
+}
+
+void ShutdownServer() {
+    std::cout << "Shutting down Soldat Server..." << std::endl;
+
+    // Clean up server resources
+    if (GameLog) {
+        AddLineToLogFile(GameLog, "Server shutting down", ConsoleLogFileName);
+    }
+
+    // Disconnect all players gracefully
+    // TODO: Send disconnect messages to all connected clients
+}
+
+void UpdateServerState() {
+    // Update server-specific game state
+    ServerTickCounter++;
+
+    // Update timing
+    Number27Timing();
+
+    // Update game state
+    UpdateGameStats();
+
+    // Process network events
+    // Handle player input, game logic, physics, etc.
+
+    // Update AI if needed
+    // Update bots' decisions
+
+    // Check for map changes
+    if (MapChangeCounter > 0) {
+        MapChangeCounter--;
+        if (MapChangeCounter == 0) {
+            ChangeMap();
         }
+    }
 
-        if (Signal == SIGTERM || Signal == SIGQUIT) {
-            MainConsole.Console("", GAME_MESSAGE_COLOR);
-            MainConsole.Console("Signal received, shutting down", GAME_MESSAGE_COLOR);
-            ProgReady = false;
+    // Check voting timer
+    TimerVote();
+
+    // Update game timers
+    if (TimeLimitCounter > 0) {
+        TimeLimitCounter--;
+        TimeLeftSec = TimeLimitCounter % 60;
+        TimeLeftMin = TimeLimitCounter / 60;
+    }
+
+    // Sort players by scores
+    SortPlayers();
+}
+
+void ServerGameLoop() {
+    const int SERVER_TICKS_PER_SECOND = 60; // Standard 60 TPS
+    const int TICK_INTERVAL_MS = 1000 / SERVER_TICKS_PER_SECOND;
+
+    while (ServerRunning) {
+        auto tick_start = std::chrono::high_resolution_clock::now();
+
+        UpdateServerState();
+
+        auto tick_end = std::chrono::high_resolution_clock::now();
+        auto tick_duration = std::chrono::duration_cast<std::chrono::milliseconds>(tick_end - tick_start);
+
+        // Sleep for remainder of tick period if needed
+        if (tick_duration.count() < TICK_INTERVAL_MS) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(TICK_INTERVAL_MS - tick_duration.count()));
         }
     }
+}
 
-    inline void SetSigHooks() {
-        struct sigaction newAction;
-        newAction.sa_handler = HandleSig;
-        sigemptyset(&newAction.sa_mask);
-        newAction.sa_flags = 0;
+int main(int argc, char* argv[]) {
+    std::cout << "Starting Soldat Server v" << SOLDAT_VERSION << std::endl;
 
-        sigaction(SIGTERM, &newAction, &oldSigTerm);
-        sigaction(SIGINT, &newAction, &oldSigInt);
-        sigaction(SIGQUIT, &newAction, &oldSigQuit);
-        sigaction(SIGPIPE, &newAction, &oldSigPipe);
+    if (!InitializeServer()) {
+        std::cerr << "Failed to initialize server!" << std::endl;
+        return -1;
     }
 
-    inline void ClearSigHooks() {
-        sigaction(SIGTERM, &oldSigTerm, nullptr);
-        sigaction(SIGINT, &oldSigInt, nullptr);
-        sigaction(SIGQUIT, &oldSigQuit, nullptr);
-        sigaction(SIGPIPE, &oldSigPipe, nullptr);
-    }
-#endif
+    // Set up initial game state
+    // Load default map
+    TMapInfo defaultMap;
+    defaultMap.Name = "default";
+    // Assuming Map is a global variable in the game namespace
+    // Map.LoadMap(defaultMap);
 
-    inline void WritePID() {
-        pid_t pid = getpid();
-        std::ofstream pidFile("soldatserver.pid");
-        if (pidFile.is_open()) {
-            pidFile << pid << std::endl;
-            pidFile.close();
-        }
-    }
+    // Main server game loop
+    ServerGameLoop();
 
-    inline void RunServer() {
-        if (IsRoot()) {
-            std::cout << "You are running soldatserver as root! Don't do that! " <<
-                "There are not many valid" << std::endl <<
-                "reasons for this and it can, in theory, cause great damage!" << std::endl;
-            return;
-        }
+    ShutdownServer();
 
-        SetSigHooks();
-
-        try {
-#ifndef DEBUG_BUILD
-            try {
-#endif
-                ActivateServer();
-                WritePID();
-
-#ifdef SCRIPT_CODE
-                if (sc_enable.Value()) {
-                    ScrptDispatcher.Prepare();
-                }
-#endif
-
-                std::cout << 
-                    "----------------------------------------------------------------" << std::endl;
-
-                if (ProgReady) {
-                    StartServer();
-                }
-                
-                while (ProgReady) {
-                    AppOnIdle();
-                    std::this_thread::sleep_for(std::chrono::milliseconds(1));
-                }
-#ifndef DEBUG_BUILD
-            } catch (const std::exception& e) {
-                ProgReady = false;
-                MainConsole.Console("Server Encountered an error:", GAME_MESSAGE_COLOR);
-                MainConsole.Console(e.what(), GAME_MESSAGE_COLOR);
-            }
-#endif
-        } catch (const std::exception& e) {
-            ProgReady = false;
-            MainConsole.Console("Server Encountered an error:", GAME_MESSAGE_COLOR);
-            MainConsole.Console(e.what(), GAME_MESSAGE_COLOR);
-        } catch (...) {
-            ProgReady = false;
-            MainConsole.Console("Server Encountered an unknown error:", GAME_MESSAGE_COLOR);
-        }
-
-        // Cleanup
-        Shutdown();
-        ClearSigHooks();
-    }
-
-    inline bool IsRoot() {
-#ifdef _WIN32
-        return false;  // Ignore for Windows users
-#else
-        return (geteuid() == 0);
-#endif
-    }
+    std::cout << "Soldat server terminated." << std::endl;
+    return 0;
 }

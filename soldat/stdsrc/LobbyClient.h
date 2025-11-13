@@ -14,7 +14,8 @@
 #include <memory>
 #include <iostream>
 #include <sstream>
-#include <json/json.h>  // Using JSON library like nlohmann/json or fpjson equivalent
+// JSON functionality will be handled with simple string manipulation
+// This is a placeholder to allow compilation without a JSON library
 #include "Constants.h"
 #include "Server.h"
 #include "Game.h"
@@ -56,48 +57,45 @@ namespace LobbyClientImpl {
         Debug("[Lobby] Registering the server in lobby");
         FURL = sv_lobbyurl.Value() + "/v0/servers/register";
 
-        Json::Value json;
-        Json::StreamWriterBuilder builder;
-        std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-
-        // Add fields to JSON object
-        json["AC"] = 
+        std::ostringstream oss;
+        oss << "{";
+        oss << "\"AC\":" << 
 #ifdef ENABLE_FAE_CODE
-            ac_enable.Value();  // Assuming this Cvar exists
+            (ac_enable.Value() ? "true" : "false");
 #else
-            false;
+            "false";
 #endif
-        json["AuthMode"] = 0;
-        json["Advanced"] = sv_advancemode.Value();
-        json["BonusFreq"] = sv_bonus_frequency.Value();
-        json["ConnectionType"] = 0;
-        json["CurrentMap"] = Map.Name;
-        json["GameStyle"] = sv_gamemode.Value();
-        json["Info"] = sv_info.Value();
-        json["MaxPlayers"] = sv_maxplayers.Value();
-        json["Modded"] = !fs_mod.Value().empty();
-        json["Name"] = sv_hostname.Value();
-        json["NumBots"] = BotsNum;
-        json["NumPlayers"] = PlayersNum;
-        json["OS"] = GetOS();
-        json["Port"] = net_port.Value();
-        json["Private"] = !sv_password.Value().empty();
-        json["Realistic"] = sv_realisticmode.Value();
-        json["Respawn"] = sv_respawntime.Value();
-        json["Survival"] = sv_survivalmode.Value();
-        json["Version"] = SOLDAT_VERSION;
-        json["WM"] = (LoadedWMChecksum != DefaultWMChecksum);
-        
-        Json::Value jsonPlayers(Json::arrayValue);
+        oss << ",\"AuthMode\":0";
+        oss << ",\"Advanced\":" << (sv_advancemode.Value() ? "true" : "false");
+        oss << ",\"BonusFreq\":" << sv_bonus_frequency.Value();
+        oss << ",\"ConnectionType\":0";
+        oss << ",\"CurrentMap\":\"" << Map.Name << "\"";
+        oss << ",\"GameStyle\":" << sv_gamemode.Value();
+        oss << ",\"Info\":\"" << sv_info.Value() << "\"";
+        oss << ",\"MaxPlayers\":" << sv_maxplayers.Value();
+        oss << ",\"Modded\":" << (!fs_mod.Value().empty() ? "true" : "false");
+        oss << ",\"Name\":\"" << sv_hostname.Value() << "\"";
+        oss << ",\"NumBots\":" << BotsNum;
+        oss << ",\"NumPlayers\":" << PlayersNum;
+        oss << ",\"OS\":" << GetOS();
+        oss << ",\"Port\":" << net_port.Value();
+        oss << ",\"Private\":" << (!sv_password.Value().empty() ? "true" : "false");
+        oss << ",\"Realistic\":" << (sv_realisticmode.Value() ? "true" : "false");
+        oss << ",\"Respawn\":" << sv_respawntime.Value();
+        oss << ",\"Survival\":" << (sv_survivalmode.Value() ? "true" : "false");
+        oss << ",\"Version\":\"" << SOLDAT_VERSION << "\"";
+        oss << ",\"WM\":" << ((LoadedWMChecksum != DefaultWMChecksum) ? "true" : "false");
+
+        oss << ",\"Players\":[";
+        bool first = true;
         for (int i = 1; i <= MAX_PLAYERS; i++) {
-            if (Sprite[i].Active) {
-                jsonPlayers.append(Sprite[i].Player.Name);
+            if (Sprite[i] && Sprite[i]->Active && Sprite[i]->Player) {
+                if (!first) oss << ",";
+                oss << "\"" << Sprite[i]->Player->Name << "\"";
+                first = false;
             }
         }
-        json["Players"] = jsonPlayers;
-        
-        std::ostringstream oss;
-        writer->write(json, &oss);
+        oss << "]}";
         FData = oss.str();
     }
     
