@@ -31,11 +31,6 @@ const int DIST_TOO_CLOSE  =  35;
 const int DIST_COLLIDE    =  20;
 const int DIST_STOP_PRONE =  25;
 
-// Function declarations
-int CheckDistance(float PosA, float PosB);
-void SimpleDecision(uint8_t SNum);
-void GoToThing(uint8_t SNum, uint8_t TNum);
-void ControlBot(TSprite& SpriteC);
 
 namespace AIImpl {
     inline int CheckDistance(float PosA, float PosB) {

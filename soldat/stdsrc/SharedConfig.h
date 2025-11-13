@@ -19,12 +19,6 @@
 #include "Util.h"     // For ColorToHex and StringToColor functions
 #include "Constants.h" // For various constants
 
-// Function declarations
-#ifdef SERVER_CODE
-bool LoadBotConfig(const std::string& FilePath, TSprite& SpriteC);
-#endif
-bool LoadWeaponsConfig(const std::string& FilePath);
-
 // Helper functions to read configuration values
 namespace SharedConfigImpl {
     inline void ReadConfColor(std::map<std::string, std::string>& conf, 
@@ -362,7 +356,9 @@ namespace SharedConfigImpl {
 }
 
 // Using declarations to bring into global namespace
+#ifdef SERVER_CODE
 using SharedConfigImpl::LoadBotConfig;
+#endif
 using SharedConfigImpl::LoadWeaponsConfig;
 using SharedConfigImpl::ReadConfColor;
 using SharedConfigImpl::ReadConfMagicColor;

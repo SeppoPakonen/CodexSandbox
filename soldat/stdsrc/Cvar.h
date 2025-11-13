@@ -51,7 +51,7 @@ template<typename T>
 using TCallback = std::function<bool(TCvar<T>*, T)>;
 
 struct TCvarBase {
-private:
+protected:
     std::string FName;
     TCvarFlags FFlags;
     std::string FDescription;
@@ -71,6 +71,12 @@ public:
     const std::string& GetName() const { return FName; }
     const TCvarFlags& GetFlags() const { return FFlags; }
     const std::string& GetDescription() const { return FDescription; }
+    
+    // Added setter methods to allow derived classes to modify protected members
+    void SetName(const std::string& name) { FName = name; }
+    void SetFlags(const TCvarFlags& flags) { FFlags = flags; }
+    void SetDescription(const std::string& description) { FDescription = description; }
+    void SetErrorMessage(const std::string& msg) { FErrorMessage = msg; }
 };
 
 template<typename T>
@@ -84,18 +90,47 @@ public:
     TCvar(const std::string& Name, const std::string& Description, T Value, T DefaultValue, 
           const TCvarFlags& Flags, const TCallback<T>& OnChange)
         : FValue(Value), FDefaultValue(DefaultValue), FOnChange(OnChange) {
-        FName = Name;
-        FDescription = Description;
-        FFlags = Flags;
+        SetName(Name);
+        SetDescription(Description);
+        SetFlags(Flags);
     }
     
     void Reset() override {
         SetValue(FDefaultValue);
     }
     
-    virtual bool SetValue(T Value) = 0;
+    virtual bool SetValue(T Value) {
+        if (FFlags.count(TCvarFlag::CVAR_INITONLY) && CvarsInitialized) {
+            FErrorMessage = "Can be set only at startup";
+            return false;
+        }
+
+        if (FOnChange) {
+            if (!FOnChange(this, Value)) {
+                return false;
+            }
+        }
+
+        if (Value != FDefaultValue) {
+            FFlags.insert(TCvarFlag::CVAR_MODIFIED);
+        } else {
+            FFlags.erase(TCvarFlag::CVAR_MODIFIED);
+        }
+
+#ifdef SERVER_CODE
+        // Sync update if value changed
+        if (Value != GetValue()) {
+            SyncUpdate(true);
+        }
+#endif
+
+        // Actually set the value
+        FValue = Value;
+        return true;
+    }
+    
     static TCvar<T>* Find(const std::string& Name) {
-        TCvarBase* base = TCvarBase.Find(Name);
+        TCvarBase* base = TCvarBase::Find(Name);
         if (!base) return nullptr;
         // In a real implementation, we'd need type checking here
         return static_cast<TCvar<T>*>(base);
@@ -104,6 +139,9 @@ public:
     const T& GetValue() const { return FValue; }
     const T& GetDefaultValue() const { return FDefaultValue; }
     void SetOnChange(const TCallback<T>& callback) { FOnChange = callback; }
+    
+    // Public getter for accessing the value
+    T Value() const { return FValue; }
 };
 
 struct TIntegerCvar : public TCvar<int> {
@@ -638,7 +676,13 @@ using CvarImpl::ResetSyncCvars;
 // Global variables - they would need to be defined in a source file or with 'extern' in other headers
 extern std::unordered_map<std::string, std::unique_ptr<TCvarBase>> Cvars;
 extern std::unordered_map<std::string, std::unique_ptr<TCvarBase>> CvarsSync;
-extern bool CvarsNeedSyncing = false;
-extern bool CvarsInitialized = false;
+extern bool CvarsNeedSyncing;
+extern bool CvarsInitialized;
 
 #endif // CVAR_H
+// Add these global variable definitions at the end of Cvar.h
+std::unordered_map<std::string, std::unique_ptr<TCvarBase>> Cvars;
+std::unordered_map<std::string, std::unique_ptr<TCvarBase>> CvarsSync;
+bool CvarsNeedSyncing = false;
+bool CvarsInitialized = false;
+

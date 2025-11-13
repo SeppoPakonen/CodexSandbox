@@ -24,20 +24,6 @@ struct TIntersectionResult {
     uint8_t NumIntersections;
 };
 
-// Function declarations
-TIntersectionResult IsLineIntersectingCircle(TVector2 Line1, TVector2 Line2, TVector2 CircleCenter,
-                                            float Radius);
-bool LineCircleCollision(TVector2 StartPoint, TVector2 EndPoint, TVector2 CircleCenter,
-                        float Radius, TVector2& CollisionPoint);
-float PointLineDistance(TVector2 P1, TVector2 P2, TVector2 P3);
-float Angle2Points(TVector2 P1, TVector2 P2);
-float Distance(float X1, float Y1, float X2, float Y2);
-float SqrDist(float X1, float Y1, float X2, float Y2);
-float SqrDist(TVector2 P1, TVector2 P2);
-float Distance(TVector2 P1, TVector2 P2);
-int GreaterPowerOf2(int N);
-int RoundFair(float Value);
-
 // Helper function to check if value is in range
 inline bool InRange(float value, float min, float max) {
     return value >= min && value <= max;
@@ -46,6 +32,15 @@ inline bool InRange(float value, float min, float max) {
 // Helper functions for math operations
 inline float Sqr(float x) {
     return x * x;
+}
+
+// Additional required functions
+inline float SqrDist(float X1, float Y1, float X2, float Y2) {
+    return Sqr(X1 - X2) + Sqr(Y1 - Y2);
+}
+
+inline float SqrDist(TVector2 P1, TVector2 P2) {
+    return Sqr(P1.x - P2.x) + Sqr(P1.y - P2.y);
 }
 
 // Function implementations
@@ -258,7 +253,6 @@ using CalcImpl::LineCircleCollision;
 using CalcImpl::PointLineDistance;
 using CalcImpl::Angle2Points;
 using CalcImpl::Distance;
-using CalcImpl::SqrDist;
 using CalcImpl::GreaterPowerOf2;
 using CalcImpl::RoundFair;
 

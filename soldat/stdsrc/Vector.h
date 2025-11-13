@@ -81,19 +81,6 @@ struct TVector3 {
 using PVector2 = TVector2*;
 using PVector3 = TVector3*;
 
-// Function declarations
-TVector2 Vector2(float x, float y);
-
-float Vec2Length(TVector2 v);
-float Vec2Length2(TVector2 v);
-float Vec2Dot(TVector2 v1, TVector2 v2);
-TVector2 Vec2Add(TVector2 v1, TVector2 v2);
-TVector2 Vec2Subtract(TVector2 v1, TVector2 v2);
-PVector2 Vec2Scale(TVector2& vOut, TVector2 v, float s);
-PVector2 Vec2Normalize(TVector2& vOut, TVector2 v);
-
-float Vec3Length(TVector3 v);
-
 // Function implementations
 namespace VectorImpl {
     inline TVector2 Vector2(float x, float y) {

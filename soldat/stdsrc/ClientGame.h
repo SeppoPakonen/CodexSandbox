@@ -60,19 +60,6 @@ extern bool ForceClientSpriteSnapshotMov;
 extern int LastForceClientSpriteSnapshotMovTick;
 extern int MenuTimer;
 
-// Function declarations
-void ResetFrameTiming();
-void GameLoop();
-int GetGameFps();
-double GetCurrentTime();
-void TabComplete();
-void ResetWeaponStats();
-void BigMessage(const std::wstring& Text, int Delay, uint32_t Col);
-uint8_t GetCameraTarget(bool Backwards = false);
-#ifdef STEAM_CODE
-void GetMicData();
-#endif
-
 struct TFrameTiming {
     int64_t Frequency;
     int64_t StartTime;
@@ -535,7 +522,7 @@ using ClientGameImpl::GetCameraTarget;
 using ClientGameImpl::GetMicData;
 
 // Global variables
-extern TVector2 MousePrev = {{0.0f, 0.0f}};
+extern TVector2 MousePrev = {0.0f, 0.0f};
 extern float mx = 0.0f;
 extern float my = 0.0f;
 extern bool MapChanged = false;

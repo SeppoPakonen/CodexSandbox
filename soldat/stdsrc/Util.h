@@ -18,7 +18,15 @@
 #include <algorithm>
 
 // Forward declarations - will be defined in other files
-class TSHA1Digest; // to be defined in Sha1.h
+struct TSHA1Digest {  // Define as struct instead of forward declaration
+    // Placeholder implementation
+    char data[20]; // SHA1 digest is 160 bits = 20 bytes
+    TSHA1Digest() { 
+        for(int i = 0; i < 20; i++) {
+            data[i] = 0; 
+        }
+    }
+};
 class TMapInfo;    // defined below
 
 // Type definitions
@@ -33,45 +41,6 @@ struct TMapInfo {
     std::string Path;
 };
 
-// how often does character appear in str
-int CharCount(const std::string& Character, const std::string& Str);
-
-// splits a string, ie: 1|2|3 with a limit of 1, into 1 and 2|3
-TStringArray SplitStr(const std::string& Source, const std::string& Delimiter,
-                      int limit = -1);
-
-// Gets a specific piece of a string
-std::string GetPiece(const std::string& Source, const std::string& Delimiter,
-                     int Piece);
-
-std::variant<int, float, std::string> Iif(bool Condition, 
-                                          const std::variant<int, float, std::string>& TruePart,
-                                          const std::variant<int, float, std::string>& FalsePart);
-
-std::variant<int, float, std::string> Choose(int Index, 
-                                             const std::vector<std::variant<int, float, std::string>>& Choices);
-
-uint32_t ColorToHex(TColor Color);
-TColor StringToColor(const std::string& S);
-
-#ifndef SERVER_CODE
-std::string NumberFormat(uint32_t Num);
-int CheckFileSize(const std::string& filename);
-#endif
-
-std::string OverrideFileExt(const std::string& Filename, const std::string& Ext);
-
-std::string Md5StringHelper(std::string Text);
-bool CreateDirIfMissing(const std::string& Dir);
-bool CreateFileIfMissing(const std::string& Filename);
-std::string GetSize(int64_t Bytes);
-TSHA1Digest GetMapChecksum(TMapInfo Map);
-bool GetMapInfo(std::string MapName, std::string Directory, TMapInfo& MapInfo);
-bool VerifyMapChecksum(TMapInfo Map, TSHA1Digest Checksum);
-
-#ifdef DEVELOPMENT_CODE
-std::string ToStr(const void* AValue, void* ATypeInfo);
-#endif
 
 // Implementation of the functions
 namespace UtilImpl {
@@ -275,6 +244,5 @@ using UtilImpl::GetSize;
 using UtilImpl::GetMapChecksum;
 using UtilImpl::GetMapInfo;
 using UtilImpl::VerifyMapChecksum;
-using UtilImpl::ToStr;
 
 #endif // UTIL_H

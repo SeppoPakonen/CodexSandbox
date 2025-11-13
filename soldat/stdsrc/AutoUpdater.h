@@ -4,7 +4,12 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-#include <process.h> // This would be the appropriate header, though process handling varies by platform
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <sys/wait.h>
+#include <unistd.h>
+#endif
 
 // Forward declarations
 class TProcess {
@@ -20,11 +25,6 @@ public:
     void Execute();
 };
 
-// Function declarations
-void StartAutoUpdater();
-
-// Global variables
-extern TProcess* UpdaterProcess;
 
 namespace AutoUpdaterImpl {
     inline void TProcess::Execute() {
@@ -58,11 +58,11 @@ namespace AutoUpdaterImpl {
     }
 }
 
+// Global variables
+extern TProcess* UpdaterProcess;
+
 // Using declarations to bring into global namespace
 using AutoUpdaterImpl::TProcess;
 using AutoUpdaterImpl::StartAutoUpdater;
-
-// Global variables
-extern TProcess* UpdaterProcess = nullptr;
 
 #endif // AUTO_UPDATER_H
