@@ -58,7 +58,7 @@ endif()
 
 # Include directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/soldat/stdsrc)
+include_directories(${PROJECT_SOURCE_DIR}/stdsrc)
 include_directories(${GLM_INCLUDE_DIR})
 include_directories(${GLEW_INCLUDE_DIRS})
 include_directories(${PHYSFS_INCLUDE_DIR})
