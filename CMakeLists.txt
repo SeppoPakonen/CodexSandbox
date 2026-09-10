@@ -37,19 +37,19 @@ endif()
 
 # Create the executable
 add_executable(pinball_game
-    src/main.cpp
-    src/renderer.cpp
-    src/shader.cpp
-    src/camera.cpp
-    src/input.cpp
-    src/ball.cpp
-    src/paddle.cpp
-    src/game.cpp
-    src/simple_renderer.cpp
+    pinball/src/main.cpp
+    pinball/src/renderer.cpp
+    pinball/src/shader.cpp
+    pinball/src/camera.cpp
+    pinball/src/input.cpp
+    pinball/src/ball.cpp
+    pinball/src/paddle.cpp
+    pinball/src/game.cpp
+    pinball/src/simple_renderer.cpp
 )
 
 # Include directories
-target_include_directories(pinball_game PRIVATE include)
+target_include_directories(pinball_game PRIVATE pinball/include)
 target_include_directories(pinball_game PRIVATE ${GLM_INCLUDE_DIR})
 target_include_directories(pinball_game PRIVATE ${GLEW_INCLUDE_DIRS})
 
@@ -62,4 +62,11 @@ target_link_libraries(pinball_game
 )
 
 # Copy shaders to build directory
-file(COPY shaders/ DESTINATION ${CMAKE_BINARY_DIR}/shaders)
+if(EXISTS ${CMAKE_SOURCE_DIR}/pinball/shaders)
+    file(COPY ${CMAKE_SOURCE_DIR}/pinball/shaders/ DESTINATION ${CMAKE_BINARY_DIR}/shaders)
+elseif(EXISTS ${CMAKE_SOURCE_DIR}/shaders)
+    file(COPY ${CMAKE_SOURCE_DIR}/shaders/ DESTINATION ${CMAKE_BINARY_DIR}/shaders)
+else()
+    message(WARNING "Shaders directory not found, creating empty directory")
+    file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
+endif()

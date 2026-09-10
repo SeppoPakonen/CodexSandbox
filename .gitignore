@@ -43,3 +43,23 @@ deps/
 tmp/
 
 # Pinball project specific entries (from Pinball repo)
+
+# Build artifacts
+build/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+*.lib
+*.bin
+# CMake generated files
+cmake-build*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+cmake-build*/
+.kilo/
+bin/
