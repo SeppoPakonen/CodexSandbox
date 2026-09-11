@@ -63,3 +63,10 @@ Makefile
 cmake-build*/
 .kilo/
 bin/
+
+# AI assistant history / state
+.aider*
+.maestro/
+
+# Nested external repo copies
+io_thps_scene/
